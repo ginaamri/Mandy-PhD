@@ -47,7 +47,7 @@ class_data <- class_data_NA %>% filter(!is.na(Total_duration_of_fixations.comput
 
 view(class_data)
 
-# create new column names that give total duration of looking A, B, Teddy and Urmenschen
+# create new column names that give total duration of looking Computer, Gregor, Teddy and Plant
 total_duration <- class_data  %>% 
   rename (Computer = Total_duration_of_fixations.computer,
           Gregor = Total_duration_of_fixations.gregor,
