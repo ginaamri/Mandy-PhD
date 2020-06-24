@@ -9,12 +9,14 @@
 
 ## http://www.eyetracking-r.com/
 
+if (!require(tidyverse)) install.packages("tidyverse", dep = TRUE)
+if (!require(lemon)) install.packages("lemon", dep = TRUE)
 
-install.packages("tidyverse")
-install.packages("lemon")
-
-library(tidyverse) # contains ggplot2, dplyr...and all the other good things
-library(lemon) # necessary for arranging multiple plots next to each other
+# install.packages("tidyverse")
+# install.packages("lemon")
+# 
+# library(tidyverse) # contains ggplot2, dplyr...and all the other good things
+# library(lemon) # necessary for arranging multiple plots next to each other
 
 ### AUTOMATIC MAPPING
 ##########################################################################
