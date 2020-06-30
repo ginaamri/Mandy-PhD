@@ -80,15 +80,14 @@ view(total_duration_long)
 
 ### create an additional data set with proportions of duration
 
-
 # create a new column with name sum_aois that gives the sum of looking at all AOIs
-total_duration <- total_duration  %>% mutate(sum_aois =
+proportion_duration <- total_duration  %>% mutate(sum_aois =
                                                Computer +
                                                Gregor+
                                                Plant+
                                                Teddy+
                                                Material)
-view(total_duration)
+view(proportion_duration)
 
 # create new columns that give proportion of the duration of looking at AOIs
 # relative duration divided by total duration is the proportion
@@ -101,10 +100,10 @@ proportion_duration <- total_duration  %>%
 
 view(proportion_duration)
 
-# # create data set of proportions in long format for plotting
-# proportion_duration_long  <- gather(proportion_duration, AOI, proportion, Computer:Material)
-# 
-# view(proportion_duration_long)
+# create data set of proportions in long format for plotting
+proportion_duration_long  <- gather(proportion_duration, AOI, proportion, Computer:Material)
+
+view(proportion_duration_long)
 
 
 #########################################################
@@ -125,7 +124,8 @@ total.plot.raw <- ggplot(total_duration_long, aes(x = AOI, y = duration, colour 
     "Total_duration_of_fixations.computer" = "Computer", 
     "Total_duration_of_fixations.gregor" = "Gregor",
     "Total_duration_of_fixations.teddy" = "Teddy",
-    "Total_duration_of_fixations.plant" = "Plant"
+    "Total_duration_of_fixations.plant" = "Plant",
+    "Total_duration_of_fixations.material" = "Material"
   ))
 
 total.plot.raw
@@ -144,18 +144,33 @@ prop.plot
 
 ### BARPLOTS
 ### Plot data TOTAL DURATION
-duration_plot <- ggplot(total_duration, aes(x = `AOI:`, y = X5))+
-  geom_bar(stat="identity", width=.5, fill="tomato") + 
-  labs (title = "Total duration (s)", 
-        x = 
-        "Total_duration_of_fixations.computer" = "Computer", 
-        "Total_duration_of_fixations.gregor" = "Gregor",
-        "Total_duration_of_fixations.teddy" = "Teddy",
-        "Total_duration_of_fixations.plant" = "Plant",
-        "Total_duration_of_fixation.material = Material",
-        y = "Total duration (s)")
+duration_plot <- ggplot(total_duration_long, aes(x = AOI, y = duration, colour = AOI, fill = AOI))+
+  geom_bar(stat="identity", width=.5)+
+  labs (title = "Total duration of looking at AOIs in ms", 
+        colour = "AOI",
+        fill = "AOI")
 
 duration_plot
 
 
+### Plot data PROPORTION OF DURATION
+proportion_plot <- ggplot(proportion_duration_long, aes(x = AOI, y = proportion, colour = AOI, fill = AOI))+
+  geom_bar(stat="identity", width=.5)+
+  labs (title = "Proportion of duration of looking at AOIs", 
+        colour = "AOI",
+        fill = "AOI")
 
+proportion_plot
+
+
+################################################################
+### Arranging duration plots
+################################################################
+
+
+# now we arrange both plots on top of each other using ggarrange telling it to take both plots
+# in two rows and one colummn (i.e. on top of each other) and specifying that we only want one legend
+# function grid_arrange is part of package lemon
+
+grid_arrange_shared_legend(duration_plot, proportion_plot,
+                           nrow = 2, ncol = 1, position = "right")
