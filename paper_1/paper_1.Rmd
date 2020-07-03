@@ -77,10 +77,14 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 ## Participants
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 24), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the dissertation project in advance. Participation in the study was voluntary and only took place after written consent has been given.
+
+The selection of the subjects was based on extreme groups, whereby professional experience is the crucial criterion for the selection of experts or novices. Novices were recruited as teachers who have been working in the teaching profession for no more than 3 years, whereas experts were considered to have professional experience of 10 years or more (@ Messer & Reusser, 2000).
 
 
 ## Material
+
+### Eye-tracking equipment 
 
 A binocular Tobii Pro Glasses 2 eye-tracker consisting of a wearable head unit and a recording unit was used to record the eye movements. The head unit is a measuring device with different sensitive sensors. A high-definition scene camera captures a full HD video and an integrated microphone records the surrounding sounds. Infrared light illuminators support the eye tracking sensors which record the eye orientation. The videos were recorded with a sampling rate of 50 Hz and a video resolution with 1920 x 1080 at 25 frames per second. The scene camera has a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and has a frame dimension of 179 x 159 x 57mm (width x depth x height). The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
 
@@ -89,7 +93,18 @@ The Tobii Pro Glasses 2 software allows for non-screen based recordings of a par
 
 ## Procedure
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+A first important step in conducting Study I was the pilot phase, in which the measuring instruments were tested and evaluated in a Lab with subjects.
+
+After the pilot study, experts (n = 24) and novices (n = 24) were invited to the mobile Lab of the Department of Empirical School- and Classroom Research at the University of Leipzig. The two extreme groups were divided into groups of four. Subsequently, the subjects were asked to give a 15-minute lesson at six different dates. The duration of each appointment was about 2h30min: each extreme group had an 15min briefing, 15min lesson unit, 10min technical preparation and follow-up and 5min buffer/break.
+
+One person of the group acted as a teacher, the other three subjects as a class. The respondents representing the class received behavioral instructions to simulate typical events and disturbances in the classroom (e.g. putting their heads on the table, chatting, looking at their mobile phones, etc.) The classroom disturbances, divided into active and passive, were displayed as instructions during the lesson for all "students" but not the teacher. In order to avoid learning effects, the disturbances in each lesson were distributed pseudo-randomly over the short teaching phase.
+
+By using mobile eye-trackers, the gaze and behavior of the experts and novices was recorded during the lesson. In addition, what the participating teachers said was recorded with a portable microphone. Other sounds and voices were recorded using an audio recorder installed in the middle of the room. Movements, facial expressions and gestures of the subjects were recorded by four cameras from different angles. One camera was installed to film the class action from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded.
+
+After each recording, the subjects answered classroom management items using validated questionnaires, how present they perceived the teacher, and the teacher should give an assessment of the used classroom management.
+The lessons recorded on video were coded in a post-hoc procedure with a coding software by previously trained raters. 
+
+The data on the teacher's attendance behavior obtained through the coding, eye-tracking and audio recordings were linked to the results of the questionnaires. The statistical data have been analyzed by using the program RStudio (Link: https://rstudio.com/).
 
 
 
