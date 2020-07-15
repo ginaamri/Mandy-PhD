@@ -57,6 +57,7 @@ output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
+
 library("papaja")
 r_refs("r-references.bib")
 
@@ -68,44 +69,51 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
+# State of research
+
+Teaching and classroom management are multidimensional settings in which teachers have to respond immediately to events as they develop [@barnes2004significance]. The different interests and abilities of students must be managed in a way that maximizes the active learning time of students and minimizes disruptions whilst teaching. Learning to develop such classroom management skills and to teach effectively is a complicated and complex process [@wolff2017see]. 
+
+During teaching, teachers must be able to select from a variety of visual and acoustic impressions to focus their attention on the essential and to distinguish between relevant and irrelevant events. This ability is called professional vision and is a key component of teacher expertise and successful teaching [@barth2017professionelle]. Eye tracking technology has become a reliable means to study teachers’ visual focus of attention [@pouta2020student; @bogert2016visualperception; @wolff2017see]
+
+Educational research has repeatedly shown that there are differences between experienced and novice teachers in terms of perception and behavioral competencies [@barth2017professionelle; @bogert2016visualperception; @wolff2017see]. For example, experts direct their attention more often and more evenly to all students, whereas novices only direct their attention to some students. The frequency and duration of fixations as eye movement are decisive [@stuermer2017eye]. Mobile eye-tracking technology has also shown that experienced teachers distribute their focus more efficiently to solve tasks [@jarodzka2010eyes]. Furthermore, in contrast to novices, experts are able to focus their attention on the entire class and guide the class while giving feedback to individual students and answering questions [@cortina2015low].
+
+
+## Research questions
+
+The first study is a laboratory study that uses a quasi-experimental cross-sectional study design to investigate whether the experience of teachers has an influence on the perception of and response to disruptions. The disturbances are experimentally varied using a previously written script. Thus, the aim is to find out whether differences in the allocation of attention between expertise groups can be detected in this controlled context.
+
+In order to answer this question, the hypothesis was formulated that teachers with more professional experience not only notice more disturbances but also notice them faster. In the hypothesis, therefore, it is necessary to check what has already been shown in the research literature: In complex teaching situations, experts have a more structured and elaborate professional knowledge than novices in order to perceive and interpret relevant events and to act appropriately [@berliner2001learning; @lachner2016makes].
 
 
 # Methods
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
 ## Participants
 
 For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 24), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the dissertation project in advance. Participation in the study was voluntary and only took place after written consent has been given.
 
-The selection of the subjects was based on extreme groups, whereby professional experience is the crucial criterion for the selection of experts or novices. Novices were recruited as teachers who have been working in the teaching profession for no more than 3 years, whereas experts were considered to have professional experience of 10 years or more (@ Messer & Reusser, 2000).
+The selection of the subjects was based on extreme groups, whereby professional experience is the crucial criterion for the selection of experts or novices. Novices were recruited as teachers who have been working in the teaching profession for no more than 3 years, whereas experts were considered to have professional experience of 10 years or more [@messner2000berufliche].
 
+## Procedure
 
-## Material
+For this study, lesson units of n = 24 experts and n = 24 novices were recorded by the mobile laboratory of the Department of Empirical School and Classroom Research at the University of Leipzig. The two extreme groups were each divided into groups of four, with one group being invited on each of six different dates. All participants were asked to hold a 15-minute lesson. The duration of each appointment was approximately 2h30min: per extreme group 4 x 15min briefing, 15min lesson units, 10min technical preparation and follow-up and 5min buffer/break.
+
+One person from the group of 4 acted as a teacher, the other three subjects acted as the class. The subjects, who represented the class, were given behavioral instructions in a pre-written script to simulate typical events and disturbances in the classroom (e.g. putting their heads on the table, chatting, looking at their mobile phones, etc.).
+
+The lesson disturbances were displayed as instructions during the lesson for all "students" but not the teacher. In order to avoid learning effects, the disruptions in each lesson were distributed pseudo-randomly over the short teaching phase. In addition, the order of the data collection was taken into account in the analyses and variance caused by order was controlled.
+
+By using mobile eye-trackers, the gaze and behavior of the experts and novices was recorded during the lesson. In addition, what the participating teachers said was recorded with a portable microphone. Other sounds and voices were recorded with an audio recorder installed in the middle of the laboratory. Movements, facial expressions and gestures of the subjects were recorded by four cameras from different angles. One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the laboratory to film the teacher and class from the front and back. In addition, it the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
+
+The lessons recorded on video were coded in a post-hoc procedure with a coding software by previously trained raters. The statistical data have been analyzed by using the program RStudio [Link: https://rstudio.com/].
+
+## Measures
 
 ### Eye-tracking equipment 
 
 A binocular Tobii Pro Glasses 2 eye-tracker consisting of a wearable head unit and a recording unit was used to record the eye movements. The head unit is a measuring device with different sensitive sensors. A high-definition scene camera captures a full HD video and an integrated microphone records the surrounding sounds. Infrared light illuminators support the eye tracking sensors which record the eye orientation. The videos were recorded with a sampling rate of 50 Hz and a video resolution with 1920 x 1080 at 25 frames per second. The scene camera has a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and has a frame dimension of 179 x 159 x 57mm (width x depth x height). The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
 
 The Tobii Pro Glasses 2 software allows for non-screen based recordings of a participants’ attention while moving in real-world settings. The recordings of the glasses contain both HD-video from the subject’s perspective as well as the respective gaze data mapped onto the video. In order to map multiple recordings to AOIs, it is necessary to import the eye-tracking recordings into the Tobii Pro Analyzer software. Also, it is necessary to create a reference image of the scene in which one wishes to plot the gaze data (i.e. snapshot). Once the snapshot is imported, the gaze recordings of multiple recordings can be mapped to the reference image and analyzed in aggregated form. Tobii Pro does not allow to do AOI based analyses within Pro Lab. Also, the dependency on snapshot reference images makes this approach impractical when working in different settings, i.e. different classrooms with various participants. Finally, mapping gaze to people or any moving objects complicated the analyses further.
-
-
-## Procedure
-
-A first important step in conducting Study I was the pilot phase, in which the measuring instruments were tested and evaluated in a Lab with subjects.
-
-After the pilot study, experts (n = 24) and novices (n = 24) were invited to the mobile Lab of the Department of Empirical School- and Classroom Research at the University of Leipzig. The two extreme groups were divided into groups of four. Subsequently, the subjects were asked to give a 15-minute lesson at six different dates. The duration of each appointment was about 2h30min: each extreme group had an 15min briefing, 15min lesson unit, 10min technical preparation and follow-up and 5min buffer/break.
-
-One person of the group acted as a teacher, the other three subjects as a class. The respondents representing the class received behavioral instructions to simulate typical events and disturbances in the classroom (e.g. putting their heads on the table, chatting, looking at their mobile phones, etc.) The classroom disturbances, divided into active and passive, were displayed as instructions during the lesson for all "students" but not the teacher. In order to avoid learning effects, the disturbances in each lesson were distributed pseudo-randomly over the short teaching phase.
-
-By using mobile eye-trackers, the gaze and behavior of the experts and novices was recorded during the lesson. In addition, what the participating teachers said was recorded with a portable microphone. Other sounds and voices were recorded using an audio recorder installed in the middle of the room. Movements, facial expressions and gestures of the subjects were recorded by four cameras from different angles. One camera was installed to film the class action from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded.
-
-After each recording, the subjects answered classroom management items using validated questionnaires, how present they perceived the teacher, and the teacher should give an assessment of the used classroom management.
-The lessons recorded on video were coded in a post-hoc procedure with a coding software by previously trained raters. 
-
-The data on the teacher's attendance behavior obtained through the coding, eye-tracking and audio recordings were linked to the results of the questionnaires. The statistical data have been analyzed by using the program RStudio (Link: https://rstudio.com/).
-
 
 
 ## Data analysis
