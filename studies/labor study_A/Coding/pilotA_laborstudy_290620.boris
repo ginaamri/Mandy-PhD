@@ -1,0 +1,15 @@
+{
+ "time_format":"hh:mm:ss",
+ "project_date":"2020-08-10T18:27:11",
+ "project_name":"pilotA_laborstudy_290620",
+ "project_description":"",
+ "project_format_version":"7.0",
+ "subjects_conf":{},
+ "behaviors_conf":{},
+ "observations":{},
+ "behavioral_categories":[],
+ "independent_variables":{},
+ "coding_map":{},
+ "behaviors_coding_map":[],
+ "converters":{}
+}
