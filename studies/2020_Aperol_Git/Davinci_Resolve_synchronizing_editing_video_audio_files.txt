@@ -1,0 +1,14 @@
+Workflow for synchronizing and editing video and audio files (gopro, ambient and eye-tracking)
+
+Editing program: Davinci Resolve
+
+- before editing the files make sure that you have exported the eye-tracking videos with GAZE in Tobii Pro Lab
+
+1) open the program
+2) create a new project (see name of your file)
+3) media pool opens automatically --> import your files (drag-and-drop): 
+	- eye-tracking video with gaze
+	- gopro videos (4)
+	- ambient audio recorder
+4) go to "edit" in the bar below
+5) 
