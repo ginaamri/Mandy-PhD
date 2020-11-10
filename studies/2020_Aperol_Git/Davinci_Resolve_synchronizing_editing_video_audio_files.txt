@@ -2,13 +2,52 @@ Workflow for synchronizing and editing video and audio files (gopro, ambient and
 
 Editing program: Davinci Resolve
 
-- before editing the files make sure that you have exported the eye-tracking videos with GAZE in Tobii Pro Lab
+before editing the videos
+- install Davinci Resolve 16 (not Studio)
+- make sure that you have exported the eye-tracking videos with GAZE in Tobii Pro Lab
 
 1) open the program
-2) create a new project (see name of your file)
-3) media pool opens automatically --> import your files (drag-and-drop): 
-	- eye-tracking video with gaze
-	- gopro videos (4)
-	- ambient audio recorder
+2) create a new project (name them after the files)
+
+3) media pool opens automatically --> import files (drag-and-drop): 
+	- eye-tracking video with gaze (1x)
+	- gopro videos (4x)
+	- ambient audio recorder (1x)
+
 4) go to "edit" in the bar below
-5) 
+5) drag and drop the videos in each line 
+6) check for clapping hands in the beginning
+7) cut the videos at this point 
+8) ckeck if glasses and gopro videos are synced by audio 
+9) cut the end of the videos to make them the same length
+10) put all five videos in a row of track 1 with audio track
+
+11) go to "deliver" in the bar below
+12) name the file (e.g. Aperol_pilot_02_03_novice_C_cam1_cut) and browse for location
+13) change "format" from "Quicktime" to "mp4" and make sure that the codec is "H.264"
+14) ! change: render --> "entire timeline" to "in/out range" just above the videos
+15) right click on the first video --> render this clip
+16) make sure that the video and the filename are the same 
+17) click on the left side "add to render queue"
+18) video apprears on the right side 
+19) click on second video and repeat step 16 and 17
+20) do this for all videos in the render bar
+21) go to the render queue on the left side and select all videos (strg + clicking on each video) 
+22) click "start render" --> wait until it's done
+
+before creating a splitscreen:
+- make sure that you have downloaded the splitscreen templates (https://bit.ly/MrAT-SplitScreen)
+
+23) create a splitscreen with glasses video and cam4 or cam3 (a video where you can see the instructions appearing)
+24) go back to "edit" 
+25) delete the other videos (cam1, cam2, cam3) - keep the audio track 
+26) click on "inspector" --> "generator" and "splitX2Horiz"
+27) drag the splitscreen in a video track line 
+28) adjust the two videos with "transform" and "crop" just below the timeline window (glasses video in upper area and cam4 below)
+29) go to "deliver" 
+30) name the file (e.g. Aperol_pilot_02_03_novice_C_splitscreen)
+31) change "format" from "Quicktime" to "mp4" and make sure that the codec is "H.264"
+32) click "add to render queue" on the left side
+33) keep "render --> entire timeline"
+34) video apprears on the right side 
+35) click "start render" --> wait until it's done
