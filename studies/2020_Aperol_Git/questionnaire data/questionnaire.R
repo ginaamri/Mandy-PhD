@@ -21,9 +21,14 @@ library(dplyr)
 library(readxl)
 
 ### read in data
-data<-read_excel("fragebogen_value.xlsx")
+# data<-read_excel("fragebogen_value.xlsx")
+# 
+# show(data)
 
-show(data)
+# read in data:
+
+
+
 
 ### filter relevant rows via filter function
 data <- data  %>% filter (Aperol_pilot_01_02_expert_A_quest)
