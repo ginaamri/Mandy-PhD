@@ -1,0 +1,241 @@
+---
+title: "Einzeldinge - Pilot and Preliminary Data"
+author: "Gregor Kachel, Ramiro Glauer, Jan Lonnemann, Frauke Hildebrandt"
+date: "03.04.2019"  
+output: 
+  bookdown::html_document2:
+    toc: yes
+    toc_float: true
+    fig_caption: yes
+    number_sections: false
+    code_folding: hide
+bibliography: library.bib
+csl: apa.csl
+header-includes:
+  \usepackage{caption}
+  \renewcommand{\thetable}{S\arabic{table}} 
+  \renewcommand{\thefigure}{S\arabic{figure}}
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)
+```
+
+
+```{r load_packages, include = FALSE}
+
+# install.packages("tidyverse")
+# install.packages("ggplot2")
+
+library(ggplot2)
+library(tidyverse)
+
+```
+
+```{r part 1-1-1 data, echo = F}
+
+# load tab delimited text file into R; file should be in the same folder as the script for "./" to select it
+raw.data<-read.table("./einzeltab.txt",sep="\t", header=T) 
+# subsetting only data trials
+raw.data<-raw.data[raw.data$content=="data",]
+# subsetting only valid trials, exclude drops
+raw.data<-raw.data[raw.data$valid=="in",]
+# subsetting only first trial, exclude second trial
+raw.data<-raw.data[raw.data$trial=="1",]
+# subsetting only 12 to 28 months of age
+raw.data<-raw.data[raw.data$agem<="30",]
+# creating categories by splitting age in the middle
+raw.data$splitage <- ifelse(raw.data$agem >= 18, 
+                            c("18-27"), c("12-17")) 
+# creating categories by making age-groups in the middle
+attach(raw.data)
+raw.data$agecat[agem <= 18] <- "12mo"
+raw.data$agecat[agem > 18 & agem <= 23] <- "18mo"
+raw.data$agecat[agem >= 24] <- "24mo"
+detach(raw.data)
+# factor to numeric
+#raw.data$correct<-as.numeric(levels(raw.data$correct))[raw.data$correct] 
+# drop levels and check exclusion
+raw.data<-droplevels(raw.data)
+# str(raw.data)
+
+# creating data test with test, control1 and control2
+test.data<-raw.data[raw.data$condition=="test",]
+test.data<-droplevels(test.data)
+control1.data<-raw.data[raw.data$condition=="control1",]
+control1.data<-droplevels(control1.data)
+control2.data<-raw.data[raw.data$condition=="control2",]
+control2.data<-droplevels(control2.data)
+
+# str(test.data)
+
+```
+
+### Abstract
+
+We collected data from one- and two-year-olds (N = ; ages etc) in a set-up in which an object is established as being special by having the experimenter and child engage with it temporarily. Then, two additional objects are revealed that look just like the first one. All objects are successively placed in three locations in front of the child. While they are identical with regard to surface features, one of them is special due to the shared history the experimenter and child have with it. At test, the child is prompted to retrieve the special one from the set of three indistinguishable objects relying solely on its location. In order to show that one-year-olds can generally succeed in tracking an object in a set of three items, an additional control condition tests children with items that are distinguishable on the basis of surface features (here colour). 
+
+### Descriptive Analysis and State of Data Collection
+
+Table with overview of data.
+```{r part 1-1-2 data, echo = F}
+
+# load tab delimited text file into R; file should be in the same folder as the script for "./" to select it
+raw.data<-read.table("./einzeltab.txt",sep="\t", header=T) 
+# subsetting only data trials
+raw.data<-raw.data[raw.data$content=="data",]
+# subsetting only valid trials, exclude drops
+raw.data<-raw.data[raw.data$valid=="in",]
+# subsetting only first trial, exclude second trial
+ raw.data<-raw.data[raw.data$trial=="1",]
+# subsetting only 12 to 28 months of age
+raw.data<-raw.data[raw.data$agem<="30",]
+# creating categories by splitting age in the middle
+raw.data$splitage <- ifelse(raw.data$agem >= 18, 
+                            c("18-27"), c("12-17")) 
+
+# creating categories by making age-groups in the middle
+attach(raw.data)
+raw.data$agecat[agem <= 17] <- "12mo"
+raw.data$agecat[agem > 17 & agem <= 23] <- "18mo"
+raw.data$agecat[agem <= 18] <- "12mo"
+raw.data$agecat[agem > 18 & agem <= 23] <- "18mo"
+raw.data$agecat[agem >= 24] <- "24mo"
+detach(raw.data)
+
+# factor to numeric
+raw.data$correct<-as.numeric(levels(raw.data$correct))[raw.data$correct] 
+# drop levels and check exclusion
+raw.data<-droplevels(raw.data)
+# str(raw.data)
+
+
+overview<-aggregate(raw.data$correct, list(raw.data$agecat, raw.data$condition), mean)
+N<-aggregate(raw.data$id, list(raw.data$agecat, raw.data$condition), length)
+colnames(N)<- c("Age","Condition","lengthresult")
+overview<- cbind(overview, N$lengthresult)
+colnames(overview)<- c("Age","Condition","% correct", "N")
+overview
+
+# overview<-aggregate(raw.data$correct, list(raw.data$splitage, raw.data$condition), mean)
+# N<-aggregate(raw.data$id, list(raw.data$splitage, raw.data$condition), length)
+# colnames(N)<- c("Age","Condition","lengthresult")
+# overview<- cbind(overview, N$lengthresult)
+# colnames(overview)<- c("Age","Condition","% correct", "N")
+# overview
+
+```
+
+
+### Test
+
+```{r plot1, echo = FALSE, fig.cap="TEST CONDITION. Count of children's correct (green) and incorrect (red) choices from a set of three itmes plotted against their age in months. Line depicts smoothed conditional means. Error bars are 95% confidence intervals based on non-parametric bootstraps.One trial per participant.", fig.width = 10, fig.height = 5, fig.scale = 1.5}
+
+#  create plot here 
+test.data$correct.factor <- factor(test.data$correct)
+
+g <- ggplot(test.data, aes(x=agem)) + 
+  geom_dotplot(aes(fill=correct.factor), stackgroups = TRUE, binwidth = 0.5, binpositions = "all") + 
+  geom_smooth(aes(y = correct, col=condition), method="lm") +
+  scale_x_continuous(breaks=c(11:30))
+
+g + labs(y="Proportion Correct", 
+         x="Age in Months")
+
+
+```
+
+### Control 1
+
+```{r part 1-1-3 data, echo = F}
+
+# load tab delimited text file into R; file should be in the same folder as the script for "./" to select it
+control1.data<-read.table("./einzeltab.txt",sep="\t", header=T) 
+# subsetting only data trials
+control1.data<-control1.data[control1.data$content=="data",]
+# subsetting only valid trials, exclude drops
+control1.data<-control1.data[control1.data$valid=="in",]
+# subsetting only first trial, exclude second trial
+control1.data<-control1.data[control1.data$trial=="1",]
+# subsetting only 12 to 28 months of age
+control1.data<-control1.data[control1.data$agem<="28",]
+# subsetting only trials in the test condition
+control1.data<-control1.data[control1.data$condition=="control1",]
+# drop levels and check exclusion
+control1.data<-droplevels(control1.data)
+# creating categories by splitting age in the middle
+control1.data$splitage <- ifelse(control1.data$agem >= 18, 
+                            c("18-27"), c("12-17")) 
+# creating categories by making age-groups in the middle
+attach(control1.data)
+control1.data$agecat[agem <= 17] <- "12mo"
+control1.data$agecat[agem > 17 & agem < 24] <- "18mo"
+control1.data$agecat[agem >= 24] <- "24mo"
+detach(control1.data)
+
+# factor to numeric
+control1.data$correct<-as.numeric(levels(control1.data$correct))[control1.data$correct] 
+
+control1.data$correct.factor <- factor(control1.data$correct)
+
+```
+
+
+```{r plot2, echo = FALSE, fig.cap="CONTROL1 CONDITION. Count of children's correct (green) and incorrect (red) choices from a set of three itmes plotted against their age in months. Line depicts smoothed conditional means. Error bars are 95% confidence intervals based on non-parametric bootstraps.One trial per participant.", fig.width = 10, fig.height = 5, fig.scale = 1.5}
+#  create plot here 
+
+g <- ggplot(control1.data, aes(x=agem)) + 
+  geom_dotplot(aes(fill=correct.factor), stackgroups = TRUE, binwidth = 0.5, binpositions = "all") + 
+  geom_smooth(aes(y = correct, col=condition), method="lm") +
+  scale_x_continuous(breaks=c(11:30))
+g + labs(y="Proportion Correct", 
+         x="Age in Months")
+
+```
+### Control 2
+
+```{r part 1-1-4 data, echo = F}
+
+# load tab delimited text file into R; file should be in the same folder as the script for "./" to select it
+control2.data<-read.table("./einzeltab.txt",sep="\t", header=T) 
+# subsetting only data trials
+control2.data<-control2.data[control2.data$content=="data",]
+# subsetting only valid trials, exclude drops
+control2.data<-control2.data[control2.data$valid=="in",]
+# subsetting only first trial, exclude second trial
+control2.data<-control2.data[control2.data$trial=="1",]
+# subsetting only 12 to 28 months of age
+control2.data<-control2.data[control2.data$agem<="28",]
+# subsetting only trials in the test condition
+control2.data<-control2.data[control2.data$condition=="control2",]
+# drop levels and check exclusion
+control2.data<-droplevels(control2.data)
+# creating categories by splitting age in the middle
+control2.data$splitage <- ifelse(control2.data$agem >= 18, 
+                            c("18-27"), c("12-17")) 
+# creating categories by making age-groups in the middle
+attach(control2.data)
+control2.data$agecat[agem <= 17] <- "12mo"
+control2.data$agecat[agem > 17 & agem < 24] <- "18mo"
+control2.data$agecat[agem >= 24] <- "24mo"
+detach(control2.data)
+
+# factor to numeric
+control2.data$correct<-as.numeric(levels(control2.data$correct))[control2.data$correct] 
+
+control2.data$correct.factor <- factor(control2.data$correct)
+
+```
+
+
+```{r plot3, echo = FALSE, fig.cap="control2 CONDITION. Count of children's correct (green) and incorrect (red) choices from a set of three itmes plotted against their age in months. Line depicts smoothed conditional means. Error bars are 95% confidence intervals based on non-parametric bootstraps.One trial per participant.", fig.width = 10, fig.height = 5, fig.scale = 1.5}
+#  create plot here 
+
+g <- ggplot(control2.data, aes(x=agem)) + 
+  geom_dotplot(aes(fill=correct.factor), stackgroups = TRUE, binwidth = 0.5, binpositions = "all") + 
+  geom_smooth(aes(y = correct, col=condition), method="lm") +
+  scale_x_continuous(breaks=c(11:30))
+g + labs(y="Proportion Correct", 
+         x="Age in Months")
+
+```

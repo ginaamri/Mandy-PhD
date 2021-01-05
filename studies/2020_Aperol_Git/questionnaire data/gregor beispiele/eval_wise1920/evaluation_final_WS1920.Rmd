@@ -1,0 +1,857 @@
+---
+title: Evaluationsbericht BiWi2
+author: "DozentIn: `r toString(params$Dozierende)` - WiSe 2019/2020"
+date: \today
+params:
+  logo: ./pictures/logo.png
+  cover: ./pictures/cover.png
+  iblue: 2b4894
+  igray: d4dbde
+  Dozierende: "Gregor Kachel"
+data: ./data/biwi2_evaldata.txt
+documentclass: article
+fontsize: 10
+papersize: a4paper
+output: 
+  IReports::businessReport:
+    keep_tex: TRUE
+    latex_engine: xelatex
+    resetStyleFiles: FALSE
+header-includes: 
+  - \newcommand{\logo}{`r gsub("_", "\\_", params$logo)`}
+  - \newcommand{\cover}{`r gsub("_", "\\_", params$cover)`}
+  - \newcommand{\iblue}{`r params$iblue`}
+  - \newcommand{\igray}{`r params$igray`}
+include-before:
+  - \renewcommand{\contentsname}{Inhaltsverzeichnis}
+  - \renewcommand{\pagename}{Biwi-2 Auswertung}
+---
+
+```{r setup, include = FALSE}
+# packages from template
+library(dplyr)
+library(knitr)
+library(xtable)
+# packages we added
+library(ggplot2)
+library(ggpubr)
+library(tidyverse)
+
+# settings
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+
+```
+
+```{r load data, include=FALSE}
+# # load the data from the "data" subfolder
+# mock.data<-read.table("./data/biwi2_evaldata.txt",sep="\t", header=T)
+# # exclude the sosci variables to get only relevant data
+# mock.data<- mock.data %>% filter(scale != "sosci")
+
+mock.data<- read.csv("./data/biwi_WS1920_final.csv", header = TRUE)
+# exclude the sosci variables to get only relevant data
+mock.data<- mock.data %>% filter(scale != "sosci")
+# exclude cases of NAs in the response (column "value)
+mock.data<- mock.data %>% drop_na(value)
+
+```
+
+\maketitle
+\tableofcontents
+\addcontentsline{toc}{section}{Contents}
+\clearpage
+
+
+
+\section{Allgemeines}
+\subsection{Begrüßung}
+Sehr geehrte Dozierende,  
+Sie erhalten hier die Ergebnisse der automatisierten Auswertung der Evaluation Ihrer Lehrveranstaltungen des Seminars "Praxis- und Studienfeld Schule" aus dem Wintersemester 2019/2020. In diesem Auswertungsbericht werden die Mittelwerte der Erhebungsskalen im Fließtext dargestellt. Daten zu einzelnen Erhebungsitems werden graphisch wiedergegeben. Im gesamten Bericht werden die Daten zu aller Teilnehmenden mit den Daten aus dem Seminar von `r toString(params$Dozierende)` gegenübergestellt.
+
+\subsection{Methodik und Darstellung}
+Für die vorliegende Evaluation wurde ein Fragebogen mit ScoSci Survey (Leiner and Leiner 2014) erstellt. Studierende wurden per Mail oder QR-Code eingeladen, den Fragebogen online auszufüllen. Für die Verarbeitung der Daten nutzen wir R (R Core Team 2017) und die Softwarepakete aus der Sammlung tidyverse (Wickham 2017). Für Fragen zur Methodik oder Hintergründen der Erhebung schreiben Sie bitte an empschul[at]uni-leipzig.de.
+
+\section{Demographie}
+```{r participants, include=FALSE}
+
+# to create all values for the entire set:
+N <- length(unique(mock.data$ID)) # number of participants
+
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+ind.data <- mock.data %>% filter(Dozierende == params$Dozierende)
+
+# use the same code to create values for the subset
+ind.N <- length(unique(ind.data$ID)) # number of participants for one lecturer
+
+```
+In diesem Semester haben insgesamt `r toString(N)` Studierende an der Evaluation des Praktikums Biwi2 teilgenommen. Aus dem Seminar von `r toString(params$Dozierende)` haben `r toString(ind.N)` Studierende den Fragebogen beantwortet. Die Tortendiagramme beziehen sich auf die Daten aller Studierenden.
+
+```{r demographic pie charts side by side, echo=FALSE}
+
+#in order to do demographic we need a dataset containing each subject once, so we filter by one item that everybody answered...THIS NEEDS TO BE DOUBLECHECKED
+demo.data <- mock.data %>% filter(scale == "gesamt")
+
+###### Gender Plot All ###
+# create percentages for gender; NOTE! the next two lines work no matter how many levels the column has
+gendertable <- table(demo.data$Geschlecht)
+genderpercs <- as.data.frame(round((gendertable / sum(gendertable)),2))
+# Create a basic bar
+gender.plot = ggplot(genderpercs, aes(x="", y=Freq, fill=Var1)) + geom_bar(stat="identity", width=1)
+# Convert to gender.plot (polar coordinates) and add labels
+gender.plot = gender.plot + coord_polar("y", start=0) + geom_text(aes(label = paste0(round(Freq*100), "%")), position = position_stack(vjust = 0.5))
+# Remove labels and add title
+gender.plot = gender.plot + labs(x = NULL, y = NULL, fill = NULL, title = "Geschlecht")
+# Tidy up the theme
+gender.plot = gender.plot + theme_classic() + theme(axis.line = element_blank(),
+                                                    axis.text = element_blank(),
+                                                    axis.ticks = element_blank(),
+                                                    plot.title = element_text(hjust = 0.5, color = "#666666"))+
+   guides(fill = guide_legend(direction = "vertical"))
+
+###### Studiengang Plot all
+# create percentages for school
+schooltable <- table(demo.data$Studiengang)
+schoolpercs <- as.data.frame(round((schooltable / sum(schooltable)),2))
+# Create a basic bar
+school.plot = ggplot(schoolpercs, aes(x="", y=Freq, fill=Var1)) + geom_bar(stat="identity", width=1)
+# Convert to school.plot (polar coordinates) and add labels
+school.plot = school.plot + coord_polar("y", start=0) + geom_text(aes(label = paste0(round(Freq*100), "%")), position = position_stack(vjust = 0.5))
+# Remove labels and add title
+school.plot = school.plot + labs(x = NULL, y = NULL, fill = NULL, title = "Studiengang")
+# Tidy up the theme
+school.plot = school.plot + theme_classic() + theme(axis.line = element_blank(),
+                                                    axis.text = element_blank(),
+                                                    axis.ticks = element_blank(),
+                                                    plot.title = element_text(hjust = 0.5, color = "#666666"))+
+   guides(fill = guide_legend(direction = "vertical"))
+
+###### Fachsemester Plot all
+# create percentages for school
+semtable <- table(demo.data$Fachsemester)
+sempercs <- as.data.frame(round((semtable / sum(semtable)),2))
+# Create a basic bar
+sem.plot = ggplot(sempercs, aes(x="", y=Freq, fill=Var1)) + geom_bar(stat="identity", width=1)
+# Convert to sem.plot (polar coordinates) and add labels
+sem.plot = sem.plot + coord_polar("y", start=0) + geom_text(aes(label = paste0(round(Freq*100), "%")), position = position_stack(vjust = 0.5))
+# Remove labels and add title
+sem.plot = sem.plot + labs(x = NULL, y = NULL, fill = NULL, title = "Fachsemester")
+# Tidy up the theme
+sem.plot = sem.plot + theme_classic() + theme(axis.line = element_blank(),
+                                              axis.text = element_blank(),
+                                              axis.ticks = element_blank(),
+                                              plot.title = element_text(hjust = 0.5, color = "#666666")) +
+  guides(fill = guide_legend(direction = "vertical", ncol = 2))
+
+# arrange all three plots next to each other ...this needs fixing
+ggarrange(gender.plot, sem.plot,school.plot, ncol = 3, nrow = 1, 
+          legend = "bottom", common.legend = F) 
+
+# Verbesserungsmöglichkeit:
+# hier erklärt wie man die label auf die torten schreibt...
+# https://www.r-graph-gallery.com/piechart-ggplot2.html
+
+```
+
+\pagebreak
+\section{Bewertung des Moduls}
+```{r Modul gesamtbewertung für fließtext, include=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Modul.data <- mock.data %>% filter(scale == "Modul")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Modul.data <- Modul.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# Erstelle Mittelwert, min, max, sd der Modulbewertungen
+meanModul <- mean(Modul.data$value)
+minModul <- min(Modul.data$value)
+maxModul <- max(Modul.data$value)
+sdModul <- sd(Modul.data$value)
+NModul<-length(unique(Modul.data$ID))
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+ind.Modul.data <- Modul.data %>% filter(Dozierende == params$Dozierende)
+# erstelle Mittelwert, min, max, sd for individual lecturer
+ind.meanModul <- mean(ind.Modul.data$value)
+ind.minModul <- min(ind.Modul.data$value)
+ind.maxModul <- max(ind.Modul.data$value)
+ind.sdModul <- sd(ind.Modul.data$value)
+ind.NModul<-length(unique(ind.Modul.data$ID))
+```
+Der Mittelwert aller Items zur Evaluation des Moduls beträgt `r round(meanModul, 2)` (min = `r toString(minModul)`; max = `r toString(maxModul)`; SD = `r round(sdModul,2)`; N = `r toString(NModul)`; Lickert-Skala 1-5; 5 = beste Bewertung). Im Seminar von `r toString(params$Dozierende)` wurde das Modul insgesamt mit `r round(ind.meanModul, 2)` (min = `r toString(ind.minModul)`; max = `r toString(ind.maxModul)`; SD = `r round(ind.sdModul,2)`; N = `r toString(ind.NModul)`) bewertet. 
+
+```{r Modul horicontal Plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Modul.data <- mock.data %>% filter(scale == "Modul")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Modul.data <- Modul.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Dozierende that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+
+modul.plot.data <- Modul.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+modul.plot.data$Teilnehmende <- as.factor(modul.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+modul.plot.sd <-modul.plot.data %>% 
+  group_by(itemfulltext, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# and here comes the long plot 
+modul.plot<-ggplot(data = modul.plot.sd, 
+                           aes(x = itemfulltext, y = mean, 
+                               group=Teilnehmende, colour = Teilnehmende)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,5)+
+  labs(data = modul.plot.data, y = "Ausprägung", x = NULL,
+       title="Modulbewertung" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+modul.plot
+
+```
+
+
+```{r Modul gesamtbewertung Plot, fig.height = 3, fig.width = 5, message = FALSE, warning = FALSE , echo=FALSE}
+
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Modul.data <- mock.data %>% filter(scale == "Modul")
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Modul.data <- Modul.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Dozierende that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+
+modul.plot.data <- Modul.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+modul.plot.data$Teilnehmende <- as.factor(modul.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+modul.plot.sd <-modul.plot.data %>% 
+  group_by(item, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# THIS IS THREE PLOTS IN ONE - Hooray!
+# as we call three plots and two dataframes, the first line requires dummy NULL entries 
+modul.plot <- ggplot(data = NULL, mapping = aes(NULL)) +
+  # then we call a violin from all data, trim = cut at limits, adjust = makes slender 
+  geom_violin(data = Modul.data, trim = TRUE , adjust = .7, draw_quantiles = c(0.5),
+              mapping = aes(x=item, y = value))+
+  # a jitter plot Alle vs Individual (Teilnehmende), 
+  geom_jitter(modul.plot.data, width = 0.1, inherit.aes = FALSE, size = 1,
+              mapping = aes(x = item, y = value, colour = Teilnehmende))+
+  # mean and SD via geom pointrange for all and individual (Teilnehmende)
+  geom_crossbar(data = modul.plot.sd, position = "dodge", width = 0.5,
+                aes(x=item, y = mean, ymin = mean-se, ymax = mean+se, colour = Teilnehmende))+
+  # we can't make the violin transparent, so we change the bakground to white
+  theme_light() +
+  theme(legend.position="bottom") +
+  # axis limits from 1 through 5
+  ylim(1,5)+
+  # label the plot, also here we have to call the data to get the item names
+  labs(data = modul.plot.data, y = "Ausprägung", x = "Item",
+       title="Modulbewertung",
+       subtitle="Verteilung der Werte je Item und Mittelwerte der Items")
+modul.plot
+
+# solid advice on setting figure size in Markdown https://sebastiansauer.github.io/figure_sizing_knitr/
+
+```
+
+
+
+\pagebreak
+\section{Bewertung des Praktikums}
+```{r Praktikum.für fließtext, include=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Praktikum.data <- mock.data %>% filter(scale == "Praktikum")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Praktikum.data <- Praktikum.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# Erstelle Mittelwert, min, max, sd der Praktikumbewertungen
+meanPraktikum <- mean(Praktikum.data$value)
+minPraktikum <- min(Praktikum.data$value)
+maxPraktikum <- max(Praktikum.data$value)
+sdPraktikum <- sd(Praktikum.data$value)
+NPraktikum<-length(unique(Praktikum.data$ID))
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+ind.Praktikum.data <- Praktikum.data %>% filter(Dozierende == params$Dozierende)
+# erstelle Mittelwert, min, max, sd for individual lecturer
+ind.meanPraktikum <- mean(ind.Praktikum.data$value)
+ind.minPraktikum <- min(ind.Praktikum.data$value)
+ind.maxPraktikum <- max(ind.Praktikum.data$value)
+ind.sdPraktikum <- sd(ind.Praktikum.data$value)
+ind.NPraktikum<-length(unique(ind.Praktikum.data$ID))
+```
+Der Mittelwert aller Items zur Evaluation des Praktikums beträgt `r round(meanPraktikum, 2)` (min = `r toString(minPraktikum)`; max = `r toString(maxPraktikum)`; SD = `r round(sdPraktikum,2)`; N = `r toString(NPraktikum)`; Lickert-Skala 1-5; 5 = beste Bewertung). Im Seminar von `r toString(params$Dozierende)` wurde das Praktikum insgesamt mit `r round(ind.meanPraktikum, 2)` (min = `r toString(ind.minPraktikum)`; max = `r toString(ind.maxPraktikum)`; SD = `r round(ind.sdPraktikum,2)`; N = `r toString(ind.NPraktikum)`) bewertet. 
+
+```{r Praktikum.horicontal Plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Praktikum.data <- mock.data %>% filter(scale == "Praktikum")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Praktikum.data <- Praktikum.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Dozierende that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+
+Prakitkumplot.data <- Praktikum.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+Prakitkumplot.data$Teilnehmende <- as.factor(Prakitkumplot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+Prakitkumplot.sd <-Prakitkumplot.data %>% 
+  group_by(itemfulltext, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# and here comes the long plot 
+Prakitkumplot.long<-ggplot(data = Prakitkumplot.sd, 
+                      aes(x = itemfulltext, y = mean, 
+                          group=Teilnehmende, colour = Teilnehmende)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,5)+
+  labs(data = Prakitkumplot.data, y = "Ausprägung", x = NULL,
+       title="Praktikumsbewertung" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 65))+
+  coord_flip()
+Prakitkumplot.long
+
+```
+
+```{r Praktikum.gesamtbewertung Plot, fig.height = 3, message = FALSE, warning = FALSE , echo=FALSE}
+
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Praktikum.data <- mock.data %>% filter(scale == "Praktikum")
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Praktikum.data <- Praktikum.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Dozierende that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+
+Praktikum.plot.data <- Praktikum.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+Praktikum.plot.data$Teilnehmende <- as.factor(Praktikum.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+Praktikum.plot.sd <-Praktikum.plot.data %>% 
+  group_by(item, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# THIS IS THREE PLOTS IN ONE - Hooray!
+# as we call three plots and two dataframes, the first line requires dummy NULL entries 
+Praktikum.plot <- ggplot(data = NULL, mapping = aes(NULL)) +
+  # then we call a violin from all data, trim = cut at limits, adjust = makes slender 
+  geom_violin(data = Praktikum.data, trim = TRUE , adjust = .7, draw_quantiles = c(0.5),
+              mapping = aes(x=item, y = value))+
+  # a jitter plot Alle vs Individual (Teilnehmende), 
+  geom_jitter(Praktikum.plot.data, width = 0.1, inherit.aes = FALSE, size = 1,
+              mapping = aes(x = item, y = value, colour = Teilnehmende))+
+  # mean and SD via geom pointrange for all and individual (Teilnehmende)
+  geom_crossbar(data = Praktikum.plot.sd, position = "dodge", width = 0.5,
+                aes(x=item, y = mean, ymin = mean-se, ymax = mean+se, colour = Teilnehmende))+
+  # we can't make the violin transparent, so we change the bakground to white
+  theme_light() +
+  theme(legend.position="bottom") +
+  # axis limits from 1 through 5
+  ylim(1,5)+
+  # label the plot, also here we have to call the data to get the item names
+  labs(data = Praktikum.plot.data, y = "Ausprägung", x = "Item",
+       title="Praktikumsbewertung",
+       subtitle="Verteilung der Werte je Item und Mittelwerte der Items")
+Praktikum.plot
+
+# solid advice on setting figure size in Markdown https://sebastiansauer.github.io/figure_sizing_knitr/
+
+```
+
+
+\pagebreak
+\section{Bewertung der Veranstaltung}
+```{r Veranstaltung.für fließtext, include=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Veranstaltung.data <- mock.data %>% filter(scale == "Veranstaltung")
+Veranstaltung.data <- Veranstaltung.data %>% filter(value != "NA")
+Veranstaltung.data <- Veranstaltung.data %>% filter(item != "OPT-OUT Option")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Veranstaltung.data <- Veranstaltung.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# Erstelle Mittelwert, min, max, sd der Veranstaltungbewertungen
+meanVeranstaltung <- mean(Veranstaltung.data$value)
+minVeranstaltung <- min(Veranstaltung.data$value)
+maxVeranstaltung <- max(Veranstaltung.data$value)
+sdVeranstaltung <- sd(Veranstaltung.data$value)
+NVeranstaltung<-length(unique(Veranstaltung.data$ID))
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+ind.Veranstaltung.data <- Veranstaltung.data %>% filter(Dozierende == params$Dozierende)
+# erstelle Mittelwert, min, max, sd for individual lecturer
+ind.meanVeranstaltung <- mean(ind.Veranstaltung.data$value)
+ind.minVeranstaltung <- min(ind.Veranstaltung.data$value)
+ind.maxVeranstaltung <- max(ind.Veranstaltung.data$value)
+ind.sdVeranstaltung <- sd(ind.Veranstaltung.data$value)
+ind.NVeranstaltung<-length(unique(ind.Veranstaltung.data$ID))
+```
+Der Mittelwert aller Items zur Evaluation des Veranstaltungs beträgt `r round(meanVeranstaltung, 2)` (min = `r toString(minVeranstaltung)`; max = `r toString(maxVeranstaltung)`; SD = `r round(sdVeranstaltung,2)`; N = `r toString(NVeranstaltung)`; Lickert-Skala 1-5; 5 = beste Bewertung). Im Seminar von `r toString(params$Dozierende)` wurde das Veranstaltung insgesamt mit `r round(ind.meanVeranstaltung, 2)` (min = `r toString(ind.minVeranstaltung)`; max = `r toString(ind.maxVeranstaltung)`; SD = `r round(ind.sdVeranstaltung,2)`; N = `r toString(ind.NVeranstaltung)`) bewertet. 
+
+```{r Veranstaltung.horicontal Plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Veranstaltung.data <- mock.data %>% filter(scale == "Veranstaltung")
+Veranstaltung.data <- Veranstaltung.data %>% filter(item != "OPT-OUT Option")
+Veranstaltung.data <- Veranstaltung.data %>% filter(value != "NA")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Veranstaltung.data <- Veranstaltung.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Dozierende that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+
+Veranstaltung.plot.data <- Veranstaltung.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+Veranstaltung.plot.data$Teilnehmende <- as.factor(Veranstaltung.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+Veranstaltung.plot.sd <-Veranstaltung.plot.data %>% 
+  group_by(itemfulltext, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# and here comes the long plot 
+Veranstaltung.plot.long<-ggplot(data = Veranstaltung.plot.sd, 
+                                aes(x = itemfulltext, y = mean, 
+                                    group=Teilnehmende, colour = Teilnehmende)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  theme(legend.position="bottom") +
+  ylim(1,5)+
+  labs(data = Veranstaltung.plot.data, y = "Ausprägung", x = NULL,
+       title="Veranstaltungsbewertung" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 65))+
+  coord_flip()
+Veranstaltung.plot.long
+
+```
+
+```{r Veranstaltung.gesamtbewertung Plot, fig.height = 3, message = FALSE, warning = FALSE , echo=FALSE}
+
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Veranstaltung.data <- mock.data %>% filter(scale == "Veranstaltung")
+Veranstaltung.data <- Veranstaltung.data %>% filter(item != "OPT-OUT Option")
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Veranstaltung.data <- Veranstaltung.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Dozierende that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+
+Veranstaltung.plot.data <- Veranstaltung.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+Veranstaltung.plot.data$Teilnehmende <- as.factor(Veranstaltung.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+Veranstaltung.plot.sd <-Veranstaltung.plot.data %>% 
+  group_by(item, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# THIS IS THREE PLOTS IN ONE - Hooray!
+# as we call three plots and two dataframes, the first line requires dummy NULL entries 
+Veranstaltung.plot <- ggplot(data = NULL, mapping = aes(NULL)) +
+  # then we call a violin from all data, trim = cut at limits, adjust = makes slender 
+  geom_violin(data = Veranstaltung.data, trim = TRUE , adjust = .7, draw_quantiles = c(0.5),
+              mapping = aes(x=item, y = value))+
+  # a jitter plot Alle vs Individual (Teilnehmende), 
+  geom_jitter(Veranstaltung.plot.data, width = 0.1, inherit.aes = FALSE, size = 1,
+              mapping = aes(x = item, y = value, colour = Teilnehmende))+
+  # mean and SD via geom pointrange for all and individual (Teilnehmende)
+  geom_crossbar(data = Veranstaltung.plot.sd, position = "dodge", width = 0.5,
+                aes(x=item, y = mean, ymin = mean-se, ymax = mean+se, colour = Teilnehmende))+
+  # we can't make the violin transparent, so we change the bakground to white
+  theme_light() +
+  theme(legend.position="bottom") +
+  # axis limits from 1 through 5
+  ylim(1,5)+
+  # label the plot, also here we have to call the data to get the item names
+  labs(data = Veranstaltung.plot.data, y = "Ausprägung", x = "Item",
+       title="Veranstaltungsbewertung",
+       subtitle="Verteilung der Werte je Item und Mittelwerte der Items")
+Veranstaltung.plot
+
+```
+
+
+\pagebreak
+\section{Bewertung des Portfolios}
+```{r Portfolio.für fließtext, include=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Portfolio.data <- mock.data %>% filter(scale == "Portfolio")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Portfolio.data <- Portfolio.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# Erstelle Mittelwert, min, max, sd der Portfoliobewertungen
+meanPortfolio <- mean(Portfolio.data$value)
+minPortfolio <- min(Portfolio.data$value)
+maxPortfolio <- max(Portfolio.data$value)
+sdPortfolio <- sd(Portfolio.data$value)
+NPortfolio<-length(unique(Portfolio.data$ID))
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+ind.Portfolio.data <- Portfolio.data %>% filter(Dozierende == params$Dozierende)
+# erstelle Mittelwert, min, max, sd for individual lecturer
+ind.meanPortfolio <- mean(ind.Portfolio.data$value)
+ind.minPortfolio <- min(ind.Portfolio.data$value)
+ind.maxPortfolio <- max(ind.Portfolio.data$value)
+ind.sdPortfolio <- sd(ind.Portfolio.data$value)
+ind.NPortfolio<-length(unique(ind.Portfolio.data$ID))
+```
+Der Mittelwert aller Items zur Evaluation des Portfolios beträgt `r round(meanPortfolio, 2)` (min = `r toString(minPortfolio)`; max = `r toString(maxPortfolio)`; SD = `r round(sdPortfolio,2)`; N = `r toString(NPortfolio)`; Lickert-Skala 1-5; 5 = beste Bewertung). Im Seminar von `r toString(params$Dozierende)` wurde das Portfolio insgesamt mit `r round(ind.meanPortfolio, 2)` (min = `r toString(ind.minPortfolio)`; max = `r toString(ind.maxPortfolio)`; SD = `r round(ind.sdPortfolio,2)`; N = `r toString(ind.NPortfolio)`) bewertet. 
+
+```{r Portfolio.horicontal Plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Portfolio.data <- mock.data %>% filter(scale == "Portfolio")
+Portfolio.data <- Portfolio.data %>% filter(item != "OPT-OUT Option")
+Portfolio.data <- Portfolio.data %>% filter(value != "NA")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Portfolio.data <- Portfolio.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Portfolio that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+# Portfolio --> Portfolio
+
+Portfolio.plot.data <- Portfolio.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+Portfolio.plot.data$Teilnehmende <- as.factor(Portfolio.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+Portfolio.plot.sd <-Portfolio.plot.data %>% 
+  group_by(itemfulltext, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# and here comes the long plot 
+Portfolio.plot.long<-ggplot(data = Portfolio.plot.sd, 
+                             aes(x = itemfulltext, y = mean, 
+                                 group=Teilnehmende, colour = Teilnehmende)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  theme(legend.position="bottom") +
+  ylim(1,5)+
+  labs(data = Portfolio.plot.data, y = "Ausprägung", x = NULL,
+       title="Portfoliobewertung" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 50))+
+  coord_flip()
+Portfolio.plot.long
+
+```
+
+```{r Portfolio.gesamtbewertung Plot, fig.height = 3, fig.width = 5, message = FALSE, warning = FALSE , echo=FALSE}
+
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Portfolio.data <- mock.data %>% filter(scale == "Portfolio")
+Portfolio.data <- Portfolio.data %>% filter(item != "OPT-OUT Option")
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Portfolio.data <- Portfolio.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Portfolio that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+
+Portfolio.plot.data <- Portfolio.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+Portfolio.plot.data$Teilnehmende <- as.factor(Portfolio.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+Portfolio.plot.sd <-Portfolio.plot.data %>% 
+  group_by(item, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# THIS IS THREE PLOTS IN ONE - Hooray!
+# as we call three plots and two dataframes, the first line requires dummy NULL entries 
+Portfolio.plot <- ggplot(data = NULL, mapping = aes(NULL)) +
+  # then we call a violin from all data, trim = cut at limits, adjust = makes slender 
+  geom_violin(data = Portfolio.data, trim = TRUE , adjust = .7, draw_quantiles = c(0.5),
+              mapping = aes(x=item, y = value))+
+  # a jitter plot Alle vs Individual (Teilnehmende), 
+  geom_jitter(Portfolio.plot.data, width = 0.1, inherit.aes = FALSE, size = 1,
+              mapping = aes(x = item, y = value, colour = Teilnehmende))+
+  # mean and SD via geom pointrange for all and individual (Teilnehmende)
+  geom_crossbar(data = Portfolio.plot.sd, position = "dodge", width = 0.5,
+                aes(x=item, y = mean, ymin = mean-se, ymax = mean+se, colour = Teilnehmende))+
+  # we can't make the violin transparent, so we change the bakground to white
+  theme_light() +
+  theme(legend.position="bottom") +
+  # axis limits from 1 through 5
+  ylim(1,5)+
+  # label the plot, also here we have to call the data to get the item names
+  labs(data = Portfolio.plot.data, y = "Ausprägung", x = "Item",
+       title="Portfoliobewertung",
+       subtitle="Verteilung der Werte je Item und Mittelwerte der Items")
+  Portfolio.plot
+
+```
+
+
+\pagebreak
+\section{Bewertung der Dozierenden}
+```{r Dozierende.für fließtext, include=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Dozierende.data <- mock.data %>% filter(scale == "Dozent")
+Dozierende.data <- Dozierende.data %>% filter(item != "OPT-OUT Option")
+Dozierende.data <- Dozierende.data %>% filter(value != "NA")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Dozierende.data <- Dozierende.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# Erstelle Mittelwert, min, max, sd der Dozierendebewertungen
+meanDozierende <- mean(Dozierende.data$value)
+minDozierende <- min(Dozierende.data$value)
+maxDozierende <- max(Dozierende.data$value)
+sdDozierende <- sd(Dozierende.data$value)
+NDozierende<-length(unique(Dozierende.data$ID))
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+ind.Dozierende.data <- Dozierende.data %>% filter(Dozierende == params$Dozierende)
+# erstelle Mittelwert, min, max, sd for individual lecturer
+ind.meanDozierende <- mean(ind.Dozierende.data$value)
+ind.minDozierende <- min(ind.Dozierende.data$value)
+ind.maxDozierende <- max(ind.Dozierende.data$value)
+ind.sdDozierende <- sd(ind.Dozierende.data$value)
+ind.NDozierende<-length(unique(ind.Dozierende.data$ID))
+```
+Der Mittelwert aller Items zur Evaluation der Dozierenden beträgt `r round(meanDozierende, 2)` (min = `r toString(minDozierende)`; max = `r toString(maxDozierende)`; SD = `r round(sdDozierende,2)`; N = `r toString(NDozierende)`; Lickert-Skala 1-5; 5 = beste Bewertung). Im Seminar von `r toString(params$Dozierende)` wurde der/die DozentIn insgesamt mit `r round(ind.meanDozierende, 2)` (min = `r toString(ind.minDozierende)`; max = `r toString(ind.maxDozierende)`; SD = `r round(ind.sdDozierende,2)`; N = `r toString(ind.NDozierende)`) bewertet. 
+
+```{r Dozierende.horicontal Plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Dozierende.data <- mock.data %>% filter(scale == "Dozent")
+Dozierende.data <- Dozierende.data %>% filter(item != "OPT-OUT Option")
+Dozierende.data <- Dozierende.data %>% filter(value != "NA")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Dozierende.data <- Dozierende.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Dozierende that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter dozent
+# Dozierende --> Portfolio
+
+Dozierende.plot.data <- Dozierende.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+Dozierende.plot.data$Teilnehmende <- as.factor(Dozierende.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+Dozierende.plot.sd <-Dozierende.plot.data %>% 
+  group_by(itemfulltext, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# and here comes the long plot 
+Dozierende.plot.long<-ggplot(data = Dozierende.plot.sd, 
+                                aes(x = itemfulltext, y = mean, 
+                                    group=Teilnehmende, colour = Teilnehmende)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  theme(legend.position="bottom") +
+  ylim(1,5)+
+  labs(data = Dozierende.plot.data, y = "Ausprägung", x = NULL,
+       title="Dozierendenbewertung" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+Dozierende.plot.long
+
+```
+
+```{r Dozierende.gesamtbewertung Plot, fig.height = 3, message = FALSE, warning = FALSE , echo=FALSE}
+
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Dozierende.data <- mock.data %>% filter(scale == "Dozent")
+Dozierende.data <- Dozierende.data %>% filter(item != "OPT-OUT Option")
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+Dozierende.data <- Dozierende.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# to stick to the individual vs all style necessary for anonymized feedback in plotting
+# we create a new vector from Dozierende that we call "Teilnehmende" and copy the names
+# of the name called by the parameter but rename all others to "all"
+# now the "fill ="option can use the new column to differentiate all vs parameter Dozeierende
+
+Dozierende.plot.data <- Dozierende.data %>%
+  mutate(Teilnehmende = ifelse(Dozierende == params$Dozierende, toString(params$Dozierende), "Alle Kurse"))
+Dozierende.plot.data$Teilnehmende <- as.factor(Dozierende.plot.data$Teilnehmende)
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+Dozierende.plot.sd <-Dozierende.plot.data %>% 
+  group_by(item, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# THIS IS THREE PLOTS IN ONE - Hooray!
+# as we call three plots and two dataframes, the first line requires dummy NULL entries 
+Dozierende.plot <- ggplot(data = NULL, mapping = aes(NULL)) +
+  # then we call a violin from all data, trim = cut at limits, adjust = makes slender 
+  geom_violin(data = Dozierende.data, trim = TRUE , adjust = .7, draw_quantiles = c(0.5),
+              mapping = aes(x=item, y = value))+
+  # a jitter plot Alle vs Individual (Teilnehmende), 
+  geom_jitter(Dozierende.plot.data, width = 0.1, inherit.aes = FALSE, size = 1,
+              mapping = aes(x = item, y = value, colour = Teilnehmende))+
+  # mean and SD via geom pointrange for all and individual (Teilnehmende)
+  geom_crossbar(data = Dozierende.plot.sd, position = "dodge", width = 0.5,
+                aes(x=item, y = mean, ymin = mean-se, ymax = mean+se, colour = Teilnehmende))+
+  # we can't make the violin transparent, so we change the bakground to white
+  theme_light() +
+  theme(legend.position="bottom") +
+  # axis limits from 1 through 5
+  ylim(1,5)+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 15))+
+  # label the plot, also here we have to call the data to get the item names
+  labs(data = Dozierende.plot.data, y = "Ausprägung", x = "Item",
+       title="Dozierendenbewertung",
+       subtitle="Verteilung der Werte je Item und Mittelwerte der Items")
+Dozierende.plot
+
+```
+
+
+\pagebreak
+\section{Schulnote für die Veranstaltung}
+```{r Gesamtbewertung, include=FALSE}
+
+# filter des Items Gesamtbewertung
+Benotung.data <- mock.data %>% filter(item == "Benotung")
+
+# value sometimes contains text, we have to convert the numbers to numeric, this is complicated due to the comma
+Benotung.data <- Benotung.data %>%  mutate(value = as.numeric(sub(",", ".", value, fixed = TRUE)))
+
+# Erstelle Mittelwert, min, max, sd der Benotung
+meangrade <- mean(Benotung.data$value)
+mingrade <- min(Benotung.data$value)
+maxgrade <- max(Benotung.data$value)
+sdgrade <- sd(Benotung.data$value)
+Ngrade<-length(unique(Benotung.data$ID))
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+ind.Benotung.data <- Benotung.data %>% filter(Dozierende == params$Dozierende)
+# erstelle Mittelwert, min, max, sd for individual lecturer
+ind.meangrade <- mean(ind.Benotung.data$value)
+ind.mingrade <- min(ind.Benotung.data$value)
+ind.maxgrade <- max(ind.Benotung.data$value)
+ind.sdgrade <- sd(ind.Benotung.data$value)
+ind.Ngrade<-length(unique(ind.Benotung.data$ID))
+
+```
+Die Teilnehmenden bewerteten die Veranstaltung mit einer Gesamtnote von `r round(meangrade, 2)` (min = `r toString(mingrade)`; max = `r toString(maxgrade)`; SD = `r round(sdgrade,2)`; N = `r toString(Ngrade)`; Schulnoten 1-6). Im Seminar von `r toString(params$Dozierende)` wurde die Veranstaltung mit einer Gesamtnote von `r round(ind.meangrade, 2)` (min = `r toString(ind.mingrade)`; max = `r toString(ind.maxgrade)`; SD = `r round(ind.sdgrade,2)`; N = `r toString(ind.Ngrade)`) bewertet.
+
+\section{Angaben zu Fehlzeiten}
+```{r Abwesenheit data prep, echo=FALSE}
+
+Abwesenheit.count.data <- mock.data %>% filter(scale == "Abwesenheit")
+Abwesenheit.count.data <- Abwesenheit.count.data %>% filter(item == "Anzahl")
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+
+Abwesenheit.count.data <- Abwesenheit.count.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# Erstelle Mittelwert, min, max, sd der Modulbewertungen
+meanAbwesenheit <- mean(Abwesenheit.count.data$value)
+minAbwesenheit <- min(Abwesenheit.count.data$value)
+maxAbwesenheit <- max(Abwesenheit.count.data$value)
+sdAbwesenheit <- sd(Abwesenheit.count.data$value)
+NAbwesenheit<-length(unique(Abwesenheit.count.data$ID))
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+Abwesenheit.ind.count.data <- Abwesenheit.count.data %>% filter(Dozierende == params$Dozierende)
+# erstelle Mittelwert, min, max, sd for individual lecturer
+ind.meanAbwesenheit <- mean(Abwesenheit.ind.count.data$value)
+ind.minAbwesenheit <- min(Abwesenheit.ind.count.data$value)
+ind.maxAbwesenheit <- max(Abwesenheit.ind.count.data$value)
+ind.sdAbwesenheit <- sd(Abwesenheit.ind.count.data$value)
+ind.NAbwesenheit<-length(unique(Abwesenheit.ind.count.data$ID))
+
+# optionen abwesenheit for  plotting
+Abwesenheitsoptionen.data <- mock.data %>% filter(scale == "Abwesenheit")
+Abwesenheitsoptionen.data <- Abwesenheitsoptionen.data %>% mutate(value = ifelse(value == "TRUE", "1", "0"))
+Abwesenheitsoptionen.data <- Abwesenheitsoptionen.data %>% filter(item != "Anzahl")
+Abwesenheitsoptionen.data <- Abwesenheitsoptionen.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+Abwesenheitsoptionen.data <- Abwesenheitsoptionen.data %>% filter(Dozierende == params$Dozierende)
+# pro option Summieren um die Daten zum PLotten zu erstellen
+Abwesenheit.plot.data <- Abwesenheitsoptionen.data %>% 
+  group_by(item) %>%
+  summarise(
+    sum = sum(value),
+         )    
+
+# filter der Items Warumfehlzeiten	
+Abwesenheit.open.data <- mock.data %>% filter(scale == "offen")
+Abwesenheit.open.data <- Abwesenheit.open.data %>% filter(value != "NA")
+Abwesenheit.open.data <- Abwesenheit.open.data %>% filter(Dozierende == params$Dozierende)
+# filter Abwesenheit.open.data
+Abwesenheit.open.data <- Abwesenheit.open.data %>% filter(itemfulltext != "Was hätten Sie gern im Vorfeld des Praktikums geübt?")
+
+```
+Im allgemeinen gaben die Studierenden an, dass sie bei `r round(meanAbwesenheit, 2)` Veranstaltungen (min = `r toString(minAbwesenheit)`; max = `r toString(maxAbwesenheit)`; SD = `r round(sdAbwesenheit,2)`; N = `r toString(NAbwesenheit)` abwesend waren. Im Kurs von `r toString(params$Dozierende)` waren die Studierenden nach eigenen Angaben bei `r round(ind.meanAbwesenheit, 2)` Veranstaltungen  (min = `r toString(ind.minAbwesenheit)`; max = `r toString(ind.maxAbwesenheit)`; SD = `r round(ind.sdAbwesenheit,2)`; N = `r toString(ind.NAbwesenheit)`) abwesend. Auf eine offene Frage nach Gründen antworteten die Studierenden im Kurs von `r toString(params$Dozierende)` mit:
+
+\vspace{5mm}
+__`r toString(print(Abwesenheit.open.data$value, quote = TRUE))`__
+
+\vspace{5mm}\
+Weiterhin wurden Gründe für Abwesenheiten mit verschiedenen Antwortoptionen erhoben, wobei Mehrfachnennungen möglich waren. Im folgenden wird die Anzahl der Nennungen für alle Optionen im Kurs von `r toString(params$Dozierende)` angegeben (N = `r toString(ind.NAbwesenheit)`).
+
+\vspace{5mm}
+```{r Abwesenheit Plot,  fig.height = 3, message = FALSE, warning = FALSE , echo=FALSE}
+
+# and here comes the long plot 
+Abwesenheit.plot.long<-ggplot(data = Abwesenheit.plot.data, 
+                             aes(x = item, y = sum)) +
+  geom_point() +
+  theme_light() +
+  labs(y = "Gründe", x = NULL,
+       title="Gründe für Abwesenheit" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+Abwesenheit.plot.long
+
+```
+
+
+\section{Übungswünsche}
+```{r offene items, include=FALSE}
+# filter der Items Warumfehlzeiten	
+open.data <- mock.data %>% filter(scale == "offen")
+open.data <- open.data %>% filter(value != "NA")
+open.data <- open.data %>% filter(Dozierende == params$Dozierende)
+# filter fehlzeitengruende.data
+fehlzeitengruende.data <- open.data %>% filter(itemfulltext != "Was hätten Sie gern im Vorfeld des Praktikums geübt?")
+# filter uebungswuensche.data
+uebungswuensche.data <- open.data %>% filter(itemfulltext != "Was waren die Gründe für Ihre Fehlzeiten?")
+
+```
+Auf die Frage "Was hätten Sie gern im Vorfeld des Praktikums geübt?" antworteten die Studierenden im Kurs von `r toString(params$Dozierende)` mit:
+
+\vspace{5mm}
+__`r toString(print(uebungswuensche.data$value, quote = TRUE))`__

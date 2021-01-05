@@ -1,0 +1,357 @@
+what	count	project	study	phase	condition	age	sex	counter	where	e	id	bday	bmon	byea	birthday	tday	tmon	tyea	testdate	agem	aged	day_by31	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct	comments	video_label
+head	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_comm_4yo_A_255543
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	fam	1	0	fam	na	na	na	left	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	fam	2	0	fam	na	na	na	right	0	1		E macht Versteck 2x hoch
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	fam	3	0	fam	na	na	na	right	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	fam	4	0	fam	na	na	na	left	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	1	1	rep	circle	circle	square	left	0	0		Mutter erklärt Kind, was es machen soll, E erklärt auch, nicht eindeutig wo Kind drauf zeigt
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	2	2	rep	triangle	triangle	lemon	right	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	3	3	rep	heart	heart	circle	left	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	4	4	rep	diamond	diamond	square	left	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	5	5	rep	lemon	lemon	triangle	right	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	6	6	rep	circle	circle	heart	left	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	7	7	rep	square	square	triangle	right	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	8	8	rep	diamond	diamond	lemon	left	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	9	9	rep	heart	heart	triangle	right	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	10	10	rep	circle	circle	lemon	left	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	11	11	rep	triangle	triangle	square	right	1	1		"E sagt ""prima, danke"""
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	12	12	rep	lemon	lemon	diamond	right	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	13	13	rep	square	square	circle	left	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	14	14	rep	triangle	triangle	heart	right	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	15	15	rep	lemon	lemon	circle	right	1	1		
+data	1	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	255543	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	A	test	16	16	rep	square	square	diamond	left	1	1		
+head	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_comm_4yo_B_255315
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	fam	1	0	fam	na	na	na	left	1	1	"Webcams waren im Vollbild, nicht Präsentation-->Unterbrechung; sagt zuerst rechts und zeigt danach auf das linke"	
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	fam	2	0	fam	na	na	na	right	1	1	Mutter bestätigt Kind nach richtigem Zeigen(ja, genau dort)	
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	fam	3	0	fam	na	na	na	right	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	fam	4	0	fam	na	na	na	left	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	1	1	rep	square	square	diamond	left	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	2	2	rep	lemon	lemon	circle	right	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	3	3	rep	triangle	triangle	heart	right	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	4	4	rep	square	square	circle	left	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	5	5	rep	lemon	lemon	diamond	right	1	1	Unterbrechung: Toilette	
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	6	6	rep	triangle	triangle	square	right	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	7	7	rep	circle	circle	lemon	left	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	8	8	rep	heart	heart	triangle	right	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	9	9	rep	diamond	diamond	lemon	left	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	10	10	rep	square	square	triangle	right	1	1	"E sagt ""Super"""	
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	11	11	rep	circle	circle	heart	left	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	12	12	rep	lemon	lemon	triangle	right	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	13	13	rep	diamond	diamond	square	left	1	0		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	14	14	rep	heart	heart	circle	left	1	1	"E fragt ""Was ist jetzt auf den Verstecken?"""	
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	15	15	rep	triangle	triangle	lemon	right	1	1		
+data	2	SymLit	RMTS	pilot1	comm	4yo	1	B	videocall	VJ	255315	18	6	2016	18/6/2016	9	12	2020	9/12/2020	53	1635	53,60655738	comm	B	test	16	16	rep	circle	circle	square	left	0	0	uneindeutiges Zeigen	
+head	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_comm_4yo_A_254786
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	fam	1	0	fam	na	na	na	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	fam	2	0	fam	na	na	na	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	fam	3	0	fam	na	na	na	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	fam	4	0	fam	na	na	na	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	1	1	rep	circle	circle	square	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	2	2	rep	triangle	triangle	lemon	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	3	3	rep	heart	heart	circle	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	4	4	rep	diamond	diamond	square	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	5	5	rep	lemon	lemon	triangle	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	6	6	rep	circle	circle	heart	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	7	7	rep	square	square	triangle	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	8	8	rep	diamond	diamond	lemon	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	9	9	rep	heart	heart	triangle	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	10	10	rep	circle	circle	lemon	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	11	11	rep	triangle	triangle	square	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	12	12	rep	lemon	lemon	diamond	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	13	13	rep	square	square	circle	left	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	14	14	rep	triangle	triangle	heart	right	1	1		"E fragt nach und sagt dann ""ok super"""
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	15	15	rep	lemon	lemon	circle	right	1	1		
+data	3	SymLit	RMTS	pilot1	comm	4yo	1	A	videocall	AS	254786	26	6	2016	26/6/2016	16	12	2020	16/12/2020	53	1634	53,57377049	comm	A	test	16	16	rep	square	square	diamond	left	1	1		
+head	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_comm_4yo_B_255948
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	fam	1	0	fam	na	na	na	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	fam	2	0	fam	na	na	na	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	fam	3	0	fam	na	na	na	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	fam	4	0	fam	na	na	na	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	1	1	rep	square	square	diamond	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	2	2	rep	lemon	lemon	circle	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	3	3	rep	triangle	triangle	heart	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	4	4	rep	square	square	circle	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	5	5	rep	lemon	lemon	diamond	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	6	6	rep	triangle	triangle	square	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	7	7	rep	circle	circle	lemon	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	8	8	rep	heart	heart	triangle	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	9	9	rep	diamond	diamond	lemon	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	10	10	rep	square	square	triangle	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	11	11	rep	circle	circle	heart	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	12	12	rep	lemon	lemon	triangle	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	13	13	rep	diamond	diamond	square	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	14	14	rep	heart	heart	circle	left	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	15	15	rep	triangle	triangle	lemon	right	na	na		
+data	4	SymLit	RMTS	pilot1	comm	4yo	0	B	videocall	AS	255948	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	B	test	16	16	rep	circle	circle	square	left	na	na		
+head	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_noncomm_4yo_A_256237
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	fam	1	0	fam	na	na	na	left	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	fam	2	0	fam	na	na	na	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	fam	3	0	fam	na	na	na	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	fam	4	0	fam	na	na	na	left	0	1		E deckt Banane nochmal auf
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	1	1	rep	circle	circle	square	left	0	1		"Mutter sagt ""Kreis"""
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	2	2	rep	triangle	triangle	lemon	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	3	3	rep	heart	heart	circle	left	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	4	4	rep	diamond	diamond	square	left	0	1		Mutter sagt etwas (nicht verständlich)
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	5	5	rep	lemon	lemon	triangle	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	6	6	rep	circle	circle	heart	left	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	7	7	rep	square	square	triangle	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	8	8	rep	diamond	diamond	lemon	left	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	9	9	rep	heart	heart	triangle	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	10	10	rep	circle	circle	lemon	left	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	11	11	rep	triangle	triangle	square	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	12	12	rep	lemon	lemon	diamond	right	1	1		"Kind sagt ""immer da und da"", Mutter ""Immer im Wechsel"", E ""genau"""
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	13	13	rep	square	square	circle	left	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	14	14	rep	triangle	triangle	heart	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	15	15	rep	lemon	lemon	circle	right	1	1		
+data	5	SymLit	RMTS	pilot1	noncomm	4yo	1	A	videocall	AS	256237	23	6	2016	23/6/2016	15	12	2020	15/12/2020	53	1636	53,63934426	noncomm	A	test	16	16	rep	square	square	diamond	left	1	1		
+head	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_noncomm_4yo_B_?
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	fam	1	0	fam	na	na	na	left	na	na		"Internetverbindung instabil/abgerissen vor Beginn der Testung; Kind hat keinen Stimulus gesehen"
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	fam	2	0	fam	na	na	na	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	fam	3	0	fam	na	na	na	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	fam	4	0	fam	na	na	na	left	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	1	1	rep	square	square	diamond	left	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	2	2	rep	lemon	lemon	circle	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	3	3	rep	triangle	triangle	heart	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	4	4	rep	square	square	circle	left	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	5	5	rep	lemon	lemon	diamond	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	6	6	rep	triangle	triangle	square	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	7	7	rep	circle	circle	lemon	left	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	8	8	rep	heart	heart	triangle	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	9	9	rep	diamond	diamond	lemon	left	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	10	10	rep	square	square	triangle	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	11	11	rep	circle	circle	heart	left	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	12	12	rep	lemon	lemon	triangle	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	13	13	rep	diamond	diamond	square	left	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	14	14	rep	heart	heart	circle	left	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	15	15	rep	triangle	triangle	lemon	right	na	na		
+data	6	SymLit	RMTS	pilot1	noncomm	4yo	?	B	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	B	test	16	16	rep	circle	circle	square	left	na	na		
+head	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_noncomm_4yo_A_255949
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	fam	1	0	fam	na	na	na	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	fam	2	0	fam	na	na	na	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	fam	3	0	fam	na	na	na	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	fam	4	0	fam	na	na	na	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	1	1	rep	circle	circle	square	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	2	2	rep	triangle	triangle	lemon	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	3	3	rep	heart	heart	circle	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	4	4	rep	diamond	diamond	square	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	5	5	rep	lemon	lemon	triangle	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	6	6	rep	circle	circle	heart	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	7	7	rep	square	square	triangle	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	8	8	rep	diamond	diamond	lemon	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	9	9	rep	heart	heart	triangle	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	10	10	rep	circle	circle	lemon	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	11	11	rep	triangle	triangle	square	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	12	12	rep	lemon	lemon	diamond	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	13	13	rep	square	square	circle	left	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	14	14	rep	triangle	triangle	heart	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	15	15	rep	lemon	lemon	circle	right	na	na		
+data	7	SymLit	RMTS	pilot1	noncomm	4yo	0	A	videocall	VJ	255949	24	6	2016	24/6/2016	17	12	2020	17/12/2020	53	1637	53,67213115	comm	A	test	16	16	rep	square	square	diamond	left	na	na		
+head	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_noncomm_4yo_B_255354
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	fam	1	0	fam	na	na	na	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	fam	2	0	fam	na	na	na	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	fam	3	0	fam	na	na	na	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	fam	4	0	fam	na	na	na	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	1	1	rep	square	square	diamond	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	2	2	rep	lemon	lemon	circle	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	3	3	rep	triangle	triangle	heart	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	4	4	rep	square	square	circle	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	5	5	rep	lemon	lemon	diamond	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	6	6	rep	triangle	triangle	square	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	7	7	rep	circle	circle	lemon	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	8	8	rep	heart	heart	triangle	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	9	9	rep	diamond	diamond	lemon	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	10	10	rep	square	square	triangle	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	11	11	rep	circle	circle	heart	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	12	12	rep	lemon	lemon	triangle	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	13	13	rep	diamond	diamond	square	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	14	14	rep	heart	heart	circle	left	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	15	15	rep	triangle	triangle	lemon	right	na	na		
+data	8	SymLit	RMTS	pilot1	noncomm	4yo	1	B	videocall	AS	255354	26	6	2016	26/6/2016	18	12	2020	18/12/2020	53	1636	53,63934426	comm	B	test	16	16	rep	circle	circle	square	left	na	na		
+head	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct	child was tested live at home	SymLit_RMTS_pilot1_comm_3yo_A_257807
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	fam	1	0	fam	na	na	na	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	fam	2	0	fam	na	na	na	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	fam	3	0	fam	na	na	na	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	fam	4	0	fam	na	na	na	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	1	1	rep	circle	circle	square	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	2	2	rep	triangle	triangle	lemon	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	3	3	rep	heart	heart	circle	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	4	4	rep	diamond	diamond	square	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	5	5	rep	lemon	lemon	triangle	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	6	6	rep	circle	circle	heart	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	7	7	rep	square	square	triangle	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	8	8	rep	diamond	diamond	lemon	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	9	9	rep	heart	heart	triangle	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	10	10	rep	circle	circle	lemon	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	11	11	rep	triangle	triangle	square	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	12	12	rep	lemon	lemon	diamond	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	13	13	rep	square	square	circle	left	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	14	14	rep	triangle	triangle	heart	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	15	15	rep	lemon	lemon	circle	right	na	na		
+data	1	SymLit	RMTS	pilot1	comm	3yo	0	A	home	GK	257807	26	9	2017	26/9/2017	25	11	2020	25/11/2020	37	1156	37,90163934	comm	A	test	16	16	rep	square	square	diamond	left	na	na		
+head	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_comm_3yo_B_258339
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	fam	1	0	fam	na	na	na	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	fam	2	0	fam	na	na	na	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	fam	3	0	fam	na	na	na	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	fam	4	0	fam	na	na	na	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	1	1	rep	square	square	diamond	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	2	2	rep	lemon	lemon	circle	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	3	3	rep	triangle	triangle	heart	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	4	4	rep	square	square	circle	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	5	5	rep	lemon	lemon	diamond	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	6	6	rep	triangle	triangle	square	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	7	7	rep	circle	circle	lemon	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	8	8	rep	heart	heart	triangle	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	9	9	rep	diamond	diamond	lemon	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	10	10	rep	square	square	triangle	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	11	11	rep	circle	circle	heart	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	12	12	rep	lemon	lemon	triangle	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	13	13	rep	diamond	diamond	square	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	14	14	rep	heart	heart	circle	left	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	15	15	rep	triangle	triangle	lemon	right	na	na		
+data	10	SymLit	RMTS	pilot1	comm	3yo	1	B	videocall	VJ	258339	28	6	2017	28/6/2017	17	12	2020	17/12/2020	41	1268	41,57377049	comm	B	test	16	16	rep	circle	circle	square	left	na	na		
+head	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_comm_3yo_A_?
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	fam	1	0	fam	na	na	na	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	fam	2	0	fam	na	na	na	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	fam	3	0	fam	na	na	na	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	fam	4	0	fam	na	na	na	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	1	1	rep	circle	circle	square	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	2	2	rep	triangle	triangle	lemon	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	3	3	rep	heart	heart	circle	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	4	4	rep	diamond	diamond	square	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	5	5	rep	lemon	lemon	triangle	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	6	6	rep	circle	circle	heart	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	7	7	rep	square	square	triangle	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	8	8	rep	diamond	diamond	lemon	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	9	9	rep	heart	heart	triangle	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	10	10	rep	circle	circle	lemon	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	11	11	rep	triangle	triangle	square	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	12	12	rep	lemon	lemon	diamond	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	13	13	rep	square	square	circle	left	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	14	14	rep	triangle	triangle	heart	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	15	15	rep	lemon	lemon	circle	right	na	na		
+data	11	SymLit	RMTS	pilot1	comm	3yo	?	A	videocall	?	?	x	x	x	x/x/x	x	x	x	x/x/x	#WERT!	#WERT!	#WERT!	comm	A	test	16	16	rep	square	square	diamond	left	na	na		
+head	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_comm_3yo_B_258786
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	fam	1	0	fam	na	na	na	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	fam	2	0	fam	na	na	na	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	fam	3	0	fam	na	na	na	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	fam	4	0	fam	na	na	na	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	1	1	rep	square	square	diamond	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	2	2	rep	lemon	lemon	circle	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	3	3	rep	triangle	triangle	heart	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	4	4	rep	square	square	circle	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	5	5	rep	lemon	lemon	diamond	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	6	6	rep	triangle	triangle	square	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	7	7	rep	circle	circle	lemon	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	8	8	rep	heart	heart	triangle	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	9	9	rep	diamond	diamond	lemon	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	10	10	rep	square	square	triangle	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	11	11	rep	circle	circle	heart	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	12	12	rep	lemon	lemon	triangle	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	13	13	rep	diamond	diamond	square	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	14	14	rep	heart	heart	circle	left	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	15	15	rep	triangle	triangle	lemon	right	na	na		
+data	12	SymLit	RMTS	pilot1	comm	3yo	0	B	videocall	VJ	258786	29	6	2017	29/6/2017	18	12	2020	18/12/2020	41	1268	41,57377049	comm	B	test	16	16	rep	circle	circle	square	left	na	na		
+head	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_noncomm_3yo_A_258813
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	fam	1	0	fam	na	na	na	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	fam	2	0	fam	na	na	na	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	fam	3	0	fam	na	na	na	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	fam	4	0	fam	na	na	na	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	1	1	rep	circle	circle	square	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	2	2	rep	triangle	triangle	lemon	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	3	3	rep	heart	heart	circle	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	4	4	rep	diamond	diamond	square	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	5	5	rep	lemon	lemon	triangle	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	6	6	rep	circle	circle	heart	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	7	7	rep	square	square	triangle	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	8	8	rep	diamond	diamond	lemon	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	9	9	rep	heart	heart	triangle	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	10	10	rep	circle	circle	lemon	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	11	11	rep	triangle	triangle	square	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	12	12	rep	lemon	lemon	diamond	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	13	13	rep	square	square	circle	left	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	14	14	rep	triangle	triangle	heart	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	15	15	rep	lemon	lemon	circle	right	na	na		
+data	13	SymLit	RMTS	pilot1	noncomm	3yo	0	A	videocall	VJ	258813	27	6	2017	27/6/2017	17	12	2020	17/12/2020	41	1269	41,60655738	noncomm	A	test	16	16	rep	square	square	diamond	left	na	na		
+head	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_noncomm_3yo_B_258510
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	fam	1	0	fam	na	na	na	left	1	1		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	fam	2	0	fam	na	na	na	right	1	1	"E verspricht sich: ""Unter der einen Banane"""	
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	fam	3	0	fam	na	na	na	right	1	1	E bittet Kind nochmal zu zeigen--> Kind verändert Antwort	
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	fam	4	0	fam	na	na	na	left	1	1		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	1	1	rep	square	square	diamond	left	1	1	Kind überlegt lange	
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	2	2	rep	lemon	lemon	circle	right	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	3	3	rep	triangle	triangle	heart	right	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	4	4	rep	square	square	circle	left	1	1		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	5	5	rep	lemon	lemon	diamond	right	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	6	6	rep	triangle	triangle	square	right	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	7	7	rep	circle	circle	lemon	left	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	8	8	rep	heart	heart	triangle	right	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	9	9	rep	diamond	diamond	lemon	left	1	1		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	10	10	rep	square	square	triangle	right	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	11	11	rep	circle	circle	heart	left	1	1		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	12	12	rep	lemon	lemon	triangle	right	1	1		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	13	13	rep	diamond	diamond	square	left	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	14	14	rep	heart	heart	circle	left	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	15	15	rep	triangle	triangle	lemon	right	1	0		
+data	14	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	VJ	258510	23	6	2017	23/6/2017	11	12	2020	11/12/2020	41	1267	41,54098361	comm	B	test	16	16	rep	circle	circle	square	left	1	0		
+head	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_noncomm_3yo_A_258947
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	fam	1	0	fam	na	na	na	left	0	0		E deckt Banane zweimal auf
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	fam	2	0	fam	na	na	na	right	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	fam	3	0	fam	na	na	na	right	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	fam	4	0	fam	na	na	na	left	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	1	1	rep	circle	circle	square	left	0	0		Vater erklärt, E erklärt und fragt nach
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	2	2	rep	triangle	triangle	lemon	right	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	3	3	rep	heart	heart	circle	left	0	1		Vater erklärt, uneindeutig zuerst
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	4	4	rep	diamond	diamond	square	left	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	5	5	rep	lemon	lemon	triangle	right	0	1		"E sagt ""super, danke"""
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	6	6	rep	circle	circle	heart	left	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	7	7	rep	square	square	triangle	right	0	1		uneindeutig
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	8	8	rep	diamond	diamond	lemon	left	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	9	9	rep	heart	heart	triangle	right	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	10	10	rep	circle	circle	lemon	left	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	11	11	rep	triangle	triangle	square	right	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	12	12	rep	lemon	lemon	diamond	right	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	13	13	rep	square	square	circle	left	1	1		"E sagt""super, danke"""
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	14	14	rep	triangle	triangle	heart	right	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	15	15	rep	lemon	lemon	circle	right	1	1		
+data	15	SymLit	RMTS	pilot1	noncomm	3yo	1	A	videocall	AS	258947	23	6	2017	23/6/2017	14	12	2020	14/12/2020	41	1270	41,63934426	comm	A	test	16	16	rep	square	square	diamond	left	1	1		"E sagt ""hmm, super"""
+head	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	cond	cb	trialtype	trial	order	task	cue	tar	dis	sidecorrect	valid	correct		SymLit_RMTS_pilot1_noncomm_3yo_B_258441
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	fam	1	0	fam	na	na	na	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	fam	2	0	fam	na	na	na	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	fam	3	0	fam	na	na	na	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	fam	4	0	fam	na	na	na	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	1	1	rep	square	square	diamond	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	2	2	rep	lemon	lemon	circle	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	3	3	rep	triangle	triangle	heart	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	4	4	rep	square	square	circle	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	5	5	rep	lemon	lemon	diamond	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	6	6	rep	triangle	triangle	square	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	7	7	rep	circle	circle	lemon	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	8	8	rep	heart	heart	triangle	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	9	9	rep	diamond	diamond	lemon	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	10	10	rep	square	square	triangle	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	11	11	rep	circle	circle	heart	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	12	12	rep	lemon	lemon	triangle	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	13	13	rep	diamond	diamond	square	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	14	14	rep	heart	heart	circle	left	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	15	15	rep	triangle	triangle	lemon	right	na	na		
+data	16	SymLit	RMTS	pilot1	noncomm	3yo	1	B	videocall	AS	258441	29	6	2017	29/6/2017	16	12	2020	16/12/2020	41	1266	41,50819672	comm	B	test	16	16	rep	circle	circle	square	left	na	na		
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
+																																				
