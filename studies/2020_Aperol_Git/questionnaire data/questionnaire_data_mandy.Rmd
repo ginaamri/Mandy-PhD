@@ -18,14 +18,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # load tab delimited text file into R; 
 # file should be in a subfolder named "data" for the script to select it
-raw.data<-read.table("./data/SymLit_RMTS_subjectlist_251220.txt",sep="\t", header=T) 
+raw.data<-read.table("./data/questionnaire_value.txt",sep="\t", header=T) 
 
+view(raw.data)
 # loading packages
 # if a package is not installed on the current machine, it will install it
 if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
 
 # suppress "summarize" info. 
-# if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
+# if this line is committed, each table using the summarize function will be accompanied with a warning from the console
 options(dplyr.summarise.inform = FALSE)
 
 # # change data structure: everything is turned into factors except for 
@@ -34,103 +35,45 @@ options(dplyr.summarise.inform = FALSE)
 #   mutate(across(!correct&!agem&!aged, as.factor),
 #          correct = as.integer(correct))
 
-```
-
-# Short Summary
-This report provides a summary of the first pilot ran for SymLit_RMTS. Our aim for Pilot1 was to evaluate whether the tasks we are planning to use for SymLit_RMTS are appropriate for three- and four-year-old children. In a between-subjects design, three- and four-year-old children saw either a communicative framing of the task or a non-communicative task (condition (comm; non-comm) x agegroup (3yo; 4yo). Children were tested via online video calls. Since we were primarily interested in whether children understand the overall presentation of the task, we used very simple stimulus pairings in which the cue was a representation of the target stimulus (i.e. target is a circle; distractor is a square; cue is a drawn circle). 
-
-### Demographics
-For pilot 1, we aimed at testing for four children in each condition and age-group. The table shows the state of data collection as of `r Sys.Date()`.
-
-```{r overview demographics data table, echo=FALSE}
-raw.data %>% # select data
-  filter(what == "head") %>% # select only lines with data and only valid trials
-  group_by(age, condition) %>%
-  summarise(N = n_distinct(id),
-            male = sum(sex),
-            "mean age" = round(mean(agem), 2),
-            "min age" = min(agem),
-            "max age" = max(agem),
-            "sd age" = round(sd(agem), 2),
-            ) %>% 
-  knitr::kable(digits = 2)
-
-# demographics.data<- raw.data %>% # select data
-#   filter(what == "head") %>% # select only lines with data and only valid trials
-#   group_by(age, condition) %>%
-#   summarise(N = n_distinct(id),
-#             male = sum(sex),
-#             "mean age" = round(mean(agem), 2),
-#             "min age" = min(agem),
-#             "max age" = max(agem),
-#             "sd age" = round(sd(agem), 2),
-#             ) 
+# print(raw.data)
 
 ```
 
-### Performance in Familiarization Trials
-All test sessions commence with a set of four familiarisation trials in which children have to point out the location of an item that was hidden in plain sight. These trials familiarize children with the task and ensure that the experimenter can read their responses (pointing) via the video call. Children need to succeed in at least half of the familiarization trials in order to progress to the test trials. In case children cannot point out the correct side of the screen, experimenters continue with a mock participation and participants would not be dropped from the sample.
 
-```{r overview familiarization data table, echo=FALSE}
-raw.data %>%
-  filter(what == "data" & valid == "1" & trialtype == "fam") %>% 
-  mutate(correct = as.integer(correct),
-         valid = as.integer(valid))%>% 
-  group_by(age, condition) %>%
-  summarise(N = n_distinct(id),
-            "trials/N" = round(sum(valid)/n_distinct(id), 2),
-            "% correct" = round(mean(correct)*100, 2),
-              ) %>% 
-  knitr::kable(digits = 2)
+### Plotting questionnaire data
 
+
+```{r plot classroom management boxplot by groups, echo = FALSE}
+
+### classroom management
+
+# filter by parameter variable, i.e. create a subset for each group (expert/novice/experimenter)
+km.data <- raw.data %>% filter(item == "Klassenmanagement",
+                               value.1 != "n.a.")
+
+# print(km.data)
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+km.data <- km.data %>%  mutate(value = as.numeric(as.character(factor(value.1))))
+
+
+# create  mean, min, max, sd of classroom management
+meankm <- mean(km.data$value.1)
+minModul <- min(Modul.data$value)
+maxModul <- max(Modul.data$value)
+sdModul <- sd(Modul.data$value)
+NModul<-length(unique(Modul.data$ID))
+# filter by parametervariable, i.e. create a subset for the individual lecturer
+ind.Modul.data <- Modul.data %>% filter(Dozierende == params$Dozierende)
+# erstelle Mittelwert, min, max, sd for individual lecturer
+ind.meanModul <- mean(ind.Modul.data$value)
+ind.minModul <- min(ind.Modul.data$value)
+ind.maxModul <- max(ind.Modul.data$value)
+ind.sdModul <- sd(ind.Modul.data$value)
+ind.NModul<-length(unique(ind.Modul.data$ID))
 ```
 
-### Performance in Test Trials
-During the main phase of the study, children are presented with 16 test trials. In order to be submitted to the analyses, participants need to complete at least 8 test trials. Reasons for excluding trials include fuzziness and lack of attention, experimenter error, technical issues, and parental interference. Hence, the number of trials by participants can vary across conditions (cf. trials/N). Trials are coded as valid (valid = 1; drop = 0) and correct (correct = 1; error = 0). The table provides the percentages of correct choices during the main phase of the experiment.
 
-```{r overview test data table, echo=FALSE}
-raw.data %>% 
-  filter(what == "data" & valid == "1" & trialtype == "test") %>% 
-  mutate(correct = as.integer(correct),
-         valid = as.integer(valid))%>% 
-  group_by(age, condition) %>%
-  summarise(N = n_distinct(id),
-            "trials/N" = round(sum(valid)/n_distinct(id), 2),
-            "% correct" = round(mean(correct)*100, 2),
-              )  %>% 
-  knitr::kable(digits = 2)
-
-# test.data<-raw.data %>% # select data
-#   filter(what == "data" & valid == "1" & trialtype == "test") %>% # select only lines with data and only valid trials
-#   mutate(correct = as.integer(correct),
-#          valid = as.integer(valid))%>% 
-#   group_by(age, condition) %>%
-#   summarise(N = n_distinct(id),
-#             "trials/N" = round(sum(valid)/n_distinct(id), 2),
-#             "% correct" = round(mean(correct)*100, 2),
-#               ) 
-
-# test.data<-raw.data %>% # select data
-#   filter(what == "data" & valid == "1" & trialtype == "test") %>% # select only lines with data and only valid trials
-#   mutate(correct = as.integer(correct),
-#          valid = as.integer(valid))%>% 
-#   group_by(age, condition) %>%
-#   summarise(N = n_distinct(id),
-#             "mean age" = round(mean(agem), 2),
-#             "min age" = min(agem),
-#             "max age" = max(agem),
-#             #"sd age" = round(sd(agem), 2),
-#             "trials/N" = round(sum(valid)/n_distinct(id), 2),
-#             "% correct" = round(mean(correct)*100, 2)
-#               ) 
-# test.data %>% relocate("mean age", "min age", "max age", .after = "age")
-
-```
-
-### Proportion of Correct Choices
-Graph provides boxplots and individual data for all experimental groups. Contrary to our hypothesis, children in both age-groups perform better in the non-communicative condition. The main reason behind this could be that the presentation of the communicative task is not clear enough. Mainly, we failed to get across that the monkey is actually drawing something for the children to help them. In the next phase we should make this more explicit. In general it needs to be noted that the number of participants per experimental group is very low. Other than that, data generally indicate that in both conditions and age-groups, children succeed in the task. Hence, our task in general and the video procedure in particular are age-appropriate and can be used to investigate our main research question.
-
-```{r plot boxplot by groups, echo = FALSE}
 
 test.ind.data <- raw.data %>%
   filter(what == "data" & valid == "1" & trialtype == "test") %>%
