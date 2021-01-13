@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # load tab delimited text file into R; 
 # file should be in a subfolder named "data" for the script to select it
-raw.data<-read.table("./data/questionnaire_data_080121.txt",sep="\t", header=T) 
+raw.data<-read.table("./data/short_questionnaire_data_1301211.txt",sep="\t", header=T) 
 
 
 # loading packages
@@ -29,19 +29,38 @@ if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
 # if this line is committed, each table using the summarize function will be accompanied with a warning from the console
 options(dplyr.summarise.inform = FALSE)
 
-# # change data structure: everything is turned into factors except for 
-# main.data <- raw.data %>%
-#   filter(what == "data"& valid == 1)  %>%
-#   mutate(across(!correct&!agem&!aged, as.factor),
-#          correct = as.integer(correct))
+### checking for missing values
+apply(is.na(raw.data), 2, which)
+
+# knock out NAs
+raw.data <- raw.data  %>% filter(
+  personID != "NA")
+
 
 view (raw.data)
+str(raw.data)
+
+```
+
+### Data collection
+For the pilot study, we collected data from . The table shows the state of data collection as of `r Sys.Date()`.
+
+```{r overview demographics data table, echo=FALSE}
+raw.data %>% # select data
+  group_by(session, target, perspective) %>%
+  summarise(N = n_distinct(personID),
+            male = sum(sex),
+            "mean age" = round(mean(age), 2),
+            "min age" = min(age),
+            "max age" = max(age),
+            "sd age" = round(sd(age), 2),
+            ) %>% 
+  knitr::kable(digits = 2)
 
 ```
 
 
 ### Plotting questionnaire data
-
 
 ```{r plot classroom management boxplot by groups, echo = FALSE}
 
