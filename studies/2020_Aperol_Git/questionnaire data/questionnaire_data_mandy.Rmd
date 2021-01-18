@@ -54,13 +54,11 @@ The table shows the state of data collection as of `r Sys.Date()`.
 
 ```{r overview demographics data table, echo=FALSE}
 raw.data %>% # select data
-  group_by(session, target, perspective) %>%
+  group_by(session, perspective) %>%
   summarise(N = n_distinct(personID),
-            male = sum(sex),
             "mean age" = round(mean(age), 2),
             "min age" = min(age),
-            "max age" = max(age),
-            "sd age" = round(sd(age), 2),
+            "max age" = max(age)
             ) %>% 
   knitr::kable(digits = 2)
 
@@ -70,28 +68,89 @@ raw.data %>% # select data
 
 ### Plotting questionnaire data
 
-```{r plot classroom management boxplot by groups, echo = FALSE}
+```{r mean classroom management by session, echo = FALSE}
 
-### classroom management
+### classroom management session 1 
 
-# filter by parameter variable, i.e. create a subset for each group (expert/novice/experimenter)
-km.data <- raw.data %>% filter(scale == "Klassenmanagement")
+# filter by parameter variable, i.e. create a subset for each session
+km1.data <- raw.data %>% filter(scale == "Klassenmanagement",
+                               session == "1")
 
-view (km.data)
+view (km1.data)
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
-km.data <- km.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+km1.data <- km1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
 
 
 # create  mean, min, max, sd of classroom management
-meankm <- mean(km.data$value)
-minkm <- min(km.data$value)
-maxkm <- max(km.data$value)
-sdkm <- sd(km.data$value)
-Nkm<-length(unique(km.data$ID))
+meankm1 <- mean(km1.data$value)
+minkm1 <- min(km1.data$value)
+maxkm1 <- max(km1.data$value)
+sdkm1 <- sd(km1.data$value)
+Nkm1 <- length(unique(km1.data$personID))
+mdkm1 <- median(km1.data$value)
+
+km1.data <- raw.data %>% filter(scale == "Klassenmanagement",
+                               session == "1") %>% 
+  group_by(perspective, target) %>%
+  summarise(N = n_distinct(personID),
+            "mean age" = round(mean(age), 2),
+            "min age" = min(age),
+            "max age" = max(age),
+            "sd age" = round(sd(age), 2),
+            ) %>% 
+  knitr::kable(digits = 2)
+
+### classroom management session 2 
+
+# filter by parameter variable, i.e. create a subset for each session
+km2.data <- raw.data %>% filter(scale == "Klassenmanagement",
+                               session == "2")
+
+view (km2.data)
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+km2.data <- km2.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+
+# create  mean, min, max, sd of classroom management
+meankm2 <- mean(km2.data$value)
+minkm2 <- min(km2.data$value)
+maxkm2 <- max(km2.data$value)
+sdkm2 <- sd(km2.data$value)
+Nkm2<-length(unique(km2.data$personID))
+
 ```
 
+The item "classroom management"  was rated by the observer, the teacher and students on average in session 1 with `r round(meankm1, 2)` (min = `r minkm1`; max = `r maxkm1`; SD = `r round(sdkm1,2)`; N = `r Nkm1`; lickert-scale 1-4; 4 = best evaluation) and in session 2 with `r round(meankm2, 2)` (min = `r minkm2`; max = `r maxkm2`; SD = `r round(sdkm2,2)`; N = `r Nkm2`; lickert-scale 1-4; 4 = best evaluation).
 
+
+```{r Modul horicontal Plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
+
+# to create error bars, we need to summarise the data in a seperate dataframe
+modul.plot.sd <-modul.plot.data %>%
+  group_by(itemfulltext, Teilnehmende, .drop=TRUE) %>%
+  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# and here comes the long plot
+modul.plot<-ggplot(data = modul.plot.sd,
+                           aes(x = itemfulltext, y = mean,
+                               group=Teilnehmende, colour = Teilnehmende)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,5)+
+  labs(data = modul.plot.data, y = "Ausprägung", x = NULL,
+       title="Modulbewertung" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+modul.plot
+
+```
 
 
 ### Comparing Performance across age-groups and conditions
