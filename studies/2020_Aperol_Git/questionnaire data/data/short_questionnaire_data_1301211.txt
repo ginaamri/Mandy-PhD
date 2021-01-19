@@ -181,13 +181,13 @@ Aperol_pilot_01_02_expert_A_quest	data	5	001	002	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	1	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	3	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	4	A	51	0	0	0	0	0
@@ -196,8 +196,8 @@ Aperol_pilot_01_02_expert_A_quest	data	5	001	002	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	70	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	data	5	001	002	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	data	5	001	002	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	data	5	001	002	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	3	A	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	head	1	001	003	1	Klassenmanagement	km_lernstoff	observer	Die gesamte Unterrichtssequenz wurde für den Lernstoff verwendet.	3	B	27	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	1	001	003	1	Klassenmanagement	km_mitbekommen	observer	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	2	B	27	0	0	0	0	0
@@ -269,16 +269,16 @@ Aperol_pilot_01_03_novice_B_quest	data	2	001	003	5	Präsenz/Haltung_Blick	phb_rau
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik untersützten meinen Ausruck.	4	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	6	Präsenz/Stimme  	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	3	B	29	0	1,5	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	2	001	003	6	Präsenz/Stimme 	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	3	B	29	0	1,5	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	2	001	003	6	Präsenz/Stimme 	ps_impulse	teacher	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	B	29	0	1,5	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	2	001	003	6	Präsenz/Stimme  	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	3	B	29	0	1,5	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	2	001	003	6	Präsenz/Stimme  	ps_impulse	teacher	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	6	Präsenz/Stimme 	ps_vorgehen	teacher	Vor einem Methodenwechsel erklärte ich nochmals kurz das Vorgehen und die geltenden Regeln (z.B. bei Gruppenarbeit).	1	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_nonverbal	teacher	Bei Unterrichtsstörungen haben ich oft nonverbale Signale, wie z.B. Stirnrunzeln oder mahnende Blicke verwendet.	2	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	teacher	Bei Unterrichtsstärungen habe ich mich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	teacher	Bei Unterrrichtsstörungen habe ich störende Schüler*innen direkt angesprochen.	2	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	8	Redeanteil	redeanteil	teacher	Meine Einschätzung meines Redeanteils liegt bei __%.	95	B	29	0	1,5	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	2	001	003	9	Manipulationsitem 	m_natürlich	teacher	Während der Stunde habe ich mich sehr natürlich verhalten.	3	B	29	0	1,5	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	2	001	003	9	Manipulationsitem	m_natürlich	teacher	Während der Stunde habe ich mich sehr natürlich verhalten.	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	2	001	003	9	Manipulationsitem	m_fiktiv	teacher	Es war für mich kein Problem, vor einer fiktiven Klassen zu unterrichten.	3	B	29	0	1,5	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	2	001	003	9	Manipulationsitem	m_verhalten	teacher	Beim Unterrichten habe ich mich vor der fiktiven Klasse so verhalteb, wie ich es auch in der Schule tun würde. 	3	B	29	0	1,5	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	2	001	003	9	Manipulationsitem 	m_verhalten	teacher	Beim Unterrichten habe ich mich vor der fiktiven Klasse so verhalteb, wie ich es auch in der Schule tun würde. 	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	head	3	001	003	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	1	Klassenmanagement	kkm_klar	student	Den Schüler*innen war jederzeit klar, was sie tun sollten.	3	B	44	1	0	0	0	0
@@ -301,13 +301,13 @@ Aperol_pilot_01_03_novice_B_quest	data	3	001	003	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	1	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	2	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	B	44	1	0	0	0	0
@@ -316,8 +316,8 @@ Aperol_pilot_01_03_novice_B_quest	data	3	001	003	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	80	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	3	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	3	001	003	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	3	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	3	001	003	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	3	001	003	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	head	4	001	003	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	4	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	4	B	33	1	0	0	0	0
@@ -341,13 +341,13 @@ Aperol_pilot_01_03_novice_B_quest	data	4	001	003	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	2	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	2	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	2	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	B	33	1	0	0	0	0
@@ -356,8 +356,8 @@ Aperol_pilot_01_03_novice_B_quest	data	4	001	003	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	3	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	3	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	80	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	2	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	4	001	003	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	2	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	2	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	4	001	003	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	2	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	4	001	003	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	2	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	head	5	001	003	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	4	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	4	B	51	0	0	0	0	0
@@ -381,13 +381,13 @@ Aperol_pilot_01_03_novice_B_quest	data	5	001	003	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	1	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	3	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	3	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	3	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	4	B	51	0	0	0	0	0
@@ -396,8 +396,8 @@ Aperol_pilot_01_03_novice_B_quest	data	5	001	003	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	3	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	3	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	85	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	3	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	data	5	001	003	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	3	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	data	5	001	003	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	data	5	001	003	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	3	B	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	head	1	001	004	1	Klassenmanagement	km_lernstoff	observer	Die gesamte Unterrichtssequenz wurde für den Lernstoff verwendet.	3	C	27	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	1	001	004	1	Klassenmanagement	km_mitbekommen	observer	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	2	C	27	0	0	0	0	0
@@ -469,16 +469,16 @@ Aperol_pilot_01_04_novice_C_quest	data	2	001	004	5	Präsenz/Haltung_Blick	phb_rau
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik untersützten meinen Ausruck.	1	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	3	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	6	Präsenz/Stimme  	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	2	C	33	1	0,6	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	2	001	004	6	Präsenz/Stimme 	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	2	C	33	1	0,6	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	2	001	004	6	Präsenz/Stimme 	ps_impulse	teacher	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	C	33	1	0,6	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	2	001	004	6	Präsenz/Stimme  	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	2	C	33	1	0,6	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	2	001	004	6	Präsenz/Stimme  	ps_impulse	teacher	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	6	Präsenz/Stimme 	ps_vorgehen	teacher	Vor einem Methodenwechsel erklärte ich nochmals kurz das Vorgehen und die geltenden Regeln (z.B. bei Gruppenarbeit).	2	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_nonverbal	teacher	Bei Unterrichtsstörungen haben ich oft nonverbale Signale, wie z.B. Stirnrunzeln oder mahnende Blicke verwendet.	4	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	teacher	Bei Unterrichtsstärungen habe ich mich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.	3	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	teacher	Bei Unterrrichtsstörungen habe ich störende Schüler*innen direkt angesprochen.	3	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	8	Redeanteil	redeanteil	teacher	Meine Einschätzung meines Redeanteils liegt bei __%.	90	C	33	1	0,6	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	2	001	004	9	Manipulationsitem 	m_natürlich	teacher	Während der Stunde habe ich mich sehr natürlich verhalten.	3	C	33	1	0,6	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	2	001	004	9	Manipulationsitem	m_natürlich	teacher	Während der Stunde habe ich mich sehr natürlich verhalten.	3	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	2	001	004	9	Manipulationsitem	m_fiktiv	teacher	Es war für mich kein Problem, vor einer fiktiven Klassen zu unterrichten.	3	C	33	1	0,6	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	2	001	004	9	Manipulationsitem	m_verhalten	teacher	Beim Unterrichten habe ich mich vor der fiktiven Klasse so verhalteb, wie ich es auch in der Schule tun würde. 	3	C	33	1	0,6	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	2	001	004	9	Manipulationsitem 	m_verhalten	teacher	Beim Unterrichten habe ich mich vor der fiktiven Klasse so verhalteb, wie ich es auch in der Schule tun würde. 	3	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	head	3	001	004	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	1	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	1	Klassenmanagement	kkm_klar	student	Den Schüler*innen war jederzeit klar, was sie tun sollten.	3	C	44	1	0	0	0	0
@@ -501,13 +501,13 @@ Aperol_pilot_01_04_novice_C_quest	data	3	001	004	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	2	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	3	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	1	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	1	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	0	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	3	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	1	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	1	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	0	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	2	C	44	1	0	0	0	0
@@ -516,8 +516,8 @@ Aperol_pilot_01_04_novice_C_quest	data	3	001	004	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	2	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	88	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	2	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	3	001	004	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	2	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	3	001	004	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	3	001	004	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	head	4	001	004	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	3	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	4	C	29	0	0	0	0	0
@@ -541,13 +541,13 @@ Aperol_pilot_01_04_novice_C_quest	data	4	001	004	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	1	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	1	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	C	29	0	0	0	0	0
@@ -556,8 +556,8 @@ Aperol_pilot_01_04_novice_C_quest	data	4	001	004	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	3	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	3	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	90	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	3	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	4	001	004	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	3	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	4	001	004	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	4	001	004	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	3	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	head	5	001	004	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	4	C	51	0	0	0	0	0
@@ -581,13 +581,13 @@ Aperol_pilot_01_04_novice_C_quest	data	5	001	004	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	1	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	1	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	3	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	3	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	4	C	51	0	0	0	0	0
@@ -596,8 +596,8 @@ Aperol_pilot_01_04_novice_C_quest	data	5	001	004	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	90	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	data	5	001	004	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	data	5	001	004	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	3	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	data	5	001	004	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	4	C	51	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	head	1	001	001	1	Klassenmanagement	km_lernstoff	observer	Die gesamte Unterrichtssequenz wurde für den Lernstoff verwendet.	4	D	27	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	1	001	001	1	Klassenmanagement	km_mitbekommen	observer	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	3	D	27	0	0	0	0	0
@@ -669,16 +669,16 @@ Aperol_pilot_01_01_expert_D_quest	data	2	001	001	5	Präsenz/Haltung_Blick	phb_rau
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik untersützten meinen Ausruck.	4	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	4	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	6	Präsenz/Stimme  	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	4	D	51	0	25	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	2	001	001	6	Präsenz/Stimme 	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	4	D	51	0	25	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	2	001	001	6	Präsenz/Stimme 	ps_impulse	teacher	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	D	51	0	25	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	2	001	001	6	Präsenz/Stimme  	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	4	D	51	0	25	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	2	001	001	6	Präsenz/Stimme  	ps_impulse	teacher	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	3	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	6	Präsenz/Stimme 	ps_vorgehen	teacher	Vor einem Methodenwechsel erklärte ich nochmals kurz das Vorgehen und die geltenden Regeln (z.B. bei Gruppenarbeit).	4	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_nonverbal	teacher	Bei Unterrichtsstörungen haben ich oft nonverbale Signale, wie z.B. Stirnrunzeln oder mahnende Blicke verwendet.	3	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	teacher	Bei Unterrichtsstärungen habe ich mich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.	2	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	teacher	Bei Unterrrichtsstörungen habe ich störende Schüler*innen direkt angesprochen.	3	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	8	Redeanteil	redeanteil	teacher	Meine Einschätzung meines Redeanteils liegt bei __%.	95	D	51	0	25	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	2	001	001	9	Manipulationsitem 	m_natürlich	teacher	Während der Stunde habe ich mich sehr natürlich verhalten.	4	D	51	0	25	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	2	001	001	9	Manipulationsitem	m_natürlich	teacher	Während der Stunde habe ich mich sehr natürlich verhalten.	4	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	2	001	001	9	Manipulationsitem	m_fiktiv	teacher	Es war für mich kein Problem, vor einer fiktiven Klassen zu unterrichten.	4	D	51	0	25	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	2	001	001	9	Manipulationsitem	m_verhalten	teacher	Beim Unterrichten habe ich mich vor der fiktiven Klasse so verhalteb, wie ich es auch in der Schule tun würde. 	4	D	51	0	25	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	2	001	001	9	Manipulationsitem 	m_verhalten	teacher	Beim Unterrichten habe ich mich vor der fiktiven Klasse so verhalteb, wie ich es auch in der Schule tun würde. 	4	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	head	3	001	001	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	4	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	3	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	1	Klassenmanagement	kkm_klar	student	Den Schüler*innen war jederzeit klar, was sie tun sollten.	3	D	44	1	0	0	0	0
@@ -701,13 +701,13 @@ Aperol_pilot_01_01_expert_D_quest	data	3	001	001	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	1	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	2	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	3	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	3	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	3	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	4	D	44	1	0	0	0	0
@@ -716,8 +716,8 @@ Aperol_pilot_01_01_expert_D_quest	data	3	001	001	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	2	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	4	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	80	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	3	001	001	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	4	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	3	001	001	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	4	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	3	001	001	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	4	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	head	4	001	001	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	4	D	29	0	0	0	0	0
@@ -741,23 +741,23 @@ Aperol_pilot_01_01_expert_D_quest	data	4	001	001	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	1	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	1	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	6	Präsenz/Stimme 	ps_vorgehen	student	Vor einem Methodenwechsel erklärte die Lehrperson nochmals kurz das Vorgehen und die geltenden Regeln (z.B. bei Gruppenarbeit).	1	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	7	Präsenz/Stimme 	ps_redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	70	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_nonverbal	student	Bei Unterrichtsstärungen hat die Lehrperson oft nonverbale Signale, wie z.B. Stirnrunzeln oder mahnende Blicke verwendet.	2	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_nonverbal	student	Bei Unterrichtsstärungen hat die Lehrperson oft nonverbale Signale, wie z.B. Stirnrunzeln oder mahnende Blicke verwendet.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	2	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	4	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	8	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	4	001	001	8	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	2	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	7	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	70	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	8	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	4	001	001	8	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	4	001	001	8	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	head	5	001	001	1	Klassenmanagement	km_lernstoff	student	Die gesamte Unterrichtsstunde wurde für den Lernstoff verwendet.	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	1	Klassenmanagement	km_mitbekommen	student	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	4	D	33	1	0	0	0	0
@@ -781,13 +781,13 @@ Aperol_pilot_01_01_expert_D_quest	data	5	001	001	4	Aktivierung und Förderung	af_
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	4	Aktivierung und Förderung	af_schwierigkeit	student	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitsstufen und unterschiedlichen Hilfen zur Wahl.	2	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	4	Aktivierung und Förderung	af_individuell	student	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	3	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	4	Aktivierung und Förderung	af_beherrschen	student	Die Lehrperson hat darau geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	3	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	3	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Präsenz/Haltung_Blick	phb_stand	student	Die Lehrperson stand gerade und aufrecht. 	4	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Präsenz/Haltung_Blick	phb_augen	student	Die Lehrperson hat den Schüler*innen direkt in die aufgen geschaut. 	3	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	6	Präsenz/Stimme  	ps_impulse	student	Die Arbeitsaufträge waren präzise, klar und kurz formuliert.	4	D	33	1	0	0	0	0
@@ -796,8 +796,8 @@ Aperol_pilot_01_01_expert_D_quest	data	5	001	001	7	Präsenz/verbale_nonberbale In
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_zubewegen	student	Bei Unterrichtsstörungen hat die Leherperson sich oft auf störende/unruhig werdende Schüler*innen zubewegt, um sie zu ermahnen.+	3	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	7	Präsenz/verbale_nonberbale Intervention	pi_direkt	student	Bei Unterrichtsstörungen hat die Lehrperson störende Schüler*innen direkt angesprochen.	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	8	Redeanteil	redeanteil	student	Meine Einschätzung des Redeanteils der Lehrperson liegt bei ___%.	80	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	9	Manipulationsitem 	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	data	5	001	001	9	Manipulationsitem 	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	4	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	9	Manipulationsitem	m_natürlich	student	Während der Stunde hat sich die Lehrperson sehr natürlich verhalten.	4	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	data	5	001	001	9	Manipulationsitem	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson keine Problem war, vor einer fiktiven Klasse zu unterrichten.	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	data	5	001	001	9	Manipulationsitem 	m_verhalten	student	Ich hatte den Eindruck, dass sich die Lehrperson beim Unterrichten vor der fiktiven Klasse so verhalten, wie sie es auch in der Schule tun würde. 	4	D	33	1	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	head	6	002	001	1	Klassenmanagement	km_lernstoff	observer	Die gesamte Unterrichtssequenz wurde für den Lernstoff verwendet.	3	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	data	6	002	001	1	Klassenmanagement	km_mitbekommen	observer	Die Lehrperson hat alles mitbekommen, was in der Klasse passiert ist.	3	A	27	0	0	0	0	0
