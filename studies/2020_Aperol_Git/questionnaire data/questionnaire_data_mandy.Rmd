@@ -18,10 +18,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # load tab delimited text file into R; 
 # file should be in a subfolder named "data" for the script to select it
-raw.data<-read.table("./data/short_questionnaire_data_1301211.txt",sep="\t", header=T) 
+raw.data<-read.table("./data/short_questionnaire_data_2001211.txt",sep="\t", header=T) 
 
 
 # loading packages
+# install.packages("stringr") # install stringr to use the filter() function with text data
+library(stringr)
+
 # if a package is not installed on the current machine, it will install it
 if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
 
@@ -49,15 +52,25 @@ In each session, one subject took the role of teacher, while the other teachers 
 
 
 ### Data collection
-For the pilot study, we collected questionnaire data from N = `r sum(n_distinct(raw.data$personID))` subjects in `r sum(n_distinct(raw.data$session))` sessions. The questionnaires were answered after each lesson (10min) by an observer, the teacher and the three teachers acting as the class. 
+For the pilot study, we collected questionnaire data from N = 8 subjects in `r sum(n_distinct(raw.data$session))` sessions. The questionnaires were answered after each lesson (10min) by an observer, the teacher and the three teachers acting as the class. 
 
 
 The table shows the state of data collection as of `r Sys.Date()`.
 
 ```{r overview demographics data table, echo=FALSE}
+
+# counting male / female 
+sex <- raw.data %>% filter(what == "head")
+
+# # converting column "group" from character into numeric 
+# raw.data <- raw.data %>%  mutate(group = as.numeric(as.character(group)))
+
+# demographics, grouped by group, filtered by perspective (N, meanage, max, min age)
 raw.data %>% # select data
-  group_by(session, perspective) %>%
-  summarise(N = n_distinct(personID),
+  filter(perspective == "teacher") %>%
+  group_by(group) %>%
+  summarise(N = n_distinct(groupID),
+            "male" = sum(sex),
             "mean age" = round(mean(age), 2),
             "min age" = min(age),
             "max age" = max(age)
