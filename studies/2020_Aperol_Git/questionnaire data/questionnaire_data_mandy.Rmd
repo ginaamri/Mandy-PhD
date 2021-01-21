@@ -67,7 +67,8 @@ raw.data %>%
             "male" = sum(gender),
             "mean age" = round(mean(age), 2),
             "min age" = min(age),
-            "max age" = max(age)
+            "max age" = max(age),
+            "experience" = round(mean(experience), 2)
             ) %>% 
   knitr::kable(digits = 2)
 
@@ -191,9 +192,10 @@ phb.data$group <- as.factor(phb.data$group)
 
 # to create error bars, we need to summarize the data in a separate data frame
 phb.plot.sd <- phb.data %>%
-  filter (perspective == "teacher") %>%
   group_by(group, item.wordings, .drop=TRUE) %>%
-  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+names(phb.plot.sd)
 
 # and here comes the long plot
 phb.plot<-ggplot(data = phb.plot.sd,
@@ -203,7 +205,7 @@ phb.plot<-ggplot(data = phb.plot.sd,
   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
   theme_light() +
   ylim(1,4)+
-  facet_grid()+
+  facet_grid(~perspective)+
   labs(data = phb.data, y = "value", x = NULL,
        title="presence: posture and gaze" ,
        subtitle=NULL)+
