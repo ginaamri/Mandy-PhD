@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # load tab delimited text file into R; 
 # file should be in a subfolder named "data" for the script to select it
-raw.data<-read.table("./data/short_questionnaire_data_2001211.txt",sep="\t", header=T) 
+raw.data<-read.table("./data/short_questionnaire_data_2101211.txt",sep="\t", header=T) 
 
 
 # loading packages
@@ -46,7 +46,7 @@ raw.data <- raw.data  %>% filter(
 ```
 
 # Short Summary
-This report provides a summary of the questionnaire data of the first pilot APEROL. The aim was to explore connections between the visual attention of the teacher and students’ in-class experience of the teachers’ "withitness". The study was conducted as a lab study with simulated scripted mini-lessons (10min per lesson). Data was collected from N = 8 teachers and N = 1 observer in 2 sessions. 
+This report provides a summary of the questionnaire data of the first pilot APEROL. The aim was to explore connections between the visual attention of the teacher and students’ in-class experience of the teachers’ "withitness". The study was conducted as a lab study with simulated scripted mini-lessons (10min per lesson). Data was collected from N = 8 teachers in 2 sessions. 
 
 In each session, one subject took the role of teacher, while the other teachers acted as the class. After each lesson, the subjects answered items on classroom management, especially on the teacher's behaviour, using validated questionnaires. An external observer also answered a questionnaire. In addition, the teacher was asked to give a self-assessment on his/her classroom management. 
 
@@ -59,18 +59,12 @@ The table shows the state of data collection as of `r Sys.Date()`.
 
 ```{r overview demographics data table, echo=FALSE}
 
-# counting male / female 
-sex <- raw.data %>% filter(what == "head")
-
-# # converting column "group" from character into numeric 
-# raw.data <- raw.data %>%  mutate(group = as.numeric(as.character(group)))
-
-# demographics, grouped by group, filtered by perspective (N, meanage, max, min age)
-raw.data %>% # select data
-  filter(perspective == "teacher") %>%
+# demographics, grouped by group (N, gender, meanage, max, min age)
+raw.data %>%
+  filter(what == "head") %>%
   group_by(group) %>%
-  summarise(N = n_distinct(groupID),
-            "male" = sum(sex),
+  summarise(N=n(),
+            "male" = sum(gender),
             "mean age" = round(mean(age), 2),
             "min age" = min(age),
             "max age" = max(age)
@@ -80,10 +74,9 @@ raw.data %>% # select data
 ```
 
 
-
 ### Plotting scales
 
-The graphs provide line plots for each perspective and target, plotted for the following scales for both sessions:
+The questionnaire contains following scales:
 
 (1) classroom management
 (2) positive climate and motivation
@@ -95,375 +88,123 @@ The graphs provide line plots for each perspective and target, plotted for the f
 (8) turn taking
 (9) natural behaviour
 
+```{r cleaning items, echo = FALSE}
 
-#### Session 1 
+# to compare both sessions filter only Identical items
+raw.data <- raw.data  %>% filter(str_detect(shortID, 
+                                                 paste(c("km_mitbekommen",
+                                                         "km_klar",
+                                                         "km_ungestört",
+                                                         "km_aktiv",
+                                                         "lkm_freundlich",
+                                                         "lkm_interesse",
+                                                         "lkm_kritik",
+                                                         "lkm_ausreden",
+                                                         "lkm_überlegen",
+                                                         "lkm_rückmeldungen",
+                                                         "ks_funktion",
+                                                         "ks_verständlich",
+                                                         "ks_sichtbar",
+                                                         "af_beiträge",
+                                                         "af_wechselseitig",
+                                                         "af_nachdenken",
+                                                         "phb_stand",
+                                                         "phb_augen",
+                                                         "phb_blick",
+                                                         "phb_vorsichgeht",
+                                                         "phb_raum",
+                                                         "phb_gestik",
+                                                         "phb_alleangesehen",
+                                                         "ps_deutlich",
+                                                         "ps_klar",
+                                                         "ps_impulse",
+                                                         "pi_nonverbal",
+                                                         "pi_zubewegen",
+                                                         "pi_direkt",
+                                                         "redeanteil",
+                                                         "m_natürlich",
+                                                         "m_fiktiv",
+                                                         "m_verhalten"),
+                                                    collapse = '|')))
 
-#### classroom management
 
-```{r mean classroom management by session, echo = FALSE}
+                                      
+```
 
-### classroom management session 1 
+The scales on the quality of teaching are a validated questionnaire (Helmke 2014).Whereas the scales on the teacher's presence behaviour were derived from the research literature and were used in the pilot for the first time. 
+For this reason, the various items for the scales ***presence*** are presented below.
 
-# filter by parameter variable, i.e. create a subset for each session
-km1.data <- raw.data %>% filter(scale == "Klassenmanagement",
-                               session == "1")
 
-view (km1.data)
+### presence: posture and gaze
+
+```{r mean presence: posture and gaze, echo = FALSE}
+
+### presence: posture and gaze 
+
+# filter by parameter variable, i.e. create a subset for presence: posture and gaze
+phb.data <- raw.data %>% filter(scale == "Präsenz/Haltung_Blick")
+
+view (phb.data)
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
-km1.data <- km1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+phb.data <- phb.data %>%  mutate(value = as.numeric(as.character(factor(value))))
 
 
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
+# create  mean, min, max, sd of presence: posture/gaze
+meanphb <- mean(phb.data$value)
+minphb <- min(phb.data$value)
+maxphb <- max(phb.data$value)
+sdphb <- sd(phb.data$value)
+Nphb <- phb.data %>% summarise(N = n_distinct(personID))
 
-```
+# filter by parametervariable, i.e. create a subset for experts and novice
+expert.data <- phb.data %>% filter (group == "expert")
+novice.data <- phb.data %>% filter (group == "novice")
 
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***classroom management*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
+# create mean, min, max, sd for expert/novice
+# expert
+expert.meanphb <- mean(expert.data$value)
+expert.minphb <- min(expert.data$value)
+expert.maxphb <- max(expert.data$value)
+expert.sdphb <- sd(expert.data$value)
+expert.Nphb<-length(unique(expert.data$personID))
 
-``` {r classroom management data table, echo=FALSE}
-
-km1.data %>% # select data
-  group_by(target,perspective) %>%
-  summarise(N = n_distinct(personID),
-            "mean" = round(mean(value), 2),
-            "min" = min(value),
-            "max" = max(value),
-            "sd" = sd(value),
-            "median" = median(value)
-            ) %>% 
-  knitr::kable(digits = 2)
-
-```
-
-```{r classroom management line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
-
-# to create error bars, we need to summarize the data in a separate data frame
-km1.plot.sd <- km1.data %>%
-  group_by(perspective, target, .drop=TRUE) %>%
-  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# and here comes the long plot
-km1.plot<-ggplot(data = km1.plot.sd,
-                   aes(x = perspective, y = mean,
-                       group = target, colour = target)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  labs(data = km1.data, y = "value", x = NULL,
-       title="classroom management" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-km1.plot
+#novice
+novice.meanphb <- mean(novice.data$value)
+novice.minphb <- min(novice.data$value)
+novice.maxphb <- max(novice.data$value)
+novice.sdphb <- sd(novice.data$value)
+novice.Nphb<-length(unique(novice.data$personID))
 
 ```
 
+The mean for all items of the scale ***presence: posture and gaze*** is `r round(meanphb, 2)` (min = `r minphb`; max = `r maxphb`; SD = `r round(sdphb,2)`; N = `r Nphb`; lickert-scale 1-4; 4 = best evaluation). 
 
-#### positive climate and motivation
+The mini-lessons of the experts were evaluated on average with `r round(expert.meanphb, 2)` (min = `r expert.minphb`; max = `r expert.maxphb`; SD = `r round(expert.sdphb,2)`; N = `r expert.Nphb`). 
 
-```{r mean positive climate and motivation by session, echo = FALSE}
-
-### positive climate and motivation session 1 
-
-# filter by parameter variable, i.e. create a subset for each session
-lkm1.data <- raw.data %>% filter(scale == "Lernförderliches Klima und Motivierung",
-                               session == "1")
-
-view (lkm1.data)
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-lkm1.data <- lkm1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
-
-```
-
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***positive climate and motivation*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
-
-XXX Die Tabellen kann ich mir vielleicht für jede Skala sparen? XXX
-
-``` {r positive climate and motivation data table, echo=FALSE}
-
-lkm1.data %>% # select data
-  group_by(target,perspective) %>%
-  summarise(N = n_distinct(personID),
-            "mean" = round(mean(value), 2),
-            "min" = min(value),
-            "max" = max(value),
-            "sd" = sd(value),
-            "median" = median(value)
-            ) %>% 
-  knitr::kable(digits = 2)
-
-```
-
-
-```{r positive climate and motivation line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
-
-# to create error bars, we need to summarize the data in a separate data frame
-lkm1.plot.sd <- lkm1.data %>%
-  group_by(perspective, target, .drop=TRUE) %>%
-  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# and here comes the long plot
-lkm1.plot<-ggplot(data = lkm1.plot.sd,
-                   aes(x = perspective, y = mean,
-                       group = target, colour = target)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  labs(data = lkm1.data, y = "value", x = NULL,
-       title="positive climate and motivation" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-lkm1.plot
-```
-
-XXX Order lieber Boxplots? Da würde ich gern noch die Mittelwerte mit einer Linie verbinden. XXX
-
-```{r plot boxplot by groups, echo = FALSE}
-lkm1.boxplot <- ggplot() +
-              geom_boxplot(data = lkm1.plot.sd, 
-                           aes(x = perspective, y = mean), )+ 
-  geom_line(data = lkm1.plot.sd, mapping = aes(x = perspective, y = mean)) + 
-  geom_jitter(data = lkm1.plot.sd, aes(x = perspective, y = mean, colour = target), size = 2, width = 0.1) +
-    scale_y_continuous(breaks = scales::pretty_breaks(n = 5), limits = c(0,4))+
-  labs(x="perspective", y="value", title = "positive climate and motivation")+ 
-  theme_classic()
-lkm1.boxplot
-
-```
-
-#### clarity and structuredness
-
-```{r mean clarity and structuredness by session, echo = FALSE}
-
-### clarity and structuredness session 1 
-
-# filter by parameter variable, i.e. create a subset for each session
-ks1.data <- raw.data %>% filter(scale == "Klarheit und Strukturiertheit",
-                               session == "1")
-
-view (ks1.data)
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-ks1.data <- ks1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
-
-```
-
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***clarity and structuredness*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
-
-XXX Die Tabellen kann ich mir vielleicht für jede Skala sparen? XXX
-
-``` {r clarity and structuredness data table, echo=FALSE}
-
-ks1.data %>% # select data
-  group_by(target,perspective) %>%
-  summarise(N = n_distinct(personID),
-            "mean" = round(mean(value), 2),
-            "min" = min(value),
-            "max" = max(value),
-            "sd" = sd(value),
-            "median" = median(value)
-            ) %>% 
-  knitr::kable(digits = 2)
-
-```
-
-
-```{r clarity and structuredness line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
-
-# to create error bars, we need to summarize the data in a separate data frame
-ks1.plot.sd <- ks1.data %>%
-  group_by(perspective, target, .drop=TRUE) %>%
-  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# and here comes the long plot
-ks1.plot<-ggplot(data = ks1.plot.sd,
-                   aes(x = perspective, y = mean,
-                       group = target, colour = target)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  labs(data = ks1.data, y = "value", x = NULL,
-       title="clarity and structuredness" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-ks1.plot
-```
-
-
-#### activation and support
-
-```{r mean activation and support by session, echo = FALSE}
-
-### activation and support session 1 
-
-# filter by parameter variable, i.e. create a subset for each session
-af1.data <- raw.data %>% filter(scale == "Aktivierung und Förderung",
-                               session == "1")
-
-view (af1.data)
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-af1.data <- af1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
-
-```
-
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***activation and support*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
-
-XXX Die Tabellen kann ich mir vielleicht für jede Skala sparen? XXX
-
-``` {r activation and support data table, echo=FALSE}
-
-af1.data %>% # select data
-  group_by(target,perspective) %>%
-  summarise(N = n_distinct(personID),
-            "mean" = round(mean(value), 2),
-            "min" = min(value),
-            "max" = max(value),
-            "sd" = sd(value),
-            "median" = median(value)
-            ) %>% 
-  knitr::kable(digits = 2)
-
-```
-
-
-```{r activation and support line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
-
-# to create error bars, we need to summarize the data in a separate data frame
-af1.plot.sd <- af1.data %>%
-  group_by(perspective, target, .drop=TRUE) %>%
-  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# and here comes the long plot
-af1.plot<-ggplot(data = af1.plot.sd,
-                   aes(x = perspective, y = mean,
-                       group = target, colour = target)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  labs(data = af1.data, y = "value", x = NULL,
-       title="activation and support" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-af1.plot
-```
-
-
-#### presence: posture and gaze
-
-```{r mean presence: posture and gaze by session, echo = FALSE}
-
-### presence: posture and gaze session 1 
-
-# filter by parameter variable, i.e. create a subset for each session
-phb1.data <- raw.data %>% filter(scale == "Präsenz/Haltung_Blick",
-                               session == "1")
-
-view (phb1.data)
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-phb1.data <- phb1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
-
-```
-
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***presence: posture and gaze*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
-
-XXX Die Tabellen kann ich mir vielleicht für jede Skala sparen? XXX
-
-``` {r presence: posture and gaze data table, echo=FALSE}
-
-phb1.data %>% # select data
-  group_by(target,perspective) %>%
-  summarise(N = n_distinct(personID),
-            "mean" = round(mean(value), 2),
-            "min" = min(value),
-            "max" = max(value),
-            "sd" = sd(value),
-            "median" = median(value)
-            ) %>% 
-  knitr::kable(digits = 2)
-
-```
+The mini-lessons of the novices were evaluated on average with `r round(novice.meanphb, 2)` (min = `r novice.minphb`; max = `r novice.maxphb`; SD = `r round(novice.sdphb,2)`; N = `r novice.Nphb`). 
 
 
 ```{r presence: posture and gaze line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
 
+phb.data$group <- as.factor(phb.data$group)
+
 # to create error bars, we need to summarize the data in a separate data frame
-phb1.plot.sd <- phb1.data %>%
-  group_by(perspective, target, .drop=TRUE) %>%
+phb.plot.sd <- phb.data %>%
+  filter (perspective == "teacher") %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
   summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
 
 # and here comes the long plot
-phb1.plot<-ggplot(data = phb1.plot.sd,
-                   aes(x = perspective, y = mean,
-                       group = target, colour = target)) +
+phb.plot<-ggplot(data = phb.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
   geom_line()+
   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
   theme_light() +
   ylim(1,4)+
-  labs(data = phb1.data, y = "value", x = NULL,
+  facet_grid()+
+  labs(data = phb.data, y = "value", x = NULL,
        title="presence: posture and gaze" ,
        subtitle=NULL)+
   theme(legend.position="bottom",
@@ -471,311 +212,48 @@ phb1.plot<-ggplot(data = phb1.plot.sd,
         plot.title = element_text(hjust = 0.5))+
   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
   coord_flip()
-phb1.plot
+phb.plot
 
 ```
 
+### Overview all scales 
 
-#### presence: voice
-XXX aus unerklärlichen Gründen wird mir "No data available in table" angezeigt, wenn ich versuche, Präsenz/Stimme für Session1 zu filtern. Hab den Fehler leider noch nicht gefunden... XXX
-```{r mean presence: voice by session, echo = FALSE}
+```{r mean classroom management, echo = FALSE}
 
-### presence: voice session 1 
+### classroom management 
 
 # filter by parameter variable, i.e. create a subset for each session
-ps1.data <- raw.data %>% filter(scale == "Präsenz/Stimme",
-                                session == "1")
+km.data <- raw.data %>% filter(scale == "Klassenmanagement")
+
+view (km.data)
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
-ps1.data <- ps1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+km.data <- km.data %>%  mutate(value = as.numeric(as.character(factor(value))))
 
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
-
-```
-
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***presence: voice*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
-
-XXX Die Tabellen kann ich mir vielleicht für jede Skala sparen? XXX
-
-
-
-``` {r presence: voice data table, echo=FALSE}
-# 
-# ps1.data %>% # select data
-#   group_by(target,perspective) %>%
-#   summarise(N = n_distinct(personID),
-#             "mean" = round(mean(value), 2),
-#             "min" = min(value),
-#             "max" = max(value),
-#             "sd" = sd(value),
-#             "median" = median(value)
-#             ) %>% 
-#   knitr::kable(digits = 2)
-
-```
-
-```{r presence: voice line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
-
-# # to create error bars, we need to summarize the data in a separate data frame
-# ps1.plot.sd <- ps1.data %>%
-#   group_by(perspective, target, .drop=TRUE) %>%
-#   summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-# 
-# # and here comes the long plot
-# ps1.plot<-ggplot(data = ps1.plot.sd,
-#                    aes(x = perspective, y = mean,
-#                        group = target, colour = target)) +
-#   geom_line()+
-#   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-#   theme_light() +
-#   ylim(1,4)+
-#   labs(data = ps1.data, y = "value", x = NULL,
-#        title="presence: voice" ,
-#        subtitle=NULL)+
-#   theme(legend.position="bottom",
-#         panel.spacing.x = ,
-#         plot.title = element_text(hjust = 0.5))+
-#   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-#   coord_flip()
-# ps1.plot
-
+# create  mean, min, max, sd of classroom management
+km.data.plot %>% km.data %>% 
+                  
+          meankm <- mean(km.data$value)
+          minkm <- min(km.data$value)
+          maxkm <- max(km.data$value)
+          sdkm <- sd(km.data$value)
+          Nkm <- km.data %>% summarise(N = n_distinct(personID))
+          mdkm <- median(km.data$value)
+         
+          
 ```
 
 
+### to do
 
-
-#### presence: verbal and non-verbal intervention
-
-```{r mean presence: verbal and non-verbal intervention by session, echo = FALSE}
-
-### presence: verbal and non-verbal intervention session 1 
-
-# filter by parameter variable, i.e. create a subset for each session
-pi1.data <- raw.data %>% filter(scale == "Präsenz/verbale_nonberbale Intervention",
-                               session == "1")
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-pi1.data <- pi1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
-
-```
-
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***presence: verbal and non-verbal intervention*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
-
-XXX Die Tabellen kann ich mir vielleicht für jede Skala sparen? XXX
-
-``` {r presence: verbal and non-verbal intervention data table, echo=FALSE}
-
-pi1.data %>% # select data
-  group_by(target,perspective) %>%
-  summarise(N = n_distinct(personID),
-            "mean" = round(mean(value), 2),
-            "min" = min(value),
-            "max" = max(value),
-            "sd" = sd(value),
-            "median" = median(value)
-            ) %>% 
-  knitr::kable(digits = 2)
-
-```
-
-
-```{r presence: verbal and non-verbal intervention line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
-
-# to create error bars, we need to summarize the data in a separate data frame
-pi1.plot.sd <- pi1.data %>%
-  group_by(perspective, target, .drop=TRUE) %>%
-  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# and here comes the long plot
-pi1.plot<-ggplot(data = pi1.plot.sd,
-                   aes(x = perspective, y = mean,
-                       group = target, colour = target)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  labs(data = pi1.data, y = "value", x = NULL,
-       title="presence: verbal and non-verbal intervention" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-pi1.plot
-
-```
-
-#### turn taking
-
-```{r mean turn taking by session, echo = FALSE}
-
-### turn taking session 1 
-
-# filter by parameter variable, i.e. create a subset for each session
-redeanteil1.data <- raw.data %>% filter(scale == "Redeanteil",
-                               session == "1")
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-redeanteil1.data <- redeanteil1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
-
-```
-
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***turn taking*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
-
-XXX Die Tabellen kann ich mir vielleicht für jede Skala sparen? XXX
-
-``` {r turn taking data table, echo=FALSE}
-
-redeanteil1.data %>% # select data
-  group_by(target,perspective) %>%
-  summarise(N = n_distinct(personID),
-            "mean" = round(mean(value), 2),
-            "min" = min(value),
-            "max" = max(value),
-            "sd" = sd(value),
-            "median" = median(value)
-            ) %>% 
-  knitr::kable(digits = 2)
-
-```
-
-
-```{r turn taking line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
-
-# to create error bars, we need to summarize the data in a separate data frame
-redeanteil1.plot.sd <- redeanteil1.data %>%
-  group_by(perspective, target, .drop=TRUE) %>%
-  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# and here comes the long plot
-redeanteil1.plot<-ggplot(data = redeanteil1.plot.sd,
-                   aes(x = perspective, y = mean,
-                       group = target, colour = target)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1, 100)+
-  labs(data = redeanteil1.data, y = "value", x = NULL,
-       title="turn taking" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-redeanteil1.plot
-
-```
-
-
-#### natural behaviour
-
-```{r mean natural behaviour by session, echo = FALSE}
-
-### natural behaviour session 1 
-
-# filter by parameter variable, i.e. create a subset for each session
-m1.data <- raw.data %>% filter(scale == "Manipulationsitem",
-                               session == "1")
-
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-m1.data <- m1.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-
-# # create  mean, min, max, sd of classroom management
-# meankm1 <- mean(km1.data$value)
-# minkm1 <- min(km1.data$value)
-# maxkm1 <- max(km1.data$value)
-# sdkm1 <- sd(km1.data$value)
-# Nkm1 <- km1.data %>% summarise(N = n_distinct(personID))
-# mdkm1 <- median(km1.data$value)
-
-```
-
-The table below shows the mean, minimum and maximum value, the standard deviation and median for the item ***natural behaviour*** in session 1 for each perspective and target. The target always corresponds with the perspective of the teacher, i.e. teacher = target A. 
-
-XXX Die Tabellen kann ich mir vielleicht für jede Skala sparen? XXX
-
-``` {r natural behaviour data table, echo=FALSE}
-
-m1.data %>% # select data
-  group_by(target,perspective) %>%
-  summarise(N = n_distinct(personID),
-            "mean" = round(mean(value), 2),
-            "min" = min(value),
-            "max" = max(value),
-            "sd" = sd(value),
-            "median" = median(value)
-            ) %>% 
-  knitr::kable(digits = 2)
-
-```
-
-
-```{r natural behaviour line plots,  fig.height = 4, message = FALSE, warning = FALSE , echo=FALSE}
-
-# to create error bars, we need to summarize the data in a separate data frame
-m1.plot.sd <- m1.data %>%
-  group_by(perspective, target, .drop=TRUE) %>%
-  summarise(mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# and here comes the long plot
-m1.plot<-ggplot(data = m1.plot.sd,
-                   aes(x = perspective, y = mean,
-                       group = target, colour = target)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  labs(data = m1.data, y = "value", x = NULL,
-       title="natural behaviour" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-m1.plot
-```
-
-
-### TO DO 
-
-- session 2 plotten
-- anderen plot für redeanteil (barplot?)
-- fehler finden für presence: voice
+- vergessen: Berufserfahrung bei Demographie mit aufnehmen
+- selbst und fremdeinschätzung durch facet_grid bei plot hinzufügen
 
 
 # References
 
+Helmke, A., Helmke, T., Lenske, G., Pham, G., Praetorius, A. K., Schrader, F. W., & AdeThurow, M. (2014). Unterrichtsdiagnostik mit EMU. Aus-und Fortbildung der Lehrkräfte in Hinblick auf Verbesserung der Diagnosefähigkeit, Umgang mit Heterogenität und individuelle Förderung, 149-163.
+
 R Core Team (2019). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
-
-
