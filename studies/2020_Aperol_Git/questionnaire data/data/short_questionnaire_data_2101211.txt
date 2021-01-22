@@ -26,7 +26,7 @@ Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	5	Präsenz/Haltung_Blick	phb_blick	observer	Die Lehrperson hatte die ganze Klasse im Blick. 	3	A	27	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	observer	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	2	A	27	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	5	Präsenz/Haltung_Blick	phb_raum	observer	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	A	27	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.	4	A	27	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützt den Ausdruck der Lehrperson. 	4	A	27	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	observer	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	A	27	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	6	Präsenz/Stimme  	ps_deutlich	observer	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	A	27	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	1	001	002	6	Präsenz/Stimme  	ps_klar	observer	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	A	27	0	0	0	0	0
@@ -61,12 +61,12 @@ Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	4	Aktivierung und Förder
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	4	Aktivierung und Förderung	af_schwierigkeit	teacher	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitesstufen und unterschiedlichen Hilfen zur Wahl.	1	A	44	1	15	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	4	Aktivierung und Förderung	af_individuell	teacher	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	A	44	1	15	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	4	Aktivierung und Förderung	af_beherrschen	teacher	Ich habe darauf geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	2	A	44	1	15	0	0	0
-Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_stand	teacher	Ich stand gerade und aufrecht.	3	A	44	1	15	0	0	0
-Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_augen	teacher	Ich habe den Schüler*innen direkt in die Augen geschaut.	4	A	44	1	15	0	0	0
+Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_stand	teacher	Ich stand gerade und aufrcht. 	3	A	44	1	15	0	0	0
+Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_augen	teacher	Ich habe den Schüler*innen direkt in die Aufgen geschaut.	4	A	44	1	15	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_blick	teacher	Ich hatte die ganze Klasse im Blick. 	3	A	44	1	15	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	teacher	Ich wusste immer genau, was in der Klasse vor sich geht. 	2	A	44	1	15	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_raum	teacher	Während der Stunde ging ich oft durch die Reihen der Klasse.	1	A	44	1	15	0	0	0
-Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützten meinen Ausdruck.	2	A	44	1	15	0	0	0
+Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik untersützten meinen Ausruck.	2	A	44	1	15	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	3	A	44	1	15	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	6	Präsenz/Stimme  	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	3	A	44	1	15	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	2	001	002	6	Präsenz/Stimme  	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	3	A	44	1	15	0	0	0
@@ -106,7 +106,7 @@ Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	A	29	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	A	29	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	4	A	29	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	4	A	29	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	A	29	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	A	29	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	A	29	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	3	001	002	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	A	29	0	0	0	0	0
@@ -146,7 +146,7 @@ Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	A	33	1	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	A	33	1	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	A	33	1	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	4	A	33	1	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	A	33	1	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	A	33	1	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	A	33	1	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	4	001	002	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	A	33	1	0	0	0	0
@@ -186,7 +186,7 @@ Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	A	51	0	0	0	0	0
-Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	4	A	51	0	0	0	0	0
+Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	A	51	0	0	0	0	0
 Aperol_pilot_01_02_expert_A_quest	expert	data	5	001	002	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	A	51	0	0	0	0	0
@@ -261,12 +261,12 @@ Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	4	Aktivierung und Förder
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	4	Aktivierung und Förderung	af_schwierigkeit	teacher	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitesstufen und unterschiedlichen Hilfen zur Wahl.	1	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	4	Aktivierung und Förderung	af_individuell	teacher	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	4	Aktivierung und Förderung	af_beherrschen	teacher	Ich habe darauf geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	2	B	29	0	1,5	0	0	0
-Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_stand	teacher	Ich stand gerade und aufrecht.	3	B	29	0	1,5	0	0	0
-Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_augen	teacher	Ich habe den Schüler*innen direkt in die Augen geschaut.	4	B	29	0	1,5	0	0	0
+Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_stand	teacher	Ich stand gerade und aufrcht. 	3	B	29	0	1,5	0	0	0
+Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_augen	teacher	Ich habe den Schüler*innen direkt in die Aufgen geschaut.	4	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_blick	teacher	Ich hatte die ganze Klasse im Blick. 	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	teacher	Ich wusste immer genau, was in der Klasse vor sich geht. 	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_raum	teacher	Während der Stunde ging ich oft durch die Reihen der Klasse.	1	B	29	0	1,5	0	0	0
-Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützten meinen Ausdruck.	4	B	29	0	1,5	0	0	0
+Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik untersützten meinen Ausruck.	4	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	6	Präsenz/Stimme  	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	3	B	29	0	1,5	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	2	001	003	6	Präsenz/Stimme  	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	3	B	29	0	1,5	0	0	0
@@ -306,7 +306,7 @@ Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	B	44	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	B	44	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	B	44	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	3	001	003	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	B	44	1	0	0	0	0
@@ -346,7 +346,7 @@ Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	B	33	1	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	2	B	33	1	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	B	33	1	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	4	001	003	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	B	33	1	0	0	0	0
@@ -386,7 +386,7 @@ Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	B	51	0	0	0	0	0
-Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	B	51	0	0	0	0	0
+Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	B	51	0	0	0	0	0
 Aperol_pilot_01_03_novice_B_quest	novice	data	5	001	003	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	B	51	0	0	0	0	0
@@ -461,12 +461,12 @@ Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	4	Aktivierung und Förder
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	4	Aktivierung und Förderung	af_schwierigkeit	teacher	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitesstufen und unterschiedlichen Hilfen zur Wahl.	2	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	4	Aktivierung und Förderung	af_individuell	teacher	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	3	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	4	Aktivierung und Förderung	af_beherrschen	teacher	Ich habe darauf geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	3	C	33	1	0,6	0	0	0
-Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_stand	teacher	Ich stand gerade und aufrecht.	1	C	33	1	0,6	0	0	0
-Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_augen	teacher	Ich habe den Schüler*innen direkt in die Augen geschaut.	1	C	33	1	0,6	0	0	0
+Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_stand	teacher	Ich stand gerade und aufrcht. 	1	C	33	1	0,6	0	0	0
+Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_augen	teacher	Ich habe den Schüler*innen direkt in die Aufgen geschaut.	1	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_blick	teacher	Ich hatte die ganze Klasse im Blick. 	1	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	teacher	Ich wusste immer genau, was in der Klasse vor sich geht. 	1	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_raum	teacher	Während der Stunde ging ich oft durch die Reihen der Klasse.	1	C	33	1	0,6	0	0	0
-Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützten meinen Ausdruck.	1	C	33	1	0,6	0	0	0
+Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik untersützten meinen Ausruck.	1	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	3	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	6	Präsenz/Stimme  	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	2	C	33	1	0,6	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	2	001	004	6	Präsenz/Stimme  	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	2	C	33	1	0,6	0	0	0
@@ -506,7 +506,7 @@ Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	1	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	1	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	C	44	1	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	0	C	44	1	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	0	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	C	44	1	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	3	001	004	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	C	44	1	0	0	0	0
@@ -546,7 +546,7 @@ Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	C	29	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	4	C	29	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	C	29	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	4	001	004	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	C	29	0	0	0	0	0
@@ -586,7 +586,7 @@ Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	3	C	51	0	0	0	0	0
-Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	4	C	51	0	0	0	0	0
+Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	C	51	0	0	0	0	0
 Aperol_pilot_01_04_novice_C_quest	novice	data	5	001	004	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	C	51	0	0	0	0	0
@@ -661,12 +661,12 @@ Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	4	Aktivierung und Förder
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	4	Aktivierung und Förderung	af_schwierigkeit	teacher	Den Schüler*innen standen Aufgaben mit unterschiedlichen Schwierigkeitesstufen und unterschiedlichen Hilfen zur Wahl.	1	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	4	Aktivierung und Förderung	af_individuell	teacher	Es gab Aufgaben, bei denen die Schüler*innen selbst entscheiden konnten, auf welche Weise sie sie bearbeiten.	1	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	4	Aktivierung und Förderung	af_beherrschen	teacher	Ich habe darauf geachtet, dass alle den Lernstoff des Unterrichts sicher beherschen.	4	D	51	0	25	0	0	0
-Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_stand	teacher	Ich stand gerade und aufrecht. 	4	D	51	0	25	0	0	0
-Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_augen	teacher	Ich habe den Schüler*innen direkt in die Augen geschaut.	3	D	51	0	25	0	0	0
+Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_stand	teacher	Ich stand gerade und aufrcht. 	4	D	51	0	25	0	0	0
+Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_augen	teacher	Ich habe den Schüler*innen direkt in die Aufgen geschaut.	3	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_blick	teacher	Ich hatte die ganze Klasse im Blick. 	3	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	teacher	Ich wusste immer genau, was in der Klasse vor sich geht. 	3	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_raum	teacher	Während der Stunde ging ich oft durch die Reihen der Klasse.	1	D	51	0	25	0	0	0
-Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützten meinen Ausdruck.	4	D	51	0	25	0	0	0
+Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik untersützten meinen Ausruck.	4	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	4	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	6	Präsenz/Stimme  	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	4	D	51	0	25	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	2	001	001	6	Präsenz/Stimme  	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	4	D	51	0	25	0	0	0
@@ -706,7 +706,7 @@ Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	D	44	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	D	44	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	3	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	D	44	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	3	001	001	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	44	1	0	0	0	0
@@ -746,7 +746,7 @@ Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	1	D	29	0	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	4	D	29	0	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	D	29	0	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	4	001	001	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	29	0	0	0	0	0
@@ -786,7 +786,7 @@ Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	5	Präsenz/Haltung_Blick	
 Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Stunde ging die Lehrperson oft durch die Reihen der Klasse.	2	D	33	1	0	0	0	0
-Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	4	D	33	1	0	0	0	0
+Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, dass die Lehrperson alle oft angesehen hat.	4	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	6	Präsenz/Stimme  	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	D	33	1	0	0	0	0
 Aperol_pilot_01_01_expert_D_quest	expert	data	5	001	001	6	Präsenz/Stimme  	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	33	1	0	0	0	0
@@ -825,7 +825,7 @@ Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	5	Präsenz/Haltung_Blick	phb_blick	observer	Die Lehrperson hatte die ganze Klasse im Blick. 	3	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	observer	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	2	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	5	Präsenz/Haltung_Blick	phb_raum	observer	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	2	A	27	0	0	0	0	0
-Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	2	A	27	0	0	0	0	0
+Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	observer	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	3	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	6	Präsenz/Stimme 	ps_deutlich	observer	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	6	002	001	6	Präsenz/Stimme 	ps_klar	observer	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	A	27	0	0	0	0	0
@@ -867,7 +867,7 @@ Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	5	Präsenz/Haltung_Blick	phb_blick	teacher	Ich hatte die ganze Klasse im Blick. 	4	A	23	1	0,5	Gymnasium	12	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	teacher	Ich wusste immer genau, was in der Klasse vor sich geht. 	3	A	23	1	0,5	Gymnasium	12	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	5	Präsenz/Haltung_Blick	phb_raum	teacher	Während der Sequenz habe ich mich im Raum bewegt. 	3	A	23	1	0,5	Gymnasium	12	0
-Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützten meinen Ausdruck. 	2	A	23	1	0,5	Gymnasium	12	0
+Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützen meinen Ausdruck. 	2	A	23	1	0,5	Gymnasium	12	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	4	A	23	1	0,5	Gymnasium	12	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	6	Präsenz/Stimme 	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	4	A	23	1	0,5	Gymnasium	12	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	7	002	001	6	Präsenz/Stimme 	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	4	A	23	1	0,5	Gymnasium	12	0
@@ -909,7 +909,7 @@ Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	A	20	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	A	20	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	2	A	20	0	0	0	0	0
-Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	2	A	20	0	0	0	0	0
+Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	A	20	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	4	A	20	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	A	20	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	8	002	001	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	A	20	0	0	0	0	0
@@ -951,7 +951,7 @@ Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	A	22	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	2	A	22	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	1	A	22	0	0	0	0	0
-Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	A	22	0	0	0	0	0
+Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	A	22	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	4	A	22	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	A	22	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	9	002	001	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	A	22	0	0	0	0	0
@@ -993,7 +993,7 @@ Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	5	Präsenz/Haltung_Blick
 Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	3	A	27	0	0	0	0	0
-Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	2	A	27	0	0	0	0	0
+Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	4	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	A	27	0	0	0	0	0
 Aperol_pilot_02_01_novice_A_quest	novice	data	10	002	001	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	A	27	0	0	0	0	0
@@ -1035,7 +1035,7 @@ Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	5	Präsenz/Haltung_Blick	phb_blick	observer	Die Lehrperson hatte die ganze Klasse im Blick. 	4	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	observer	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	5	Präsenz/Haltung_Blick	phb_raum	observer	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	3	B	27	0	0	0	0	0
-Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	B	27	0	0	0	0	0
+Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	observer	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	4	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	6	Präsenz/Stimme 	ps_deutlich	observer	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	6	002	002	6	Präsenz/Stimme 	ps_klar	observer	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	B	27	0	0	0	0	0
@@ -1067,7 +1067,7 @@ Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	3	Klarheit und Strukturi
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	3	Klarheit und Strukturiertheit	ks_verständlich	teacher	Ich habe so erklärt, dass die Lernenden alles verstanden haben.	2	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	3	Klarheit und Strukturiertheit	ks_sichtbar	teacher	Ich habe den Unterrichtsinhalt sichtbar gemacht, zum Beispiel durch Schaubild, Mindmap, Poster oder Zeichnung.	4	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	4	Aktivierung und Förderung	af_beiträge	teacher	Die Lernenden haben sich mit eigenen Beiträgen am Unterrichtsgespräch beteiligt.	4	B	20	0	0	Gymnasium	6	0
-Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	4	Aktivierung und Förderung	af_wechselseitig	teacher	Sofern möglich, haben sich die Lernenden wechselseitig etwas erklärt, sich Fragen gestellt oder Rückmeldung gegeben.	-	B	20	0	0	Gymnasium	6	0
+Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	4	Aktivierung und Förderung	af_wechselseitig	teacher	Sofern möglich, haben sich die Lernenden wechselseitig etwas erklärt, sich Fragen gestellt oder Rückmeldung gegeben.	0	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	4	Aktivierung und Förderung	af_nachdenken	teacher	Es gab Fragen oder Aufgaben, bei denen die Lernenden richtig nachdenken mussten.	3	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	4	Aktivierung und Förderung	af_esk	teacher	Die Lernenden wurden durch die Fragen und Antworten während der Sequenz emotional/sozial/kognitiv gefordert.	3	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	4	Aktivierung und Förderung	af_niveaus	teacher	Die Sequenz hat Lernende mit unterschiedlichen Lernvoraussetzungen und - niveaus angesprochen. 	4	B	20	0	0	Gymnasium	6	0
@@ -1077,7 +1077,7 @@ Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	5	Präsenz/Haltung_Blick	phb_blick	teacher	Ich hatte die ganze Klasse im Blick. 	3	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	teacher	Ich wusste immer genau, was in der Klasse vor sich geht. 	3	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	5	Präsenz/Haltung_Blick	phb_raum	teacher	Während der Sequenz habe ich mich im Raum bewegt. 	3	B	20	0	0	Gymnasium	6	0
-Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützten meinen Ausdruck. 	2	B	20	0	0	Gymnasium	6	0
+Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützen meinen Ausdruck. 	2	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	3	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	6	Präsenz/Stimme 	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	2	B	20	0	0	Gymnasium	6	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	7	002	002	6	Präsenz/Stimme 	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	3	B	20	0	0	Gymnasium	6	0
@@ -1119,7 +1119,7 @@ Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	B	23	1	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	B	23	1	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	1	B	23	1	0	0	0	0
-Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten meinen Ausdruck.	2	B	23	1	0	0	0	0
+Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	B	23	1	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	2	B	23	1	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	B	23	1	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	8	002	002	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	B	23	1	0	0	0	0
@@ -1161,7 +1161,7 @@ Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	B	22	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	B	22	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	2	B	22	0	0	0	0	0
-Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	B	22	0	0	0	0	0
+Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	22	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	3	B	22	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	B	22	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	9	002	002	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	B	22	0	0	0	0	0
@@ -1203,7 +1203,7 @@ Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	5	Präsenz/Haltung_Blick
 Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	2	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	3	B	27	0	0	0	0	0
-Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	B	27	0	0	0	0	0
+Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	3	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	B	27	0	0	0	0	0
 Aperol_pilot_02_02_novice_B_quest	novice	data	10	002	002	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	B	27	0	0	0	0	0
@@ -1245,7 +1245,7 @@ Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	5	Präsenz/Haltung_Blick	phb_blick	observer	Die Lehrperson hatte die ganze Klasse im Blick. 	2	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	observer	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	2	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	5	Präsenz/Haltung_Blick	phb_raum	observer	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	1	C	27	0	0	0	0	0
-Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	2	C	27	0	0	0	0	0
+Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	observer	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	3	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	6	Präsenz/Stimme 	ps_deutlich	observer	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	6	002	003	6	Präsenz/Stimme 	ps_klar	observer	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	C	27	0	0	0	0	0
@@ -1287,7 +1287,7 @@ Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	5	Präsenz/Haltung_Blick	phb_blick	teacher	Ich hatte die ganze Klasse im Blick. 	3	C	22	0	0	Gymnasium	7	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	teacher	Ich wusste immer genau, was in der Klasse vor sich geht. 	3	C	22	0	0	Gymnasium	7	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	5	Präsenz/Haltung_Blick	phb_raum	teacher	Während der Sequenz habe ich mich im Raum bewegt. 	2	C	22	0	0	Gymnasium	7	0
-Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützten meinen Ausdruck. 	3	C	22	0	0	Gymnasium	7	0
+Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützen meinen Ausdruck. 	3	C	22	0	0	Gymnasium	7	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	3	C	22	0	0	Gymnasium	7	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	6	Präsenz/Stimme 	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	2	C	22	0	0	Gymnasium	7	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	7	002	003	6	Präsenz/Stimme 	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	2	C	22	0	0	Gymnasium	7	0
@@ -1329,7 +1329,7 @@ Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	C	23	1	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	C	23	1	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	2	C	23	1	0	0	0	0
-Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	C	23	1	0	0	0	0
+Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	C	23	1	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	2	C	23	1	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	2	C	23	1	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	8	002	003	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	2	C	23	1	0	0	0	0
@@ -1371,7 +1371,7 @@ Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	C	20	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	C	20	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	3	C	20	0	0	0	0	0
-Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	C	20	0	0	0	0	0
+Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	C	20	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	4	C	20	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	C	20	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	9	002	003	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	C	20	0	0	0	0	0
@@ -1413,7 +1413,7 @@ Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	5	Präsenz/Haltung_Blick
 Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	4	C	27	0	0	0	0	0
-Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	C	27	0	0	0	0	0
+Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	3	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	3	C	27	0	0	0	0	0
 Aperol_pilot_02_03_novice_C_quest	novice	data	10	002	003	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	3	C	27	0	0	0	0	0
@@ -1455,7 +1455,7 @@ Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	5	Präsenz/Haltung_Blick	phb_blick	observer	Die Lehrperson hatte die ganze Klasse im Blick. 	3	D	27	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	observer	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	2	D	27	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	5	Präsenz/Haltung_Blick	phb_raum	observer	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	3	D	27	0	0	0	0	0
-Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	D	27	0	0	0	0	0
+Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	5	Präsenz/Haltung_Blick	phb_gestik	observer	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	D	27	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	observer	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	3	D	27	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	6	Präsenz/Stimme 	ps_deutlich	observer	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	D	27	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	6	002	004	6	Präsenz/Stimme 	ps_klar	observer	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	27	0	0	0	0	0
@@ -1497,7 +1497,7 @@ Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	5	Präsenz/Haltung_Blick	phb_blick	teacher	Ich hatte die ganze Klasse im Blick. 	2	D	27	0	1,5	Gymnasium	5	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	teacher	Ich wusste immer genau, was in der Klasse vor sich geht. 	2	D	27	0	1,5	Gymnasium	5	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	5	Präsenz/Haltung_Blick	phb_raum	teacher	Während der Sequenz habe ich mich im Raum bewegt. 	2	D	27	0	1,5	Gymnasium	5	0
-Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützten meinen Ausdruck. 	3	D	27	0	1,5	Gymnasium	5	0
+Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	5	Präsenz/Haltung_Blick	phb_gestik	teacher	Die Gestik und Mimik unterstützen meinen Ausdruck. 	3	D	27	0	1,5	Gymnasium	5	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	teacher	Ich hatte den Eindruck, dass ich alle oft angesehen habe. 	1	D	27	0	1,5	Gymnasium	5	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	6	Präsenz/Stimme 	ps_deutlich	teacher	Ich habe klar, deutlich und langsam gesprochen	3	D	27	0	1,5	Gymnasium	5	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	7	002	004	6	Präsenz/Stimme 	ps_klar	teacher	Ich habe mich klar und verständlich ausgedrückt.	2	D	27	0	1,5	Gymnasium	5	0
@@ -1539,7 +1539,7 @@ Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	D	23	1	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	D	23	1	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	2	D	23	1	0	0	0	0
-Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	2	D	23	1	0	0	0	0
+Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	D	23	1	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	3	D	23	1	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	D	23	1	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	8	002	004	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	23	1	0	0	0	0
@@ -1581,7 +1581,7 @@ Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	5	Präsenz/Haltung_Blick	
 Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	4	D	20	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	4	D	20	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	3	D	20	0	0	0	0	0
-Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  	3	D	20	0	0	0	0	0
+Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	3	D	20	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	4	D	20	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	D	20	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	9	002	004	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	20	0	0	0	0	0
@@ -1623,7 +1623,7 @@ Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	5	Präsenz/Haltung_Blick
 Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	5	Präsenz/Haltung_Blick	phb_blick	student	Die Lehrperson hatte die ganze Klasse im Blick. 	3	D	22	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	5	Präsenz/Haltung_Blick	phb_vorsichgeht	student	Die Lehrperson wusste immer genau, was in der Klasse vor sich geht. 	3	D	22	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	5	Präsenz/Haltung_Blick	phb_raum	student	Während der Sequenz hat sich die Lehrperson im Raum bewegt. 	3	D	22	0	0	0	0	0
-Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Die Gestik und Mimik unterstützten den Ausdruck der Lehrperson.  unterstützen den Ausdruck der Lehrperson. 	2	D	22	0	0	0	0	0
+Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	5	Präsenz/Haltung_Blick	phb_gestik	student	Die Gestik und Mimik unterstützen den Ausdruck der Lehrperson. 	2	D	22	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	5	Präsenz/Haltung_Blick	phb_alleangesehen	student	Ich hatte den Eindruck, die Lehrperson hat alle oft angesehen. 	4	D	22	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	6	Präsenz/Stimme 	ps_deutlich	student	Die Lehrperson hat klar, deutlich und langsam gesprochen.	4	D	22	0	0	0	0	0
 Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	6	Präsenz/Stimme 	ps_klar	student	Die Lehrperson hat sich klar und verständlich ausgedrückt.	4	D	22	0	0	0	0	0

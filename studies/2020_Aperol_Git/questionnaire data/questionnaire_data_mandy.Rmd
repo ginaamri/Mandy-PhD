@@ -18,7 +18,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # load tab delimited text file into R; 
 # file should be in a subfolder named "data" for the script to select it
-raw.data<-read.table("./data/short_questionnaire_data_2101211.txt",sep="\t", header=T) 
+# import: never forget to insert "dec="," for replacing values with "," by "."
+raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",", sep="\t", header=T) 
 
 
 # loading packages
@@ -59,16 +60,26 @@ The table shows the state of data collection as of `r Sys.Date()`.
 
 ```{r overview demographics data table, echo=FALSE}
 
-# demographics, grouped by group (N, gender, meanage, max, min age)
+# years of experience
+class(raw.data$experience)
+
+# converting numbers to numeric
+raw.data <- raw.data %>%  mutate(experience = as.numeric(as.character(factor(experience))))
+
+# demographics and years of experience, grouped by group (N, gender, M age, max, min age)
 raw.data %>%
   filter(what == "head") %>%
   group_by(group) %>%
   summarise(N=n(),
             "male" = sum(gender),
-            "mean age" = round(mean(age), 2),
+            "M age" = round(mean(age), 2),
             "min age" = min(age),
             "max age" = max(age),
-            "experience" = round(mean(experience), 2)
+            "SD age" = round(sd(age), 2),
+            "M experience" = round(mean(experience), 2),
+            "min experience" = min(experience),
+            "max experience" = max(experience),
+            "SD experience" = round(sd(experience), 2),
             ) %>% 
   knitr::kable(digits = 2)
 
@@ -218,38 +229,27 @@ phb.plot
 
 ```
 
+
 ### Overview all scales 
 
-```{r mean classroom management, echo = FALSE}
+```{r table all sclaes, echo=FALSE}
 
-### classroom management 
-
-# filter by parameter variable, i.e. create a subset for each session
-km.data <- raw.data %>% filter(scale == "Klassenmanagement")
-
-view (km.data)
+sum(is.na(raw.data$scale == "Aktivierung und Förderung"))
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
-km.data <- km.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+raw.data <- raw.data %>%  mutate(value = as.numeric(as.character(factor(value))))
 
-# create  mean, min, max, sd of classroom management
-km.data.plot %>% km.data %>% 
-                  
-          meankm <- mean(km.data$value)
-          minkm <- min(km.data$value)
-          maxkm <- max(km.data$value)
-          sdkm <- sd(km.data$value)
-          Nkm <- km.data %>% summarise(N = n_distinct(personID))
-          mdkm <- median(km.data$value)
-         
-          
+# create a table of all scales 
+raw.data %>% # select data
+  group_by(group, scale) %>%
+  summarise("M scale" = round(mean(value), 2),
+            "min scale" = min(value),
+            "max sclae" = max(value),
+            "SD scale" = round(sd(value), 2),
+            ) %>% 
+  knitr::kable(digits = 2)
+
 ```
-
-
-### to do
-
-- vergessen: Berufserfahrung bei Demographie mit aufnehmen
-- selbst und fremdeinschätzung durch facet_grid bei plot hinzufügen
 
 
 # References

@@ -66,34 +66,6 @@ During teaching, teachers must be able to select from a variety of visual and ac
 
 Educational research has repeatedly shown that there are differences between experienced and novice teachers in terms of perception and behavioral competencies [@barth2017professionelle; @bogert2016visualperception; @wolff2017see]. For example, experts direct their attention more often and more evenly to all students, whereas novices only direct their attention to some students. The frequency and duration of fixations as eye movement are decisive [@stuermer2017eye]. Mobile eye-tracking technology has also shown that experienced teachers distribute their focus more efficiently to solve tasks [@jarodzka2010eyes]. Furthermore, in contrast to novices, experts are able to focus their attention on the entire class and guide the class while giving feedback to individual students and answering questions [@cortina2015low].
 
-Hey Mandy, hier wollte ich dir mal zeigen wie man Bilder in papaja einbindet. Viel Spass damit. Ein Beispiel für Tabellen und Graphen machen wir auch zeitnah.
-
-(ref:thisisdialectical-caption) Illustration of comic material that made the second author of this paper chuckle a bit. For advice on how to insert images, please see the code chunk.
-
-```{r dialectical, fig.cap = "(ref:thisisdialectical-caption)", fig.align = "center", echo = FALSE}
-
-knitr::include_graphics("./pictures/thisisdialectical.png", dpi = 108)
-
-# # How to insert images in papaja
-# - pictures must be png
-# - I created a pictures folder in the main folder, just dumb pictures there
-# - you just need to hand the name and path of the picture to the knitr::: function (see above)
-# - the dpi argument is for adjusting the size on the page in pixels
-
-# in order to write the caption, you have to use the line just above the code chunk (ref:YOURTEXT-caption) and then just write behing it
-# the code chunk then opens and after "r" it needs to provide a name for the code chunk, must be unique in the document
-# the fig.cap = then calls the text from the line just above
-# fig.align allows to position the pic on page, center ist probablby best
-# echo = false ensures that the code chunk does not occur in the pdf
-# Now, go and try putting your own images in the paper 
-#
-# TIP = check line 46 in this manuscript. THis section ets global properties for how graphs are put in the paper. 
-#         if floatsintext      : yes  --> pics, graphs, tables will be put where the code chunk is
-#         if floatsintext      : no   --> pics, graphs, tables will be put at the end as is required by some journals
-# TIP: check the folder "papaja_example&tutorial" that I put in this folder for paper1
-# Tip: make a bookmark of this and skim through it: http://frederikaust.com/papaja_man/
-
-```
 
 
 ## Research questions
@@ -121,30 +93,27 @@ quest.raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",
 quest.raw.data <- quest.raw.data  %>% filter(
   personID != "NA")
 
-# converting numbers to numeric
-raw.data <- raw.data %>%  mutate(experience = as.numeric(as.character(factor(experience))))
-
 
 # create a basic table (tibble) using tidyverse functions
 demo.quest.table <- quest.raw.data %>%
   filter(what == "head") %>%
   group_by(group) %>%
   summarise(N=n(),
-            "male" = sum(gender),
+            "Male" = sum(gender),
             "M age" = round(mean(age), 2),
-            "min age" = min(age),
-            "max age" = max(age),
+            "Min age" = min(age),
+            "Max age" = max(age),
             "SD age" = round(sd(age), 2),
-            "M experience" = round(mean(experience), 2),
-            "min experience" = min(experience),
-            "max experience" = max(experience),
-            "SD experience" = round(sd(experience), 2),
-            ) %>% 
+            "M exp." = round(mean(experience), 2),
+            "Min exp." = min(experience),
+            "Max exp." = max(experience),
+            "SD exp." = round(sd(experience), 2),
+           )
 
 # format and insert table in manuscript
 apa_table(
   demo.quest.table,
-  caption = "Demographic Information",
+  caption = "Demographic Informationand and Teaching Experience",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
@@ -156,7 +125,35 @@ apa_table(
 
 The selection of the subjects was based on extreme groups, whereby professional experience is the crucial criterion for the selection of experts or novices. Novices were recruited as teachers who have been working in the teaching profession for no more than 3 years, whereas experts were considered to have professional experience of 10 years or more [@messner2000berufliche].
 
-## Procedure
+## Data collection
+
+(ref:data_collection-caption) Illustration of comic material that made the second author of this paper chuckle a bit. For advice on how to insert images, please see the code chunk.
+
+```{r data collection, fig.cap = "(ref:data_collection-caption)", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/data_collection.png", dpi = 108)
+
+# # How to insert images in papaja
+# - pictures must be png
+# - I created a pictures folder in the main folder, just dumb pictures there
+# - you just need to hand the name and path of the picture to the knitr::: function (see above)
+# - the dpi argument is for adjusting the size on the page in pixels
+
+# in order to write the caption, you have to use the line just above the code chunk (ref:YOURTEXT-caption) and then just write behing it
+# the code chunk then opens and after "r" it needs to provide a name for the code chunk, must be unique in the document
+# the fig.cap = then calls the text from the line just above
+# fig.align allows to position the pic on page, center ist probablby best
+# echo = false ensures that the code chunk does not occur in the pdf
+# Now, go and try putting your own images in the paper 
+#
+# TIP = check line 46 in this manuscript. THis section ets global properties for how graphs are put in the paper. 
+#         if floatsintext      : yes  --> pics, graphs, tables will be put where the code chunk is
+#         if floatsintext      : no   --> pics, graphs, tables will be put at the end as is required by some journals
+# TIP: check the folder "papaja_example&tutorial" that I put in this folder for paper1
+# Tip: make a bookmark of this and skim through it: http://frederikaust.com/papaja_man/
+
+```
+
 
 For this study, lesson units of n = 24 experts and n = 24 novices were recorded by the mobile laboratory of the Department of Empirical School and Classroom Research at the University of Leipzig. The two extreme groups were each divided into groups of four, with one group being invited on each of six different dates. All participants were asked to hold a 15-minute lesson. The duration of each appointment was approximately 2h30min: per extreme group 4 x 15min briefing, 15min lesson units, 10min technical preparation and follow-up and 5min buffer/break.
 
@@ -168,10 +165,60 @@ By using mobile eye-trackers, the gaze and behavior of the experts and novices w
 
 The lessons recorded on video were coded in a post-hoc procedure with a coding software by previously trained raters. The statistical data have been analyzed by using the program RStudio [Link: https://rstudio.com/].
 
+
 ## Measures
 
 ### Questionnaire Data
-*Describe how we collect questionnaire data (paper or online). Add some basic information about the structure of the questionnaire.* Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+*Describe how we collect questionnaire data (paper or online). Add some basic information about the structure of the questionnaire.* 
+
+The questionnaire contains the following scales:
+
+(1) classroom management
+(2) positive climate and motivation
+(3) clarity and structuredness
+(4) activation and support
+(5) presence: posture and gaze
+(6) presence: voice
+(7) presence: verbal and non-verbal intervention
+(8) turn taking
+(9) natural behaviour
+
+The table below provides an overview over the mean, min, max and standard deviation of all scales.
+
+```{r table all sclaes, echo=FALSE}
+
+# prepare data (selected from questionnaire data)
+quest.raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",", sep="\t", header=T) 
+
+# knock out NAs
+quest.raw.data <- quest.raw.data  %>% filter(
+  personID != "NA")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+
+# create a basic table (tibble) using tidyverse functions 
+scale.quest.table <- quest.raw.data %>% # select data
+  group_by(group, scale) %>%
+  summarise("M scale" = round(mean(value), 2),
+            "min scale" = min(value),
+            "max sclae" = max(value),
+            "SD scale" = round(sd(value), 2),
+            )
+
+# format and insert table in manuscript
+apa_table(
+  scale.quest.table,
+  caption = "Mean values of all scales",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
 
 
 ### Eye-tracking equipment 
