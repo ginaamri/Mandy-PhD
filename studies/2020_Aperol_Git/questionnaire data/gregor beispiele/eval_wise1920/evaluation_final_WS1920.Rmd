@@ -252,7 +252,7 @@ modul.plot <- ggplot(data = NULL, mapping = aes(NULL)) +
   # mean and SD via geom pointrange for all and individual (Teilnehmende)
   geom_crossbar(data = modul.plot.sd, position = "dodge", width = 0.5,
                 aes(x=item, y = mean, ymin = mean-se, ymax = mean+se, colour = Teilnehmende))+
-  # we can't make the violin transparent, so we change the bakground to white
+  # we can't make the violin transparent, so we change the background to white
   theme_light() +
   theme(legend.position="bottom") +
   # axis limits from 1 through 5
