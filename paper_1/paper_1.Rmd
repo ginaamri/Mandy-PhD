@@ -43,7 +43,7 @@ wordcount         : "X"
 
 bibliography      : ["r-references.bib"]
 
-floatsintext      : no
+floatsintext      : yes
 figurelist        : no
 tablelist         : no
 footnotelist      : no
@@ -76,6 +76,35 @@ Teaching and classroom management are multidimensional settings in which teacher
 During teaching, teachers must be able to select from a variety of visual and acoustic impressions to focus their attention on the essential and to distinguish between relevant and irrelevant events. This ability is called professional vision and is a key component of teacher expertise and successful teaching [@barth2017professionelle]. Eye tracking technology has become a reliable means to study teachers’ visual focus of attention [@pouta2020student; @bogert2016visualperception; @wolff2017see]
 
 Educational research has repeatedly shown that there are differences between experienced and novice teachers in terms of perception and behavioral competencies [@barth2017professionelle; @bogert2016visualperception; @wolff2017see]. For example, experts direct their attention more often and more evenly to all students, whereas novices only direct their attention to some students. The frequency and duration of fixations as eye movement are decisive [@stuermer2017eye]. Mobile eye-tracking technology has also shown that experienced teachers distribute their focus more efficiently to solve tasks [@jarodzka2010eyes]. Furthermore, in contrast to novices, experts are able to focus their attention on the entire class and guide the class while giving feedback to individual students and answering questions [@cortina2015low].
+
+Hey Mandy, hier wollte ich dir mal zeigen wie man Bilder in papaja einbindet. Viel Spass damit. Ein Beispiel für Tabellen und Graphen machen wir auch zeitnah.
+
+(ref:thisisdialectical-caption) Illustration of comic material that made the second author of this paper chuckle a bit. For advice on how to insert images, please see the code chunk.
+
+```{r dialectical, fig.cap = "(ref:thisisdialectical-caption)", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/thisisdialectical.png", dpi = 108)
+
+# # How to insert images in papaja
+# - pictures must be png
+# - I created a pictures folder in the main folder, just dumb pictures there
+# - you just need to hand the name and path of the picture to the knitr::: function (see above)
+# - the dpi argument is for adjusting the size on the page in pixels
+
+# in order to write the caption, you have to use the line just above the code chunk (ref:YOURTEXT-caption) and then just write behing it
+# the code chunk then opens and after "r" it needs to provide a name for the code chunk, must be unique in the document
+# the fig.cap = then calls the text from the line just above
+# fig.align allows to position the pic on page, center ist probablby best
+# echo = false ensures that the code chunk does not occur in the pdf
+# Now, go and try putting your own images in the paper 
+#
+# TIP = check line 46 in this manuscript. THis section ets global properties for how graphs are put in the paper. 
+#         if floatsintext      : yes  --> pics, graphs, tables will be put where the code chunk is
+#         if floatsintext      : no   --> pics, graphs, tables will be put at the end as is required by some journals
+# TIP: check the folder "papaja_example&tutorial" that I put in this folder for paper1
+# Tip: make a bookmark of this and skim through it: http://frederikaust.com/papaja_man/
+
+```
 
 
 ## Research questions
