@@ -39,7 +39,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            : papaja::apa6_pdf # hier kann man auch word irgendwie machen
 ---
 
 ```{r setup, include = FALSE}
@@ -112,7 +112,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 24), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the dissertation project in advance. Participation in the study was voluntary and only took place after written consent has been given.
 
 
-```{r demographicspilot1table,,echo=FALSE}
+```{r demographicspilot1table,echo=FALSE}
 
 # prepare data (selected from questionnaire data)
 quest.raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",", sep="\t", header=T) 
@@ -144,7 +144,7 @@ demo.quest.table <- quest.raw.data %>%
 # format and insert table in manuscript
 apa_table(
   demo.quest.table,
-  caption = "Demographic Information",
+  caption = "Demographic Information and Teaching Experience",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
