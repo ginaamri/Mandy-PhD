@@ -8,21 +8,24 @@ author:
     corresponding : yes    # Define only one corresponding author
     address       : "Egelstraße 2a 04103 Leipzig"
     email         : "mandy.klatt@uni-leipzig.de"
-  - name          : "Gregor Kachel"
+  - name          : "Dr. Gregor Kachel"
+    affiliation   : "1, 2"
+  - name          : "Dr. Christin Lotz"
     affiliation   : "1"
-
+  - name          : "Prof. Dr. Anne Deiglmayr"
+    affiliation   : "1"
+  
 affiliation:
   - id            : "1"
     institution   : "University of Leipzig"
-  
+  - id            : "2"
+    institution   : "MPI for Evolutionary Anthropology, Leipzig"
 
 authornote: |
-  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
-
-  Enter author note here.
+  The study was carried out with the permission of Ethics Committee of the University of Leipzig.
 
 abstract: |
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  This document is a supplement to the paper. 
   
 keywords          : "keywords"
 wordcount         : "X"
@@ -194,19 +197,14 @@ quest.raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",
 quest.raw.data <- quest.raw.data  %>% filter(
   personID != "NA")
 
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-
 # create a basic table (tibble) using tidyverse functions 
 scale.quest.table <- quest.raw.data %>% # select data
   group_by(group, scale) %>%
   summarise("M scale" = round(mean(value), 2),
             "min scale" = min(value),
             "max sclae" = max(value),
-            "SD scale" = round(sd(value), 2),
-            )
-
+            "SD scale" = round(sd(value), 2))
+            
 # format and insert table in manuscript
 apa_table(
   scale.quest.table,

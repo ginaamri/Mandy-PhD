@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # load tab delimited text file into R; 
 # file should be in a subfolder named "data" for the script to select it
 # import: never forget to insert "dec="," for replacing values with "," by "."
-raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",", sep="\t", header=T) 
+raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
 
 
 # loading packages
@@ -133,7 +133,6 @@ raw.data <- raw.data  %>% filter(str_detect(shortID,
                                                          "pi_nonverbal",
                                                          "pi_zubewegen",
                                                          "pi_direkt",
-                                                         "redeanteil",
                                                          "m_natürlich",
                                                          "m_fiktiv",
                                                          "m_verhalten"),
@@ -233,8 +232,6 @@ phb.plot
 ### Overview all scales 
 
 ```{r table all sclaes, echo=FALSE}
-
-sum(is.na(raw.data$scale == "Aktivierung und Förderung"))
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
 raw.data <- raw.data %>%  mutate(value = as.numeric(as.character(factor(value))))
