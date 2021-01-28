@@ -122,7 +122,7 @@ quest.raw.data <- quest.raw.data  %>% filter(
   personID != "NA")
 
 # converting numbers to numeric
-raw.data <- raw.data %>%  mutate(experience = as.numeric(as.character(factor(experience))))
+quest.raw.data <- quest.raw.data %>% mutate(experience = as.numeric(as.character(factor(experience))))
 
 
 # create a basic table (tibble) using tidyverse functions
@@ -138,8 +138,7 @@ demo.quest.table <- quest.raw.data %>%
             "M experience" = round(mean(experience), 2),
             "min experience" = min(experience),
             "max experience" = max(experience),
-            "SD experience" = round(sd(experience), 2),
-            ) %>% 
+            "SD experience" = round(sd(experience), 2))
 
 # format and insert table in manuscript
 apa_table(

@@ -118,6 +118,19 @@
 
 \linenumbers
 \usepackage{csquotes}
+\usepackage[titles]{tocloft}
+\cftpagenumbersoff{figure}
+\renewcommand{\cftfigpresnum}{\itshape\figurename\enspace}
+\renewcommand{\cftfigaftersnum}{.\space}
+\setlength{\cftfigindent}{0pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\settowidth{\cftfignumwidth}{Figure 10.\qquad}
+\cftpagenumbersoff{table}
+\renewcommand{\cfttabpresnum}{\itshape\tablename\enspace}
+\renewcommand{\cfttabaftersnum}{.\space}
+\setlength{\cfttabindent}{0pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\settowidth{\cfttabnumwidth}{Table 10.\qquad}
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -204,7 +217,7 @@ For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:demographicspilot1table,}Demographic Informationand and Teaching Experience}
+\caption{\label{tab:demographicspilottable}Demographic Informationand and Teaching Experience}
 
 \small{
 
@@ -278,80 +291,17 @@ The questionnaire contains the following scales:
 \item
   presence: verbal and non-verbal intervention
 \item
-  turn taking
-\item
   natural behaviour
 \end{enumerate}
 
 The table below provides an overview over the mean, min, max and standard deviation of all scales.
-
-\begin{verbatim}
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-
-## Warning in mean.default(value): argument is not numeric or logical: returning NA
-\end{verbatim}
-
-\begin{verbatim}
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm =
-## na.rm): NAs durch Umwandlung erzeugt
-
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm =
-## na.rm): NAs durch Umwandlung erzeugt
-
-## Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm =
-## na.rm): NAs durch Umwandlung erzeugt
-\end{verbatim}
 
 \begin{table}[h]
 
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:table all sclaes}Mean values of all scales}
+\caption{\label{tab:table all scales}Mean values of all scales}
 
 \small{
 
@@ -359,30 +309,22 @@ The table below provides an overview over the mean, min, max and standard deviat
 \toprule
 group & \multicolumn{1}{c}{scale} & \multicolumn{1}{c}{M scale} & \multicolumn{1}{c}{min scale} & \multicolumn{1}{c}{max sclae} & \multicolumn{1}{c}{SD scale}\\
 \midrule
-expert & Aktivierung und Förderung & NA & 1 & 4 & 1.11\\
-expert & Klarheit und Strukturiertheit & NA & 1 & 4 & 0.89\\
-expert & Klassenmanagement & NA & 1 & 4 & 0.80\\
-expert & Lernförderliches Klima und Motivierung & NA & 2 & 4 & 0.62\\
-expert & Manipulationsitem & NA & 2 & 4 & 0.69\\
-expert & Manipulationsitem & NA & 3 & 4 & 0.52\\
-expert & Präsenz/Haltung\_Blick & NA & 1 & 4 & 0.92\\
-expert & Präsenz/Stimme & NA & 1 & 4 & 1.16\\
-expert & Präsenz/Stimme\ \ & NA & 2 & 4 & 0.63\\
-expert & Präsenz/verbale\_nonberbale Intervention & NA & 2 & 4 & 0.78\\
-expert & Redeanteil & NA & 60 & 95 & 10.53\\
-novice & Aktivierung und Förderung & NA & - & 4 & NA\\
-novice & Klarheit und Strukturiertheit & NA & 1 & 4 & 0.87\\
-novice & Klassenmanagement & NA & 0 & 4 & 0.91\\
-novice & Lernförderliches Klima und Motivierung & NA & 0 & 4 & 0.90\\
-novice & Manipulationsitem & NA & 2 & 4 & 0.45\\
-novice & Manipulationsitem & NA & 2 & 4 & 0.75\\
-novice & Nachdenkzeit & NA & - & 5-10 & NA\\
-novice & Präsenz/Haltung\_Blick & NA & 0 & 4 & 0.95\\
-novice & Präsenz/Stimme & NA & 0 & 4 & 1.04\\
-novice & Präsenz/Stimme\ \ & NA & 2 & 4 & 0.69\\
-novice & Präsenz/verbale\_nonberbale Intervention & NA & 1 & 4 & 0.91\\
-novice & Redeanteil & NA & 50 & 95 & 12.97\\
-novice & Störung & NA & - & Stift auf Papier schreiben & NA\\
+expert & Activation and support & 3.33 & 2.00 & 4.00 & 0.80\\
+ & Clarity and structuredness & 3.70 & 1.00 & 4.00 & 0.73\\
+ & Classroom management & 3.23 & 1.00 & 4.00 & 0.90\\
+ & Natural behaviour & 3.57 & 2.00 & 4.00 & 0.63\\
+ & Positive climate and motivation & 3.60 & 2.00 & 4.00 & 0.62\\
+ & Presence: posture/gaze & 3.29 & 1.00 & 4.00 & 0.92\\
+ & Presence: verbal and non-verbal intervention & 3.07 & 2.00 & 4.00 & 0.78\\
+ & Presence: voice & 3.57 & 2.00 & 4.00 & 0.63\\
+novice & Activation and support & 2.23 & 0.00 & 4.00 & 1.39\\
+ & Clarity and structuredness & 3.35 & 1.00 & 4.00 & 0.76\\
+ & Classroom management & 2.82 & 1.00 & 4.00 & 0.90\\
+ & Natural behaviour & 3.13 & 2.00 & 4.00 & 0.71\\
+ & Positive climate and motivation & 3.11 & 0.00 & 4.00 & 0.90\\
+ & Presence: posture/gaze & 2.95 & 0.00 & 4.00 & 0.95\\
+ & Presence: verbal and non-verbal intervention & 2.88 & 1.00 & 4.00 & 0.97\\
+ & Presence: voice & 3.30 & 2.00 & 4.00 & 0.74\\
 \bottomrule
 \end{tabular}
 
@@ -502,6 +444,13 @@ Wolff, C. E., Jarodzka, H., \& Boshuizen, H. P. (2017). See and tell: Difference
 \end{CSLReferences}
 
 \endgroup
+
+
+\clearpage
+\renewcommand{\listfigurename}{Figure captions}
+
+\clearpage
+\renewcommand{\listtablename}{Table captions}
 
 
 \end{document}

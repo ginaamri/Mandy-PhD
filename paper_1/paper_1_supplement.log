@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  27 JAN 2021 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  28 JAN 2021 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -624,14 +624,52 @@ Package csquotes Info: ... configuration file loaded successfully.
 es.cfg
 File: csquotes.cfg 
 ))
+(c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tocloft/tocloft
+.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip85
+\cftbeforetoctitleskip=\skip86
+\cftaftertoctitleskip=\skip87
+\cftbeforepartskip=\skip88
+\cftpartnumwidth=\skip89
+\cftpartindent=\skip90
+\cftbeforesecskip=\skip91
+\cftsecindent=\skip92
+\cftsecnumwidth=\skip93
+\cftbeforesubsecskip=\skip94
+\cftsubsecindent=\skip95
+\cftsubsecnumwidth=\skip96
+\cftbeforesubsubsecskip=\skip97
+\cftsubsubsecindent=\skip98
+\cftsubsubsecnumwidth=\skip99
+\cftbeforeparaskip=\skip100
+\cftparaindent=\skip101
+\cftparanumwidth=\skip102
+\cftbeforesubparaskip=\skip103
+\cftsubparaindent=\skip104
+\cftsubparanumwidth=\skip105
+\cftbeforeloftitleskip=\skip106
+\cftafterloftitleskip=\skip107
+\cftbeforefigskip=\skip108
+\cftfigindent=\skip109
+\cftfignumwidth=\skip110
+\c@lofdepth=\count310
+\c@lotdepth=\count311
+\cftbeforelottitleskip=\skip111
+\cftafterlottitleskip=\skip112
+\cftbeforetabskip=\skip113
+\cfttabindent=\skip114
+\cfttabnumwidth=\skip115
+)
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.s
 ty
-Package: babel 2020/12/16 3.52 The Babel package
+Package: babel 2021/01/26 3.53 The Babel package
 
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.d
 ef
-File: babel.def 2020/12/16 3.52 Babel common definitions
-\babel@savecnt=\count310
+File: babel.def 2021/01/26 3.53 Babel common definitions
+\babel@savecnt=\count312
 \U@D=\dimen196
 \l@babelnohyphens=\language3
 
@@ -639,7 +677,7 @@ File: babel.def 2020/12/16 3.52 Babel common definitions
 l.def)
 \bbl@readstream=\read2
 )
-\bbl@dirlevel=\count311
+\bbl@dirlevel=\count313
 
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-english
 /english.ldf
@@ -659,20 +697,20 @@ Package babel Info: \l@newzealand = using hyphenrules for english
 /english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 ))
-\cslhangindent=\skip85
-\csllabelwidth=\skip86
+\cslhangindent=\skip116
+\csllabelwidth=\skip117
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count312
-\calc@Bcount=\count313
+\calc@Acount=\count314
+\calc@Bcount=\count315
 \calc@Adimen=\dimen197
 \calc@Bdimen=\dimen198
-\calc@Askip=\skip87
-\calc@Bskip=\skip88
+\calc@Askip=\skip118
+\calc@Bskip=\skip119
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count314
-\calc@Cskip=\skip89
+\calc@Ccount=\count316
+\calc@Cskip=\skip120
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -682,29 +720,29 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3bac
 kend-pdftex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count315
+\l__kernel_color_stack_int=\count317
 \l__pdf_internal_box=\box60
 ) (./paper_1_supplement.aux)
 \openout1 = `paper_1_supplement.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 186.
+LaTeX Font Info:    ... okay on input line 186.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -765,7 +803,7 @@ on.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 173.
+Package hyperref Info: Link coloring OFF on input line 186.
 
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/namere
 f.sty
@@ -779,54 +817,54 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 g/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count316
+\c@section@level=\count318
 )
-LaTeX Info: Redefining \ref on input line 173.
-LaTeX Info: Redefining \pageref on input line 173.
-LaTeX Info: Redefining \nameref on input line 173.
+LaTeX Info: Redefining \ref on input line 186.
+LaTeX Info: Redefining \pageref on input line 186.
+LaTeX Info: Redefining \nameref on input line 186.
 (./paper_1_supplement.out) (./paper_1_supplement.out)
 \@outlinefile=\write5
 \openout5 = `paper_1_supplement.out'.
 
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-75.
+88.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-75.
+88.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-75.
+88.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-175.
+188.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-175.
+188.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 175.
+(Font)              <12> on input line 188.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 175.
+(Font)              <8> on input line 188.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 175.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 175
+(Font)              <6> on input line 188.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 188
 .
 
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.f
 d
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 175
+LaTeX Font Info:    Trying to load font information for U+msb on input line 188
 .
 
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.f
@@ -837,9 +875,9 @@ p/pdftex.map}
 
 ] [2] [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 211.
+(Font)              <10.95> on input line 224.
 
-Overfull \hbox (25.75887pt too wide) in paragraph at lines 206--223
+Overfull \hbox (25.75887pt too wide) in paragraph at lines 219--236
  [] 
  []
 
@@ -850,11 +888,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./pictures/data_collection.png, id=85, 483.30562pt x 300.3722pt>
 File: ./pictures/data_collection.png Graphic file (type png)
 <use ./pictures/data_collection.png>
-Package pdftex.def Info: ./pictures/data_collection.png  used on input line 236
+Package pdftex.def Info: ./pictures/data_collection.png  used on input line 249
 .
 (pdftex.def)             Requested size: 469.77197pt x 291.96107pt.
 
-Overfull \hbox (34.9245pt too wide) in paragraph at lines 236--237
+Overfull \hbox (34.9245pt too wide) in paragraph at lines 249--250
  []\T1/lmr/m/n/12 {[] 
  []
 
@@ -865,205 +903,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 2221) has occurred while \output is active []
 
 [6 <./pictures/data_collection.png>] [7]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-88.
-(c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-[8]
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[9]
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 336--336
-[]\T1/lmtt/m/n/12 ## Warning in mean.default(value): argument is not numeric or
- logical: returning NA[] 
- []
-
-
-Overfull \hbox (24.24522pt too wide) in paragraph at lines 347--347
-[]\T1/lmtt/m/n/12 ## Warning in var(if (is.vector(x) || is.factor(x)) x else as
-.double(x), na.rm =[] 
- []
-
-
-Overfull \hbox (24.24522pt too wide) in paragraph at lines 347--347
-[]\T1/lmtt/m/n/12 ## Warning in var(if (is.vector(x) || is.factor(x)) x else as
-.double(x), na.rm =[] 
- []
-
-
-Overfull \hbox (24.24522pt too wide) in paragraph at lines 347--347
-[]\T1/lmtt/m/n/12 ## Warning in var(if (is.vector(x) || is.factor(x)) x else as
-.double(x), na.rm =[] 
- []
-
-
-Overfull \hbox (75.58968pt too wide) in paragraph at lines 353--392
+Overfull \hbox (15.76062pt too wide) in paragraph at lines 303--334
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 12.04726pt on input line 394.
-
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10]
+[8]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 416.
+(hyperref)                than one, level fixed on input line 358.
 
-[11] [12] [13]
+[9] [10] [11]
 Underfull \vbox (badness 1389) has occurred while \output is active []
 
-[14] AED endfloat: Processing end Figures and Tables [15] [16] (./paper_1_suppl
+[12] [13] [14] AED endfloat: Processing end Figures and Tables (./paper_1_suppl
 ement.aux)
 Package rerunfilecheck Info: File `paper_1_supplement.out' has not changed.
 (rerunfilecheck)             Checksum: E61F812605B8CB4F1495512C11D473B5;1566.
  ) 
 Here is how much of TeX's memory you used:
- 15089 strings out of 481252
- 225819 string characters out of 5913865
- 553955 words of memory out of 5000000
- 31656 multiletter control sequences out of 15000+600000
- 457858 words of font info for 73 fonts, out of 8000000 for 9000
+ 15309 strings out of 481252
+ 229162 string characters out of 5913865
+ 557488 words of memory out of 5000000
+ 31879 multiletter control sequences out of 15000+600000
+ 457540 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,11n,88p,2257b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-e
@@ -1073,12 +938,11 @@ lm/lmbx12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
 s/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/te
 xmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/mk99feta/AppData/Roa
-ming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on paper_1_supplement.pdf (16 pages, 720731 bytes).
+nyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb>
+Output written on paper_1_supplement.pdf (14 pages, 694517 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 81 named destinations out of 1000 (max. 500000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 203 compressed objects within 3 object streams
+ 78 named destinations out of 1000 (max. 500000)
  110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

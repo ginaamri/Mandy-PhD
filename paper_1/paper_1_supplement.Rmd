@@ -33,8 +33,9 @@ wordcount         : "X"
 bibliography      : ["r-references.bib"]
 
 floatsintext      : yes
-figurelist        : no
-tablelist         : no
+figsintext        : yes
+figurelist        : yes
+tablelist         : yes
 footnotelist      : no
 linenumbers       : yes
 mask              : no
@@ -42,7 +43,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            : bookdown::word_document2 #papaja::apa6_pdf #
 ---
 
 ```{r setup, include = FALSE}
@@ -55,7 +56,7 @@ r_refs("r-references.bib")
 
 ```
 
-```{r analysis-preferences}
+```{r analysis-preferences, echo = FALSE}
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
@@ -87,15 +88,14 @@ We report how we determined our sample size, all data exclusions (if any), all m
 For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 24), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the dissertation project in advance. Participation in the study was voluntary and only took place after written consent has been given.
 
 
-```{r demographicspilot1table,,echo=FALSE}
+```{r demographicspilottable, echo = FALSE}
 
 # prepare data (selected from questionnaire data)
-quest.raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",", sep="\t", header=T) 
+quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
 
 # knock out NAs
 quest.raw.data <- quest.raw.data  %>% filter(
   personID != "NA")
-
 
 # create a basic table (tibble) using tidyverse functions
 demo.quest.table <- quest.raw.data %>%
@@ -142,7 +142,7 @@ knitr::include_graphics("./pictures/data_collection.png", dpi = 108)
 # - you just need to hand the name and path of the picture to the knitr::: function (see above)
 # - the dpi argument is for adjusting the size on the page in pixels
 
-# in order to write the caption, you have to use the line just above the code chunk (ref:YOURTEXT-caption) and then just write behing it
+# in order to write the caption, you have to use the line just above the code chunk (ref:YOURTEXT-caption) and then just write behind it
 # the code chunk then opens and after "r" it needs to provide a name for the code chunk, must be unique in the document
 # the fig.cap = then calls the text from the line just above
 # fig.align allows to position the pic on page, center ist probablby best
@@ -183,19 +183,57 @@ The questionnaire contains the following scales:
 (5) presence: posture and gaze
 (6) presence: voice
 (7) presence: verbal and non-verbal intervention
-(8) turn taking
-(9) natural behaviour
+(8) natural behaviour
 
 The table below provides an overview over the mean, min, max and standard deviation of all scales.
 
-```{r table all sclaes, echo=FALSE}
+```{r table all scales, echo = FALSE}
 
 # prepare data (selected from questionnaire data)
-quest.raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",", sep="\t", header=T) 
+quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
 
 # knock out NAs
 quest.raw.data <- quest.raw.data  %>% filter(
   personID != "NA")
+
+# to compare both sessions filter only Identical items
+quest.raw.data <- quest.raw.data  %>% filter(str_detect(shortID, 
+                                                 paste(c("km_mitbekommen",
+                                                         "km_klar",
+                                                         "km_ungestört",
+                                                         "km_aktiv",
+                                                         "lkm_freundlich",
+                                                         "lkm_interesse",
+                                                         "lkm_kritik",
+                                                         "lkm_ausreden",
+                                                         "lkm_überlegen",
+                                                         "lkm_rückmeldungen",
+                                                         "ks_funktion",
+                                                         "ks_verständlich",
+                                                         "ks_sichtbar",
+                                                         "af_beiträge",
+                                                         "af_wechselseitig",
+                                                         "af_nachdenken",
+                                                         "phb_stand",
+                                                         "phb_augen",
+                                                         "phb_blick",
+                                                         "phb_vorsichgeht",
+                                                         "phb_raum",
+                                                         "phb_gestik",
+                                                         "phb_alleangesehen",
+                                                         "ps_deutlich",
+                                                         "ps_klar",
+                                                         "ps_impulse",
+                                                         "pi_nonverbal",
+                                                         "pi_zubewegen",
+                                                         "pi_direkt",
+                                                         "m_natürlich",
+                                                         "m_fiktiv",
+                                                         "m_verhalten"),
+                                                    collapse = '|')))
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
 
 # create a basic table (tibble) using tidyverse functions 
 scale.quest.table <- quest.raw.data %>% # select data
@@ -204,7 +242,11 @@ scale.quest.table <- quest.raw.data %>% # select data
             "min scale" = min(value),
             "max sclae" = max(value),
             "SD scale" = round(sd(value), 2))
-            
+
+# remove duplicate labels from the table column "group" to create the APA-style omission of categorical variables
+# this is easier than the stub_indent option in apa_table
+scale.quest.table$group[duplicated(scale.quest.table$group)] <- ""
+
 # format and insert table in manuscript
 apa_table(
   scale.quest.table,
@@ -213,11 +255,119 @@ apa_table(
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
   font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
-  )
+)
 
 ```
 
 
+In addition, we plotted all scales for experts and novices. Graph provides boxplots and individual data for both groups.
+
+```{r boxplot scales, echo = FALSE}
+# prepare data (selected from questionnaire data)
+quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
+
+# knock out NAs
+quest.raw.data <- quest.raw.data  %>% filter(
+  personID != "NA")
+
+# to compare both sessions filter only Identical items
+quest.raw.data <- quest.raw.data  %>% filter(str_detect(shortID, 
+                                                 paste(c("km_mitbekommen",
+                                                         "km_klar",
+                                                         "km_ungestört",
+                                                         "km_aktiv",
+                                                         "lkm_freundlich",
+                                                         "lkm_interesse",
+                                                         "lkm_kritik",
+                                                         "lkm_ausreden",
+                                                         "lkm_überlegen",
+                                                         "lkm_rückmeldungen",
+                                                         "ks_funktion",
+                                                         "ks_verständlich",
+                                                         "ks_sichtbar",
+                                                         "af_beiträge",
+                                                         "af_wechselseitig",
+                                                         "af_nachdenken",
+                                                         "phb_stand",
+                                                         "phb_augen",
+                                                         "phb_blick",
+                                                         "phb_vorsichgeht",
+                                                         "phb_raum",
+                                                         "phb_gestik",
+                                                         "phb_alleangesehen",
+                                                         "ps_deutlich",
+                                                         "ps_klar",
+                                                         "ps_impulse",
+                                                         "pi_nonverbal",
+                                                         "pi_zubewegen",
+                                                         "pi_direkt",
+                                                         "m_natürlich",
+                                                         "m_fiktiv",
+                                                         "m_verhalten"),
+                                                    collapse = '|')))
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
+
+
+quest.plot <- quest.raw.data %>%
+  ggplot( aes(x=scale, y=value, fill=scale)) +
+    geom_boxplot() +
+    scale_x_discrete(guide = guide_axis(angle = 70)) +
+    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    theme_light() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)
+    ) +
+    facet_grid(~group)+
+    ggtitle("Boxplot with individual points for all scales") +
+    xlab("")
+# quest.plot
+
+```
+
+(ref:boxplot_all_scales-caption) Boxplot with individual points for all scales
+
+```{r boxplot_all_scales, fig.cap = "(ref:boxplot_all_scales-caption)", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/boxplot_all_scales.png", dpi = 108)
+
+```
+
+In addition, we evaluated the duration of the speaking time during the lesson in the questionnaire by external and self-assessment. The following graph shows the duration of speaking time for experts and novices.
+
+```{r duration speaking time, echo = FALSE}
+# prepare data (selected from questionnaire data)
+quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
+
+# knock out NAs
+quest.raw.data <- quest.raw.data  %>% filter(
+  personID != "NA")
+
+# to compare both sessions filter only Identical items
+quest.raw.data <- quest.raw.data  %>% filter(str_detect(scale, 
+                                                 paste(c("Duration of speaking time"),
+                                                    collapse = '|')))
+view(quest.raw.data)
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
+
+speaking.plot <- quest.raw.data %>%
+  ggplot(aes(x='Duration of speaking time', y=value, fill=group)) +
+    geom_boxplot() +
+    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    theme_light() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)) +
+    facet_grid(group~perspective) +
+    ggtitle("Boxplot with individual points for Duration of speaking time") +
+    xlab("")
+speaking.plot
+
+```
 
 ### Eye-tracking equipment 
 

@@ -153,7 +153,7 @@ For this reason, the various items for the scales ***presence*** are presented b
 ### presence: posture and gaze 
 
 # filter by parameter variable, i.e. create a subset for presence: posture and gaze
-phb.data <- raw.data %>% filter(scale == "Präsenz/Haltung_Blick")
+phb.data <- raw.data %>% filter(scale == "Presence: posture/gaze")
 
 view (phb.data)
 
@@ -205,8 +205,6 @@ phb.plot.sd <- phb.data %>%
   group_by(group, item.wordings, .drop=TRUE) %>%
   summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
 
-names(phb.plot.sd)
-
 # and here comes the long plot
 phb.plot<-ggplot(data = phb.plot.sd,
                   aes(x = item.wordings, y = mean,
@@ -237,7 +235,7 @@ phb.plot
 raw.data <- raw.data %>%  mutate(value = as.numeric(as.character(factor(value))))
 
 # create a table of all scales 
-raw.data %>% # select data
+table.scales <- raw.data %>% # select data
   group_by(group, scale) %>%
   summarise("M scale" = round(mean(value), 2),
             "min scale" = min(value),
