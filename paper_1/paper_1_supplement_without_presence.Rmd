@@ -128,30 +128,11 @@ The selection of the subjects was based on extreme groups, whereby professional 
 
 ## Data collection
 
-(ref:data_collection-caption) Example for the set up during a mini-lesson
+(ref:datacollection-caption) Example for set-up during a mini-lesson
 
-```{r data collection, fig.cap = "(ref:data_collection-caption)", fig.align = "center", echo = FALSE}
+```{r datacollection, fig.cap = "(ref:datacollection-caption)", fig.align = "center", echo = FALSE}
 
-knitr::include_graphics("./pictures/data_collection.png", dpi = 108)
-
-# # How to insert images in papaja
-# - pictures must be png
-# - I created a pictures folder in the main folder, just dumb pictures there
-# - you just need to hand the name and path of the picture to the knitr::: function (see above)
-# - the dpi argument is for adjusting the size on the page in pixels
-
-# in order to write the caption, you have to use the line just above the code chunk (ref:YOURTEXT-caption) and then just write behind it
-# the code chunk then opens and after "r" it needs to provide a name for the code chunk, must be unique in the document
-# the fig.cap = then calls the text from the line just above
-# fig.align allows to position the pic on page, center ist probablby best
-# echo = false ensures that the code chunk does not occur in the pdf
-# Now, go and try putting your own images in the paper 
-#
-# TIP = check line 46 in this manuscript. THis section ets global properties for how graphs are put in the paper. 
-#         if floatsintext      : yes  --> pics, graphs, tables will be put where the code chunk is
-#         if floatsintext      : no   --> pics, graphs, tables will be put at the end as is required by some journals
-# TIP: check the folder "papaja_example&tutorial" that I put in this folder for paper1
-# Tip: make a bookmark of this and skim through it: http://frederikaust.com/papaja_man/
+knitr::include_graphics("./pictures/datacollection.png", dpi = 108)
 
 ```
 
@@ -414,118 +395,7 @@ as.plot<-ggplot(data = as.plot.sd,
 as.plot
 
 ```
-\newpage
-(5) Presence: posture/gaze
-```{r Presence: posture/gaze line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
 
-### Presence: posture/gaze 
-
-# filter by parameter variable, i.e. create a subset for Presence: posture/gaze
-ppg.data <- quest.raw.data %>% filter(scale == "Presence: posture/gaze")
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-ppg.data <- ppg.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-# to create error bars, we need to summarize the data in a separate data frame
-ppg.plot.sd <- ppg.data %>%
-  group_by(group, item.wordings, .drop=TRUE) %>%
-  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# long plot
-ppg.plot<-ggplot(data = ppg.plot.sd,
-                  aes(x = item.wordings, y = mean,
-                      group = group, colour = group)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  facet_grid(~perspective)+
-  labs(data = ppg.data, y = "value", x = NULL,
-       title="Presence: posture/gaze" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5),
-        axis.text.y = element_text(size = 6))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-ppg.plot
-
-```
-\newpage
-(6) Presence: voice
-```{r Presence: voice line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
-
-### Presence: voice 
-# filter by parameter variable, i.e. create a subset for Presence: voice
-pv.data <- quest.raw.data %>% filter(scale == "Presence: voice")
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-pv.data <- pv.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-# to create error bars, we need to summarize the data in a separate data frame
-pv.plot.sd <- pv.data %>%
-  group_by(group, item.wordings, .drop=TRUE) %>%
-  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# long plot
-pv.plot<-ggplot(data = pv.plot.sd,
-                  aes(x = item.wordings, y = mean,
-                      group = group, colour = group)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  facet_grid(~perspective)+
-  labs(data = pv.data, y = "value", x = NULL,
-       title="Presence: voice" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5),
-        axis.text.y = element_text(size = 6))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-pv.plot
-
-```
-\newpage
-(7) Presence: verbal and non-verbal intervention
-```{r Presence: verbal and non-verbal intervention line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
-
-### Presence: verbal and non-verbal intervention 
-# filter by parameter variable, i.e. create a subset for Presence: verbal and non-verbal intervention
-pvni.data <- quest.raw.data %>% filter(scale == "Presence: verbal and non-verbal intervention")
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-pvni.data <- pvni.data %>%  mutate(value = as.numeric(as.character(factor(value))))
-
-# to create error bars, we need to summarize the data in a separate data frame
-pvni.plot.sd <- pvni.data %>%
-  group_by(group, item.wordings, .drop=TRUE) %>%
-  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# long plot
-pvni.plot<-ggplot(data = pvni.plot.sd,
-                  aes(x = item.wordings, y = mean,
-                      group = group, colour = group)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  facet_grid(~perspective)+
-  labs(data = pvni.data, y = "value", x = NULL,
-       title="Presence: verbal and non-verbal intervention" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5),
-        axis.text.y = element_text(size = 6))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-pvni.plot
-
-```
 \newpage
 (8) Natural behaviour
 ```{r Natural behaviour line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}

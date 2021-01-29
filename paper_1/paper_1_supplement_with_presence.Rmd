@@ -128,11 +128,11 @@ The selection of the subjects was based on extreme groups, whereby professional 
 
 ## Data collection
 
-(ref:data_collection-caption) Example for the set up during a mini-lesson
+(ref:datacollection-caption) Example for set up during a mini-lesson
 
-```{r data collection, fig.cap = "(ref:data_collection-caption)", fig.align = "center", echo = FALSE}
+```{r datacollection, fig.cap = "(ref:datacollection-caption)", fig.align = "center", echo = FALSE}
 
-knitr::include_graphics("./pictures/data_collection.png", dpi = 108)
+knitr::include_graphics("./pictures/datacollection.png", dpi = 108)
 
 # # How to insert images in papaja
 # - pictures must be png
@@ -452,6 +452,7 @@ ppg.plot<-ggplot(data = ppg.plot.sd,
 ppg.plot
 
 ```
+
 \newpage
 (6) Presence: voice
 ```{r Presence: voice line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
