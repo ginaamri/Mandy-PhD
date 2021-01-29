@@ -219,7 +219,8 @@ phb.plot<-ggplot(data = phb.plot.sd,
        subtitle=NULL)+
   theme(legend.position="bottom",
         panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5))+
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 3.5))+
   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
   coord_flip()
 phb.plot

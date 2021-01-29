@@ -34,8 +34,8 @@ bibliography      : ["r-references.bib"]
 
 floatsintext      : yes
 figsintext        : yes
-figurelist        : yes
-tablelist         : yes
+figurelist        : no
+tablelist         : no
 footnotelist      : no
 linenumbers       : yes
 mask              : no
@@ -43,7 +43,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : bookdown::word_document2 #papaja::apa6_pdf #
+output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
@@ -74,9 +74,9 @@ Educational research has repeatedly shown that there are differences between exp
 
 ## Research questions
 
-The first study is a laboratory study that uses a quasi-experimental cross-sectional study design to investigate whether the experience of teachers has an influence on the perception of and response to disruptions. The disturbances are experimentally varied using a previously written script. Thus, the aim is to find out whether differences in the allocation of attention between expertise groups can be detected in this controlled context.
+The aim of the pilot study was to investigate whether there are differences in how expert and novice teachers manage scripted classroom disruptions. The disruptions were experimentally varied using a previously written script. Thus, our aim was to find out whether differences in the allocation of attention between expertise groups can be detected in this controlled context.
 
-In order to answer this question, the hypothesis was formulated that teachers with more professional experience not only notice more disturbances but also notice them faster. In the hypothesis, therefore, it is necessary to check what has already been shown in the research literature: In complex teaching situations, experts have a more structured and elaborate professional knowledge than novices in order to perceive and interpret relevant events and to act appropriately [@berliner2001learning; @lachner2016makes].
+In order to answer this question, the hypothesis was formulated that teachers with more professional experience not only notice more disruptions but also notice them faster. In the hypothesis, therefore, it is necessary to check what has already been shown in the research literature: In complex teaching situations, experts have a more structured and elaborate professional knowledge than novices in order to perceive and interpret relevant events and to act appropriately [@berliner2001learning; @lachner2016makes].
 
 
 # Methods
@@ -85,8 +85,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ## Participants
 
-For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 24), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the dissertation project in advance. Participation in the study was voluntary and only took place after written consent has been given.
-
+For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 24), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the study in advance. Participation in the study was voluntary and only took place after written consent has been given.
 
 ```{r demographicspilottable, echo = FALSE}
 
@@ -130,7 +129,7 @@ The selection of the subjects was based on extreme groups, whereby professional 
 
 ## Data collection
 
-(ref:data_collection-caption) Illustration of comic material that made the second author of this paper chuckle a bit. For advice on how to insert images, please see the code chunk.
+(ref:data_collection-caption) Example for the set up during a mini-lesson
 
 ```{r data collection, fig.cap = "(ref:data_collection-caption)", fig.align = "center", echo = FALSE}
 
@@ -158,13 +157,13 @@ knitr::include_graphics("./pictures/data_collection.png", dpi = 108)
 ```
 
 
-For this study, lesson units of n = 24 experts and n = 24 novices were recorded by the mobile laboratory of the Department of Empirical School and Classroom Research at the University of Leipzig. The two extreme groups were each divided into groups of four, with one group being invited on each of six different dates. All participants were asked to hold a 15-minute lesson. The duration of each appointment was approximately 2h30min: per extreme group 4 x 15min briefing, 15min lesson units, 10min technical preparation and follow-up and 5min buffer/break.
+For this study, scripted mini-lessons with n = 2 experts and n = 6 novices were recorded in the mobile Lab of the Empirical School and Classroom Research at the University of Leipzig. The subjects were divided into groups of four, so the study was conducted on two different sessions. All participants were asked to hold a 10-minute lesson. The duration of each appointment was approximately 2h: per group 10min briefing, 4 x 10min mini-lessons, 10min technical preparation and follow-up and 4x 10min transition points between the lessons and answering the questionnaire.
 
-One person from the group of 4 acted as a teacher, the other three subjects acted as the class. The subjects, who represented the class, were given behavioral instructions in a pre-written script to simulate typical events and disturbances in the classroom (e.g. putting their heads on the table, chatting, looking at their mobile phones, etc.).
+One person from the group of 4 acted as a teacher, the other three subjects acted as the class. The subjects, who represented the class, were given behavioral instructions in a pre-written script to simulate typical events and disruptions in the classroom (e.g. putting their heads on the table, chatting, looking at their mobile phones, etc.).
 
-The lesson disturbances were displayed as instructions during the lesson for all "students" but not the teacher. In order to avoid learning effects, the disruptions in each lesson were distributed pseudo-randomly over the short teaching phase. In addition, the order of the data collection was taken into account in the analyses and variance caused by order was controlled.
+The lesson disruptions were displayed as instructions during the lesson for all "students" but not the teacher. In order to avoid learning effects, the disruptions in each lesson were distributed pseudo-randomly over the short teaching phase. In addition, the order of the data collection was taken into account in the analyses and variance caused by order was controlled.
 
-By using mobile eye-trackers, the gaze and behavior of the experts and novices was recorded during the lesson. In addition, what the participating teachers said was recorded with a portable microphone. Other sounds and voices were recorded with an audio recorder installed in the middle of the laboratory. Movements, facial expressions and gestures of the subjects were recorded by four cameras from different angles. One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the laboratory to film the teacher and class from the front and back. In addition, it the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
+By using mobile eye-trackers, the gaze and behavior of the experts and novices was recorded during the lesson. In addition, the speech and sounds and voices were recorded with an audio recorder installed in the middle of the Lab. Movements, facial expressions and gestures of the subjects were recorded by four cameras from different angles. One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
 
 The lessons recorded on video were coded in a post-hoc procedure with a coding software by previously trained raters. The statistical data have been analyzed by using the program RStudio [Link: https://rstudio.com/].
 
@@ -174,16 +173,19 @@ The lessons recorded on video were coded in a post-hoc procedure with a coding s
 ### Questionnaire Data
 *Describe how we collect questionnaire data (paper or online). Add some basic information about the structure of the questionnaire.* 
 
-The questionnaire contains the following scales:
+The evaluation after each mini-lesson was conducted using paper questionnaires. Time needed to complete the questionnaire was about 5 minutes. 
+The scales on the quality of teaching are a validated questionnaire (@helmke2014unterrichtsdiagnostik). Whereas the scales on the teacher's presence behaviour were derived from the research literature (@brophy1986classroom; @kiel2013trainingsbuch; @kounin2006techniken; @marzano2007art; @nolting2012storungen) and were used in the pilot for the first time. 
 
-(1) classroom management
-(2) positive climate and motivation
-(3) clarity and structuredness
-(4) activation and support
-(5) presence: posture and gaze
-(6) presence: voice
-(7) presence: verbal and non-verbal intervention
-(8) natural behaviour
+The following scales were assessed:
+
+(1) Classroom management
+(2) Positive climate and motivation
+(3) Clarity and structuredness
+(4) Activation and support
+(5) Presence: posture and gaze
+(6) Presence: voice
+(7) Presence: verbal and non-verbal intervention
+(8) Natural behaviour
 
 The table below provides an overview over the mean, min, max and standard deviation of all scales.
 
@@ -259,56 +261,310 @@ apa_table(
 
 ```
 
+The individual items of a scale were further represented in graphs.
 
-In addition, we plotted all scales for experts and novices. Graph provides boxplots and individual data for both groups.
+(1) Classroom management
+```{r classroom management line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
 
-```{r boxplot scales, echo = FALSE}
-# prepare data (selected from questionnaire data)
-quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
+### classroom management 
 
-# knock out NAs
-quest.raw.data <- quest.raw.data  %>% filter(
-  personID != "NA")
-
-# to compare both sessions filter only Identical items
-quest.raw.data <- quest.raw.data  %>% filter(str_detect(shortID, 
-                                                 paste(c("km_mitbekommen",
-                                                         "km_klar",
-                                                         "km_ungestört",
-                                                         "km_aktiv",
-                                                         "lkm_freundlich",
-                                                         "lkm_interesse",
-                                                         "lkm_kritik",
-                                                         "lkm_ausreden",
-                                                         "lkm_überlegen",
-                                                         "lkm_rückmeldungen",
-                                                         "ks_funktion",
-                                                         "ks_verständlich",
-                                                         "ks_sichtbar",
-                                                         "af_beiträge",
-                                                         "af_wechselseitig",
-                                                         "af_nachdenken",
-                                                         "phb_stand",
-                                                         "phb_augen",
-                                                         "phb_blick",
-                                                         "phb_vorsichgeht",
-                                                         "phb_raum",
-                                                         "phb_gestik",
-                                                         "phb_alleangesehen",
-                                                         "ps_deutlich",
-                                                         "ps_klar",
-                                                         "ps_impulse",
-                                                         "pi_nonverbal",
-                                                         "pi_zubewegen",
-                                                         "pi_direkt",
-                                                         "m_natürlich",
-                                                         "m_fiktiv",
-                                                         "m_verhalten"),
-                                                    collapse = '|')))
+# filter by parameter variable, i.e. create a subset for classroom management
+cm.data <- quest.raw.data %>% filter(scale == "Classroom management")
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
-quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
+cm.data <- cm.data %>%  mutate(value = as.numeric(as.character(factor(value))))
 
+# to create error bars, we need to summarize the data in a separate data frame
+cm.plot.sd <- cm.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+cm.plot<-ggplot(data = cm.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = cm.data, y = "value", x = NULL,
+       title="Classroom management" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+cm.plot
+
+```
+
+(2) Positive climate and motivation
+```{r Positive climate and motivation line plots,  fig.width=6, fig.height = 7, message = FALSE, warning = FALSE , echo=FALSE}
+
+### Positive climate and motivation 
+
+# filter by parameter variable, i.e. create a subset for Positive climate and motivation
+pcm.data <- quest.raw.data %>% filter(scale == "Positive climate and motivation")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+pcm.data <- pcm.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+pcm.plot.sd <- pcm.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+pcm.plot<-ggplot(data = pcm.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = pcm.data, y = "value", x = NULL,
+       title="Positive climate and motivation" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+pcm.plot
+
+```
+
+(3) Clarity and structuredness
+```{r Clarity and structuredness line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+
+### Clarity and structuredness 
+
+# filter by parameter variable, i.e. create a subset for Clarity and structuredness
+cs.data <- quest.raw.data %>% filter(scale == "Clarity and structuredness")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+cs.data <- cs.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+cs.plot.sd <- cs.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+cs.plot<-ggplot(data = cs.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = cs.data, y = "value", x = NULL,
+       title="Clarity and structuredness" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+cs.plot
+
+```
+
+(4) Activation and support
+```{r Activation and support line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+
+### Activation and support 
+
+# filter by parameter variable, i.e. create a subset for Activation and support
+as.data <- quest.raw.data %>% filter(scale == "Activation and support")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+as.data <- as.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+as.plot.sd <- as.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+as.plot<-ggplot(data = as.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = as.data, y = "value", x = NULL,
+       title="Activation and support" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+as.plot
+
+```
+
+(5) Presence: posture and gaze
+```{r Presence: posture and gaze line plots, fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+
+### presence: posture and gaze 
+# filter by parameter variable, i.e. create a subset for Presence: posture and gaze
+ppg.data <- quest.raw.data %>% filter(scale == "Presence: posture/gaze")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+ppg.data <- ppg.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+ppg.plot.sd <- ppg.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+ppg.plot<-ggplot(data = ppg.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = ppg.data, y = "value", x = NULL,
+       title="Presence: posture and gaze" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+ppg.plot
+
+```
+
+(6) Presence: voice
+```{r Presence: voice line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+
+### Presence: voice 
+# filter by parameter variable, i.e. create a subset for Presence: voice
+pv.data <- quest.raw.data %>% filter(scale == "Presence: posture/gaze")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+pv.data <- pv.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+pv.plot.sd <- pv.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+pv.plot<-ggplot(data = pv.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = pv.data, y = "value", x = NULL,
+       title="Presence: voice" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+pv.plot
+
+```
+
+(7) Presence: verbal and non-verbal intervention
+```{r Presence: verbal and non-verbal intervention line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+
+### Presence: verbal and non-verbal intervention 
+# filter by parameter variable, i.e. create a subset for Presence: verbal and non-verbal intervention
+pvni.data <- quest.raw.data %>% filter(scale == "Presence: posture/gaze")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+pvni.data <- pvni.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+pvni.plot.sd <- pvni.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+pvni.plot<-ggplot(data = pvni.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = pvni.data, y = "value", x = NULL,
+       title="Presence: verbal and non-verbal intervention" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+pvni.plot
+
+```
+
+(8) Natural behaviour
+```{r Natural behaviour line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+
+### Natural behaviour 
+# filter by parameter variable, i.e. create a subset for Natural behaviour
+nb.data <- quest.raw.data %>% filter(scale == "Presence: posture/gaze")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+nb.data <- nb.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+nb.plot.sd <- nb.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+nb.plot<-ggplot(data = nb.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = nb.data, y = "value", x = NULL,
+       title="Natural behaviour" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+nb.plot
+
+```
+
+In addition, we plotted all scales. Graph provides boxplots and individual data for experts and novices.
+```{r boxplot scales, fig.width=6, fig.height = 8, echo = FALSE}
 
 quest.plot <- quest.raw.data %>%
   ggplot( aes(x=scale, y=value, fill=scale)) +
@@ -323,21 +579,15 @@ quest.plot <- quest.raw.data %>%
     facet_grid(~group)+
     ggtitle("Boxplot with individual points for all scales") +
     xlab("")
-# quest.plot
+quest.plot
 
 ```
 
-(ref:boxplot_all_scales-caption) Boxplot with individual points for all scales
 
-```{r boxplot_all_scales, fig.cap = "(ref:boxplot_all_scales-caption)", fig.align = "center", echo = FALSE}
 
-knitr::include_graphics("./pictures/boxplot_all_scales.png", dpi = 108)
+Furthermore, the duration of the speaking time during the lesson was estimated in the questionnaire by external and self-assessment. The following graph shows the duration of speaking time for experts and novices evaluated by the observer, the students and the teacher.
 
-```
-
-In addition, we evaluated the duration of the speaking time during the lesson in the questionnaire by external and self-assessment. The following graph shows the duration of speaking time for experts and novices.
-
-```{r duration speaking time, echo = FALSE}
+```{r Duration speaking time, fig.width=5, fig.height = 5, echo = FALSE}
 # prepare data (selected from questionnaire data)
 quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
 
@@ -361,7 +611,8 @@ speaking.plot <- quest.raw.data %>%
     theme_light() +
     theme(
       legend.position="none",
-      plot.title = element_text(size=11)) +
+      plot.title = element_text(size=11),
+      axis.text.x = element_text(size = 8)) +
     facet_grid(group~perspective) +
     ggtitle("Boxplot with individual points for Duration of speaking time") +
     xlab("")
@@ -369,11 +620,13 @@ speaking.plot
 
 ```
 
+
+
 ### Eye-tracking equipment 
 
 A binocular Tobii Pro Glasses 2 eye-tracker consisting of a wearable head unit and a recording unit was used to record the eye movements. The head unit is a measuring device with different sensitive sensors. A high-definition scene camera captures a full HD video and an integrated microphone records the surrounding sounds. Infrared light illuminators support the eye tracking sensors which record the eye orientation. The videos were recorded with a sampling rate of 50 Hz and a video resolution with 1920 x 1080 at 25 frames per second. The scene camera has a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and has a frame dimension of 179 x 159 x 57mm (width x depth x height). The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
 
-The Tobii Pro Glasses 2 software allows for non-screen based recordings of a participants’ attention while moving in real-world settings. The recordings of the glasses contain both HD-video from the subject’s perspective as well as the respective gaze data mapped onto the video. In order to map multiple recordings to AOIs, it is necessary to import the eye-tracking recordings into the Tobii Pro Analyzer software. Also, it is necessary to create a reference image of the scene in which one wishes to plot the gaze data (i.e. snapshot). Once the snapshot is imported, the gaze recordings of multiple recordings can be mapped to the reference image and analyzed in aggregated form. Tobii Pro does not allow to do AOI based analyses within Pro Lab. Also, the dependency on snapshot reference images makes this approach impractical when working in different settings, i.e. different classrooms with various participants. Finally, mapping gaze to people or any moving objects complicated the analyses further.
+The Tobii Pro Glasses 2 software allows for non-screen based recordings of a participants’ attention while moving in real-world settings. The recordings of the glasses contain both HD-video from the subjects' perspective as well as the respective gaze data mapped onto the video. In order to map multiple recordings to AOIs, it is necessary to import the eye-tracking recordings into the Tobii Pro Analyzer software. Also, it is necessary to create a reference image of the scene in which one wishes to plot the gaze data (i.e. snapshot). Once the snapshot is imported, the gaze recordings of multiple recordings can be mapped to the reference image and analyzed in aggregated form. Tobii Pro does not allow to do AOI based analyses within Pro Lab. Also, the dependency on snapshot reference images makes this approach impractical when working in different settings, i.e. different classrooms with various participants. Finally, mapping gaze to people or any moving objects complicated the analyses further.
 
 
 ## Data analysis
