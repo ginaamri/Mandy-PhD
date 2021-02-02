@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  2 FEB 2021 19:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  29 JAN 2021 15:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -539,7 +539,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multir
 ow.sty
-Package: multirow 2021/01/29 v2.7 Span multiple rows of a table
+Package: multirow 2021/01/02 v2.6 Span multiple rows of a table
 \multirow@colwidth=\skip79
 \multirow@cntb=\count295
 \multirow@dima=\skip80
@@ -681,10 +681,11 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3bac
 kend-pdftex.def
-File: l3backend-pdftex.def 2020-01-29 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count315
+File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count315
 \l__pdf_internal_box=\box60
-) (./paper_1_supplement.aux)
+)
+No file paper_1_supplement.aux.
 \openout1 = `paper_1_supplement.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 173.
@@ -784,7 +785,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 173.
 LaTeX Info: Redefining \pageref on input line 173.
 LaTeX Info: Redefining \nameref on input line 173.
-(./paper_1_supplement.out) (./paper_1_supplement.out)
 \@outlinefile=\write5
 \openout5 = `paper_1_supplement.out'.
 
@@ -847,16 +847,18 @@ Overfull \hbox (25.75887pt too wide) in paragraph at lines 206--223
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4]
-<./pictures/datacollection.png, id=85, 483.30562pt x 300.3722pt>
-File: ./pictures/datacollection.png Graphic file (type png)
-<use ./pictures/datacollection.png>
-Package pdftex.def Info: ./pictures/datacollection.png  used on input line 236.
-
+<./pictures/data_collection.png, id=37, 483.30562pt x 300.3722pt>
+File: ./pictures/data_collection.png Graphic file (type png)
+<use ./pictures/data_collection.png>
+Package pdftex.def Info: ./pictures/data_collection.png  used on input line 236
+.
 (pdftex.def)             Requested size: 469.77197pt x 291.96107pt.
-[5]
-Underfull \vbox (badness 2073) has occurred while \output is active []
 
-[6 <./pictures/datacollection.png>]
+Overfull \hbox (34.9245pt too wide) in paragraph at lines 236--237
+ []\T1/lmr/m/n/12 {[] 
+ []
+
+[5 <./pictures/data_collection.png>] [6]
 Overfull \hbox (15.76062pt too wide) in paragraph at lines 293--324
  [] 
  []
@@ -866,129 +868,73 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7]
 <paper_1_supplement_files/figure-latex/classroom management line plots-1.pdf, i
-d=117, 433.62pt x 433.62pt>
+d=71, 433.62pt x 433.62pt>
 File: paper_1_supplement_files/figure-latex/classroom management line plots-1.p
 df Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/classroom management line plots-1.pd
 f>
 Package pdftex.def Info: paper_1_supplement_files/figure-latex/classroom manage
-ment line plots-1.pdf  used on input line 337.
+ment line plots-1.pdf  used on input line 334.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[8 <./paper_1_supplement_files/figure-latex/classroom management line plots-1.p
-df>]
 <paper_1_supplement_files/figure-latex/Positive climate and motivation line plo
-ts-1.pdf, id=128, 433.62pt x 505.89pt>
+ts-1.pdf, id=72, 433.62pt x 505.89pt>
 File: paper_1_supplement_files/figure-latex/Positive climate and motivation lin
 e plots-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/Positive climate and motivation line
  plots-1.pdf>
 Package pdftex.def Info: paper_1_supplement_files/figure-latex/Positive climate
- and motivation line plots-1.pdf  used on input line 341.
+ and motivation line plots-1.pdf  used on input line 337.
 (pdftex.def)             Requested size: 433.62555pt x 505.89645pt.
-[9 <./paper_1_supplement_files/figure-latex/Positive climate and motivation lin
-e plots-1.pdf>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[8 <./paper_1_supplement_files/figure-latex/classroom management line plots-1.p
+df>]
 <paper_1_supplement_files/figure-latex/Clarity and structuredness line plots-1.
-pdf, id=139, 433.62pt x 433.62pt>
+pdf, id=84, 433.62pt x 433.62pt>
 File: paper_1_supplement_files/figure-latex/Clarity and structuredness line plo
 ts-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/Clarity and structuredness line plot
 s-1.pdf>
 Package pdftex.def Info: paper_1_supplement_files/figure-latex/Clarity and stru
-cturedness line plots-1.pdf  used on input line 345.
+cturedness line plots-1.pdf  used on input line 340.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[10 <./paper_1_supplement_files/figure-latex/Clarity and structuredness line pl
-ots-1.pdf>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[9 <./paper_1_supplement_files/figure-latex/Positive climate and motivation lin
+e plots-1.pdf>]
 <paper_1_supplement_files/figure-latex/Activation and support line plots-1.pdf,
- id=151, 433.62pt x 433.62pt>
+ id=95, 433.62pt x 433.62pt>
 File: paper_1_supplement_files/figure-latex/Activation and support line plots-1
 .pdf Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/Activation and support line plots-1.
 pdf>
 Package pdftex.def Info: paper_1_supplement_files/figure-latex/Activation and s
-upport line plots-1.pdf  used on input line 349.
+upport line plots-1.pdf  used on input line 343.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[11 <./paper_1_supplement_files/figure-latex/Activation and support line plots-
-1.pdf>]
-<./pictures/presenceposturegaze.png, id=162, 433.62pt x 433.62pt>
-File: ./pictures/presenceposturegaze.png Graphic file (type png)
-<use ./pictures/presenceposturegaze.png>
-Package pdftex.def Info: ./pictures/presenceposturegaze.png  used on input line
- 357.
-(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[12 <./pictures/presenceposturegaze.png>]
-<./pictures/presencevoice.png, id=169, 433.62pt x 433.62pt>
-File: ./pictures/presencevoice.png Graphic file (type png)
-<use ./pictures/presencevoice.png>
-Package pdftex.def Info: ./pictures/presencevoice.png  used on input line 370.
-(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[13 <./pictures/presencevoice.png>]
-<./pictures/presenceverbalnonverbalintervention.png, id=177, 433.62pt x 433.62p
-t>
-File: ./pictures/presenceverbalnonverbalintervention.png Graphic file (type png
-)
-<use ./pictures/presenceverbalnonverbalintervention.png>
-Package pdftex.def Info: ./pictures/presenceverbalnonverbalintervention.png  us
-ed on input line 382.
-(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[14 <./pictures/presenceverbalnonverbalintervention.png>]
-<paper_1_supplement_files/figure-latex/Natural behaviour line plots-1.pdf, id=1
-84, 433.62pt x 433.62pt>
-File: paper_1_supplement_files/figure-latex/Natural behaviour line plots-1.pdf 
-Graphic file (type pdf)
-<use paper_1_supplement_files/figure-latex/Natural behaviour line plots-1.pdf>
-Package pdftex.def Info: paper_1_supplement_files/figure-latex/Natural behaviou
-r line plots-1.pdf  used on input line 396.
-(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[15 <./paper_1_supplement_files/figure-latex/Natural behaviour line plots-1.pdf
->]
-<paper_1_supplement_files/figure-latex/boxplot scales-1.pdf, id=195, 433.62pt x
- 578.16pt>
-File: paper_1_supplement_files/figure-latex/boxplot scales-1.pdf Graphic file (
-type pdf)
-<use paper_1_supplement_files/figure-latex/boxplot scales-1.pdf>
-Package pdftex.def Info: paper_1_supplement_files/figure-latex/boxplot scales-1
-.pdf  used on input line 401.
-(pdftex.def)             Requested size: 433.63878pt x 578.18504pt.
-[16 <./paper_1_supplement_files/figure-latex/boxplot scales-1.pdf>]
-<paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf, id=209, 36
-1.35pt x 361.35pt>
-File: paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf Graphi
-c file (type pdf)
-<use paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf>
-Package pdftex.def Info: paper_1_supplement_files/figure-latex/Duration speakin
-g time-1.pdf  used on input line 405.
-(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[17 <./paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf>] [18
-]
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 428.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[19] [20] [21] [22] AED endfloat: Processing end Figures and Tables [23] [24] (
-./paper_1_supplement.aux)
-Package rerunfilecheck Info: File `paper_1_supplement.out' has not changed.
-(rerunfilecheck)             Checksum: D26CAA9FA2A8C1CB534B466E44DD8617;1566.
- ) 
+[10 <./paper_1_supplement_files/figure-latex/Clarity and structuredness line pl
+ots-1.pdf>]
+
+! Package pdftex.def Error: File `paper_1_supplement_files/figure-latex/Presenc
+e: posture and gaze line plots-1.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.346 ...sence: posture and gaze line plots-1.pdf}
+                                                   
 Here is how much of TeX's memory you used:
- 15164 strings out of 481252
- 230195 string characters out of 5913865
- 551880 words of memory out of 5000000
- 31702 multiletter control sequences out of 15000+600000
+ 15002 strings out of 481252
+ 226340 string characters out of 5913865
+ 550469 words of memory out of 5000000
+ 31614 multiletter control sequences out of 15000+600000
  457540 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,11n,88p,2257b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-e
-c.enc}<c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/
-lm/lmbx12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
-/public/lm/lmr10.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/font
-s/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-di
-st/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/te
-xmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb>
-Output written on paper_1_supplement.pdf (24 pages, 892010 bytes).
-PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 290 compressed objects within 3 object streams
- 103 named destinations out of 1000 (max. 500000)
- 160 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+!  ==> Fatal error occurred, no output PDF file produced!

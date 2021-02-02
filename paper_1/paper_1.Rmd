@@ -110,7 +110,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 24), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the dissertation project in advance. Participation in the study was voluntary and only took place after written consent has been given.
 
 (ref:pilot1demotable-caption) Demographic data for Pilot 1.
-```{r demographicspilot1table,echo=FALSE}
+```{r demographicspilot1table, echo=FALSE}
 
 # prepare data (selected from questionnaire data)
 quest.raw.data<-read.table("./data/short_questionnaire_data_2101211.txt", dec=",", sep="\t", header=T) 

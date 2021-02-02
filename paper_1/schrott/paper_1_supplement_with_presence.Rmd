@@ -22,10 +22,10 @@ affiliation:
     institution   : "MPI for Evolutionary Anthropology, Leipzig"
 
 authornote: |
-  The study was carried out with the permission of Ethics Committee of the University of Leipzig.
+  The study was carried out with the permission of the Ethics Committee of the University of Leipzig.
 
 abstract: |
-  This document is a supplement to the paper. 
+  This document is a supplement to the paper and shows first graphs findings from the pilot study. 
   
 keywords          : "Professional Vision, Expert-Novice-Paradigm, Eye-Tracking"
 wordcount         : "1949"
@@ -42,7 +42,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            : word_document #papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
@@ -415,116 +415,133 @@ as.plot
 
 ```
 \newpage
-(5) Presence: posture/gaze
-```{r Presence: posture/gaze line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
 
-### Presence: posture/gaze 
+(ref:presenceposturegaze-caption) (5) Presence: posture/gaze 
 
-# filter by parameter variable, i.e. create a subset for Presence: posture/gaze
-ppg.data <- quest.raw.data %>% filter(scale == "Presence: posture/gaze")
+```{r presenceposturegaze, fig.cap = "(ref:presenceposturegaze-caption)", fig.align = "center", echo = FALSE}
 
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-ppg.data <- ppg.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+knitr::include_graphics("./pictures/presenceposturegaze.png", dpi = 108)
 
-# to create error bars, we need to summarize the data in a separate data frame
-ppg.plot.sd <- ppg.data %>%
-  group_by(group, item.wordings, .drop=TRUE) %>%
-  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+# ```{r Presence: posture/gaze line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
 
-# long plot
-ppg.plot<-ggplot(data = ppg.plot.sd,
-                  aes(x = item.wordings, y = mean,
-                      group = group, colour = group)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  facet_grid(~perspective)+
-  labs(data = ppg.data, y = "value", x = NULL,
-       title="Presence: posture/gaze" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5),
-        axis.text.y = element_text(size = 6))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-ppg.plot
+# ### Presence: posture/gaze 
+# 
+# # filter by parameter variable, i.e. create a subset for Presence: posture/gaze
+# ppg.data <- quest.raw.data %>% filter(scale == "Presence: posture/gaze")
+# 
+# # value sometimes contained text before filtering, we have to convert the numbers to numeric
+# ppg.data <- ppg.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# 
+# # to create error bars, we need to summarize the data in a separate data frame
+# ppg.plot.sd <- ppg.data %>%
+#   group_by(group, item.wordings, .drop=TRUE) %>%
+#   summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+# 
+# # long plot
+# ppg.plot<-ggplot(data = ppg.plot.sd,
+#                   aes(x = item.wordings, y = mean,
+#                       group = group, colour = group)) +
+#   geom_line()+
+#   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+#   theme_light() +
+#   ylim(1,4)+
+#   facet_grid(~perspective)+
+#   labs(data = ppg.data, y = "value", x = NULL,
+#        title="Presence: posture/gaze" ,
+#        subtitle=NULL)+
+#   theme(legend.position="bottom",
+#         panel.spacing.x = ,
+#         plot.title = element_text(hjust = 0.5),
+#         axis.text.y = element_text(size = 6))+
+#   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+#   coord_flip()
+# ppg.plot
 
 ```
 
 \newpage
-(6) Presence: voice
-```{r Presence: voice line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
 
-### Presence: voice 
-# filter by parameter variable, i.e. create a subset for Presence: voice
-pv.data <- quest.raw.data %>% filter(scale == "Presence: voice")
+(ref:presencevoice-caption) (6) Presence: voice
 
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-pv.data <- pv.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+```{r presencevoice, fig.cap = "(ref:presencevoice-caption)", fig.align = "center", echo = FALSE}
 
-# to create error bars, we need to summarize the data in a separate data frame
-pv.plot.sd <- pv.data %>%
-  group_by(group, item.wordings, .drop=TRUE) %>%
-  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+knitr::include_graphics("./pictures/presencevoice.png", dpi = 108)
 
-# long plot
-pv.plot<-ggplot(data = pv.plot.sd,
-                  aes(x = item.wordings, y = mean,
-                      group = group, colour = group)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  facet_grid(~perspective)+
-  labs(data = pv.data, y = "value", x = NULL,
-       title="Presence: voice" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5),
-        axis.text.y = element_text(size = 6))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-pv.plot
+# ```{r Presence: voice line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+# 
+# ### Presence: voice 
+# # filter by parameter variable, i.e. create a subset for Presence: voice
+# pv.data <- quest.raw.data %>% filter(scale == "Presence: voice")
+# 
+# # value sometimes contained text before filtering, we have to convert the numbers to numeric
+# pv.data <- pv.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# 
+# # to create error bars, we need to summarize the data in a separate data frame
+# pv.plot.sd <- pv.data %>%
+#   group_by(group, item.wordings, .drop=TRUE) %>%
+#   summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+# 
+# # long plot
+# pv.plot<-ggplot(data = pv.plot.sd,
+#                   aes(x = item.wordings, y = mean,
+#                       group = group, colour = group)) +
+#   geom_line()+
+#   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+#   theme_light() +
+#   ylim(1,4)+
+#   facet_grid(~perspective)+
+#   labs(data = pv.data, y = "value", x = NULL,
+#        title="Presence: voice" ,
+#        subtitle=NULL)+
+#   theme(legend.position="bottom",
+#         panel.spacing.x = ,
+#         plot.title = element_text(hjust = 0.5),
+#         axis.text.y = element_text(size = 6))+
+#   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+#   coord_flip()
+# pv.plot
 
 ```
 \newpage
-(7) Presence: verbal and non-verbal intervention
-```{r Presence: verbal and non-verbal intervention line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
 
-### Presence: verbal and non-verbal intervention 
-# filter by parameter variable, i.e. create a subset for Presence: verbal and non-verbal intervention
-pvni.data <- quest.raw.data %>% filter(scale == "Presence: verbal and non-verbal intervention")
+(ref:presenceverbalnonverbalintervention-caption) (7) Presence: verbal and non-verbal intervention
+```{r presenceverbalnonverbalintervention, fig.cap = "(ref:presenceverbalnonverbalintervention-caption)", fig.align = "center", echo = FALSE}
 
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-pvni.data <- pvni.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+knitr::include_graphics("./pictures/presenceverbalnonverbalintervention.png", dpi = 108)
 
-# to create error bars, we need to summarize the data in a separate data frame
-pvni.plot.sd <- pvni.data %>%
-  group_by(group, item.wordings, .drop=TRUE) %>%
-  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
-
-# long plot
-pvni.plot<-ggplot(data = pvni.plot.sd,
-                  aes(x = item.wordings, y = mean,
-                      group = group, colour = group)) +
-  geom_line()+
-  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
-  theme_light() +
-  ylim(1,4)+
-  facet_grid(~perspective)+
-  labs(data = pvni.data, y = "value", x = NULL,
-       title="Presence: verbal and non-verbal intervention" ,
-       subtitle=NULL)+
-  theme(legend.position="bottom",
-        panel.spacing.x = ,
-        plot.title = element_text(hjust = 0.5),
-        axis.text.y = element_text(size = 6))+
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
-  coord_flip()
-pvni.plot
+# ```{r Presence: verbal and non-verbal intervention line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+# 
+# ### Presence: verbal and non-verbal intervention 
+# # filter by parameter variable, i.e. create a subset for Presence: verbal and non-verbal intervention
+# pvni.data <- quest.raw.data %>% filter(scale == "Presence: verbal and non-verbal intervention")
+# 
+# # value sometimes contained text before filtering, we have to convert the numbers to numeric
+# pvni.data <- pvni.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# 
+# # to create error bars, we need to summarize the data in a separate data frame
+# pvni.plot.sd <- pvni.data %>%
+#   group_by(group, item.wordings, .drop=TRUE) %>%
+#   summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+# 
+# # long plot
+# pvni.plot<-ggplot(data = pvni.plot.sd,
+#                   aes(x = item.wordings, y = mean,
+#                       group = group, colour = group)) +
+#   geom_line()+
+#   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+#   theme_light() +
+#   ylim(1,4)+
+#   facet_grid(~perspective)+
+#   labs(data = pvni.data, y = "value", x = NULL,
+#        title="Presence: verbal and non-verbal intervention" ,
+#        subtitle=NULL)+
+#   theme(legend.position="bottom",
+#         panel.spacing.x = ,
+#         plot.title = element_text(hjust = 0.5),
+#         axis.text.y = element_text(size = 6))+
+#   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+#   coord_flip()
+# pvni.plot
 
 ```
 \newpage

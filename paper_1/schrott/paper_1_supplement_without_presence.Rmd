@@ -86,7 +86,8 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 For the sample recruitment of the subjects (N = 48, experts n = 24, novices n = 24), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the study in advance. Participation in the study was voluntary and only took place after written consent has been given.
 
-```{r demographicspilottable, echo = FALSE}
+(ref:demographicspilottable-caption) Demographic data for Pilot 1.
+```{r demographicspilot1table,echo=FALSE}
 
 # prepare data (selected from questionnaire data)
 quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
@@ -167,9 +168,9 @@ The following scales were assessed:
 (7) Presence: verbal and non-verbal intervention
 (8) Natural behaviour
 
-The table below provides an overview over the mean, min, max and standard deviation of all scales.
 
-```{r table all scales, echo = FALSE}
+\@ref(tab:allscales) The table provides an overview over the mean, range and standard deviation of all scales.
+```{r allscales, echo = FALSE}
 
 # prepare data (selected from questionnaire data)
 quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
