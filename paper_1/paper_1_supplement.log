@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  2 FEB 2021 19:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  3 FEB 2021 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -847,7 +847,7 @@ Overfull \hbox (25.75887pt too wide) in paragraph at lines 206--223
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4]
-<./pictures/datacollection.png, id=85, 483.30562pt x 300.3722pt>
+<./pictures/datacollection.png, id=93, 483.30562pt x 300.3722pt>
 File: ./pictures/datacollection.png Graphic file (type png)
 <use ./pictures/datacollection.png>
 Package pdftex.def Info: ./pictures/datacollection.png  used on input line 236.
@@ -866,7 +866,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7]
 <paper_1_supplement_files/figure-latex/classroom management line plots-1.pdf, i
-d=117, 433.62pt x 433.62pt>
+d=125, 433.62pt x 433.62pt>
 File: paper_1_supplement_files/figure-latex/classroom management line plots-1.p
 df Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/classroom management line plots-1.pd
@@ -877,7 +877,7 @@ ment line plots-1.pdf  used on input line 337.
 [8 <./paper_1_supplement_files/figure-latex/classroom management line plots-1.p
 df>]
 <paper_1_supplement_files/figure-latex/Positive climate and motivation line plo
-ts-1.pdf, id=128, 433.62pt x 505.89pt>
+ts-1.pdf, id=136, 433.62pt x 505.89pt>
 File: paper_1_supplement_files/figure-latex/Positive climate and motivation lin
 e plots-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/Positive climate and motivation line
@@ -888,7 +888,7 @@ Package pdftex.def Info: paper_1_supplement_files/figure-latex/Positive climate
 [9 <./paper_1_supplement_files/figure-latex/Positive climate and motivation lin
 e plots-1.pdf>]
 <paper_1_supplement_files/figure-latex/Clarity and structuredness line plots-1.
-pdf, id=139, 433.62pt x 433.62pt>
+pdf, id=147, 433.62pt x 433.62pt>
 File: paper_1_supplement_files/figure-latex/Clarity and structuredness line plo
 ts-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/Clarity and structuredness line plot
@@ -899,7 +899,7 @@ cturedness line plots-1.pdf  used on input line 345.
 [10 <./paper_1_supplement_files/figure-latex/Clarity and structuredness line pl
 ots-1.pdf>]
 <paper_1_supplement_files/figure-latex/Activation and support line plots-1.pdf,
- id=151, 433.62pt x 433.62pt>
+ id=159, 433.62pt x 433.62pt>
 File: paper_1_supplement_files/figure-latex/Activation and support line plots-1
 .pdf Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/Activation and support line plots-1.
@@ -909,20 +909,20 @@ upport line plots-1.pdf  used on input line 349.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 [11 <./paper_1_supplement_files/figure-latex/Activation and support line plots-
 1.pdf>]
-<./pictures/presenceposturegaze.png, id=162, 433.62pt x 433.62pt>
+<./pictures/presenceposturegaze.png, id=170, 433.62pt x 433.62pt>
 File: ./pictures/presenceposturegaze.png Graphic file (type png)
 <use ./pictures/presenceposturegaze.png>
 Package pdftex.def Info: ./pictures/presenceposturegaze.png  used on input line
  357.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 [12 <./pictures/presenceposturegaze.png>]
-<./pictures/presencevoice.png, id=169, 433.62pt x 433.62pt>
+<./pictures/presencevoice.png, id=177, 433.62pt x 433.62pt>
 File: ./pictures/presencevoice.png Graphic file (type png)
 <use ./pictures/presencevoice.png>
 Package pdftex.def Info: ./pictures/presencevoice.png  used on input line 370.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 [13 <./pictures/presencevoice.png>]
-<./pictures/presenceverbalnonverbalintervention.png, id=177, 433.62pt x 433.62p
+<./pictures/presenceverbalnonverbalintervention.png, id=185, 433.62pt x 433.62p
 t>
 File: ./pictures/presenceverbalnonverbalintervention.png Graphic file (type png
 )
@@ -932,7 +932,7 @@ ed on input line 382.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 [14 <./pictures/presenceverbalnonverbalintervention.png>]
 <paper_1_supplement_files/figure-latex/Natural behaviour line plots-1.pdf, id=1
-84, 433.62pt x 433.62pt>
+92, 433.62pt x 433.62pt>
 File: paper_1_supplement_files/figure-latex/Natural behaviour line plots-1.pdf 
 Graphic file (type pdf)
 <use paper_1_supplement_files/figure-latex/Natural behaviour line plots-1.pdf>
@@ -941,7 +941,7 @@ r line plots-1.pdf  used on input line 396.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 [15 <./paper_1_supplement_files/figure-latex/Natural behaviour line plots-1.pdf
 >]
-<paper_1_supplement_files/figure-latex/boxplot scales-1.pdf, id=195, 433.62pt x
+<paper_1_supplement_files/figure-latex/boxplot scales-1.pdf, id=203, 433.62pt x
  578.16pt>
 File: paper_1_supplement_files/figure-latex/boxplot scales-1.pdf Graphic file (
 type pdf)
@@ -950,7 +950,7 @@ Package pdftex.def Info: paper_1_supplement_files/figure-latex/boxplot scales-1
 .pdf  used on input line 401.
 (pdftex.def)             Requested size: 433.63878pt x 578.18504pt.
 [16 <./paper_1_supplement_files/figure-latex/boxplot scales-1.pdf>]
-<paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf, id=209, 36
+<paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf, id=217, 36
 1.35pt x 361.35pt>
 File: paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf Graphi
 c file (type pdf)
@@ -961,34 +961,38 @@ g time-1.pdf  used on input line 405.
 [17 <./paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf>] [18
 ]
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 428.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] [20] [21] [22] AED endfloat: Processing end Figures and Tables [23] [24] (
-./paper_1_supplement.aux)
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 465.
+
+[19] [20] [21] [22] [23] AED endfloat: Processing end Figures and Tables [24] [
+25] (./paper_1_supplement.aux)
 Package rerunfilecheck Info: File `paper_1_supplement.out' has not changed.
-(rerunfilecheck)             Checksum: D26CAA9FA2A8C1CB534B466E44DD8617;1566.
+(rerunfilecheck)             Checksum: 6486594761B3A3ABE04EC6BD1986A744;1826.
  ) 
 Here is how much of TeX's memory you used:
- 15164 strings out of 481252
- 230195 string characters out of 5913865
- 551880 words of memory out of 5000000
- 31702 multiletter control sequences out of 15000+600000
- 457540 words of font info for 72 fonts, out of 8000000 for 9000
+ 15183 strings out of 481252
+ 230493 string characters out of 5913865
+ 555074 words of memory out of 5000000
+ 31709 multiletter control sequences out of 15000+600000
+ 461811 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,11n,88p,2257b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-e
 c.enc}<c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/
 lm/lmbx12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
-/public/lm/lmr10.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/font
-s/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-di
-st/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/te
-xmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb>
-Output written on paper_1_supplement.pdf (24 pages, 892010 bytes).
+/public/lm/lmbxi10.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fo
+nts/type1/public/lm/lmr10.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-
+dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX
+/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roaming/T
+inyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppData/R
+oaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb>
+Output written on paper_1_supplement.pdf (25 pages, 911300 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 290 compressed objects within 3 object streams
- 103 named destinations out of 1000 (max. 500000)
- 160 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 315 compressed objects within 4 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

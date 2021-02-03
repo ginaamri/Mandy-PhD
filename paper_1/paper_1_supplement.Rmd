@@ -186,7 +186,7 @@ The following scales were assessed:
 (7) Presence: verbal and non-verbal intervention
 (8) Natural behaviour
 
-The table below provides an overview over the mean, min, max and standard deviation of all scales.
+The table at the end of the manuscript provides an overview over the mean, the range and standard deviation of all scales.
 
 ```{r table all scales, echo = FALSE}
 
@@ -261,7 +261,7 @@ apa_table(
 ```
 
 \newpage
-The individual items of a scale were further represented in graphs.
+The individual items of a scale are further represented in graphs.
 
 (1) Classroom management
 ```{r classroom management line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
@@ -646,6 +646,47 @@ speaking.plot
 A binocular Tobii Pro Glasses 2 eye-tracker consisting of a wearable head unit and a recording unit was used to record the eye movements. The head unit is a measuring device with different sensitive sensors. A high-definition scene camera captures a full HD video and an integrated microphone records the surrounding sounds. Infrared light illuminators support the eye tracking sensors which record the eye orientation. The videos were recorded with a sampling rate of 50 Hz and a video resolution with 1920 x 1080 at 25 frames per second. The scene camera has a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and has a frame dimension of 179 x 159 x 57mm (width x depth x height). The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
 
 The Tobii Pro Glasses 2 software allows for non-screen based recordings of a participants’ attention while moving in real-world settings. The recordings of the glasses contain both HD-video from the subjects' perspective as well as the respective gaze data mapped onto the video. In order to map multiple recordings to AOIs, it is necessary to import the eye-tracking recordings into the Tobii Pro Analyzer software. Also, it is necessary to create a reference image of the scene in which one wishes to plot the gaze data (i.e. snapshot). Once the snapshot is imported, the gaze recordings of multiple recordings can be mapped to the reference image and analyzed in aggregated form. Tobii Pro does not allow to do AOI based analyses within Pro Lab. Also, the dependency on snapshot reference images makes this approach impractical when working in different settings, i.e. different classrooms with various participants. Finally, mapping gaze to people or any moving objects complicated the analyses further.
+
+### Eye-Tracking Data 
+
+#### Gaze relational index (GRI)
+
+The GRI is a measure of visual expertise in information processing. This metric is calculated as the ratio of mean fixation duration to fixation count. The GRI is higher for novices than for experts. (@gegenfurtner2020gaze)
+
+```{r GRItable, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.raw.data<-read.table("./data/Aperol_pilot_02_glasses_fixation_metrics.tsv", dec=",", sep="\t", header=T) 
+
+# calculate GRI 
+
+
+
+# create a basic table (tibble) using tidyverse functions
+et.quest.table <- et.raw.data %>%
+  summarise("M Fixation Number" = round(mean(Number_of_whole_fixations), 2),
+            "SE Fixation Number" = round(se(Number_of_whole_fixations), 2),
+            "M Duration Fixation" = round(mean(Total_duration_of_whole_fixations)),
+            "SE Duration Fixation" = round(se(Total_duration_of_whole_fixations))
+            )
+
+# format and insert table in manuscript
+apa_table(
+  et.quest.table,
+  caption = "Number and Duration of fixations",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+### Coding Data 
+
+The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters (@kuckartz2019analyzing). The following coding scheme has been developed for coding:
+
 
 
 ## Data analysis

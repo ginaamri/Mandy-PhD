@@ -1,0 +1,5 @@
+Recording	Participant	TOI	Interval	Media	Duration_of_interval	Start_of_interval	Number_of_Events.Logged_live_Event	Time_to_first_Event.Logged_live_Event	Total_duration_of_whole_fixations	Average_duration_of_whole_fixations	Number_of_whole_fixations	Duration_of_first_whole_fixation
+Recording037	PilotA_PersonA_050820	Entire Recording	1	fullstream	729762	0	0		101541	178	569	80
+Recording038	PilotA_PersonB_050820	Entire Recording	1	fullstream	730565	0	0		520431	457	1140	160
+Recording039	PilotA_PersonC_050820	Entire Recording	1	fullstream	737604	0	0		469018	448	1048	200
+Recording040	PilotA_PersonD_050820	Entire Recording	1	fullstream	747729	0	0		438655	716	613	220
