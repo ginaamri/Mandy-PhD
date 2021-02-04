@@ -51,6 +51,10 @@ output            : papaja::apa6_pdf #bookdown::word_document2
 if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
 if (!require(papaja)) install.packages('papaja'); library(papaja)
 
+# suppress "summarize" info. 
+# if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
+options(dplyr.summarise.inform = FALSE)
+
 r_refs("r-references.bib")
 
 ```
@@ -663,16 +667,15 @@ et.raw.data <- et.raw.data %>%  mutate(Number_of_whole_fixations = as.numeric(Nu
                                        Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations))
 
 # calculate GRI 
-view(et.raw.data)
 
 # create a basic table (tibble) using tidyverse functions
 et.raw.table <- et.raw.data %>%
   group_by(Participant, Variable) %>%
   summarise("Fixation Number" = Number_of_whole_fixations,
-            "M Duration Fixation" = mean(Total_duration_of_whole_fixations),
-            "SE Duration Fixation" = round(se(Total_duration_of_whole_fixations, na.rm = TRUE), 2),
-            "GRI" = round(mean(Total_duration_of_whole_fixations) / Number_of_whole_fixations)
-            )
+            "Average Duration Fixation" = Average_duration_of_whole_fixations,
+            "SE Duration Fixation" = se(Total_duration_of_whole_fixations),
+            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+view(et.raw.table)
 
 # format and insert table in manuscript
 apa_table(
@@ -686,6 +689,24 @@ apa_table(
 
 ```
 
+```{r boxplot GRI, fig.width=6, fig.height = 8, echo = FALSE}
+
+et.plot <- et.raw.data %>%
+  ggplot(aes(x=Number_of_whole_fixations, y=value, fill=scale)) +
+    geom_boxplot() +
+    scale_x_discrete(guide = guide_axis(angle = 70)) +
+    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    theme_light() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)
+    ) +
+    facet_grid(~Variable)+
+    ggtitle("Boxplot with individual points for Number of fixations") +
+    xlab("")
+et.plot
+
+```
 
 ### Coding Data 
 
