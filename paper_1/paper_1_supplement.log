@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  3 FEB 2021 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  4 FEB 2021 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -960,24 +960,97 @@ g time-1.pdf  used on input line 405.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
 [17 <./paper_1_supplement_files/figure-latex/Duration speaking time-1.pdf>] [18
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+23.
+(c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (42.77023pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ##   Participant Variable `Fixation Number` `M Duration Fix~ 
+`SE Duration Fi~   GRI[] 
+ []
+
+
+Overfull \hbox (42.77023pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ##   <chr>       <chr>                <dbl>            <dbl> 
+           <dbl> <dbl>[] 
+ []
+
+
+Overfull \hbox (42.75623pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ## 1 01_01_D     Expert                 803           316571 
+              NA   394[] 
+ []
+
+
+Overfull \hbox (42.76323pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ## 2 01_02_A     Expert                1070           385812 
+              NA   361[] 
+ []
+
+
+Overfull \hbox (42.75623pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ## 3 01_03_B     Novice                 617           374315 
+              NA   607[] 
+ []
+
+
+Overfull \hbox (42.75623pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ## 4 01_04_C     Novice                 769           384537 
+              NA   500[] 
+ []
+
+
+Overfull \hbox (42.75623pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ## 5 02_01_A     Novice                 569           101541 
+              NA   178[] 
+ []
+
+
+Overfull \hbox (42.76323pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ## 6 02_02_B     Novice                1140           520431 
+              NA   457[] 
+ []
+
+
+Overfull \hbox (42.75623pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ## 7 02_03_C     Novice                1048           469018 
+              NA   448[] 
+ []
+
+
+Overfull \hbox (42.74922pt too wide) in paragraph at lines 436--436
+[]\T1/lmtt/m/n/12 ## 8 02_04_D     Novice                 613           438655 
+              NA   716[] 
+ []
+
+
+Overfull \hbox (13.4792pt too wide) in paragraph at lines 442--465
+ [] 
+ []
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[19]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 465.
+(hyperref)                than one, level fixed on input line 487.
 
-[19] [20] [21] [22] [23] AED endfloat: Processing end Figures and Tables [24] [
-25] (./paper_1_supplement.aux)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[20] [21] [22] [23] [24] AED endfloat: Processing end Figures and Tables [25] [
+26] [27] (./paper_1_supplement.aux)
 Package rerunfilecheck Info: File `paper_1_supplement.out' has not changed.
 (rerunfilecheck)             Checksum: 6486594761B3A3ABE04EC6BD1986A744;1826.
  ) 
 Here is how much of TeX's memory you used:
- 15183 strings out of 481252
- 230493 string characters out of 5913865
- 555074 words of memory out of 5000000
- 31709 multiletter control sequences out of 15000+600000
- 461811 words of font info for 73 fonts, out of 8000000 for 9000
+ 15226 strings out of 481252
+ 231197 string characters out of 5913865
+ 563084 words of memory out of 5000000
+ 31746 multiletter control sequences out of 15000+600000
+ 462129 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,11n,88p,2257b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-e
@@ -988,11 +1061,12 @@ nts/type1/public/lm/lmr10.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX
 /texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roaming/T
 inyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppData/R
-oaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb>
-Output written on paper_1_supplement.pdf (25 pages, 911300 bytes).
+oaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/mk99feta/Ap
+pData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on paper_1_supplement.pdf (27 pages, 939350 bytes).
 PDF statistics:
- 375 PDF objects out of 1000 (max. 8388607)
- 315 compressed objects within 4 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 325 compressed objects within 4 object streams
+ 116 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

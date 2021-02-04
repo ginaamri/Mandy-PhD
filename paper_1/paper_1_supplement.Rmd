@@ -656,24 +656,28 @@ The GRI is a measure of visual expertise in information processing. This metric 
 ```{r GRItable, echo = FALSE}
 
 # prepare data (selected from questionnaire data)
-et.raw.data<-read.table("./data/Aperol_pilot_02_glasses_fixation_metrics.tsv", dec=",", sep="\t", header=T) 
+et.raw.data<-read.table("./data/Aperol_pilot_glasses_raw_fixation_saccades_metrics.tsv", dec=",", sep="\t", header=T) 
+
+# converting to integer to numeric
+et.raw.data <- et.raw.data %>%  mutate(Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations))
 
 # calculate GRI 
-
-
+view(et.raw.data)
 
 # create a basic table (tibble) using tidyverse functions
-et.quest.table <- et.raw.data %>%
-  summarise("M Fixation Number" = round(mean(Number_of_whole_fixations), 2),
-            "SE Fixation Number" = round(se(Number_of_whole_fixations), 2),
-            "M Duration Fixation" = round(mean(Total_duration_of_whole_fixations)),
-            "SE Duration Fixation" = round(se(Total_duration_of_whole_fixations))
+et.raw.table <- et.raw.data %>%
+  group_by(Participant, Variable) %>%
+  summarise("Fixation Number" = Number_of_whole_fixations,
+            "M Duration Fixation" = mean(Total_duration_of_whole_fixations),
+            "SE Duration Fixation" = round(se(Total_duration_of_whole_fixations, na.rm = TRUE), 2),
+            "GRI" = round(mean(Total_duration_of_whole_fixations) / Number_of_whole_fixations)
             )
 
 # format and insert table in manuscript
 apa_table(
-  et.quest.table,
-  caption = "Number and Duration of fixations",
+  et.raw.table,
+  caption = "Number and Duration (in msec) of Fixations",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
