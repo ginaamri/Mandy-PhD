@@ -1,0 +1,272 @@
+Farbe	Kommentar	Dokumentgruppe	Dokumentname	Code	Anfang	Ende	Gewicht	Segment	Bearbeitet von	Bearbeitet am	Erstellt von	Erstellt am	Fläche	Abdeckungsgrad %
+?			Aperol_pilot_02_04_novice_D_cam1	Phase\lesson begin	0:00:17,1	0:00:17,4	0		empshiwi	09.10.2020 14:27:39	empshiwi	09.10.2020 14:27:39	00:00:00,2	0,04
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:00:17,1	0:00:19,9	0		empshiwi	09.10.2020 14:28:02	empshiwi	09.10.2020 14:28:02	00:00:02,7	0,39
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:00:21,6	0:00:22,8	0		empshiwi	09.10.2020 14:28:11	empshiwi	09.10.2020 14:28:11	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:00:24,6	0:00:25,5	0		empshiwi	09.10.2020 14:28:23	empshiwi	09.10.2020 14:28:23	00:00:00,8	0,12
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:00:26,0	0:00:28,5	0		empshiwi	09.10.2020 14:28:56	empshiwi	09.10.2020 14:28:56	00:00:02,5	0,37
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:00:28,6	0:00:31,9	0		empshiwi	09.10.2020 14:29:11	empshiwi	09.10.2020 14:29:11	00:00:03,3	0,47
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:00:33,5	0:00:48,0	0		empshiwi	09.10.2020 14:30:23	empshiwi	09.10.2020 14:30:23	00:00:14,5	2,05
+?			Aperol_pilot_02_04_novice_D_cam1	Phase\organisation/transition points	0:00:17,1	0:00:33,4	0		empshiwi	09.10.2020 14:29:55	empshiwi	09.10.2020 14:29:55	00:00:16,3	2,30
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:00:49,0	0:00:49,9	0		empshiwi	09.10.2020 14:30:42	empshiwi	09.10.2020 14:30:42	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:00:50,4	0:00:51,4	0		empshiwi	09.10.2020 14:30:51	empshiwi	09.10.2020 14:30:51	00:00:00,9	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:00:51,4	0:00:53,8	0		empshiwi	09.10.2020 14:31:15	empshiwi	09.10.2020 14:31:15	00:00:02,3	0,33
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:00:54,4	0:00:55,8	0		empshiwi	09.10.2020 14:31:24	empshiwi	09.10.2020 14:31:24	00:00:01,3	0,20
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:00:55,9	0:00:59,4	0		empshiwi	09.10.2020 14:33:03	empshiwi	09.10.2020 14:33:03	00:00:03,4	0,49
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:00:56,4	0:00:57,1	0		empshiwi	09.10.2020 14:31:59	empshiwi	09.10.2020 14:31:59	00:00:00,6	0,09
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:00:58,4	0:01:00,1	0		empshiwi	09.10.2020 14:32:17	empshiwi	09.10.2020 14:32:17	00:00:01,6	0,23
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:00,1	0:01:02,3	0		empshiwi	09.10.2020 14:33:33	empshiwi	09.10.2020 14:33:33	00:00:02,1	0,30
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:01:02,9	0:01:04,8	0		empshiwi	09.10.2020 14:34:23	empshiwi	09.10.2020 14:34:23	00:00:01,8	0,26
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:05,5	0:01:07,6	0		empshiwi	09.10.2020 14:34:48	empshiwi	09.10.2020 14:34:48	00:00:02,0	0,28
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:01:08,0	0:01:11,7	0		empshiwi	09.10.2020 14:42:02	empshiwi	09.10.2020 14:42:02	00:00:03,7	0,52
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:11,5	0:01:14,4	0		empshiwi	09.10.2020 14:42:45	empshiwi	09.10.2020 14:42:45	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:01:14,5	0:01:15,9	0		empshiwi	09.10.2020 14:42:34	empshiwi	09.10.2020 14:42:34	00:00:01,4	0,20
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:15,9	0:01:31,0	0		empshiwi	09.10.2020 14:44:10	empshiwi	09.10.2020 14:44:10	00:00:15,0	2,13
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:37,0	0:01:37,5	0		empshiwi	09.10.2020 14:44:31	empshiwi	09.10.2020 14:44:31	00:00:00,4	0,06
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:01:37,6	0:01:38,9	0		empshiwi	09.10.2020 14:44:41	empshiwi	09.10.2020 14:44:41	00:00:01,3	0,18
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:38,9	0:01:42,1	0		empshiwi	09.10.2020 14:44:52	empshiwi	09.10.2020 14:44:52	00:00:03,1	0,45
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:43,4	0:01:44,4	0		empshiwi	09.10.2020 14:45:02	empshiwi	09.10.2020 14:45:02	00:00:00,9	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:49,9	0:01:50,8	0		empshiwi	09.10.2020 14:45:24	empshiwi	09.10.2020 14:45:24	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:01:50,9	0:01:52,1	0		empshiwi	09.10.2020 14:45:48	empshiwi	09.10.2020 14:45:48	00:00:01,1	0,17
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:01:52,3	0:02:01,4	0		empshiwi	09.10.2020 14:46:33	empshiwi	09.10.2020 14:46:33	00:00:09,0	1,27
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:02,2	0:02:03,5	0		empshiwi	09.10.2020 14:46:51	empshiwi	09.10.2020 14:46:51	00:00:01,2	0,18
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:03,9	0:02:04,7	0		empshiwi	09.10.2020 14:47:30	empshiwi	09.10.2020 14:47:30	00:00:00,8	0,11
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:02:04,8	0:02:05,8	0		empshiwi	09.10.2020 14:47:48	empshiwi	09.10.2020 14:47:48	00:00:01,0	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:05,8	0:02:11,8	0		empshiwi	09.10.2020 14:48:28	empshiwi	09.10.2020 14:48:28	00:00:05,9	0,83
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:02:13,5	0:02:14,6	0		empshiwi	09.10.2020 14:48:50	empshiwi	09.10.2020 14:48:50	00:00:01,0	0,15
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:14,6	0:02:17,5	0		empshiwi	09.10.2020 14:49:04	empshiwi	09.10.2020 14:49:04	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:18,3	0:02:24,1	0		empshiwi	09.10.2020 14:49:39	empshiwi	09.10.2020 14:49:39	00:00:05,8	0,83
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:02:27,6	0:02:32,2	0		empshiwi	09.10.2020 14:50:07	empshiwi	09.10.2020 14:50:07	00:00:04,5	0,65
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:32,2	0:02:33,2	0		empshiwi	09.10.2020 14:50:23	empshiwi	09.10.2020 14:50:23	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:02:33,2	0:02:36,7	0		empshiwi	09.10.2020 14:53:29	empshiwi	09.10.2020 14:53:29	00:00:03,4	0,49
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:37,0	0:02:40,6	0		empshiwi	09.10.2020 14:53:50	empshiwi	09.10.2020 14:53:50	00:00:03,5	0,49
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:40,9	0:02:41,7	0		empshiwi	09.10.2020 14:54:03	empshiwi	09.10.2020 14:54:03	00:00:00,7	0,11
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:02:42,0	0:02:44,0	0		empshiwi	09.10.2020 14:54:42	empshiwi	09.10.2020 14:54:42	00:00:02,0	0,28
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:44,0	0:02:44,5	0		empshiwi	09.10.2020 14:54:53	empshiwi	09.10.2020 14:54:53	00:00:00,4	0,06
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:46,0	0:02:47,5	0		empshiwi	09.10.2020 14:55:09	empshiwi	09.10.2020 14:55:09	00:00:01,5	0,21
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:02:46,0	0:02:46,8	0		empshiwi	09.10.2020 14:55:19	empshiwi	09.10.2020 14:55:19	00:00:00,8	0,12
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:02:47,7	0:02:49,0	0		empshiwi	09.10.2020 14:55:44	empshiwi	09.10.2020 14:55:44	00:00:01,2	0,17
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:49,0	0:02:50,8	0		empshiwi	09.10.2020 15:00:53	empshiwi	09.10.2020 15:00:53	00:00:01,7	0,24
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:54,1	0:02:57,0	0		empshiwi	09.10.2020 15:01:16	empshiwi	09.10.2020 15:01:16	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:02:57,1	0:02:59,1	0		empshiwi	09.10.2020 15:01:30	empshiwi	09.10.2020 15:01:30	00:00:02,0	0,28
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:02:59,4	0:03:01,6	0		empshiwi	09.10.2020 15:01:53	empshiwi	09.10.2020 15:01:53	00:00:02,2	0,31
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window	0:02:35,2	0:03:03,0	0		empshiwi	09.10.2020 15:03:55	empshiwi	09.10.2020 15:03:55	00:00:27,7	3,92
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window\perceidved	0:02:52,8	0:02:53,1	0		empshiwi	09.10.2020 15:04:20	empshiwi	09.10.2020 15:04:20	00:00:00,3	0,05
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor	0:02:46,0	0:02:55,6	0		empshiwi	09.10.2020 15:05:10	empshiwi	09.10.2020 15:05:10	00:00:09,5	1,35
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\perceived	0:02:52,8	0:02:53,1	0		empshiwi	09.10.2020 15:05:19	empshiwi	09.10.2020 15:05:19	00:00:00,3	0,05
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted	0:02:54,1	0:02:57,0	0		empshiwi	09.10.2020 15:05:35	empshiwi	09.10.2020 15:05:35	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted\verbal	0:02:54,1	0:02:57,0	0		empshiwi	09.10.2020 15:05:41	empshiwi	09.10.2020 15:05:41	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window\reacted	0:02:54,1	0:02:57,0	0		empshiwi	09.10.2020 15:05:47	empshiwi	09.10.2020 15:05:47	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window\reacted\verbal	0:02:54,1	0:02:57,0	0		empshiwi	09.10.2020 15:05:49	empshiwi	09.10.2020 15:05:49	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor	0:02:58,6	0:03:09,2	0		empshiwi	09.10.2020 15:06:37	empshiwi	09.10.2020 15:06:37	00:00:10,5	1,49
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\perceived	0:03:01,7	0:03:01,8	0		empshiwi	09.10.2020 15:06:52	empshiwi	09.10.2020 15:06:52	00:00:00,1	0,03
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted	0:03:03,2	0:03:05,1	0		empshiwi	09.10.2020 15:07:16	empshiwi	09.10.2020 15:07:16	00:00:01,8	0,26
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted\verbal	0:03:03,2	0:03:05,1	0		empshiwi	09.10.2020 15:07:18	empshiwi	09.10.2020 15:07:18	00:00:01,8	0,26
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted	0:03:07,4	0:03:08,4	0		empshiwi	09.10.2020 15:07:41	empshiwi	09.10.2020 15:07:41	00:00:00,9	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted\verbal	0:03:07,4	0:03:08,4	0		empshiwi	09.10.2020 15:07:43	empshiwi	09.10.2020 15:07:43	00:00:00,9	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted	0:03:09,0	0:03:10,2	0		empshiwi	09.10.2020 15:08:02	empshiwi	09.10.2020 15:08:02	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted\verbal	0:03:09,0	0:03:10,2	0		empshiwi	09.10.2020 15:08:10	empshiwi	09.10.2020 15:08:10	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:09,0	0:03:10,2	0		empshiwi	09.10.2020 15:08:13	empshiwi	09.10.2020 15:08:13	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:07,4	0:03:08,4	0		empshiwi	09.10.2020 15:08:21	empshiwi	09.10.2020 15:08:21	00:00:00,9	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:03,2	0:03:05,1	0		empshiwi	09.10.2020 15:08:26	empshiwi	09.10.2020 15:08:26	00:00:01,8	0,26
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:10,9	0:03:16,7	0		empshiwi	09.10.2020 15:09:29	empshiwi	09.10.2020 15:09:29	00:00:05,8	0,82
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:16,7	0:03:24,3	0		empshiwi	09.10.2020 15:10:43	empshiwi	09.10.2020 15:10:43	00:00:07,5	1,07
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:24,3	0:03:26,9	0		empshiwi	09.10.2020 15:10:59	empshiwi	09.10.2020 15:10:59	00:00:02,5	0,37
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:26,2	0:03:28,2	0		empshiwi	09.10.2020 15:11:12	empshiwi	09.10.2020 15:11:12	00:00:01,9	0,28
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:29,1	0:03:29,5	0		empshiwi	09.10.2020 15:11:25	empshiwi	09.10.2020 15:11:25	00:00:00,4	0,06
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:28,5	0:03:29,1	0		empshiwi	09.10.2020 15:11:30	empshiwi	09.10.2020 15:11:30	00:00:00,5	0,08
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:30,0	0:03:31,0	0		empshiwi	09.10.2020 15:11:37	empshiwi	09.10.2020 15:11:37	00:00:01,0	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:30,9	0:03:34,7	0		empshiwi	09.10.2020 15:12:05	empshiwi	09.10.2020 15:12:05	00:00:03,7	0,53
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:34,9	0:03:35,3	0		empshiwi	09.10.2020 15:12:16	empshiwi	09.10.2020 15:12:16	00:00:00,3	0,06
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:35,4	0:03:36,7	0		empshiwi	09.10.2020 15:12:33	empshiwi	09.10.2020 15:12:33	00:00:01,3	0,18
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window	0:03:13,0	0:03:34,8	0		empshiwi	09.10.2020 15:13:51	empshiwi	09.10.2020 15:13:51	00:00:21,8	3,08
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window\perceidved	0:03:33,9	0:03:34,0	0		empshiwi	09.10.2020 15:14:04	empshiwi	09.10.2020 15:14:04	00:00:00,1	0,02
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window\reacted	0:03:34,3	0:03:34,9	0		empshiwi	09.10.2020 15:14:21	empshiwi	09.10.2020 15:14:21	00:00:00,5	0,08
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window\reacted\verbal	0:03:34,3	0:03:34,9	0		empshiwi	09.10.2020 15:14:23	empshiwi	09.10.2020 15:14:23	00:00:00,5	0,08
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window\reacted	0:03:35,4	0:03:36,7	0		empshiwi	09.10.2020 15:14:27	empshiwi	09.10.2020 15:14:27	00:00:01,3	0,18
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\staring out oft the window\reacted\verbal	0:03:35,4	0:03:36,7	0		empshiwi	09.10.2020 15:14:29	empshiwi	09.10.2020 15:14:29	00:00:01,3	0,18
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:36,7	0:03:37,8	0		empshiwi	09.10.2020 15:14:42	empshiwi	09.10.2020 15:14:42	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:38,3	0:03:41,4	0		empshiwi	09.10.2020 15:14:59	empshiwi	09.10.2020 15:14:59	00:00:03,0	0,43
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:41,6	0:03:42,7	0		empshiwi	09.10.2020 15:15:10	empshiwi	09.10.2020 15:15:10	00:00:01,0	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:42,8	0:03:43,9	0		empshiwi	09.10.2020 15:15:26	empshiwi	09.10.2020 15:15:26	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:44,1	0:03:48,5	0		empshiwi	09.10.2020 15:15:41	empshiwi	09.10.2020 15:15:41	00:00:04,4	0,62
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:48,7	0:03:50,7	0		empshiwi	09.10.2020 15:16:02	empshiwi	09.10.2020 15:16:02	00:00:01,9	0,28
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor	0:03:50,8	0:03:55,8	0		empshiwi	09.10.2020 15:16:21	empshiwi	09.10.2020 15:16:21	00:00:04,9	0,70
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:50,8	0:03:53,3	0		empshiwi	09.10.2020 15:16:42	empshiwi	09.10.2020 15:16:42	00:00:02,4	0,35
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\head on table	0:03:34,9	0:04:32,5	0		empshiwi	14.10.2020 12:23:32	empshiwi	14.10.2020 12:23:32	00:00:57,6	8,13
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted\verbal	0:03:53,3	0:03:55,7	0		empshiwi	14.10.2020 12:24:34	empshiwi	14.10.2020 12:24:34	00:00:02,3	0,33
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:53,3	0:03:55,7	0		empshiwi	14.10.2020 12:24:36	empshiwi	14.10.2020 12:24:36	00:00:02,3	0,33
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\perceived	0:03:50,7	0:03:50,9	0		empshiwi	14.10.2020 12:27:09	empshiwi	14.10.2020 12:27:09	00:00:00,2	0,03
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:03:55,6	0:03:56,3	0		empshiwi	14.10.2020 12:27:36	empshiwi	14.10.2020 12:27:36	00:00:00,7	0,10
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\reacted	0:03:53,3	0:03:55,7	0		empshiwi	14.10.2020 12:27:47	empshiwi	14.10.2020 12:27:47	00:00:02,3	0,33
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:03:56,5	0:04:05,2	0		empshiwi	14.10.2020 12:28:05	empshiwi	14.10.2020 12:28:05	00:00:08,6	1,22
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:04:07,9	0:04:09,3	0		empshiwi	14.10.2020 12:28:29	empshiwi	14.10.2020 12:28:29	00:00:01,3	0,20
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:04:11,2	0:04:13,9	0		empshiwi	14.10.2020 12:28:55	empshiwi	14.10.2020 12:28:55	00:00:02,6	0,37
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:04:13,9	0:04:14,5	0		empshiwi	14.10.2020 12:29:04	empshiwi	14.10.2020 12:29:04	00:00:00,6	0,08
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:04:15,9	0:04:26,1	0		empshiwi	14.10.2020 12:29:53	empshiwi	14.10.2020 12:29:53	00:00:10,2	1,44
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:04:26,3	0:04:32,8	0		empshiwi	14.10.2020 12:31:42	empshiwi	14.10.2020 12:31:42	00:00:06,4	0,92
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:04:27,2	0:04:29,9	0		empshiwi	14.10.2020 12:30:42	empshiwi	14.10.2020 12:30:42	00:00:02,7	0,38
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:04:32,9	0:04:40,1	0		empshiwi	14.10.2020 12:32:30	empshiwi	14.10.2020 12:32:30	00:00:07,1	1,02
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:04:40,5	0:04:42,3	0		empshiwi	14.10.2020 12:32:53	empshiwi	14.10.2020 12:32:53	00:00:01,7	0,24
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:04:42,6	0:04:52,1	0		empshiwi	14.10.2020 12:33:27	empshiwi	14.10.2020 12:33:27	00:00:09,4	1,34
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:04:54,7	0:04:55,7	0		empshiwi	14.10.2020 12:33:46	empshiwi	14.10.2020 12:33:46	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:04:58,0	0:05:03,6	0		empshiwi	14.10.2020 12:34:36	empshiwi	14.10.2020 12:34:36	00:00:05,6	0,79
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:02,2	0:05:02,6	0		empshiwi	14.10.2020 12:34:52	empshiwi	14.10.2020 12:34:52	00:00:00,3	0,05
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:04,1	0:05:07,0	0		empshiwi	14.10.2020 12:35:13	empshiwi	14.10.2020 12:35:13	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:06,0	0:05:10,7	0		empshiwi	14.10.2020 12:36:01	empshiwi	14.10.2020 12:36:01	00:00:04,6	0,66
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:11,9	0:05:15,3	0		empshiwi	14.10.2020 12:42:35	empshiwi	14.10.2020 12:42:35	00:00:03,4	0,48
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:14,7	0:05:21,0	0		empshiwi	14.10.2020 12:37:03	empshiwi	14.10.2020 12:37:03	00:00:06,2	0,88
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drawing	0:04:46,5	0:05:10,7	0		empshiwi	14.10.2020 12:40:26	empshiwi	14.10.2020 12:40:26	00:00:24,1	3,40
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drawing\perceived	0:04:53,8	0:04:53,9	0		empshiwi	14.10.2020 12:40:54	empshiwi	14.10.2020 12:40:54	00:00:00,1	0,02
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drawing\reacted	0:04:54,7	0:04:55,7	0		empshiwi	14.10.2020 12:41:02	empshiwi	14.10.2020 12:41:02	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drawing\reacted\verbal	0:04:54,7	0:04:55,7	0		empshiwi	14.10.2020 12:41:05	empshiwi	14.10.2020 12:41:05	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drawing\reacted	0:04:58,0	0:05:03,6	0		empshiwi	14.10.2020 12:41:12	empshiwi	14.10.2020 12:41:12	00:00:05,6	0,79
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drawing\reacted\verbal	0:04:58,0	0:05:03,6	0		empshiwi	14.10.2020 12:41:13	empshiwi	14.10.2020 12:41:13	00:00:05,6	0,79
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drawing\reacted	0:05:06,0	0:05:10,7	0		empshiwi	14.10.2020 12:41:28	empshiwi	14.10.2020 12:41:28	00:00:04,6	0,66
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drawing\reacted\verbal	0:05:06,0	0:05:10,7	0		empshiwi	14.10.2020 12:41:30	empshiwi	14.10.2020 12:41:30	00:00:04,6	0,66
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:22,3	0:05:29,1	0		empshiwi	14.10.2020 12:43:08	empshiwi	14.10.2020 12:43:08	00:00:06,7	0,95
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:28,0	0:05:29,0	0		empshiwi	14.10.2020 12:43:20	empshiwi	14.10.2020 12:43:20	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\yelling	0:05:28,0	0:05:29,0	0		empshiwi	14.10.2020 12:43:23	empshiwi	14.10.2020 12:43:23	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\yelling\perceived	0:05:28,1	0:05:28,2	0		empshiwi	14.10.2020 12:43:38	empshiwi	14.10.2020 12:43:38	00:00:00,0	0,01
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:30,2	0:05:32,7	0		empshiwi	14.10.2020 12:44:04	empshiwi	14.10.2020 12:44:04	00:00:02,4	0,35
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\yelling\reacted	0:05:30,2	0:05:32,7	0		empshiwi	14.10.2020 12:44:06	empshiwi	14.10.2020 12:44:06	00:00:02,4	0,35
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\yelling\reacted\verbal	0:05:30,2	0:05:32,7	0		empshiwi	14.10.2020 12:44:08	empshiwi	14.10.2020 12:44:08	00:00:02,4	0,35
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:33,5	0:05:41,9	0		empshiwi	14.10.2020 12:45:23	empshiwi	14.10.2020 12:45:23	00:00:08,4	1,19
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor	0:05:37,9	0:05:43,4	0		empshiwi	14.10.2020 12:45:59	empshiwi	14.10.2020 12:45:59	00:00:05,5	0,78
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:42,9	0:05:43,4	0		empshiwi	14.10.2020 12:45:53	empshiwi	14.10.2020 12:45:53	00:00:00,5	0,07
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor\perceived	0:05:37,9	0:05:38,0	0		empshiwi	14.10.2020 12:46:16	empshiwi	14.10.2020 12:46:16	00:00:00,0	0,01
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:42,8	0:05:45,2	0		empshiwi	14.10.2020 12:46:46	empshiwi	14.10.2020 12:46:46	00:00:02,4	0,34
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:44,8	0:05:46,2	0		empshiwi	14.10.2020 12:47:07	empshiwi	14.10.2020 12:47:07	00:00:01,4	0,20
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:46,2	0:05:46,6	0		empshiwi	14.10.2020 12:47:15	empshiwi	14.10.2020 12:47:15	00:00:00,3	0,05
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:46,5	0:05:47,0	0		empshiwi	14.10.2020 12:47:26	empshiwi	14.10.2020 12:47:26	00:00:00,5	0,07
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:47,0	0:05:47,5	0		empshiwi	14.10.2020 12:47:38	empshiwi	14.10.2020 12:47:38	00:00:00,5	0,07
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:05:47,4	0:05:48,1	0		empshiwi	14.10.2020 12:47:48	empshiwi	14.10.2020 12:47:48	00:00:00,7	0,10
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:50,0	0:05:55,3	0		empshiwi	14.10.2020 12:48:19	empshiwi	14.10.2020 12:48:19	00:00:05,2	0,73
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:56,3	0:05:57,7	0		empshiwi	14.10.2020 12:48:30	empshiwi	14.10.2020 12:48:30	00:00:01,3	0,19
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:05:59,0	0:06:16,6	0		empshiwi	14.10.2020 12:49:48	empshiwi	14.10.2020 12:49:48	00:00:17,5	2,47
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:17,5	0:06:18,5	0		empshiwi	14.10.2020 12:50:00	empshiwi	14.10.2020 12:50:00	00:00:01,0	0,15
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:23,1	0:06:24,0	0		empshiwi	14.10.2020 12:50:15	empshiwi	14.10.2020 12:50:15	00:00:00,8	0,12
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:27,7	0:06:28,3	0		empshiwi	14.10.2020 12:50:26	empshiwi	14.10.2020 12:50:26	00:00:00,5	0,07
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:06:29,1	0:06:32,7	0		empshiwi	14.10.2020 12:50:42	empshiwi	14.10.2020 12:50:42	00:00:03,6	0,51
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:32,7	0:06:41,3	0		empshiwi	14.10.2020 12:51:50	empshiwi	14.10.2020 12:51:50	00:00:08,6	1,21
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\clicking pen	0:06:27,8	0:06:54,0	0		empshiwi	14.10.2020 12:52:30	empshiwi	14.10.2020 12:52:30	00:00:26,1	3,70
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:42,0	0:06:43,0	0		empshiwi	14.10.2020 12:52:57	empshiwi	14.10.2020 12:52:57	00:00:01,0	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:44,0	0:06:44,7	0		empshiwi	14.10.2020 12:53:07	empshiwi	14.10.2020 12:53:07	00:00:00,6	0,09
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:46,2	0:06:47,1	0		empshiwi	14.10.2020 12:53:13	empshiwi	14.10.2020 12:53:13	00:00:00,8	0,12
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:51,0	0:06:52,2	0		empshiwi	14.10.2020 12:53:24	empshiwi	14.10.2020 12:53:24	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:06:52,2	0:06:52,7	0		empshiwi	14.10.2020 12:53:39	empshiwi	14.10.2020 12:53:39	00:00:00,4	0,07
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:52,8	0:06:53,9	0		empshiwi	14.10.2020 12:53:49	empshiwi	14.10.2020 12:53:49	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:06:53,9	0:06:54,2	0		empshiwi	14.10.2020 12:53:55	empshiwi	14.10.2020 12:53:55	00:00:00,2	0,04
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\clicking pen\perceived	0:06:48,0	0:06:48,2	0		empshiwi	14.10.2020 12:54:09	empshiwi	14.10.2020 12:54:09	00:00:00,1	0,02
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\clicking pen\reacted	0:06:51,0	0:06:52,2	0		empshiwi	14.10.2020 12:54:18	empshiwi	14.10.2020 12:54:18	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\clicking pen\reacted\verbal	0:06:51,0	0:06:52,2	0		empshiwi	14.10.2020 12:54:20	empshiwi	14.10.2020 12:54:20	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\clicking pen\reacted	0:06:52,8	0:06:53,9	0		empshiwi	14.10.2020 12:54:25	empshiwi	14.10.2020 12:54:25	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\clicking pen\reacted\verbal	0:06:52,8	0:06:53,9	0		empshiwi	14.10.2020 12:54:27	empshiwi	14.10.2020 12:54:27	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:54,6	0:06:56,9	0		empshiwi	14.10.2020 12:55:11	empshiwi	14.10.2020 12:55:11	00:00:02,2	0,32
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:06:57,9	0:06:58,7	0		empshiwi	14.10.2020 12:56:07	empshiwi	14.10.2020 12:56:07	00:00:00,7	0,10
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:06:59,2	0:07:00,2	0		empshiwi	14.10.2020 12:59:13	empshiwi	14.10.2020 12:59:13	00:00:00,9	0,13
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:07:00,3	0:07:03,0	0		empshiwi	14.10.2020 12:59:31	empshiwi	14.10.2020 12:59:31	00:00:02,6	0,37
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:03,8	0:07:05,3	0		empshiwi	14.10.2020 12:59:41	empshiwi	14.10.2020 12:59:41	00:00:01,4	0,21
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:07:04,2	0:07:05,3	0		empshiwi	14.10.2020 13:00:19	empshiwi	14.10.2020 13:00:19	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:05,6	0:07:10,0	0		empshiwi	14.10.2020 13:00:36	empshiwi	14.10.2020 13:00:36	00:00:04,4	0,62
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:07:10,3	0:07:14,5	0		empshiwi	14.10.2020 13:01:11	empshiwi	14.10.2020 13:01:11	00:00:04,1	0,59
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:14,7	0:07:17,8	0		empshiwi	14.10.2020 13:01:26	empshiwi	14.10.2020 13:01:26	00:00:03,0	0,44
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:07:17,6	0:07:20,4	0		empshiwi	14.10.2020 13:01:38	empshiwi	14.10.2020 13:01:38	00:00:02,7	0,38
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:21,3	0:07:23,7	0		empshiwi	14.10.2020 13:02:06	empshiwi	14.10.2020 13:02:06	00:00:02,4	0,35
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:25,7	0:07:26,3	0		empshiwi	14.10.2020 13:02:27	empshiwi	14.10.2020 13:02:27	00:00:00,6	0,08
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:07:25,2	0:07:29,8	0		empshiwi	14.10.2020 13:04:04	empshiwi	14.10.2020 13:04:04	00:00:04,6	0,65
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:30,4	0:07:34,3	0		empshiwi	14.10.2020 13:04:47	empshiwi	14.10.2020 13:04:47	00:00:03,8	0,54
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:07:34,4	0:07:35,1	0		empshiwi	14.10.2020 13:04:59	empshiwi	14.10.2020 13:04:59	00:00:00,7	0,10
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:36,2	0:07:37,4	0		empshiwi	14.10.2020 13:05:25	empshiwi	14.10.2020 13:05:25	00:00:01,2	0,17
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:07:38,1	0:07:39,2	0		empshiwi	14.10.2020 13:05:37	empshiwi	14.10.2020 13:05:37	00:00:01,0	0,15
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:39,4	0:07:53,4	0		empshiwi	14.10.2020 13:06:29	empshiwi	14.10.2020 13:06:29	00:00:14,0	1,98
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:07:53,4	0:07:55,7	0		empshiwi	14.10.2020 13:06:55	empshiwi	14.10.2020 13:06:55	00:00:02,2	0,32
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:55,8	0:07:58,9	0		empshiwi	14.10.2020 13:07:13	empshiwi	14.10.2020 13:07:13	00:00:03,0	0,44
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:07:59,4	0:08:03,6	0		empshiwi	14.10.2020 13:07:33	empshiwi	14.10.2020 13:07:33	00:00:04,1	0,58
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:05,4	0:08:06,2	0		empshiwi	14.10.2020 13:07:46	empshiwi	14.10.2020 13:07:46	00:00:00,7	0,11
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:08:07,2	0:08:19,5	0		empshiwi	14.10.2020 13:08:29	empshiwi	14.10.2020 13:08:29	00:00:12,2	1,73
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:17,2	0:08:18,0	0		empshiwi	14.10.2020 13:08:39	empshiwi	14.10.2020 13:08:39	00:00:00,7	0,10
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:19,7	0:08:23,0	0		empshiwi	14.10.2020 13:08:51	empshiwi	14.10.2020 13:08:51	00:00:03,2	0,46
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:08:21,3	0:08:22,6	0		empshiwi	14.10.2020 13:08:59	empshiwi	14.10.2020 13:08:59	00:00:01,3	0,18
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:23,5	0:08:30,0	0		empshiwi	14.10.2020 13:09:51	empshiwi	14.10.2020 13:09:51	00:00:06,5	0,92
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\looking at phone	0:08:29,9	0:09:05,8	0		empshiwi	14.10.2020 13:10:55	empshiwi	14.10.2020 13:10:55	00:00:35,9	5,07
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drumming hands	0:08:33,9	0:08:48,5	0		empshiwi	14.10.2020 13:12:13	empshiwi	14.10.2020 13:12:13	00:00:14,5	2,06
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:30,9	0:08:32,3	0		empshiwi	14.10.2020 13:12:25	empshiwi	14.10.2020 13:12:25	00:00:01,3	0,20
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:33,3	0:08:33,8	0		empshiwi	14.10.2020 13:12:46	empshiwi	14.10.2020 13:12:46	00:00:00,4	0,06
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:08:34,6	0:08:35,1	0		empshiwi	14.10.2020 13:13:00	empshiwi	14.10.2020 13:13:00	00:00:00,5	0,07
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drumming hands\perceived 	0:08:35,0	0:08:35,1	0		empshiwi	14.10.2020 13:13:15	empshiwi	14.10.2020 13:13:15	00:00:00,1	0,02
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drumming hands\reacted	0:08:36,4	0:08:39,0	0		empshiwi	14.10.2020 13:13:31	empshiwi	14.10.2020 13:13:31	00:00:02,5	0,37
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drumming hands\reacted\verbal	0:08:36,4	0:08:39,0	0		empshiwi	14.10.2020 13:13:32	empshiwi	14.10.2020 13:13:32	00:00:02,5	0,37
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:08:39,3	0:08:40,1	0		empshiwi	14.10.2020 13:13:43	empshiwi	14.10.2020 13:13:43	00:00:00,7	0,11
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:08:40,2	0:08:43,6	0		empshiwi	14.10.2020 13:14:03	empshiwi	14.10.2020 13:14:03	00:00:03,3	0,48
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:43,7	0:08:47,3	0		empshiwi	14.10.2020 13:14:26	empshiwi	14.10.2020 13:14:26	00:00:03,6	0,51
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drumming hands\reacted	0:08:43,7	0:08:47,3	0		empshiwi	14.10.2020 13:14:35	empshiwi	14.10.2020 13:14:35	00:00:03,6	0,51
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\drumming hands\reacted\verbal	0:08:43,7	0:08:47,3	0		empshiwi	14.10.2020 13:14:36	empshiwi	14.10.2020 13:14:36	00:00:03,6	0,51
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\chatting with neighbor	0:08:45,9	0:08:48,0	0		empshiwi	14.10.2020 13:15:07	empshiwi	14.10.2020 13:15:07	00:00:02,1	0,30
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:08:45,9	0:08:48,0	0		empshiwi	14.10.2020 13:15:11	empshiwi	14.10.2020 13:15:11	00:00:02,1	0,30
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:47,9	0:08:48,5	0		empshiwi	14.10.2020 13:15:20	empshiwi	14.10.2020 13:15:20	00:00:00,5	0,08
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:08:50,0	0:08:52,3	0		empshiwi	14.10.2020 13:15:56	empshiwi	14.10.2020 13:15:56	00:00:02,3	0,32
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question	0:08:50,0	0:08:52,3	0		empshiwi	14.10.2020 13:16:01	empshiwi	14.10.2020 13:16:01	00:00:02,3	0,32
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\perceived	0:08:50,0	0:08:50,1	0		empshiwi	14.10.2020 13:16:16	empshiwi	14.10.2020 13:16:16	00:00:00,0	0,01
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\reacted	0:08:52,4	0:08:54,6	0		empshiwi	14.10.2020 13:17:09	empshiwi	14.10.2020 13:17:09	00:00:02,2	0,31
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\reacted\verbal	0:08:52,4	0:08:54,6	0		empshiwi	14.10.2020 13:17:10	empshiwi	14.10.2020 13:17:10	00:00:02,2	0,31
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:52,4	0:08:54,6	0		empshiwi	14.10.2020 13:17:05	empshiwi	14.10.2020 13:17:05	00:00:02,2	0,31
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:08:54,4	0:08:54,9	0		empshiwi	14.10.2020 13:16:49	empshiwi	14.10.2020 13:16:49	00:00:00,5	0,07
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:08:55,5	0:09:01,3	0		empshiwi	14.10.2020 13:17:55	empshiwi	14.10.2020 13:17:55	00:00:05,7	0,81
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:02,0	0:09:04,4	0		empshiwi	14.10.2020 13:18:16	empshiwi	14.10.2020 13:18:16	00:00:02,3	0,33
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\looking at phone\perceived	0:09:01,0	0:09:01,3	0		empshiwi	14.10.2020 13:18:35	empshiwi	14.10.2020 13:18:35	00:00:00,2	0,03
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\looking at phone\reacted	0:09:02,0	0:09:04,4	0		empshiwi	14.10.2020 13:18:40	empshiwi	14.10.2020 13:18:40	00:00:02,3	0,33
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\looking at phone\reacted\verbal	0:09:02,0	0:09:04,4	0		empshiwi	14.10.2020 13:18:41	empshiwi	14.10.2020 13:18:41	00:00:02,3	0,33
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:06,3	0:09:07,5	0		empshiwi	14.10.2020 13:18:57	empshiwi	14.10.2020 13:18:57	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\looking at phone\reacted	0:09:06,3	0:09:07,5	0		empshiwi	14.10.2020 13:18:59	empshiwi	14.10.2020 13:18:59	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\looking at phone\reacted\verbal	0:09:06,3	0:09:07,5	0		empshiwi	14.10.2020 13:19:02	empshiwi	14.10.2020 13:19:02	00:00:01,1	0,16
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:08,7	0:09:10,7	0		empshiwi	14.10.2020 13:19:24	empshiwi	14.10.2020 13:19:24	00:00:01,9	0,27
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:12,2	0:09:15,8	0		empshiwi	14.10.2020 13:19:52	empshiwi	14.10.2020 13:19:52	00:00:03,5	0,50
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:09:14,9	0:09:16,3	0		empshiwi	14.10.2020 13:20:06	empshiwi	14.10.2020 13:20:06	00:00:01,3	0,19
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question	0:09:14,9	0:09:16,3	0		empshiwi	14.10.2020 13:20:09	empshiwi	14.10.2020 13:20:09	00:00:01,3	0,19
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\perceived	0:09:15,0	0:09:15,1	0		empshiwi	14.10.2020 13:20:28	empshiwi	14.10.2020 13:20:28	00:00:00,1	0,01
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:16,6	0:09:17,5	0		empshiwi	14.10.2020 13:20:41	empshiwi	14.10.2020 13:20:41	00:00:00,8	0,12
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\reacted	0:09:16,6	0:09:17,5	0		empshiwi	14.10.2020 13:20:43	empshiwi	14.10.2020 13:20:43	00:00:00,8	0,12
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\reacted\verbal	0:09:16,6	0:09:17,5	0		empshiwi	14.10.2020 13:20:45	empshiwi	14.10.2020 13:20:45	00:00:00,8	0,12
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:09:17,6	0:09:18,3	0		empshiwi	14.10.2020 13:20:57	empshiwi	14.10.2020 13:20:57	00:00:00,6	0,09
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:18,3	0:09:21,6	0		empshiwi	14.10.2020 13:21:09	empshiwi	14.10.2020 13:21:09	00:00:03,2	0,46
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:22,1	0:09:22,6	0		empshiwi	14.10.2020 13:21:22	empshiwi	14.10.2020 13:21:22	00:00:00,4	0,07
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:09:22,9	0:09:23,4	0		empshiwi	14.10.2020 13:21:37	empshiwi	14.10.2020 13:21:37	00:00:00,4	0,06
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:23,8	0:09:28,5	0		empshiwi	14.10.2020 13:22:03	empshiwi	14.10.2020 13:22:03	00:00:04,6	0,66
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:09:28,1	0:09:31,0	0		empshiwi	14.10.2020 13:22:34	empshiwi	14.10.2020 13:22:34	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question	0:09:28,1	0:09:31,0	0		empshiwi	14.10.2020 13:22:37	empshiwi	14.10.2020 13:22:37	00:00:02,8	0,40
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:29,7	0:09:29,9	0		empshiwi	14.10.2020 13:22:51	empshiwi	14.10.2020 13:22:51	00:00:00,1	0,02
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:32,3	0:09:34,4	0		empshiwi	14.10.2020 13:23:02	empshiwi	14.10.2020 13:23:02	00:00:02,0	0,29
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\reacted	0:09:32,3	0:09:34,4	0		empshiwi	14.10.2020 13:23:05	empshiwi	14.10.2020 13:23:05	00:00:02,0	0,29
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\reacted\verbal	0:09:32,3	0:09:34,4	0		empshiwi	14.10.2020 13:23:07	empshiwi	14.10.2020 13:23:07	00:00:02,0	0,29
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\perceived	0:09:28,7	0:09:28,9	0		empshiwi	14.10.2020 13:23:27	empshiwi	14.10.2020 13:23:27	00:00:00,2	0,03
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:09:33,3	0:09:33,9	0		empshiwi	14.10.2020 13:23:47	empshiwi	14.10.2020 13:23:47	00:00:00,6	0,08
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:35,1	0:09:37,7	0		empshiwi	14.10.2020 13:24:08	empshiwi	14.10.2020 13:24:08	00:00:02,6	0,37
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:39,8	0:09:53,7	0		empshiwi	14.10.2020 13:24:50	empshiwi	14.10.2020 13:24:50	00:00:13,9	1,97
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:55,0	0:09:56,4	0		empshiwi	14.10.2020 13:25:02	empshiwi	14.10.2020 13:25:02	00:00:01,3	0,18
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:09:59,5	0:10:01,4	0		empshiwi	14.10.2020 13:25:23	empshiwi	14.10.2020 13:25:23	00:00:01,9	0,27
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:10:01,8	0:10:05,3	0		empshiwi	14.10.2020 13:25:39	empshiwi	14.10.2020 13:25:39	00:00:03,4	0,48
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:05,5	0:10:06,4	0		empshiwi	14.10.2020 13:25:46	empshiwi	14.10.2020 13:25:46	00:00:00,8	0,12
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:06,9	0:10:07,9	0		empshiwi	14.10.2020 13:25:59	empshiwi	14.10.2020 13:25:59	00:00:00,9	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:10:07,3	0:10:11,3	0		empshiwi	14.10.2020 13:29:39	empshiwi	14.10.2020 13:29:39	00:00:03,9	0,56
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:11,7	0:10:15,3	0		empshiwi	14.10.2020 13:29:55	empshiwi	14.10.2020 13:29:55	00:00:03,5	0,51
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:10:17,6	0:10:19,8	0		empshiwi	14.10.2020 13:30:19	empshiwi	14.10.2020 13:30:19	00:00:02,1	0,30
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:16,3	0:10:17,3	0		empshiwi	14.10.2020 13:30:24	empshiwi	14.10.2020 13:30:24	00:00:01,0	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:20,4	0:10:24,5	0		empshiwi	14.10.2020 13:30:38	empshiwi	14.10.2020 13:30:38	00:00:04,0	0,58
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:10:21,0	0:10:21,7	0		empshiwi	14.10.2020 13:30:46	empshiwi	14.10.2020 13:30:46	00:00:00,7	0,10
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:25,5	0:10:28,9	0		empshiwi	14.10.2020 13:31:47	empshiwi	14.10.2020 13:31:47	00:00:03,3	0,47
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:10:27,6	0:10:30,7	0		empshiwi	14.10.2020 13:32:41	empshiwi	14.10.2020 13:32:41	00:00:03,1	0,44
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question	0:10:27,6	0:10:30,7	0		empshiwi	14.10.2020 13:32:45	empshiwi	14.10.2020 13:32:45	00:00:03,1	0,44
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:31,8	0:10:33,9	0		empshiwi	14.10.2020 13:33:03	empshiwi	14.10.2020 13:33:03	00:00:02,1	0,30
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\reacted	0:10:31,8	0:10:33,9	0		empshiwi	14.10.2020 13:33:07	empshiwi	14.10.2020 13:33:07	00:00:02,1	0,30
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\reacted\verbal	0:10:31,8	0:10:33,9	0		empshiwi	14.10.2020 13:33:09	empshiwi	14.10.2020 13:33:09	00:00:02,1	0,30
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\asking question\perceived	0:10:28,2	0:10:28,4	0		empshiwi	14.10.2020 13:33:28	empshiwi	14.10.2020 13:33:28	00:00:00,2	0,03
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:34,3	0:10:35,4	0		empshiwi	14.10.2020 13:34:27	empshiwi	14.10.2020 13:34:27	00:00:01,0	0,14
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:36,4	0:10:38,4	0		empshiwi	14.10.2020 13:34:49	empshiwi	14.10.2020 13:34:49	00:00:01,9	0,27
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\student	0:10:39,3	0:10:44,3	0		empshiwi	14.10.2020 13:35:23	empshiwi	14.10.2020 13:35:23	00:00:05,0	0,71
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:41,9	0:10:50,8	0		empshiwi	14.10.2020 13:35:58	empshiwi	14.10.2020 13:35:58	00:00:08,8	1,24
+?			Aperol_pilot_02_04_novice_D_cam1	Phase\lesson end	0:11:03,0	0:11:03,1	0		empshiwi	14.10.2020 13:36:25	empshiwi	14.10.2020 13:36:25	00:00:00,1	0,02
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:52,1	0:10:52,8	0		empshiwi	14.10.2020 13:36:37	empshiwi	14.10.2020 13:36:37	00:00:00,6	0,09
+?			Aperol_pilot_02_04_novice_D_cam1	speaking time\teachter	0:10:53,4	0:11:03,0	0		empshiwi	14.10.2020 13:36:55	empshiwi	14.10.2020 13:36:55	00:00:09,6	1,35
+?			Aperol_pilot_02_04_novice_D_cam1	Phase\class discussion	0:00:33,5	0:11:03,1	0		empshiwi	14.10.2020 13:38:41	empshiwi	14.10.2020 13:38:41	00:10:29,6	88,84
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\head on table\not reacted	0:03:34,9	0:04:32,5	0		empshiwi	15.10.2020 14:59:35	empshiwi	15.10.2020 14:59:35	00:00:57,6	8,13
+?			Aperol_pilot_02_04_novice_D_cam1	disturbance\head on table\not perceived	0:03:34,9	0:04:32,5	0		empshiwi	15.10.2020 14:59:37	empshiwi	15.10.2020 14:59:37	00:00:57,6	8,13

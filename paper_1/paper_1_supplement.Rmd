@@ -628,6 +628,8 @@ view(quest.raw.data)
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
 quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
 
+quest.raw.data <- quest.raw.data %>% mutate (speaking.data)
+
 speaking.plot <- quest.raw.data %>%
   ggplot(aes(x='Duration of speaking time', y=value, fill=group)) +
     geom_boxplot() +
@@ -662,7 +664,7 @@ The GRI is a measure of visual expertise in information processing. This metric 
 # prepare data (selected from questionnaire data)
 et.raw.data<-read.table("./data/Aperol_pilot_glasses_raw_fixation_saccades_metrics.tsv", dec=",", sep="\t", header=T) 
 
-# converting to integer to numeric
+# converting integer to numeric
 et.raw.data <- et.raw.data %>%  mutate(Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
                                        Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations))
 
@@ -674,6 +676,7 @@ et.raw.table <- et.raw.data %>%
   summarise("Fixation Number" = Number_of_whole_fixations,
             "Average Duration Fixation" = Average_duration_of_whole_fixations,
             "SE Duration Fixation" = se(Total_duration_of_whole_fixations),
+            "TOI length" = TOI,
             "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
 view(et.raw.table)
 
@@ -712,7 +715,63 @@ et.plot
 
 The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters (@kuckartz2019analyzing). The following coding scheme has been developed for coding:
 
+``` {r coded speaking time, echo = FALSE}
+### read in data for 01_01_expert_D
+speaking.data.01.01 <- read.table("./data/Aperol_pilot_01_01_expert_D_cam4.txt", dec=",", sep="\t", header=T)
 
+### select relevant columns
+speaking.data.01.01 <- speaking.data.01.01  %>% select(
+  Dokumentgruppe,
+  Dokumentname,
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+str(speaking.data.01.01)
+
+### checking for missing values
+is.na(speaking.data.01.01)
+which(is.na(speaking.data.01.01))
+
+### filter only speaking time of teacher and "kodiert von Anna" as row 
+speaking.data.01.01 <- speaking.data.01.01 %>% filter (Code == "speaking time\\teacher",
+                                           Dokumentgruppe == "kodiert von Anna")
+
+
+speaking.data.01.01 <- sum(speaking.data.01.01$Abdeckungsgrad..)
+
+
+# read in data for 01_02_expert_A
+speaking.data.01.02 <- read.table("./data/Aperol_pilot_01_02_expert_A_cam1_AL", dec=",", sep="\t", header=T)
+
+### select relevant columns
+speaking.data.01.02 <- speaking.data.01.02 %>% select(
+  Dokumentgruppe,
+  Dokumentname,
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+str(speaking.data.01.02)
+
+### checking for missing values
+is.na(speaking.data.01.01)
+which(is.na(speaking.data.01.01))
+
+### filter only speaking time of teacher and "kodiert von Anna" as row 
+speaking.data.01.01 <- speaking.data.01.01 %>% filter (Code == "speaking time\\teacher",
+                                           Dokumentgruppe == "kodiert von Anna")
+
+
+speaking.data.01.01 <- sum(speaking.data.01.01$Abdeckungsgrad..)
+
+
+
+```
 
 ## Data analysis
 We used `r cite_r("r-references.bib")` for all our analyses.
