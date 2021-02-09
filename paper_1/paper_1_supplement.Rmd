@@ -127,10 +127,17 @@ apa_table(
 
 ```
 
-
 The selection of the subjects was based on extreme groups, whereby professional experience is the crucial criterion for the selection of experts or novices. Novices were recruited as teachers who have been working in the teaching profession for no more than 3 years, whereas experts were considered to have professional experience of 10 years or more [@messner2000berufliche].
 
-## Data collection
+## Procedure/ Data collection
+
+### Set up
+
+For this study, scripted mini-lessons with n = 2 experts and n = 6 novices were recorded in the mobile Lab of the Empirical School and Classroom Research at the University of Leipzig. The subjects were divided into groups of four, so the study was conducted on two different sessions. All participants were asked to hold a 10-minute lesson. The duration of each appointment was approximately 2h: per group 10min briefing, 4 x 10min mini-lessons, 10min technical preparation and follow-up and 4x 10min transition points between the lessons and answering questionnaires.
+
+One person from the group of 4 acted as a teacher, the other three subjects acted as the class. The subjects, who represented the class, were given behavioral instructions in a pre-written script to simulate typical events and disruptions in the classroom (e.g. putting their heads on the table, chatting, looking at their mobile phones, etc.).
+
+The lesson disruptions were displayed as instructions during the lesson for all "students" but not the teacher. In order to avoid learning effects, the disruptions in each lesson were distributed pseudo-randomly over the short teaching phase. In addition, the order of the data collection was taken into account in the analyses and variance caused by order was controlled.
 
 (ref:datacollection-caption) Example for set up during a mini-lesson
 
@@ -159,25 +166,25 @@ knitr::include_graphics("./pictures/datacollection.png", dpi = 108)
 
 ```
 
+### Questionnaire data
 
-For this study, scripted mini-lessons with n = 2 experts and n = 6 novices were recorded in the mobile Lab of the Empirical School and Classroom Research at the University of Leipzig. The subjects were divided into groups of four, so the study was conducted on two different sessions. All participants were asked to hold a 10-minute lesson. The duration of each appointment was approximately 2h: per group 10min briefing, 4 x 10min mini-lessons, 10min technical preparation and follow-up and 4x 10min transition points between the lessons and answering the questionnaire.
+After each mini-lesson, the subjects answered items on the teaching quality using a validated questionnaire ((@helmke2014unterrichtsdiagnostik)) and scales on the teacher's presence behavior. An external observer also completed the questionnaire. In addition, the teacher was asked to give a self-assessment on his/her classroom management by completing the questionnaire. 
 
-One person from the group of 4 acted as a teacher, the other three subjects acted as the class. The subjects, who represented the class, were given behavioral instructions in a pre-written script to simulate typical events and disruptions in the classroom (e.g. putting their heads on the table, chatting, looking at their mobile phones, etc.).
+### Behavioral data
 
-The lesson disruptions were displayed as instructions during the lesson for all "students" but not the teacher. In order to avoid learning effects, the disruptions in each lesson were distributed pseudo-randomly over the short teaching phase. In addition, the order of the data collection was taken into account in the analyses and variance caused by order was controlled.
+The speech, sounds and voices were recorded with an audio recorder installed in the middle of the Lab. Movements, facial expressions and gestures of the subjects were recorded by four cameras from different angles. One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
 
-By using mobile eye-trackers, the gaze and behavior of the experts and novices was recorded during the lesson. In addition, the speech and sounds and voices were recorded with an audio recorder installed in the middle of the Lab. Movements, facial expressions and gestures of the subjects were recorded by four cameras from different angles. One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
+### Eyetracking data
 
-The lessons recorded on video were coded in a post-hoc procedure with a coding software by previously trained raters. The statistical data have been analyzed by using the program RStudio [Link: https://rstudio.com/].
+A binocular Tobii Pro Glasses 2 eye-tracker consisting of a wearable head unit and a recording unit was used to record the eye movements of all 8 participants. The head unit is a measuring device with different sensitive sensors. A high-definition scene camera captures a full HD video and an integrated microphone records the surrounding sounds. Infrared light illuminators support the eye tracking sensors which record the eye orientation. The videos were recorded with a sampling rate of 50 Hz and a video resolution with 1920 x 1080 at 25 frames per second. The scene camera has a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and has a frame dimension of 179 x 159 x 57mm (width x depth x height). The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
 
 
-## Measures
+## Coding/ Data preparation/ Reliability 
 
 ### Questionnaire Data
-*Describe how we collect questionnaire data (paper or online). Add some basic information about the structure of the questionnaire.* 
 
 The evaluation after each mini-lesson was conducted using paper questionnaires. Time needed to complete the questionnaire was about 5 minutes. 
-The scales on the quality of teaching are a validated questionnaire (@helmke2014unterrichtsdiagnostik). Whereas the scales on the teacher's presence behaviour were derived from the research literature (@brophy1986classroom; @kiel2013trainingsbuch; @kounin2006techniken; @marzano2007art; @nolting2012storungen) and were used in the pilot for the first time. 
+The scales on the quality of teaching are a validated questionnaire (@helmke2014unterrichtsdiagnostik). Whereas the scales on the teacher's presence behavior were derived from the research literature (@brophy1986classroom; @kiel2013trainingsbuch; @kounin2006techniken; @marzano2007art; @nolting2012storungen) and were used in the pilot for the first time. 
 
 The following scales were assessed:
 
@@ -589,7 +596,6 @@ nb.plot
 \newpage
 In addition, we plotted all scales. Graph provides boxplots and individual data for experts and novices.
 
-
 ```{r boxplot scales, fig.width=6, fig.height = 8, echo = FALSE}
 
 quest.plot <- quest.raw.data %>%
@@ -647,78 +653,12 @@ speaking.plot
 ```
 \newpage
 
-### Eye-tracking equipment 
 
-A binocular Tobii Pro Glasses 2 eye-tracker consisting of a wearable head unit and a recording unit was used to record the eye movements. The head unit is a measuring device with different sensitive sensors. A high-definition scene camera captures a full HD video and an integrated microphone records the surrounding sounds. Infrared light illuminators support the eye tracking sensors which record the eye orientation. The videos were recorded with a sampling rate of 50 Hz and a video resolution with 1920 x 1080 at 25 frames per second. The scene camera has a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and has a frame dimension of 179 x 159 x 57mm (width x depth x height). The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
-
-The Tobii Pro Glasses 2 software allows for non-screen based recordings of a participants’ attention while moving in real-world settings. The recordings of the glasses contain both HD-video from the subjects' perspective as well as the respective gaze data mapped onto the video. In order to map multiple recordings to AOIs, it is necessary to import the eye-tracking recordings into the Tobii Pro Analyzer software. Also, it is necessary to create a reference image of the scene in which one wishes to plot the gaze data (i.e. snapshot). Once the snapshot is imported, the gaze recordings of multiple recordings can be mapped to the reference image and analyzed in aggregated form. Tobii Pro does not allow to do AOI based analyses within Pro Lab. Also, the dependency on snapshot reference images makes this approach impractical when working in different settings, i.e. different classrooms with various participants. Finally, mapping gaze to people or any moving objects complicated the analyses further.
-
-### Eye-Tracking Data 
-
-#### Gaze relational index (GRI)
-
-The GRI is a measure of visual expertise in information processing. This metric is calculated as the ratio of mean fixation duration to fixation count. The GRI is higher for novices than for experts. (@gegenfurtner2020gaze)
-
-```{r GRItable, echo = FALSE}
-
-# prepare data (selected from questionnaire data)
-et.raw.data<-read.table("./data/Aperol_pilot_glasses_raw_fixation_saccades_metrics.tsv", dec=",", sep="\t", header=T) 
-
-# converting integer to numeric
-et.raw.data <- et.raw.data %>%  mutate(Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
-                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations))
-
-# calculate GRI 
-
-# create a basic table (tibble) using tidyverse functions
-et.raw.table <- et.raw.data %>%
-  group_by(Participant, Variable) %>%
-  summarise("Fixation Number" = Number_of_whole_fixations,
-            "Average Duration Fixation" = Average_duration_of_whole_fixations,
-            "SE Duration Fixation" = se(Total_duration_of_whole_fixations),
-            "TOI length" = TOI,
-            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
-view(et.raw.table)
-
-# format and insert table in manuscript
-apa_table(
-  et.raw.table,
-  caption = "Number and Duration (in msec) of Fixations",
-  # note = "Write Note here", 
-  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
-  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
-  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
-  )
-
-```
-
-```{r boxplot GRI, fig.width=6, fig.height = 8, echo = FALSE}
-
-et.plot <- et.raw.data %>%
-  ggplot(aes(x=Number_of_whole_fixations, y=value, fill=scale)) +
-    geom_boxplot() +
-    scale_x_discrete(guide = guide_axis(angle = 70)) +
-    geom_jitter(color="black", size=0.4, alpha=0.9) +
-    theme_light() +
-    theme(
-      legend.position="none",
-      plot.title = element_text(size=11)
-    ) +
-    facet_grid(~Variable)+
-    ggtitle("Boxplot with individual points for Number of fixations") +
-    xlab("")
-et.plot
-
-```
-
-### Coding Data 
+### Behavioral Data
 
 The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters (@kuckartz2019analyzing). The following coding scheme was developed:
 
-- 
-
 First, we coded the speaking time of the teacher and the students to compare all perspectives: coder, observer, students, teacher. The graph below shows the result of the coded speaking duration compared to the estimated speaking duration assessed with the questionnaire.
-
 
 ``` {r coded speaking time, echo = FALSE}
 ### read in data for 01_01_expert_D
@@ -966,17 +906,94 @@ speaking.plot
 
 ```
 
+
+### Eyetracking Data
+
+The Tobii Pro Lab 2 software was used to analyze the teachers' visual attetion during each mini-lesson. The software allows for non-screen based recordings of a participants’ attention while moving in real-world settings. The recordings of the glasses contain both HD-video from the subjects' perspective as well as the respective gaze data mapped onto the video. In order to map multiple recordings to AOIs, we first imported the eye-tracking recordings into the Tobii Pro Analyzer software. Second, we created dynamic Areas of Interest (AOI) manually to plot the gaze data. Once the AOIs are created, the gaze recordings of multiple recordings can be mapped and analyzed in aggregated form. Tobii Pro does not allow to do AOI based analyses within Pro Lab. So we exported a tsv. file to do further analyses in the software R.
+
+#### Gaze relational index (GRI)
+
+The GRI is a measure of visual expertise in information processing. This metric is calculated as the ratio of mean fixation duration to fixation count. The GRI is higher for novices than for experts. (@gegenfurtner2020gaze)
+
+```{r GRItable, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.raw.data<-read.table("./data/Aperol_pilot_glasses_AOI.tsv", dec=",", sep="\t", header=T) 
+
+# converting integer to numeric
+et.raw.data <- et.raw.data %>%  mutate(Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations))
+
+
+# calculate the GRI 
+
+# create a basic table (tibble) using tidyverse functions
+et.raw.table <- et.raw.data %>%
+  group_by(Participant, Variable) %>%
+  summarise("Fixation Number" = Number_of_whole_fixations,
+            "Average Duration Fixation" = Average_duration_of_whole_fixations,
+            "SE Duration Fixation" = se(Total_duration_of_whole_fixations),
+            "TOI length" = TOI,
+            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+
+view(et.raw.table)
+
+# format and insert table in manuscript
+apa_table(
+  et.raw.table,
+  caption = "Number and Duration (in msec) of Fixations",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+```{r boxplot GRI, fig.width=6, fig.height = 8, echo = FALSE}
+
+et.plot <- et.raw.data %>%
+  ggplot(aes(x=Number_of_whole_fixations, y=value, fill=scale)) +
+    geom_boxplot() +
+    scale_x_discrete(guide = guide_axis(angle = 70)) +
+    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    theme_light() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)
+    ) +
+    facet_grid(~Variable)+
+    ggtitle("Boxplot with individual points for Number of fixations") +
+    xlab("")
+et.plot
+
+```
+
+
+
+
 ## Data analysis
 We used `r cite_r("r-references.bib")` for all our analyses.
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
+### Questionnaire Data
+
+### Behavioral Data
+
+### Eyetracking Data
+
+
+
 # Results
 
-### Questionnaire Data
-*Start entering descriptives and plots here* Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+### Questionnaire Data
+
+### Behavioral Data
+
+### Eyetracking Data
 
 
 # Discussion

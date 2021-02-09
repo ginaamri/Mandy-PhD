@@ -1,0 +1,81 @@
+ID	Recording	Label	Group	PersonID	Session	Unit	Type of disruption	Total duration of fixation in AOI (sec)	Total duration of fixation in AOI (msec)	Average duration of fixation in AOI (sec)	Average duration of fixation in AOI (msec)	Number of fixations in AOI	Total Time of Interest Duration (sec)	Total Time of Interest Duration (msec)
+1	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	chatting with neighbor	5,89	5889,47	0,28	280,45	21	723,92	723922,27
+2	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	yelling	9,50	9500,22	0,73	730,79	13	723,92	723922,27
+3	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	asking a question	5,74	5744,89	0,96	957,48	6	723,92	723922,27
+4	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	walking around	6,62	6616,62	0,33	330,83	20	723,92	723922,27
+5	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	clicking with pen	0,92	919,80	0,31	306,60	3	723,92	723922,27
+6	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	drumming hands on table	11,34	11339,68	0,67	667,04	17	723,92	723922,27
+7	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	putting head on table	4,28	4280,81	0,36	356,73	12	723,92	723922,27
+8	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	looking at phone	6,46	6456,24	0,81	807,03	8	723,92	723922,27
+9	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	drawing on paper	4,28	4277,53	0,53	534,69	8	723,92	723922,27
+10	033	Aperol_pilot_01_04_novice_C_glasses	novice	C	001	001	calibration	16,95	16953,86	1,13	1130,26	15	723,92	723922,27
+11	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	chatting with neighbor	6,98	6980,81	0,50	498,63	14	838,03	838025,59
+12	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	yelling	4,67	4674,45	0,67	667,78	7	838,03	838025,59
+13	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	asking a question	4,22	4217,56	0,28	281,17	15	838,03	838025,59
+14	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	walking around	4,74	4740,12	0,18	182,31	26	838,03	838025,59
+15	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	clicking with pen	7,28	7275,66	0,28	279,83	26	838,03	838025,59
+16	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	drumming hands on table	9,30	9295,02	0,42	422,50	22	838,03	838025,59
+17	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	putting head on table	7,16	7155,72	0,38	376,62	19	838,03	838025,59
+18	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	looking at phone	11,27	11273,40	0,38	375,78	30	838,03	838025,59
+19	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	drawing on paper	5,39	5387,20	0,22	215,49	25	838,03	838025,59
+20	034	Aperol_pilot_01_02_expert_A_glasses	expert	A	001	002	calibration	14,40	14400,23	1,11	1107,71	13	838,03	838025,59
+21	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	chatting with neighbor	11,44	11435,47	0,71	714,72	16	744,44	744444,49
+22	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	yelling	5,40	5403,07	0,68	675,38	8	744,44	744444,49
+23	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	asking a question	7,18	7182,87	0,80	798,10	9	744,44	744444,49
+24	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	walking around	19,34	19342,95	0,92	921,09	21	744,44	744444,49
+25	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	clicking with pen	20,07	20068,02	0,96	955,62	21	744,44	744444,49
+26	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	drumming hands on table	8,09	8090,41	1,35	1348,40	6	744,44	744444,49
+27	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	putting head on table	5,35	5353,29	0,54	535,33	10	744,44	744444,49
+28	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	looking at phone	10,17	10168,97	0,73	726,36	14	744,44	744444,49
+29	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	drawing on paper	19,86	19857,95	0,55	551,61	36	744,44	744444,49
+30	035	Aperol_pilot_01_03_novice_B_glasses	novice	B	001	003	calibration	10,38	10375,46	0,58	576,42	18	744,44	744444,49
+31	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	chatting with neighbor	4,24	4235,49	0,71	705,91	6	781,98	781978,04
+32	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	yelling	2,98	2978,23	0,43	425,46	7	781,98	781978,04
+33	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	asking a question	1,44	1443,21	0,48	481,07	3	781,98	781978,04
+34	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	walking around	20,86	20863,43	0,60	596,10	35	781,98	781978,04
+35	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	clicking with pen	5,48	5475,55	0,55	547,56	10	781,98	781978,04
+36	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	drumming hands on table	3,47	3468,42	0,58	578,07	6	781,98	781978,04
+37	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	putting head on table	4,62	4622,55	0,66	660,36	7	781,98	781978,04
+38	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	looking at phone	4,98	4976,97	0,50	497,70	10	781,98	781978,04
+39	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	drawing on paper	7,81	7805,47	0,52	520,36	15	781,98	781978,04
+40	036	Aperol_pilot_01_01_expert_D_glasses	expert	D	001	004	calibration	15,83	15834,07	1,58	1583,41	10	781,98	781978,04
+41	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	chatting with neighbor	1,50	1499,18	0,17	166,58	9	729,76	729762,37
+42	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	yelling	8,31	8307,13	0,40	395,58	21	729,76	729762,37
+43	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	asking a question	0,16	159,91	0,16	159,91	1	729,76	729762,37
+44	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	clicking with pen	0,34	341,45	0,07	68,29	5	729,76	729762,37
+45	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	drumming hands on table	7,13	7131,35	0,19	187,67	38	729,76	729762,37
+46	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	putting head on table	2,15	2154,55	0,12	119,70	18	729,76	729762,37
+47	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	looking at phone	1,36	1363,86	0,17	170,48	8	729,76	729762,37
+48	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	drawing on paper	3,44	3437,99	0,17	170,48	20	729,76	729762,37
+49	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	staring out the window	1,17	1174,07	0,13	130,45	9	729,76	729762,37
+50	037	Aperol_pilot_02_01_novice_A_glasses	novice	A	002	001	calibration	10,18	10183,38	0,36	363,69	28	729,76	729762,37
+51	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	chatting with neighbor	3,86	3859,60	0,35	350,87	11	730,57	730565,01
+52	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	yelling	5,54	5537,67	0,62	615,30	9	730,57	730565,01
+53	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	asking a question	4,59	4593,66	0,66	656,24	7	730,57	730565,01
+54	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	clicking with pen	7,03	7031,68	0,70	703,17	10	730,57	730565,01
+55	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	drumming hands on table	3,48	3477,94	0,39	386,44	9	730,57	730565,01
+56	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	putting head on table	8,33	8328,93	0,46	462,72	18	730,57	730565,01
+57	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	looking at phone	3,27	3269,13	0,36	363,24	9	730,57	730565,01
+58	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	drawing on paper	5,23	5227,18	0,21	209,09	25	730,57	730565,01
+59	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	staring out the window	2,42	2418,56	0,60	604,64	4	730,57	730565,01
+60	038	Aperol_pilot_02_02_novice_B_glasses	novice	B	002	002	calibration	12,52	12524,66	0,96	963,44	13	730,57	730565,01
+61	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	chatting with neighbor	7,87	7867,69	0,79	786,77	10	737,60	737604,07
+62	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	yelling	13,42	13418,17	0,89	894,55	15	737,60	737604,07
+63	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	asking a question	4,72	4717,15	0,94	943,43	5	737,60	737604,07
+64	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	clicking with pen	5,62	5617,35	0,51	510,67	11	737,60	737604,07
+65	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	drumming hands on table	3,70	3698,21	0,46	462,28	8	737,60	737604,07
+66	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	putting head on table	9,92	9921,86	0,40	396,88	25	737,60	737604,07
+67	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	looking at phone	2,65	2648,60	0,26	264,86	10	737,60	737604,07
+68	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	drawing on paper	4,39	4392,88	0,34	337,91	13	737,60	737604,07
+69	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	staring out the window	9,75	9751,48	0,36	361,17	27	737,60	737604,07
+70	039	Aperol_pilot_02_03_novice_C_glasses	novice	C	002	003	calibration	15,75	15753,36	0,83	829,12	19	737,60	737604,07
+71	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	chatting with neighbor	18,60	18600,29	1,96	1959,01	5	747,73	747729,29
+72	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	yelling	0,47	469,84	1,95	1953,66	9	747,73	747729,29
+73	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	asking a question	8,82	8822,52	0,18	179,90	3	747,73	747729,29
+74	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	clicking with pen	3,96	3957,60	0,58	582,63	9	747,73	747729,29
+75	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	drumming hands on table	0,22	219,85	2,32	2318,57	7	747,73	747729,29
+76	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	putting head on table	16,23	16229,98	0,22	219,85	1	747,73	747729,29
+77	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	looking at phone	5,24	5243,62	1,98	1978,80	2	747,73	747729,29
+78	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	drawing on paper	0,54	539,70	0,74	735,21	12	747,73	747729,29
+79	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	staring out the window	17,58	17582,95	0,23	234,92	2	747,73	747729,29
+80	040	Aperol_pilot_02_04_novice_D_glasses	novice	D	002	004	calibration	9,80	9795,03	1,33	1328,59	14	747,73	747729,29
