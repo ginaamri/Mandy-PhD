@@ -614,45 +614,8 @@ quest.plot <- quest.raw.data %>%
 quest.plot
 
 ```
+
 \newpage
-Furthermore, the duration of the speaking time during the lesson was estimated in the questionnaire by external and self-assessment. The following graph shows the duration of speaking time for experts and novices evaluated by the observer, the students and the teacher.
-
-```{r Duration speaking time, fig.width=5, fig.height = 5, echo = FALSE}
-# prepare data (selected from questionnaire data)
-quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
-
-# knock out NAs
-quest.raw.data <- quest.raw.data  %>% filter(
-  personID != "NA")
-
-# to compare both sessions filter only Identical items
-quest.raw.data <- quest.raw.data  %>% filter(str_detect(scale, 
-                                                 paste(c("Duration of speaking time"),
-                                                    collapse = '|')))
-view(quest.raw.data)
-
-# value sometimes contained text before filtering, we have to convert the numbers to numeric
-quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
-
-quest.raw.data <- quest.raw.data %>% mutate (speaking.data)
-
-speaking.plot <- quest.raw.data %>%
-  ggplot(aes(x='Duration of speaking time', y=value, fill=group)) +
-    geom_boxplot() +
-    geom_jitter(color="black", size=0.4, alpha=0.9) +
-    theme_light() +
-    theme(
-      legend.position="none",
-      plot.title = element_text(size=11),
-      axis.text.x = element_text(size = 8)) +
-    facet_grid(group~perspective) +
-    ggtitle("Boxplot with individual points for Duration of speaking time") +
-    xlab("")
-speaking.plot
-
-```
-\newpage
-
 
 ### Behavioral Data
 
@@ -918,29 +881,31 @@ The GRI is a measure of visual expertise in information processing. This metric 
 ```{r GRItable, echo = FALSE}
 
 # prepare data (selected from questionnaire data)
-et.raw.data<-read.table("./data/Aperol_pilot_glasses_AOI.tsv", dec=",", sep="\t", header=T) 
+et.data<-read.table("./data/Aperol_pilot_glasses_AOI.txt", dec=",", sep="\t", header=T) 
+
+view(et.data)
+str(et.data)
 
 # converting integer to numeric
-et.raw.data <- et.raw.data %>%  mutate(Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
-                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations))
-
+et.data <- et.data %>%  mutate(Number.of.fixations.in.AOI = as.numeric(Number.of.fixations.in.AOI))
 
 # calculate the GRI 
 
 # create a basic table (tibble) using tidyverse functions
-et.raw.table <- et.raw.data %>%
-  group_by(Participant, Variable) %>%
-  summarise("Fixation Number" = Number_of_whole_fixations,
-            "Average Duration Fixation" = Average_duration_of_whole_fixations,
-            "SE Duration Fixation" = se(Total_duration_of_whole_fixations),
-            "TOI length" = TOI,
-            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+et.table <- et.data %>%
+  group_by(PersonID, Group) %>%
+  summarise("Fixation Number" = Number.of.fixations.in.AOI,
+            "Fixation Duration" = Total.duration.of.fixation.in.AOI..msec.,
+            "Average Duration Fixation" = Average.duration.of.fixation.in.AOI..msec.,
+            "SE Duration Fixation" = se(Total.duration.of.fixation.in.AOI..msec.),
+            "TOI" = Total.Time.of.Interest.Duration..msec.,
+            "GRI" = Average.duration.of.fixation.in.AOI..msec. / Number.of.fixations.in.AOI)
 
-view(et.raw.table)
+view(et.table)
 
 # format and insert table in manuscript
 apa_table(
-  et.raw.table,
+  et.table,
   caption = "Number and Duration (in msec) of Fixations",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
@@ -951,21 +916,21 @@ apa_table(
 ```
 
 ```{r boxplot GRI, fig.width=6, fig.height = 8, echo = FALSE}
-
-et.plot <- et.raw.data %>%
-  ggplot(aes(x=Number_of_whole_fixations, y=value, fill=scale)) +
-    geom_boxplot() +
-    scale_x_discrete(guide = guide_axis(angle = 70)) +
-    geom_jitter(color="black", size=0.4, alpha=0.9) +
-    theme_light() +
-    theme(
-      legend.position="none",
-      plot.title = element_text(size=11)
-    ) +
-    facet_grid(~Variable)+
-    ggtitle("Boxplot with individual points for Number of fixations") +
-    xlab("")
-et.plot
+# 
+# et.plot <- et.raw.data %>%
+#   ggplot(aes(x=Number_of_whole_fixations, y=value, fill=scale)) +
+#     geom_boxplot() +
+#     scale_x_discrete(guide = guide_axis(angle = 70)) +
+#     geom_jitter(color="black", size=0.4, alpha=0.9) +
+#     theme_light() +
+#     theme(
+#       legend.position="none",
+#       plot.title = element_text(size=11)
+#     ) +
+#     facet_grid(~Variable)+
+#     ggtitle("Boxplot with individual points for Number of fixations") +
+#     xlab("")
+# et.plot
 
 ```
 
