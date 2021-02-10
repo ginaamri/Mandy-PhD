@@ -17,12 +17,12 @@ author:
   
 affiliation:
   - id            : "1"
-    institution   : "University of Leipzig"
+    institution   : "Leipzig University"
   - id            : "2"
-    institution   : "MPI for Evolutionary Anthropology, Leipzig"
+    institution   : "Max-Planck University for Evolutionary Anthropology"
 
 authornote: |
-  The study was carried out with the permission of the Ethics Committee of the University of Leipzig.
+  The Ethics Advisory Board of Leipzig University has dealt with the research project and has come to the conclusion that there are no objections to the implementation of this research project. The Ethics Advisory Board points out that the scientific and ethical responsibilty for the implementation of the project remains with the project director.
 
 abstract: |
   This document is a supplement to the paper and shows first graphs findings from the pilot study. 
@@ -197,7 +197,7 @@ The following scales were assessed:
 (7) Presence: verbal and non-verbal intervention
 (8) Natural behaviour
 
-The table at the end of the manuscript provides an overview over the mean, the range and standard deviation of all scales.
+The table provides an overview over the mean, the range and standard deviation of all scales.
 
 ```{r table all scales, echo = FALSE}
 
@@ -621,9 +621,37 @@ quest.plot
 
 The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters (@kuckartz2019analyzing). The following coding scheme was developed:
 
+- phase - lesson begin, state event: teacher starts the lesson with a noise, talk, taking a position in class
+- phase - lesson end,	state event: teacher finishes the lesson with a noise, talk, taking a position in class
+- phase - organization/transition points, state event: any situation that does not imply effective learning time (fetching chalk, working material, organizing desks, opening windows, printing work results etc.)
+- phase - single,	state event: any individual student activity on a given task (reading, writing, drawing etc.)
+- phase - group, state event: any student activity on a given task together in a group of at least 3 students (reading, writing, drawing etc.)
+- phase - class discussion, state event: discussion in class, teacher talks to class/individual/group
+- phase - pair: state event: any student activity on a given task together in a team of 2 students (reading, writing, drawing etc.)
+- phase - teachers lecture, state event: any teacher's presentation on a certain topic which maybe supported by a PPP, PREZI, notes on board, OHP etc.
+- phase - other, state event: not categorizable
+- phase - break, state event: e.g. drinking, relaxation exercises
+- phase - external interruption, state event: external interruptions (e.g. fire alarm, technical problems, other teachers coming into the room)
+
+- speaking time - teacher, state event
+- speaking time - students, state event
+
+- disruption - chatting with neighbor, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - asking a question, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - yelling, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - looking at phone, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - staring out of window, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - drawing, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - head on table, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - clicking pen, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - drumming hands, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - walking around, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+
+
+
 First, we coded the speaking time of the teacher and the students to compare all perspectives: coder, observer, students, teacher. The graph below shows the result of the coded speaking duration compared to the estimated speaking duration assessed with the questionnaire.
 
-``` {r coded speaking time, echo = FALSE}
+```{r coded speaking time, echo = FALSE}
 ### read in data for 01_01_expert_D
 speaking.data.01.01 <- read.delim("./data/Aperol_pilot_01_01_expert_D_cam4_AL_MK.txt", dec=",", sep="\t", header=T)
 
@@ -637,26 +665,15 @@ speaking.data.01.01 <- speaking.data.01.01  %>% select(
   Fläche,
   Abdeckungsgrad..)
 
-str(speaking.data.01.01)
-
-### checking for missing values
-is.na(speaking.data.01.01)
-which(is.na(speaking.data.01.01))
-
 ### filter only speaking time of teacher and "kodiert von Anna" as row 
 speaking.data.01.01 <- speaking.data.01.01 %>% filter (Code == "speaking time\\teacher",
                                            Dokumentgruppe == "kodiert von Anna")
-
-
 speaking.data.01.01 <- sum(speaking.data.01.01$Abdeckungsgrad..)
-
-
 
 
 # read in data for 01_02_expert_A
 speaking.data.01.02 <- read.delim("./data/Aperol_pilot_01_02_expert_A_cam1_AL.txt", dec=",", sep="\t", header=T)
 
-view(speaking.data.01.02)
 
 ### select relevant columns
 speaking.data.01.02 <- speaking.data.01.02 %>% select(
@@ -667,24 +684,13 @@ speaking.data.01.02 <- speaking.data.01.02 %>% select(
   Fläche,
   Abdeckungsgrad..)
 
-### checking for missing values
-is.na(speaking.data.01.02)
-which(is.na(speaking.data.01.02))
-
 ### filter only speaking time of teacher as row 
 speaking.data.01.02 <- speaking.data.01.02 %>% filter (Code == "speaking time\\teacher")
-
-view(speaking.data.01.02)
-
 speaking.data.01.02 <- sum(speaking.data.01.02$Abdeckungsgrad..)
-
-
 
 
 # read in data for 01_03_novice_B
 speaking.data.01.03 <- read.delim("./data/Aperol_pilot_01_03_novice_B_cam1.txt", dec=",", sep="\t", header=T)
-
-view(speaking.data.01.03)
 
 ### select relevant columns
 speaking.data.01.03 <- speaking.data.01.03 %>% select(
@@ -694,23 +700,14 @@ speaking.data.01.03 <- speaking.data.01.03 %>% select(
   Fläche,
   Abdeckungsgrad..)
 
-str(speaking.data.01.03)
-
-### checking for missing values
-is.na(speaking.data.01.03)
-which(is.na(speaking.data.01.03))
-
 ### filter only speaking time of teacher as row 
 speaking.data.01.03 <- speaking.data.01.03 %>% filter (Code == "speaking time\\teachter")
-
 speaking.data.01.03 <- sum(speaking.data.01.03$Abdeckungsgrad..)
 
 
 
 # read in data for 01_04_novice_C
 speaking.data.01.04 <- read.delim("./data/Aperol_pilot_01_04_novice_C_cam1.txt", dec=",", sep="\t", header=T)
-
-view(speaking.data.01.04)
 
 ### select relevant columns
 speaking.data.01.04 <- speaking.data.01.04 %>% select(
@@ -719,12 +716,6 @@ speaking.data.01.04 <- speaking.data.01.04 %>% select(
   Ende,
   Fläche,
   Abdeckungsgrad..)
-
-str(speaking.data.01.04)
-
-### checking for missing values
-is.na(speaking.data.01.04)
-which(is.na(speaking.data.01.04))
 
 ### filter only speaking time of teacher as row 
 speaking.data.01.04 <- speaking.data.01.04 %>% filter (Code == "speaking time\\teachter")
@@ -735,8 +726,6 @@ speaking.data.01.04 <- sum(speaking.data.01.04$Abdeckungsgrad..)
 # read in data for 02_01_novice_A
 speaking.data.02.01 <- read.delim("./data/Aperol_pilot_02_01_novice_A_glasses.txt", dec=",", sep="\t", header=T)
 
-view(speaking.data.02.01)
-
 ### select relevant columns
 speaking.data.02.01 <- speaking.data.02.01 %>% select(
   Code,
@@ -745,23 +734,13 @@ speaking.data.02.01 <- speaking.data.02.01 %>% select(
   Fläche,
   Abdeckungsgrad..)
 
-str(speaking.data.02.01)
-
-### checking for missing values
-is.na(speaking.data.02.01)
-which(is.na(speaking.data.02.01))
-
 ### filter only speaking time of teacher as row 
 speaking.data.02.01 <- speaking.data.02.01 %>% filter (Code == "speaking time\\teacher")
-
 speaking.data.02.01 <- sum(speaking.data.02.01$Abdeckungsgrad..)
-
 
 
 # read in data for 02_02_novice_B
 speaking.data.02.02 <- read.delim("./data/Aperol_pilot_02_02_novice_B_cam1_AL_MK.txt", dec=",", sep="\t", header=T)
-
-view(speaking.data.02.02)
 
 ### select relevant columns
 speaking.data.02.02 <- speaking.data.02.02 %>% select(
@@ -772,24 +751,14 @@ speaking.data.02.02 <- speaking.data.02.02 %>% select(
   Fläche,
   Abdeckungsgrad..)
 
-str(speaking.data.02.02)
-
-### checking for missing values
-is.na(speaking.data.02.02)
-which(is.na(speaking.data.02.02))
-
 ### filter only speaking time of teacher as row 
 speaking.data.02.02 <- speaking.data.02.02 %>% filter (Code == "speaking time\\teacher",
                                                        Dokumentgruppe == "kodiert von Anna")
-
 speaking.data.02.02 <- sum(speaking.data.02.02$Abdeckungsgrad..)
-
 
 
 # read in data for 02_03_novice_C
 speaking.data.02.03 <- read.delim("./data/Aperol_pilot_02_03_novice_C_cam1_AL_MK.txt", dec=",", sep="\t", header=T)
-
-view(speaking.data.02.03)
 
 ### select relevant columns
 speaking.data.02.03 <- speaking.data.02.03 %>% select(
@@ -800,24 +769,13 @@ speaking.data.02.03 <- speaking.data.02.03 %>% select(
   Fläche,
   Abdeckungsgrad..)
 
-str(speaking.data.02.03)
-
-### checking for missing values
-is.na(speaking.data.02.03)
-which(is.na(speaking.data.02.03))
-
 ### filter only speaking time of teacher as row 
 speaking.data.02.03 <- speaking.data.02.03 %>% filter (Code == "speaking time\\teachter",
                                                        Dokumentgruppe == "02_03_kodiert von Anna")
-
 speaking.data.02.03 <- sum(speaking.data.02.03$Abdeckungsgrad..)
-
-
 
 # read in data for 02_04_novice_D
 speaking.data.02.04 <- read.delim("./data/Aperol_pilot_02_04_novice_D_cam1.txt", dec=",", sep="\t", header=T)
-
-view(speaking.data.02.04)
 
 ### select relevant columns
 speaking.data.02.04 <- speaking.data.02.04 %>% select(
@@ -827,17 +785,13 @@ speaking.data.02.04 <- speaking.data.02.04 %>% select(
   Fläche,
   Abdeckungsgrad..)
 
-str(speaking.data.02.04)
-
-### checking for missing values
-is.na(speaking.data.02.04)
-which(is.na(speaking.data.02.04))
-
 ### filter only speaking time of teacher as row 
 speaking.data.02.04 <- speaking.data.02.04 %>% filter (Code == "speaking time\\teachter")
-
 speaking.data.02.04 <- sum(speaking.data.02.04$Abdeckungsgrad..)
 
+```
+
+```{r speaking plot, echo=FALSE}
 
 # read in table with coded speaking time included
 speaking.data <- read.delim("./data/plus_coded_speaking_time_questionnaire_data_0802.txt", dec=",", sep="\t", header=T)
@@ -847,10 +801,9 @@ speaking.data <- speaking.data  %>% filter(str_detect(scale,
                                                  paste(c("Duration of speaking time"),
                                                     collapse = '|')))
 
-view(speaking.data)
-
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
 speaking.data <- speaking.data %>%  mutate(value = as.numeric(value))
+
 
 speaking.plot <- speaking.data %>%
   ggplot(aes(x='Duration of speaking time', y=value, fill=group)) +
@@ -866,7 +819,6 @@ speaking.plot <- speaking.data %>%
     xlab("")
 speaking.plot
 
-
 ```
 
 
@@ -881,36 +833,34 @@ The GRI is a measure of visual expertise in information processing. This metric 
 ```{r GRItable, echo = FALSE}
 
 # prepare data (selected from questionnaire data)
-et.data<-read.table("./data/Aperol_pilot_glasses_AOI.txt", dec=",", sep="\t", header=T) 
+et.raw.data<-read.table("./data/Aperol_pilot_glasses_raw_fixation_saccades_metrics.tsv", dec=",", sep="\t", header=T) 
 
-view(et.data)
-str(et.data)
 
 # converting integer to numeric
-et.data <- et.data %>%  mutate(Number.of.fixations.in.AOI = as.numeric(Number.of.fixations.in.AOI))
+et.raw.data <- et.raw.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations)
+                                       )
 
 # calculate the GRI 
-
 # create a basic table (tibble) using tidyverse functions
-et.table <- et.data %>%
-  group_by(PersonID, Group) %>%
-  summarise("Fixation Number" = Number.of.fixations.in.AOI,
-            "Fixation Duration" = Total.duration.of.fixation.in.AOI..msec.,
-            "Average Duration Fixation" = Average.duration.of.fixation.in.AOI..msec.,
-            "SE Duration Fixation" = se(Total.duration.of.fixation.in.AOI..msec.),
-            "TOI" = Total.Time.of.Interest.Duration..msec.,
-            "GRI" = Average.duration.of.fixation.in.AOI..msec. / Number.of.fixations.in.AOI)
-
-view(et.table)
+et.raw.table <- et.raw.data %>%
+  group_by(Participant, Variable) %>%
+  summarise("Fixation Number" = Number_of_whole_fixations,
+            "Fixation Duration" = Total_duration_of_whole_fixations,
+            "M Duration Fixation" = Average_duration_of_whole_fixations,
+            "TOI" = Duration_of_interval,
+            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
 
 # format and insert table in manuscript
 apa_table(
-  et.table,
+  et.raw.table,
   caption = "Number and Duration (in msec) of Fixations",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
-  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  font_size = "scriptsize" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
   )
 
 ```
