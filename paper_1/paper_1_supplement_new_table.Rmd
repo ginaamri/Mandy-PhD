@@ -202,52 +202,34 @@ The table provides an overview over the mean, the range and standard deviation o
 
 ```{r table all scales, echo = FALSE}
 
-# prepare data (selected from questionnaire data)
-quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
+# prepare data (selected from questionnaire data) - only equal items and without observer
+quest.raw.data<-read.table("./data/short_questionnaire_data_150221.txt", dec=",", sep="\t", header=T) 
 
-# knock out NAs and filter only perspective == teacher, student
+# knock out NAs and duration of speaking time
 quest.raw.data <- quest.raw.data  %>% filter(
   personID != "NA",
-  str_detect(perspective, paste(c("teacher", "student"),collapse = '|')))
-
-# to compare both sessions filter only Identical items
-quest.raw.data <- quest.raw.data  %>% filter(str_detect(shortID, 
-                                                 paste(c("km_mitbekommen",
-                                                         "km_klar",
-                                                         "km_ungestört",
-                                                         "km_aktiv",
-                                                         "lkm_freundlich",
-                                                         "lkm_interesse",
-                                                         "lkm_kritik",
-                                                         "lkm_ausreden",
-                                                         "lkm_überlegen",
-                                                         "lkm_rückmeldungen",
-                                                         "ks_funktion",
-                                                         "ks_verständlich",
-                                                         "ks_sichtbar",
-                                                         "af_beiträge",
-                                                         "af_wechselseitig",
-                                                         "af_nachdenken",
-                                                         "phb_stand",
-                                                         "phb_augen",
-                                                         "phb_blick",
-                                                         "phb_vorsichgeht",
-                                                         "phb_raum",
-                                                         "phb_gestik",
-                                                         "phb_alleangesehen",
-                                                         "ps_deutlich",
-                                                         "ps_klar",
-                                                         "ps_impulse",
-                                                         "pi_nonverbal",
-                                                         "pi_zubewegen",
-                                                         "pi_direkt",
-                                                         "m_natürlich",
-                                                         "m_fiktiv",
-                                                         "m_verhalten"),
-                                                    collapse = '|')))
+  itemID != "8")
+view(quest.raw.data)
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
 quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
+
+# calculate Cronbach's Alpha
+# select relevant columns
+quest.raw.data.column <- quest.raw.data %>% select(itemID, value)
+view(quest.raw.data.column)
+# changing long format into wide format 
+quest.raw.data.wide <- spread (quest.raw.data.column, itemID, value)
+view(quest.raw.data.wide)
+
+quest.raw.data.wide <- as_tibble(quest.raw.data) %>%          
+                          select(scale, value) %>%             # select columns of interest
+                          mutate(id = row_number()) %>%         # create a row identifier
+                          spread(scale, value)                 # reshape dataset
+
+
+view(quest.raw.data.wide)
+
 
 # create a basic table (tibble) using tidyverse functions 
 scale.quest.table <- quest.raw.data %>% # select data
@@ -257,11 +239,6 @@ scale.quest.table <- quest.raw.data %>% # select data
             "min scale" = min(value),
             "max sclae" = max(value))
             
-
-# remove duplicate labels from the table column "group" to create the APA-style omission of categorical variables
-# this is easier than the stub_indent option in apa_table
-scale.quest.table$group[duplicated(scale.quest.table$group)] <- ""
-
 # format and insert table in manuscript
 apa_table(
   scale.quest.table,
@@ -278,12 +255,14 @@ apa_table(
 The individual items of a scale are further represented in graphs.
 
 (1) Classroom management
-```{r classroom management line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+```{r classroom management line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Classroom Management}
 
 ### classroom management 
 
-# filter by parameter variable, i.e. create a subset for classroom management
+# filter by parameter variable, i.e. create a subset for classroom management without perspective "observer"
 cm.data <- quest.raw.data %>% filter(scale == "Classroom management")
+                                                 
+view(cm.data)
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
 cm.data <- cm.data %>%  mutate(value = as.numeric(as.character(factor(value))))
@@ -296,7 +275,7 @@ cm.plot.sd <- cm.data %>%
 # long plot
 cm.plot<-ggplot(data = cm.plot.sd,
                   aes(x = item.wordings, y = mean,
-                      group = group, colour = group)) +
+                      group = perspective, colour = perspective)) +
   geom_line()+
   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
   theme_light() +
@@ -316,7 +295,7 @@ cm.plot
 ```
 \newpage
 (2) Positive climate and motivation
-```{r Positive climate and motivation line plots,  fig.width=6, fig.height = 7, message = FALSE, warning = FALSE , echo=FALSE}
+```{r Positive climate and motivation line plots,  fig.width=6, fig.height = 7, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Positive climate and motivation}
 
 ### Positive climate and motivation 
 
@@ -354,7 +333,7 @@ pcm.plot
 ```
 \newpage
 (3) Clarity and structuredness
-```{r Clarity and structuredness line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+```{r Clarity and structuredness line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Clarity and structuredness}
 
 ### Clarity and structuredness 
 
@@ -392,7 +371,7 @@ cs.plot
 ```
 \newpage
 (4) Activation and support
-```{r Activation and support line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+```{r Activation and support line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Activation and support}
 
 ### Activation and support 
 
@@ -561,7 +540,7 @@ knitr::include_graphics("./pictures/presenceverbalnonverbalintervention.png", dp
 ```
 \newpage
 (8) Natural behaviour
-```{r Natural behaviour line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+```{r Natural behaviour line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Natural beaviour}
 
 ### Natural behaviour 
 # filter by parameter variable, i.e. create a subset for Natural behaviour
@@ -599,7 +578,7 @@ nb.plot
 \newpage
 In addition, we plotted all scales. Graph provides boxplots and individual data for experts and novices.
 
-```{r boxplot scales, fig.width=6, fig.height = 8, echo = FALSE}
+```{r boxplot scales, fig.width=6, fig.height = 8, echo = FALSE, fig.cap = Boxplots and individual data for experts and novices}
 
 quest.plot <- quest.raw.data %>%
   ggplot(aes(x=scale, y=value, fill=scale)) +
@@ -622,16 +601,16 @@ quest.plot
 
 ### Behavioral Data
 
-The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters (@kuckartz2019analyzing). The following coding scheme was developed:
+The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters [@kuckartz2019analyzing]. The following coding scheme was developed:
 
 - phase - lesson begin, state event: teacher starts the lesson with a noise, talk, taking a position in class
 - phase - lesson end,	state event: teacher finishes the lesson with a noise, talk, taking a position in class
-- phase - organization/transition points, state event: any situation that does not imply effective learning time (fetching chalk, working material, organizing desks, opening windows, printing work results etc.)
+- phase - organization/transition points, state event: any situation that does not imply effective learning time (fetching chalk, working        material, organizing desks, opening windows, printing work results etc.)
 - phase - single,	state event: any individual student activity on a given task (reading, writing, drawing etc.)
 - phase - group, state event: any student activity on a given task together in a group of at least 3 students (reading, writing, drawing etc.)
 - phase - class discussion, state event: discussion in class, teacher talks to class/individual/group
 - phase - pair: state event: any student activity on a given task together in a team of 2 students (reading, writing, drawing etc.)
-- phase - teachers lecture, state event: any teacher's presentation on a certain topic which maybe supported by a PPP, PREZI, notes on board, OHP etc.
+- phase - teachers lecture, state event: any teacher's presentation on a certain topic which maybe supported by a PPP, PREZI, notes on board,    OHP etc.
 - phase - other, state event: not categorizable
 - phase - break, state event: e.g. drinking, relaxation exercises
 - phase - external interruption, state event: external interruptions (e.g. fire alarm, technical problems, other teachers coming into the room)
@@ -654,7 +633,7 @@ The recorded lessons were coded in a post-hoc procedure with the coding software
 
 First, we coded the speaking time of the teacher and the students to compare all perspectives: coder, observer, students, teacher. The graph below shows the result of the coded speaking duration compared to the estimated speaking duration assessed with the questionnaire.
 
-```{r coded speaking time, echo = FALSE}
+```{r coded speaking time, echo = FALSE }
 ### read in data for 01_01_expert_D
 speaking.data.01.01 <- read.delim("./data/Aperol_pilot_01_01_expert_D_cam4_AL_MK.txt", dec=",", sep="\t", header=T)
 
