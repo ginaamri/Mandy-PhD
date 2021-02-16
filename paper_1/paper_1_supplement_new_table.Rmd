@@ -50,7 +50,9 @@ output            : papaja::apa6_pdf #bookdown::word_document2
 # if a package is not installed on the current machine, it will install it
 if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
 if (!require(papaja)) install.packages('papaja'); library(papaja)
-if (!require(psych)) install.packages('psych'); library(psych)
+if (!require(psych)) install.packages('psych'); library(psych) # stats
+if (!require(moments)) install.packages('moments'); library(moments) # skewness & kurtosis
+if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysis of a scale or index
 
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
@@ -198,9 +200,9 @@ The following scales were assessed:
 (7) Presence: verbal and non-verbal intervention
 (8) Natural behaviour
 
-The table provides an overview over the mean, the range and standard deviation of all scales.
+Table \@ref(tab:table-all-scales-self-assessment) provides an overview over the mean, the standard deviation, the range, Cronbach's Alpha and the Skewness & Kurtosis of all scales for the teachers' self-assessment.
 
-```{r table all scales, echo = FALSE}
+```{r table-all-scales-self-assessment, echo = FALSE}
 
 # prepare data (selected from questionnaire data) - only equal items and without observer
 quest.raw.data<-read.table("./data/short_questionnaire_data_150221.txt", dec=",", sep="\t", header=T) 
@@ -208,41 +210,147 @@ quest.raw.data<-read.table("./data/short_questionnaire_data_150221.txt", dec=","
 # knock out NAs and duration of speaking time
 quest.raw.data <- quest.raw.data  %>% filter(
   personID != "NA",
-  itemID != "8")
-view(quest.raw.data)
+  itemID != "8",
+  perspective == "self-assessment")
 
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
 quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
 
-# calculate Cronbach's Alpha
-# select relevant columns
-quest.raw.data.column <- quest.raw.data %>% select(itemID, value)
-view(quest.raw.data.column)
-# changing long format into wide format 
-quest.raw.data.wide <- spread (quest.raw.data.column, itemID, value)
-view(quest.raw.data.wide)
 
-quest.raw.data.wide <- as_tibble(quest.raw.data) %>%          
-                          select(scale, value) %>%             # select columns of interest
-                          mutate(id = row_number()) %>%         # create a row identifier
-                          spread(scale, value)                 # reshape dataset
+# calculate Cronbach's Alpha for each scale
+
+# activation & support
+self.as.wide <- quest.raw.data %>%
+                          filter (scale == "Activation and support") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+self.alpha.as <- alpha(self.as.wide[,-1])
+self.alpha.as
+
+#clarity & structuredness
+self.cs.wide <- quest.raw.data %>%
+                          filter (scale == "Clarity and structuredness") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.cs <- alpha(self.cs.wide[,-1])
+self.alpha.cs
 
 
-view(quest.raw.data.wide)
+#classroom management
+self.cm.wide <- quest.raw.data %>%
+                          filter (scale == "Classroom management") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.cm <- alpha(self.cm.wide[,-1])
+self.alpha.cm
+
+#natural behaviour
+self.nb.wide <- quest.raw.data %>%
+                          filter (scale == "Natural behaviour") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.nb <- alpha(self.nb.wide[,-1])
+self.alpha.nb
+
+#positive climate and motivation
+self.pcm.wide <- quest.raw.data %>%
+                          filter (scale == "Positive climate and motivation") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.pcm <- alpha(self.pcm.wide[,-1])
+self.alpha.pcm
 
 
-# create a basic table (tibble) using tidyverse functions 
-scale.quest.table <- quest.raw.data %>% # select data
+#presence: posture & gaze
+self.ppg.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: posture/gaze") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.ppg <- alpha(self.ppg.wide[,-1])
+self.alpha.ppg
+
+
+#presence: verbal and non-verbal intervention
+self.pvni.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: verbal and non-verbal intervention") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.pvni <- alpha(self.pvni.wide[,-1])
+self.alpha.pvni
+
+	
+#presence: voice
+self.pv.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: voice") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.pv <- alpha(self.pv.wide[,-1])
+self.alpha.pv
+
+############################################### 
+#Presence without subscales
+self.p.wide <- quest.raw.data %>%
+                          filter(str_detect(scale,
+                                        paste(c(
+                                        "Presence: voice", 
+                                        "Presence: verbal and non-verbal intervention", 
+                                        "Presence: posture/gaze"),
+                                         collapse = '|'))) %>% 
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.p <- alpha(self.p.wide[,-1])
+self.alpha.p
+
+###############################################
+
+# item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+
+
+###############################################
+
+# create a basic table (tibble) using tidyverse functions for teachers' self assessment 
+teacher.scale.quest.table <- quest.raw.data %>% # select data
+  filter(perspective == "self-assessment")%>%
   group_by(scale) %>%
-  summarise("M scale" = round(mean(value), 2),
-            "SD scale" = round(sd(value), 2),
-            "min scale" = min(value),
-            "max sclae" = max(value))
-            
+  summarise("M" = round(mean(value), 2),
+            "SD" = round(sd(value), 2),
+            "Min" = min(value),
+            "Max" = max(value),
+            "Skewness" = skewness(value),
+            "Kurtosis" = kurtosis(value))
+
+view(teacher.scale.quest.table) 
+
 # format and insert table in manuscript
 apa_table(
-  scale.quest.table,
-  caption = "Mean values of all scales",
+  teacher.scale.quest.table,
+  caption = "Scale analysis for teachers' self-assessment",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
@@ -251,11 +359,168 @@ apa_table(
 
 ```
 
+Table \@ref(tab:table-all-scales-students) provides an overview over the mean, the standard deviation, the range, Cronbach's Alpha and the Skewness & Kurtosis of all scales for the students' perception of the teacher's behaviour in class.
+
+```{r table-all-scales-students, echo = FALSE}
+
+# prepare data (selected from questionnaire data) - only equal items and without observer
+quest.raw.data<-read.table("./data/short_questionnaire_data_150221.txt", dec=",", sep="\t", header=T) 
+
+# knock out NAs and duration of speaking time
+quest.raw.data <- quest.raw.data  %>% filter(
+  personID != "NA",
+  itemID != "8",
+  perspective == "student")
+view(quest.raw.data)
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
+
+
+# calculate Cronbach's Alpha for each scale of students' peception
+
+# activation & support
+stud.as.wide <- quest.raw.data %>%
+                          filter (scale == "Activation and support") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+stud.alpha.as <- alpha(stud.as.wide[,-1])
+stud.alpha.as
+
+#clarity & structuredness
+stud.cs.wide <- quest.raw.data %>%
+                          filter (scale == "Clarity and structuredness") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.cs <- alpha(stud.cs.wide[,-1])
+stud.alpha.cs
+
+
+#classroom management
+stud.cm.wide <- quest.raw.data %>%
+                          filter (scale == "Classroom management") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.cm <- alpha(stud.cm.wide[,-1])
+stud.alpha.cm
+
+#natural behaviour
+stud.nb.wide <- quest.raw.data %>%
+                          filter (scale == "Natural behaviour") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.nb <- alpha(stud.nb.wide[,-1])
+stud.alpha.nb
+
+#positive climate and motivation
+stud.pcm.wide <- quest.raw.data %>%
+                          filter (scale == "Positive climate and motivation") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.pcm <- alpha(stud.pcm.wide[,-1])
+stud.alpha.pcm
+
+
+#presence: posture & gaze
+stud.ppg.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: posture/gaze") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.ppg <- alpha(stud.ppg.wide[,-1])
+stud.alpha.ppg
+
+
+#presence: verbal and non-verbal intervention
+stud.pvni.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: verbal and non-verbal intervention") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.pvni <- alpha(stud.pvni.wide[,-1])
+stud.alpha.pvni
+
+	
+#presence: voice
+stud.pv.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: voice") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.pv <- alpha(stud.pv.wide[,-1])
+stud.alpha.pv
+
+############################################### 
+#Presence without subscales
+stud.p.wide <- quest.raw.data %>%
+                          filter(str_detect(scale,
+                                        paste(c(
+                                        "Presence: voice", 
+                                        "Presence: verbal and non-verbal intervention", 
+                                        "Presence: posture/gaze"),
+                                         collapse = '|'))) %>% 
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.p <- alpha(stud.p.wide[,-1])
+stud.alpha.p
+
+###############################################
+
+# create a basic table (tibble) using tidyverse functions for teacher self assessment 
+student.scale.quest.table <- quest.raw.data %>% # select data
+  filter(perspective == "student")%>%
+  group_by(scale) %>%
+  summarise("M" = round(mean(value), 2),
+            "SD" = round(sd(value), 2),
+            "Min" = min(value),
+            "Max" = max(value),
+            "Skewness" = skewness(value),
+            "Kurtosis" = kurtosis(value))
+
+view(student.scale.quest.table) 
+
+# format and insert table in manuscript
+apa_table(
+  student.scale.quest.table,
+  caption = "Scale analysis for students' perspective",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+)
+
+```
+
+
+
 \newpage
 The individual items of a scale are further represented in graphs.
 
 (1) Classroom management
-```{r classroom management line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Classroom Management}
+```{r Line Plots Classroom Management, echo=FALSE, fig.height=6, fig.width=6, message=FALSE, warning=FALSE, fig.cap="Items for Classroom Management"}
 
 ### classroom management 
 
@@ -295,7 +560,7 @@ cm.plot
 ```
 \newpage
 (2) Positive climate and motivation
-```{r Positive climate and motivation line plots,  fig.width=6, fig.height = 7, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Positive climate and motivation}
+```{r Positive climate and motivation line plots,  fig.width=6, fig.height = 7, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = "Items for Positive climate and motivation"}
 
 ### Positive climate and motivation 
 
@@ -333,7 +598,7 @@ pcm.plot
 ```
 \newpage
 (3) Clarity and structuredness
-```{r Clarity and structuredness line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Clarity and structuredness}
+```{r Clarity and structuredness line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = "Items for Clarity and structuredness"}
 
 ### Clarity and structuredness 
 
@@ -371,7 +636,7 @@ cs.plot
 ```
 \newpage
 (4) Activation and support
-```{r Activation and support line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Activation and support}
+```{r Activation and support line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = "Items for Activation and support"}
 
 ### Activation and support 
 
@@ -540,7 +805,7 @@ knitr::include_graphics("./pictures/presenceverbalnonverbalintervention.png", dp
 ```
 \newpage
 (8) Natural behaviour
-```{r Natural behaviour line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = Items for Natural beaviour}
+```{r Natural behaviour line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = "Items for Natural Behaviour"}
 
 ### Natural behaviour 
 # filter by parameter variable, i.e. create a subset for Natural behaviour
@@ -578,7 +843,7 @@ nb.plot
 \newpage
 In addition, we plotted all scales. Graph provides boxplots and individual data for experts and novices.
 
-```{r boxplot scales, fig.width=6, fig.height = 8, echo = FALSE, fig.cap = Boxplots and individual data for experts and novices}
+```{r boxplot scales, fig.width=6, fig.height = 8, echo = FALSE, fig.cap = "Boxplots and individual data for experts and novices"}
 
 quest.plot <- quest.raw.data %>%
   ggplot(aes(x=scale, y=value, fill=scale)) +

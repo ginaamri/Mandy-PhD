@@ -296,29 +296,889 @@ The following scales were assessed:
   Natural behaviour
 \end{enumerate}
 
-The table provides an overview over the mean, the range and standard deviation of all scales.
+Table \ref{tab:table-all-scales-self-assessment} provides an overview over the mean, the standard deviation, the range, Cronbach's Alpha and the Skewness \& Kurtosis of all scales for the teachers' self-assessment.
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.as.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.85      0.87    0.85      0.69 6.8 0.095  2.5 0.97     0.62
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.67 0.85 1.04 
+## 
+##  Reliability if an item is dropped:
+##                  raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r
+## af_beiträge           0.75      0.76    0.62      0.62  3.2    0.169    NA
+## af_nachdenken         0.71      0.74    0.59      0.59  2.9    0.185    NA
+## af_wechselseitig      0.93      0.93    0.87      0.87 13.7    0.049    NA
+##                  med.r
+## af_beiträge       0.62
+## af_nachdenken     0.59
+## af_wechselseitig  0.87
+## 
+##  Item statistics 
+##                  n raw.r std.r r.cor r.drop mean   sd
+## af_beiträge      8  0.90  0.92  0.90   0.80  3.0 0.93
+## af_nachdenken    8  0.92  0.93  0.92   0.81  2.4 1.06
+## af_wechselseitig 8  0.86  0.82  0.65   0.62  2.0 1.31
+## 
+## Non missing response frequency for each item
+##                     1    2    3    4 miss
+## af_beiträge      0.00 0.38 0.25 0.38    0
+## af_nachdenken    0.25 0.25 0.38 0.12    0
+## af_wechselseitig 0.50 0.25 0.00 0.25    0
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in alpha(self.cs.wide[, -1]): Some items were negatively correlated with the total scale and probably 
+## should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Some items ( ks_sichtbar ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in sqrt(Vtc): NaNs wurden erzeugt
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.cs.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r   S/N  ase mean   sd median_r
+##      -0.76      -1.1   -0.36     -0.36 -0.53 0.94  2.8 0.53    -0.36
+## 
+##  lower alpha upper     95% confidence boundaries
+## -2.6 -0.76 1.08 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r   S/N alpha se var.r
+## ks_sichtbar         -0.75     -0.36    0.13     -0.36 -0.26       NA     0
+## ks_verständlich     -0.17     -0.36    0.13     -0.36 -0.26       NA     0
+##                 med.r
+## ks_sichtbar     -0.36
+## ks_verständlich -0.36
+## 
+##  Item statistics 
+##                 n raw.r std.r r.cor r.drop mean   sd
+## ks_sichtbar     8  0.88  0.57   NaN  -0.36  3.1 1.13
+## ks_verständlich 8  0.13  0.57   NaN  -0.36  2.5 0.53
+## 
+## Non missing response frequency for each item
+##                    1    2    3   4 miss
+## ks_sichtbar     0.12 0.12 0.25 0.5    0
+## ks_verständlich 0.00 0.50 0.50 0.0    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.cm.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.83      0.82    0.93      0.54 4.6 0.084  2.4 0.72     0.55
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.67 0.83 1 
+## 
+##  Reliability if an item is dropped:
+##                raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+## km_aktiv            0.84      0.83    0.83      0.62 5.0    0.091 0.049  0.57
+## km_klar             0.71      0.68    0.86      0.42 2.2    0.172 0.167  0.44
+## km_mitbekommen      0.89      0.89    0.94      0.74 8.4    0.070 0.033  0.82
+## km_ungestört        0.65      0.63    0.70      0.37 1.7    0.182 0.101  0.53
+## 
+##  Item statistics 
+##                n raw.r std.r r.cor r.drop mean   sd
+## km_aktiv       8  0.73  0.73  0.71   0.56  2.0 0.76
+## km_klar        8  0.93  0.92  0.90   0.84  2.5 1.07
+## km_mitbekommen 8  0.60  0.62  0.51   0.40  2.8 0.71
+## km_ungestört   8  0.97  0.97  0.99   0.93  2.5 0.93
+## 
+## Non missing response frequency for each item
+##                   1    2    3    4 miss
+## km_aktiv       0.25 0.50 0.25 0.00    0
+## km_klar        0.12 0.50 0.12 0.25    0
+## km_mitbekommen 0.00 0.38 0.50 0.12    0
+## km_ungestört   0.12 0.38 0.38 0.12    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.nb.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##        0.9       0.9    0.87      0.76 9.4 0.061  2.8 0.71     0.76
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.78 0.9 1.02 
+## 
+##  Reliability if an item is dropped:
+##             raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## m_fiktiv         0.91      0.91    0.83      0.83 10.1    0.065    NA  0.83
+## m_natürlich      0.81      0.81    0.68      0.68  4.2    0.135    NA  0.68
+## m_verhalten      0.86      0.86    0.76      0.76  6.4    0.096    NA  0.76
+## 
+##  Item statistics 
+##             n raw.r std.r r.cor r.drop mean   sd
+## m_fiktiv    8  0.88  0.89  0.79   0.75  3.0 0.76
+## m_natürlich 8  0.94  0.94  0.92   0.87  2.6 0.74
+## m_verhalten 8  0.92  0.91  0.86   0.81  2.9 0.83
+## 
+## Non missing response frequency for each item
+##                2    3    4 miss
+## m_fiktiv    0.25 0.50 0.25    0
+## m_natürlich 0.50 0.38 0.12    0
+## m_verhalten 0.38 0.38 0.25    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.pcm.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+##       0.78      0.78    0.97      0.37 3.5 0.11  2.9 0.61     0.41
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.57 0.78 1 
+## 
+##  Reliability if an item is dropped:
+##                   raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## lkm_ausreden           0.81      0.81    0.88      0.47 4.4     0.10 0.083
+## lkm_freundlich         0.80      0.78    0.91      0.41 3.5     0.09 0.120
+## lkm_interesse          0.73      0.74    0.98      0.36 2.8     0.15 0.114
+## lkm_kritik             0.69      0.66    0.84      0.28 2.0     0.16 0.122
+## lkm_rückmeldungen      0.67      0.68    0.79      0.30 2.1     0.18 0.088
+## lkm_überlegen          0.77      0.78    0.88      0.41 3.5     0.12 0.091
+##                   med.r
+## lkm_ausreden       0.48
+## lkm_freundlich     0.46
+## lkm_interesse      0.41
+## lkm_kritik         0.24
+## lkm_rückmeldungen  0.41
+## lkm_überlegen      0.43
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean   sd
+## lkm_ausreden      8  0.32  0.46  0.46   0.20  3.2 0.46
+## lkm_freundlich    8  0.51  0.59  0.59   0.31  3.1 0.83
+## lkm_interesse     8  0.80  0.72  0.66   0.63  2.6 1.19
+## lkm_kritik        8  0.88  0.90  0.91   0.82  3.0 0.76
+## lkm_rückmeldungen 8  0.91  0.86  0.87   0.85  2.5 0.93
+## lkm_überlegen     8  0.66  0.60  0.60   0.48  2.6 0.92
+## 
+## Non missing response frequency for each item
+##                      1    2    3    4 miss
+## lkm_ausreden      0.00 0.00 0.75 0.25    0
+## lkm_freundlich    0.00 0.25 0.38 0.38    0
+## lkm_interesse     0.25 0.12 0.38 0.25    0
+## lkm_kritik        0.00 0.25 0.50 0.25    0
+## lkm_rückmeldungen 0.12 0.38 0.38 0.12    0
+## lkm_überlegen     0.12 0.25 0.50 0.12    0
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in cor.smooth(r): Matrix was not positive definite, smoothing was done
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.ppg.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.85      0.86    0.94      0.47 6.3 0.077  2.7 0.69     0.45
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.7 0.85 1.01 
+## 
+##  Reliability if an item is dropped:
+##                   raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## phb_alleangesehen      0.87      0.88    0.97      0.55 7.3    0.072 0.099
+## phb_augen              0.81      0.82    0.98      0.44 4.7    0.104 0.113
+## phb_blick              0.79      0.80    0.99      0.40 3.9    0.114 0.102
+## phb_gestik             0.88      0.88    0.96      0.56 7.5    0.066 0.081
+## phb_raum               0.88      0.89    0.97      0.57 8.1    0.068 0.078
+## phb_stand              0.78      0.80    0.86      0.40 4.0    0.118 0.107
+## phb_vorsichgeht        0.80      0.80    0.94      0.40 3.9    0.108 0.110
+##                   med.r
+## phb_alleangesehen  0.49
+## phb_augen          0.45
+## phb_blick          0.42
+## phb_gestik         0.52
+## phb_raum           0.62
+## phb_stand          0.42
+## phb_vorsichgeht    0.42
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean   sd
+## phb_alleangesehen 8  0.51  0.52  0.46   0.35  3.0 0.93
+## phb_augen         8  0.85  0.84  0.83   0.76  3.4 1.06
+## phb_blick         8  0.96  0.96  0.98   0.94  2.8 0.89
+## phb_gestik        8  0.52  0.50  0.48   0.33  2.6 1.06
+## phb_raum          8  0.43  0.45  0.36   0.26  1.8 0.89
+## phb_stand         8  0.95  0.95  0.97   0.93  2.9 0.99
+## phb_vorsichgeht   8  0.96  0.96  0.96   0.94  2.5 0.76
+## 
+## Non missing response frequency for each item
+##                      1    2    3    4 miss
+## phb_alleangesehen 0.12 0.00 0.62 0.25    0
+## phb_augen         0.12 0.00 0.25 0.62    0
+## phb_blick         0.12 0.12 0.62 0.12    0
+## phb_gestik        0.12 0.38 0.25 0.25    0
+## phb_raum          0.50 0.25 0.25 0.00    0
+## phb_stand         0.12 0.12 0.50 0.25    0
+## phb_vorsichgeht   0.12 0.25 0.62 0.00    0
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in alpha(self.pvni.wide[, -1]): Some items were negatively correlated with the total scale and probably 
+## should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Some items ( pi_nonverbal ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in sqrt(Vtc): NaNs wurden erzeugt
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.pvni.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r   S/N ase mean   sd median_r
+##      -0.75     -0.81   -0.42     -0.18 -0.45   1  2.8 0.35    -0.17
+## 
+##  lower alpha upper     95% confidence boundaries
+## -2.76 -0.75 1.26 
+## 
+##  Reliability if an item is dropped:
+##              raw_alpha std.alpha G6(smc) average_r   S/N alpha se var.r  med.r
+## pi_direkt        -0.58     -0.72  -0.264    -0.264 -0.42     0.95    NA -0.264
+## pi_nonverbal     -0.21     -0.22  -0.098    -0.098 -0.18     0.81    NA -0.098
+## pi_zubewegen     -0.38     -0.40  -0.165    -0.165 -0.28     0.94    NA -0.165
+## 
+##  Item statistics 
+##              n raw.r std.r r.cor r.drop mean   sd
+## pi_direkt    8  0.49  0.53   NaN  -0.22  3.2 0.71
+## pi_nonverbal 8  0.64  0.41   NaN  -0.30  2.4 0.92
+## pi_zubewegen 8  0.20  0.46   NaN  -0.29  2.6 0.52
+## 
+## Non missing response frequency for each item
+##                 1    2    3    4 miss
+## pi_direkt    0.00 0.12 0.50 0.38    0
+## pi_nonverbal 0.12 0.50 0.25 0.12    0
+## pi_zubewegen 0.00 0.38 0.62 0.00    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.pv.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+##       0.77      0.76    0.82      0.51 3.2 0.12  2.8 0.62     0.54
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.53 0.77 1.01 
+## 
+##  Reliability if an item is dropped:
+##             raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## ps_deutlich      0.65      0.70    0.54      0.54 2.32    0.213    NA  0.54
+## ps_impulse       0.89      0.89    0.79      0.79 7.75    0.081    NA  0.79
+## ps_klar          0.31      0.34    0.21      0.21 0.52    0.434    NA  0.21
+## 
+##  Item statistics 
+##             n raw.r std.r r.cor r.drop mean   sd
+## ps_deutlich 8  0.87  0.81  0.76   0.64  2.9 0.83
+## ps_impulse  8  0.62  0.71  0.52   0.39  2.6 0.52
+## ps_klar     8  0.96  0.95  0.95   0.88  2.9 0.83
+## 
+## Non missing response frequency for each item
+##                2    3    4 miss
+## ps_deutlich 0.38 0.38 0.25    0
+## ps_impulse  0.38 0.62 0.00    0
+## ps_klar     0.38 0.38 0.25    0
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in cor.smooth(r): Matrix was not positive definite, smoothing was done
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in alpha(self.p.wide[, -1]): Some items were negatively correlated with the total scale and probably 
+## should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Some items ( pi_nonverbal ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+
+## Warning in cor.smooth(R): Matrix was not positive definite, smoothing was done
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = self.p.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N ase mean   sd median_r
+##       0.74      0.74    0.73      0.18 2.8 0.1  2.7 0.42     0.18
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.54 0.74 0.95 
+## 
+##  Reliability if an item is dropped:
+##                   raw_alpha std.alpha G6(smc) average_r S/N var.r med.r
+## phb_alleangesehen      0.71      0.70    0.74      0.16 2.3  0.20 0.159
+## phb_augen              0.70      0.70    0.72      0.16 2.4  0.18 0.159
+## phb_blick              0.66      0.66    0.67      0.14 1.9  0.17 0.145
+## phb_gestik             0.74      0.73    0.75      0.19 2.8  0.20 0.178
+## phb_raum               0.74      0.72    0.72      0.18 2.6  0.20 0.178
+## phb_stand              0.65      0.65    0.67      0.14 1.9  0.17 0.129
+## phb_vorsichgeht        0.68      0.66    0.68      0.14 1.9  0.18 0.096
+## pi_direkt              0.76      0.76    0.75      0.21 3.1  0.21 0.273
+## pi_nonverbal           0.84      0.83    0.81      0.29 4.9  0.12 0.291
+## pi_zubewegen           0.76      0.76    0.78      0.21 3.1  0.21 0.214
+## ps_deutlich            0.71      0.70    0.77      0.17 2.4  0.20 0.145
+## ps_impulse             0.74      0.72    0.74      0.18 2.6  0.21 0.202
+## ps_klar                0.68      0.66    0.69      0.14 2.0  0.19 0.130
+## 
+##  Item statistics 
+##                   n  raw.r std.r  r.cor r.drop mean   sd
+## phb_alleangesehen 8  0.617  0.65  0.644  0.495  3.0 0.93
+## phb_augen         8  0.673  0.62  0.587  0.545  3.4 1.06
+## phb_blick         8  0.908  0.88  0.845  0.872  2.8 0.89
+## phb_gestik        8  0.453  0.38  0.257  0.280  2.6 1.06
+## phb_raum          8  0.439  0.49  0.389  0.296  1.8 0.89
+## phb_stand         8  0.956  0.92  0.891  0.935  2.9 0.99
+## phb_vorsichgeht   8  0.893  0.87  0.834  0.859  2.5 0.76
+## pi_direkt         8  0.147  0.18  0.023  0.019  3.2 0.71
+## pi_nonverbal      8 -0.723 -0.71 -1.014 -0.789  2.4 0.92
+## pi_zubewegen      8  0.075  0.17  0.072 -0.019  2.6 0.52
+## ps_deutlich       8  0.638  0.60  0.622  0.534  2.9 0.83
+## ps_impulse        8  0.376  0.47  0.452  0.291  2.6 0.52
+## ps_klar           8  0.855  0.86  0.819  0.805  2.9 0.83
+## 
+## Non missing response frequency for each item
+##                      1    2    3    4 miss
+## phb_alleangesehen 0.12 0.00 0.62 0.25    0
+## phb_augen         0.12 0.00 0.25 0.62    0
+## phb_blick         0.12 0.12 0.62 0.12    0
+## phb_gestik        0.12 0.38 0.25 0.25    0
+## phb_raum          0.50 0.25 0.25 0.00    0
+## phb_stand         0.12 0.12 0.50 0.25    0
+## phb_vorsichgeht   0.12 0.25 0.62 0.00    0
+## pi_direkt         0.00 0.12 0.50 0.38    0
+## pi_nonverbal      0.12 0.50 0.25 0.12    0
+## pi_zubewegen      0.00 0.38 0.62 0.00    0
+## ps_deutlich       0.00 0.38 0.38 0.25    0
+## ps_impulse        0.00 0.38 0.62 0.00    0
+## ps_klar           0.00 0.38 0.38 0.25    0
+\end{verbatim}
 
 \begin{table}[h]
 
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:table all scales}Mean values of all scales}
+\caption{\label{tab:table-all-scales-self-assessment}Scale analysis for teachers' self-assessment}
 
 \small{
 
-\begin{tabular}{lllll}
+\begin{tabular}{lllllll}
 \toprule
-scale & \multicolumn{1}{c}{M scale} & \multicolumn{1}{c}{SD scale} & \multicolumn{1}{c}{min scale} & \multicolumn{1}{c}{max sclae}\\
+scale & \multicolumn{1}{c}{M} & \multicolumn{1}{c}{SD} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Skewness} & \multicolumn{1}{c}{Kurtosis}\\
 \midrule
-Activation and support & 2.45 & 1.37 & 0.00 & 4.00\\
-Clarity and structuredness & 3.41 & 0.81 & 1.00 & 4.00\\
-Classroom management & 2.97 & 0.94 & 1.00 & 4.00\\
-Natural behaviour & 3.28 & 0.74 & 2.00 & 4.00\\
-Positive climate and motivation & 3.27 & 0.89 & 0.00 & 4.00\\
-Presence: posture/gaze & 3.10 & 0.96 & 0.00 & 4.00\\
-Presence: verbal and non-verbal intervention & 3.07 & 0.82 & 1.00 & 4.00\\
-Presence: voice & 3.40 & 0.72 & 2.00 & 4.00\\
+Activation and support & 2.46 & 1.14 & 1.00 & 4.00 & 0.10 & 1.65\\
+Clarity and structuredness & 2.81 & 0.91 & 1.00 & 4.00 & -0.17 & 2.17\\
+Classroom management & 2.44 & 0.88 & 1.00 & 4.00 & 0.19 & 2.38\\
+Natural behaviour & 2.83 & 0.76 & 2.00 & 4.00 & 0.28 & 1.84\\
+Positive climate and motivation & 2.85 & 0.87 & 1.00 & 4.00 & -0.49 & 2.65\\
+Presence: posture/gaze & 2.70 & 1.01 & 1.00 & 4.00 & -0.44 & 2.15\\
+Presence: verbal and non-verbal intervention & 2.75 & 0.79 & 1.00 & 4.00 & -0.07 & 2.48\\
+Presence: voice & 2.79 & 0.72 & 2.00 & 4.00 & 0.32 & 2.03\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+Table \ref{tab:table-all-scales-students} provides an overview over the mean, the standard deviation, the range, Cronbach's Alpha and the Skewness \& Kurtosis of all scales for the students' perception of the teacher's behaviour in class.
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.as.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r  S/N  ase mean   sd median_r
+##       0.48       0.5    0.41      0.25 0.99 0.17  2.6 0.71     0.22
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.14 0.48 0.82 
+## 
+##  Reliability if an item is dropped:
+##                  raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r
+## af_beiträge           0.34      0.35    0.22      0.22 0.55     0.26    NA
+## af_nachdenken         0.49      0.54    0.37      0.37 1.18     0.18    NA
+## af_wechselseitig      0.26      0.27    0.16      0.16 0.37     0.29    NA
+##                  med.r
+## af_beiträge       0.22
+## af_nachdenken     0.37
+## af_wechselseitig  0.16
+## 
+##  Item statistics 
+##                   n raw.r std.r r.cor r.drop mean   sd
+## af_beiträge      24  0.64  0.72  0.49   0.35  3.3 0.75
+## af_nachdenken    24  0.64  0.65  0.31   0.23  2.6 0.97
+## af_wechselseitig 24  0.82  0.75  0.55   0.37  2.0 1.25
+## 
+## Non missing response frequency for each item
+##                     1    2    3    4 miss
+## af_beiträge      0.04 0.04 0.50 0.42    0
+## af_nachdenken    0.12 0.33 0.33 0.21    0
+## af_wechselseitig 0.58 0.00 0.25 0.17    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.cs.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+##       0.62      0.64    0.47      0.47 1.8 0.15  3.6 0.58     0.47
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.34 0.62 0.91 
+## 
+##  Reliability if an item is dropped:
+##                 raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+## ks_sichtbar          0.64      0.47    0.22      0.47 0.9       NA     0  0.47
+## ks_verständlich      0.35      0.47    0.22      0.47 0.9       NA     0  0.47
+## 
+##  Item statistics 
+##                  n raw.r std.r r.cor r.drop mean   sd
+## ks_sichtbar     24  0.90  0.86  0.59   0.47  3.5 0.78
+## ks_verständlich 24  0.81  0.86  0.59   0.47  3.6 0.58
+## 
+## Non missing response frequency for each item
+##                    1    2    3    4 miss
+## ks_sichtbar     0.04 0.04 0.25 0.67    0
+## ks_verständlich 0.00 0.04 0.29 0.67    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.cm.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.75      0.75    0.73      0.42 2.9 0.085  3.2 0.69     0.37
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.58 0.75 0.91 
+## 
+##  Reliability if an item is dropped:
+##                raw_alpha std.alpha G6(smc) average_r S/N alpha se  var.r med.r
+## km_aktiv            0.59      0.59    0.50      0.33 1.5    0.143 0.0038  0.35
+## km_klar             0.68      0.68    0.59      0.41 2.1    0.114 0.0063  0.37
+## km_mitbekommen      0.76      0.76    0.73      0.52 3.2    0.085 0.0319  0.50
+## km_ungestört        0.70      0.70    0.67      0.44 2.4    0.109 0.0555  0.36
+## 
+##  Item statistics 
+##                 n raw.r std.r r.cor r.drop mean   sd
+## km_aktiv       24  0.85  0.85  0.83   0.70  3.0 0.93
+## km_klar        24  0.76  0.77  0.70   0.56  3.3 0.86
+## km_mitbekommen 24  0.66  0.66  0.45   0.40  3.3 0.92
+## km_ungestört   24  0.74  0.74  0.59   0.52  3.1 0.93
+## 
+## Non missing response frequency for each item
+##                   1    2    3    4 miss
+## km_aktiv       0.04 0.29 0.29 0.38    0
+## km_klar        0.04 0.12 0.33 0.50    0
+## km_mitbekommen 0.08 0.04 0.33 0.54    0
+## km_ungestört   0.08 0.12 0.42 0.38    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.nb.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.85      0.85    0.82      0.66 5.8 0.056  3.4 0.59     0.61
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.74 0.85 0.96 
+## 
+##  Reliability if an item is dropped:
+##             raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r med.r
+## m_fiktiv         0.71      0.71    0.56      0.56 2.5    0.120    NA  0.56
+## m_natürlich      0.89      0.90    0.82      0.82 8.9    0.044    NA  0.82
+## m_verhalten      0.75      0.75    0.61      0.61 3.1    0.103    NA  0.61
+## 
+##  Item statistics 
+##              n raw.r std.r r.cor r.drop mean   sd
+## m_fiktiv    23  0.92  0.92  0.89   0.79  3.4 0.72
+## m_natürlich 23  0.83  0.82  0.64   0.61  3.3 0.71
+## m_verhalten 23  0.89  0.90  0.86   0.77  3.5 0.59
+## 
+## Non missing response frequency for each item
+##                2    3    4 miss
+## m_fiktiv    0.13 0.35 0.52    0
+## m_natürlich 0.13 0.39 0.48    0
+## m_verhalten 0.04 0.43 0.52    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.pcm.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd median_r
+##       0.82      0.81    0.86      0.41 4.2 0.05  3.4 0.6     0.44
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.72 0.82 0.92 
+## 
+##  Reliability if an item is dropped:
+##                   raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## lkm_ausreden           0.78      0.77    0.78      0.40 3.3    0.063 0.043
+## lkm_freundlich         0.85      0.86    0.86      0.54 5.9    0.048 0.014
+## lkm_interesse          0.79      0.76    0.85      0.39 3.2    0.060 0.079
+## lkm_kritik             0.81      0.80    0.85      0.44 3.9    0.052 0.062
+## lkm_rückmeldungen      0.76      0.74    0.81      0.36 2.8    0.067 0.075
+## lkm_überlegen          0.75      0.72    0.76      0.34 2.6    0.070 0.057
+##                   med.r
+## lkm_ausreden       0.41
+## lkm_freundlich     0.54
+## lkm_interesse      0.42
+## lkm_kritik         0.51
+## lkm_rückmeldungen  0.41
+## lkm_überlegen      0.43
+## 
+##  Item statistics 
+##                    n raw.r std.r r.cor r.drop mean   sd
+## lkm_ausreden      24  0.77  0.75  0.75   0.66  3.6 0.77
+## lkm_freundlich    24  0.32  0.41  0.31   0.20  3.7 0.46
+## lkm_interesse     24  0.78  0.76  0.68   0.64  3.2 0.96
+## lkm_kritik        24  0.68  0.65  0.54   0.51  3.2 0.88
+## lkm_rückmeldungen 24  0.84  0.84  0.80   0.73  3.3 0.92
+## lkm_überlegen     24  0.87  0.88  0.90   0.79  3.4 0.83
+## 
+## Non missing response frequency for each item
+##                      1    2    3    4 miss
+## lkm_ausreden      0.04 0.04 0.17 0.75    0
+## lkm_freundlich    0.00 0.00 0.29 0.71    0
+## lkm_interesse     0.04 0.25 0.21 0.50    0
+## lkm_kritik        0.08 0.04 0.46 0.42    0
+## lkm_rückmeldungen 0.08 0.04 0.33 0.54    0
+## lkm_überlegen     0.04 0.08 0.29 0.58    0
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in alpha(stud.ppg.wide[, -1]): Some items were negatively correlated with the total scale and probably 
+## should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Some items ( phb_stand ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.ppg.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+##       0.59      0.54    0.74      0.14 1.2 0.11  3.2 0.39     0.17
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.37 0.59 0.81 
+## 
+##  Reliability if an item is dropped:
+##                   raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r
+## phb_alleangesehen      0.58      0.54    0.74     0.163 1.17    0.119 0.120
+## phb_augen              0.59      0.52    0.74     0.156 1.10    0.113 0.138
+## phb_blick              0.34      0.26    0.47     0.055 0.35    0.187 0.074
+## phb_gestik             0.43      0.36    0.66     0.085 0.56    0.160 0.106
+## phb_raum               0.67      0.61    0.76     0.203 1.53    0.086 0.109
+## phb_stand              0.68      0.68    0.76     0.259 2.09    0.096 0.073
+## phb_vorsichgeht        0.39      0.31    0.54     0.070 0.45    0.171 0.100
+##                   med.r
+## phb_alleangesehen 0.182
+## phb_augen         0.135
+## phb_blick         0.062
+## phb_gestik        0.135
+## phb_raum          0.215
+## phb_stand         0.215
+## phb_vorsichgeht   0.062
+## 
+##  Item statistics 
+##                    n raw.r std.r  r.cor r.drop mean   sd
+## phb_alleangesehen 24  0.45 0.425  0.287  0.231  3.5 0.66
+## phb_augen         24  0.33 0.455  0.291  0.158  3.6 0.49
+## phb_blick         24  0.90 0.876  0.972  0.827  3.5 0.72
+## phb_gestik        24  0.77 0.748  0.706  0.577  3.0 0.86
+## phb_raum          24  0.40 0.256  0.085  0.048  2.1 0.97
+## phb_stand         24 -0.14 0.025 -0.130 -0.295  3.7 0.46
+## phb_vorsichgeht   24  0.82 0.813  0.880  0.671  3.3 0.82
+## 
+## Non missing response frequency for each item
+##                      1    2    3    4 miss
+## phb_alleangesehen 0.00 0.08 0.29 0.62    0
+## phb_augen         0.00 0.00 0.38 0.62    0
+## phb_blick         0.04 0.00 0.42 0.54    0
+## phb_gestik        0.04 0.25 0.42 0.29    0
+## phb_raum          0.33 0.33 0.25 0.08    0
+## phb_stand         0.00 0.00 0.29 0.71    0
+## phb_vorsichgeht   0.04 0.08 0.38 0.50    0
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in alpha(stud.pvni.wide[, -1]): Some items were negatively correlated with the total scale and probably 
+## should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Some items ( pi_direkt ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.pvni.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean   sd median_r
+##        0.2      0.16    0.23     0.062 0.2 0.27  3.2 0.46     0.18
+## 
+##  lower alpha upper     95% confidence boundaries
+## -0.34 0.2 0.73 
+## 
+##  Reliability if an item is dropped:
+##              raw_alpha std.alpha G6(smc) average_r   S/N alpha se var.r med.r
+## pi_direkt         0.40      0.40    0.25      0.25  0.68     0.24    NA  0.25
+## pi_nonverbal      0.30      0.30    0.18      0.18  0.44     0.28    NA  0.18
+## pi_zubewegen     -0.64     -0.66   -0.25     -0.25 -0.40     0.66    NA -0.25
+## 
+##  Item statistics 
+##               n raw.r std.r r.cor r.drop mean   sd
+## pi_direkt    24  0.43  0.51 0.063 -0.040  3.6 0.65
+## pi_nonverbal 24  0.59  0.55 0.181  0.038  2.8 0.78
+## pi_zubewegen 24  0.80  0.78 0.636  0.356  3.1 0.80
+## 
+## Non missing response frequency for each item
+##                 1    2    3    4 miss
+## pi_direkt    0.00 0.08 0.21 0.71    0
+## pi_nonverbal 0.04 0.29 0.50 0.17    0
+## pi_zubewegen 0.04 0.12 0.50 0.33    0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.pv.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N ase mean   sd median_r
+##       0.71      0.72    0.65      0.46 2.6 0.1  3.6 0.48     0.44
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.51 0.71 0.92 
+## 
+##  Reliability if an item is dropped:
+##             raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## ps_deutlich      0.61      0.62    0.44      0.44 1.60     0.16    NA  0.44
+## ps_impulse       0.76      0.76    0.61      0.61 3.08     0.10    NA  0.61
+## ps_klar          0.49      0.50    0.33      0.33 0.98     0.20    NA  0.33
+## 
+##  Item statistics 
+##              n raw.r std.r r.cor r.drop mean   sd
+## ps_deutlich 24  0.79  0.81  0.67   0.54  3.6 0.58
+## ps_impulse  24  0.76  0.74  0.50   0.43  3.5 0.66
+## ps_klar     24  0.84  0.85  0.77   0.64  3.6 0.58
+## 
+## Non missing response frequency for each item
+##                2    3    4 miss
+## ps_deutlich 0.04 0.29 0.67    0
+## ps_impulse  0.08 0.29 0.62    0
+## ps_klar     0.04 0.29 0.67    0
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in alpha(stud.p.wide[, -1]): Some items were negatively correlated with the total scale and probably 
+## should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## Some items ( phb_stand ) were negatively correlated with the total scale and 
+## probably should be reversed.  
+## To do this, run the function again with the 'check.keys=TRUE' option
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = stud.p.wide[, -1])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean   sd median_r
+##       0.71      0.67    0.89      0.13   2 0.081  3.3 0.33     0.11
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.55 0.71 0.87 
+## 
+##  Reliability if an item is dropped:
+##                   raw_alpha std.alpha G6(smc) average_r S/N alpha se var.r
+## phb_alleangesehen      0.68      0.63    0.86     0.125 1.7    0.088 0.079
+## phb_augen              0.72      0.68    0.90     0.150 2.1    0.080 0.083
+## phb_blick              0.63      0.57    0.83     0.099 1.3    0.106 0.068
+## phb_gestik             0.65      0.60    0.86     0.110 1.5    0.100 0.072
+## phb_raum               0.70      0.65    0.87     0.135 1.9    0.081 0.078
+## phb_stand              0.74      0.73    0.90     0.182 2.7    0.073 0.066
+## phb_vorsichgeht        0.65      0.60    0.85     0.110 1.5    0.099 0.072
+## pi_direkt              0.72      0.69    0.90     0.155 2.2    0.078 0.078
+## pi_nonverbal           0.67      0.62    0.86     0.122 1.7    0.093 0.070
+## pi_zubewegen           0.70      0.66    0.87     0.141 2.0    0.082 0.079
+## ps_deutlich            0.72      0.67    0.89     0.147 2.1    0.077 0.078
+## ps_impulse             0.67      0.61    0.87     0.115 1.6    0.092 0.079
+## ps_klar                0.70      0.65    0.85     0.133 1.8    0.081 0.076
+##                   med.r
+## phb_alleangesehen 0.097
+## phb_augen         0.137
+## phb_blick         0.062
+## phb_gestik        0.101
+## phb_raum          0.101
+## phb_stand         0.181
+## phb_vorsichgeht   0.093
+## pi_direkt         0.152
+## pi_nonverbal      0.101
+## pi_zubewegen      0.093
+## ps_deutlich       0.152
+## ps_impulse        0.084
+## ps_klar           0.114
+## 
+##  Item statistics 
+##                    n raw.r std.r r.cor r.drop mean   sd
+## phb_alleangesehen 24  0.52  0.53  0.53  0.401  3.5 0.66
+## phb_augen         24  0.19  0.25  0.16  0.077  3.6 0.49
+## phb_blick         24  0.84  0.83  0.85  0.781  3.5 0.72
+## phb_gestik        24  0.72  0.70  0.69  0.606  3.0 0.86
+## phb_raum          24  0.49  0.42  0.40  0.295  2.1 0.97
+## phb_stand         24 -0.21 -0.11 -0.18 -0.308  3.7 0.46
+## phb_vorsichgeht   24  0.72  0.70  0.72  0.608  3.3 0.82
+## pi_direkt         24  0.22  0.19  0.12  0.075  3.6 0.65
+## pi_nonverbal      24  0.62  0.57  0.57  0.490  2.8 0.78
+## pi_zubewegen      24  0.41  0.35  0.33  0.244  3.1 0.80
+## ps_deutlich       24  0.20  0.28  0.23  0.066  3.6 0.58
+## ps_impulse        24  0.63  0.65  0.62  0.526  3.5 0.66
+## ps_klar           24  0.37  0.44  0.44  0.250  3.6 0.58
+## 
+## Non missing response frequency for each item
+##                      1    2    3    4 miss
+## phb_alleangesehen 0.00 0.08 0.29 0.62    0
+## phb_augen         0.00 0.00 0.38 0.62    0
+## phb_blick         0.04 0.00 0.42 0.54    0
+## phb_gestik        0.04 0.25 0.42 0.29    0
+## phb_raum          0.33 0.33 0.25 0.08    0
+## phb_stand         0.00 0.00 0.29 0.71    0
+## phb_vorsichgeht   0.04 0.08 0.38 0.50    0
+## pi_direkt         0.00 0.08 0.21 0.71    0
+## pi_nonverbal      0.04 0.29 0.50 0.17    0
+## pi_zubewegen      0.04 0.12 0.50 0.33    0
+## ps_deutlich       0.00 0.04 0.29 0.67    0
+## ps_impulse        0.00 0.08 0.29 0.62    0
+## ps_klar           0.00 0.04 0.29 0.67    0
+\end{verbatim}
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:table-all-scales-students}Scale analysis for students' perspective}
+
+\small{
+
+\begin{tabular}{lllllll}
+\toprule
+scale & \multicolumn{1}{c}{M} & \multicolumn{1}{c}{SD} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Skewness} & \multicolumn{1}{c}{Kurtosis}\\
+\midrule
+Activation and support & 2.64 & 1.13 & 1.00 & 4.00 & -0.32 & 1.73\\
+Clarity and structuredness & 3.58 & 0.68 & 1.00 & 4.00 & -1.75 & 6.09\\
+Classroom management & 3.18 & 0.91 & 1.00 & 4.00 & -0.87 & 2.86\\
+Natural behaviour & 3.41 & 0.67 & 2.00 & 4.00 & -0.68 & 2.38\\
+Positive climate and motivation & 3.41 & 0.83 & 1.00 & 4.00 & -1.40 & 4.29\\
+Presence: posture/gaze & 3.24 & 0.89 & 1.00 & 4.00 & -1.05 & 3.31\\
+Presence: verbal and non-verbal intervention & 3.18 & 0.81 & 1.00 & 4.00 & -0.66 & 2.70\\
+Presence: voice & 3.60 & 0.60 & 2.00 & 4.00 & -1.18 & 3.36\\
 \bottomrule
 \end{tabular}
 
@@ -338,7 +1198,7 @@ The individual items of a scale are further represented in graphs.
 \tightlist
 \item
   Classroom management
-  \includegraphics{paper_1_supplement_new_table_files/figure-latex/classroom management line plots-1.pdf}
+  \includegraphics{paper_1_supplement_new_table_files/figure-latex/Line Plots Classroom Management-1.pdf}
   \newpage
 \item
   Positive climate and motivation
@@ -402,14 +1262,18 @@ The individual items of a scale are further represented in graphs.
   In addition, we plotted all scales. Graph provides boxplots and individual data for experts and novices.
 \end{enumerate}
 
+\begin{figure}
+\centering
 \includegraphics{paper_1_supplement_new_table_files/figure-latex/boxplot scales-1.pdf}
+\caption{(\#fig:boxplot scales)Boxplots and individual data for experts and novices}
+\end{figure}
 
 \newpage
 
 \hypertarget{behavioral-data-1}{%
 \subsubsection{Behavioral Data}\label{behavioral-data-1}}
 
-The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters (Kuckartz and Rädiker (2019)). The following coding scheme was developed:
+The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters (Kuckartz \& Rädiker, 2019). The following coding scheme was developed:
 
 \begin{itemize}
 \item
@@ -539,7 +1403,7 @@ Participant & \multicolumn{1}{c}{Variable1} & \multicolumn{1}{c}{Fixation Number
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
 
-We used R {[}Version 4.0.3; R Core Team (2019){]} and the R-packages \emph{\}dplyr} {[}@\}R-dplyr{]}, \emph{forcats} {[}Version 0.5.0; Wickham (2020a){]}, \emph{ggplot2} {[}Version 3.3.2; Wickham (2016){]}, \emph{papaja} {[}Version 0.1.0.9997; Aust and Barth (2020){]}, \emph{papayar} (Muschelli, 2016), \emph{psych} {[}Version 2.0.12; Revelle (2020){]}, \emph{purrr} {[}Version 0.3.4; Henry and Wickham (2020){]}, \emph{readr} {[}Version 1.4.0; Wickham, Hester, and Francois (2018){]}, \emph{stringr} {[}Version 1.4.0; Wickham (2019){]}, \emph{tibble} {[}Version 3.0.4; Müller and Wickham (2021){]}, \emph{tidyr} {[}Version 1.1.2; Wickham (2020b){]}, and \emph{tidyverse} {[}Version 1.3.0; Wickham et al. (2019){]} for all our analyses.
+We used R {[}Version 4.0.3; R Core Team (2019){]} and the R-packages \emph{\}dplyr} {[}@\}R-dplyr{]}, \emph{forcats} {[}Version 0.5.0; Wickham (2020a){]}, \emph{ggplot2} {[}Version 3.3.2; Wickham (2016){]}, \emph{moments} {[}Version 0.14; Komsta and Novomestky (2015){]}, \emph{papaja} {[}Version 0.1.0.9997; Aust and Barth (2020){]}, \emph{papayar} (Muschelli, 2016), \emph{psych} {[}Version 2.0.12; Revelle (2020){]}, \emph{purrr} {[}Version 0.3.4; Henry and Wickham (2020){]}, \emph{readr} {[}Version 1.4.0; Wickham, Hester, and Francois (2018){]}, \emph{sjPlot} {[}Version 2.8.7; Lüdecke (2021){]}, \emph{stringr} {[}Version 1.4.0; Wickham (2019){]}, \emph{tibble} {[}Version 3.0.4; Müller and Wickham (2021){]}, \emph{tidyr} {[}Version 1.1.2; Wickham (2020b){]}, and \emph{tidyverse} {[}Version 1.3.0; Wickham et al. (2019){]} for all our analyses.
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
@@ -618,6 +1482,9 @@ Jarodzka, H., Scheiter, K., Gerjets, P., \& Van Gog, T. (2010). In the eyes of t
 \leavevmode\hypertarget{ref-kiel2013trainingsbuch}{}%
 Kiel, E., Frey, A., Weiß, S., \& Weiss, S. (2013). \emph{Trainingsbuch klassenf{ü}hrung} (Vol. 3992). UTB.
 
+\leavevmode\hypertarget{ref-R-moments}{}%
+Komsta, L., \& Novomestky, F. (2015). \emph{Moments: Moments, cumulants, skewness, kurtosis and related tests}. Retrieved from \url{https://CRAN.R-project.org/package=moments}
+
 \leavevmode\hypertarget{ref-kounin2006techniken}{}%
 Kounin, J. S. (2006). \emph{Techniken der klassenf{ü}hrung}. Waxmann Verlag.
 
@@ -626,6 +1493,9 @@ Kuckartz, U., \& Rädiker, S. (2019). \emph{Analyzing qualitative data with MAXQ
 
 \leavevmode\hypertarget{ref-lachner2016makes}{}%
 Lachner, A., Jarodzka, H., \& Nückles, M. (2016). What makes an expert teacher? Investigating teachers' professional vision and discourse abilities. \emph{Instructional Science}, \emph{44}(3), 197--203.
+
+\leavevmode\hypertarget{ref-R-sjPlot}{}%
+Lüdecke, D. (2021). \emph{sjPlot: Data visualization for statistics in social science}. Retrieved from \url{https://CRAN.R-project.org/package=sjPlot}
 
 \leavevmode\hypertarget{ref-marzano2007art}{}%
 Marzano, R. J. (2007). \emph{The art and science of teaching: A comprehensive framework for effective instruction}. Ascd.
