@@ -335,6 +335,9 @@ self.alpha.p
 ###############################################
 
 # create a basic table (tibble) using tidyverse functions for teachers' self assessment 
+# adding alpha column
+
+
 teacher.scale.quest.table <- quest.raw.data %>% # select data
   filter(perspective == "self-assessment")%>%
   group_by(scale) %>%
