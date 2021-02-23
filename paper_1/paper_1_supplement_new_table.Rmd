@@ -216,9 +216,8 @@ quest.raw.data <- quest.raw.data  %>% filter(
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
 quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
 
-
+##############################################
 # calculate Cronbach's Alpha for each scale
-
 # activation & support
 self.as.wide <- quest.raw.data %>%
                           filter (scale == "Activation and support") %>%  
@@ -287,18 +286,6 @@ self.alpha.ppg <- alpha(self.ppg.wide[,-1])
 self.alpha.ppg
 
 
-#presence: verbal and non-verbal intervention
-self.pvni.wide <- quest.raw.data %>%
-                          filter (scale == "Presence: verbal and non-verbal intervention") %>%  
-                          select(shortID, value) %>%
-                          group_by(shortID) %>%
-                          mutate(id=row_number()) %>%
-                          spread(shortID, value)
-
-self.alpha.pvni <- alpha(self.pvni.wide[,-1])
-self.alpha.pvni
-
-	
 #presence: voice
 self.pv.wide <- quest.raw.data %>%
                           filter (scale == "Presence: voice") %>%  
@@ -310,7 +297,19 @@ self.pv.wide <- quest.raw.data %>%
 self.alpha.pv <- alpha(self.pv.wide[,-1])
 self.alpha.pv
 
-############################################### 
+
+#presence: verbal/non-verbal intervention
+self.pvni.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: verbal and non-verbal intervention") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.pvni <- alpha(self.pvni.wide[,-1])
+self.alpha.pvni
+
+	
 #Presence without subscales
 self.p.wide <- quest.raw.data %>%
                           filter(str_detect(scale,
@@ -327,16 +326,43 @@ self.p.wide <- quest.raw.data %>%
 self.alpha.p <- alpha(self.p.wide[,-1])
 self.alpha.p
 
-###############################################
+# correlation between all presences' items
+cor.test(self.p.wide$phb_alleangesehen, self.p.wide$phb_alleangesehen, method=c("pearson"))
+
+##############################################
 
 # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
 
+# activation & support
+tab_itemscale(self.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# classroom management
+tab_itemscale(self.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# clarity & structuredness
+tab_itemscale(self.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# natural behaviour
+tab_itemscale(self.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# postive clima and motivation
+tab_itemscale(self.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# presence without subscales
+tab_itemscale(self.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# presence: posture & gaze
+tab_itemscale(self.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# presence: voice
+tab_itemscale(self.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# presence: verbal/non-verbal intervention
+tab_itemscale(self.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
 
 ###############################################
 
-# create a basic table (tibble) using tidyverse functions for teachers' self assessment 
-# adding alpha column
 
+# create a basic table (tibble) using tidyverse functions for teachers' self assessment 
 
 teacher.scale.quest.table <- quest.raw.data %>% # select data
   filter(perspective == "self-assessment")%>%
@@ -379,6 +405,7 @@ view(quest.raw.data)
 # value sometimes contained text before filtering, we have to convert the numbers to numeric
 quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
 
+###############################################
 
 # calculate Cronbach's Alpha for each scale of students' peception
 
@@ -473,7 +500,7 @@ stud.pv.wide <- quest.raw.data %>%
 stud.alpha.pv <- alpha(stud.pv.wide[,-1])
 stud.alpha.pv
 
-############################################### 
+
 #Presence without subscales
 stud.p.wide <- quest.raw.data %>%
                           filter(str_detect(scale,
@@ -491,6 +518,35 @@ stud.alpha.p <- alpha(stud.p.wide[,-1])
 stud.alpha.p
 
 ###############################################
+
+# item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+
+# activation & support
+tab_itemscale(stud.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# classroom management
+tab_itemscale(stud.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# clarity & structuredness
+tab_itemscale(stud.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# natural behaviour
+tab_itemscale(stud.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# positive clima and motivation
+tab_itemscale(stud.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# presence without subscales
+tab_itemscale(stud.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# presence: posture & gaze
+tab_itemscale(stud.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# presence: voice
+tab_itemscale(stud.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# presence: verbal/non-verbal intervention
+tab_itemscale(stud.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+
 
 # create a basic table (tibble) using tidyverse functions for teacher self assessment 
 student.scale.quest.table <- quest.raw.data %>% # select data
@@ -516,7 +572,6 @@ apa_table(
 )
 
 ```
-
 
 
 \newpage
