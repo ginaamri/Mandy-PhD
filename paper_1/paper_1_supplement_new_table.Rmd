@@ -326,8 +326,41 @@ self.p.wide <- quest.raw.data %>%
 self.alpha.p <- alpha(self.p.wide[,-1])
 self.alpha.p
 
-# correlation between all presences' items
-cor.test(self.p.wide$phb_alleangesehen, self.p.wide$phb_alleangesehen, method=c("pearson"))
+##############################################
+# #####correlation between all presences' items
+# SELF-ASSESSMENT
+# install.packages("Hmisc")
+library("Hmisc")
+
+# function to format the correlation matrix
+flattenCorrMatrix <- function(cormat, pmat) {
+  ut <- upper.tri(cormat)
+  data.frame(
+    row = rownames(cormat)[row(cormat)[ut]],
+    column = rownames(cormat)[col(cormat)[ut]],
+    cor  =(cormat)[ut],
+    p = pmat[ut]
+    )
+}
+
+res1.self<-rcorr(as.matrix(self.p.wide[,-1]))
+
+flattenCorrMatrix(res2$r, res2$P)
+
+res2.self<-flattenCorrMatrix(res2$r, res2$P)
+
+# Visualization correlation matrix
+# Use corrplot() function: Draw a correlogram
+
+# install.packages("corrplot")
+library("corrplot")
+
+# Insignificant correlation are crossed
+corrplot(res1.self$r, type="upper", order="hclust",
+         p.mat = res1.self$P, sig.level = 0.01, insig = "blank")
+# Insignificant correlations are leaved blank
+corrplot(res1.self$r, type="upper", order="hclust",
+         p.mat = res1.self$P, sig.level = 0.01, insig = "blank")
 
 ##############################################
 
@@ -516,7 +549,41 @@ stud.p.wide <- quest.raw.data %>%
 
 stud.alpha.p <- alpha(stud.p.wide[,-1])
 stud.alpha.p
+##############################################
+# #####correlation between all presences' items
+# SELF-ASSESSMENT
+# install.packages("Hmisc")
+library("Hmisc")
 
+# function to format the correlation matrix
+flattenCorrMatrix <- function(cormat, pmat) {
+  ut <- upper.tri(cormat)
+  data.frame(
+    row = rownames(cormat)[row(cormat)[ut]],
+    column = rownames(cormat)[col(cormat)[ut]],
+    cor  =(cormat)[ut],
+    p = pmat[ut]
+    )
+}
+
+res1.stud<-rcorr(as.matrix(stud.p.wide[,-1]))
+
+flattenCorrMatrix(res1.stud$r, res1.stud$P)
+
+res2.stud<-flattenCorrMatrix(res1.stud$r, res1.stud$P)
+
+# Visualization correlation matrix
+# Use corrplot() function: Draw a correlogram
+
+# install.packages("corrplot")
+library("corrplot")
+
+# Insignificant correlation are crossed
+corrplot(res1.stud$r, type="upper", order="hclust",
+         p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
+# Insignificant correlations are leaved blank
+corrplot(res1.stud$r, type="upper", order="hclust",
+         p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
 ###############################################
 
 # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
