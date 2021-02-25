@@ -343,11 +343,15 @@ flattenCorrMatrix <- function(cormat, pmat) {
     )
 }
 
-res1.self<-rcorr(as.matrix(self.p.wide[,-1]))
+res1.self<-cor(self.p.wide[,-1])
 
-flattenCorrMatrix(res2$r, res2$P)
+rm(res1.self)
+flattenCorrMatrix(res1.self$r, res1.self$P)
 
-res2.self<-flattenCorrMatrix(res2$r, res2$P)
+res1.self<-flattenCorrMatrix(res1.self$r, res1.self$P)
+
+res2 <- rcorr(as.matrix(res1.self))
+res2
 
 # Visualization correlation matrix
 # Use corrplot() function: Draw a correlogram
@@ -566,11 +570,13 @@ flattenCorrMatrix <- function(cormat, pmat) {
     )
 }
 
-res1.stud<-rcorr(as.matrix(stud.p.wide[,-1]))
+res1.stud<-cor(stud.p.wide[,-1])
 
-flattenCorrMatrix(res1.stud$r, res1.stud$P)
-
-res2.stud<-flattenCorrMatrix(res1.stud$r, res1.stud$P)
+# res1.stud<-rcorr(as.matrix(stud.p.wide[,-1]))
+# 
+# flattenCorrMatrix(res1.stud$r, res1.stud$P)
+# 
+# res2.stud<-flattenCorrMatrix(res1.stud$r, res1.stud$P)
 
 # Visualization correlation matrix
 # Use corrplot() function: Draw a correlogram
@@ -578,13 +584,13 @@ res2.stud<-flattenCorrMatrix(res1.stud$r, res1.stud$P)
 # install.packages("corrplot")
 library("corrplot")
 
-# Insignificant correlation are crossed
-corrplot(res1.stud$r, type="upper", order="hclust",
-         p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
-# Insignificant correlations are leaved blank
-corrplot(res1.stud$r, type="upper", order="hclust",
-         p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
-###############################################
+# # Insignificant correlation are crossed
+# corrplot(res1.stud$r, type="upper", order="hclust",
+#          p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
+# # Insignificant correlations are leaved blank
+# corrplot(res1.stud$r, type="upper", order="hclust",
+#          p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
+# ###############################################
 
 # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
 
