@@ -217,6 +217,7 @@ quest.raw.data <- quest.raw.data  %>% filter(
 quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
 
 ##############################################
+
 # calculate Cronbach's Alpha for each scale
 # activation & support
 self.as.wide <- quest.raw.data %>%
@@ -226,7 +227,6 @@ self.as.wide <- quest.raw.data %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
 self.alpha.as <- alpha(self.as.wide[,-1])
-self.alpha.as
 
 #clarity & structuredness
 self.cs.wide <- quest.raw.data %>%
@@ -237,8 +237,6 @@ self.cs.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 self.alpha.cs <- alpha(self.cs.wide[,-1])
-self.alpha.cs
-
 
 #classroom management
 self.cm.wide <- quest.raw.data %>%
@@ -249,7 +247,6 @@ self.cm.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 self.alpha.cm <- alpha(self.cm.wide[,-1])
-self.alpha.cm
 
 #natural behaviour
 self.nb.wide <- quest.raw.data %>%
@@ -260,7 +257,6 @@ self.nb.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 self.alpha.nb <- alpha(self.nb.wide[,-1])
-self.alpha.nb
 
 #positive climate and motivation
 self.pcm.wide <- quest.raw.data %>%
@@ -271,8 +267,6 @@ self.pcm.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 self.alpha.pcm <- alpha(self.pcm.wide[,-1])
-self.alpha.pcm
-
 
 #presence: posture & gaze
 self.ppg.wide <- quest.raw.data %>%
@@ -283,8 +277,6 @@ self.ppg.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 self.alpha.ppg <- alpha(self.ppg.wide[,-1])
-self.alpha.ppg
-
 
 #presence: voice
 self.pv.wide <- quest.raw.data %>%
@@ -295,8 +287,6 @@ self.pv.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 self.alpha.pv <- alpha(self.pv.wide[,-1])
-self.alpha.pv
-
 
 #presence: verbal/non-verbal intervention
 self.pvni.wide <- quest.raw.data %>%
@@ -307,8 +297,6 @@ self.pvni.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 self.alpha.pvni <- alpha(self.pvni.wide[,-1])
-self.alpha.pvni
-
 	
 #Presence without subscales
 self.p.wide <- quest.raw.data %>%
@@ -324,84 +312,76 @@ self.p.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 self.alpha.p <- alpha(self.p.wide[,-1])
-self.alpha.p
 
 ##############################################
+
+# # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+# 
+# # activation & support
+# tab_itemscale(self.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # classroom management
+# tab_itemscale(self.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # clarity & structuredness
+# tab_itemscale(self.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # natural behaviour
+# tab_itemscale(self.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # postive clima and motivation
+# tab_itemscale(self.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # presence without subscales
+# tab_itemscale(self.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # presence: posture & gaze
+# tab_itemscale(self.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# # presence: voice
+# tab_itemscale(self.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# # presence: verbal/non-verbal intervention
+# tab_itemscale(self.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+##############################################
+
+# add alphas to excel table 
+# read in new data 
+quest.raw.data.alpha <- read.table("./data/short_questionnaire_data_260221_alpha.txt", dec=",", sep="\t", header=T) 
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data.alpha <- quest.raw.data.alpha %>%  mutate(alpha = as.numeric(alpha))
+
+##############################################
+
 # #####correlation between all presences' items
 # SELF-ASSESSMENT
 # install.packages("Hmisc")
-library("Hmisc")
+# library("Hmisc")
 
-# function to format the correlation matrix
-flattenCorrMatrix <- function(cormat, pmat) {
-  ut <- upper.tri(cormat)
-  data.frame(
-    row = rownames(cormat)[row(cormat)[ut]],
-    column = rownames(cormat)[col(cormat)[ut]],
-    cor  =(cormat)[ut],
-    p = pmat[ut]
-    )
-}
-
+# function cr() to format the correlation matrix
 res1.self<-cor(self.p.wide[,-1])
 
-rm(res1.self)
-flattenCorrMatrix(res1.self$r, res1.self$P)
-
-res1.self<-flattenCorrMatrix(res1.self$r, res1.self$P)
-
-res2 <- rcorr(as.matrix(res1.self))
-res2
 
 # Visualization correlation matrix
 # Use corrplot() function: Draw a correlogram
 
-# install.packages("corrplot")
-library("corrplot")
-
-# Insignificant correlation are crossed
-corrplot(res1.self$r, type="upper", order="hclust",
-         p.mat = res1.self$P, sig.level = 0.01, insig = "blank")
-# Insignificant correlations are leaved blank
-corrplot(res1.self$r, type="upper", order="hclust",
-         p.mat = res1.self$P, sig.level = 0.01, insig = "blank")
-
-##############################################
-
-# item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
-
-# activation & support
-tab_itemscale(self.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# classroom management
-tab_itemscale(self.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# clarity & structuredness
-tab_itemscale(self.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# natural behaviour
-tab_itemscale(self.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# postive clima and motivation
-tab_itemscale(self.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# presence without subscales
-tab_itemscale(self.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# presence: posture & gaze
-tab_itemscale(self.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# presence: voice
-tab_itemscale(self.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# presence: verbal/non-verbal intervention
-tab_itemscale(self.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
+# # install.packages("corrplot")
+# library("corrplot")
+# 
+# # Insignificant correlation are crossed
+# corrplot(res1.self$r, type="upper", order="hclust",
+#          p.mat = res1.self$P, sig.level = 0.01, insig = "blank")
+# # Insignificant correlations are leaved blank
+# corrplot(res1.self$r, type="upper", order="hclust",
+#          p.mat = res1.self$P, sig.level = 0.01, insig = "blank")
 
 ###############################################
 
-
 # create a basic table (tibble) using tidyverse functions for teachers' self assessment 
+# Change Number of Digits in Global R Options to reduce the number of digits after the decimal point to two
+options(digits = 2)              
 
-teacher.scale.quest.table <- quest.raw.data %>% # select data
+teacher.scale.quest.table <- quest.raw.data.alpha %>% # select data
   filter(perspective == "self-assessment")%>%
   group_by(scale) %>%
   summarise("M" = round(mean(value), 2),
@@ -409,9 +389,8 @@ teacher.scale.quest.table <- quest.raw.data %>% # select data
             "Min" = min(value),
             "Max" = max(value),
             "Skewness" = skewness(value),
-            "Kurtosis" = kurtosis(value))
-
-view(teacher.scale.quest.table) 
+            "Kurtosis" = kurtosis(value),
+            "Cronbach's α" = mean(alpha))
 
 # format and insert table in manuscript
 apa_table(
@@ -454,7 +433,6 @@ stud.as.wide <- quest.raw.data %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
 stud.alpha.as <- alpha(stud.as.wide[,-1])
-stud.alpha.as
 
 #clarity & structuredness
 stud.cs.wide <- quest.raw.data %>%
@@ -465,8 +443,6 @@ stud.cs.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 stud.alpha.cs <- alpha(stud.cs.wide[,-1])
-stud.alpha.cs
-
 
 #classroom management
 stud.cm.wide <- quest.raw.data %>%
@@ -477,7 +453,6 @@ stud.cm.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 stud.alpha.cm <- alpha(stud.cm.wide[,-1])
-stud.alpha.cm
 
 #natural behaviour
 stud.nb.wide <- quest.raw.data %>%
@@ -488,7 +463,6 @@ stud.nb.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 stud.alpha.nb <- alpha(stud.nb.wide[,-1])
-stud.alpha.nb
 
 #positive climate and motivation
 stud.pcm.wide <- quest.raw.data %>%
@@ -499,8 +473,6 @@ stud.pcm.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 stud.alpha.pcm <- alpha(stud.pcm.wide[,-1])
-stud.alpha.pcm
-
 
 #presence: posture & gaze
 stud.ppg.wide <- quest.raw.data %>%
@@ -511,8 +483,6 @@ stud.ppg.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 stud.alpha.ppg <- alpha(stud.ppg.wide[,-1])
-stud.alpha.ppg
-
 
 #presence: verbal and non-verbal intervention
 stud.pvni.wide <- quest.raw.data %>%
@@ -523,8 +493,6 @@ stud.pvni.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 stud.alpha.pvni <- alpha(stud.pvni.wide[,-1])
-stud.alpha.pvni
-
 	
 #presence: voice
 stud.pv.wide <- quest.raw.data %>%
@@ -535,8 +503,6 @@ stud.pv.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 stud.alpha.pv <- alpha(stud.pv.wide[,-1])
-stud.alpha.pv
-
 
 #Presence without subscales
 stud.p.wide <- quest.raw.data %>%
@@ -552,25 +518,55 @@ stud.p.wide <- quest.raw.data %>%
                           spread(shortID, value)
 
 stud.alpha.p <- alpha(stud.p.wide[,-1])
-stud.alpha.p
+
+# ###############################################
+
+# # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+# 
+# # activation & support
+# tab_itemscale(stud.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # classroom management
+# tab_itemscale(stud.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # clarity & structuredness
+# tab_itemscale(stud.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # natural behaviour
+# tab_itemscale(stud.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # positive clima and motivation
+# tab_itemscale(stud.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # presence without subscales
+# tab_itemscale(stud.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # presence: posture & gaze
+# tab_itemscale(stud.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# # presence: voice
+# tab_itemscale(stud.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# # presence: verbal/non-verbal intervention
+# tab_itemscale(stud.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+
 ##############################################
 # #####correlation between all presences' items
 # SELF-ASSESSMENT
 # install.packages("Hmisc")
 library("Hmisc")
 
-# function to format the correlation matrix
-flattenCorrMatrix <- function(cormat, pmat) {
-  ut <- upper.tri(cormat)
-  data.frame(
-    row = rownames(cormat)[row(cormat)[ut]],
-    column = rownames(cormat)[col(cormat)[ut]],
-    cor  =(cormat)[ut],
-    p = pmat[ut]
-    )
-}
-
-res1.stud<-cor(stud.p.wide[,-1])
+# # function to format the correlation matrix
+# flattenCorrMatrix <- function(cormat, pmat) {
+#   ut <- upper.tri(cormat)
+#   data.frame(
+#     row = rownames(cormat)[row(cormat)[ut]],
+#     column = rownames(cormat)[col(cormat)[ut]],
+#     cor  =(cormat)[ut],
+#     p = pmat[ut]
+#     )
+# }
+# 
+# res1.stud<-cor(stud.p.wide[,-1])
 
 # res1.stud<-rcorr(as.matrix(stud.p.wide[,-1]))
 # 
@@ -590,39 +586,20 @@ library("corrplot")
 # # Insignificant correlations are leaved blank
 # corrplot(res1.stud$r, type="upper", order="hclust",
 #          p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
-# ###############################################
 
-# item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+##############################################
 
-# activation & support
-tab_itemscale(stud.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# add alphas to excel table 
+# read in new data 
+quest.raw.data.alpha <- read.table("./data/short_questionnaire_data_260221_alpha.txt", dec=",", sep="\t", header=T) 
 
-# classroom management
-tab_itemscale(stud.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data.alpha <- quest.raw.data.alpha %>%  mutate(alpha = as.numeric(alpha))
 
-# clarity & structuredness
-tab_itemscale(stud.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# natural behaviour
-tab_itemscale(stud.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# positive clima and motivation
-tab_itemscale(stud.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# presence without subscales
-tab_itemscale(stud.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-# presence: posture & gaze
-tab_itemscale(stud.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# presence: voice
-tab_itemscale(stud.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# presence: verbal/non-verbal intervention
-tab_itemscale(stud.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-
-
+##############################################
 
 # create a basic table (tibble) using tidyverse functions for teacher self assessment 
-student.scale.quest.table <- quest.raw.data %>% # select data
+student.scale.quest.table <- quest.raw.data.alpha %>% # select data
   filter(perspective == "student")%>%
   group_by(scale) %>%
   summarise("M" = round(mean(value), 2),
@@ -630,9 +607,8 @@ student.scale.quest.table <- quest.raw.data %>% # select data
             "Min" = min(value),
             "Max" = max(value),
             "Skewness" = skewness(value),
-            "Kurtosis" = kurtosis(value))
-
-view(student.scale.quest.table) 
+            "Kurtosis" = kurtosis(value),
+            "Cronbach's α" = mean(alpha))
 
 # format and insert table in manuscript
 apa_table(
