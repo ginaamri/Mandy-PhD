@@ -384,7 +384,8 @@ options(digits = 2)
 teacher.scale.quest.table <- quest.raw.data.alpha %>% # select data
   filter(perspective == "self-assessment")%>%
   group_by(scale) %>%
-  summarise("M" = round(mean(value), 2),
+  summarise("N items" = n_distinct(shortID),
+            "M" = round(mean(value), 2),
             "SD" = round(sd(value), 2),
             "Min" = min(value),
             "Max" = max(value),
@@ -602,7 +603,8 @@ quest.raw.data.alpha <- quest.raw.data.alpha %>%  mutate(alpha = as.numeric(alph
 student.scale.quest.table <- quest.raw.data.alpha %>% # select data
   filter(perspective == "student")%>%
   group_by(scale) %>%
-  summarise("M" = round(mean(value), 2),
+  summarise("N items" = n_distinct(shortID),
+            "M" = round(mean(value), 2),
             "SD" = round(sd(value), 2),
             "Min" = min(value),
             "Max" = max(value),
@@ -1244,11 +1246,84 @@ et.calib.table <- et.calib.data %>%
             "TOI" = Duration_of_interval,
             "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
 
-
 # format and insert table in manuscript
 apa_table(
   et.calib.table,
   caption = "Number and Duration (in msec) of Fixations during calibration",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "scriptsize" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+```{r Calib end to lession start TOI, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.calib.lesson.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_calib_end_lesson_start.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.calib.lesson.data <- et.calib.lesson.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations)
+                                       )
+options(digits = 2)              
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.calib.lesson.table <- et.calib.lesson.data %>%
+  group_by(Participant, Variable1) %>%
+  summarise("Fixation Number" = Number_of_whole_fixations,
+            "Fixation Duration" = Total_duration_of_whole_fixations,
+            "M Duration Fixation" = Average_duration_of_whole_fixations,
+            "TOI" = Duration_of_interval,
+            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+
+# format and insert table in manuscript
+apa_table(
+  et.calib.lesson.table,
+  caption = "Number and Duration (in msec) of Fixations Calibration End to Lesson Start",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "scriptsize" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+```{r Disturbance "head on table" to first intervention, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.distub.head.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_head_on_table_session1.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.distub.head.data <- et.distub.head.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations)
+                                       )
+options(digits = 2)              
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.distub.head.table <- et.distub.head.data %>%
+  group_by(Participant, Variable1) %>%
+  summarise("Fixation Number" = Number_of_whole_fixations,
+            "Fixation Duration" = Total_duration_of_whole_fixations,
+            "M Duration Fixation" = Average_duration_of_whole_fixations,
+            "TOI" = Duration_of_interval,
+            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+view(et.distub.head.data)
+
+# format and insert table in manuscript
+apa_table(
+  et.distub.head.table,
+  caption = "Number and Duration (in msec) of Fixations for Disturbance 'head on table' to first intervention",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)

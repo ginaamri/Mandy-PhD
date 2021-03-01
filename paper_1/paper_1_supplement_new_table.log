@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  26 FEB 2021 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  1 MAR 2021 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1020,7 +1020,7 @@ Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
  []
 
 
-Overfull \hbox (67.07472pt too wide) in paragraph at lines 399--422
+Overfull \hbox (116.54788pt too wide) in paragraph at lines 399--422
  [] 
  []
 
@@ -1064,7 +1064,7 @@ he total scale and[]
  []
 
 
-Overfull \hbox (67.07472pt too wide) in paragraph at lines 468--491
+Overfull \hbox (116.54788pt too wide) in paragraph at lines 468--491
  [] 
  []
 
@@ -1186,22 +1186,31 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[26] [27]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[27]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 731.
+(hyperref)                than one, level fixed on input line 762.
 
-[28] [29] [30] [31] AED endfloat: Processing end Figures and Tables [32] (./pap
-er_1_supplement_new_table.aux)
+[28] [29] [30] [31]
+Underfull \vbox (badness 1389) has occurred while \output is active []
+
+[32] AED endfloat: Processing end Figures and Tables [33] (./paper_1_supplement
+_new_table.aux)
 Package rerunfilecheck Info: File `paper_1_supplement_new_table.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 10DA996242BC3B861B8B0F9C45B87BEF;3094.
+(rerunfilecheck)             Checksum: B86E47CC80E07DCDDB6E1122C1900F4D;3094.
  ) 
 Here is how much of TeX's memory you used:
- 14808 strings out of 481252
- 228023 string characters out of 5913865
- 552969 words of memory out of 5000000
- 31283 multiletter control sequences out of 15000+600000
+ 14817 strings out of 481252
+ 228172 string characters out of 5913865
+ 555075 words of memory out of 5000000
+ 31284 multiletter control sequences out of 15000+600000
  470372 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,11n,88p,2267b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1216,10 +1225,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roam
 ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppD
 ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/mk99fe
 ta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on paper_1_supplement_new_table.pdf (32 pages, 914765 bytes).
+Output written on paper_1_supplement_new_table.pdf (33 pages, 917767 bytes).
 PDF statistics:
- 471 PDF objects out of 1000 (max. 8388607)
- 402 compressed objects within 5 object streams
- 145 named destinations out of 1000 (max. 500000)
+ 487 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
+ 153 named destinations out of 1000 (max. 500000)
  240 words of extra memory for PDF output out of 10000 (max. 10000000)
 

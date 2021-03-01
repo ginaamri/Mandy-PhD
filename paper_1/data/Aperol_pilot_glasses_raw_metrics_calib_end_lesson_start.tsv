@@ -1,0 +1,9 @@
+Recording	Participant	Variable1	TOI	Interval	Media	Duration_of_interval	Start_of_interval	Number_of_Events.Calibration_end	Number_of_Events.Calibration_start	Number_of_Events.Lesson_start	Time_to_first_Event.Calibration_end	Time_to_first_Event.Calibration_start	Time_to_first_Event.Lesson_start	Total_duration_of_whole_fixations	Average_duration_of_whole_fixations	Number_of_whole_fixations	Duration_of_first_whole_fixation
+Recording033	01_04_C	Novice	Transition Calibration to Lesson start	1	fullstream	39235	40865	0	0	1			38235	22387	344	65	360
+Recording034	01_02_A	Expert	Transition Calibration to Lesson start	1	fullstream	15502	18076	0	0	1			14502	6736	249	27	120
+Recording035	01_03_B	Novice	Transition Calibration to Lesson start	1	fullstream	58763	14525	0	0	1			57763	36378	638	57	200
+Recording036	01_01_D	Expert	Transition Calibration to Lesson start	1	fullstream	53133	19456	0	0	1			52133	38177	378	101	200
+Recording037	02_01_A	Novice	Transition Calibration to Lesson start	1	fullstream	30195	23649	0	0	1			29195	2619	187	14	260
+Recording038	02_02_B	Novice	Transition Calibration to Lesson start	1	fullstream	30297	15827	0	0	1			29297	15851	345	46	240
+Recording039	02_03_C	Novice	Transition Calibration to Lesson start	1	fullstream	42603	22956	0	0	1			41603	27643	321	86	340
+Recording040	02_04_D	Novice	Transition Calibration to Lesson start	1	fullstream	36204	24654	0	0	1			35204	27783	524	53	100
