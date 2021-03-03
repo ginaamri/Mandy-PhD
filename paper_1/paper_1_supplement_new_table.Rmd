@@ -121,7 +121,7 @@ demo.quest.table <- quest.raw.data %>%
 # format and insert table in manuscript
 apa_table(
   demo.quest.table,
-  caption = "Demographic Informationand and Teaching Experience",
+  caption = "Demographic Information and Teaching Experience",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
@@ -202,7 +202,7 @@ The following scales were assessed:
 
 Table \@ref(tab:table-all-scales-self-assessment) provides an overview over the mean, the standard deviation, the range, Cronbach's Alpha and the Skewness & Kurtosis of all scales for the teachers' self-assessment.
 
-```{r table-all-scales-self-assessment, echo = FALSE}
+```{r table-all-scales-self-assessment, echo=FALSE, message=FALSE, warning=FALSE}
 
 # prepare data (selected from questionnaire data) - only equal items and without observer
 quest.raw.data<-read.table("./data/short_questionnaire_data_150221.txt", dec=",", sep="\t", header=T) 
@@ -400,14 +400,14 @@ apa_table(
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
-  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
 )
 
 ```
 
 Table \@ref(tab:table-all-scales-students) provides an overview over the mean, the standard deviation, the range, Cronbach's Alpha and the Skewness & Kurtosis of all scales for the students' perception of the teacher's behaviour in class.
 
-```{r table-all-scales-students, echo = FALSE}
+```{r table-all-scales-students, echo=FALSE, message=FALSE, warning=FALSE}
 
 # prepare data (selected from questionnaire data) - only equal items and without observer
 quest.raw.data<-read.table("./data/short_questionnaire_data_150221.txt", dec=",", sep="\t", header=T) 
@@ -619,7 +619,7 @@ apa_table(
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
-  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
 )
 
 ```

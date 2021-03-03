@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  1 MAR 2021 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.22)  3 MAR 2021 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -864,353 +864,181 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (221.84532pt too wide) in paragraph at lines 305--305
-[]\T1/lmtt/m/n/12 ## Warning in alpha(self.cs.wide[, -1]): Some items were nega
-tively correlated with the total scale and probably[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 311--311
+Overfull \hbox (30.42023pt too wide) in paragraph at lines 305--305
 []\T1/lmtt/m/n/12 ## Some items ( ks_sichtbar ) were negatively correlated with
  the total scale and[] 
  []
 
 
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 319--319
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(r): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (234.19533pt too wide) in paragraph at lines 333--333
-[]\T1/lmtt/m/n/12 ## Warning in alpha(self.pvni.wide[, -1]): Some items were ne
-gatively correlated with the total scale and probably[] 
- []
-
-
-Overfull \hbox (36.59523pt too wide) in paragraph at lines 339--339
+Overfull \hbox (36.59523pt too wide) in paragraph at lines 311--311
 []\T1/lmtt/m/n/12 ## Some items ( pi_nonverbal ) were negatively correlated wit
 h the total scale and[] 
  []
 
+
+Overfull \hbox (36.59523pt too wide) in paragraph at lines 317--317
+[]\T1/lmtt/m/n/12 ## Some items ( pi_nonverbal ) were negatively correlated wit
+h the total scale and[] 
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 328.
 [8]
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 347--347
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(r): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (215.67032pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/12 ## Warning in alpha(self.p.wide[, -1]): Some items were negat
-ively correlated with the total scale and probably[] 
- []
-
-
-Overfull \hbox (36.59523pt too wide) in paragraph at lines 359--359
-[]\T1/lmtt/m/n/12 ## Some items ( pi_nonverbal ) were negatively correlated wit
-h the total scale and[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 363--363
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-[9]
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 393--393
-[]\T1/lmtt/m/n/12 ## Warning in cor.smooth(R): Matrix was not positive definite
-, smoothing was done[] 
- []
-
-
-Overfull \hbox (116.54788pt too wide) in paragraph at lines 399--422
- [] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (228.02032pt too wide) in paragraph at lines 432--432
-[]\T1/lmtt/m/n/12 ## Warning in alpha(stud.ppg.wide[, -1]): Some items were neg
-atively correlated with the total scale and probably[] 
- []
-
-
-Overfull \hbox (18.07022pt too wide) in paragraph at lines 438--438
+Overfull \hbox (18.07022pt too wide) in paragraph at lines 356--356
 []\T1/lmtt/m/n/12 ## Some items ( phb_stand ) were negatively correlated with t
 he total scale and[] 
  []
 
 
-Overfull \hbox (234.19533pt too wide) in paragraph at lines 444--444
-[]\T1/lmtt/m/n/12 ## Warning in alpha(stud.pvni.wide[, -1]): Some items were ne
-gatively correlated with the total scale and probably[] 
- []
-
-[10]
-Overfull \hbox (18.07022pt too wide) in paragraph at lines 450--450
+Overfull \hbox (18.07022pt too wide) in paragraph at lines 362--362
 []\T1/lmtt/m/n/12 ## Some items ( pi_direkt ) were negatively correlated with t
 he total scale and[] 
  []
 
 
-Overfull \hbox (215.67032pt too wide) in paragraph at lines 456--456
-[]\T1/lmtt/m/n/12 ## Warning in alpha(stud.p.wide[, -1]): Some items were negat
-ively correlated with the total scale and probably[] 
- []
-
-
-Overfull \hbox (18.07022pt too wide) in paragraph at lines 462--462
+Overfull \hbox (18.07022pt too wide) in paragraph at lines 368--368
 []\T1/lmtt/m/n/12 ## Some items ( phb_stand ) were negatively correlated with t
 he total scale and[] 
  []
 
-
-Overfull \hbox (116.54788pt too wide) in paragraph at lines 468--491
- [] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11]
+[9]
 <paper_1_supplement_new_table_files/figure-latex/Line Plots Classroom Managemen
-t-1.pdf, id=183, 433.62pt x 433.62pt>
+t-1.pdf, id=177, 433.62pt x 433.62pt>
 File: paper_1_supplement_new_table_files/figure-latex/Line Plots Classroom Mana
 gement-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_new_table_files/figure-latex/Line Plots Classroom Manag
 ement-1.pdf>
 Package pdftex.def Info: paper_1_supplement_new_table_files/figure-latex/Line P
-lots Classroom Management-1.pdf  used on input line 504.
+lots Classroom Management-1.pdf  used on input line 410.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[12] [13 <./paper_1_supplement_new_table_files/figure-latex/Line Plots Classroo
-m Management-1.pdf>]
+[10 <./paper_1_supplement_new_table_files/figure-latex/Line Plots Classroom Man
+agement-1.pdf>]
 <paper_1_supplement_new_table_files/figure-latex/Positive climate and motivatio
-n line plots-1.pdf, id=200, 433.62pt x 505.89pt>
+n line plots-1.pdf, id=188, 433.62pt x 505.89pt>
 File: paper_1_supplement_new_table_files/figure-latex/Positive climate and moti
 vation line plots-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_new_table_files/figure-latex/Positive climate and motiv
 ation line plots-1.pdf>
 Package pdftex.def Info: paper_1_supplement_new_table_files/figure-latex/Positi
-ve climate and motivation line plots-1.pdf  used on input line 508.
+ve climate and motivation line plots-1.pdf  used on input line 414.
 (pdftex.def)             Requested size: 433.62555pt x 505.89645pt.
-[14 <./paper_1_supplement_new_table_files/figure-latex/Positive climate and mot
+[11 <./paper_1_supplement_new_table_files/figure-latex/Positive climate and mot
 ivation line plots-1.pdf>]
 <paper_1_supplement_new_table_files/figure-latex/Clarity and structuredness lin
-e plots-1.pdf, id=211, 433.62pt x 433.62pt>
+e plots-1.pdf, id=199, 433.62pt x 433.62pt>
 File: paper_1_supplement_new_table_files/figure-latex/Clarity and structurednes
 s line plots-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_new_table_files/figure-latex/Clarity and structuredness
  line plots-1.pdf>
 Package pdftex.def Info: paper_1_supplement_new_table_files/figure-latex/Clarit
-y and structuredness line plots-1.pdf  used on input line 512.
+y and structuredness line plots-1.pdf  used on input line 418.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[15 <./paper_1_supplement_new_table_files/figure-latex/Clarity and structuredne
+[12 <./paper_1_supplement_new_table_files/figure-latex/Clarity and structuredne
 ss line plots-1.pdf>]
 <paper_1_supplement_new_table_files/figure-latex/Activation and support line pl
-ots-1.pdf, id=222, 433.62pt x 433.62pt>
+ots-1.pdf, id=210, 433.62pt x 433.62pt>
 File: paper_1_supplement_new_table_files/figure-latex/Activation and support li
 ne plots-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_new_table_files/figure-latex/Activation and support lin
 e plots-1.pdf>
 Package pdftex.def Info: paper_1_supplement_new_table_files/figure-latex/Activa
-tion and support line plots-1.pdf  used on input line 516.
+tion and support line plots-1.pdf  used on input line 422.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[16 <./paper_1_supplement_new_table_files/figure-latex/Activation and support l
+[13 <./paper_1_supplement_new_table_files/figure-latex/Activation and support l
 ine plots-1.pdf>]
-<./pictures/presenceposturegaze.png, id=233, 433.62pt x 433.62pt>
+<./pictures/presenceposturegaze.png, id=222, 433.62pt x 433.62pt>
 File: ./pictures/presenceposturegaze.png Graphic file (type png)
 <use ./pictures/presenceposturegaze.png>
 Package pdftex.def Info: ./pictures/presenceposturegaze.png  used on input line
- 524.
+ 430.
 (pdftex.def)             Requested size: 385.21924pt x 385.21924pt.
-[17 <./pictures/presenceposturegaze.png>]
-<./pictures/presencevoice.png, id=240, 433.62pt x 433.62pt>
+[14 <./pictures/presenceposturegaze.png>]
+<./pictures/presencevoice.png, id=229, 433.62pt x 433.62pt>
 File: ./pictures/presencevoice.png Graphic file (type png)
 <use ./pictures/presencevoice.png>
-Package pdftex.def Info: ./pictures/presencevoice.png  used on input line 537.
+Package pdftex.def Info: ./pictures/presencevoice.png  used on input line 443.
 (pdftex.def)             Requested size: 385.21924pt x 385.21924pt.
-[18 <./pictures/presencevoice.png>]
-<./pictures/presenceverbalnonverbalintervention.png, id=247, 433.62pt x 433.62p
+[15 <./pictures/presencevoice.png>]
+<./pictures/presenceverbalnonverbalintervention.png, id=236, 433.62pt x 433.62p
 t>
 File: ./pictures/presenceverbalnonverbalintervention.png Graphic file (type png
 )
 <use ./pictures/presenceverbalnonverbalintervention.png>
 Package pdftex.def Info: ./pictures/presenceverbalnonverbalintervention.png  us
-ed on input line 549.
+ed on input line 455.
 (pdftex.def)             Requested size: 385.21924pt x 385.21924pt.
-[19 <./pictures/presenceverbalnonverbalintervention.png>]
+[16 <./pictures/presenceverbalnonverbalintervention.png>]
 <paper_1_supplement_new_table_files/figure-latex/Natural behaviour line plots-1
-.pdf, id=255, 433.62pt x 433.62pt>
+.pdf, id=243, 433.62pt x 433.62pt>
 File: paper_1_supplement_new_table_files/figure-latex/Natural behaviour line pl
 ots-1.pdf Graphic file (type pdf)
 <use paper_1_supplement_new_table_files/figure-latex/Natural behaviour line plo
 ts-1.pdf>
 Package pdftex.def Info: paper_1_supplement_new_table_files/figure-latex/Natura
-l behaviour line plots-1.pdf  used on input line 563.
+l behaviour line plots-1.pdf  used on input line 469.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
-[20 <./paper_1_supplement_new_table_files/figure-latex/Natural behaviour line p
+[17 <./paper_1_supplement_new_table_files/figure-latex/Natural behaviour line p
 lots-1.pdf>]
-<paper_1_supplement_new_table_files/figure-latex/boxplot scales-1.pdf, id=266, 
+<paper_1_supplement_new_table_files/figure-latex/boxplot scales-1.pdf, id=254, 
 433.62pt x 578.16pt>
 File: paper_1_supplement_new_table_files/figure-latex/boxplot scales-1.pdf Grap
 hic file (type pdf)
 <use paper_1_supplement_new_table_files/figure-latex/boxplot scales-1.pdf>
 Package pdftex.def Info: paper_1_supplement_new_table_files/figure-latex/boxplo
-t scales-1.pdf  used on input line 570.
+t scales-1.pdf  used on input line 476.
 (pdftex.def)             Requested size: 433.63878pt x 578.18504pt.
-[21] [22 <./paper_1_supplement_new_table_files/figure-latex/boxplot scales-1.pd
+[18] [19 <./paper_1_supplement_new_table_files/figure-latex/boxplot scales-1.pd
 f>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-83.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+89.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [23] [24]
-<paper_1_supplement_new_table_files/figure-latex/speaking plot-1.pdf, id=296, 4
+) [20] [21]
+<paper_1_supplement_new_table_files/figure-latex/speaking plot-1.pdf, id=284, 4
 69.755pt x 325.215pt>
 File: paper_1_supplement_new_table_files/figure-latex/speaking plot-1.pdf Graph
 ic file (type pdf)
 <use paper_1_supplement_new_table_files/figure-latex/speaking plot-1.pdf>
 Package pdftex.def Info: paper_1_supplement_new_table_files/figure-latex/speaki
-ng plot-1.pdf  used on input line 632.
+ng plot-1.pdf  used on input line 538.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (28.90639pt too wide) in paragraph at lines 632--633
+Overfull \hbox (28.90639pt too wide) in paragraph at lines 538--539
 [][]  
  []
 
-[25 <./paper_1_supplement_new_table_files/figure-latex/speaking plot-1.pdf>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 653.
+[22 <./paper_1_supplement_new_table_files/figure-latex/speaking plot-1.pdf>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[26]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[27]
+[24]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 762.
+(hyperref)                than one, level fixed on input line 695.
 
-[28] [29] [30] [31]
+[25] [26] [27] [28]
 Underfull \vbox (badness 1389) has occurred while \output is active []
 
-[32] AED endfloat: Processing end Figures and Tables [33] (./paper_1_supplement
+[29] AED endfloat: Processing end Figures and Tables [30] (./paper_1_supplement
 _new_table.aux)
 Package rerunfilecheck Info: File `paper_1_supplement_new_table.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: B86E47CC80E07DCDDB6E1122C1900F4D;3094.
+(rerunfilecheck)             Checksum: E3A7E8CC7DF03A7E89C972C851AE5946;3094.
  ) 
 Here is how much of TeX's memory you used:
  14817 strings out of 481252
- 228172 string characters out of 5913865
- 555075 words of memory out of 5000000
- 31284 multiletter control sequences out of 15000+600000
+ 228238 string characters out of 5913865
+ 557198 words of memory out of 5000000
+ 31285 multiletter control sequences out of 15000+600000
  470372 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,11n,88p,2267b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1221,14 +1049,15 @@ blic/lm/lmbx12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmbxi10.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmr10.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/t
 exmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roam
-ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppD
-ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/mk99fe
-ta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on paper_1_supplement_new_table.pdf (33 pages, 917767 bytes).
+nyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/mk99feta/AppData/Roam
+ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppDat
+a/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99fet
+a/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/
+mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on paper_1_supplement_new_table.pdf (30 pages, 940973 bytes).
 PDF statistics:
- 487 PDF objects out of 1000 (max. 8388607)
- 417 compressed objects within 5 object streams
- 153 named destinations out of 1000 (max. 500000)
+ 480 PDF objects out of 1000 (max. 8388607)
+ 412 compressed objects within 5 object streams
+ 152 named destinations out of 1000 (max. 500000)
  240 words of extra memory for PDF output out of 10000 (max. 10000000)
 
