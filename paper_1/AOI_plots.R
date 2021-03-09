@@ -30,10 +30,74 @@ et.table <- et.raw.data %>%
   summarise("Mean Duration of Fixations" = mean(Total.duration.of.fixation.in.AOI..sec.),
             "Number of Fixations" = mean(Number.of.fixations.in.AOI),
             "TOI" = mean(Total.Time.of.Interest.Duration..sec.))
- 
+  
+
+# create a new column with name Total that gives the sum duration in sec of looking at all AOIs
+et.raw.data <- et.raw.data %>% mutate(Total = sum(Total.duration.of.fixation.in.AOI..sec.))
+
+
 # create new columns that give proportion of the duration of looking at AOIs
 # relative duration divided by total duration is the proportion
-proportion.et.data <- et.raw.data %>% 
-  group_by(Type.of.disruption, Group) %>%
-  summarise(Proportion = Average.duration.of.fixation.in.AOI..sec./Total.duration.of.fixation.in.AOI..sec.)
+proportion.et.data <- et.raw.data %>% group_by(Group, Type.of.disruption) %>% 
+                                      mutate(Proportion = Total.duration.of.fixation.in.AOI..sec./Total)
+
+
+### Plot data TOTAL
+total.plot <- ggplot(et.raw.data, aes(x = Type.of.disruption, y = Total.duration.of.fixation.in.AOI..sec., fill = Type.of.disruption)) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
+  scale_x_discrete(guide = guide_axis(angle = 70)) +
+  geom_boxplot()+
+  facet_wrap(~ Group, nrow = 1)+
+  theme_light() +
+  theme(legend.position="none")+
+  labs(y = "Total Duration of Looking at AOIs in sec", x = "AOI")
+
+total.plot
+
+
+
+### Plot data PROPORTIONS
+prop.plot <- ggplot(proportion.et.data, aes(x = Type.of.disruption, y = Proportion, fill = Type.of.disruption)) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
+  scale_x_discrete(guide = guide_axis(angle = 70)) +
+  geom_boxplot()+
+  facet_wrap(~ Group, nrow = 1)+
+  theme_light() +
+  theme(legend.position="none")+
+  labs(y = "Proportion of Looking at AOIs", x = "AOI")
+
+prop.plot
+
+
+### Plot Number of Fixations
+number.plot <- ggplot(et.raw.data, aes(x = Type.of.disruption, y = Number.of.fixations.in.AOI, fill = Type.of.disruption)) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
+  scale_x_discrete(guide = guide_axis(angle = 70)) +
+  geom_boxplot()+
+  facet_wrap(~ Group, nrow = 1)+
+  theme_light() +
+  theme(legend.position="none")+
+  labs(y = "Number of Fixations in AOI", x = "AOI")
+
+number.plot
+
+str(et.table)
+
+### Plot Average duration of fixation
+average.plot <- ggplot(et.table, aes(x = "Type of Disruption", y = "Mean Duration of Fixations", fill = "Type of Disruption")) +
+  scale_x_discrete(guide = guide_axis(angle = 70)) +
+  geom_bar(aes(y="Mean Duration of Fixations")) + 
+  facet_wrap(~ Group)+
+  theme_light() +
+  theme(legend.position="none")+
+  labs(y = "Average Duration of Looking at AOIs in sec", x = "AOI")
+
+average.plot
+
+
+
+
+
+
+
 
