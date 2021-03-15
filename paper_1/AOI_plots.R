@@ -47,6 +47,7 @@ total.plot <- ggplot(et.raw.data, aes(x = Type.of.disruption, y = Total.duration
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
+  geom_jitter(color="black", size=0.4, alpha=0.5) +
   facet_wrap(~ Group, nrow = 1)+
   theme_light() +
   theme(legend.position="none")+
@@ -74,6 +75,7 @@ number.plot <- ggplot(et.raw.data, aes(x = Type.of.disruption, y = Number.of.fix
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
+  geom_jitter(color="black", size=0.4, alpha=0.5) +
   facet_wrap(~ Group, nrow = 1)+
   theme_light() +
   theme(legend.position="none")+

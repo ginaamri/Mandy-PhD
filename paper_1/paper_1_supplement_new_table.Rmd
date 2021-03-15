@@ -48,8 +48,9 @@ output            : papaja::apa6_pdf #bookdown::word_document2
 ```{r setup, include = FALSE}
 
 # if a package is not installed on the current machine, it will install it
+if(!"devtools" %in% rownames(installed.packages())) install.packages("devtools")
 if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
-if (!require(papaja)) install.packages('papaja'); library(papaja)
+if (!require(papaja)) install.packages("papaja"); library(papaja)
 if (!require(psych)) install.packages('psych'); library(psych) # stats
 if (!require(moments)) install.packages('moments'); library(moments) # skewness & kurtosis
 if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysis of a scale or index
@@ -958,12 +959,11 @@ quest.plot <- quest.raw.data %>%
   ggplot(aes(x=scale, y=value, fill=scale)) +
     geom_boxplot() +
     scale_x_discrete(guide = guide_axis(angle = 70)) +
-    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    geom_jitter(color="black", size=0.4, alpha=0.5) +
     theme_light() +
     theme(
       legend.position="none",
-      plot.title = element_text(size=11)
-    ) +
+      plot.title = element_text(size=11)) +
     facet_grid(~group)+
     ggtitle("Boxplot with individual points for all scales") +
     xlab("")
@@ -1186,40 +1186,124 @@ The Tobii Pro Lab 2 software was used to analyze the teachers' visual attetion d
 
 The GRI is a measure of visual expertise in information processing. This metric is calculated as the ratio of mean fixation duration to fixation count. The GRI is higher for novices than for experts. [@gegenfurtner2020gaze]
 
-```{r GRItable, echo = FALSE}
+```{r GRItable1, echo = FALSE}
 
 # prepare data (selected from questionnaire data)
-et.raw.data<-read.table("./data/Aperol_pilot_glasses_raw_fixation_saccades_metrics.tsv", dec=",", sep="\t", header=T) 
+et.toi.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_all_TOI.tsv", dec=",", sep="\t", header=T) 
 
 
 # converting integer to numeric
-et.raw.data <- et.raw.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+et.toi.data <- et.toi.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
                                        Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
                                        Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
-                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations)
-                                       )
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations))
 
 # calculate the GRI 
 # create a basic table (tibble) using tidyverse functions
-et.raw.table <- et.raw.data %>%
-  group_by(Participant, Variable) %>%
-  summarise("Fixation Number" = Number_of_whole_fixations,
-            "Fixation Duration" = Total_duration_of_whole_fixations,
-            "M Duration Fixation" = Average_duration_of_whole_fixations,
-            "TOI" = Duration_of_interval,
-            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+et.toi.table1 <- et.toi.data %>%
+  group_by(TOI) %>%
+  summarise("ID" = Participant,
+            "Group" = Variable1,
+            "Duration TOI ms" = Duration_of_interval,
+            "M Duration Fixation" = mean(Total_duration_of_whole_fixations),
+            "Number Fixation" = Number_of_whole_fixations,
+            "Time TOI Duration" = Duration_of_interval/mean(Total_duration_of_whole_fixations),
+            "Old GRI" = mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations,
+            "New GRI" = (Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations)
+
 
 # format and insert table in manuscript
 apa_table(
-  et.raw.table,
-  caption = "Number and Duration (in msec) of Fixations",
+  et.toi.table1,
+  caption = "GRI",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
-  font_size = "scriptsize" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
   )
 
 ```
+
+
+```{r GRItable2, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.toi.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_all_TOI.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.toi.data <- et.toi.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations))
+
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.toi.table2 <- et.toi.data %>%
+  group_by(Variable1, TOI) %>%
+  rename("Group" = Variable1) %>%
+  summarise("M Fixation Duration" = mean(Total_duration_of_whole_fixations),
+            "M Number Fixation" = mean(Number_of_whole_fixations),
+            "M TOI" = mean(Duration_of_interval),
+            "M Old GRI" = mean(mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations),
+            "SD Old GRI" = sd(mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations),
+            "M New GRI" = mean((Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations),
+            "SD New GRI" = sd((Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations))
+
+
+# format and insert table in manuscript
+apa_table(
+  et.toi.table2,
+  caption = "GRI",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+```{r GRItable3, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.toi.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_all_TOI.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.toi.data <- et.toi.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations))
+
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.toi.table3 <- et.toi.data %>%
+  group_by(Variable1) %>%
+  rename("Group" = Variable1) %>%
+  summarise("M Fixation Duration" = mean(Total_duration_of_whole_fixations),
+            "M Number Fixation" = mean(Number_of_whole_fixations),
+            "M TOI" = mean(Duration_of_interval),
+            "M Old GRI" = mean(mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations),
+            "SD Old GRI" = sd(mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations),
+            "M New GRI" = mean((Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations),
+            "SD New GRI" = sd((Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations))
+
+
+# format and insert table in manuscript
+apa_table(
+  et.toi.table3,
+  caption = "GRI",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
 
 ```{r calibration phase TOI, echo = FALSE}
 
