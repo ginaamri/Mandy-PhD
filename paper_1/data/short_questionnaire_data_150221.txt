@@ -992,4 +992,3 @@ ID	questionnaire label	group	what	personID	session	unit	itemID	scale_original	sc
 991	Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	11	Manipulationsitem 	Natural behaviour	m_fiktiv	student	Ich hatte den Eindruck, dass es für die Lehrperson kein Problem war, vor einer fiktiven Klassen zu unterrichten.	4	D	22	0	0	0	0	0
 992	Aperol_pilot_02_04_novice_D_quest	novice	data	10	002	004	11	Manipulationsitem 	Natural behaviour	m_verhalten	student	Beim Unterrichten vor einer fiktiven Klasse hat sich die Lehrperson so verhalten, wie sie es auch in der Schule/Universität tun würde. 	4	D	22	0	0	0	0	0
 																				
-																				

@@ -1,0 +1,639 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  english,
+  man,floatsintext]{apa6}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Through the eyes of the teacher},
+  pdfauthor={Mandy Klatt1, Dr.~Gregor Kachel1, 2, Dr.~Christin Lotz1, \& Prof.~Dr.~Anne Deiglmayr1},
+  pdflang={en-EN},
+  pdfkeywords={Professional Vision, Expert-Novice-Paradigm, Eye-Tracking},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+% Manuscript styling
+\usepackage{upgreek}
+\captionsetup{font=singlespacing,justification=justified}
+
+% Table formatting
+\usepackage{longtable}
+\usepackage{lscape}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
+
+% Enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
+
+% \setlength{\parindent}{0.5in}
+% \setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+% \usepackage{etoolbox}
+\makeatletter
+\patchcmd{\HyOrg@maketitle}
+  {\section{\normalfont\normalsize\abstractname}}
+  {\section*{\normalfont\normalsize\abstractname}}
+  {}{\typeout{Failed to patch abstract.}}
+\patchcmd{\HyOrg@maketitle}
+  {\section{\protect\normalfont{\@title}}}
+  {\section*{\protect\normalfont{\@title}}}
+  {}{\typeout{Failed to patch title.}}
+\makeatother
+\shorttitle{Visual attention in teaching and learning processes}
+\keywords{Professional Vision, Expert-Novice-Paradigm, Eye-Tracking\newline\indent Word count: 1949}
+\usepackage{lineno}
+
+\linenumbers
+\usepackage{csquotes}
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\else
+  \usepackage[shorthands=off,main=english]{babel}
+\fi
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\title{Through the eyes of the teacher}
+\author{Mandy Klatt\textsuperscript{1}, Dr.~Gregor Kachel\textsuperscript{1, 2}, Dr.~Christin Lotz\textsuperscript{1}, \& Prof.~Dr.~Anne Deiglmayr\textsuperscript{1}}
+\date{}
+
+
+\authornote{
+
+The Ethics Advisory Board of Leipzig University has dealt with the research project and has come to the conclusion that there are no objections to the implementation of this research project. The Ethics Advisory Board points out that the scientific and ethical responsibilty for the implementation of the project remains with the project director.
+
+Correspondence concerning this article should be addressed to Mandy Klatt, Egelstraße 2a 04103 Leipzig. E-mail: \href{mailto:mandy.klatt@uni-leipzig.de}{\nolinkurl{mandy.klatt@uni-leipzig.de}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} Leipzig University\\\textsuperscript{2} Max-Planck University for Evolutionary Anthropology}
+
+\abstract{
+This document is a supplement to the paper and shows first graphs findings from the pilot study.
+}
+
+
+
+\begin{document}
+\maketitle
+
+\hypertarget{state-of-research}{%
+\section{State of research}\label{state-of-research}}
+
+Teaching and classroom management are multidimensional settings in which teachers have to respond immediately to events as they develop (Barnes, 2004). The different interests and abilities of students must be managed in a way that maximizes the active learning time of students and minimizes disruptions whilst teaching. Learning to develop such classroom management skills and to teach effectively is a complicated and complex process (Wolff, Jarodzka, \& Boshuizen, 2017).
+
+During teaching, teachers must be able to select from a variety of visual and acoustic impressions to focus their attention on the essential and to distinguish between relevant and irrelevant events. This ability is called professional vision and is a key component of teacher expertise and successful teaching (Barth, 2017). Eye tracking technology has become a reliable means to study teachers' visual focus of attention (Bogert, 2016; Pouta, Lehtinen, \& Palonen, 2020; Wolff, Jarodzka, \& Boshuizen, 2017)
+
+Educational research has repeatedly shown that there are differences between experienced and novice teachers in terms of perception and behavioral competencies (Barth, 2017; Bogert, 2016; Wolff, Jarodzka, \& Boshuizen, 2017). For example, experts direct their attention more often and more evenly to all students, whereas novices only direct their attention to some students. The frequency and duration of fixations as eye movement are decisive (Stuermer, Seidel, Mueller, Häusler, \& Cortina, 2017). Mobile eye-tracking technology has also shown that experienced teachers distribute their focus more efficiently to solve tasks (Jarodzka, Scheiter, Gerjets, \& Van Gog, 2010). Furthermore, in contrast to novices, experts are able to focus their attention on the entire class and guide the class while giving feedback to individual students and answering questions (Cortina, Miller, McKenzie, \& Epstein, 2015).
+
+\hypertarget{research-questions}{%
+\subsection{Research questions}\label{research-questions}}
+
+The aim of the pilot study was to investigate whether there are differences in how expert and novice teachers manage scripted classroom disruptions. The disruptions were experimentally varied using a previously written script. Thus, our aim was to find out whether differences in the allocation of attention between expertise groups can be detected in this controlled context.
+
+In order to answer this question, the hypothesis was formulated that teachers with more professional experience not only notice more disruptions but also notice them faster. In the hypothesis, therefore, it is necessary to check what has already been shown in the research literature: In complex teaching situations, experts have a more structured and elaborate professional knowledge than novices in order to perceive and interpret relevant events and to act appropriately (Berliner, 2001; Lachner, Jarodzka, \& Nückles, 2016).
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study.
+
+\hypertarget{participants}{%
+\subsection{Participants}\label{participants}}
+
+For the sample recruitment of the subjects (N = 8, experts n = 2, novices n = 6), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the study in advance. Participation in the study was voluntary and only took place after written consent has been given.
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:demographicspilottable}Demographic Information and Teaching Experience}
+
+\small{
+
+\begin{tabular}{lllllllllll}
+\toprule
+group & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Male} & \multicolumn{1}{c}{M age} & \multicolumn{1}{c}{Min age} & \multicolumn{1}{c}{Max age} & \multicolumn{1}{c}{SD age} & \multicolumn{1}{c}{M exp.} & \multicolumn{1}{c}{Min exp.} & \multicolumn{1}{c}{Max exp.} & \multicolumn{1}{c}{SD exp.}\\
+\midrule
+expert & 2 & 1 & 47.50 & 44 & 51 & 4.95 & 20.00 & 15.00 & 25.00 & 7.07\\
+novice & 6 & 2 & 25.67 & 20 & 33 & 4.89 & 0.68 & 0.00 & 1.50 & 0.68\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+The selection of the subjects was based on extreme groups, whereby professional experience is the crucial criterion for the selection of experts or novices. Novices were recruited as teachers who have been working in the teaching profession for no more than 3 years, whereas experts were considered to have professional experience of 10 years or more (Messner \& Reusser, 2000).
+
+\hypertarget{procedure-data-collection}{%
+\subsection{Procedure/ Data collection}\label{procedure-data-collection}}
+
+\hypertarget{set-up}{%
+\subsubsection{Set up}\label{set-up}}
+
+For this study, scripted mini-lessons with n = 2 experts and n = 6 novices were recorded in the mobile Lab of the Empirical School and Classroom Research at the University of Leipzig. The subjects were divided into groups of four, so the study was conducted on two different sessions. All participants were asked to hold a 10-minute lesson. The duration of each appointment was approximately 2h: per group 10min briefing, 4 x 10min mini-lessons, 10min technical preparation and follow-up and 4x 10min transition points between the lessons and answering questionnaires.
+
+One person from the group of 4 acted as a teacher, the other three subjects acted as the class. The subjects, who represented the class, were given behavioral instructions in a pre-written script to simulate typical events and disruptions in the classroom (e.g.~putting their heads on the table, chatting, looking at their mobile phones, etc.).
+
+The lesson disruptions were displayed as instructions during the lesson for all ``students'' but not the teacher. In order to avoid learning effects, the disruptions in each lesson were distributed pseudo-randomly over the short teaching phase. In addition, the order of the data collection was taken into account in the analyses and variance caused by order was controlled.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=5.94in]{./pictures/datacollection} 
+
+}
+
+\caption{Example for set up during a mini-lesson}\label{fig:datacollection}
+\end{figure}
+
+\hypertarget{eyetracking-data}{%
+\subsubsection{Eyetracking data}\label{eyetracking-data}}
+
+A binocular Tobii Pro Glasses 2 eye-tracker consisting of a wearable head unit and a recording unit was used to record the eye movements of all 8 participants. The head unit is a measuring device with different sensitive sensors. A high-definition scene camera captures a full HD video and an integrated microphone records the surrounding sounds. Infrared light illuminators support the eye tracking sensors which record the eye orientation. The videos were recorded with a sampling rate of 50 Hz and a video resolution with 1920 x 1080 at 25 frames per second. The scene camera has a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and has a frame dimension of 179 x 159 x 57mm (width x depth x height). The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
+
+\hypertarget{coding-data-preparation-reliability}{%
+\subsection{Coding/ Data preparation/ Reliability}\label{coding-data-preparation-reliability}}
+
+\hypertarget{eyetracking-data-1}{%
+\subsubsection{Eyetracking Data}\label{eyetracking-data-1}}
+
+The Tobii Pro Lab 2 software was used to analyze the teachers' visual attetion during each mini-lesson. The software allows for non-screen based recordings of a participants' attention while moving in real-world settings. The recordings of the glasses contain both HD-video from the subjects' perspective as well as the respective gaze data mapped onto the video. In order to map multiple recordings to AOIs, we first imported the eye-tracking recordings into the Tobii Pro Analyzer software. Second, we created dynamic Areas of Interest (AOI) manually to plot the gaze data. Once the AOIs are created, the gaze recordings of multiple recordings can be mapped and analyzed in aggregated form. Tobii Pro does not allow to do AOI based analyses within Pro Lab. So we exported a tsv. file to do further analyses in the software R.
+
+\hypertarget{gaze-relational-index-gri}{%
+\paragraph{Gaze relational index (GRI)}\label{gaze-relational-index-gri}}
+
+The GRI is a measure of visual expertise in information processing. This metric is calculated as the ratio of mean fixation duration to fixation count. The GRI is higher for novices than for experts. (Gegenfurtner et al., 2020)
+
+The first table provides an overview over the
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:GRItable1}GRI}
+
+\tiny{
+
+\begin{tabular}{lllllllll}
+\toprule
+TOI & \multicolumn{1}{c}{ID} & \multicolumn{1}{c}{Group} & \multicolumn{1}{c}{DurTOI} & \multicolumn{1}{c}{M Dur Fix} & \multicolumn{1}{c}{Number Fix} & \multicolumn{1}{c}{TimeTOI Dur} & \multicolumn{1}{c}{OldGRI} & \multicolumn{1}{c}{NewGRI}\\
+\midrule
+Asking question & 01\_04\_C & Novice & 3,869.00 & 2,925.62 & 3.00 & 1.32 & 975.21 & 0.44\\
+Asking question & 01\_02\_A & Expert & 7,112.00 & 2,925.62 & 13.00 & 2.43 & 225.05 & 0.19\\
+Asking question & 01\_03\_B & Novice & 12,863.00 & 2,925.62 & 4.00 & 4.40 & 731.41 & 1.10\\
+Asking question & 01\_01\_D & Expert & 7,648.00 & 2,925.62 & 7.00 & 2.61 & 417.95 & 0.37\\
+Asking question & 02\_01\_A & Novice & 7,422.00 & 2,925.62 & 3.00 & 2.54 & 975.21 & 0.85\\
+Asking question & 02\_02\_B & Novice & 7,082.00 & 2,925.62 & 9.00 & 2.42 & 325.07 & 0.27\\
+Asking question & 02\_03\_C & Novice & 8,045.00 & 2,925.62 & 8.00 & 2.75 & 365.70 & 0.34\\
+Asking question & 02\_04\_D & Novice & 6,595.00 & 2,925.62 & 6.00 & 2.25 & 487.60 & 0.38\\
+Calibration phase & 01\_04\_C & Novice & 17,224.00 & 12,275.12 & 14.00 & 1.40 & 876.79 & 0.10\\
+Calibration phase & 01\_02\_A & Expert & 13,335.00 & 12,275.12 & 10.00 & 1.09 & 1,227.51 & 0.11\\
+Calibration phase & 01\_03\_B & Novice & 10,615.00 & 12,275.12 & 17.00 & 0.86 & 722.07 & 0.05\\
+Calibration phase & 01\_01\_D & Expert & 16,470.00 & 12,275.12 & 9.00 & 1.34 & 1,363.90 & 0.15\\
+Calibration phase & 02\_01\_A & Novice & 17,902.00 & 12,275.12 & 13.00 & 1.46 & 944.24 & 0.11\\
+Calibration phase & 02\_02\_B & Novice & 12,325.00 & 12,275.12 & 12.00 & 1.00 & 1,022.93 & 0.08\\
+Calibration phase & 02\_03\_C & Novice & 16,494.00 & 12,275.12 & 18.00 & 1.34 & 681.95 & 0.07\\
+Calibration phase & 02\_04\_D & Novice & 20,964.00 & 12,275.12 & 14.00 & 1.71 & 876.79 & 0.12\\
+Chatting with neighbour & 01\_04\_C & Novice & 9,843.00 & 4,070.12 & 27.00 & 2.42 & 150.75 & 0.09\\
+Chatting with neighbour & 01\_02\_A & Expert & 2,607.00 & 4,070.12 & 1.00 & 0.64 & 4,070.12 & 0.64\\
+Chatting with neighbour & 01\_03\_B & Novice & 11,060.00 & 4,070.12 & 10.00 & 2.72 & 407.01 & 0.27\\
+Chatting with neighbour & 01\_01\_D & Expert & 6,612.00 & 4,070.12 & 3.00 & 1.62 & 1,356.71 & 0.54\\
+Chatting with neighbour & 02\_01\_A & Novice & 7,429.00 & 4,070.12 & 5.00 & 1.83 & 814.02 & 0.37\\
+Chatting with neighbour & 02\_02\_B & Novice & 8,397.00 & 4,070.12 & 11.00 & 2.06 & 370.01 & 0.19\\
+Chatting with neighbour & 02\_03\_C & Novice & 11,713.00 & 4,070.12 & 11.00 & 2.88 & 370.01 & 0.26\\
+Chatting with neighbour & 02\_04\_D & Novice & 11,443.00 & 4,070.12 & 4.00 & 2.81 & 1,017.53 & 0.70\\
+Clicking pen & 01\_04\_C & Novice & 12,980.00 & 8,809.75 & 4.00 & 1.47 & 2,202.44 & 0.37\\
+Clicking pen & 01\_02\_A & Expert & 12,071.00 & 8,809.75 & 20.00 & 1.37 & 440.49 & 0.07\\
+Clicking pen & 01\_03\_B & Novice & 26,272.00 & 8,809.75 & 16.00 & 2.98 & 550.61 & 0.19\\
+Clicking pen & 01\_01\_D & Expert & 11,597.00 & 8,809.75 & 11.00 & 1.32 & 800.89 & 0.12\\
+Clicking pen & 02\_01\_A & Novice & 16,114.00 & 8,809.75 & 11.00 & 1.83 & 800.89 & 0.17\\
+Clicking pen & 02\_02\_B & Novice & 9,409.00 & 8,809.75 & 12.00 & 1.07 & 734.15 & 0.09\\
+Clicking pen & 02\_03\_C & Novice & 16,269.00 & 8,809.75 & 27.00 & 1.85 & 326.29 & 0.07\\
+Clicking pen & 02\_04\_D & Novice & 24,220.00 & 8,809.75 & 19.00 & 2.75 & 463.67 & 0.14\\
+Drawing on paper & 01\_04\_C & Novice & 39,979.00 & 34,414.38 & 27.00 & 1.16 & 1,274.61 & 0.04\\
+Drawing on paper & 01\_02\_A & Expert & 44,971.00 & 34,414.38 & 87.00 & 1.31 & 395.57 & 0.02\\
+Drawing on paper & 01\_03\_B & Novice & 129,708.00 & 34,414.38 & 79.00 & 3.77 & 435.62 & 0.05\\
+Drawing on paper & 01\_01\_D & Expert & 74,511.00 & 34,414.38 & 92.00 & 2.17 & 374.07 & 0.02\\
+Drawing on paper & 02\_01\_A & Novice & 43,469.00 & 34,414.38 & 31.00 & 1.26 & 1,110.14 & 0.04\\
+Drawing on paper & 02\_02\_B & Novice & 147,788.00 & 34,414.38 & 295.00 & 4.29 & 116.66 & 0.01\\
+Drawing on paper & 02\_03\_C & Novice & 26,495.00 & 34,414.38 & 46.00 & 0.77 & 748.14 & 0.02\\
+Drawing on paper & 02\_04\_D & Novice & 27,915.00 & 34,414.38 & 11.00 & 0.81 & 3,128.58 & 0.07\\
+Drumming hands & 01\_04\_C & Novice & 43,507.00 & 11,415.88 & 41.00 & 3.81 & 278.44 & 0.09\\
+Drumming hands & 01\_02\_A & Expert & 20,530.00 & 11,415.88 & 27.00 & 1.80 & 422.81 & 0.07\\
+Drumming hands & 01\_03\_B & Novice & 12,615.00 & 11,415.88 & 6.00 & 1.11 & 1,902.65 & 0.18\\
+Drumming hands & 01\_01\_D & Expert & 23,121.00 & 11,415.88 & 17.00 & 2.03 & 671.52 & 0.12\\
+Drumming hands & 02\_01\_A & Novice & 62,326.00 & 11,415.88 & 50.00 & 5.46 & 228.32 & 0.11\\
+Drumming hands & 02\_02\_B & Novice & 24,699.00 & 11,415.88 & 25.00 & 2.16 & 456.64 & 0.09\\
+Drumming hands & 02\_03\_C & Novice & 27,775.00 & 11,415.88 & 49.00 & 2.43 & 232.98 & 0.05\\
+Drumming hands & 02\_04\_D & Novice & 14,998.00 & 11,415.88 & 9.00 & 1.31 & 1,268.43 & 0.15\\
+Looking at phone & 01\_04\_C & Novice & 7,984.00 & 11,563.00 & 8.00 & 0.69 & 1,445.38 & 0.09\\
+Looking at phone & 01\_02\_A & Expert & 19,897.00 & 11,563.00 & 28.00 & 1.72 & 412.96 & 0.06\\
+Looking at phone & 01\_03\_B & Novice & 40,427.00 & 11,563.00 & 30.00 & 3.50 & 385.43 & 0.12\\
+Looking at phone & 01\_01\_D & Expert & 32,387.00 & 11,563.00 & 29.00 & 2.80 & 398.72 & 0.10\\
+Looking at phone & 02\_01\_A & Novice & 33,557.00 & 11,563.00 & 14.00 & 2.90 & 825.93 & 0.21\\
+Looking at phone & 02\_02\_B & Novice & 16,321.00 & 11,563.00 & 19.00 & 1.41 & 608.58 & 0.07\\
+Looking at phone & 02\_03\_C & Novice & 28,223.00 & 11,563.00 & 47.00 & 2.44 & 246.02 & 0.05\\
+Looking at phone & 02\_04\_D & Novice & 31,944.00 & 11,563.00 & 19.00 & 2.76 & 608.58 & 0.15\\
+Putting head on table & 01\_04\_C & Novice & 20,929.00 & 17,049.88 & 38.00 & 1.23 & 448.68 & 0.03\\
+Putting head on table & 01\_02\_A & Expert & 23,402.00 & 17,049.88 & 27.00 & 1.37 & 631.48 & 0.05\\
+Putting head on table & 01\_03\_B & Novice & 39,159.00 & 17,049.88 & 41.00 & 2.30 & 415.85 & 0.06\\
+Putting head on table & 01\_01\_D & Expert & 6,354.00 & 17,049.88 & 4.00 & 0.37 & 4,262.47 & 0.09\\
+Putting head on table & 02\_01\_A & Novice & 51,225.00 & 17,049.88 & 45.00 & 3.00 & 378.89 & 0.07\\
+Putting head on table & 02\_02\_B & Novice & 11,322.00 & 17,049.88 & 20.00 & 0.66 & 852.49 & 0.03\\
+Putting head on table & 02\_03\_C & Novice & 61,713.00 & 17,049.88 & 81.00 & 3.62 & 210.49 & 0.04\\
+Putting head on table & 02\_04\_D & Novice & 57,484.00 & 17,049.88 & 42.00 & 3.37 & 405.95 & 0.08\\
+Yelling & 01\_04\_C & Novice & 6,083.00 & 889.50 & 1.00 & 6.84 & 889.50 & 6.84\\
+Yelling & 01\_02\_A & Expert & 1,995.00 & 889.50 & 1.00 & 2.24 & 889.50 & 2.24\\
+Yelling & 01\_03\_B & Novice & 6,527.00 & 889.50 & 1.00 & 7.34 & 889.50 & 7.34\\
+Yelling & 01\_01\_D & Expert & 2,245.00 & 889.50 & 1.00 & 2.52 & 889.50 & 2.52\\
+Yelling & 02\_01\_A & Novice & 9,105.00 & 889.50 & 7.00 & 10.24 & 127.07 & 1.46\\
+Yelling & 02\_02\_B & Novice & 2,548.00 & 889.50 & 5.00 & 2.86 & 177.90 & 0.57\\
+Yelling & 02\_03\_C & Novice & 2,992.00 & 889.50 & 2.00 & 3.36 & 444.75 & 1.68\\
+Yelling & 02\_04\_D & Novice & 12,416.00 & 889.50 & 1.00 & 13.96 & 889.50 & 13.96\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:GRItable2}GRI}
+
+\tiny{
+
+\begin{tabular}{lllllllll}
+\toprule
+Group & \multicolumn{1}{c}{TOI} & \multicolumn{1}{c}{M Fixation Duration} & \multicolumn{1}{c}{M Number Fixation} & \multicolumn{1}{c}{M TOI} & \multicolumn{1}{c}{M Old GRI} & \multicolumn{1}{c}{SD Old GRI} & \multicolumn{1}{c}{M New GRI} & \multicolumn{1}{c}{SD New GRI}\\
+\midrule
+Expert & Asking question & 2,108.50 & 10.00 & 7,380.00 & 231.70 & 98.30 & 0.39 & 0.18\\
+Expert & Calibration phase & 12,283.00 & 9.50 & 14,902.50 & 1,296.54 & 96.50 & 0.13 & 0.03\\
+Expert & Chatting with neighbour & 1,829.00 & 2.00 & 4,609.50 & 1,219.33 & 862.20 & 1.32 & 0.16\\
+Expert & Clicking pen & 5,416.50 & 15.50 & 11,834.00 & 381.62 & 156.68 & 0.15 & 0.06\\
+Expert & Drawing on paper & 25,514.50 & 89.50 & 59,741.00 & 285.30 & 11.27 & 0.03 & 0.01\\
+Expert & Drumming hands & 8,405.00 & 22.00 & 21,825.50 & 402.85 & 129.48 & 0.13 & 0.05\\
+Expert & Looking at phone & 8,484.50 & 28.50 & 26,142.00 & 297.79 & 7.39 & 0.11 & 0.03\\
+Expert & Putting head on table & 7,605.50 & 15.50 & 14,878.00 & 1,091.53 & 1,145.29 & 0.16 & 0.07\\
+Expert & Yelling & 580.00 & 1.00 & 2,120.00 & 580.00 & 0.00 & 3.66 & 0.30\\
+Novice & Asking question & 3,198.00 & 5.50 & 7,646.00 & 703.26 & 320.81 & 0.51 & 0.30\\
+Novice & Calibration phase & 12,272.50 & 14.67 & 15,920.67 & 853.95 & 130.15 & 0.09 & 0.03\\
+Novice & Chatting with neighbour & 4,817.17 & 11.33 & 9,980.83 & 617.28 & 384.64 & 0.26 & 0.18\\
+Novice & Clicking pen & 9,940.83 & 14.83 & 17,544.00 & 955.00 & 774.90 & 0.15 & 0.09\\
+Novice & Drawing on paper & 37,381.00 & 81.50 & 69,225.67 & 1,233.52 & 1,156.72 & 0.04 & 0.02\\
+Novice & Drumming hands & 12,419.50 & 30.00 & 30,986.67 & 791.90 & 760.35 & 0.10 & 0.04\\
+Novice & Looking at phone & 12,589.17 & 22.83 & 26,409.33 & 747.59 & 459.89 & 0.10 & 0.05\\
+Novice & Putting head on table & 20,198.00 & 44.50 & 40,305.33 & 535.53 & 252.70 & 0.04 & 0.02\\
+Novice & Yelling & 992.67 & 2.83 & 6,611.83 & 635.78 & 409.08 & 4.76 & 4.60\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:GRItable3}GRI}
+
+\tiny{
+
+\begin{tabular}{llllllll}
+\toprule
+Group & \multicolumn{1}{c}{M Fixation Duration} & \multicolumn{1}{c}{M Number Fixation} & \multicolumn{1}{c}{M TOI} & \multicolumn{1}{c}{M Old GRI} & \multicolumn{1}{c}{SD Old GRI} & \multicolumn{1}{c}{M New GRI} & \multicolumn{1}{c}{SD New GRI}\\
+\midrule
+Expert & 8,025.17 & 21.50 & 18,159.17 & 1,953.05 & 2,871.09 & 0.16 & 0.08\\
+Novice & 12,645.43 & 25.33 & 24,958.93 & 1,878.32 & 2,902.64 & 0.13 & 0.15\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:calibration phase TOI}Number and Duration (in msec) of Fixations during calibration}
+
+\scriptsize{
+
+\begin{tabular}{lllllll}
+\toprule
+Participant & \multicolumn{1}{c}{Variable1} & \multicolumn{1}{c}{Fixation Number} & \multicolumn{1}{c}{Fixation Duration} & \multicolumn{1}{c}{M Duration Fixation} & \multicolumn{1}{c}{TOI} & \multicolumn{1}{c}{GRI}\\
+\midrule
+01\_01\_D & Expert & 9.00 & 14,372.00 & 1,597.00 & 16,470.00 & 177.44\\
+01\_02\_A & Expert & 10.00 & 10,194.00 & 1,019.00 & 13,335.00 & 101.90\\
+01\_03\_B & Novice & 17.00 & 9,234.00 & 543.00 & 10,615.00 & 31.94\\
+01\_04\_C & Novice & 14.00 & 15,311.00 & 1,094.00 & 17,224.00 & 78.14\\
+02\_01\_A & Novice & 13.00 & 5,157.00 & 397.00 & 17,902.00 & 30.54\\
+02\_02\_B & Novice & 12.00 & 10,654.00 & 888.00 & 12,325.00 & 74.00\\
+02\_03\_C & Novice & 18.00 & 14,151.00 & 786.00 & 16,494.00 & 43.67\\
+02\_04\_D & Novice & 14.00 & 19,128.00 & 1,366.00 & 20,964.00 & 97.57\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:Calib end to lession start TOI}Number and Duration (in msec) of Fixations Calibration End to Lesson Start}
+
+\scriptsize{
+
+\begin{tabular}{lllllll}
+\toprule
+Participant & \multicolumn{1}{c}{Variable1} & \multicolumn{1}{c}{Fixation Number} & \multicolumn{1}{c}{Fixation Duration} & \multicolumn{1}{c}{M Duration Fixation} & \multicolumn{1}{c}{TOI} & \multicolumn{1}{c}{GRI}\\
+\midrule
+01\_01\_D & Expert & 101.00 & 38,177.00 & 378.00 & 53,133.00 & 3.74\\
+01\_02\_A & Expert & 27.00 & 6,736.00 & 249.00 & 15,502.00 & 9.22\\
+01\_03\_B & Novice & 57.00 & 36,378.00 & 638.00 & 58,763.00 & 11.19\\
+01\_04\_C & Novice & 65.00 & 22,387.00 & 344.00 & 39,235.00 & 5.29\\
+02\_01\_A & Novice & 14.00 & 2,619.00 & 187.00 & 30,195.00 & 13.36\\
+02\_02\_B & Novice & 46.00 & 15,851.00 & 345.00 & 30,297.00 & 7.50\\
+02\_03\_C & Novice & 86.00 & 27,643.00 & 321.00 & 42,603.00 & 3.73\\
+02\_04\_D & Novice & 53.00 & 27,783.00 & 524.00 & 36,204.00 & 9.89\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+\hypertarget{data-analysis}{%
+\subsection{Data analysis}\label{data-analysis}}
+
+We used R {[}Version 4.0.3; R Core Team (2019){]} and the R-packages \emph{\}dplyr} {[}@\}R-dplyr{]}, \emph{corrplot2017} (Wei \& Simko, 2017), \emph{forcats} {[}Version 0.5.0; Wickham (2020a){]}, \emph{Formula} {[}Version 1.2.4; Zeileis and Croissant (2010){]}, \emph{ggplot2} {[}Version 3.3.2; Wickham (2016){]}, \emph{Hmisc} {[}Version 4.4.2; Harrell Jr, Charles Dupont, and others. (2020){]}, \emph{lattice} {[}Version 0.20.41; Sarkar (2008){]}, \emph{moments} {[}Version 0.14; Komsta and Novomestky (2015){]}, \emph{papaja} {[}Version 0.1.0.9997; Aust and Barth (2020){]}, \emph{papayar} (Muschelli, 2016), \emph{psych} {[}Version 2.0.12; Revelle (2020){]}, \emph{purrr} {[}Version 0.3.4; Henry and Wickham (2020){]}, \emph{readr} {[}Version 1.4.0; Wickham, Hester, and Francois (2018){]}, \emph{sjPlot} {[}Version 2.8.7; Lüdecke (2021){]}, \emph{stringr} {[}Version 1.4.0; Wickham (2019){]}, \emph{survival} {[}Version 3.2.7; Terry M. Therneau and Patricia M. Grambsch (2000){]}, \emph{tibble} {[}Version 3.0.4; Müller and Wickham (2021){]}, \emph{tidyr} {[}Version 1.1.2; Wickham (2020b){]}, and \emph{tidyverse} {[}Version 1.3.0; Wickham et al. (2019){]} for all our analyses.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\hypertarget{questionnaire-data}{%
+\subsubsection{Questionnaire Data}\label{questionnaire-data}}
+
+\hypertarget{behavioral-data}{%
+\subsubsection{Behavioral Data}\label{behavioral-data}}
+
+\hypertarget{eyetracking-data-2}{%
+\subsubsection{Eyetracking Data}\label{eyetracking-data-2}}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\hypertarget{questionnaire-data-1}{%
+\subsubsection{Questionnaire Data}\label{questionnaire-data-1}}
+
+\hypertarget{behavioral-data-1}{%
+\subsubsection{Behavioral Data}\label{behavioral-data-1}}
+
+\hypertarget{eyetracking-data-3}{%
+\subsubsection{Eyetracking Data}\label{eyetracking-data-3}}
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\newpage
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-R-papaja}{}%
+Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Create} {APA} manuscripts with {R Markdown}}. Retrieved from \url{https://github.com/crsh/papaja}
+
+\leavevmode\hypertarget{ref-barnes2004significance}{}%
+Barnes, D. (2004). The significance of teachers' frames for teaching. In \emph{Teachers and teaching} (pp. 16--38). Routledge.
+
+\leavevmode\hypertarget{ref-barth2017professionelle}{}%
+Barth, V. L. (2017). \emph{Professionelle wahrnehmung von störungen im unterricht}. Springer.
+
+\leavevmode\hypertarget{ref-berliner2001learning}{}%
+Berliner, D. C. (2001). Learning about and learning from expert teachers. \emph{International Journal of Educational Research}, \emph{35}(5), 463--482.
+
+\leavevmode\hypertarget{ref-bogert2016visualperception}{}%
+Bogert, N. J. van den. (2016). \emph{On teachers' visual perception and interpretation of classroom events using eye tracking and collaborative tagging methodologies}. Technische Universiteit Eindhoven.
+
+\leavevmode\hypertarget{ref-cortina2015low}{}%
+Cortina, K. S., Miller, K. F., McKenzie, R., \& Epstein, A. (2015). Where low and high inference data converge: Validation of CLASS assessment of mathematics instruction using mobile eye tracking with expert and novice teachers. \emph{International Journal of Science and Mathematics Education}, \emph{13}(2), 389--403.
+
+\leavevmode\hypertarget{ref-gegenfurtner2020gaze}{}%
+Gegenfurtner, A., Boucheix, J.-M., Gruber, H., Hauser, F., Lehtinen, E., \& Lowe, R. K. (2020). The gaze relational index as a measure of visual expertise. \emph{Journal of Expertise. East Lansing, Michigan: Michigan State University, 2020, Vol. 3, Iss. 1}.
+
+\leavevmode\hypertarget{ref-R-Hmisc}{}%
+Harrell Jr, F. E., Charles Dupont, with contributions from, \& others., many. (2020). \emph{Hmisc: Harrell miscellaneous}. Retrieved from \url{https://CRAN.R-project.org/package=Hmisc}
+
+\leavevmode\hypertarget{ref-R-purrr}{}%
+Henry, L., \& Wickham, H. (2020). \emph{Purrr: Functional programming tools}. Retrieved from \url{https://CRAN.R-project.org/package=purrr}
+
+\leavevmode\hypertarget{ref-jarodzka2010eyes}{}%
+Jarodzka, H., Scheiter, K., Gerjets, P., \& Van Gog, T. (2010). In the eyes of the beholder: How experts and novices interpret dynamic stimuli. \emph{Learning and Instruction}, \emph{20}(2), 146--154.
+
+\leavevmode\hypertarget{ref-R-moments}{}%
+Komsta, L., \& Novomestky, F. (2015). \emph{Moments: Moments, cumulants, skewness, kurtosis and related tests}. Retrieved from \url{https://CRAN.R-project.org/package=moments}
+
+\leavevmode\hypertarget{ref-lachner2016makes}{}%
+Lachner, A., Jarodzka, H., \& Nückles, M. (2016). What makes an expert teacher? Investigating teachers' professional vision and discourse abilities. \emph{Instructional Science}, \emph{44}(3), 197--203.
+
+\leavevmode\hypertarget{ref-R-sjPlot}{}%
+Lüdecke, D. (2021). \emph{sjPlot: Data visualization for statistics in social science}. Retrieved from \url{https://CRAN.R-project.org/package=sjPlot}
+
+\leavevmode\hypertarget{ref-messner2000berufliche}{}%
+Messner, H., \& Reusser, K. (2000). Die berufliche entwicklung von lehrpersonen als lebenslanger prozess. \emph{Beitr{ä}ge Zur Lehrerinnen-Und Lehrerbildung}, \emph{18}(2), 157--171.
+
+\leavevmode\hypertarget{ref-R-papayar}{}%
+Muschelli, J. (2016). \emph{Papayar: View medical research images using the papaya JavaScript library}. Retrieved from \url{https://CRAN.R-project.org/package=papayar}
+
+\leavevmode\hypertarget{ref-R-tibble}{}%
+Müller, K., \& Wickham, H. (2021). \emph{Tibble: Simple data frames}. Retrieved from \url{https://CRAN.R-project.org/package=tibble}
+
+\leavevmode\hypertarget{ref-pouta2020student}{}%
+Pouta, M., Lehtinen, E., \& Palonen, T. (2020). Student teachers' and experienced teachers' professional vision of students' understanding of the rational number concept.
+
+\leavevmode\hypertarget{ref-R-base}{}%
+R Core Team. (2019). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+
+\leavevmode\hypertarget{ref-R-psych}{}%
+Revelle, W. (2020). \emph{Psych: Procedures for psychological, psychometric, and personality research}. Evanston, Illinois: Northwestern University. Retrieved from \url{https://CRAN.R-project.org/package=psych}
+
+\leavevmode\hypertarget{ref-R-lattice}{}%
+Sarkar, D. (2008). \emph{Lattice: Multivariate data visualization with r}. New York: Springer. Retrieved from \url{http://lmdvr.r-forge.r-project.org}
+
+\leavevmode\hypertarget{ref-stuermer2017eye}{}%
+Stuermer, K., Seidel, T., Mueller, K., Häusler, J., \& Cortina, K. S. (2017). What is in the eye of preservice teachers while instructing? An eye-tracking study about attention processes in different teaching situations. \emph{Zeitschrift f{ü}r Erziehungswissenschaft}, \emph{20}(1), 75--92.
+
+\leavevmode\hypertarget{ref-R-survival-book}{}%
+Terry M. Therneau, \& Patricia M. Grambsch. (2000). \emph{Modeling survival data: Extending the {C}ox model}. New York: Springer.
+
+\leavevmode\hypertarget{ref-R-corrplot2017}{}%
+Wei, T., \& Simko, V. (2017). \emph{R package "corrplot": Visualization of a correlation matrix}. Retrieved from \url{https://github.com/taiyun/corrplot}
+
+\leavevmode\hypertarget{ref-R-ggplot2}{}%
+Wickham, H. (2016). \emph{ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
+
+\leavevmode\hypertarget{ref-R-stringr}{}%
+Wickham, H. (2019). \emph{Stringr: Simple, consistent wrappers for common string operations}. Retrieved from \url{https://CRAN.R-project.org/package=stringr}
+
+\leavevmode\hypertarget{ref-R-forcats}{}%
+Wickham, H. (2020a). \emph{Forcats: Tools for working with categorical variables (factors)}. Retrieved from \url{https://CRAN.R-project.org/package=forcats}
+
+\leavevmode\hypertarget{ref-R-tidyr}{}%
+Wickham, H. (2020b). \emph{Tidyr: Tidy messy data}. Retrieved from \url{https://CRAN.R-project.org/package=tidyr}
+
+\leavevmode\hypertarget{ref-R-tidyverse}{}%
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the {tidyverse}. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
+
+\leavevmode\hypertarget{ref-R-readr}{}%
+Wickham, H., Hester, J., \& Francois, R. (2018). \emph{Readr: Read rectangular text data}. Retrieved from \url{https://CRAN.R-project.org/package=readr}
+
+\leavevmode\hypertarget{ref-wolff2017see}{}%
+Wolff, C. E., Jarodzka, H., \& Boshuizen, H. P. (2017). See and tell: Differences between expert and novice teachers' interpretations of problematic classroom management events. \emph{Teaching and Teacher Education}, \emph{66}, 295--308.
+
+\leavevmode\hypertarget{ref-R-Formula}{}%
+Zeileis, A., \& Croissant, Y. (2010). Extended model formulas in {R}: Multiple parts and multiple responses. \emph{Journal of Statistical Software}, \emph{34}(1), 1--13. \url{https://doi.org/10.18637/jss.v034.i01}
+
+\end{CSLReferences}
+
+\endgroup
+
+
+\end{document}
