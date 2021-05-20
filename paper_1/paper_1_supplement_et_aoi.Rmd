@@ -296,13 +296,13 @@ if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysi
 options(dplyr.summarise.inform = FALSE)
 
 # prepare data (selected from AOI data)
-et.raw.data<-read.table("./Aperol_pilot_AOI_glasses_metrics_session01.txt", dec=",", sep="\t", header=T) 
+et.raw.data<-read.table("./data/Aperol_pilot_AOI_glasses_metrics_session01.txt", dec=",", sep="\t", header=T) 
 
 # convert into numeric
-et.raw.data <- et.raw.data %>%  mutate(Total.duration.of.fixation.in.AOI..sec. = as.numeric(Total.duration.of.fixation.in.AOI..sec.),
-                                       Average.duration.of.fixation.in.AOI..sec. = as.numeric(Average.duration.of.fixation.in.AOI..sec.),
-                                       Number.of.fixations.in.AOI = as.numeric (Number.of.fixations.in.AOI),
-                                       Total.Time.of.Interest.Duration..sec. = as.numeric(Total.Time.of.Interest.Duration..sec.))
+et.raw.data <- et.raw.data %>%  mutate(Total_duration_of_fixations = as.numeric(Total_duration_of_fixations),
+                                       Average_duration_of_fixations = as.numeric(Average_duration_of_fixations),
+                                       Number_of_fixations = as.numeric (Number_of_fixations),
+                                       Total_duration_of_Visit = as.numeric(Total_duration_of_Visit))
 
 
 # create a basic table (tibble) using tidyverse functions for all disruptions 
@@ -310,26 +310,38 @@ et.raw.data <- et.raw.data %>%  mutate(Total.duration.of.fixation.in.AOI..sec. =
 options(digits = 2)              
 
 et.table <- et.raw.data %>%
-  group_by(Type.of.disruption, Group) %>%
-  filter(Type.of.disruption != "staring out the window") %>%
-  rename ('Type of Disruption' = Type.of.disruption) %>%
-  summarise("Mean Duration of Fixations" = mean(Total.duration.of.fixation.in.AOI..sec.),
-            "Number of Fixations" = mean(Number.of.fixations.in.AOI),
-            "TOI" = mean(Total.Time.of.Interest.Duration..sec.))
-  
+  group_by(Group, AOI) %>%
+  summarise("Mean Duration of Fixations" = mean(Total_duration_of_fixations),
+            "Number of Fixations" = mean(Number_of_fixations),
+            "Mean Duration of Visits" = mean(Total_duration_of_Visit))
 
-# create a new column with name Total that gives the sum duration in sec of looking at all AOIs
-et.raw.data <- et.raw.data %>% mutate(Total = sum(Total.duration.of.fixation.in.AOI..sec.))
+view(et.table)  
+
+#FIXATIONS
+# create a new column with name Total that gives the sum duration in msec of looking at all AOIs
+et.raw.data <- et.raw.data %>% mutate(total_fixations = sum(Total_duration_of_fixations))
 
 
 # create new columns that give proportion of the duration of looking at AOIs
 # relative duration divided by total duration is the proportion
-proportion.et.data <- et.raw.data %>% group_by(Group, Type.of.disruption) %>% 
-                                      mutate(Proportion = Total.duration.of.fixation.in.AOI..sec./Total)
+proportion.et.data <- et.raw.data %>% group_by(Group, AOI) %>% 
+                                      mutate(proportion_fixations = Total_duration_of_fixations/total_fixations)
 
 
-### Plot data TOTAL
-total.plot <- ggplot(et.raw.data, aes(x = Type.of.disruption, y = Total.duration.of.fixation.in.AOI..sec., fill = Type.of.disruption)) +
+#VISITS
+# create a new column with name Total that gives the sum duration in msec of visits in AOIs
+et.raw.data <- et.raw.data %>% mutate(total_visits = sum(Total_duration_of_Visit))
+
+
+# create new columns that give proportion of the duration of looking at AOIs
+# relative duration divided by total duration is the proportion
+proportion.et.data <- et.raw.data %>% group_by(Group, AOI) %>% 
+                                      mutate(proportion_visits = Total_duration_of_Visit/Total)
+
+
+
+### Plot data TOTAL FIXATIONS
+total.fix.plot <- ggplot(et.raw.data, aes(x = AOI, y = Total_duration_of_fixations, fill = AOI)) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
@@ -337,14 +349,13 @@ total.plot <- ggplot(et.raw.data, aes(x = Type.of.disruption, y = Total.duration
   facet_wrap(~ Group, nrow = 1)+
   theme_light() +
   theme(legend.position="none")+
-  labs(y = "Total Duration of Looking at AOIs in sec", x = "AOI")
+  labs(y = "Total Duration of Looking at AOIs", x = "AOI")
 
-total.plot
+total.fix.plot
 
 
-
-### Plot data PROPORTIONS
-prop.plot <- ggplot(proportion.et.data, aes(x = Type.of.disruption, y = Proportion, fill = Type.of.disruption)) +
+### Plot data PROPORTIONS FIXATIONS
+prop.fix.plot <- ggplot(proportion.et.data, aes(x = AOI, y = proportion_fixations, fill = AOI)) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
@@ -353,11 +364,11 @@ prop.plot <- ggplot(proportion.et.data, aes(x = Type.of.disruption, y = Proporti
   theme(legend.position="none")+
   labs(y = "Proportion of Looking at AOIs", x = "AOI")
 
-prop.plot
+prop.fix.plot
 
 
 ### Plot Number of Fixations
-number.plot <- ggplot(et.raw.data, aes(x = Type.of.disruption, y = Number.of.fixations.in.AOI, fill = Type.of.disruption)) +
+number.plot <- ggplot(et.raw.data, aes(x = AOI, y = Number_of_fixations, fill = AOI)) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
@@ -367,18 +378,35 @@ number.plot <- ggplot(et.raw.data, aes(x = Type.of.disruption, y = Number.of.fix
   theme(legend.position="none")+
   labs(y = "Number of Fixations in AOI", x = "AOI")
 
-number.plot
+number.fix.plot
 
-# ### Plot Average duration of fixation
-# average.plot <- ggplot(et.table, aes(x = "Type of Disruption", y = "Mean Duration of Fixations", fill = "Type of Disruption")) +
-#   scale_x_discrete(guide = guide_axis(angle = 70)) +
-#   geom_bar(aes(y="Mean Duration of Fixations")) + 
-#   facet_wrap(~ Group)+
-#   theme_light() +
-#   theme(legend.position="none")+
-#   labs(y = "Average Duration of Looking at AOIs in sec", x = "AOI")
-# 
-# average.plot
+
+
+### Plot data TOTAL VISITS
+total.visit.plot <- ggplot(et.raw.data, aes(x = AOI, y = Total_duration_of_Visit, fill = AOI)) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
+  scale_x_discrete(guide = guide_axis(angle = 70)) +
+  geom_boxplot()+
+  geom_jitter(color="black", size=0.4, alpha=0.5) +
+  facet_wrap(~ Group, nrow = 1)+
+  theme_light() +
+  theme(legend.position="none")+
+  labs(y = "Total Duration of Visits in AOIs", x = "AOI")
+
+total.visit.plot
+
+
+### Plot data PROPORTIONS VISITS
+prop.visit.plot <- ggplot(proportion.et.data, aes(x = AOI, y = proportion_visits, fill = AOI)) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
+  scale_x_discrete(guide = guide_axis(angle = 70)) +
+  geom_boxplot()+
+  facet_wrap(~ Group, nrow = 1)+
+  theme_light() +
+  theme(legend.position="none")+
+  labs(y = "Proportion of Visits in AOIs", x = "AOI")
+
+prop.visit.plot
 
 ```
 
