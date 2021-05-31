@@ -1,0 +1,1098 @@
+Recording	Participant	Group	TOI	Interval	Media	Event_type	Validity	EventIndex	Start	Stop	Duration	AOI	Hit_proportion	FixationPointX	FixationPointY	Average_pupil_size
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	1	218	637	420	StudentA	1	0,30887	0,15678	2,95971
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	2	697	3196	2499	StudentA	1	0,37442	0,14533	2,96041
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	3	3236	3436	200	StudentB	1	0,46067	0,15489	2,97498
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	4	3496	4815	1319	StudentA	1	0,3805	0,12556	2,99622
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	5	4855	5255	400	StudentB	1	0,51657	0,15133	2,96292
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	6	5295	5595	300	StudentA	1	0,37255	0,15673	2,95999
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	7	5714	5794	80	StudentC	1	0,81107	0,18601	2,99266
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	8	5814	6114	300	StudentC	1	0,75499	0,18147	3,02064
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	1	fullstream	Fixation	Whole	9	6354	7633	1279	StudentA	1	0,39319	0,08266	2,98526
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	2	fullstream	Fixation	Partial	1	0	312	312	StudentC	1	0,58562	0,04371	2,88029
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	2	fullstream	Fixation	Whole	2	652	1591	939	StudentA	1	0,45354	0,32885	2,91832
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	2	fullstream	Fixation	Whole	3	1631	2071	440	StudentA	1	0,51462	0,21739	2,9132
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	2	fullstream	Fixation	Whole	4	2111	2771	660	StudentA	1	0,46298	0,35853	2,95908
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	2	fullstream	Fixation	Whole	5	2831	3590	760	StudentA	1	0,49785	0,14501	2,92372
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	2	fullstream	Fixation	Partial	6	3610	4470	860	StudentA	1	0,41618	0,11057	2,89669
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	2	fullstream	Fixation	Whole	7	4909	5029	120	Material	0,66661	0,69843	0,48593	2,87185
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	3	fullstream	Fixation	Partial	1	0	207	207	StudentC	1	0,42399	0,10641	2,90676
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	3	fullstream	Fixation	Whole	2	227	606	380	StudentC	1	0,50892	0,15328	2,90349
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	3	fullstream	Fixation	Whole	3	646	826	180	StudentC	1	0,52341	0,3157	2,871
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	3	fullstream	Fixation	Whole	4	866	1046	180	StudentC	1	0,47296	0,16546	2,9195
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	3	fullstream	Fixation	Whole	5	1066	3625	2559	StudentC	1	0,52055	0,20483	2,85662
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	3	fullstream	Fixation	Whole	6	3725	6203	2479	StudentC	1	0,55184	0,17803	2,84512
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	3	fullstream	Fixation	Whole	7	6243	6583	340	Classroom_others	1	0,50398	0,09146	2,86046
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	3	fullstream	Fixation	Partial	8	6723	6752	30	StudentA	1	0,33263	0,254	2,90657
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Partial	1	0	220	220	StudentC	1	0,72158	0,14893	3,07169
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	2	400	2059	1659	StudentA	1	0,31185	0,09796	2,97509
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	3	2079	2199	120	StudentA	1	0,29996	0,22697	2,96468
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	4	2219	2379	160	StudentA	1	0,27173	0,24307	2,96504
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	5	2658	2738	80	StudentC	1	0,69542	0,26703	3,02025
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	6	2758	3018	260	StudentC	1	0,67911	0,40957	3,06982
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Partial	7	3338	3558	220	StudentA	0,90911	0,15713	0,25121	2,81309
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	8	3858	4437	580	StudentC	1	0,55123	0,66203	2,95961
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	9	4497	4857	360	StudentC	0,94446	0,54402	0,67002	3,035
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	10	4877	4977	100	StudentC	1	0,58152	0,71674	3,0477
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	11	4997	5137	140	StudentC	1	0,52596	0,74324	2,97505
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	12	5257	5377	120	StudentC	1	0,42736	0,75146	2,96598
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Partial	13	5437	5617	180	StudentC	1	0,5927	0,64079	3,16242
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	14	5717	7456	1739	StudentC	1	0,5354	0,1822	3,17099
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	15	8895	8995	100	StudentC	1	0,62378	0,21878	2,98992
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Partial	16	9015	10934	1919	StudentC	1	0,54166	0,20639	2,93266
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Partial	17	11014	11753	740	StudentC	1	0,57796	0,21457	2,91998
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Partial	18	11773	13572	1799	StudentC	1	0,55483	0,17675	2,9549
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Partial	19	13592	13852	260	StudentC	1	0,68817	0,17565	3,00698
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	20	13972	15151	1179	StudentC	0,98304	0,50422	0,18028	3,01598
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	21	15371	15711	340	StudentC	1	0,49186	0,10843	3,00318
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	22	15891	16231	340	StudentA	1	0,33368	0,34604	2,99105
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	23	16251	16450	200	StudentB	1	0,4917	0,28957	2,98173
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	24	16550	17010	460	StudentC	1	0,67165	0,43145	3,03479
+Recording033	PilotA_PersonC_290720	Novice	Reaction_nonverbal	4	fullstream	Fixation	Whole	25	17030	17610	580	StudentC	1	0,6545	0,23874	3,1268
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Partial	1	0	490	490	StudentB	1	0,42733	0,18962	2,82201
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	2	670	930	260	StudentB	1	0,49318	0,23208	2,86514
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Partial	3	970	1310	340	StudentB	1	0,53255	0,03252	2,93339
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Partial	4	1350	5867	4517	StudentB	1	0,52812	0,12508	2,84107
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	5	6827	7426	600	StudentB	1	0,58603	0,12963	2,85395
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	6	7646	7746	100	StudentB	1	0,5194	0,10212	2,8178
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	7	8426	9285	859	StudentB	1	0,49373	0,12758	2,92825
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	8	9465	9585	120	Classroom_others	1	0,52235	0,42758	2,69966
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	9	10285	11004	720	StudentB	1	0,53513	0,15623	2,85826
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	10	11584	11764	180	StudentB	1	0,55036	0,26979	2,96587
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	11	12503	12643	140	StudentB	1	0,36473	0,32734	2,73553
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	12	12663	12983	320	StudentB	1	0,44261	0,27584	2,84243
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Whole	13	13123	13203	80	StudentB	1	0,4944	0,29783	2,80776
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	1	fullstream	Fixation	Partial	14	14442	14545	102	Classroom_others	1	0,7444	0,37977	2,78401
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	2	fullstream	Fixation	Partial	1	0	297	297	StudentA	1	0,45354	0,32885	2,91431
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	2	fullstream	Fixation	Whole	2	337	777	440	StudentA	1	0,51462	0,21739	2,9132
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	2	fullstream	Fixation	Whole	3	817	1477	660	StudentA	1	0,46298	0,35853	2,95908
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	2	fullstream	Fixation	Whole	4	1537	2296	760	StudentA	1	0,49785	0,14501	2,92372
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	2	fullstream	Fixation	Partial	5	2316	3176	860	StudentA	1	0,41618	0,11057	2,89669
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	2	fullstream	Fixation	Whole	6	3616	3735	120	Material	0,66661	0,69843	0,48593	2,87185
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	3	fullstream	Fixation	Partial	1	0	158	158	StudentC	1	0,52341	0,3157	2,8705
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	3	fullstream	Fixation	Whole	2	198	378	180	StudentC	1	0,47296	0,16546	2,9195
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	3	fullstream	Fixation	Whole	3	398	2956	2559	StudentC	1	0,52055	0,20483	2,85662
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	3	fullstream	Fixation	Partial	4	3056	4577	1521	StudentC	1	0,55184	0,17803	2,84917
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	4	fullstream	Fixation	Partial	1	0	157	157	StudentB	1	0,48164	0,44095	2,89957
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	4	fullstream	Fixation	Whole	2	197	4435	4238	StudentB	1	0,49547	0,14416	2,8838
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	5	fullstream	Fixation	Partial	1	0	395	395	StudentC	1	0,7168	0,10322	2,95899
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	5	fullstream	Fixation	Whole	2	595	1355	760	StudentA	1	0,3824	0,07841	2,84602
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	5	fullstream	Fixation	Whole	3	1375	1634	260	StudentA	1	0,39976	0,17396	2,83054
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	5	fullstream	Fixation	Partial	4	1654	5125	3471	StudentA	1	0,46293	0,17702	2,8917
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Partial	1	0	150	150	StudentB	1	0,56608	0,39688	2,86119
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	2	190	1409	1219	StudentB	1	0,46842	0,18298	2,87083
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	3	1709	1789	80	StudentB	1	0,36591	0,13364	2,84021
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	4	1849	1929	80	StudentB	1	0,29591	0,27726	2,86451
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	5	1989	2069	80	StudentB	1	0,30988	0,33631	2,99684
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	6	2489	2748	260	StudentB	0,92309	0,34402	0,30381	2,71879
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	7	2828	2928	100	StudentB	1	0,28485	0,22829	2,74011
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	8	2948	3088	140	StudentB	1	0,33467	0,28321	2,74188
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	9	3108	3428	320	StudentB	0,93747	0,36136	0,16578	2,76701
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	10	3548	3628	80	Classroom_others	1	0,67032	0,4407	2,79561
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	11	3708	3988	280	Classroom_others	1	0,53612	0,39134	2,81603
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	12	4028	4607	580	StudentB	1	0,45276	0,14472	2,79282
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	13	4647	4867	220	StudentB	1	0,50474	0,30797	2,77328
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Partial	14	4887	5807	919	StudentB	1	0,46514	0,15593	2,80168
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Partial	15	5827	5927	100	StudentB	1	0,31774	0,01602	2,78993
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Partial	16	6546	7406	859	StudentB	1	0,43713	0,04149	2,88062
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	17	8425	8725	300	StudentC	1	0,69829	0,32364	2,89461
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Partial	18	8745	9005	260	StudentC	1	0,69675	0,269	2,92955
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	19	9205	9385	180	Classroom_others	0,88883	0,32074	0,42384	2,81967
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Partial	20	9584	9704	120	Classroom_others	0,83328	0,22796	0,33331	2,95011
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	21	9784	9884	100	Classroom_others	1	0,55031	0,15962	2,90951
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Whole	22	9924	10304	380	StudentB	1	0,54523	0,09739	2,89839
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	6	fullstream	Fixation	Partial	23	10644	10945	302	StudentC	1	0,58072	0,29834	2,90932
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	7	fullstream	Fixation	Partial	1	0	42	42	StudentC	1	0,42736	0,75146	2,98578
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	7	fullstream	Fixation	Partial	2	102	282	180	StudentC	1	0,5927	0,64079	3,16242
+Recording033	PilotA_PersonC_290720	Novice	Reaction_verbal	7	fullstream	Fixation	Whole	3	382	2121	1739	StudentC	1	0,5354	0,1822	3,17099
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1		Fixation	Partial	1	0	150	150		0	0,57161	0,13734	2,50832
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	2	210	830	620		0	0,56644	0,12885	2,48586
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	3	869	1149	280		0	0,64371	0,28234	2,45813
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	4	1189	4427	3238		0	0,58185	0,14464	2,43683
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	5	4447	4707	260		0	0,52308	0,25003	2,45724
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	6	4747	5927	1179		0	0,61641	0,15102	2,49994
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	7	5967	6226	260		0	0,50627	0,26096	2,51991
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	8	6266	8425	2159		0	0,60409	0,09629	2,53499
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	9	8465	8785	320		0	0,50059	0,14185	2,55596
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	10	8825	9664	840		0	0,57436	0,06487	2,56007
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	11	9704	10064	360		0	0,45769	0,18294	2,50977
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	12	10104	10724	620		0	0,57617	0,11628	2,55691
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	13	10764	11164	400		0	0,48503	0,21276	2,56947
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	14	11204	11963	760		0	0,623	0,11501	2,58536
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	15	12023	13202	1179		0	0,59542	0,19805	2,54472
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	16	13322	13662	340		0	0,26787	0,17324	2,54642
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	17	13842	14941	1099		0	0,54496	0,13417	2,54866
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	18	15201	15441	240		0	0,41091	0,15205	2,56131
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	19	15461	15761	300		0	0,40269	0,12669	2,60726
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	20	15801	16101	300		0	0,5194	0,10768	2,62433
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	21	16161	16740	580		0	0,39082	0,2018	2,6047
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	22	16780	17100	320		0	0,52422	0,14937	2,72885
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	23	17140	17420	280		0	0,60135	0,15546	2,73991
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	24	17520	18200	680		0	0,37977	0,24311	2,75722
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	25	20818	21078	260		0	0,43615	0,05438	2,65248
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	26	21118	21298	180		0	0,5608	0,11153	2,64322
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	27	21358	21458	100		0	0,37221	0,19176	2,62939
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	28	21478	21857	380		0	0,32236	0,30302	2,65958
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	29	21877	23137	1259		0	0,47517	0,19892	2,68265
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	30	23177	24596	1419		0	0,52106	0,14492	2,5865
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	31	24616	24936	320		0	0,45186	0,20271	2,57767
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	32	25076	25355	280		0	0,40943	0,38446	2,67039
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	33	25375	26935	1559		0	0,47423	0,21294	2,71695
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	34	26975	28853	1879		0	0,50069	0,18759	2,70291
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	35	28873	29353	480		0	0,39043	0,1213	2,67314
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	36	29373	30932	1559		0	0,48071	0,13701	2,65215
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	37	30952	31252	300		0	0,52623	0,22503	2,63408
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	38	31272	31372	100		0	0,48612	0,20187	2,62777
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	39	31392	31672	280		0	0,46487	0,17756	2,64066
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	40	31692	33711	2019		0	0,48917	0,1646	2,64064
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	41	33731	35490	1759		0	0,47212	0,11974	2,61344
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	42	35510	37728	2219		0	0,50964	0,13643	2,60658
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	43	37748	39727	1979		0	0,48469	0,14266	2,59484
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	44	39967	40547	580		0	0,73079	0,30994	2,61985
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	45	40587	41146	560		0	0,51466	0,40161	2,47959
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	46	41186	41546	360		0	0,57789	0,24258	2,54698
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	47	41566	41786	220		0	0,5378	0,31603	2,5325
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	48	41806	42166	360		0	0,48094	0,26745	2,56163
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	49	42206	42466	260		0	0,60572	0,22895	2,57812
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	50	42486	43065	580		0	0,6246	0,36667	2,57275
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	51	43105	43405	300		0	0,62354	0,23646	2,59747
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	52	43425	44125	700		0	0,61677	0,34073	2,59429
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	53	45304	45464	160		0	0,37079	0,1794	2,52959
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	54	45484	45684	200		0	0,48269	0,14098	2,57464
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	55	45724	45984	260		0	0,46103	0,28527	2,49132
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	56	46004	46164	160		0	0,50575	0,23398	2,52718
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	57	46223	46603	380		0	0,44955	0,13472	2,59022
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	58	46663	46803	140		0	0,51135	0,47121	2,64473
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	59	46883	47183	300		0	0,66517	0,23554	2,69727
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	60	47203	47503	300		0	0,53858	0,22833	2,5935
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	61	47563	48622	1059		0	0,66724	0,17877	2,59222
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	62	48942	49022	80		0	0,29558	0,2842	2,56726
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	63	49082	49162	80		0	0,23117	0,30986	2,68657
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	64	49202	49302	100		0	0,27172	0,24733	2,72666
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	65	49322	49482	160		0	0,21786	0,26295	2,73618
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	66	53839	54099	260		0	0,64464	0,41944	2,55688
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	67	54139	54259	120		0	0,49969	0,26639	2,54307
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	68	54299	54499	200		0	0,60236	0,43122	2,47291
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	69	54539	54899	360		0	0,69473	0,28378	2,51221
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	70	56138	57157	1019		0	0,49064	0,28755	2,58781
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	71	57397	57497	100		0	0,80361	0,22017	2,60323
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	72	57517	58736	1219		0	0,65672	0,23067	2,5317
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	73	58936	59196	260		0	0,34841	0,16543	2,52905
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	74	59356	59476	120		0	0,54449	0,566	2,68122
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	75	59536	59856	320		0	0,51693	0,75256	2,73688
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	76	59916	60096	180		0	0,47352	0,38463	2,85765
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	77	60116	60195	80		0	0,50271	0,38779	2,81094
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	78	60215	60315	100		0	0,52644	0,44464	2,758
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	79	60375	60475	100		0	0,48838	0,21472	2,78253
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	80	60515	60755	240		0	0,49313	0,17856	2,7394
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	81	60775	61215	440		0	0,43256	0,26374	2,7511
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	82	61255	61655	400		0	0,36306	0,22017	2,81962
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	83	61715	61914	200		0	0,5698	0,34103	2,8081
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	84	62094	62554	460	StudentB	1	0,38777	0,16223	2,85122
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	85	62574	62974	400	StudentA	1	0,38327	0,25055	2,91508
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	86	63014	63394	380	StudentC	1	0,51234	0,16748	2,96256
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	87	63594	64093	500	StudentA	1	0,47423	0,10768	2,99142
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	88	64393	64953	560	StudentC	1	0,4841	0,12281	2,99014
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	89	65153	65512	360	Material	1	0,52889	0,31037	2,97433
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	90	65572	65772	200	Classroom_others	1	0,62592	0,70672	2,90708
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	91	66012	67231	1219	Material	1	0,49901	0,33924	2,88005
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	92	67311	67511	200		0	0,34499	0,11583	2,88797
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	93	67771	67851	80	StudentB	1	0,2755	0,40501	2,7997
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	94	68071	68151	80	StudentA	1	0,2846	0,22084	2,91446
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	95	68171	68331	160	StudentA	1	0,35232	0,16756	2,89959
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	96	68351	68591	240	StudentA	1	0,39992	0,03012	2,92192
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	97	68811	70450	1639	StudentC	1	0,5466	0,12698	2,87647
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	98	70669	70769	100	StudentB	1	0,49149	0,17059	2,8368
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	99	70849	72388	1539	StudentA	1	0,38502	0,12728	2,8336
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	100	72408	72868	460	StudentA	1	0,38188	0,23997	2,83934
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	101	72928	73728	800	StudentB	1	0,50605	0,17892	2,87993
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	102	73768	73948	180	StudentB	1	0,4797	0,32743	2,89074
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	103	74167	74527	360	StudentC	1	0,5433	0,15529	2,88149
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	104	74687	74767	80	StudentB	1	0,33051	0,20074	2,8553
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	105	74787	75027	240	StudentB	1	0,44452	0,11602	2,83579
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	106	75067	75547	480	StudentB	1	0,50014	0,31597	2,8927
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	107	75647	75826	180	StudentB	1	0,67011	0,06218	2,95202
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	108	75846	76506	660	StudentB	1	0,47179	0,26083	2,92357
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	109	76526	77126	600	StudentB	1	0,49991	0,24723	2,86673
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	110	77266	77346	80	StudentB	1	0,44208	0,18758	2,87051
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	111	77386	78525	1139	StudentB	1	0,47241	0,17686	2,88006
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	112	79045	79145	100	Classroom_others	1	0,17638	0,38243	2,94163
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	113	79165	79245	80		0	0,08233	0,35835	2,88637
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	114	79265	79364	100		0	0,18265	0,4039	2,9238
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	115	80464	80624	160	Classroom_others	1	0,52359	0,91603	2,80937
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	116	81523	81823	300	StudentA	0,86669	0,55143	0,1048	3,02198
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	117	82003	82143	140	StudentC	1	0,78845	0,03599	3,02006
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	118	83502	83682	180	Material	1	0,59805	0,44128	2,86796
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	119	83722	83902	180	Material	1	0,54327	0,51432	2,91853
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	120	84122	84941	820	StudentC	1	0,47147	0,10916	2,91711
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	121	85141	85701	560	StudentA	1	0,38286	0,16928	2,87477
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	122	85781	85861	80	StudentC	1	0,76522	0,26238	2,91912
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	123	85921	86840	919	StudentC	1	0,55581	0,18666	2,85873
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	124	86860	88779	1919	Classroom_others	1	0,52929	0,104	2,7366
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	125	89019	89239	220	Classroom_others	1	0,43105	0,17211	2,70257
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	126	89379	89479	100	Classroom_others	0,80005	0,42251	0,61434	2,68602
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	127	89679	89758	80	Classroom_others	1	0,44864	0,97427	2,86119
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	128	90178	90318	140	Classroom_others,StudentA	1	0,50761	0,1279	2,97344
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	129	90338	90558	220	Classroom_others,StudentA	1	0,45967	0,01726	2,94419
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	130	91358	91438	80	Classroom_others	1	0,49987	0,03879	2,87695
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	131	92497	92657	160	Material	1	0,5453	0,76226	2,69657
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	132	92817	93216	400	StudentC	1	0,57372	0,13357	2,84966
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	133	93276	94975	1699	StudentB	1	0,45678	0,13646	2,83953
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	134	95195	95795	600	StudentC	1	0,50082	0,07383	2,90413
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	135	96075	96235	160	StudentA	1	0,36047	0,07304	2,85045
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	136	96535	96874	340	StudentA	1	0,40881	0,06644	2,90195
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	137	96914	97174	260	StudentB	1	0,50919	0,11432	2,87198
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	138	97234	97494	260	StudentC	1	0,60836	0,03628	2,89012
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	139	97554	97914	360	StudentC	1	0,52989	0,00926	2,9094
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	140	98194	98453	260	StudentB	1	0,57677	0,18385	2,89945
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	141	98513	99653	1139	StudentB	1	0,39325	0,09745	2,87092
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	142	101152	101232	80	Material	1	0,41242	0,4737	2,77161
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	143	102191	102351	160	StudentC	1	0,65885	0,22515	2,86317
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	144	102371	102811	440	StudentC	1	0,61955	0,12653	2,86
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	145	103591	103690	100		0	0,19941	0,08671	2,88646
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	146	103750	104270	520	StudentA	1	0,32825	0,0807	2,89947
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	147	104650	104830	180	StudentC	1	0,7373	0,02334	2,95375
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	148	105330	105469	140	StudentA	1	0,34325	0,23165	2,78324
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	149	105489	105969	480	StudentA	1	0,38994	0,07929	2,90396
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	150	106049	106229	180	StudentB	1	0,48639	0,0189	2,96447
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	151	106329	107109	780	StudentC	1	0,66335	0,08315	2,9904
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	152	107228	107528	300	StudentB	1	0,44108	0,03957	2,93297
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	153	107588	107688	100	StudentA	1	0,21427	0,02562	2,94793
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	154	107708	107868	160	StudentA	1	0,31453	0,03929	2,94692
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	155	107888	108248	360	StudentA	1	0,35424	0,03232	2,9702
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	156	108508	108987	480	StudentC	1	0,65464	0,02804	2,88757
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	157	109067	109707	640	StudentB	1	0,41291	0,05367	2,88911
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	158	111706	111866	160	StudentA	0,87502	0,3023	0,15752	2,88289
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	159	116003	116363	360	StudentB	1	0,41383	0,14726	2,84971
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	160	116403	116543	140	Classroom_others	1	0,48771	0,05598	2,88407
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	161	116563	116843	280	Classroom_others	1	0,58176	0,0467	2,85929
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	162	116863	118662	1799	Classroom_others	1	0,6011	0,09177	2,69826
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	163	118722	118922	200	Classroom_others	1	0,44838	0,06207	2,68671
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	164	119202	119601	400	Classroom_others	1	0,37034	0,00692	2,71884
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	165	120121	120621	500	Classroom_others	1	0,51177	0,12305	2,77354
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	166	120641	120841	200	Classroom_others	1	0,56126	0,05419	2,72464
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	167	122280	122520	240	Classroom_others	1	0,25133	0,07945	2,85878
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	168	122580	122799	220	Classroom_others	1	0,41432	0,18673	2,69963
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	169	122819	123499	680	Classroom_others	1	0,37197	0,22682	2,73568
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	170	123659	123779	120	StudentC	1	0,70667	0,27219	2,7876
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	171	123899	125078	1179	StudentB	1	0,42733	0,18962	2,8438
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	172	125258	125518	260	StudentB	1	0,49318	0,23208	2,86514
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	173	125558	125898	340	StudentB	1	0,53255	0,03252	2,93339
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	174	125938	130455	4517	StudentB	1	0,52812	0,12508	2,84107
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	175	131415	132014	600	StudentB	1	0,58603	0,12963	2,85395
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	176	132234	132334	100	StudentB	1	0,5194	0,10212	2,8178
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	177	133014	133873	859	StudentB	1	0,49373	0,12758	2,92825
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	178	134053	134173	120	Classroom_others	1	0,52235	0,42758	2,69966
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	179	134873	135592	720	StudentB	1	0,53513	0,15623	2,85826
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	180	136172	136352	180	StudentB	1	0,55036	0,26979	2,96587
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	181	137091	137231	140	StudentB	1	0,36473	0,32734	2,73553
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	182	137251	137571	320	StudentB	1	0,44261	0,27584	2,84243
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	183	137711	137791	80	StudentB	1	0,4944	0,29783	2,80776
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	184	139030	139150	120	Classroom_others	1	0,7444	0,37977	2,78021
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	185	139170	139510	340	StudentC	1	0,59892	0,37913	2,80122
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	186	139750	140549	800	StudentA	1	0,4316	0,18684	2,82026
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	187	140909	141529	620	StudentC	1	0,58985	0,14083	2,85925
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	188	141809	142468	660	StudentA	1	0,39966	0,1278	2,84618
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	189	144467	144967	500	StudentC	1	0,61275	0,21663	2,84731
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	190	145366	145706	340	StudentC	1	0,68862	0,37144	2,93131
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	191	145826	145926	100	StudentA	1	0,19339	0,35817	2,95477
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	192	145946	146066	120	StudentA	1	0,2796	0,3581	2,98399
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	193	146086	146226	140	StudentA	1	0,23042	0,3491	2,86659
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	194	146366	146446	80	StudentC	1	0,70859	0,30009	2,94072
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	195	146466	147685	1219	StudentC	1	0,65413	0,29978	2,90742
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	196	147805	147925	120	Material	1	0,48057	0,89774	2,84393
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	197	148765	148884	120	StudentC	1	0,70541	0,33318	2,90952
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	198	148964	149144	180	StudentC	1	0,66282	0,28108	2,92027
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	199	149284	149384	100	StudentC	1	0,67271	0,2502	2,80349
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	200	149404	149484	80	StudentC	1	0,65969	0,12432	2,90289
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	201	151263	151563	300	StudentC	1	0,69931	0,38961	2,98781
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	202	152283	152402	120	StudentA	1	0,2689	0,46089	3,0164
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	203	152502	152722	220	Material	1	0,53557	0,90662	2,8475
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	204	153462	153602	140	Material	1	0,52637	0,55143	2,94594
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	205	153862	153962	100	Material	1	0,53281	0,53206	2,85494
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	206	155361	155581	220	StudentC	1	0,71416	0,31369	3,07348
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	207	158419	158899	480	StudentC	1	0,6486	0,19246	2,90785
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	208	159179	159278	100	StudentA	1	0,25006	0,36853	2,95665
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	209	159578	159838	260	StudentA	1	0,15019	0,26888	2,76228
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	210	160098	160218	120	StudentC	1	0,72234	0,18232	2,89094
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	211	160238	161377	1139	StudentC	1	0,72034	0,11684	2,91055
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	212	161617	161877	260	StudentA	1	0,2804	0,3285	2,96915
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	213	161977	162317	340	StudentA	1	0,29699	0,31907	2,97688
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	214	162337	162437	100	StudentA	0,80008	0,2134	0,35298	2,90723
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	215	162597	164855	2259	StudentC	1	0,79641	0,11965	2,94523
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	216	165155	165975	820	StudentA	1	0,33345	0,16985	2,87199
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	217	166135	166394	260	StudentC	1	0,73145	0,26373	2,8894
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	218	166434	167034	600	StudentC	1	0,76997	0,17116	2,99121
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	219	167254	167674	420	StudentA	1	0,34479	0,10825	2,91691
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	220	167874	169253	1379	StudentC	0,97102	0,73364	0,07347	2,94388
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	221	169333	170392	1059	StudentB	1	0,33633	0,16213	2,89661
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	222	170472	171012	540	StudentC	0,96294	0,69215	0,10346	2,91756
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	223	171172	171411	240	StudentA	1	0,35644	0,19046	2,88416
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	224	171471	171851	380	StudentA	1	0,33306	0,16545	2,91348
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	225	174030	174350	320	StudentA	1	0,25647	0,03757	2,87345
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	226	174670	175089	420	StudentC	1	0,69627	0,04024	2,94464
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	227	175209	175309	100		0	0,36931	0,14375	2,88021
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	228	175349	175769	420	StudentA	1	0,30912	0,15446	2,94406
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	229	175809	175989	180	StudentB	1	0,50132	0,09864	2,92704
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	230	176109	176369	260	StudentC	1	0,74432	0,06587	2,9918
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	231	176469	177648	1179	StudentC	1	0,69258	0,07635	2,9556
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	232	177748	178108	360	StudentB	1	0,4006	0,13941	2,93869
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	233	178228	178567	340	StudentC	1	0,67436	0,23713	2,98488
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	234	179687	179987	300	StudentC	1	0,53403	0,08414	2,99062
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	235	180546	180626	80		0	0,30217	0,15048	3,00438
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	236	184704	184924	220	StudentC	1	0,57451	0,36364	2,90286
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	237	185543	186003	460	StudentC	1	0,73716	0,55974	2,99552
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	238	186663	187162	500	Material	1	0,43363	0,85552	2,83287
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	239	187402	187762	360	StudentC	0,88888	0,62677	0,57141	3,11859
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	240	187882	188282	400	Material	1	0,40786	0,80089	3,01788
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	241	188302	188462	160	Material	1	0,46888	0,90036	2,92085
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	242	189041	189241	200	StudentC	1	0,71384	0,47369	2,9726
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	243	189261	189541	280	StudentC	1	0,70314	0,45434	3,10115
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	244	189661	189821	160	Material	1	0,42955	0,80558	3,03506
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	245	189901	190001	100	Material	1	0,43166	0,82531	2,79746
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	246	190181	190580	400	Material	1	0,43176	0,52227	2,98203
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	247	190700	190880	180	StudentC	1	0,72833	0,44287	3,10527
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	248	190900	191060	160	StudentC	1	0,69955	0,33755	3,1485
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	249	193279	193499	220	StudentC	1	0,62073	0,12171	2,96903
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	250	193759	194198	440	StudentA	1	0,40572	0,24	2,9035
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	251	194258	194478	220	StudentB	1	0,49941	0,2055	2,974
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	252	194598	195038	440	StudentC	1	0,59541	0,08481	3,0043
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	253	195238	195797	560	StudentA	1	0,41432	0,11462	2,98056
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	254	195957	196177	220	Classroom_others	1	0,50094	0,90919	2,93878
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	255	196477	196917	440	StudentC	1	0,71284	0,13069	3,11387
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	256	196977	197397	420	StudentB	1	0,4878	0,11549	2,98132
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	257	197476	198316	840	StudentA	1	0,36027	0,13707	2,98478
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	258	198376	198476	100	StudentB	1	0,55862	0,09887	2,97469
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	259	198496	198696	200	StudentB	1	0,59618	0,11734	2,95234
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	260	198776	200355	1579	StudentA	1	0,33641	0,17824	2,98677
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	261	200595	201014	420	StudentC	1	0,65505	0,12996	2,95843
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	262	201034	201394	360	StudentC	1	0,66252	0,22059	2,96194
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	263	201414	201514	100	StudentC	1	0,63434	0,31314	2,98971
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	264	201834	202174	340	StudentA	1	0,42523	0,20065	2,95934
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	265	202194	202294	100	StudentA	1	0,33697	0,2451	2,94201
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	266	202394	202474	80		0	0,6795	0,3411	2,96741
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	267	202514	202653	140	StudentC	1	0,54146	0,24015	2,92466
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	268	202673	204073	1399	StudentC	1	0,5089	0,14702	2,97967
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	269	204253	204372	120	Classroom_others	1	0,24917	0,29064	2,88819
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	270	204592	204672	80	Classroom_others	1	0,24054	0,2445	2,6493
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	271	204712	204892	180	Classroom_others	0,88891	0,17941	0,39853	2,91453
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	272	204932	205232	300	Classroom_others	1	0,16726	0,34618	2,88784
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	273	205992	207511	1519	StudentC	1	0,54548	0,16493	2,9289
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	274	207990	208090	100	Classroom_others	1	0,21585	0,31673	2,97998
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	275	208110	208650	540	Classroom_others	1	0,2621	0,19598	2,93527
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	276	208690	208810	120	Classroom_others	1	0,17149	0,15724	2,96
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	277	208830	208970	140	Classroom_others	1	0,14642	0,17308	2,89167
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	278	209689	210129	440	StudentC	1	0,51621	0,27795	2,90309
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	279	210149	210649	500	StudentC	1	0,51442	0,41258	2,88365
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	280	210989	211368	380	StudentA	1	0,3826	0,149	2,98232
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	281	211408	211728	320	StudentA	1	0,45219	0,28741	2,96241
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	282	211788	216945	5157	StudentA	1	0,46685	0,1345	2,92647
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	283	217025	217305	280	StudentA	1	0,47185	0,16564	2,88441
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	284	217465	221183	3718	StudentA	1	0,46966	0,1717	2,89992
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	285	221403	222322	919	StudentC	1	0,57743	0,17897	2,93197
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	286	222602	223022	420	StudentA	1	0,30887	0,15678	2,95971
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	287	223082	225580	2499	StudentA	1	0,37442	0,14533	2,96041
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	288	225620	225820	200	StudentB	1	0,46067	0,15489	2,97498
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	289	225880	227199	1319	StudentA	1	0,3805	0,12556	2,99622
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	290	227239	227639	400	StudentB	1	0,51657	0,15133	2,96292
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	291	227679	227979	300	StudentA	1	0,37255	0,15673	2,95999
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	292	228099	228179	80	StudentC	1	0,81107	0,18601	2,99266
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	293	228199	228499	300	StudentC	1	0,75499	0,18147	3,02064
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	294	228738	230018	1279	StudentA	1	0,39319	0,08266	2,98526
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	295	230078	230258	180	StudentB	1	0,6649	0,07698	3,02679
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	296	230797	230917	120	Material	1	0,31257	0,74007	2,98963
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	297	230997	231117	120	Classroom_others	1	0,46976	0,85515	2,89832
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	298	231317	231397	80	Material	1	0,37585	0,69458	2,93755
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	299	231497	231597	100	Material	1	0,39395	0,73795	2,87646
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	300	231957	232076	120	Material	1	0,41246	0,82566	2,6669
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	301	232196	232416	220	Material	1	0,3924	0,80393	2,72957
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	302	232536	232756	220	Material	1	0,36442	0,64128	2,80671
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	303	232776	232936	160	Material	1	0,38528	0,65191	2,66162
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	304	232996	233256	260	Material	1	0,50516	0,81833	2,66849
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	305	233316	233556	240	Material	1	0,46367	0,79395	2,92072
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	306	234015	234115	100	Material	1	0,50267	0,89019	2,62643
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	307	234135	234375	240	Material	1	0,44607	0,86608	2,69527
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	308	235614	235954	340	StudentC	1	0,56157	0,12479	2,8023
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	309	236014	236354	340	StudentB	1	0,3836	0,28402	2,81216
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	310	236434	236894	460	StudentA	0,95653	0,23344	0,26414	2,91951
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	311	236994	237433	440	StudentA	1	0,27721	0,17633	2,94323
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	312	237613	237793	180	StudentC	1	0,64301	0,11105	2,97647
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	313	238533	238893	360	StudentC	1	0,60588	0,18238	2,92074
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	314	238973	239332	360	StudentB	1	0,36979	0,09279	2,95203
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	315	239412	241131	1719	StudentC	1	0,68509	0,05188	2,90489
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	316	242570	243190	620	StudentC	1	0,67285	0,08297	2,77036
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	317	243270	243390	120	Classroom_others	1	0,25949	0,06483	2,83456
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	318	243530	243730	200	Classroom_others	1	0,13055	0,04281	2,79694
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	319	244229	244349	120	StudentA	1	0,40298	0,02261	2,86387
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	320	244509	244689	180	StudentA	1	0,43377	0,02763	2,86204
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	321	246728	246968	240	StudentC	1	0,61691	0,02148	2,77049
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	322	247208	247847	640	StudentA	1	0,373	0,10731	2,82826
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	323	247887	248307	420	StudentB	1	0,52603	0,08009	2,85993
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	324	248367	248787	420	StudentA	1	0,28308	0,1137	2,86808
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	325	248847	249426	580	StudentB	1	0,47431	0,10088	2,88634
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	326	249586	251205	1619	StudentC	1	0,61205	0,14224	2,83168
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	327	251345	251765	420	StudentB	1	0,49467	0,20632	2,84078
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	328	251825	252085	260	StudentA	1	0,30301	0,3257	2,89968
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	329	252785	252924	140	Classroom_others	1	0,55094	0,1372	2,84057
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	330	252944	254683	1739	StudentC	1	0,59556	0,17538	2,81046
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	331	254723	255203	480	StudentC	1	0,56852	0,39466	2,78906
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	332	255323	255483	160	StudentB	1	0,48626	0,16639	2,86882
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	333	255623	255783	160	StudentA	1	0,31233	0,19398	3,02202
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	334	255823	256023	200	StudentA	1	0,26469	0,32708	2,89372
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	335	256123	256582	460	StudentC	1	0,59316	0,33132	2,91395
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	336	256602	258521	1919	StudentC	1	0,55724	0,19136	2,86942
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	337	258541	258741	200	StudentC	1	0,62084	0,21662	2,87978
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	338	258761	260640	1879	StudentC	1	0,54234	0,15208	2,81308
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	339	260720	263398	2678	StudentC	1	0,55208	0,1613	2,79383
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	340	263418	263598	180	StudentC	1	0,48038	0,26705	2,77608
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	341	263618	264198	580	StudentC	1	0,56024	0,21344	2,75909
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	342	266597	268236	1639	StudentC	1	0,55375	0,13678	2,84392
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	343	268316	268535	220	StudentB	0,90911	0,2712	0,19318	2,91925
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	344	268675	269175	500	StudentC	1	0,57913	0,14709	2,88024
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	345	269275	272633	3358	StudentC	1	0,58668	0,11992	2,85311
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	346	273253	273333	80	StudentC	1	0,5879	0,00739	2,92093
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	347	273373	273573	200	StudentC	1	0,54882	0,18449	2,9237
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	348	273952	274492	540	StudentB	1	0,48974	0,22351	2,92738
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	349	274532	279089	4557	StudentB	1	0,5249	0,15778	2,89414
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	350	280269	281208	939	StudentB	1	0,484	0,15771	2,85467
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	351	281288	282168	879	StudentC	1	0,63828	0,10853	2,877
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	352	282227	283207	979	StudentB	1	0,41682	0,12801	2,88371
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	353	283287	284486	1199	StudentC	1	0,61451	0,07872	2,91108
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	354	284566	284646	80	StudentB	1	0,2396	0,15382	2,96432
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	355	285566	286405	840	StudentC	1	0,58876	0,19876	2,9158
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	356	286425	286625	200	StudentC	1	0,58177	0,13832	2,89177
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	357	286645	287644	999	StudentC	1	0,58562	0,04371	2,89123
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	358	287984	288924	939	StudentA	1	0,45354	0,32885	2,91832
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	359	288964	289403	440	StudentA	1	0,51462	0,21739	2,9132
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	360	289443	290103	660	StudentA	1	0,46298	0,35853	2,95908
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	361	290163	290922	760	StudentA	1	0,49785	0,14501	2,92372
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	362	290942	291802	860	StudentA	1	0,41618	0,11057	2,89669
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	363	292242	292362	120	Material	0,66661	0,69843	0,48593	2,87185
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	364	294380	294720	340	Material	1	0,56493	0,72026	2,7749
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	365	294740	295800	1059	Material	1	0,50412	0,37837	2,79263
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	366	296399	296619	220	Classroom_others	1	0,21244	0,3592	2,78438
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	367	296639	296899	260	StudentA	1	0,3905	0,25182	2,81083
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	368	298358	298838	480	StudentC	1	0,61726	0,1311	2,81198
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	369	298918	299158	240	StudentB	1	0,3122	0,06345	2,80886
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	370	299238	299418	180	StudentA	1	0,20816	0,13094	2,86297
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	371	299557	299757	200	Material	1	0,4707	0,88977	2,83369
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	372	299937	300037	100	Material	1	0,42374	0,98922	2,81492
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	373	300877	301217	340	StudentA	1	0,31396	0,18564	2,87467
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	374	301336	301876	540	StudentC	1	0,63243	0,14381	2,90907
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	375	305514	306274	760	StudentC	1	0,61766	0,11568	2,8146
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	376	306334	306633	300	StudentB	1	0,41521	0,21082	2,79642
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	377	306673	307373	700	StudentA	1	0,34728	0,22599	2,85525
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	378	307413	307673	260	StudentB	1	0,49734	0,12311	2,91297
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	379	307733	309372	1639	StudentC	1	0,59389	0,11451	2,85533
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	380	309492	309592	100	StudentA	1	0,29113	0,25707	2,79364
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	381	309632	310051	420	StudentA	1	0,37066	0,18215	2,83047
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	382	310111	310431	320	StudentB	1	0,52653	0,1017	2,85823
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	383	310491	310971	480	StudentA	1	0,40969	0,11988	2,88137
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	384	311031	311151	120	StudentB	1	0,55712	0,15064	2,90833
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	385	311171	311271	100	StudentB	1	0,47869	0,12427	2,89219
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	386	311431	313849	2419	StudentC	1	0,61566	0,06013	2,852
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	387	315348	315968	620	StudentA	0,96775	0,35303	0,04441	2,87958
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	388	316148	317027	879	StudentC	1	0,55432	0,01943	2,84559
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	389	317187	317267	80	Classroom_others	1	0,33156	0,23481	2,89996
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	390	317867	318007	140	Material	1	0,51932	0,85384	2,80305
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	391	318067	318207	140	Material	1	0,61323	0,68717	2,93456
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	392	318447	318646	200	Material	1	0,54058	0,68925	2,74897
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	393	318786	318946	160	Material	1	0,47049	0,75866	2,77884
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	394	319026	319346	320	Material	1	0,51021	0,76685	2,797
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	395	319426	319566	140	Material	0,85717	0,56097	0,80077	2,85187
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	396	319586	319666	80	Material	1	0,47724	0,71577	2,75997
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	397	319946	320026	80	Material	1	0,61858	0,92314	2,68547
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	398	320146	320285	140	Material	1	0,4921	0,82364	2,76435
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	399	320305	320405	100	Material	1	0,46745	0,9869	2,55905
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	400	320425	320605	180	Material	1	0,47124	0,97592	2,6796
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	401	320825	320965	140	Material	1	0,54142	0,8883	2,58973
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	402	321125	321345	220	Material	1	0,55776	0,88965	2,58797
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	403	322144	322224	80	Material	1	0,6777	0,83515	2,70757
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	404	322484	322644	160	Material	1	0,60252	0,82589	2,65762
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	405	322944	323024	80		0	0,4745	0,87566	2,62012
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	406	325942	326062	120	Board	1	0,25152	0,34922	2,85018
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	407	326102	326342	240	Board	1	0,26148	0,07324	2,80077
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	408	326422	326822	400	Board	1	0,34616	0,48276	2,75716
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	409	326902	327122	220	Board	1	0,28333	0,08039	2,91861
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	410	327142	327381	240	Board	1	0,29405	0,16568	2,86398
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	411	327401	328781	1379	Board	1	0,44216	0,37665	2,75571
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	412	328841	328980	140	Board	1	0,57013	0,12951	2,77125
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	413	329040	332738	3698	Board	1	0,50833	0,46577	2,73038
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	414	332758	332998	240	Board	1	0,42425	0,43928	2,75777
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	415	333018	333198	180	Board	1	0,50979	0,45686	2,72791
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	416	333238	333598	360	Board	1	0,42224	0,47903	2,7637
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	417	333618	333878	260	Board	1	0,42256	0,56634	2,76434
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	418	333898	334097	200	Board	1	0,46614	0,47907	2,80256
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	419	334657	334777	120	StudentA	1	0,6499	0,05291	2,97405
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	420	335017	335317	300	Material	1	0,46562	0,77854	2,82808
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	421	336036	337695	1659	Material	1	0,54706	0,3508	2,85232
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	422	338275	342892	4617	Board	1	0,48771	0,41407	2,77553
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	423	342912	343252	340	Board	1	0,51104	0,44624	2,79151
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	424	343392	343692	300	Board	1	0,40791	0,45065	2,81753
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	425	343732	344232	500	Board	1	0,45605	0,4359	2,85251
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	426	344272	344412	140	Board	1	0,5024	0,21929	2,81994
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	427	344451	344591	140	Board	1	0,50429	0,24361	2,80962
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	428	345951	346131	180	Material	0,88884	0,70156	0,52858	2,97517
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	429	346210	346290	80	Material	1	0,68326	0,42268	2,78114
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	430	346310	348489	2179	Material	1	0,50084	0,29855	2,832
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	431	348629	352927	4297	Material	1	0,51549	0,33858	2,79659
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	432	353346	353486	140	Board	1	0,27967	0,41482	2,85229
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	433	353506	353786	280	Board	1	0,3943	0,29697	2,84005
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	434	353806	354086	280	Board	1	0,44765	0,38941	2,74973
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	435	354106	358303	4198	Board	1	0,48679	0,39461	2,82603
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	436	359003	359123	120	StudentA	1	0,47395	0,14471	2,96976
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	437	359183	359263	80	StudentC	1	0,77501	0,126	3,01923
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	438	359323	359763	440	StudentC	1	0,57542	0,0869	2,91632
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	439	359903	359982	80	Material	1	0,51951	0,96834	2,87858
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	440	360042	360162	120	Material	1	0,54473	0,95411	2,92152
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	441	360922	361242	320	Material	1	0,55321	0,95979	2,7108
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	442	361502	361681	180	Material	1	0,5183	0,89079	2,82681
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	443	362021	362501	480	Material	1	0,5267	0,91189	2,8504
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	444	364400	364600	200	StudentB	1	0,45316	0,23799	2,88149
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	445	364660	364760	100	StudentA	1	0,27231	0,40213	2,92343
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	446	364780	364980	200	StudentA	1	0,36325	0,23282	2,89547
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	447	365040	365179	140	StudentB	1	0,66454	0,11218	2,99261
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	448	365479	365559	80	Classroom_others	1	0,16934	0,28758	3,09311
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	449	365919	366759	840	StudentB	0,95238	0,51479	0,21058	2,95187
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	450	366839	367118	280	StudentC	1	0,63667	0,28285	2,93668
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	451	367158	368118	959	StudentC	1	0,58131	0,37492	2,95586
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	452	368158	368657	500	StudentC	1	0,58923	0,23785	2,90544
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	453	368677	368897	220	StudentC	1	0,57682	0,33152	2,85418
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	454	368917	369277	360	StudentC	1	0,53953	0,15633	2,90924
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	455	369317	369617	300	StudentC	1	0,42399	0,10641	2,91431
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	456	369637	370017	380	StudentC	1	0,50892	0,15328	2,90349
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	457	370057	370237	180	StudentC	1	0,52341	0,3157	2,871
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	458	370276	370456	180	StudentC	1	0,47296	0,16546	2,9195
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	459	370476	373035	2559	StudentC	1	0,52055	0,20483	2,85662
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	460	373135	375613	2479	StudentC	1	0,55184	0,17803	2,84512
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	461	375653	375993	340	Classroom_others	1	0,50398	0,09146	2,86046
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	462	376133	376333	200	StudentA	1	0,33263	0,254	2,83389
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	463	376353	376953	600	StudentA	1	0,29994	0,20693	2,84429
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	464	377073	377252	180	StudentB	1	0,51174	0,14796	2,85169
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	465	377292	377712	420	StudentA	1	0,29948	0,13786	2,86998
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	466	382809	383089	280	StudentC	1	0,56512	0,12731	2,81134
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	467	383249	383549	300	StudentB	1	0,41443	0,11557	2,78643
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	468	383609	388466	4857	StudentC	1	0,54008	0,12188	2,83995
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	469	388506	388866	360	StudentB	1	0,44664	0,11865	2,87588
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	470	388926	389285	360	StudentA	1	0,30787	0,19017	2,92969
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	471	389525	391104	1579	StudentC	1	0,57392	0,09122	2,876
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	472	391964	393703	1739	StudentC	1	0,55252	0,11559	2,81852
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	473	393783	394163	380	StudentB	1	0,38597	0,24439	2,86143
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	474	394223	394303	80	StudentA	1	0,24517	0,37905	2,90905
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	475	394323	394642	320	StudentA	1	0,31077	0,33745	2,90113
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	476	394662	394982	320	StudentA	1	0,34474	0,2775	2,94447
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	477	395022	395362	340	StudentB	1	0,49115	0,14509	2,88209
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	478	395442	397601	2159	StudentC	1	0,60025	0,05197	2,88048
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	479	397781	398400	620	StudentA	1	0,2948	0,21599	2,91387
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	480	398520	399200	680	StudentC	1	0,68295	0,06431	2,90222
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	481	399280	399639	360	StudentB	1	0,39355	0,12915	2,83984
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	482	399759	400979	1219	StudentC	1	0,62601	0,0501	2,90041
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	483	401139	401558	420	StudentA	1	0,27343	0,11137	2,96486
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	484	401658	401738	80	Material	1	0,3774	0,75468	2,93687
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	485	401758	402098	340	Material	1	0,40229	0,72007	2,89161
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	486	402378	402518	140	Material	1	0,3831	0,76799	2,89003
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	487	402578	402778	200	Material	1	0,35463	0,94075	2,95428
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	488	402938	403197	260	StudentA	1	0,46858	0,07503	2,93151
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	489	403217	403357	140	StudentA	1	0,36014	0,12631	2,91153
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	490	406376	406675	300	StudentA	1	0,42254	0,0892	2,99721
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	491	406775	407895	1119	StudentC	0,96428	0,63802	0,03296	2,96636
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	492	408334	408734	400	StudentC	1	0,66141	0,01131	2,95011
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	493	408814	409494	680	StudentB	1	0,42836	0,08654	2,93921
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	494	409614	410573	959	StudentC	1	0,59315	0,0406	2,94594
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	495	410853	410973	120	StudentC	1	0,58338	0,02258	2,94303
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	496	411173	411293	120	StudentA	0,83338	0,25245	0,51582	2,73637
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	497	411433	411772	340	StudentA	1	0,31938	0,24764	2,93603
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	498	411992	412212	220	StudentC	1	0,68473	0,02348	2,93988
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	499	412752	413172	420	StudentC	1	0,61707	0,05928	2,90769
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	500	413411	413531	120	StudentA	1	0,4274	0,00695	2,91324
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	501	413691	413971	280	StudentA	1	0,38687	0,04229	2,93611
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	502	414131	414211	80	StudentA	1	0,17482	0,26018	2,9875
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	503	414251	414591	340	StudentB	1	0,35224	0,1981	2,9168
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	504	414711	415370	660	StudentC	1	0,62459	0,14423	2,91887
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	505	415830	415950	120	Material	1	0,40385	0,76031	2,86004
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	506	416350	417309	959	StudentC	1	0,59443	0,15791	2,84874
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	507	417369	417529	160	Classroom_others	1	0,4761	0,37268	2,80903
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	508	417609	417729	120	Classroom_others	1	0,30632	0,09809	2,9103
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	509	417749	418269	520	StudentA	1	0,33617	0,10047	2,9401
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	510	418469	419768	1299	StudentC	1	0,62331	0,07276	2,93867
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	511	419948	420148	200	StudentA	1	0,23063	0,17071	2,94291
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	512	420208	420327	120	StudentA	1	0,23536	0,17911	3,00767
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	513	420387	420667	280	StudentB	1	0,44449	0,15576	2,92233
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	514	420767	422426	1659	StudentC	1	0,69584	0,07248	2,97386
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	515	423306	423406	100	Material	1	0,45694	0,77295	2,93191
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	516	423426	423646	220	Material	1	0,41673	0,79295	2,96275
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	517	423666	423865	200	Material	1	0,45892	0,94854	2,96774
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	518	423925	424105	180	Material	1	0,49267	0,94922	2,9017
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	519	424265	424365	100	Material	1	0,72758	0,70203	2,91028
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	520	424525	424625	100	Classroom_others	1	0,68158	0,16593	3,00462
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	521	424725	424825	100	Classroom_others	1	0,21419	0,37016	2,96962
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	522	424925	425065	140	Classroom_others	1	0,44567	0,28253	2,89165
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	523	425265	425424	160	Classroom_others	1	0,29213	0,44092	2,88975
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	524	425824	426044	220	Material	1	0,49344	0,80955	2,9271
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	525	426064	426504	440	Material	1	0,41446	0,80787	3,04309
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	526	426784	426944	160	Material	1	0,67293	0,8747	2,85294
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	527	427024	427143	120	Material	1	0,46988	0,89104	2,92126
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	528	427643	427783	140	Material	1	0,48705	0,86236	2,77929
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	529	428023	428123	100	StudentB	1	0,58122	0,19288	2,89702
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	530	428183	428363	180	StudentA	1	0,3787	0,18207	2,93157
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	531	428443	428842	400	StudentA	1	0,3184	0,06129	2,85973
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	532	428962	431581	2618	StudentC	1	0,63508	0,11762	2,87361
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	533	431761	432920	1159	StudentB	1	0,43499	0,1363	2,87978
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	534	433000	433480	480	StudentA	1	0,35637	0,2738	2,92888
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	535	433520	433940	420	StudentB	1	0,48028	0,1552	2,96006
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	536	434000	434879	879	StudentC	1	0,66094	0,11193	2,9346
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	537	435159	435239	80	Classroom_others	1	0,38347	0,74675	2,84151
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	538	435259	435479	220	Classroom_others	1	0,35458	0,75733	2,83256
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	539	435499	435619	120	Classroom_others	1	0,37544	0,75041	2,83821
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	540	435938	436958	1019	StudentC	1	0,57922	0,07424	2,85223
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	541	437138	437218	80	StudentA	1	0,15133	0,1815	2,88274
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	542	437318	438117	800	StudentA	1	0,42781	0,05334	2,94339
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	543	438857	439896	1039	StudentA	1	0,4779	0,06175	2,9713
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	544	439916	440156	240	StudentA	1	0,46862	0,20171	2,96655
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	545	440176	440456	280	StudentA	1	0,51179	0,1103	2,99302
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	546	440696	441055	360	StudentC	1	0,54659	0,17849	3,00044
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	547	441115	441535	420	StudentB	1	0,3111	0,17119	2,97125
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	548	441615	441895	280	StudentC	1	0,56426	0,09624	2,95866
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	549	441955	442634	680	StudentB	0,94119	0,35786	0,2425	2,88519
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	550	442654	442974	320	StudentB	1	0,45295	0,29931	2,93704
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	551	442994	443274	280	StudentB	1	0,46357	0,27099	2,95513
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	552	443294	443594	300	StudentB	1	0,48164	0,44095	2,90657
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	553	443634	447871	4238	StudentB	1	0,49547	0,14416	2,8838
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	554	449171	449251	80	Material	1	0,43714	0,87964	2,61974
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	555	450150	450330	180	Material	1	0,61634	0,65495	2,75066
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	556	450350	450550	200	Material	1	0,53213	0,76466	2,67075
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	557	450570	451549	979	Material	1	0,52829	0,81682	2,66542
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	558	451709	452089	380	Material	1	0,52661	0,90833	2,62143
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	559	452189	452489	300	Material	1	0,52741	0,91531	2,59755
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	560	452709	452789	80	Material	1	0,3553	0,87765	2,72688
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	561	452829	452928	100	Material	1	0,4322	0,83715	2,72655
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	562	453008	453088	80	Material	1	0,48631	0,96632	2,72173
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	563	453108	453648	540	Material	1	0,51202	0,88039	2,70089
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	564	458245	458605	360	StudentA	1	0,3584	0,12164	2,81105
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	565	458625	458845	220	StudentA	1	0,39785	0,22744	2,77011
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	566	458865	459745	879	StudentA	1	0,39485	0,17727	2,8033
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	567	459785	459964	180	Classroom_others	1	0,33402	0,30137	2,80388
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	568	460004	460144	140	StudentA	0,85717	0,37579	0,17641	2,96632
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	569	460244	460444	200	StudentB	1	0,51819	0,19883	2,94201
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	570	460564	461104	540	StudentC	1	0,7168	0,10322	2,97209
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	571	461304	462063	760	StudentA	1	0,3824	0,07841	2,84602
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	572	462083	462343	260	StudentA	1	0,39976	0,17396	2,83054
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	573	462363	469539	7176	StudentA	1	0,46293	0,17702	2,87006
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	574	470858	470978	120	StudentA	1	0,24263	0,21126	2,81704
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	575	471038	472157	1119	StudentA	1	0,39882	0,20505	2,79087
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	576	472397	472657	260	StudentC	1	0,6193	0,02062	2,86564
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	577	472677	474896	2219	StudentC	1	0,60756	0,06584	2,84072
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	578	474976	475675	700	StudentB	1	0,44803	0,10568	2,82109
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	579	475755	475955	200	StudentA	1	0,27906	0,12111	2,87696
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	580	476835	477374	540	Material	1	0,53724	0,81777	2,81929
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	581	477394	477574	180	Material	1	0,56666	0,90653	2,82232
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	582	478094	478294	200	Material	1	0,4694	0,76885	2,85529
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	583	478813	478933	120	Board	0,83322	0,16559	0,23939	2,943
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	584	479073	479853	780	Classroom_others	1	0,45523	0,81129	2,87821
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	585	479873	479953	80	Classroom_others	1	0,42512	0,88613	3,03052
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	586	480013	480093	80		0	0,41004	0,83706	2,96756
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	587	480532	480912	380	StudentC	1	0,6657	0,11986	2,96901
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	588	480992	481092	100	StudentB	1	0,35866	0,01285	2,83847
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	589	481512	481612	100	StudentA	1	0,25996	0,00834	2,83642
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	590	481772	481912	140	StudentA	1	0,41832	0,02437	2,85891
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	591	482551	482831	280	Classroom_others	1	0,36672	0,75864	2,9752
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	592	484170	484290	120	Classroom_others	1	0,32217	0,05258	3,00019
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	593	484850	485390	540	StudentC	1	0,70792	0,20334	2,93587
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	594	485470	485809	340	StudentB	1	0,37962	0,1946	2,81421
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	595	485849	486249	400	StudentB	1	0,40312	0,37578	2,83454
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	596	486289	486649	360	StudentA	1	0,32857	0,3072	2,93634
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	597	486669	487368	700	StudentA	1	0,30319	0,33638	2,87482
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	598	487388	488548	1159	StudentA	1	0,35858	0,25709	2,90237
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	599	488588	489187	600	StudentB	1	0,52585	0,12889	2,8937
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	600	489207	489347	140	StudentB	1	0,56867	0,32173	2,84444
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	601	489367	489667	300	StudentB	1	0,56608	0,39688	2,85869
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	602	489707	490926	1219	StudentB	1	0,46842	0,18298	2,87083
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	603	491226	491306	80	StudentB	1	0,36591	0,13364	2,84021
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	604	491366	491446	80	StudentB	1	0,29591	0,27726	2,86451
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	605	491506	491586	80	StudentB	1	0,30988	0,33631	2,99684
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	606	492006	492266	260	StudentB	0,92309	0,34402	0,30381	2,71879
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	607	492346	492445	100	StudentB	1	0,28485	0,22829	2,74011
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	608	492465	492605	140	StudentB	1	0,33467	0,28321	2,74188
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	609	492625	492945	320	StudentB	0,93747	0,36136	0,16578	2,76701
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	610	493065	493145	80	Classroom_others	1	0,67032	0,4407	2,79561
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	611	493225	493505	280	Classroom_others	1	0,53612	0,39134	2,81603
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	612	493545	494125	580	StudentB	1	0,45276	0,14472	2,79282
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	613	494165	494384	220	StudentB	1	0,50474	0,30797	2,77328
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	614	494404	495324	919	StudentB	1	0,46514	0,15593	2,80168
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	615	495344	495444	100	StudentB	1	0,31774	0,01602	2,78993
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	616	496063	496923	859	StudentB	1	0,43713	0,04149	2,88062
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	617	497942	498242	300	StudentC	1	0,69829	0,32364	2,89461
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	618	498262	498522	260	StudentC	1	0,69675	0,269	2,92955
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	619	498722	498902	180	Classroom_others	0,88883	0,32074	0,42384	2,81967
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	620	499102	499222	120	Classroom_others	0,83328	0,22796	0,33331	2,95011
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	621	499301	499401	100	Classroom_others	1	0,55031	0,15962	2,90951
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	622	499441	499821	380	StudentB	1	0,54523	0,09739	2,89839
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	623	500161	501080	919	StudentC	1	0,58072	0,29834	2,88611
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	624	501340	501640	300	StudentA	1	0,41807	0,156	2,857
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	625	501680	501940	260	StudentA	1	0,51409	0,27522	2,8735
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	626	502000	502480	480	StudentA	1	0,36091	0,17068	2,86553
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	627	502620	502720	100	StudentC	1	0,66996	0,31836	2,89563
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	628	502739	504459	1719	StudentC	1	0,57903	0,15059	2,91434
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	629	505118	505198	80	Board	1	0,22448	0,40605	3,0863
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	630	505238	505378	140	Board	1	0,29452	0,65809	2,88436
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	631	505878	506717	840	StudentA	1	0,58105	0,15653	2,91911
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	632	506997	507157	160	StudentC	1	0,88675	0,09613	2,8974
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	633	507417	508536	1119	StudentA	1	0,43397	0,1446	2,9457
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	634	508856	509096	240	StudentC	1	0,60482	0,12454	2,89881
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	635	509116	509855	740	StudentC	1	0,58659	0,13105	2,93039
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	636	509955	510655	700	StudentC	1	0,60545	0,04306	2,91079
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	637	510835	511155	320	StudentC	1	0,68901	0,03962	2,92594
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	638	511874	512434	560	Board	1	0,46205	0,73357	2,82251
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	639	516092	516272	180	Board	1	0,46389	0,86453	2,65206
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	640	517011	517111	100		0	0,78931	0,2249	2,83785
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	641	517131	517351	220	Classroom_others	1	0,63797	0,16659	2,87322
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	642	518750	519370	620	Material	1	0,59541	0,3848	2,86779
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	643	519390	520209	820	Material	1	0,47253	0,51369	2,85158
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	644	520609	520769	160	Material	1	0,54029	0,90778	2,82132
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	645	520789	520929	140	Material	1	0,51071	0,94401	2,82908
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	646	522728	522908	180	Board	1	0,32904	0,41511	2,90342
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	647	522928	523208	280	Board	1	0,35858	0,42239	2,91423
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	648	523228	523827	600	Board	1	0,42998	0,25547	2,89523
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	649	523867	524087	220	Board	1	0,39414	0,44056	2,91514
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	650	524127	524347	220	Board	1	0,4987	0,36236	2,95378
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	651	524367	529124	4757	Board	1	0,46399	0,4151	2,81269
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	652	529244	529324	80	Board	1	0,39843	0,79236	2,79474
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	653	529584	529664	80	Board	1	0,19718	0,70339	2,87379
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	654	529684	529764	80	Board	1	0,24939	0,71832	2,94338
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	655	529804	530024	220	Board	1	0,33011	0,66103	2,84334
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	656	530184	530283	100	Board	1	0,33165	0,94373	3,48267
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	657	530303	530443	140	Board	1	0,34881	0,82179	2,90125
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	658	530523	530843	320	Board	1	0,38825	0,80296	2,85349
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	659	531363	531463	100	StudentA	1	0,72262	0,35676	2,94929
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	660	531483	531563	80	StudentA	1	0,72554	0,28783	2,98701
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	661	531583	531663	80	StudentA	1	0,65878	0,35886	2,95121
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	662	531683	531902	220	StudentA	1	0,7562	0,22067	2,9911
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	663	531942	532022	80	StudentA	1	0,75784	0,34934	3,08116
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	664	532102	532302	200	StudentA	1	0,77973	0,13652	3,03311
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	665	532362	532802	440	StudentA	1	0,52242	0,06952	3,00849
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	666	532822	533122	300	StudentA	1	0,45269	0,09229	2,97897
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	667	533202	535141	1939	StudentA	1	0,46983	0,16124	2,92025
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	668	535400	535600	200	StudentC	1	0,51832	0,08034	2,99768
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	669	535640	535720	80	StudentB	1	0,42475	0,09522	3,04721
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	670	535900	536240	340	StudentA	1	0,44128	0,0976	3,01474
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	671	536520	537020	500	StudentC	1	0,63174	0,04518	3,06344
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	672	537159	537239	80	StudentB	1	0,49261	0,17405	2,99801
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	673	537279	537779	500	StudentA	1	0,36315	0,17814	3,00203
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	674	537899	538419	520	StudentB	1	0,48675	0,14779	2,9558
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	675	538599	539198	600	StudentA	1	0,44881	0,11217	2,95161
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	676	539398	539818	420	StudentC	1	0,60063	0,04478	2,9919
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	677	539878	540557	680	StudentC	1	0,56657	0,05879	3,02088
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	678	540797	543016	2219	StudentA	1	0,38726	0,09655	2,9464
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	679	543136	543356	220	StudentB	1	0,52853	0,07323	2,93667
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	680	543396	543636	240	StudentC	1	0,5117	0,0833	2,94277
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	681	544055	544475	420	Board	1	0,52193	0,32777	2,93218
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	682	544495	544855	360	Board	1	0,54876	0,448	2,88599
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	683	544875	545095	220	Board	1	0,58222	0,34136	2,89322
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	684	545135	545255	120	Board	1	0,4839	0,26019	2,89716
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	685	545335	545415	80	Board	1	0,27444	0,2488	2,97994
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	686	545435	545575	140	Board	1	0,3598	0,20661	2,92387
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	687	545774	546054	280	Board	1	0,57922	0,35539	2,90804
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	688	546074	546554	480	Board	1	0,49902	0,41	2,85842
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	689	546574	552850	6276	Board	1	0,55089	0,44449	2,85386
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	690	552910	553210	300	Board	1	0,47555	0,28424	2,8358
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	691	553250	553410	160	Board	1	0,54452	0,37598	2,82998
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	692	553450	554289	840	Board	1	0,61511	0,34704	2,86232
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	693	554329	554669	340	Board	1	0,50963	0,29463	2,84088
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	694	554709	555109	400	Board	1	0,60531	0,25818	2,84634
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	695	555149	555309	160	Board	1	0,513	0,23961	2,86876
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	696	555789	556128	340	StudentC	1	0,48754	0,1768	2,96988
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	697	556228	557787	1559	StudentA	1	0,22207	0,2062	2,99149
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	698	557847	557947	100	StudentA	1	0,21164	0,30905	2,93094
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	699	558167	558347	180	StudentA	1	0,19049	0,31105	2,94726
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	700	558367	558447	80		0	0,16062	0,26643	2,86513
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	701	558467	558587	120	StudentA	1	0,13574	0,27437	2,8814
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	702	559187	559327	140	Board	1	0,67247	0,35668	2,99846
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	703	559347	559846	500	Board	1	0,53996	0,34601	3,00271
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	704	559886	560486	600	Board	1	0,63759	0,36093	2,89869
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	705	560546	560806	260	Board	1	0,49898	0,20872	2,87702
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	706	560846	562565	1719	Board	1	0,63218	0,43928	2,95785
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	707	562605	562884	280	Board	1	0,56891	0,32222	2,94489
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	708	562924	563084	160	Board	1	0,45694	0,32424	2,9063
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	709	563124	564923	1799	Board	1	0,60822	0,40252	2,9084
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	710	564943	565243	300	Board	1	0,63165	0,49929	2,96862
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	711	565263	565723	460	Board	1	0,7407	0,39918	3,09046
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	712	565743	565843	100	Board	1	0,80946	0,48392	3,05222
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	713	565863	565943	80	Board	1	0,83173	0,43217	3,05829
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	714	565983	566083	100	Board	1	0,71004	0,39722	3,05953
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	715	566103	566842	740	Board	1	0,67776	0,48701	2,98067
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	716	566882	567102	220	Board	1	0,86479	0,64394	2,96304
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	717	567482	567562	80	Classroom_others	1	0,25344	0,2624	2,97569
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	718	567582	567782	200	StudentA	1	0,17896	0,31113	3,0238
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	719	567882	568481	600	StudentA	1	0,28386	0,2983	2,99634
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	720	568501	568621	120	StudentA	1	0,21741	0,24655	2,95206
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	721	568701	569581	879	StudentA	1	0,3318	0,18893	2,95774
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	722	569640	570100	460	StudentB	1	0,55251	0,10158	2,97211
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	723	570140	570580	440	StudentC	1	0,72158	0,14893	3,04295
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	724	570760	572419	1659	StudentA	1	0,31185	0,09796	2,97509
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	725	572439	572559	120	StudentA	1	0,29996	0,22697	2,96468
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	726	572579	572739	160	StudentA	1	0,27173	0,24307	2,96504
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	727	573019	573098	80	StudentC	1	0,69542	0,26703	3,02025
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	728	573118	573378	260	StudentC	1	0,67911	0,40957	3,06982
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	729	573698	573918	220	StudentA	0,90911	0,15713	0,25121	2,81309
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	730	574218	574797	580	StudentC	1	0,55123	0,66203	2,95961
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	731	574857	575217	360	StudentC	0,94446	0,54402	0,67002	3,035
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	732	575237	575337	100	StudentC	1	0,58152	0,71674	3,0477
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	733	575357	575497	140	StudentC	1	0,52596	0,74324	2,97505
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	734	575617	575737	120	StudentC	1	0,42736	0,75146	2,96598
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	735	575797	575977	180	StudentC	1	0,5927	0,64079	3,16242
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	736	576077	577816	1739	StudentC	1	0,5354	0,1822	3,17099
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	737	579255	579355	100	StudentC	1	0,62378	0,21878	2,98992
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	738	579375	581294	1919	StudentC	1	0,54166	0,20639	2,93266
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	739	581374	582113	740	StudentC	1	0,57796	0,21457	2,91998
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	740	582133	583932	1799	StudentC	1	0,55483	0,17675	2,9549
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	741	583952	584212	260	StudentC	1	0,68817	0,17565	3,00698
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	742	584332	585511	1179	StudentC	0,98304	0,50422	0,18028	3,01598
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	743	585731	586071	340	StudentC	1	0,49186	0,10843	3,00318
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	744	586251	586591	340	StudentA	1	0,33368	0,34604	2,99105
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	745	586611	586810	200	StudentB	1	0,4917	0,28957	2,98173
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	746	586910	587370	460	StudentC	1	0,67165	0,43145	3,03479
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	747	587390	587970	580	StudentC	1	0,6545	0,23874	3,1268
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	748	588390	588469	80		0	0,23889	0,15222	3,15044
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	749	588509	588649	140		0	0,17454	0,18847	3,09714
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	750	588669	589029	360	Board	1	0,34451	0,10688	2,97302
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	751	589129	590188	1059	Board	1	0,41455	0,1336	2,90767
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	752	590208	590468	260	Board	1	0,42971	0,30836	2,85336
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	753	590508	590628	120	Board	1	0,30097	0,40055	2,9144
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	754	590648	590848	200	Board	1	0,27605	0,40019	2,86432
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	755	590928	591288	360	Board	1	0,53463	0,44982	2,91445
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	756	591308	593107	1799	Board	1	0,56696	0,37233	2,88915
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	757	593167	593447	280	Board	1	0,45812	0,33915	2,86887
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	758	593487	593706	220	Board	1	0,57671	0,41627	2,86337
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	759	593726	595425	1699	Board	1	0,72052	0,62066	2,86212
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	760	595445	596765	1319	Board	1	0,76611	0,71189	2,83337
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	761	596805	596965	160	Board	1	0,66968	0,63219	2,78851
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	762	597044	597244	200	Board	1	0,47792	0,4987	2,84625
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	763	597324	597404	80	Board	1	0,64309	0,47462	2,84402
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	764	597624	597724	100	Board	1	0,84693	0,59973	2,77237
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	765	597824	597964	140	Board	0,85717	0,69236	0,43004	2,97755
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	766	597984	598104	120		0	0,76438	0,47531	2,96184
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	767	598124	598204	80	Board	1	0,81917	0,58085	2,88836
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	768	598584	598664	80	Classroom_others	1	0,40928	0,20219	2,9762
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	769	598684	598823	140	StudentA	1	0,35684	0,19608	3,01292
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	770	599063	599283	220	Material	1	0,47717	0,96543	2,87241
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	771	599723	599923	200	StudentB	1	0,48101	0,35284	2,92061
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	772	599943	600143	200	StudentA	1	0,4243	0,23417	2,89331
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	773	600183	600602	420	StudentB	1	0,51015	0,10156	2,94869
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	774	600782	600982	200	StudentC	1	0,623	0,0623	3,01452
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	775	601062	601382	320	StudentB	1	0,39675	0,15517	3,0173
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	776	601422	601662	240	StudentA	1	0,41217	0,15694	3,02702
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	777	601702	602062	360	StudentB	1	0,56302	0,07751	3,07174
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	778	602102	602341	240	StudentA	1	0,4327	0,11894	3,05802
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	779	602381	602621	240	StudentB	1	0,55872	0,18001	3,05323
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	780	602661	602901	240	StudentA	1	0,42974	0,41593	3,06015
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	781	602961	603281	320	StudentB	1	0,52633	0,15537	3,03937
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	782	603341	603601	260	StudentA	1	0,35784	0,1737	3,01887
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	783	603641	604340	700	StudentB	1	0,5014	0,13108	3,05045
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	784	604380	604580	200	StudentA	1	0,35731	0,1137	3,08305
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	785	604620	605420	800	StudentB	1	0,52119	0,12814	2,99191
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	786	605480	605839	360	StudentA	1	0,37653	0,24171	2,94244
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	787	605999	606079	80		0	0,66047	0,20954	2,98894
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	788	606159	606399	240	StudentB	1	0,40082	0,34372	2,98049
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	789	606439	606519	80	StudentA	1	0,34769	0,37692	2,93824
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	790	606539	606619	80	StudentA	1	0,40586	0,35021	2,94534
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	791	606759	606839	80	StudentC	1	0,66504	0,47956	3,08251
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	792	606899	606999	100	Classroom_others	1	0,80513	0,41817	2,91939
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	793	607059	607358	300	StudentC	1	0,54224	0,26266	2,96371
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	794	607558	607998	440	Board	1	0,72236	0,1502	3,02852
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	795	608018	608518	500	Board	1	0,60974	0,19285	2,87748
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	796	608538	608718	180	Board	1	0,69387	0,23151	2,90004
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	797	608878	610117	1239	Board	1	0,66265	0,11419	2,95331
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	798	610137	611036	899	Board	1	0,54065	0,21868	2,94029
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	799	611056	611456	400	Board	1	0,58605	0,23382	2,94485
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	800	611496	611916	420	Board	1	0,56007	0,20213	2,95661
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	801	612595	613375	780	StudentA	1	0,35396	0,08266	3,03493
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	802	613535	614274	740	StudentC	1	0,62923	0,15756	2,99826
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	803	614514	614934	420	StudentA	1	0,3614	0,1632	2,99254
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	804	615774	615893	120	Classroom_others	1	0,56042	0,09333	2,99004
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	805	615933	616493	560	StudentB	1	0,51107	0,11697	3,00317
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	806	616553	616913	360	StudentC	1	0,60793	0,15263	2,9942
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	807	616973	617353	380	StudentB	1	0,40445	0,17785	3,02126
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	808	617413	617513	100	StudentA	1	0,29115	0,23628	3,06004
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	809	617533	617832	300	StudentA	1	0,39232	0,10397	3,03225
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	810	617892	619212	1319	StudentB	1	0,54134	0,0784	3,07944
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	811	619851	619931	80	StudentC	1	0,71514	0,05209	3,07765
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	812	619971	620531	560	StudentC	1	0,59486	0,08884	3,03258
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	813	620571	620831	260	StudentB	1	0,43036	0,09434	3,02694
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	814	620931	621050	120	StudentA	1	0,25743	0,24546	3,08406
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	815	621070	621310	240	StudentA	1	0,31212	0,20153	3,05485
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	816	621810	621990	180	Board	1	0,82893	0,4002	3,22113
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	817	622070	622290	220	Board	1	0,85095	0,57396	2,99294
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	818	622690	623289	600	StudentA	1	0,36994	0,09225	3,03328
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	819	623529	624129	600	StudentC	1	0,57424	0,09197	3,01118
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	820	624269	624928	660	StudentA	0,93941	0,31563	0,09631	3,05382
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	821	625008	625568	560	StudentB	1	0,54401	0,08973	2,9651
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	822	625648	626247	600	StudentA	1	0,33218	0,12089	2,99836
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	823	626347	627007	660	StudentC	0,93941	0,73574	0,11287	3,08677
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	824	627227	628546	1319	StudentA	1	0,3033	0,21445	3,04073
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	825	628686	629186	500	StudentC	1	0,71587	0,16945	3,08585
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	826	629346	629785	440	StudentA	1	0,30846	0,11798	3,04743
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	827	629805	630105	300	StudentA	1	0,28915	0,14852	3,03324
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	828	630185	630345	160	Classroom_others	1	0,61346	0,14969	3,05101
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	829	630385	631085	700	StudentB	1	0,47586	0,12516	3,07292
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	830	631165	631624	460	StudentA	1	0,28319	0,16435	3,09665
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	831	631804	632164	360	StudentC	1	0,61995	0,1478	3,03347
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	832	632444	632624	180	Board	1	0,76824	0,26641	3,10712
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	833	632644	632844	200	Classroom_others	1	0,75143	0,19621	3,08023
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	834	633143	633243	100		0	0,29739	0,35827	2,98505
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	835	633263	633503	240	StudentA	1	0,27613	0,27159	3,06621
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	836	633523	633703	180	StudentA	1	0,31647	0,21936	3,01979
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	837	633763	634383	620	StudentB	1	0,5248	0,09191	3,00446
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	838	634443	635022	580	StudentC	1	0,69376	0,17796	3,1045
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	839	635162	635922	760	StudentA	1	0,33354	0,15708	3,06517
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	840	636042	636322	280	StudentB	1	0,52187	0,136	3,00251
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	841	636381	637161	780	StudentC	1	0,64746	0,10389	3,08702
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	842	637221	637401	180	StudentB	1	0,45408	0,10956	3,06221
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	843	637561	637681	120	StudentA	1	0,32579	0,21511	3,07857
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	844	637701	637821	120	StudentA	0,83337	0,28171	0,24042	3,02609
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	845	637841	637941	100	StudentA	1	0,33371	0,2156	3,09416
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	846	638140	638760	620	StudentC	1	0,65537	0,13688	3,06942
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	847	639020	639620	600	Board	1	0,76349	0,20395	3,13777
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	848	639700	639780	80	Board	1	0,91606	0,40548	3,24214
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	849	640079	640179	100	Board	1	0,94419	0,15248	3,1617
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	850	640219	640639	420	Board	1	0,7696	0,26991	3,04557
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	851	640659	640979	320	Board	1	0,87115	0,40817	3,04641
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	852	641019	641179	160	Board	1	0,77892	0,40557	3,03832
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	853	641279	641439	160	Board	1	0,80279	0,29653	3,01306
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	854	641459	641638	180	Board	1	0,90237	0,2149	3,06243
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	855	642058	642378	320	StudentC	1	0,74281	0,11166	3,1335
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	856	642438	642618	180	StudentB	1	0,48838	0,07114	3,08989
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	857	642678	643337	660	StudentA	1	0,37523	0,06617	3,04433
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	858	643417	643557	140	Classroom_others	1	0,64423	0,11911	3,00702
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	859	643577	644017	440	StudentC	1	0,62932	0,11306	3,02035
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	860	644077	644497	420	StudentB	1	0,45267	0,08547	3,04978
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	861	644577	645036	460	StudentC	1	0,66591	0,11245	3,08715
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	862	645096	645896	800	StudentB	1	0,53308	0,12427	3,04148
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	863	646036	646675	640	StudentC	1	0,68017	0,22693	3,05408
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	864	646735	647355	620	StudentB	1	0,52126	0,11681	3,04122
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	865	647395	647475	80	StudentC	1	0,60691	0,12453	3,10475
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	866	647495	649474	1979	StudentC	1	0,53505	0,05683	3,02491
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	867	649634	650253	620	StudentA	1	0,31813	0,28271	3,03414
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	868	650453	650533	80	StudentC	1	0,54849	0,0832	2,97531
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	869	650553	651393	840	StudentC	1	0,5808	0,04635	2,99802
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	870	651433	652012	580	StudentB	1	0,40304	0,15302	2,94613
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	871	652152	652592	440	StudentC	1	0,56793	0,09743	3,0054
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	872	652652	654151	1499	StudentB	1	0,40056	0,15559	3,00727
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	873	654211	654971	760	StudentC	1	0,56474	0,07363	3,03061
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	874	655031	655470	440	StudentB	1	0,37709	0,14904	3,04788
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	875	655590	655990	400	StudentC	1	0,58951	0,16418	3,10741
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	876	656050	656350	300	StudentB	1	0,4338	0,13616	3,08138
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	877	656410	656530	120	StudentA	0,66674	0,27057	0,33007	3,05395
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	878	656550	657309	760	StudentA	1	0,41419	0,15911	2,98081
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	879	657529	658149	620	StudentC	1	0,56875	0,02807	3,03071
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	880	658209	659848	1639	StudentB	1	0,38487	0,17597	2,99467
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	881	659908	661927	2019	StudentC	1	0,59428	0,05609	3,05
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	882	662086	662186	100	StudentA	0,80005	0,28771	0,34124	3,06059
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	883	662206	662966	760	StudentA	1	0,32914	0,22895	2,99237
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	884	663526	663885	360	StudentC	1	0,61147	0,01825	2,99043
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	885	663965	665904	1939	StudentA	1	0,37706	0,28633	2,88266
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	886	666024	666104	80	Classroom_others	1	0,6109	0,06735	2,95273
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	887	666164	666444	280	StudentB	1	0,4384	0,09536	2,92595
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	888	666784	667563	780	StudentC	1	0,57519	0,0253	2,9951
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	889	667603	668123	520	StudentB	1	0,48274	0,1129	2,97175
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	890	668183	669022	840	StudentC	1	0,6063	0,07087	2,99694
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	891	669122	670841	1719	StudentC	1	0,57256	0,05026	2,98316
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	892	670901	671461	560	StudentB	1	0,44282	0,14517	2,91831
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	893	671541	672141	600	Classroom_others	1	0,37717	0,09098	2,87844
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	894	672700	672820	120	Classroom_others	1	0,48529	0,00355	2,81639
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	895	674019	674159	140	StudentA	1	0,50842	0,24048	2,90574
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	896	674419	675159	740	StudentC	1	0,63958	0,09418	3,00018
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	897	675259	676158	899	StudentA	1	0,43918	0,10357	2,96833
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	898	676518	676598	80	Classroom_others	1	0,26097	0,45864	2,89641
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	899	676858	676938	80	Classroom_others	1	0,01976	0,49412	2,84253
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	900	677118	677258	140	Classroom_others	1	0,36889	0,46767	2,62233
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	901	677937	678117	180	StudentC	1	0,56362	0,08116	3,08128
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	902	678157	678517	360	StudentB	1	0,41092	0,04717	3,02668
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	903	678657	678937	280	StudentA	1	0,31878	0,14205	2,95657
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	904	679716	679796	80	Classroom_others	1	0,22011	0,43858	2,54846
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	905	680096	680196	100	Classroom_others	1	0,45629	0,26367	2,55277
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	906	680436	680855	420		0	0,24981	0,18014	2,86141
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	907	681235	681355	120		0	0,4377	0,00658	3,00421
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	908	681595	682315	720		0	0,57652	0,21484	2,98103
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	909	682395	683274	879		0	0,55557	0,61154	2,94046
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	910	683374	683654	280		0	0,31235	0,32611	2,94595
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	911	683674	684613	939		0	0,49173	0,30508	2,89171
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	912	684673	685153	480		0	0,44919	0,67336	2,7925
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	913	685293	685373	80		0	0,6407	0,67911	3,13205
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	914	685513	685693	180		0	0,53332	0,80696	2,80197
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	915	685873	685992	120		0	0,46316	0,94043	2,84013
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	916	686072	686252	180		0	0,46281	0,87123	2,77634
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	917	686272	686472	200		0	0,36926	0,92588	2,896
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	918	686552	686932	380		0	0,48863	0,88619	2,73315
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	919	687072	687152	80		0	0,53689	0,89883	2,75385
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	920	687172	687412	240		0	0,46569	0,84125	2,82327
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	921	687452	687612	160		0	0,44073	0,85014	2,84651
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	922	687631	687731	100		0	0,45459	0,90937	2,7944
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	923	687751	688011	260		0	0,50343	0,96299	2,71308
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	924	688051	688451	400		0	0,47342	0,88276	2,78946
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	925	688511	688711	200		0	0,43397	0,60572	2,82342
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	926	689071	689251	180		0	0,41324	0,04477	2,93103
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	927	689390	689470	80		0	0,31001	0,19754	2,89766
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	928	689630	689730	100		0	0,19094	0,24316	2,90008
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	929	689790	689910	120		0	0,21378	0,28832	2,85237
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	930	690610	690810	200		0	0,46967	0,7051	2,78236
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	931	690970	691129	160		0	0,49582	0,80047	2,96528
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	932	691729	691849	120		0	0,55273	0,04791	3,00091
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	933	692109	692429	320		0	0,72957	0,29872	2,98409
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	934	692489	692629	140		0	0,39322	0,23543	2,89117
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	935	692689	693108	420		0	0,32746	0,1677	2,88995
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	936	693368	693588	220		0	0,5926	0,80551	2,88876
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	937	693748	694088	340		0	0,81152	0,53275	3,02169
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	938	694587	694667	80		0	0,45222	0,12904	2,88102
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	939	694687	694907	220		0	0,432	0,17934	2,91306
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	940	694987	695147	160		0	0,31851	0,25596	3,01047
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	941	695167	695267	100		0	0,29804	0,27728	2,96555
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	942	695507	695587	80		0	0,46411	0,82611	2,7916
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	943	695607	695887	280		0	0,46407	0,80353	2,88375
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	944	695987	696167	180		0	0,52578	0,0376	2,95148
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	945	696186	696306	120		0	0,43937	0,04105	2,92761
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	946	696386	696466	80		0	0,11434	0,14485	3,00699
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	947	696506	696786	280		0	0,28141	0,14971	2,95459
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	948	696826	697006	180		0	0,46069	0,08969	2,95446
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	949	697046	697306	260		0	0,52173	0,10851	2,97509
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	950	697326	697726	400		0	0,55993	0,1639	2,97882
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	951	697746	698785	1039		0	0,53026	0,28174	2,89944
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	952	698865	699405	540		0	0,62894	0,83067	2,88368
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	953	699724	699864	140		0	0,46137	0,74948	2,76172
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	954	699924	700084	160		0	0,51696	0,393	2,91257
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	955	700144	700364	220		0	0,64815	0,50069	2,78287
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	956	700444	700624	180		0	0,51955	0,13927	2,80433
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	957	700704	700944	240		0	0,61006	0,71777	2,76164
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	958	700984	701304	320		0	0,46305	0,36375	2,82184
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	959	701343	701603	260		0	0,48758	0,75467	2,6851
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	960	701923	702183	260		0	0,4703	0,55797	2,81122
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	961	702203	702383	180		0	0,49475	0,78254	2,68195
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	962	702443	702583	140		0	0,50441	0,92501	2,78392
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	963	703282	703382	100		0	0,72404	0,07727	2,98174
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	964	703462	703562	100		0	0,52527	0,12507	2,92635
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	965	703602	704362	760		0	0,45336	0,15868	2,71481
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	966	704402	704622	220		0	0,57311	0,20009	2,70432
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	967	704662	705561	899		0	0,48454	0,15284	2,71922
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	968	705581	706980	1399		0	0,51329	0,12362	2,65091
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	969	707000	707240	240		0	0,45371	0,20654	2,59376
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	970	707260	707460	200		0	0,40496	0,30142	2,62466
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	971	707500	707580	80		0	0,49698	0,29566	2,65845
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	972	707620	709359	1739		0	0,49113	0,19727	2,69029
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	973	709399	710758	1359		0	0,49742	0,17102	2,65935
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	974	710818	711118	300		0	0,37857	0,0706	2,64048
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	975	711138	712777	1639		0	0,49025	0,13547	2,60579
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	976	712797	712937	140		0	0,50978	0,21798	2,62846
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	977	712957	713157	200		0	0,51141	0,31071	2,64613
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	978	713177	713356	180		0	0,50837	0,21892	2,71477
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	979	713376	714376	999		0	0,51238	0,29699	2,66723
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	980	714396	715475	1079		0	0,47399	0,1725	2,64697
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	981	715495	716135	640		0	0,51458	0,17277	2,64091
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	982	716155	719593	3438		0	0,52079	0,17071	2,61129
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	983	719693	720272	580		0	0,48224	0,2341	2,64769
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	984	720412	720612	200		0	0,6722	0,4306	2,66185
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	985	720652	720852	200		0	0,76701	0,28498	2,7925
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	986	720892	721032	140		0	0,60965	0,30626	2,55731
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	987	721192	721332	140		0	0,7112	0,34876	2,51946
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	988	721412	721532	120		0	0,60869	0,86171	2,74314
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	989	721672	721851	180		0	0,54054	0,90299	2,6967
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Partial	990	721911	722031	120		0	0,58807	0,91093	2,82363
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	991	722791	723251	460		0	0,54138	0,15299	2,68594
+Recording033	PilotA_PersonC_290720	Novice	Entire Recording	1	fullstream	Fixation	Whole	992	723291	723790	500		0	0,57296	0,07571	2,47537

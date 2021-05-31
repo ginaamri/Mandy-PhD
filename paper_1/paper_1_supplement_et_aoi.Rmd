@@ -319,29 +319,29 @@ view(et.table)
 
 #FIXATIONS
 # create a new column with name Total that gives the sum duration in msec of looking at all AOIs
-et.raw.data <- et.raw.data %>% mutate(total_fixations = sum(Total_duration_of_fixations))
+et.fix.data <- et.raw.data %>% mutate(total_fixations = sum(Total_duration_of_fixations))
 
 
 # create new columns that give proportion of the duration of looking at AOIs
 # relative duration divided by total duration is the proportion
-proportion.et.data <- et.raw.data %>% group_by(Group, AOI) %>% 
+proportion.et.data <- et.fix.data %>% group_by(Group, AOI) %>% 
                                       mutate(proportion_fixations = Total_duration_of_fixations/total_fixations)
 
 
 #VISITS
 # create a new column with name Total that gives the sum duration in msec of visits in AOIs
-et.raw.data <- et.raw.data %>% mutate(total_visits = sum(Total_duration_of_Visit))
+et.visit.data <- et.raw.data %>% mutate(total_visits = sum(Total_duration_of_Visit))
 
 
 # create new columns that give proportion of the duration of looking at AOIs
 # relative duration divided by total duration is the proportion
-proportion.et.data <- et.raw.data %>% group_by(Group, AOI) %>% 
-                                      mutate(proportion_visits = Total_duration_of_Visit/Total)
+proportion.et.data <- et.visit.data %>% group_by(Group, AOI) %>% 
+                                      mutate(proportion_visits = Total_duration_of_Visit/total_visits)
 
 
 
 ### Plot data TOTAL FIXATIONS
-total.fix.plot <- ggplot(et.raw.data, aes(x = AOI, y = Total_duration_of_fixations, fill = AOI)) +
+total.fix.plot <- ggplot(et.fix.data, aes(x = AOI, y = Total_duration_of_fixations, fill = AOI)) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
@@ -354,21 +354,21 @@ total.fix.plot <- ggplot(et.raw.data, aes(x = AOI, y = Total_duration_of_fixatio
 total.fix.plot
 
 
-### Plot data PROPORTIONS FIXATIONS
-prop.fix.plot <- ggplot(proportion.et.data, aes(x = AOI, y = proportion_fixations, fill = AOI)) +
-  scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
-  scale_x_discrete(guide = guide_axis(angle = 70)) +
-  geom_boxplot()+
-  facet_wrap(~ Group, nrow = 1)+
-  theme_light() +
-  theme(legend.position="none")+
-  labs(y = "Proportion of Looking at AOIs", x = "AOI")
-
-prop.fix.plot
+# ### Plot data PROPORTIONS FIXATIONS
+# prop.fix.plot <- ggplot(proportion.et.data, aes(x = AOI, y = proportion_fixations, fill = AOI)) +
+#   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
+#   scale_x_discrete(guide = guide_axis(angle = 70)) +
+#   geom_boxplot()+
+#   facet_wrap(~ Group, nrow = 1)+
+#   theme_light() +
+#   theme(legend.position="none")+
+#   labs(y = "Proportion of Looking at AOIs", x = "AOI")
+# 
+# prop.fix.plot
 
 
 ### Plot Number of Fixations
-number.plot <- ggplot(et.raw.data, aes(x = AOI, y = Number_of_fixations, fill = AOI)) +
+number.fix.plot <- ggplot(et.fix.data, aes(x = AOI, y = Number_of_fixations, fill = AOI)) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
@@ -383,7 +383,7 @@ number.fix.plot
 
 
 ### Plot data TOTAL VISITS
-total.visit.plot <- ggplot(et.raw.data, aes(x = AOI, y = Total_duration_of_Visit, fill = AOI)) +
+total.visit.plot <- ggplot(et.visit.data, aes(x = AOI, y = Total_duration_of_Visit, fill = AOI)) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
@@ -396,17 +396,32 @@ total.visit.plot <- ggplot(et.raw.data, aes(x = AOI, y = Total_duration_of_Visit
 total.visit.plot
 
 
-### Plot data PROPORTIONS VISITS
-prop.visit.plot <- ggplot(proportion.et.data, aes(x = AOI, y = proportion_visits, fill = AOI)) +
+### Plot Number of Saccades
+saccade.plot <- ggplot(et.fix.data, aes(x = AOI, y = Number_of_saccades_in_AOI, fill = AOI)) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
   scale_x_discrete(guide = guide_axis(angle = 70)) +
   geom_boxplot()+
+  geom_jitter(color="black", size=0.4, alpha=0.5) +
   facet_wrap(~ Group, nrow = 1)+
   theme_light() +
   theme(legend.position="none")+
-  labs(y = "Proportion of Visits in AOIs", x = "AOI")
+  labs(y = "Number of Saccades in AOI", x = "AOI")
 
-prop.visit.plot
+saccade.plot
+
+
+
+# ### Plot data PROPORTIONS VISITS
+# prop.visit.plot <- ggplot(proportion.et.data, aes(x = AOI, y = proportion_visits, fill = AOI)) +
+#   scale_y_continuous(breaks = scales::pretty_breaks(n = 10))+
+#   scale_x_discrete(guide = guide_axis(angle = 70)) +
+#   geom_boxplot()+
+#   facet_wrap(~ Group, nrow = 1)+
+#   theme_light() +
+#   theme(legend.position="none")+
+#   labs(y = "Proportion of Visits in AOIs", x = "AOI")
+# 
+# prop.visit.plot
 
 ```
 
