@@ -77,7 +77,8 @@ df_gri_comp$name <- factor(df_gri_comp$name,
                            )
                   
 
-ggplot(data = df_gri_comp,
+ggplot(data = filter(df_gri_comp,
+                     TOI != "Calibration phase"),
        mapping = aes(x = Group,
                      y = value
                      )

@@ -63,22 +63,23 @@ df_gri$Group <- as_factor(df_gri$Group)
 ```{r}
 
 df_gri_comp <- select(df_gri,
-                      !ID)
+                      !c(ID,`M Dur Fix`))
 
-df_gri_comp <- pivot_longer(data = df_gri,
-                            c("DurTOI","M Dur Fix","Number Fix",
+df_gri_comp <- pivot_longer(data = df_gri_comp,
+                            c("DurTOI","Number Fix",
                               "TimeTOI Dur","OldGRI","NewGRI","NewGRI_scale"))
 
 df_gri_comp$name <- factor(df_gri_comp$name,
-                           levels = c("DurTOI","M Dur Fix","Number Fix",
+                           levels = c("DurTOI","Number Fix",
                                       "TimeTOI Dur","OldGRI","NewGRI",
                                       "NewGRI_scale"),
-                           labels = c("Duration TOI","Total dur. of whole fixations (mean)",
+                           labels = c("Duration TOI",
                                       "Number of whole fixations","TimeTOI Dur","Old GRI","Adjusted GRI","Adjusted GRI (scaled)")
                            )
                   
 
-ggplot(data = df_gri_comp,
+ggplot(data = filter(df_gri_comp,
+                     TOI != "Calibration phase"),
        mapping = aes(x = Group,
                      y = value
                      )
@@ -124,6 +125,7 @@ ggplot(data = filter(df_gri_comp,
   facet_wrap(vars(name), 
              scale = "free")
 ```
+
 ## Novice vs. Expert (Asking Question)
 
 ```{r message=FALSE,warning=FALSE}
@@ -376,16 +378,36 @@ ggplot(data = filter(df_gri_comp,
 
 ```{r message=FALSE,warning=FALSE,}
 
-df_table <- tibble(Value = c("GRI","Adj. GRI","Adj. GRI (scale)"),
-                   Mean = c(mean(df_gri$OldGRI),mean(df_gri$NewGRI),mean(df_gri$NewGRI_scale)),
-                   SD = c(sd(df_gri$OldGRI),sd(df_gri$NewGRI),sd(df_gri$NewGRI_scale)),
-                   Median = c(median(df_gri$OldGRI),median(df_gri$NewGRI),median(df_gri$NewGRI_scale))
+df_gri_n <- filter(df_gri,
+                   Group == "Novice",
+                   TOI != "Calibration phase")
+
+df_table_n <- tibble(Value = c("GRI","Adj. GRI","Adj. GRI (scale)"),
+                   Mean = c(mean(df_gri_n$OldGRI),mean(df_gri_n$NewGRI),mean(df_gri_n$NewGRI_scale)),
+                   SD = c(sd(df_gri_n$OldGRI),sd(df_gri_n$NewGRI),sd(df_gri_n$NewGRI_scale)),
+                   Median = c(median(df_gri_n$OldGRI),median(df_gri_n$NewGRI),median(df_gri_n$NewGRI_scale))
+                   )
+
+df_gri_e <- filter(df_gri,
+                   Group == "Expert",
+                   TOI != "Calibration phase")
+
+df_table_e <- tibble(Value = c("GRI","Adj. GRI","Adj. GRI (scale)"),
+                   Mean = c(mean(df_gri_e$OldGRI),mean(df_gri_e$NewGRI),mean(df_gri_e$NewGRI_scale)),
+                   SD = c(sd(df_gri_e$OldGRI),sd(df_gri_e$NewGRI),sd(df_gri_e$NewGRI_scale)),
+                   Median = c(median(df_gri_e$OldGRI),median(df_gri_e$NewGRI),median(df_gri_e$NewGRI_scale))
                    )
 
 test_data <- rnorm(n = length(df_gri$OldGRI),
                    mean = 0)
 
-knitr::kable(df_table)
+
+
+knitr::kable(df_table_n,
+             caption = "Experts")
+
+knitr::kable(df_table_e,
+            caption = "Novice")
 
 ```
 
