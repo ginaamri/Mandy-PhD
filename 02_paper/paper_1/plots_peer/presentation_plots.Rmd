@@ -23,7 +23,8 @@ library(needs)
 needs(tidyverse,
       gridExtra,
       viridis,
-      ggthemes)
+      ggthemes,
+      RColorBrewer)
 
 # prepare data (selected from questionnaire data)
 df_gri <- read_delim("data/Aperol_pilot_glasses_raw_metrics_all_TOI.tsv", 
@@ -100,6 +101,26 @@ ggplot(data = filter(df_gri_comp,
              scale = "free")
 
 ```
+
+## Mean Duration
+
+```{r}
+group_by(.data = df_gri,
+         TOI) %>% summarise(`Mean Duration Fix`= mean(`M Dur Fix`)) %>%
+  ggplot(mapping = aes(x = TOI,
+                     y = `Mean Duration Fix`
+                     )
+         ) +
+  geom_bar(stat = "identity",
+           color = "black",
+           fill = "#EF8A62") +
+  theme_clean() +
+  theme(axis.text.x = element_text(angle = 45,
+                                   hjust = 1
+                                   )
+        )
+```
+
 
 ## Novice vs. Expert (Calibration)
 
