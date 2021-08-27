@@ -8,7 +8,9 @@ output: html_notebook
 ```{r}
 library(needs)
 needs(tidyverse,
-      psych)
+      psych,
+      ggthemes
+      )
 ```
 
 # Read Data sets
@@ -92,15 +94,41 @@ for (i in TOI_names) {
   df_cappa_dur$Duration_of_interval_RD[df_cappa_dur$TOI == i] <- val
 }
 
+# In seconds
+
+df_cappa_dur$Duration_of_interval_EH <- round(df_cappa_dur$Duration_of_interval_EH/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_dur$Duration_of_interval_RD <- round(df_cappa_dur$Duration_of_interval_RD/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_start$Start_of_interval_EH <- round(df_cappa_start$Start_of_interval_EH/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_start$Start_of_interval_RD <- round(df_cappa_start$Start_of_interval_RD/1000,
+                                              digits = 2
+                                             )
 ```
+
+#
+```{r}
+fun_1 <- function(x) {
+    y <- x
+    return(y)
+  }
+```
+
 
 # Reliabiltät
 
 ## Duration
 
 ```{r}
-cor.test(x = df_cappa_dur$Duration_of_interval_EH[df_cappa_dur$TOI != "Lesson"],
-     y = df_cappa_dur$Duration_of_interval_RD[df_cappa_dur$TOI != "Lesson"],
+cor.test(x = df_cappa_dur$Duration_of_interval_EH,
+     y = df_cappa_dur$Duration_of_interval_RD,
           method = "pearson")
 
 ICC(x = select(df_cappa_dur,
@@ -109,15 +137,32 @@ ICC(x = select(df_cappa_dur,
                )
     )
 
-plot(x = df_cappa_dur$Duration_of_interval_EH[df_cappa_dur != "Lesson"],
-     y = df_cappa_dur$Duration_of_interval_RD[df_cappa_dur != "Lesson"])
+# Lesson is significant longer and gives a biased view on the points.
+
+ggplot(data = filter(df_cappa_dur,
+                     TOI != "Lesson"),
+       mapping = aes(x = Duration_of_interval_RD,
+                     y = Duration_of_interval_EH
+                     )
+       ) +
+  geom_point(size = 2) +
+  geom_abline(intercept = 0,
+              slope = 1,
+              color = "red",
+              linetype = 3
+              ) +
+  labs(x = "Duration coded by RD",
+       y = "Duration coded by EH",
+       title = "Inter-coder reliability"
+       ) +
+  theme_minimal()
 ```
 
 ## Start
 
 ```{r}
-cor.test(x = df_cappa_start$Start_of_interval_EH[df_cappa_start$TOI != "Lesson"],
-     y = df_cappa_start$Start_of_interval_RD[df_cappa_start$TOI != "Lesson"],
+cor.test(x = df_cappa_start$Start_of_interval_EH,
+     y = df_cappa_start$Start_of_interval_RD,
           method = "pearson")
 
 ICC(x = select(df_cappa_start,
@@ -126,7 +171,22 @@ ICC(x = select(df_cappa_start,
                )
     )
 
-plot(x = df_cappa_start$Start_of_interval_EH[df_cappa_start != "Lesson"],
-     y = df_cappa_start$Start_of_interval_RD[df_cappa_start != "Lesson"])
+ggplot(data = filter(df_cappa_start,
+                     TOI != "Lesson"),
+       mapping = aes(x = Start_of_interval_RD,
+                     y = Start_of_interval_EH
+                     )
+       ) +
+  geom_point(size = 2) +
+  geom_abline(intercept = 0,
+              slope = 1,
+              color = "red",
+              linetype = 3
+              ) +
+  labs(x = "Start coded by RD",
+       y = "Start coded by EH",
+       title = "Inter-coder reliability"
+       ) +
+  theme_minimal()
 ```
 
