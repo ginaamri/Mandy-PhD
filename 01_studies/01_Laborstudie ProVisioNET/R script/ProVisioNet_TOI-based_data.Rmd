@@ -1,0 +1,132 @@
+---
+title: "TOI based ProVisioNet"
+output: html_notebook
+---
+
+# Packages
+
+```{r}
+library(needs)
+needs(tidyverse,
+      psych)
+```
+
+# Read Data sets
+
+```{r, include = FALSE}
+df_EH <- read_tsv(file = "data/03_03_EH_ProVisioNET_study_glasses Metrics_interval-based.tsv"
+                   )
+
+df_RD <- read_tsv(file = "data/03_03_RD_ProVisioNET_study_glasses Metrics_interval-based.tsv"
+                   )
+```
+
+# Data Wrangling
+
+```{r}
+df_EH <- df_EH %>% 
+  select(TOI, Duration_of_interval, Start_of_interval)
+
+df_RD <- df_RD %>% 
+  select(TOI, Duration_of_interval, Start_of_interval)
+
+# Start
+
+df_cappa_start <- matrix(ncol = 3,
+                         nrow = 8)
+
+colnames(df_cappa_start) <- c("TOI","Start_of_interval_EH","Start_of_interval_RD")
+
+df_cappa_start <- as_tibble(df_cappa_start)
+
+TOI_names <- c("Calibration_phase","Clicking_pen","Drumming_with_hands",
+               "Head_on_table","Heckling","Lesson","Snipping_with_fingers",
+               "Whispering")
+
+df_cappa_start$TOI <- TOI_names
+
+# EH Start TOI
+for (i in TOI_names) {
+  
+  val <- df_EH$Start_of_interval[df_EH == i]
+  
+  df_cappa_start$Start_of_interval_EH[df_cappa_start$TOI == i] <- val
+}
+
+# RD Start TOI
+for (i in TOI_names) {
+  
+  val <- df_RD$Start_of_interval[df_RD == i]
+  
+  df_cappa_start$Start_of_interval_RD[df_cappa_start$TOI == i] <- val
+}
+
+# Duration
+
+df_cappa_dur <- matrix(ncol = 3,
+                       nrow = 8)
+
+colnames(df_cappa_dur) <- c("TOI","Duration_of_interval_EH","Duration_of_interval_RD")
+
+df_cappa_dur <- as_tibble(df_cappa_dur)
+
+TOI_names <- c("Calibration_phase","Clicking_pen","Drumming_with_hands",
+               "Head_on_table","Heckling","Lesson","Snipping_with_fingers",
+               "Whispering")
+
+df_cappa_dur$TOI <- TOI_names
+
+# EH Duration TOI
+for (i in TOI_names) {
+  
+  val <- df_EH$Duration_of_interval[df_EH == i]
+  
+  df_cappa_dur$Duration_of_interval_EH[df_cappa_dur$TOI == i] <- val
+}
+
+# RD Duration TOI
+for (i in TOI_names) {
+  
+  val <- df_RD$Duration_of_interval[df_RD == i]
+  
+  df_cappa_dur$Duration_of_interval_RD[df_cappa_dur$TOI == i] <- val
+}
+
+```
+
+# Reliabiltät
+
+## Duration
+
+```{r}
+cor.test(x = df_cappa_dur$Duration_of_interval_EH[df_cappa_dur$TOI != "Lesson"],
+     y = df_cappa_dur$Duration_of_interval_RD[df_cappa_dur$TOI != "Lesson"],
+          method = "pearson")
+
+ICC(x = select(df_cappa_dur,
+               Duration_of_interval_EH,
+               Duration_of_interval_RD
+               )
+    )
+
+plot(x = df_cappa_dur$Duration_of_interval_EH[df_cappa_dur != "Lesson"],
+     y = df_cappa_dur$Duration_of_interval_RD[df_cappa_dur != "Lesson"])
+```
+
+## Start
+
+```{r}
+cor.test(x = df_cappa_start$Start_of_interval_EH[df_cappa_start$TOI != "Lesson"],
+     y = df_cappa_start$Start_of_interval_RD[df_cappa_start$TOI != "Lesson"],
+          method = "pearson")
+
+ICC(x = select(df_cappa_start,
+               Start_of_interval_EH,
+               Start_of_interval_RD
+               )
+    )
+
+plot(x = df_cappa_start$Start_of_interval_EH[df_cappa_start != "Lesson"],
+     y = df_cappa_start$Start_of_interval_RD[df_cappa_start != "Lesson"])
+```
+
