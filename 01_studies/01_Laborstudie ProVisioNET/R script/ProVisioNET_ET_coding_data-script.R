@@ -96,5 +96,21 @@ r2 <- r2 %>% filter(AOI != "Board_Screen",
                     AOI != "students_material")
 r2
 
+# merge two data frames --> adding Columns
+
+r3 <- merge(r1, r2)
+
+# build a subset that contains the two AOI hit variables  
+data_icc <- subset(r3, select = c(AOI_hit_r1, AOI_hit_r2))
+
+# calculate the ICC for two raters with new subset
+ICC(data_icc)
+
+
+
+
+
+
+
 
 

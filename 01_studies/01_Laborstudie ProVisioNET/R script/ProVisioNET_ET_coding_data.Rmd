@@ -189,6 +189,8 @@ The coding of the teacher's responses to scripted events is also done as event s
 To analyze gaze points in the AOIs, areas relevant to the research question must be defined in the Tobii Pro Lab software. For how AOIs are set and manually coded, see Supplement 5 Coding with AOIs.
 
 
+
+
 #########################################
 
 ## Data analysis
