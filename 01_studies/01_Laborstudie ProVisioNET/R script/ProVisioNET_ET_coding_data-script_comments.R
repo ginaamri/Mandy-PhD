@@ -22,7 +22,8 @@ needs(tidyverse,
       papaja,
       psych,
       moments,
-      sjPlot)
+      sjPlot,
+      DescTools)
 
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
