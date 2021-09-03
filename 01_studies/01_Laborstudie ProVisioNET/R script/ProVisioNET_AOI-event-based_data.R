@@ -10,7 +10,6 @@ if (!require(psych)) install.packages('psych'); library(psych) # stats
 if (!require(moments)) install.packages('moments'); library(moments) # skewness & kurtosis
 if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysis of a scale or index
 if (!require(DescTools)) install.packages('DescTools'); library(DescTools) # cohens kappa
-if (!require(irr)) install.packages('irr'); library(irr) # Various Coefficients of Interrater Reliability and Agreement
 
 
 # suppress "summarize" info. 
@@ -86,35 +85,25 @@ r2_filter <- r2_aggr %>% filter(AOI != "Board_Screen",
                     AOI != "students_material")
 r2_filter
 
-# merge two data frames --> adding Columns, don't forget to merge BY AOI !
+# merge two data frames --> adding Columns
 
-r3 <- merge(r1_filter, r2_filter, by = 'AOI')
-
-
-#################### Percentage Agreement ##############################
-
-# create a new df with only the ratings 
-r3_agree <- r3 %>% select(Hit_count.x, Hit_count.y)
-
-# function agree() with a tolerance
-agree(r3_agree, tolerance=50)
-
-#################### CohenKappa ##############################
-
-# first, create a xtab and specify who is rater1 and rater2
-ratertab <- xtabs(~r3$Hit_count.x + r3$Hit_count.y)
-ratertab
-
-# now you can calculate CohenKappa
-CohenKappa(ratertab)
+r3 <- merge(r1_filter, r2_filter)
 
 
-#################### ICC ##############################
+
+
 
 # build a subset that contains the two AOI hit variables  
-data_icc <- subset(r3, select = c(Hit_count.x, Hit_count.y))
+data_icc <- subset(r3, select = c(AOI_hit_r1, AOI_hit_r2))
 
 # calculate the ICC for two raters with new subset
 ICC(data_icc)
+
+
+
+
+
+
+
 
 
