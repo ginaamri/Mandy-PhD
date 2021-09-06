@@ -34,17 +34,29 @@ r1 <- na.omit(r1)
 r2 <-read_excel ("./data/coding_expertise_visual_engagement_FP.xlsx")
 
 
-# merge two data frames --> adding Columns, don't forget to merge BY AOI !
+################## DATA WRANGLING ################
 
-r3 <- merge(r1, r2, by = 'AOI')
+# different number of variables in r1 and r2 --> select all variables in r2 till 986
+r2new <- r2[c(1:986)]
 
-#################### Percentage Agreement ##############################
+# merge two data frames vertically with rbind
+r3 <- rbind(r1, r2new)
 
-# create a new df with only the ratings 
-r3_agree <- r3 %>% select(Hit_count.x, Hit_count.y)
+# add a new column to differentiate rater1 and rater2 in wide format
+r3$Added_Column <- c("rater1", "rater2")
 
-# function agree() with a tolerance
-agree(r3_agree, tolerance=50)
+#rename column
+r3 <- r3 %>% rename(rater = Added_Column)
+
+# relocate the column to the first place
+r3 <- r3 %>% relocate(rater)
+
+# create a new df r3 with only the ratings 
+r3 <- r3[-c(2:3)]
+
+# wide to long format
+r3_long <- gather(r3, timestamp, value, 2:985)
+
 
 #################### CohenKappa ##############################
 
@@ -54,12 +66,3 @@ ratertab
 
 # now you can calculate CohenKappa
 CohenKappa(ratertab)
-
-
-#################### ICC ##############################
-
-# build a subset that contains the two AOI hit variables  
-data_icc <- subset(r3, select = c(Hit_count.x, Hit_count.y))
-
-# calculate the ICC for two raters with new subset
-ICC(data_icc)
