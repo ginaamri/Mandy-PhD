@@ -60,10 +60,14 @@ r3_long <- gather(r3, timestamp, value, 2:985)
 r3_long_wide <- pivot_wider(r3_long,
                             names_from = rater)
 
+# create again a new df r3 with only the ratings 
+r3_long_wide <- r3_long_wide[c(2:3)]
+
+
 #################### CohenKappa ##############################
 
 # first, create a xtab and specify who is rater1 and rater2
-ratertab <- xtabs(~r3$Hit_count.x + r3$Hit_count.y)
+ratertab <- xtabs(~r3_long_wide$rater1 + r3_long_wide$rater2)
 ratertab
 
 # now you can calculate CohenKappa
