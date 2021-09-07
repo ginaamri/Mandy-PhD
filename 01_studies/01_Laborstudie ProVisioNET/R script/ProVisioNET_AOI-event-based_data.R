@@ -9,6 +9,8 @@ if (!require(papaja)) install.packages("papaja"); library(papaja)
 if (!require(psych)) install.packages('psych'); library(psych) # stats
 if (!require(moments)) install.packages('moments'); library(moments) # skewness & kurtosis
 if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysis of a scale or index
+if (!require(DescTools)) install.packages('DescTools'); library(DescTools) # cohens kappa
+
 
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
@@ -34,19 +36,12 @@ r1 <- r1 %>% select(AOI, Hit_proportion)
 r1 <- na.omit(r1)
 
 # round Hit_proportion to 1
-options(digits = 0)              
+r1$Hit_proportion <- round(r1$Hit_proportion,
+                           digits = 0)
 
-#aggregate data by AOI
-r1 <- aggregate(r1,
-                by = list(r1$AOI),
-                FUN = length)
-
-# select only one row and rename columns 
-r1 <- r1 %>% select (Group.1, Hit_proportion) %>%
-              rename(AOI = Group.1,
-                     AOI_hit_r1 = Hit_proportion)  
-    
-r1
+# group data by AOI and summarise Hit_prop
+r1_aggr <- group_by(.data = r1,
+                    AOI) %>% summarise(Hit_count = length(Hit_proportion))
 
 ################## RATER 2 ################
 
@@ -65,40 +60,38 @@ r2 <- r2 %>% select(AOI, Hit_proportion)
 r2 <- na.omit(r2)
 
 # round Hit_proportion to 1
-options(digits = 0)              
+r2$Hit_proportion <- round(r2$Hit_proportion,
+                           digits = 0)
 
-#aggregate data by AOI
-r2 <- aggregate(r2,
-                by = list(r2$AOI),
-                FUN = length)
+# group data by AOI and summarise Hit_prop
+r2_aggr <- group_by(.data = r2,
+                    AOI) %>% summarise(Hit_count = length(Hit_proportion))
 
-# select only one row and rename columns 
-r2 <- r2 %>% select (Group.1, Hit_proportion) %>%
-  rename(AOI = Group.1,
-         AOI_hit_r2 = Hit_proportion)  
-
-r2
 
 
 ###### filter only for identical rows for both rater
 
-r1 <- r1 %>% filter(AOI != "Board_Screen",
+r1_filter <- r1_aggr %>% filter(AOI != "Board_Screen",
                     AOI != "Disruptive_Person,students_material", 
                     AOI != "Material",
                     AOI != "students_material")
 
-r1
+r1_filter
 
-r2 <- r2 %>% filter(AOI != "Board_Screen",
+r2_filter <- r2_aggr %>% filter(AOI != "Board_Screen",
                     AOI != "Anna,Bianca,Disruptive_Person",
                     AOI != "Disruptive_Person,students_material", 
                     AOI != "Material",
                     AOI != "students_material")
-r2
+r2_filter
 
 # merge two data frames --> adding Columns
 
-r3 <- merge(r1, r2)
+r3 <- merge(r1_filter, r2_filter)
+
+
+
+
 
 # build a subset that contains the two AOI hit variables  
 data_icc <- subset(r3, select = c(AOI_hit_r1, AOI_hit_r2))
