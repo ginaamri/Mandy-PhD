@@ -57,6 +57,8 @@ r3 <- r3[-c(2:3)]
 # wide to long format
 r3_long <- gather(r3, timestamp, value, 2:985)
 
+r3_long_wide <- pivot_wider(r3_long,
+                            names_from = rater)
 
 #################### CohenKappa ##############################
 
