@@ -1,0 +1,197 @@
+---
+title: "TOI based ProVisioNet"
+output: html_notebook
+---
+
+# Packages
+
+```{r}
+if(!"devtools" %in% rownames(installed.packages())) install.packages("devtools")
+if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
+if (!require(papaja)) install.packages("papaja"); library(papaja)
+if (!require(psych)) install.packages('psych'); library(psych) # stats
+if (!require(moments)) install.packages('moments'); library(moments) # skewness & kurtosis
+if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysis of a scale or index
+if (!require(DescTools)) install.packages('DescTools'); library(DescTools) # cohens kappa
+if (!require(irr)) install.packages('irr'); library(irr) # Various Coefficients of Interrater Reliability and Agreement
+if (!require(readxl)) install.packages('readxl'); library(readxl) # read in excel files
+
+```
+
+# Read Data sets
+
+```{r, include = FALSE}
+df_AP <- read_tsv(file = "data/01_01_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv"
+                   )
+
+df_MK <- read_tsv(file = "data/01_01_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv"
+                   )
+```
+
+# Data Wrangling
+
+```{r}
+df_AP <- df_AP %>% 
+  select(TOI, Duration_of_interval, Start_of_interval)
+
+df_MK <- df_MK %>% 
+  select(TOI, Duration_of_interval, Start_of_interval)
+
+# Start
+
+df_cappa_start <- matrix(ncol = 3,
+                         nrow = 8)
+
+colnames(df_cappa_start) <- c("TOI","Start_of_interval_EH","Start_of_interval_RD")
+
+df_cappa_start <- as_tibble(df_cappa_start)
+
+TOI_names <- c("Calibration_phase","Clicking_pen","Drumming_with_hands",
+               "Head_on_table","Heckling","Lesson","Snipping_with_fingers",
+               "Whispering")
+
+df_cappa_start$TOI <- TOI_names
+
+# AP Start TOI
+for (i in TOI_names) {
+  
+  val <- df_AP$Start_of_interval[df_AP == i]
+  
+  df_cappa_start$Start_of_interval_AP[df_cappa_start$TOI == i] <- val
+}
+
+# MK Start TOI
+for (i in TOI_names) {
+  
+  val <- df_MK$Start_of_interval[df_MK == i]
+  
+  df_cappa_start$Start_of_interval_MK[df_cappa_start$TOI == i] <- val
+}
+
+# Duration
+
+df_cappa_dur <- matrix(ncol = 3,
+                       nrow = 8)
+
+colnames(df_cappa_dur) <- c("TOI","Duration_of_interval_EH","Duration_of_interval_RD")
+
+df_cappa_dur <- as_tibble(df_cappa_dur)
+
+TOI_names <- c("Calibration_phase","Clicking_pen","Drumming_with_hands",
+               "Head_on_table","Heckling","Lesson","Snipping_with_fingers",
+               "Whispering")
+
+df_cappa_dur$TOI <- TOI_names
+
+# AP Duration TOI
+for (i in TOI_names) {
+  
+  val <- df_AP$Duration_of_interval[df_AP == i]
+  
+  df_cappa_dur$Duration_of_interval_AP[df_cappa_dur$TOI == i] <- val
+}
+
+# MK Duration TOI
+for (i in TOI_names) {
+  
+  val <- df_MK$Duration_of_interval[df_MK == i]
+  
+  df_cappa_dur$Duration_of_interval_MK[df_cappa_dur$TOI == i] <- val
+}
+
+# In seconds
+
+df_cappa_dur$Duration_of_interval_AP <- round(df_cappa_dur$Duration_of_interval_AP/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_dur$Duration_of_interval_MK <- round(df_cappa_dur$Duration_of_interval_MK/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_start$Start_of_interval_AP <- round(df_cappa_start$Start_of_interval_AP/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_start$Start_of_interval_MK <- round(df_cappa_start$Start_of_interval_MK/1000,
+                                              digits = 2
+                                             )
+```
+
+#
+```{r}
+fun_1 <- function(x) {
+    y <- x
+    return(y)
+  }
+```
+
+
+# Reliabiltät
+
+## Duration
+
+```{r}
+cor.test(x = df_cappa_dur$Duration_of_interval_AP,
+     y = df_cappa_dur$Duration_of_interval_MK,
+          method = "pearson")
+
+ICC(x = select(df_cappa_dur,
+               Duration_of_interval_AP,
+               Duration_of_interval_MK
+               )
+    )
+
+# Lesson is significant longer and gives a biased view on the points.
+
+ggplot(data = filter(df_cappa_dur,
+                     TOI != "Lesson"),
+       mapping = aes(x = Duration_of_interval_AP,
+                     y = Duration_of_interval_MK
+                     )
+       ) +
+  geom_point(size = 2) +
+  geom_abline(intercept = 0,
+              slope = 1,
+              color = "red",
+              linetype = 3
+              ) +
+  labs(x = "Duration coded by AP",
+       y = "Duration coded by MK",
+       title = "Inter-coder reliability"
+       ) +
+  theme_minimal()
+```
+
+## Start
+
+```{r}
+cor.test(x = df_cappa_start$Start_of_interval_AP,
+     y = df_cappa_start$Start_of_interval_MK,
+          method = "pearson")
+
+ICC(x = select(df_cappa_start,
+               Start_of_interval_AP,
+               Start_of_interval_MK
+               )
+    )
+
+ggplot(data = filter(df_cappa_start,
+                     TOI != "Lesson"),
+       mapping = aes(x = Start_of_interval_AP,
+                     y = Start_of_interval_MK
+                     )
+       ) +
+  geom_point(size = 2) +
+  geom_abline(intercept = 0,
+              slope = 1,
+              color = "red",
+              linetype = 3
+              ) +
+  labs(x = "Start coded by AP",
+       y = "Start coded by MK",
+       title = "Inter-coder reliability"
+       ) +
+  theme_minimal()
+```
+
