@@ -1,15 +1,14 @@
 ### ProVisioNET pilot data 
 #### intercoder reli eye tracking data 01_01
 
-if(!"devtools" %in% rownames(installed.packages())) install.packages("devtools")
-if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
-if (!require(papaja)) install.packages("papaja"); library(papaja)
-if (!require(psych)) install.packages('psych'); library(psych) # stats
-if (!require(moments)) install.packages('moments'); library(moments) # skewness & kurtosis
-if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysis of a scale or index
-if (!require(DescTools)) install.packages('DescTools'); library(DescTools) # cohens kappa
-if (!require(irr)) install.packages('irr'); library(irr) # Various Coefficients of Interrater Reliability and Agreement
-if (!require(readxl)) install.packages('readxl'); library(readxl) # read in excel files
+library(needs)
+needs(tidyverse,
+      psych,
+      moments,
+      sjPlot,
+      DescTools,
+      irr,
+      readxl)
 
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
@@ -54,13 +53,67 @@ reaction_MK <- reaction_MK %>%
 
 # filter only for event TOIs 
 reaction_AP <- reaction_AP %>% 
-  filter(TOI == "Chatting_with_neighbour",
-         TOI == "Clicking_pen", 
-         TOI == "Drawing", 
-         TOI == "Drumming_with_hands", 
-         TOI == "Head_on_table", 
-         TOI == "Heckling",
-         TOI == "Looking_at_phone",
-         TOI == "Snipping_with_fingers",
+  filter(TOI == "Chatting_with_neighbour"|
+         TOI == "Clicking_pen"| 
+         TOI == "Drawing"|
+         TOI == "Drumming_with_hands"| 
+         TOI == "Head_on_table"| 
+         TOI == "Heckling"|
+         TOI == "Looking_at_phone" |
+         TOI == "Snipping_with_fingers"|
          TOI == "Whispering"
          )
+
+reaction_MK <- reaction_MK %>% 
+  filter(TOI == "Chatting_with_neighbour"|
+           TOI == "Clicking_pen"| 
+           TOI == "Drawing"|
+           TOI == "Drumming_with_hands"| 
+           TOI == "Head_on_table"| 
+           TOI == "Heckling"|
+           TOI == "Looking_at_phone" |
+           TOI == "Snipping_with_fingers"|
+           TOI == "Whispering"
+  )
+
+# compute "rowise" sum across multiple columns but instead of typing column names, use tidy selection syntax
+# for AP
+reaction_AP <- reaction_AP %>%
+  rowwise() %>%
+  mutate(Time_to_first_Reaction = sum(c_across(cols = contains("Time_to")),
+                                      na.rm = T)) %>%
+  ungroup() %>%
+  select(TOI, Time_to_first_Reaction)
+
+# replace 0 with NA
+# for AP
+reaction_AP$Time_to_first_Reaction[reaction_AP$Time_to_first_Reaction == 0] <- NA
+
+# do it again for MK
+reaction_MK <- reaction_MK %>%
+  rowwise() %>%
+  mutate(Time_to_first_Reaction = sum(c_across(cols = contains("Time_to")),
+                                      na.rm = T)) %>%
+  ungroup() %>%
+  select(TOI, Time_to_first_Reaction)
+
+# replace 0 with NA
+# for MK
+reaction_MK$Time_to_first_Reaction[reaction_MK$Time_to_first_Reaction == 0] <- NA
+
+# combine the two rater data frames
+reaction_complete <- left_join(x = reaction_AP, 
+                               y = reaction_MK,
+                               by = "TOI")
+
+# ICC
+cor.test(x = reaction_complete$Time_to_first_Reaction.x,
+         y = reaction_complete$Time_to_first_Reaction.y,
+         method = "pearson")
+
+ICC(x = select(reaction_complete,
+               Time_to_first_Reaction.x,
+               Time_to_first_Reaction.y
+)
+)
+
