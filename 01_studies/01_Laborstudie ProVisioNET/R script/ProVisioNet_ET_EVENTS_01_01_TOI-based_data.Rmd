@@ -23,7 +23,7 @@ df_AP_01 <- read_tsv(file = "data/01_01_AP_ProVisioNET_study_glasses_Metrics_Int
 
 df_MK_01 <- read_tsv(file = "data/01_01_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
-df_AP_02 <- read_tsv(file = "data/02_02_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
+# df_AP_02 <- read_tsv(file = "data/02_02_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
 df_MK_02 <- read_tsv(file = "data/02_02_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 ```
@@ -82,6 +82,35 @@ df_cappa_dur$Duration_of_interval_MK_01 <- round(df_cappa_dur$Duration_of_interv
                                               )
 
 ```
+
+Erstellen von TOI_class
+```{r}
+df_cappa_dur$TOI_class[df_cappa_dur$TOI == "Calibration_phase"] <- "Calibration_phase"
+
+df_cappa_dur$TOI_class[df_cappa_dur$TOI == "Chatting_with_neighbour" |
+                         df_cappa_dur$TOI == "Heckling" |
+                         df_cappa_dur$TOI == "Whispering"] <- "Verbal_disruption"
+
+df_cappa_dur$TOI_class[df_cappa_dur$TOI == "Head_on_table" |
+                         df_cappa_dur$TOI == "Looking_at_phone" |
+                         df_cappa_dur$TOI == "Drawing"] <- "lack_of_eagerness"
+
+df_cappa_dur$TOI_class[df_cappa_dur$TOI == "Lesson"] <- "Lesson"
+
+df_cappa_dur$TOI_class[is.na(df_cappa_dur$TOI_class)] <- "Agitation"
+
+df_cappa_dur$TOI_class <- as_factor(df_cappa_dur$TOI_class)
+
+df_cappa_dur_aggr <- df_cappa_dur %>%
+  group_by(TOI_class) %>%
+  summarise(Duration_mean_AP = mean(Duration_of_interval_AP_01),
+            Duration_mean_MK = mean(Duration_of_interval_MK_01)
+            )
+
+
+```
+
+
 
 #
 ```{r}
