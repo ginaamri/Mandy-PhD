@@ -23,9 +23,6 @@ df_AP_01 <- read_tsv(file = "data/01_01_AP_ProVisioNET_study_glasses_Metrics_Int
 
 df_MK_01 <- read_tsv(file = "data/01_01_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
-# df_AP_02 <- read_tsv(file = "data/02_02_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
-
-# df_MK_02 <- read_tsv(file = "data/02_02_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
 df_AP_04 <- read_tsv(file = "data/04_04_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
@@ -131,6 +128,11 @@ df_cappa_dur_aggr <- df_cappa_dur %>%
             Duration_mean_MK_04 = mean(Duration_of_interval_MK_04)
             )
 
+# long format for plotting
+dur_event_long  <- df_cappa_dur_aggr %>% gather(TOI, Duration)
+
+
+
 
 # In seconds
 
@@ -153,87 +155,3 @@ df_cappa_dur_aggr$Duration_mean_MK_04 <- round(df_cappa_dur_aggr$Duration_mean_M
 
 
 ```
-
-
-
-#
-```{r}
-fun_1 <- function(x) {
-    y <- x
-    return(y)
-  }
-```
-
-
-# Reliabiltät
-
-## Duration
-
-```{r}
-cor.test(x = df_cappa_dur$Duration_of_interval_AP,
-     y = df_cappa_dur$Duration_of_interval_MK,
-          method = "pearson")
-
-ICC(x = select(df_cappa_dur,
-               Duration_of_interval_AP,
-               Duration_of_interval_MK
-               )
-    )
-
-# Lesson is significant longer and gives a biased view on the points.
-
-ggplot(data = filter(df_cappa_dur,
-                     TOI != "Lesson"),
-       mapping = aes(x = Duration_of_interval_AP,
-                     y = Duration_of_interval_MK
-                     )
-       ) +
-  geom_point(size = 2) +
-  geom_text(mapping = aes(label = TOI)
-            ) +
-  geom_abline(intercept = 0,
-              slope = 1,
-              color = "red",
-              linetype = 3
-              ) +
-  labs(x = "Duration coded by AP",
-       y = "Duration coded by MK",
-       title = "Inter-coder reliability"
-       ) +
-  theme_minimal()
-```
-
-## Start
-
-```{r}
-cor.test(x = df_cappa_start$Start_of_interval_AP,
-     y = df_cappa_start$Start_of_interval_MK,
-          method = "pearson")
-
-ICC(x = select(df_cappa_start,
-               Start_of_interval_AP,
-               Start_of_interval_MK
-               )
-    )
-
-ggplot(data = filter(df_cappa_start,
-                     TOI != "Lesson"),
-       mapping = aes(x = Start_of_interval_AP,
-                     y = Start_of_interval_MK
-                     )
-       ) +
-  geom_point(size = 2) +
-  geom_text(mapping = aes(label = TOI)
-            ) +
-  geom_abline(intercept = 0,
-              slope = 1,
-              color = "red",
-              linetype = 3
-              ) +
-  labs(x = "Start coded by AP",
-       y = "Start coded by MK",
-       title = "Inter-coder reliability"
-       ) +
-  theme_minimal()
-```
-
