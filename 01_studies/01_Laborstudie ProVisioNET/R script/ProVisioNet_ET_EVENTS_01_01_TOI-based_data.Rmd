@@ -23,9 +23,11 @@ df_AP_01 <- read_tsv(file = "data/01_01_AP_ProVisioNET_study_glasses_Metrics_Int
 
 df_MK_01 <- read_tsv(file = "data/01_01_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
-# df_AP_02 <- read_tsv(file = "data/02_02_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
-df_MK_02 <- read_tsv(file = "data/02_02_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
+df_AP_04 <- read_tsv(file = "data/04_04_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
+
+df_MK_04 <- read_tsv(file = "data/04_04_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
+
 ```
 
 # Data Wrangling
@@ -36,6 +38,18 @@ df_AP_01 <- df_AP_01 %>%
   select(TOI, Duration_of_interval)
 
 df_MK_01 <- df_MK_01 %>% 
+  select(TOI, Duration_of_interval)
+
+# df_AP_02 <- df_AP_02 %>% 
+#   select(TOI, Duration_of_interval)
+# 
+# df_MK_02 <- df_MK_02 %>% 
+#   select(TOI, Duration_of_interval)
+
+df_AP_04 <- df_AP_04 %>% 
+  select(TOI, Duration_of_interval)
+
+df_MK_04 <- df_MK_04 %>% 
   select(TOI, Duration_of_interval)
 
 
@@ -54,7 +68,7 @@ TOI_names <- c("Calibration_phase","Chatting_with_neighbour", "Clicking_pen","Dr
 
 df_cappa_dur$TOI <- TOI_names
 
-# AP Duration TOI
+# AP_01 Duration TOI
 for (i in TOI_names) {
   
   val <- df_AP_01$Duration_of_interval[df_AP_01 == i]
@@ -62,7 +76,7 @@ for (i in TOI_names) {
   df_cappa_dur$Duration_of_interval_AP_01[df_cappa_dur$TOI == i] <- val
 }
 
-# MK Duration TOI
+# MK_01 Duration TOI
 for (i in TOI_names) {
   
   val <- df_MK_01$Duration_of_interval[df_MK_01 == i]
@@ -70,16 +84,21 @@ for (i in TOI_names) {
   df_cappa_dur$Duration_of_interval_MK_01[df_cappa_dur$TOI == i] <- val
 }
 
+# AP_04 Duration TOI
+for (i in TOI_names) {
+  
+  val <- df_AP_04$Duration_of_interval[df_AP_04 == i]
+  
+  df_cappa_dur$Duration_of_interval_AP_04[df_cappa_dur$TOI == i] <- val
+}
 
-# In seconds
-
-df_cappa_dur$Duration_of_interval_AP_01 <- round(df_cappa_dur$Duration_of_interval_AP_01/1000,
-                                              digits = 2
-                                              )
-
-df_cappa_dur$Duration_of_interval_MK_01 <- round(df_cappa_dur$Duration_of_interval_MK_01/1000,
-                                              digits = 2
-                                              )
+# MK_04 Duration TOI
+for (i in TOI_names) {
+  
+  val <- df_MK_04$Duration_of_interval[df_MK_04 == i]
+  
+  df_cappa_dur$Duration_of_interval_MK_04[df_cappa_dur$TOI == i] <- val
+}
 
 ```
 
@@ -93,7 +112,7 @@ df_cappa_dur$TOI_class[df_cappa_dur$TOI == "Chatting_with_neighbour" |
 
 df_cappa_dur$TOI_class[df_cappa_dur$TOI == "Head_on_table" |
                          df_cappa_dur$TOI == "Looking_at_phone" |
-                         df_cappa_dur$TOI == "Drawing"] <- "lack_of_eagerness"
+                         df_cappa_dur$TOI == "Drawing"] <- "Lack_of_eagerness"
 
 df_cappa_dur$TOI_class[df_cappa_dur$TOI == "Lesson"] <- "Lesson"
 
@@ -103,93 +122,36 @@ df_cappa_dur$TOI_class <- as_factor(df_cappa_dur$TOI_class)
 
 df_cappa_dur_aggr <- df_cappa_dur %>%
   group_by(TOI_class) %>%
-  summarise(Duration_mean_AP = mean(Duration_of_interval_AP_01),
-            Duration_mean_MK = mean(Duration_of_interval_MK_01)
+  summarise(Duration_mean_AP_01 = mean(Duration_of_interval_AP_01),
+            Duration_mean_MK_01 = mean(Duration_of_interval_MK_01),
+            Duration_mean_AP_04 = mean(Duration_of_interval_AP_04),
+            Duration_mean_MK_04 = mean(Duration_of_interval_MK_04)
             )
 
+# long format for plotting
+dur_event_long  <- df_cappa_dur_aggr %>% gather(TOI, Duration)
+
+
+
+
+# In seconds
+
+df_cappa_dur_aggr$Duration_mean_AP_01 <- round(df_cappa_dur_aggr$Duration_mean_AP_01/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_dur_aggr$Duration_mean_MK_01 <- round(df_cappa_dur_aggr$Duration_mean_MK_01/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_dur_aggr$Duration_mean_AP_04 <- round(df_cappa_dur_aggr$Duration_mean_AP_04/1000,
+                                              digits = 2
+                                              )
+
+df_cappa_dur_aggr$Duration_mean_MK_04 <- round(df_cappa_dur_aggr$Duration_mean_MK_04/1000,
+                                              digits = 2
+                                              )
+
+
 
 ```
-
-
-
-#
-```{r}
-fun_1 <- function(x) {
-    y <- x
-    return(y)
-  }
-```
-
-
-# Reliabiltät
-
-## Duration
-
-```{r}
-cor.test(x = df_cappa_dur$Duration_of_interval_AP,
-     y = df_cappa_dur$Duration_of_interval_MK,
-          method = "pearson")
-
-ICC(x = select(df_cappa_dur,
-               Duration_of_interval_AP,
-               Duration_of_interval_MK
-               )
-    )
-
-# Lesson is significant longer and gives a biased view on the points.
-
-ggplot(data = filter(df_cappa_dur,
-                     TOI != "Lesson"),
-       mapping = aes(x = Duration_of_interval_AP,
-                     y = Duration_of_interval_MK
-                     )
-       ) +
-  geom_point(size = 2) +
-  geom_text(mapping = aes(label = TOI)
-            ) +
-  geom_abline(intercept = 0,
-              slope = 1,
-              color = "red",
-              linetype = 3
-              ) +
-  labs(x = "Duration coded by AP",
-       y = "Duration coded by MK",
-       title = "Inter-coder reliability"
-       ) +
-  theme_minimal()
-```
-
-## Start
-
-```{r}
-cor.test(x = df_cappa_start$Start_of_interval_AP,
-     y = df_cappa_start$Start_of_interval_MK,
-          method = "pearson")
-
-ICC(x = select(df_cappa_start,
-               Start_of_interval_AP,
-               Start_of_interval_MK
-               )
-    )
-
-ggplot(data = filter(df_cappa_start,
-                     TOI != "Lesson"),
-       mapping = aes(x = Start_of_interval_AP,
-                     y = Start_of_interval_MK
-                     )
-       ) +
-  geom_point(size = 2) +
-  geom_text(mapping = aes(label = TOI)
-            ) +
-  geom_abline(intercept = 0,
-              slope = 1,
-              color = "red",
-              linetype = 3
-              ) +
-  labs(x = "Start coded by AP",
-       y = "Start coded by MK",
-       title = "Inter-coder reliability"
-       ) +
-  theme_minimal()
-```
-

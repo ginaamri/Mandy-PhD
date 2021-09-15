@@ -2,16 +2,15 @@
 #### intercoder reli eye tracking data 03_03
 
 
-# if a package is not installed on the current machine, it will install it
-if(!"devtools" %in% rownames(installed.packages())) install.packages("devtools")
-if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
-if (!require(papaja)) install.packages("papaja"); library(papaja)
-if (!require(psych)) install.packages('psych'); library(psych) # stats
-if (!require(moments)) install.packages('moments'); library(moments) # skewness & kurtosis
-if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysis of a scale or index
-if (!require(DescTools)) install.packages('DescTools'); library(DescTools) # cohens kappa
-if (!require(irr)) install.packages('irr'); library(irr) # Various Coefficients of Interrater Reliability and Agreement
-
+# install.packages
+library(needs)
+needs(tidyverse,
+      psych,
+      moments,
+      sjPlot,
+      DescTools,
+      irr,
+      readxl)
 
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
