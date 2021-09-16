@@ -16,8 +16,6 @@ needs(tidyverse,
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
 options(dplyr.summarise.inform = FALSE)
 
-r_refs("r-references.bib")
-
 
 ################## RATER 1 ################
 

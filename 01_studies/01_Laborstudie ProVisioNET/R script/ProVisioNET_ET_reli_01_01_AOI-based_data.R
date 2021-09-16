@@ -16,8 +16,6 @@ needs(tidyverse,
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
 options(dplyr.summarise.inform = FALSE)
 
-r_refs("r-references.bib")
-
 
 ################## RATER 1 ################
 
@@ -28,20 +26,8 @@ coding_data_r1 <-read_tsv ("./data/01_01_AP_ProVisioNET_study_glasses_Metrics_Ev
 # filter only rows lesson
 r1 <- coding_data_r1 %>% filter(TOI == "Lesson")
 
-# select variable AOI + Hit_proportion
-r1 <- r1 %>% select(AOI, Hit_proportion)
-
-
-#delete NAs
-r1 <- na.omit(r1)
-
-# round Hit_proportion to 1
-r1$Hit_proportion <- round(r1$Hit_proportion,
-                           digits = 0)
-
-# group data by AOI and summarise Hit_prop
-r1_aggr <- group_by(.data = r1,
-                    AOI) %>% summarise(Hit_count = length(Hit_proportion))
+# select relevant variables 
+r1 <- r1 %>% select(EventIndex, AOI)
 
 ################## RATER 2 ################
 
@@ -52,54 +38,39 @@ coding_data_r2 <-read_tsv ("./data/01_01_MK_ProVisioNET_study_glasses_Metrics_Ev
 # filter only rows lesson
 r2 <- coding_data_r2 %>% filter(TOI == "Lesson")
 
-# select variable AOI + Hit_proportion
-r2 <- r2 %>% select(AOI, Hit_proportion)
+# select relevant variables
+r2 <- r2 %>% select(EventIndex, AOI)
+
+#rename values in row Material = Teacher_Material
+r2$AOI[r2$AOI == "Material_Teacher"] <- "Material"
 
 
-#delete NAs
-r2 <- na.omit(r2)
+###### filter identical row number
 
-# round Hit_proportion to 1
-r2$Hit_proportion <- round(r2$Hit_proportion,
-                           digits = 0)
+r1 <- r1 %>% filter(EventIndex != 1728,
+                    EventIndex != 1729,
+                    EventIndex != 1730,
+                    EventIndex != 1731)
 
-# group data by AOI and summarise Hit_prop
-r2_aggr <- group_by(.data = r2,
-                    AOI) %>% summarise(Hit_count = length(Hit_proportion))
+r1
 
-
-# ###### filter only for identical rows for both rater
-# 
-# r1_filter <- r1_aggr %>% filter(AOI != "Board_Screen",
-#                                 AOI != "Disruptive_Person,students_material", 
-#                                 AOI != "Material",
-#                                 AOI != "students_material")
-# 
-# r1_filter
-# 
-# r2_filter <- r2_aggr %>% filter(AOI != "Board_Screen",
-#                                 AOI != "Anna,Bianca,Disruptive_Person",
-#                                 AOI != "Disruptive_Person,students_material", 
-#                                 AOI != "Material",
-#                                 AOI != "students_material")
-# r2_filter
 
 # merge two data frames --> adding Columns, don't forget to merge BY AOI !
 
-r3 <- merge(r1_aggr, r2_aggr, by = 'AOI')
+r3 <- left_join(r1, r2, by = 'EventIndex')
 
 #################### Percentage Agreement ##############################
 
 # create a new df with only the ratings 
-r3_agree <- r3 %>% select(Hit_count.x, Hit_count.y)
+r3_agree <- r3 %>% select(AOI.x, AOI.y)
 
 # function agree() with a tolerance
-agree(r3_agree, tolerance=50)
+agree(r3_agree)
 
 #################### CohenKappa ##############################
 
 # first, create a xtab and specify who is rater1 and rater2
-ratertab <- xtabs(~r3$Hit_count.x + r3$Hit_count.y)
+ratertab <- xtabs(~r3$AOI.x + r3$AOI.y)
 ratertab
 
 # now you can calculate CohenKappa
