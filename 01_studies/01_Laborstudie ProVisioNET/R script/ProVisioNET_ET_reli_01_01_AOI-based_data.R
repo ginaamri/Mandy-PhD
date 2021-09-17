@@ -59,6 +59,15 @@ r1
 
 r3 <- left_join(r1, r2, by = 'EventIndex')
 
+
+#compare AOI.x and AOI.y and output results to new column titled rating_compare
+r3$rating_compare <- as.numeric(r3$AOI.x == r3$AOI.y)
+
+# replace NA with 0 
+r3 <- r3 %>%
+   mutate_all(~replace(., is.na(.), 0))
+
+
 #################### Percentage Agreement ##############################
 
 # create a new df with only the ratings 
@@ -69,8 +78,19 @@ agree(r3_agree)
 
 #################### CohenKappa ##############################
 
-# first, create a xtab and specify who is rater1 and rater2
-ratertab <- xtabs(~r3$AOI.x + r3$AOI.y)
+# create a new variable with rater1
+r3$rater1 <- ifelse(r3$rating_compare>0,"1", "0")
+
+# create a new variable with rater2
+r3$rater2 <- ifelse(r3$rater1<0,"0", "1")
+
+
+# create a new df with only the ratings 
+r3 <- r3 %>% select(rater1, rater2)
+
+
+# create a xtab and specify who is rater1 and rater2
+ratertab <- xtabs(~r3$rater1 + r3$rater2)
 ratertab
 
 # now you can calculate CohenKappa
