@@ -78,6 +78,20 @@ agree(r3_agree)
 
 #################### CohenKappa ##############################
 
+r3_kappa <- select(r3,
+                   AOI.x, AOI.y) 
+
+r3_kappa <- as_factor(r3_kappa)
+
+r3_kappa$AOI.x <- as_factor(r3_kappa$AOI.x)
+
+r3_kappa$AOI.y <- as_factor(r3_kappa$AOI.y)
+
+psych::cohen.kappa(x = as.matrix(r3_kappa))
+
+
+
+
 # create a new variable with rater1
 r3$rater1 <- ifelse(r3$rating_compare>0,"1", "0")
 
