@@ -2,13 +2,12 @@
 #### intercoder reli eye tracking data 01_01
 
 
-# if a package is not installed on the current machine, it will install it
+# install needed packages
 library(needs)
 needs(tidyverse,
       psych,
       moments,
       sjPlot,
-      DescTools,
       irr,
       readxl)
 
