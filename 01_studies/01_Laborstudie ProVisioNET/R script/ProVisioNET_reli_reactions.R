@@ -9,7 +9,8 @@ needs(tidyverse,
       moments,
       sjPlot,
       irr,
-      readxl)
+      readxl, 
+      DescTool)
 
 
 # suppress "summarize" info. 
@@ -29,7 +30,7 @@ r1 <-read_excel ("./data/coding_reactions_CW_ohne_Abstufung.xlsx")
 r2 <-read_excel ("./data/coding_reactions_LK_ohne_Abstufung.xlsx")
 
 
-################## DATA WRANGLING ################
+################## DATA WRANGLING video 01 ################
 
 # filter relevant rows and select relevant columns 
 r1_v1 <- r1 %>% filter(script == "01") %>%
@@ -50,43 +51,82 @@ r2_long$value <- as.numeric(r2_long$value)
 
 
 # merge two data frames vertically
-r3 <- merge(r1_long, r2_long, by="reaction")
+r3 <- bind_cols(r1_long$value, r2_long$value) %>%
+         rename(rating1 = ...1, 
+                rating2 = ...2)
 
-
-# select only value 
-r3 <- select(r3, value.x, value.y)
 
 # compare for rating for video 01
-# filter only rows lesson
-
-
 # add a new column to differentiate rater1 and rater2 in wide format
-r3$Added_Column <- c("rater1", "rater2")
-
+# r3$Added_Column <- c("rater1", "rater2")
 #rename column
-r3 <- r3 %>% rename(rater = Added_Column)
-
+# r3 <- r3 %>% rename(rater = Added_Column)
 # relocate the column to the first place
-r3 <- r3 %>% relocate(rater)
-
+# r3 <- r3 %>% relocate(rater)
 # create a new df r3 with only the ratings 
-r3 <- r3[-c(2:3)]
+# r3 <- r3[-c(2:3)]
 
-# wide to long format
-r3_long <- gather(r3, timestamp, value, 2:985)
+# # wide to long format
+# r3_long <- gather(r3, timestamp, value, 2:985)
+# 
+# r3_long_wide <- pivot_wider(r3_long,
+#                             names_from = rater)
+# 
+# # create again a new df r3 with only the ratings 
+# r3_long_wide <- r3_long_wide[c(2:3)]
 
-r3_long_wide <- pivot_wider(r3_long,
-                            names_from = rater)
 
-# create again a new df r3 with only the ratings 
-r3_long_wide <- r3_long_wide[c(2:3)]
-
-
-#################### CohenKappa ##############################
+#################### CohenKappa video 01 ##############################
 
 # first, create a xtab and specify who is rater1 and rater2
-ratertab <- xtabs(~r3_long_wide$rater1 + r3_long_wide$rater2)
+ratertab <- xtabs(~r3$rating1 + r3$rating2)
 ratertab
 
 # now you can calculate CohenKappa
 CohenKappa(ratertab)
+
+
+
+
+
+################## DATA WRANGLING video 02 03 04 ################
+
+# filter relevant rows and select relevant columns 
+r1_v234 <- r1 %>% filter(script != "01") %>%
+   select(,4:17)
+
+r2_v234 <- r2 %>% filter(script != "01") %>%
+   select(,4:17)
+
+
+# reshape data frame in long format 
+r1_v234_long <- gather(r1_v234, reaction, value)
+
+r2_v234_long <- gather(r2_v234, reaction, value)
+
+r1_v234_long$value <- as.numeric(r1_v234_long$value)
+
+r2_v234_long$value <- as.numeric(r2_v234_long$value)
+
+
+# merge two data frames vertically
+r3_v234 <- bind_cols(r1_v234_long$value, r2_v234_long$value) %>%
+            rename (rating1 = ...1,
+                    rating2 = ...2)
+
+#################### CohenKappa video 02 03 04 ##############################
+
+# first, create a xtab and specify who is rater1 and rater2
+ratertab <- xtabs(~r3_v234$rating1 + r3_v234$rating2)
+ratertab
+
+# now you can calculate CohenKappa
+CohenKappa(ratertab)
+
+
+
+
+
+
+
+
