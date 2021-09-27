@@ -31,8 +31,34 @@ r2 <-read_excel ("./data/coding_reactions_LK_ohne_Abstufung.xlsx")
 
 ################## DATA WRANGLING ################
 
-# merge two data frames vertically with rbind
-r3 <- rbind(r1, r2)
+# filter relevant rows and select relevant columns 
+r1_v1 <- r1 %>% filter(script == "01") %>%
+               select(,4:17)
+
+r2_v1 <- r2 %>% filter(script == "01") %>%
+   select(,4:17)
+
+
+# reshape data frame in long format 
+r1_long <- gather(r1_v1, reaction, value)
+
+r2_long <- gather(r2_v1, reaction, value)
+
+r1_long$value <- as.numeric(r1_long$value)
+
+r2_long$value <- as.numeric(r2_long$value)
+
+
+# merge two data frames vertically
+r3 <- merge(r1_long, r2_long, by="reaction")
+
+
+# select only value 
+r3 <- select(r3, value.x, value.y)
+
+# compare for rating for video 01
+# filter only rows lesson
+
 
 # add a new column to differentiate rater1 and rater2 in wide format
 r3$Added_Column <- c("rater1", "rater2")
