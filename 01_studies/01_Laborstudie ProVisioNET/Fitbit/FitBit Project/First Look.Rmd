@@ -16,93 +16,183 @@ needs(tidyverse,
       viridis,
       grid,
       gridExtra,
-      cowplot)
+      cowplot,
+      readxl,
+      ARTofR)
 ```
 
 
 # Data 
 
-```{r, message=FALSE, include=FALSE}
-m101 <- read_csv(file = "Data/101_m.csv")
-m102 <- read_csv(file = "Data/102_m.csv")
-m103 <- read_csv(file = "Data/103_m.csv")
-m104 <- read_csv(file = "Data/104_m.csv")
-m105 <- read_csv(file = "Data/105_m.csv")
+```{r, message=FALSE, include=FALSE, error=FALSE}
+part <- read_xlsx(path = "Data/Heart Rate.xlsx")
 
-p101 <- read_csv(file = "Data/101_p.csv")
-p102 <- read_csv(file = "Data/102_p.csv")
-p103 <- read_csv(file = "Data/103_p.csv")
-p104 <- read_csv(file = "Data/104_p.csv")
-p105 <- read_csv(file = "Data/105_p.csv")
+#...............................................................................
+#                                                                              .
+#  Enter the missing cases in Heart Rate table below.                                       .
+#                                                                              .
+#...............................................................................
 
-a101 <- read_csv(file = "Data/101_a.csv")
-a102 <- read_csv(file = "Data/102_a.csv")
-a103 <- read_csv(file = "Data/103_a.csv")
-a104 <- read_csv(file = "Data/104_a.csv")
-a105 <- read_csv(file = "Data/105_a.csv")
+part <- filter(part,
+              `ID participant` != 201 # |
+              #`ID participant` != | etc.
+              )
 
-z <- ls()
+part <- part$`ID participant`
+
+for (i in part) {
+  nam <- paste("m", i, sep = "")
+  assign(x = nam, 
+         value = read_csv(file = paste("Data/", i, "_m.csv", sep = ""
+                                       )
+                          )
+         ) 
+}
+
+for (i in part) {
+  nam <- paste("a", i, sep = "")
+  assign(x = nam, 
+         value = read_csv(file = paste("Data/", i, "_a.csv", sep = ""
+                                       )
+                          )
+         ) 
+}
+
+for (i in part) {
+  nam <- paste("p", i, sep = "")
+  assign(x = nam, 
+         value = read_csv(file = paste("Data/", i, "_p.csv", sep = ""
+                                       )
+                          )
+         ) 
+}
+
+# m101 <- read_csv(file = "Data/101_m.csv")
+# m102 <- read_csv(file = "Data/102_m.csv")
+# m103 <- read_csv(file = "Data/103_m.csv")
+# m104 <- read_csv(file = "Data/104_m.csv")
+# m105 <- read_csv(file = "Data/105_m.csv")
+# 
+# p101 <- read_csv(file = "Data/101_p.csv")
+# p102 <- read_csv(file = "Data/102_p.csv")
+# p103 <- read_csv(file = "Data/103_p.csv")
+# p104 <- read_csv(file = "Data/104_p.csv")
+# p105 <- read_csv(file = "Data/105_p.csv")
+# 
+# a101 <- read_csv(file = "Data/101_a.csv")
+# a102 <- read_csv(file = "Data/102_a.csv")
+# a103 <- read_csv(file = "Data/103_a.csv")
+# a104 <- read_csv(file = "Data/104_a.csv")
+# a105 <- read_csv(file = "Data/105_a.csv")
+
+# z <- ls()
 
 ```
 
 # Change Time to seconds
 
 ```{r}
-m101$Time <- m101$Time - min(m101$Time)
-m102$Time <- m102$Time - min(m102$Time)
-m103$Time <- m103$Time - min(m103$Time)
-m104$Time <- m104$Time - min(m104$Time)
-m105$Time <- m105$Time - min(m105$Time)
+for (i in part) {
+  nam <- paste0("m", i)
+  value <- get(nam)$Time - min(get(nam)$Time)
+  `Heart Rate` <- get(nam)$`Heart Rate`
+  df <- tibble(Time = value,
+               `Heart Rate` = `Heart Rate`,
+               ID = i
+               )
+  assign(paste0("m", i), df)
+}
 
-p101$Time <- p101$Time - min(p101$Time)
-p102$Time <- p102$Time - min(p102$Time)
-p103$Time <- p103$Time - min(p103$Time)
-p104$Time <- p104$Time - min(p104$Time)
-p105$Time <- p105$Time - min(p105$Time)
+for (i in part) {
+  nam <- paste0("a", i)
+  value <- get(nam)$Time - min(get(nam)$Time)
+  `Heart Rate` <- get(nam)$`Heart Rate`
+  df <- tibble(Time = value,
+               `Heart Rate` = `Heart Rate`,
+               ID = i
+               )
+  assign(paste0("a", i), df)
+}
 
-a101$Time <- a101$Time - min(a101$Time)
-a102$Time <- a102$Time - min(a102$Time)
-a103$Time <- a103$Time - min(a103$Time)
-a104$Time <- a104$Time - min(a104$Time)
-a105$Time <- a105$Time - min(a105$Time)
+for (i in part) {
+  nam <- paste0("p", i)
+  value <- get(nam)$Time - min(get(nam)$Time)
+  `Heart Rate` <- get(nam)$`Heart Rate`
+  df <- tibble(Time = value,
+               `Heart Rate` = `Heart Rate`,
+               ID = i
+               )
+  assign(paste0("p", i), df)
+}
+
+# m101$Time <- m101$Time - min(m101$Time)
+# m102$Time <- m102$Time - min(m102$Time)
+# m103$Time <- m103$Time - min(m103$Time)
+# m104$Time <- m104$Time - min(m104$Time)
+# m105$Time <- m105$Time - min(m105$Time)
+# 
+# p101$Time <- p101$Time - min(p101$Time)
+# p102$Time <- p102$Time - min(p102$Time)
+# p103$Time <- p103$Time - min(p103$Time)
+# p104$Time <- p104$Time - min(p104$Time)
+# p105$Time <- p105$Time - min(p105$Time)
+# 
+# a101$Time <- a101$Time - min(a101$Time)
+# a102$Time <- a102$Time - min(a102$Time)
+# a103$Time <- a103$Time - min(a103$Time)
+# a104$Time <- a104$Time - min(a104$Time)
+# a105$Time <- a105$Time - min(a105$Time)
 ```
 
 # ID
 
 ```{r}
-m101$ID <- 101
-p101$ID <- 101
-a101$ID <- 101
-
-m102$ID <- 102
-p102$ID <- 102
-a102$ID <- 102
-
-m103$ID <- 103
-p103$ID <- 103
-a103$ID <- 103
-
-m104$ID <- 104
-p104$ID <- 104
-a104$ID <- 104
-
-m105$ID <- 105
-p105$ID <- 105
-a105$ID <- 105
+# m101$ID <- 101
+# p101$ID <- 101
+# a101$ID <- 101
+# 
+# m102$ID <- 102
+# p102$ID <- 102
+# a102$ID <- 102
+# 
+# m103$ID <- 103
+# p103$ID <- 103
+# a103$ID <- 103
+# 
+# m104$ID <- 104
+# p104$ID <- 104
+# a104$ID <- 104
+# 
+# m105$ID <- 105
+# p105$ID <- 105
+# a105$ID <- 105
 
 ```
 
 # Join Data Frames
 
 ```{r}
-df_main <- bind_rows(m101, m102, m103, m104, m105)
+rm(part)
+rm(nam)
+rm(`Heart Rate`)
+rm(i)
+rm(value)
+rm(df)
 
-df_prior <- bind_rows(p101, p102, p103, p104, p105)
+df_main <- 
+  mget(ls(pattern = "m")) %>%
+  bind_rows()
 
-df_after <- bind_rows(a101, a102, a103, a104, a105)
+df_prior <- 
+  mget(ls(pattern = "p")) %>%
+  bind_rows()
 
-rm(list = as.character(z))
-rm(z)
+df_after <- 
+  mget(ls(pattern = "a")) %>%
+  bind_rows()
+
+#rm(list = as.character(z))
+#rm(z)
 ```
 
 # Plots
@@ -175,7 +265,7 @@ ggplot(data = df_aggr,
                      y = mean
                      )
        ) +
-  geom_boxplot() +
+  geom_boxplot(aes(group = Type)) +
   geom_point(size = 2,
              position = position_jitter(seed = 1, 
                                         width = 0.1
@@ -215,5 +305,37 @@ ggsave(plot = plot_fitbit,
        width = 20,
        units = "cm"
        )
+```
+
+# Steps
+
+## Data
+```{r}
+df_steps <- read_xlsx(path = "Data/Heart Rate.xlsx")
+```
+
+```{r}
+df_steps <- df_steps %>%
+  transmute(ID = as.numeric(`ID participant`),
+            Steps = Diff
+            )
+
+df_steps$type <- ifelse(df_steps$ID < 200, 
+                        "Novice",
+                        "Advanced"
+                        )
+```
+
+```{r}
+df_aggr_main <- df_aggr %>%
+  ungroup() %>%
+  filter(Type == "Main") %>%
+  select(ID, mean)
+
+df_aggr_main$ID <- as.numeric(df_aggr_main$ID)
+
+df_steps <- full_join(x = df_aggr_main,
+                      y = df_steps,
+                      key = ID)
 ```
 
