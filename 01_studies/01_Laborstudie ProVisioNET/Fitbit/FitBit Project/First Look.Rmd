@@ -34,7 +34,7 @@ part <- read_xlsx(path = "Data/Heart Rate.xlsx")
 #...............................................................................
 
 part <- filter(part,
-              `ID participant` != 201 # |
+              `ID participant` != 108 # |
               #`ID participant` != | etc.
               )
 
@@ -211,21 +211,40 @@ df_all <- df_all %>%
          ID = as_factor(ID)
          )
 
+#df_all$Time <- scale(df_all$Time)
+
 df_aggr <- df_all %>%
   group_by(Type, ID) %>%
   summarise(mean = mean(`Heart Rate`))
+
+
+df_all$status <- if_else(as.numeric(as.character(df_all$ID)) < 200,
+                         "novice",
+                         "advanced") 
+
+df_all_min <- df_all %>% 
+  group_by(ID) %>% 
+  summarise(min = max(Time))
+
 ```
 
 ## Flow
 
 ```{r}
 plot_flow <-
-ggplot(data = df_all,
-       mapping = aes(x = Time,
+ggplot(data = df_all %>% 
+         #filter(ID == "101") %>%
+         arrange(Time),
+       mapping = aes(x = as.numeric(Time),
                      y = `Heart Rate`
                      )
        ) +
-  geom_line(mapping = aes(color = ID)) +
+#  geom_path(mapping = aes(color = ID),
+#            size = 0.4,
+#            alpha = 0.6) +
+  geom_smooth(mapping = aes(color = ID),
+              method = "loess") +
+  xlim(0,min(df_all_min$min)) +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
   labs(x = "Time (in Seconds)",
@@ -234,7 +253,8 @@ ggplot(data = df_all,
   theme(text = element_text(family = "serif"),
         legend.position = "none",
         strip.text = element_text(size = 16)) +
-  facet_grid(cols = vars(Type))
+  facet_grid(cols = vars(Type),
+             scales = "free_x")
 
 plot_flow_leg <-
 ggplot(data = df_all,
@@ -242,7 +262,9 @@ ggplot(data = df_all,
                      y = `Heart Rate`
                      )
        ) +
-  geom_line(mapping = aes(color = ID)) +
+ # geom_line(mapping = aes(color = ID)) +
+  geom_smooth(mapping = aes(color = ID),
+              method = "loess") +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
   labs(x = "Time (in Seconds)",
@@ -316,7 +338,7 @@ df_steps <- read_xlsx(path = "Data/Heart Rate.xlsx")
 
 ```{r}
 df_steps <- df_steps %>%
-  transmute(ID = as.numeric(`ID participant`),
+  transmute(ID = as.numeric(as.character(df_steps$`ID participant`)),
             Steps = Diff
             )
 
@@ -327,15 +349,50 @@ df_steps$type <- ifelse(df_steps$ID < 200,
 ```
 
 ```{r}
-df_aggr_main <- df_aggr %>%
+df_aggr_main <- df_aggr %>% mutate(ID = as.numeric(as.character(ID)),
+                                      ) %>%
   ungroup() %>%
   filter(Type == "Main") %>%
   select(ID, mean)
 
-df_aggr_main$ID <- as.numeric(df_aggr_main$ID)
+#df_aggr_main$ID <- as.numeric(df_aggr_main$ID)
 
 df_steps <- full_join(x = df_aggr_main,
                       y = df_steps,
                       key = ID)
+```
+```{r}
+df_steps$mean <- scale(df_steps$mean)
+df_steps$Steps <- scale(df_steps$Steps)
+
+plot_scatter <-
+ggplot(data = df_steps,
+       mapping = aes(x = Steps,
+                     y = mean)
+       ) +
+    geom_smooth(mapping = aes(color = type),
+              method = "lm",
+              se = F) +
+  geom_point(mapping = aes(shape = type),
+             alpha = 0.6,
+             size = 2.5) +
+  scale_color_viridis_d(option = "A",
+                       end = 0.8,
+                       begin = 0.3
+                       ) +
+  labs(x = "Steps\n(z-standardized)",
+       y = "Mean Heart Rate\n(z-standardized)"
+       ) +
+  theme_minimal() +
+  theme(text = element_text(family = "serif"),
+        legend.title = element_blank(),
+        )
+ 
+ggsave(plot = plot_scatter,
+       filename = "Plots/scatter.pdf",
+       height = 5,
+       width = 7,
+       units = "in")
+
 ```
 
