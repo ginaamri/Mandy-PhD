@@ -96,7 +96,7 @@ for (i in part) {
   nam <- paste0("m", i)
   value <- get(nam)$Time - min(get(nam)$Time)
   `Heart Rate` <- get(nam)$`Heart Rate`
-  df <- tibble(Time = value,
+  df <- tibble(Time = as.numeric(value),
                `Heart Rate` = `Heart Rate`,
                ID = i
                )
@@ -107,7 +107,7 @@ for (i in part) {
   nam <- paste0("a", i)
   value <- get(nam)$Time - min(get(nam)$Time)
   `Heart Rate` <- get(nam)$`Heart Rate`
-  df <- tibble(Time = value,
+  df <- tibble(Time = as.numeric(value),
                `Heart Rate` = `Heart Rate`,
                ID = i
                )
@@ -118,7 +118,7 @@ for (i in part) {
   nam <- paste0("p", i)
   value <- get(nam)$Time - min(get(nam)$Time)
   `Heart Rate` <- get(nam)$`Heart Rate`
-  df <- tibble(Time = value,
+  df <- tibble(Time = as.numeric(value),
                `Heart Rate` = `Heart Rate`,
                ID = i
                )
@@ -206,44 +206,47 @@ df_prior$Type <- "Pre"
 
 df_all <- bind_rows(df_prior, df_main, df_after)
 
-df_all <- df_all %>% 
-  mutate(Type = as_factor(Type),
-         ID = as_factor(ID)
-         )
+#df_all <- df_all %>%
+#  mutate(Type = as_factor(Type),
+#         ID = as_factor(ID),
+#         Time = as.numeric(Time)
+#         )
 
 #df_all$Time <- scale(df_all$Time)
 
-df_aggr <- df_all %>%
-  group_by(Type, ID) %>%
-  summarise(mean = mean(`Heart Rate`))
+ df_aggr <- df_all %>%
+   group_by(Type, ID) %>%
+   summarise(mean = mean(`Heart Rate`))
 
 
-df_all$status <- if_else(as.numeric(as.character(df_all$ID)) < 200,
-                         "novice",
-                         "advanced") 
+ df_all$status <- if_else(as.numeric(as.character(df_all$ID)) < 200,
+                          "novice",
+                          "advanced")
 
-df_all_min <- df_all %>% 
-  group_by(ID) %>% 
-  summarise(min = max(Time))
+ df_all_min <- df_all %>%
+ group_by(ID) %>%
+   summarise(min = max(Time))
 
 ```
 
 ## Flow
 
 ```{r}
-plot_flow <-
-ggplot(data = df_all %>% 
-         #filter(ID == "101") %>%
-         arrange(Time),
+#plot_flow <-
+ggplot(data = filter(df_all),
        mapping = aes(x = as.numeric(Time),
                      y = `Heart Rate`
                      )
        ) +
-#  geom_path(mapping = aes(color = ID),
-#            size = 0.4,
-#            alpha = 0.6) +
-  geom_smooth(mapping = aes(color = ID),
-              method = "loess") +
+  geom_path(mapping = aes(color = as_factor(ID)),
+            size = 0.4,
+            alpha = 0.4) +
+  stat_smooth(geom = "line",
+              mapping = aes(color = as.factor(ID)),
+              method = "loess",
+              se = FALSE,
+              alpha = 0.9,
+              linetype = 2) +
   xlim(0,min(df_all_min$min)) +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
