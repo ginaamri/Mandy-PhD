@@ -468,6 +468,33 @@ ggplot(data = filter(df_all),
 <h2>Boxplots</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdF9ib3ggPC0gXG5nZ3Bsb3QoZGF0YSA9IGRmX2FnZ3IsXG4gICAgICAgbWFwcGluZyA9IGFlcyh4ID0gVHlwZSxcbiAgICAgICAgICAgICAgICAgICAgIHkgPSBtZWFuLFxuICAgICAgICAgICAgICAgICAgICAgY29sb3IgPSBhc19mYWN0b3IoSUQpXG4gICAgICAgICAgICAgICAgICAgICApXG4gICAgICAgKSArXG4gIGdlb21fYm94cGxvdChjb2xvciA9IFwiZGFya2dyZXlcIixcbiAgICAgICAgICAgICAgIGZpbGwgPSBcImdyZXlcIixcbiAgICAgICAgICAgICAgIGFscGhhID0gMC42KSArXG4gIGdlb21fbGluZShtYXBwaW5nID0gYWVzKGdyb3VwID0gYXNfZmFjdG9yKElEKSkpICtcbiAgZ2VvbV9wb2ludChzaXplID0gMikgK1xuICBsYWJzKHggPSBcIlwiLFxuICAgICAgIHkgPSBcIkF2ZXJhZ2UgSGVhcnQgUmF0ZVxcbihpbiBCZWF0cyBwZXIgTWludXRlKVwiKSArXG4gIHNjYWxlX2NvbG9yX3ZpcmlkaXNfZChvcHRpb24gPSBcIkFcIixcbiAgICAgICAgICAgICAgICAgICAgICAgZW5kID0gMC44KSArXG4gIHRoZW1lX21pbmltYWwoKSArXG4gIHRoZW1lKHRleHQgPSBlbGVtZW50X3RleHQoZmFtaWx5ID0gXCJzZXJpZlwiKSxcbiAgICAgICAgc3RyaXAudGV4dCA9IGVsZW1lbnRfYmxhbmsoKSxcbiAgICAgICAgbGVnZW5kLnBvc2l0aW9uID0gXCJub25lXCIsXG4gICAgICAgIGF4aXMudGV4dC54ID0gZWxlbWVudF9ibGFuaygpXG4gICAgICAgICkgK1xuICBhZXMoZmlsbCA9IFR5cGUpXG5cbnBsb3RfYm94XG5gYGAifQ== -->
+<pre class="r"><code>plot_box &lt;- 
+ggplot(data = df_aggr,
+       mapping = aes(x = Type,
+                     y = mean,
+                     color = as_factor(ID)
+                     )
+       ) +
+  geom_boxplot(color = &quot;darkgrey&quot;,
+               fill = &quot;grey&quot;,
+               alpha = 0.6) +
+  geom_line(mapping = aes(group = as_factor(ID))) +
+  geom_point(size = 2) +
+  labs(x = &quot;&quot;,
+       y = &quot;Average Heart Rate\n(in Beats per Minute)&quot;) +
+  scale_color_viridis_d(option = &quot;A&quot;,
+                       end = 0.8) +
+  theme_minimal() +
+  theme(text = element_text(family = &quot;serif&quot;),
+        strip.text = element_blank(),
+        legend.position = &quot;none&quot;,
+        axis.text.x = element_blank()
+        ) +
+  aes(fill = Type)
+
+plot_box</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
