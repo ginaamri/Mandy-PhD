@@ -129,9 +129,6 @@ df_p <-
 df_a <- 
   mget(ls(pattern = "a")) %>%
   bind_rows()
-
-#rm(list = as.character(z))
-#rm(z)
 ```
 
 # Plots
@@ -151,10 +148,8 @@ df_all <- df_all %>%
          ID = as_factor(ID)
          )
 
-#df_all$Time <- scale(df_all$Time)
-
 df_aggr <- df_all %>%
-  group_by(Type, ID) %>%
+  group_by(Type, ID, status) %>%
   summarise(mean = mean(`Heart Rate`))
 
 
@@ -177,17 +172,16 @@ ggplot(data = filter(df_all),
                      y = `Heart Rate`
                      )
        ) +
-  geom_path(mapping = aes(color = as_factor(ID)),
-            size = 0.4,
-            alpha = 0.6) +
-  # stat_smooth(geom = "line",
-  #             mapping = aes(color = as.factor(ID)),
-  #             method = "loess",
-  #             se = FALSE,
-  #             linetype = 2) +
-  xlim(0,min(df_all_min$min)) +
+  geom_line(mapping = aes(color = as_factor(ID),
+                          linetype = as_factor(status)
+                          ),
+            size = 0.3,
+            alpha = 0.7
+            ) +
+  xlim(0, min(df_all_min$min)) +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
+  scale_linetype_manual(values = c(1, 6)) +
   labs(x = "Time (in Seconds)",
        y = "Heart Rate\n(in Beats per Minute)") +
   theme_minimal() +
@@ -203,11 +197,13 @@ ggplot(data = df_all,
                      y = `Heart Rate`
                      )
        ) +
- # geom_line(mapping = aes(color = ID)) +
-  geom_smooth(mapping = aes(color = as_factor(ID)),
+  geom_smooth(mapping = aes(color = as_factor(ID),
+                            linetype = as_factor(status)
+                            ),
               method = "loess") +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
+  scale_linetype_manual(values = c(1, 6)) +
   labs(x = "Time (in Seconds)",
        y = "Heart Rate\n(in Beats per Minute)") +
   theme_minimal() +
@@ -223,16 +219,16 @@ ggplot(data = filter(df_all),
                      y = `Heart Rate`
                      )
        ) +
-  # geom_path(mapping = aes(color = as_factor(ID)),
-  #           size = 0.4,
-  #           alpha = 0.4) +
   stat_smooth(geom = "line",
-              mapping = aes(color = as.factor(ID)),
+              mapping = aes(color = as.factor(ID),
+                            linetype = as_factor(status)
+                            ),
               method = "loess",
               se = FALSE) +
   xlim(0,min(df_all_min$min)) +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
+  scale_linetype_manual(values = c(1, 6)) +
   labs(x = "Time (in Seconds)",
        y = "Heart Rate\n(in Beats per Minute)") +
   theme_minimal() +
@@ -259,7 +255,22 @@ ggplot(data = df_aggr,
   geom_boxplot(color = "darkgrey",
                fill = "grey",
                alpha = 0.6) +
-  geom_line(mapping = aes(group = as_factor(ID))) +
+  geom_line(data = filter(df_aggr,
+                          status == "novice"),
+            mapping = aes(x = Type,
+                          y = mean,
+                          group = as_factor(ID)
+                          ),
+            linetype = 1
+            ) +
+  geom_line(data = filter(df_aggr,
+                          status == "advanced"),
+            mapping = aes(x = Type,
+                          y = mean,
+                          group = as_factor(ID)
+                          ),
+            linetype = 6
+            ) +
   geom_point(size = 2) +
   labs(x = "",
        y = "Average Heart Rate\n(in Beats per Minute)") +
@@ -272,8 +283,6 @@ ggplot(data = df_aggr,
         axis.text.x = element_blank()
         ) +
   aes(fill = Type)
-
-plot_box
 ```
 
 ## Combine
@@ -320,8 +329,6 @@ df_aggr_main <- df_aggr %>% mutate(ID = as.numeric(as.character(ID)),
   ungroup() %>%
   filter(Type == "Main") %>%
   select(ID, mean)
-
-#df_aggr_main$ID <- as.numeric(df_aggr_main$ID)
 
 df_steps <- full_join(x = df_aggr_main,
                       y = df_steps,
