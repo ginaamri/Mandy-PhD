@@ -10,7 +10,8 @@ library(needs)
 
 needs(tidyverse,
       lubridate,
-      hms)
+      hms,
+      readxl)
 ```
 
 
@@ -64,7 +65,7 @@ rm(df_dia)
 
 # Heart Rate data
 
-```{r, message=FALSE, include=FALSE, error=FALSE}
+```{r, message=FALSE, include=FALSE, error=FALSE, }
 part <- read_xlsx(path = "Data/Heart Rate.xlsx")
 
 #...............................................................................
@@ -122,6 +123,10 @@ df <- left_join(x = get(name1),
                 y = get(name2),
                 by = "Time")
 
+df <- df %>% mutate(dia_left = scale(dia_left),
+                    dia_right = scale(dia_right),
+                    `Heart Rate` = scale(`Heart Rate`)
+                    )
 assign(name3,
        value = df)  
 }
@@ -135,16 +140,41 @@ rm(name3)
 df_compl <- 
   mget(ls(pattern = "tib")) %>%
   bind_rows() %>%
-  mutate(ID = as_factor(ID))
+  mutate(ID = as_factor(ID),
+         Type = as_factor(ifelse(test = as.numeric(as.character(ID)) > 200,
+                                 yes = "advanced",
+                                 no = "novice"
+                                 )
+                          )
+         )
 ```
 
 
 ```{r}
-ggplot(data = df_compl,
-       mapping = aes(x = `Heart Rate`,
-                     y = dia_right
+ggplot(data = na.omit(df_compl),
+       mapping = aes(x = dia_right,
+                     y = `Heart Rate`
                      )
        ) +
-  geom_point()
+  geom_point(mapping = aes(color = as_factor(Type))) +
+  geom_smooth(method = "lm")
+
+ggplot(data = na.omit(df_compl),
+       mapping = aes(x = dia_left,
+                     y = `Heart Rate`
+                     )
+       ) +
+  geom_point(mapping = aes(color = as_factor(Type))) +
+  geom_smooth(method = "lm")
+
+ggplot(data = na.omit(df_compl)
+       ) + 
+  geom_histogram(mapping = aes(x = dia_left),
+                 alpha = 0.4,
+                 color = "blue") +
+  geom_histogram(mapping = aes(x = dia_right),
+                 alpha = 0.4,
+                 color = "red")
+
 ```
 
