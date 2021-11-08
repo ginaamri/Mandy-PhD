@@ -43,50 +43,32 @@ part <- part$`ID participant`
 for (i in part) {
   nam <- paste("m", i, sep = "")
   assign(x = nam, 
-         value = read_csv(file = paste("Data/", i, "_m.csv", sep = ""
+         value = read_csv(file = paste("Data/", i, "_m.csv", 
+                                       sep = ""
                                        )
                           )
          ) 
-}
+  }
 
 for (i in part) {
   nam <- paste("a", i, sep = "")
   assign(x = nam, 
-         value = read_csv(file = paste("Data/", i, "_a.csv", sep = ""
+         value = read_csv(file = paste("Data/", i, "_a.csv", 
+                                       sep = ""
                                        )
                           )
          ) 
-}
+  }
 
 for (i in part) {
   nam <- paste("p", i, sep = "")
   assign(x = nam, 
-         value = read_csv(file = paste("Data/", i, "_p.csv", sep = ""
+         value = read_csv(file = paste("Data/", i, "_p.csv", 
+                                       sep = ""
                                        )
                           )
          ) 
-}
-
-# m101 <- read_csv(file = "Data/101_m.csv")
-# m102 <- read_csv(file = "Data/102_m.csv")
-# m103 <- read_csv(file = "Data/103_m.csv")
-# m104 <- read_csv(file = "Data/104_m.csv")
-# m105 <- read_csv(file = "Data/105_m.csv")
-# 
-# p101 <- read_csv(file = "Data/101_p.csv")
-# p102 <- read_csv(file = "Data/102_p.csv")
-# p103 <- read_csv(file = "Data/103_p.csv")
-# p104 <- read_csv(file = "Data/104_p.csv")
-# p105 <- read_csv(file = "Data/105_p.csv")
-# 
-# a101 <- read_csv(file = "Data/101_a.csv")
-# a102 <- read_csv(file = "Data/102_a.csv")
-# a103 <- read_csv(file = "Data/103_a.csv")
-# a104 <- read_csv(file = "Data/104_a.csv")
-# a105 <- read_csv(file = "Data/105_a.csv")
-
-# z <- ls()
-
+  }
 ```
 
 # Change Time to seconds
@@ -101,7 +83,7 @@ for (i in part) {
                ID = i
                )
   assign(paste0("m", i), df)
-}
+  }
 
 for (i in part) {
   nam <- paste0("a", i)
@@ -112,7 +94,7 @@ for (i in part) {
                ID = i
                )
   assign(paste0("a", i), df)
-}
+  }
 
 for (i in part) {
   nam <- paste0("p", i)
@@ -123,50 +105,7 @@ for (i in part) {
                ID = i
                )
   assign(paste0("p", i), df)
-}
-
-# m101$Time <- m101$Time - min(m101$Time)
-# m102$Time <- m102$Time - min(m102$Time)
-# m103$Time <- m103$Time - min(m103$Time)
-# m104$Time <- m104$Time - min(m104$Time)
-# m105$Time <- m105$Time - min(m105$Time)
-# 
-# p101$Time <- p101$Time - min(p101$Time)
-# p102$Time <- p102$Time - min(p102$Time)
-# p103$Time <- p103$Time - min(p103$Time)
-# p104$Time <- p104$Time - min(p104$Time)
-# p105$Time <- p105$Time - min(p105$Time)
-# 
-# a101$Time <- a101$Time - min(a101$Time)
-# a102$Time <- a102$Time - min(a102$Time)
-# a103$Time <- a103$Time - min(a103$Time)
-# a104$Time <- a104$Time - min(a104$Time)
-# a105$Time <- a105$Time - min(a105$Time)
-```
-
-# ID
-
-```{r}
-# m101$ID <- 101
-# p101$ID <- 101
-# a101$ID <- 101
-# 
-# m102$ID <- 102
-# p102$ID <- 102
-# a102$ID <- 102
-# 
-# m103$ID <- 103
-# p103$ID <- 103
-# a103$ID <- 103
-# 
-# m104$ID <- 104
-# p104$ID <- 104
-# a104$ID <- 104
-# 
-# m105$ID <- 105
-# p105$ID <- 105
-# a105$ID <- 105
-
+  }
 ```
 
 # Join Data Frames
@@ -190,9 +129,6 @@ df_p <-
 df_a <- 
   mget(ls(pattern = "a")) %>%
   bind_rows()
-
-#rm(list = as.character(z))
-#rm(z)
 ```
 
 # Plots
@@ -212,10 +148,8 @@ df_all <- df_all %>%
          ID = as_factor(ID)
          )
 
-#df_all$Time <- scale(df_all$Time)
-
 df_aggr <- df_all %>%
-  group_by(Type, ID) %>%
+  group_by(Type, ID, status) %>%
   summarise(mean = mean(`Heart Rate`))
 
 
@@ -238,17 +172,16 @@ ggplot(data = filter(df_all),
                      y = `Heart Rate`
                      )
        ) +
-  geom_path(mapping = aes(color = as_factor(ID)),
-            size = 0.4,
-            alpha = 0.6) +
-  # stat_smooth(geom = "line",
-  #             mapping = aes(color = as.factor(ID)),
-  #             method = "loess",
-  #             se = FALSE,
-  #             linetype = 2) +
-  xlim(0,min(df_all_min$min)) +
+  geom_line(mapping = aes(color = as_factor(ID),
+                          linetype = as_factor(status)
+                          ),
+            size = 0.3,
+            alpha = 0.7
+            ) +
+  xlim(0, min(df_all_min$min)) +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
+  scale_linetype_manual(values = c(1, 6)) +
   labs(x = "Time (in Seconds)",
        y = "Heart Rate\n(in Beats per Minute)") +
   theme_minimal() +
@@ -264,11 +197,13 @@ ggplot(data = df_all,
                      y = `Heart Rate`
                      )
        ) +
- # geom_line(mapping = aes(color = ID)) +
-  geom_smooth(mapping = aes(color = as_factor(ID)),
+  geom_smooth(mapping = aes(color = as_factor(ID),
+                            linetype = as_factor(status)
+                            ),
               method = "loess") +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
+  scale_linetype_manual(values = c(1, 6)) +
   labs(x = "Time (in Seconds)",
        y = "Heart Rate\n(in Beats per Minute)") +
   theme_minimal() +
@@ -284,16 +219,16 @@ ggplot(data = filter(df_all),
                      y = `Heart Rate`
                      )
        ) +
-  # geom_path(mapping = aes(color = as_factor(ID)),
-  #           size = 0.4,
-  #           alpha = 0.4) +
   stat_smooth(geom = "line",
-              mapping = aes(color = as.factor(ID)),
+              mapping = aes(color = as.factor(ID),
+                            linetype = as_factor(status)
+                            ),
               method = "loess",
               se = FALSE) +
   xlim(0,min(df_all_min$min)) +
   scale_color_viridis_d(option = "A",
                         end = 0.8) +
+  scale_linetype_manual(values = c(1, 6)) +
   labs(x = "Time (in Seconds)",
        y = "Heart Rate\n(in Beats per Minute)") +
   theme_minimal() +
@@ -320,7 +255,22 @@ ggplot(data = df_aggr,
   geom_boxplot(color = "darkgrey",
                fill = "grey",
                alpha = 0.6) +
-  geom_line(mapping = aes(group = as_factor(ID))) +
+  geom_line(data = filter(df_aggr,
+                          status == "novice"),
+            mapping = aes(x = Type,
+                          y = mean,
+                          group = as_factor(ID)
+                          ),
+            linetype = 1
+            ) +
+  geom_line(data = filter(df_aggr,
+                          status == "advanced"),
+            mapping = aes(x = Type,
+                          y = mean,
+                          group = as_factor(ID)
+                          ),
+            linetype = 6
+            ) +
   geom_point(size = 2) +
   labs(x = "",
        y = "Average Heart Rate\n(in Beats per Minute)") +
@@ -333,8 +283,6 @@ ggplot(data = df_aggr,
         axis.text.x = element_blank()
         ) +
   aes(fill = Type)
-
-plot_box
 ```
 
 ## Combine
@@ -381,8 +329,6 @@ df_aggr_main <- df_aggr %>% mutate(ID = as.numeric(as.character(ID)),
   ungroup() %>%
   filter(Type == "Main") %>%
   select(ID, mean)
-
-#df_aggr_main$ID <- as.numeric(df_aggr_main$ID)
 
 df_steps <- full_join(x = df_aggr_main,
                       y = df_steps,
