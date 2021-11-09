@@ -18,10 +18,10 @@ df_sjt <- df_sjt %>% select(UI06_05, SJT_AL_gek, SJT_ST_gek, SJT_R_gek, SJT_KF_g
 
 # rename columns
 df_sjt <- rename(df_sjt, c("Group" = "UI06_05",
-                            "Monitoring" = "SJT_AL_gek",
-                            "Managing momentum" = "SJT_ST_gek",
-                            "Rules and routines" = "SJT_R_gek",
-                            "All" = "SJT_KF_gek"))
+                           "Monitoring" = "SJT_AL_gek",
+                           "Managing momentum" = "SJT_ST_gek",
+                           "Rules and routines" = "SJT_R_gek",
+                           "All" = "SJT_KF_gek"))
 
 # changing from wide to long format
 df_sjt_long <- df_sjt %>% 
@@ -35,8 +35,8 @@ df_sjt_long$Group = ifelse(df_sjt_long$"Group"<200, "Novice","Expert")
 mean_ plot <- 
   
   ggplot(data = df_sjt_long,
-       mapping = aes(x = Group,
-                     y = Mean)) +
+         mapping = aes(x = Group,
+                       y = Mean)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
              alpha = 0.4,
@@ -45,4 +45,3 @@ mean_ plot <-
   scale_fill_brewer(palette = "RdBu") +
   facet_wrap(~ "Facets Classroom Management", nrow = 1)+
   theme_cowplot()
-
