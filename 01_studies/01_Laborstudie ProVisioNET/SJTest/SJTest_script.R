@@ -30,11 +30,8 @@ df_sjt_long <- df_sjt %>%
 # define expert and novice with ifelse function
 df_sjt_long$Group = ifelse(df_sjt_long$"Group"<200, "Novice","Expert")
 
-
 # plotting mean
-mean_ plot <- 
-  
-  ggplot(data = df_sjt_long,
+mean_plot <- ggplot(data = df_sjt_long,
          mapping = aes(x = Group,
                        y = Mean)) +
   geom_boxplot(mapping = aes(fill = Group)) +
@@ -45,3 +42,5 @@ mean_ plot <-
   scale_fill_brewer(palette = "RdBu") +
   facet_wrap(~ "Facets Classroom Management", nrow = 1)+
   theme_cowplot()
+
+mean_plot
