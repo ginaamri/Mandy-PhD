@@ -14,8 +14,6 @@ needs(tidyverse,
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
 options(dplyr.summarise.inform = FALSE)
 
-r_refs("r-references.bib")
-
 
 # read in data
 reaction_AP <- read_tsv(file = "data/01_01_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv"
@@ -85,9 +83,11 @@ reaction_AP <- reaction_AP %>%
   ungroup() %>%
   select(TOI, Time_to_first_Reaction)
 
-# replace 0 with NA
-# for AP
-reaction_AP$Time_to_first_Reaction[reaction_AP$Time_to_first_Reaction == 0] <- NA
+
+# # replace 0 with NA
+# # for AP
+# reaction_AP$Time_to_first_Reaction[reaction_AP$Time_to_first_Reaction == 0] <- NA
+
 
 # do it again for MK
 reaction_MK <- reaction_MK %>%
@@ -97,23 +97,58 @@ reaction_MK <- reaction_MK %>%
   ungroup() %>%
   select(TOI, Time_to_first_Reaction)
 
-# replace 0 with NA
-# for MK
-reaction_MK$Time_to_first_Reaction[reaction_MK$Time_to_first_Reaction == 0] <- NA
+# # replace 0 with NA
+# # for MK
+# reaction_MK$Time_to_first_Reaction[reaction_MK$Time_to_first_Reaction == 0] <- NA
 
 # combine the two rater data frames
 reaction_complete <- left_join(x = reaction_AP, 
                                y = reaction_MK,
                                by = "TOI")
 
-# ICC
-cor.test(x = reaction_complete$Time_to_first_Reaction.x,
-         y = reaction_complete$Time_to_first_Reaction.y,
-         method = "pearson")
+# changing milliseconds into seconds
+reaction_complete$Time_to_first_Reaction.x <- round(reaction_complete$Time_to_first_Reaction.x/1000,
+                                               digits = 2)
 
-ICC(x = select(reaction_complete,
-               Time_to_first_Reaction.x,
-               Time_to_first_Reaction.y
-)
-)
+reaction_complete$Time_to_first_Reaction.y <- round(reaction_complete$Time_to_first_Reaction.y/1000,
+                                                    digits = 2)
+
+
+
+#################### Percentage Agreement ##############################
+
+# create a new df with only the ratings 
+reaction_ratings <- reaction_complete %>% select(Time_to_first_Reaction.x, Time_to_first_Reaction.y)
+
+# function agree() with a tolerance of 2 seconds
+## reference for tolerance: TIMSS video study tolerance of 10 to 30 seconds 
+### Seidel, 2003, p. 105 
+agree(reaction_ratings, 2)
+
+#################### CohenKappa ##############################
+
+# data preparation
+
+#calculate difference between columns row wise Time_to_first_Reaction.x and Time_to_first_Reaction.y
+# first, create two new data frames
+df1 <- subset.data.frame(reaction_ratings, select = c(Time_to_first_Reaction.x))
+df2 <- subset.data.frame(reaction_ratings, select = c(Time_to_first_Reaction.y))
+
+# add the difference as a new column
+reaction_ratings$Diff <- df1 - df2
+
+# creating only absolute values with abs()
+reaction_ratings$Diff <- abs(reaction_ratings$diff) 
+
+# if rating difference > 2 seconds --> 0
+reaction_ratings$Diff = ifelse(reaction_ratings$"Diff"<2, "1","0")
+
+
+# calculating Cohen.Kappa
+reaction_ratings_kappa <- select(reaction_ratings, Diff)
+
+reaction_ratings_kappa$Diff <- as.numeric(reaction_ratings_kappa$Diff)
+
+psych::cohen.kappa(x = as.matrix(reaction_ratings_kappa))
+
 

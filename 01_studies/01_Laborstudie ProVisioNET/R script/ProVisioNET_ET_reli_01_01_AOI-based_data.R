@@ -26,10 +26,10 @@ coding_data_r1_v1 <-read_tsv ("./data/01_01_AP_ProVisioNET_study_glasses_Metrics
                            locale = locale(decimal_mark = ","))
 
 # filter only rows lesson
-v1_r1 <- coding_data_r1 %>% filter(TOI == "Lesson")
+r1_v1 <- coding_data_r1_v1 %>% filter(TOI == "Lesson")
 
 # select relevant variables 
-v1_r1 <- r1 %>% select(EventIndex, AOI)
+r1_v1 <- r1_v1 %>% select(EventIndex, AOI)
 
 ################## RATER 2 ################
 
@@ -49,12 +49,12 @@ r2_v1$AOI[r2_v1$AOI == "Material_Teacher"] <- "Material"
 
 ###### filter identical row number
 
-r1_v1 <- r1_v1 %>% filter(EventIndex != 1728,
+v1_r1 <- v1_r1 %>% filter(EventIndex != 1728,
                     EventIndex != 1729,
                     EventIndex != 1730,
                     EventIndex != 1731)
 
-r1_v1
+v1_r1
 
 
 # merge two data frames --> adding Columns, don't forget to merge BY AOI !
