@@ -1,7 +1,6 @@
 # load packages
 library(needs)
 needs(tidyverse,
-      ggplot,
       lubridate,
       viridis,
       grid,
@@ -28,10 +27,11 @@ df_sjt_long <- df_sjt %>%
   pivot_longer(!Group, names_to = "Facets Classroom Management", values_to = "Mean")
 
 # define expert and novice with ifelse function
-df_sjt_long$Group = ifelse(df_sjt_long$"Group"<200, "Novice","Expert")
+df_sjt_long$Group = ifelse(df_sjt_long$Group < 200, "Novice","Expert")
 
 # plotting mean
-mean_plot <- ggplot(data = df_sjt_long,
+mean_plot <- 
+  ggplot(data = df_sjt_long,
          mapping = aes(x = Group,
                        y = Mean)) +
   geom_boxplot(mapping = aes(fill = Group)) +
@@ -40,7 +40,9 @@ mean_plot <- ggplot(data = df_sjt_long,
              position = position_jitter(seed = 1, 
                                         width = 0.1)) +
   scale_fill_brewer(palette = "RdBu") +
-  facet_wrap(~ "Facets Classroom Management", nrow = 1)+
+  facet_wrap(vars(`Facets Classroom Management`), 
+             nrow = 1) +
   theme_cowplot()
 
 mean_plot
+
