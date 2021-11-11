@@ -11,7 +11,8 @@ library(needs)
 needs(tidyverse,
       lubridate,
       hms,
-      readxl)
+      readxl,
+      viridis)
 ```
 
 
@@ -156,16 +157,27 @@ ggplot(data = na.omit(df_compl),
                      y = `Heart Rate`
                      )
        ) +
-  geom_point(mapping = aes(color = as_factor(Type))) +
-  geom_smooth(method = "lm")
+  geom_point(mapping = aes(color = Type),
+             alpha = 0.7) +
+  geom_smooth(method = "lm",
+              mapping = aes(color = Type),
+              se = FALSE) +
+  labs(x = "Pupil Dialation\n(in ,standardized)",
+       y = "Heart Rate\n(in beats per minute, standardized)") +
+  scale_color_viridis_d(option = "A",
+                        begin = 0.3,
+                        end = 0.7)
+  
 
 ggplot(data = na.omit(df_compl),
        mapping = aes(x = dia_left,
                      y = `Heart Rate`
                      )
        ) +
-  geom_point(mapping = aes(color = as_factor(Type))) +
-  geom_smooth(method = "lm")
+  geom_point(mapping = aes(color = Type)) +
+  geom_smooth(method = "lm",
+              mapping = aes(color = Type),
+              se = FALSE)
 
 ggplot(data = na.omit(df_compl)
        ) + 
