@@ -39,10 +39,14 @@ mean_plot <-
              alpha = 0.4,
              position = position_jitter(seed = 1, 
                                         width = 0.1)) +
+  ylim(0,1) + 
   scale_fill_brewer(palette = "RdBu") +
   facet_wrap(vars(`Facets Classroom Management`), 
-             nrow = 1) +
-  theme_cowplot()
+             nrow = 1, strip.position = "bottom") +
+  ggtitle("Situational Judgment Test of Strategic Knowledge of Classroom Management") +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank())
 
 mean_plot
 
