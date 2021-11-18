@@ -25,11 +25,12 @@ novice_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_i
 # combine two data frames 
 toi <- rbind(expert_toi, novice_toi)
 
-# filter relevant rows
-toi_react <- toi %>% filter(TOI == "Lesson")
+# filter relevant rows only for time to first reaction
+toi_react <- toi %>% filter(TOI == "Lesson" |
+                            TOI == "Whispering")
 
 
-# select relevant columns
+# select relevant columns only for time to first event
 toi_react <- toi_react %>% 
   select(Group, TOI,
          Time_to_first_Event.Reaction_chatting,
@@ -43,8 +44,8 @@ toi_react <- toi_react %>%
          Time_to_first_Event.Reaction_whispering)
 
 # changing from wide to long format
-toi_react <- df_sjt %>% 
-  pivot_longer(!Group, names_to = "Facets Classroom Management", values_to = "Mean")
+toi_react <- toi_react %>% 
+  pivot_longer(!Group, names_to = "Events", values_to = "Time")
 
 
 # changing milliseconds into seconds
