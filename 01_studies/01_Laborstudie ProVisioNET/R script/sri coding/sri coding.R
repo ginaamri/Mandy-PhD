@@ -89,5 +89,5 @@ confi_plot <-
 
 confi_plot
 
-# arraning plots 
+# arranging plots 
 grid.arrange(dist_plot, confi_plot, ncol=2, nrow =1)
