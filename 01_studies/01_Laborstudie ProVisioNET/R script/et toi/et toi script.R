@@ -16,9 +16,9 @@ needs(tidyverse,
 options(dplyr.summarise.inform = FALSE)
 
 # read in data
-expert_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_experts_intervall.tsv",
+expert_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_experts_interval.tsv",
                        locale = locale(decimal_mark = ","))
-novice_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_intervall.tsv",
+novice_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_interval.tsv",
                        locale = locale(decimal_mark = ","))
 
 
@@ -54,7 +54,7 @@ toi_react <- toi_react %>%
          Time_to_first_Event.Reaction_whispering)
 
 
-# compute "rowise" sum across multiple columns but instead of typing column names, use tidy selection syntax
+# compute "row-wise" sum across multiple columns but instead of typing column names, use tidy selection syntax
 toi_react <- toi_react %>%
   rowwise() %>%
   mutate(Time_to_first_Reaction = sum(c_across(cols = contains("Time_to")),
@@ -91,8 +91,28 @@ react_plot
          
 ############### TIME TO FIRST FIXATION ####################
 
+# read in novice data
+toi_fix_novice1 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_interval_101;108-111.tsv",
+                           locale = locale(decimal_mark = ","))
+
+toi_fix_novice2 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_interval_102-105.tsv",
+                            locale = locale(decimal_mark = ","))
+
+# combine the novice df
+toi_fix_novice <- rbind(toi_fix_novice1, toi_fix_novice2)
+
+
+# read in expert data
+toi_fix_expert <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_202_203_interval.tsv",
+                           locale = locale(decimal_mark = ","))
+
+
+# combine two data frames 
+toi_fix <- rbind(toi_fix_novice, toi_fix_expert)
+
+
 # filter relevant rows = TOIs
-toi_fix <- toi %>% filter (TOI == "Chatting_with_neighbour"|
+toi_fix <- toi_fix %>% filter (TOI == "Chatting_with_neighbour"|
                                TOI == "Clicking_pen"| 
                                TOI == "Drawing"|
                                TOI == "Drumming_with_hands"| 
@@ -148,7 +168,7 @@ number_plot <-
   scale_fill_brewer(palette = "RdBu") +
   facet_wrap(vars(TOI), 
              nrow = 1, strip.position = "bottom") +
-  ggtitle("Number of fixations for disruptive person") +
+  ggtitle("Number of fixations on disruptive person") +
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank())
