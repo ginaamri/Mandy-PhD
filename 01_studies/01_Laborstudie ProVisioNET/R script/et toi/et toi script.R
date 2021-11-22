@@ -2,7 +2,6 @@
 
 library(needs)
 needs(tidyverse,
-      ggplot,
       psych,
       moments,
       sjPlot,
@@ -16,7 +15,7 @@ needs(tidyverse,
 options(dplyr.summarise.inform = FALSE)
 
 # read in data
-expert_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_experts_interval.tsv",
+expert_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_202_203_interval.tsv",
                        locale = locale(decimal_mark = ","))
 novice_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_interval.tsv",
                        locale = locale(decimal_mark = ","))
@@ -42,7 +41,7 @@ toi_react <- toi %>% filter (TOI == "Chatting_with_neighbour"|
 
 # select relevant columns only for time to first event
 toi_react <- toi_react %>% 
-  select(Group, TOI,
+  select(Participant, Group, TOI,
          Time_to_first_Event.Reaction_chatting,
          Time_to_first_Event.Reaction_clicking,
          Time_to_first_Event.Reaction_drawing,
@@ -54,12 +53,22 @@ toi_react <- toi_react %>%
          Time_to_first_Event.Reaction_whispering)
 
 
-# compute "row-wise" sum across multiple columns but instead of typing column names, use tidy selection syntax
-toi_react <- toi_react %>%
-  rowwise() %>%
-  mutate(Time_to_first_Reaction = sum(c_across(cols = contains("Time_to")),
-                                      na.rm = T)) %>%
-  ungroup() %>%
+# # compute "row-wise" sum across multiple columns but instead of typing column names, use tidy selection syntax
+# toi_react <- toi_react %>%
+#   rowwise() %>%
+#   mutate(Time_to_first_Reaction = sum(c_across(cols = contains("Time_to")),
+#                                       na.rm = T)) %>%
+#   ungroup() %>%
+#   select(Group, TOI, Time_to_first_Reaction)
+
+
+# changing format with pivot_longer()
+toi_react <-
+  toi_react %>%
+  pivot_longer(cols = contains("Time_to"),
+               names_to = "Time_to_first_reaction",
+               values_to = "Time_to_first_Reaction") %>%
+  na.omit() %>% 
   select(Group, TOI, Time_to_first_Reaction)
 
 
@@ -78,14 +87,20 @@ react_plot <-
   geom_point(size = 2, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
+                                        width = 0.1,
+                                        height = 0)) +
+  ylim(0,25) + 
+  labs(x = "") +
   scale_fill_brewer(palette = "RdBu") +
   facet_wrap(vars(TOI), 
              nrow = 1, strip.position = "bottom") +
-  ggtitle("Time to first reaction to disruptions") +
+  ggtitle("Time to first reaction to disruptive person") +
+  theme_minimal() +
   theme(
     axis.text.x = element_blank(),
-    axis.ticks.x = element_blank())
+    axis.ticks.x = element_blank(),
+    strip.text.x = element_text(size = 8, 
+                                angle = 80))
 react_plot
 
          
@@ -145,38 +160,50 @@ fix_plot <-
              alpha = 0.4,
              position = position_jitter(seed = 1, 
                                         width = 0.1)) +
+  ylim(0,25) + 
+  labs(x ="") + 
   scale_fill_brewer(palette = "RdBu") +
   facet_wrap(vars(TOI), 
              nrow = 1, strip.position = "bottom") +
   ggtitle("Time to first fixation to disruptive person") +
+  theme_minimal() + 
   theme(
     axis.text.x = element_blank(),
-    axis.ticks.x = element_blank())
+    axis.ticks.x = element_blank(),
+    legend.position = "none",
+    strip.text.x = element_text(size = 8,
+                                angle = 80))
 
 fix_plot
 
-# plotting number of fixations for disruptive person
-number_plot <- 
-  ggplot(data = toi_fix,
-         mapping = aes(x = Group,
-                       y = `Number of fixations on disruptive person`)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
-  scale_fill_brewer(palette = "RdBu") +
-  facet_wrap(vars(TOI), 
-             nrow = 1, strip.position = "bottom") +
-  ggtitle("Number of fixations on disruptive person") +
-  theme(
-    axis.text.x = element_blank(),
-    axis.ticks.x = element_blank())
+# # plotting number of fixations for disruptive person
+# number_plot <- 
+#   ggplot(data = toi_fix,
+#          mapping = aes(x = Group,
+#                        y = `Number of fixations on disruptive person`)) +
+#   geom_boxplot(mapping = aes(fill = Group)) +
+#   geom_point(size = 2, 
+#              alpha = 0.4,
+#              position = position_jitter(seed = 1, 
+#                                         width = 0.1)) +
+#   labs(x = "") + 
+#   scale_fill_brewer(palette = "RdBu") +
+#   facet_wrap(vars(TOI), 
+#              nrow = 1, strip.position = "bottom") +
+#   ggtitle("Number of fixations on disruptive person") +
+#   theme_minimal() +
+#   theme(
+#     axis.text.x = element_blank(),
+#     axis.ticks.x = element_blank(),
+#     strip.text.x = element_text(size = 8,
+#                                 angle = 80))
+# 
+# number_plot
 
-number_plot
+
 
 # arranging plots 
-grid.arrange(fix_plot, number_plot, ncol=2, nrow =1)
+grid.arrange(fix_plot, react_plot, ncol=2, nrow =1)
 
-
+  
         

@@ -59,14 +59,21 @@ dist_plot <-
   geom_point(size = 2, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
+                                        width = 0.1,
+                                        height = 0)) +
+  labs(x = "",
+       y = "Disturbing Factor") + 
   ylim(0,10)+
   scale_fill_brewer(palette = "RdBu") +
   facet_wrap(vars(Event), 
              nrow = 1, strip.position = "bottom") +
   ggtitle("How disturbing was the event for you?") +
+  theme_minimal() + 
   theme(axis.ticks.x = element_blank(),
-        axis.text.x = element_blank())
+        axis.text.x = element_blank(),
+        legend.position = "none",
+        strip.text.x = element_text(size = 8, 
+                                    angle = 80))
 dist_plot
 
 
@@ -76,18 +83,25 @@ confi_plot <-
          mapping = aes(x = Group,
                        y = Confident_Factor)) +
   geom_boxplot(mapping = aes(fill = Group)) +
+  labs(x = "", 
+       y = "Confident Factor") +
   geom_point(size = 2, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
+                                        width = 0.15, 
+                                        height = 0)) +
   scale_fill_brewer(palette = "RdBu") +
   facet_wrap(vars(Event), 
              nrow = 1, strip.position = "bottom") +
   ggtitle("How confident did you feel in dealing with this event?") +
+  theme_minimal() +
   theme(axis.ticks.x = element_blank(),
-        axis.text.x = element_blank())
+        axis.text.x = element_blank(),
+        strip.text.x = element_text(size = 8, 
+                                    angle = 80))
 
 confi_plot
 
 # arranging plots 
 grid.arrange(dist_plot, confi_plot, ncol=2, nrow =1)
+
