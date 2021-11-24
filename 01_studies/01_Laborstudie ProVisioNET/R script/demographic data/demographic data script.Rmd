@@ -1,0 +1,158 @@
+---
+title             : "Through the eyes of the teacher"
+shorttitle        : "Visual attention in teaching and learning processes"
+
+author: 
+  - name          : "Mandy Klatt"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Egelstraße 2a 04103 Leipzig"
+    email         : "mandy.klatt@uni-leipzig.de"
+  - name          : "Dr. Gregor Kachel"
+    affiliation   : "1, 2"
+  - name          : "Dr. Christin Lotz"
+    affiliation   : "1"
+  - name          : "Prof. Dr. Anne Deiglmayr"
+    affiliation   : "1"
+  
+affiliation:
+  - id            : "1"
+    institution   : "Leipzig University"
+  - id            : "2"
+    institution   : "Max-Planck University for Evolutionary Anthropology"
+
+authornote: |
+  The Ethics Advisory Board of Leipzig University has dealt with the research project and has come to the conclusion that there are no objections to the implementation of this research project. The Ethics Advisory Board points out that the scientific and ethical responsibilty for the implementation of the project remains with the project director.
+
+abstract: |
+  This document is a supplement to the paper and shows first graphs findings from the pilot study. 
+  
+keywords          : "Professional Vision, Expert-Novice-Paradigm, Eye-Tracking"
+wordcount         : "1949"
+
+bibliography      : ["r-references.bib"]
+
+floatsintext      : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_pdf #bookdown::word_document2
+---
+
+
+```{r setup, include = FALSE}
+library("papaja")
+r_refs("r-references.bib")
+```
+
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+# Packages
+
+```{r}
+#install.packages("needs")
+
+# suppress "summarize" info. 
+# if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
+options(dplyr.summarise.inform = FALSE)
+
+library(needs)
+
+needs(tidyverse,
+      lubridate,
+      viridis,
+      grid,
+      gridExtra,
+      cowplot,
+      readxl,
+      ARTofR)
+```
+
+# Methods
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+
+## Participants
+
+```{r demographicstable, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+demo.data <- read_excel ("./data/data_empschul_labor_lehrperson_2021-11-24.xlsx") 
+
+# select relevant columns
+demo.data <- demo.data %>% select(LI02_01_1,
+                                  LI03_01,
+                                  LI04_01,
+                                  LI06_05)
+
+
+# rename columns
+demo.data <- rename(demo.data, c("Group" = "LI06_05",
+                                  "Gender" = "LI02_01_1",
+                                  "Age" = "LI03_01",
+                                  "Teaching Experience" = "LI04_01"))
+
+# define expert and novice with ifelse function
+demo.data$Group = ifelse(demo.data$Group < 200, "Novice","Expert")
+
+
+# create a basic table (tibble) using tidyverse functions
+demo.table <- demo.data %>%
+  group_by(Group) %>%
+  summarise(N=n(),
+            "Male" = sum(Gender),
+            "M Age" = round(mean(Age), 2),
+            "Min Age" = min(Age),
+            "Max Age" = max(Age),
+            "SD Age" = round(sd(Age), 2),
+            "M Exp." = round(mean(`Teaching Experience`), 2),
+            "Min Exp." = min(`Teaching Experience`),
+            "Max Exp." = max(`Teaching Experience`),
+            "SD Exp." = round(sd(`Teaching Experience`), 2),
+           )
+
+# format and insert table in manuscript
+apa_table(
+  demo.table,
+  caption = "Demographic Information and and Teaching Experience",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+## Material
+
+## Procedure
+
+## Data analysis
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+
+# Results
+
+# Discussion
+
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup

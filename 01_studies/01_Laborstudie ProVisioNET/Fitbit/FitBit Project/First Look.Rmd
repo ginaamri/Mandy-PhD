@@ -1,6 +1,8 @@
 ---
 title: "Fit Bit - First Look"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 # Packages
