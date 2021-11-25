@@ -104,6 +104,11 @@ demo.data <- rename(demo.data, c("Group" = "LI06_05",
 # define expert and novice with ifelse function
 demo.data$Group = ifelse(demo.data$Group < 200, "Novice","Expert")
 
+# changing gender female 2 = 0 
+demo.data$Gender = ifelse(demo.data$Gender == 2, "0","1")
+
+# changing character into numeric
+demo.data$Gender <- as.numeric(demo.data$Gender)
 
 # create a basic table (tibble) using tidyverse functions
 demo.table <- demo.data %>%
