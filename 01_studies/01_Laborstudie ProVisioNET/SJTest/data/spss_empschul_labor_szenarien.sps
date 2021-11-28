@@ -105,29 +105,37 @@ DATA LIST FREE(TAB)
   DEG_TIME (F8.0).
 BEGIN DATA
 64			base	interview	21-07-2021 17:14:40	101	5	1	3	2	2	3	6	4	1	5	3	2	6	2	5	1	2	3	3	1	1	3	2	3	3	2	4	6	1	2	5	3	2	3	1	2	2	4	3	3	4	1	2	1	4	2	1	2	6	5	6	6	2	5	3	4	6	2	1	5	5	4	1	2	2	2	4	3	1	10	75	70	64	69	71	47	68	50	51	55	37	48	715		
-21-07-2021 17:26:35	1	0	13	13	0	0	1,04	4	
+21-07-2021 17:26:35	1	0	13	13	0	0	1.07	5	
 65			base	interview	27-07-2021 17:41:18	102	4	5	3	3	1	1	5	6	3	4	2	2	3	4	3	2	1	5	1	2	1	2	5	4	6	3	4	2	1	5	5	3	1	4	2	1	3	5	5	6	5	1	4	2	6	3	2	1	6	2	6	4	3	5	3	3	4	1	1	4	5	4	1	2	3	4	1	6	2	24	81	62	53	77	52	44	63	32	57	54	49	43	691		
-27-07-2021 17:52:49	1	0	13	13	0	0	1,03	4	
+27-07-2021 17:52:49	1	0	13	13	0	0	1.04	4	
 66			base	interview	28-07-2021 15:40:54	103	5	5	3	3	2	5	5	4	2	6	2	2	2	3	4	3	3	5	2	5	6	2	3	6	4	6	2	5	1	2	6	2	1	5	1	2	6	5	5	3	6	1	1	1	3	3	3	3	6	3	6	6	1	6	4	2	5	2	1	5	6	5	1	3	3	5	2	5	3	12	65	62	81	68	65	48	60	40	52	65	73	53	744		
-28-07-2021 15:53:18	1	0	13	13	0	0	0,99	3	
+28-07-2021 15:53:18	1	0	13	13	0	0	1.01	4	
 67			base	interview	05-08-2021 15:58:42	104	5	1	2	2	2	2	3	2	1	3	3	1	3	2	2	2	2	4	1	1	1	3	3	5	3	3	2	2	2	3	4	2	1	3	1	2	2	1	1	1	5	1	1	1	5	2	2	1	3	1	5	5	3	2	2	3	5	1	1	3	4	5	2	2	2	2	1	2	3	8	140	41	37	40	57	39	34	27	30	33	30	27	543		
-05-08-2021 16:07:45	1	0	13	13	0	0	1,53	28	
+05-08-2021 16:07:45	1	0	13	13	0	0	1.56	29	
 69			base	interview	31-08-2021 14:25:11	201	5	1	3	3	5	2	4	3	2	5	4	3	6	4	3	1	3	5	1	2	5	5	5	2	3	2	2	4	2	6	6	2	1	4	1	3	5	3	2	3	5	1	1	1	5	3	3	2	5	4	5	5	2	4	1	5	3	1	4	4	5	2	1	5	5	2	1	5	2	6	114	87	77	115	118	59	75	50	127	58	49	46	
-856		31-08-2021 14:41:32	1	0	13	13	0	0	0,91	6	
+855		31-08-2021 14:41:32	1	0	13	13	0	0	0.94	8	
 70			base	interview	01-09-2021 17:06:31	105	2	1	1	6	4	1	2	5	1	6	1	6	2	2	1	1	1	4	1	1	1	3	4	6	5	4	1	1	1	6	6	1	1	6	1	1	1	1	1	2	6	3	2	1	2	2	2	2	5	2	2	2	2	2	2	1	5	1	3	4	2	2	1	1	2	5	1	4	3	15	123	75	97	50	68	30	73	42	68	56	52	58	807	
-	01-09-2021 17:19:58	1	0	13	13	0	0	0,96	4	
+	01-09-2021 17:19:58	1	0	13	13	0	0	0.97	5	
 71			base	interview	15-09-2021 12:02:49	106	5	3	4	4	1	3	5	4	3	2	2	4	2	2	5	2	3	6	3	2	1	5	5	2	3	4	2	3	1	5	3	2	3	1	2	3	6	2	6	2	5	2	1	2	5	3	4	2	4	3	4	5	2	4	4	5	5	2	1	4	3	4	3	4	3	4	3	5	5	8	55	46	52	43	58	30	33	20	27	34	36	37	479		
-15-09-2021 12:10:48	1	0	13	13	0	0	1,57	29	
+15-09-2021 12:10:48	1	0	13	13	0	0	1.6	30	
 72			base	interview	27-09-2021 18:35:47	202	5	4	1	6	3	1	1	5	2	2	5	1	4	1	2	1	1	5	1	3	5	6	4	1	5	2	3	2	4	5	4	2	1	4	1	1	5	2	5	2	6	1	1	1	2	1	1	1	4	2	4	4	1	5	3	5	6	1	1	4	3	1	1	5	2	3	1	1	1	16	96	72	81	62	83	115	69	39	52	52	67	57	794	
-	27-09-2021 18:50:08	1	0	13	13	0	0	0,87	1	
+	27-09-2021 18:50:08	1	0	13	13	0	0	0.89	1	
 73			base	interview	05-10-2021 16:35:26	203	5	1	2	6	2	3	3	6	1	4	2	1	4	1	1	3	2	6	1	4	3	6	2	3	5	2	1	2	1	6	5	2	1	2	1	1	5	3	2	3	6	1	1	2	2	1	4	3	6	5	5	6	2	4	5	1	5	1	1	6	1	2	1	2	2	3	1	3	1	28	108	112	82	96	68	48	64	68	60	57	74	42	
-833		05-10-2021 16:50:33	1	0	13	13	0	0	0,81	0	
+834		05-10-2021 16:50:33	1	0	13	13	0	0	0.81	0	
 75			base	interview	06-10-2021 12:56:44	107	6	2	6	3	1	1	5	6	1	6	2	5	6	2	6	1	1	6	1	4	6	6	2	6	6	6	2	6	1	6	6	4	1	6	1	1	6	6	6	1	6	1	1	1	1	1	6	6	3	1	6	6	3	6	3	4	6	1	1	5	6	2	6	1	4	6	1	2	1	33	46	57	39	55	37	52	53	41	37	58	56	42	606		
-06-10-2021 13:06:50	1	0	13	13	0	0	1,19	13	
+06-10-2021 13:06:50	1	0	13	13	0	0	1.2	13	
 77			base	interview	13-10-2021 12:48:47	108	4	2	2	5	2	5	4	3	2	4	2	3	3	3	3	2	2	5	2	3	3	5	2	4	5	6	4	2	4	3	4	1	1	3	4	1	3	2	3	2	4	2	2	2	3	2	4	4	3	4	3	3	2	3	4	4	4	2	2	3	3	4	2	3	3	4	2	3	2	21	83	72	44	53	68	46	44	38	45	40	45	31	630		
-13-10-2021 12:59:17	1	0	13	13	0	0	1,15	9	
+13-10-2021 12:59:17	1	0	13	13	0	0	1.16	9	
 79			base	interview	18-10-2021 16:55:45	109	2	2	3	6	1	5	4	3	2	3	1	2	3	2	2	2	2	5	2	4	1	5	3	5	6	6	2	3	1	2	6	2	1	5	1	1	3	2	6	3	5	1	2	3	3	2	1	1	4	2	4	6	2	3	4	2	5	1	1	2	3	5	2	3	4	3	2	2	3	46	96	62	54	95	119	58	83	40	46	60	69	68	845	
-	18-10-2021 17:10:42	1	0	13	13	0	0	0,82	1	
+	18-10-2021 17:10:42	1	0	13	13	0	0	0.83	1	
+80			base	interview	08-11-2021 14:59:20	110	5	2	3	3	2	2	4	3	1	6	5	3	3	2	6	2	1	3	2	1	2	3	3	5	6	6	2	4	2	4	6	2	3	3	2	2	3	3	4	3	6	2	2	2	3	2	2	2	6	3	1	5	2	5	4	3	5	1	1	3	4	2	4	4	3	3	1	3	2	8	145	75	119	80	74	69	59	46	50	51	48	42	866	
+	08-11-2021 15:13:46	1	0	13	13	0	0	0.99	6	
+82			base	interview	12-11-2021 12:39:51	204	2	6	3	5	6	6	2	5	1	5	4	5	2	2	3	5	4	6	1	3	3	5	6	4	6	6	4	6	5	5	5	2	2	5	1	3	2	5	3	4	6	2	2	1	1	3	3	4	3	3	6	5	2	3	6	1	5	3	3	3	4	2	2	5	2	5	1	3	3	40	54	49	40	45	39	38	46	29	30	32	33	26	501		
+12-11-2021 12:48:13	1	0	13	13	0	0	1.45	24	
+85			base	interview	15-11-2021 17:22:53	111	6	1	1	3	2	4	5	4	1	1	2	3	5	4	2	5	2	5	1	1	2	5	5	6	6	6	4	4	4	2	6	1	1	4	1	2	6	6	5	5	5	1	1	1	4	2	3	2	5	2	2	4	1	2	3	4	2	1	3	5	5	3	3	4	4	5	2	3	2	54	78	63	63	75	58	62	45	31	49	41	72	39	730		
+15-11-2021 17:35:03	1	0	13	13	0	0	1.01	6	
+86			base	interview	26-11-2021 09:49:38	205	6	6	6	6	6	6	5	4	3	6	3	6	6	2	2	4	4	6	2	6	3	2	4	6	6	5	3	4	4	5	2	1	1	2	1	1	2	1	5	3	5	3	1	1	3	1	3	2	6	3	4	5	6	5	4	4	5	1	6	5	2	2	2	2	4	4	2	2	2	7087	112	111	116	176	157	108	100	39	54	52	
+88	53	885		26-11-2021 12:07:11	1	0	13	13	0	0	0.63	0	
 END DATA.
 
 
@@ -161,11 +169,11 @@ VARIABLE LABELS
  US03_01 'Szenario 3: a) Sie kann mit lauter Stimme die ganze Klasse ermahnen.'
  US03_02 'Szenario 3: b) Sie kann einzelne auffällige Schüler:innen ermahnen.'
  US03_03 'Szenario 3: c) Sie kann die Gruppenarbeit unterbrechen und alle Schüler:innen an das Einhalten der Regeln erinnern.'
- US03_04 'Szenario 3: d) Während sich die Lehrkraft nacheinander nach dem Aufgabenstand an den einzelnen Gruppentischen erkundi...'
+ US03_04 'Szenario 3: d) Während sich die Lehrkraft nacheinander nach dem Aufgabenstand an den einzelnen Gruppentischen erkundigt, kann sie die Schüler:innen ermahnen, die die Regeln nicht einhalten.'
  US03_05 'Szenario 3: e) Sie kann zu den einzelnen Gruppentischen gehen und an die vereinbarten Regeln erinnern.'
  US03_06 'Szenario 3: f) Sie kann das Wechseln der Gruppentische ignorieren.'
  US04_01 'Szenario 4: a) Sie kann mit dem Schüler Blickkontakt aufnehmen und mit einer Geste auf das Etui verweisen.'
- US04_02 'Szenario 4: b) Sie kann abwarten, ob der Schüler mit dem Etui zu spielen beginnt, und erst dann eingreifen, um den Un...'
+ US04_02 'Szenario 4: b) Sie kann abwarten, ob der Schüler mit dem Etui zu spielen beginnt, und erst dann eingreifen, um den Unterrichtsfluss nicht zu stören.'
  US04_03 'Szenario 4: c) Sie kann den Schüler ins Unterrichtsgespräch einbeziehen, indem sie ihm eine Frage stellt.'
  US04_04 'Szenario 4: d) Sie kann zum Schüler gehen und sein Etui in ihre Schultasche legen; dabei redet sie weiter.'
  US04_05 'Szenario 4: e) Sie kann den Schüler bitten zu wiederholen, was sie bezüglich der Etuis gesagt hat.'
@@ -174,8 +182,8 @@ VARIABLE LABELS
  US05_02 'Szenario 5: b) Sie kann mitlachen, nachdem sie sich über das Wohlbefinden des Kindes informiert hat.'
  US05_03 'Szenario 5: c) Sie kann einen kurzen Moment abwarten und weitere aufkommende Albernheiten unterbinden.'
  US05_04 'Szenario 5: d) Sie kann das vom Stuhl gefallene Kind ermahnen und bitten, beim nächsten Mal besser aufzupassen.'
- US05_05 'Szenario 5: e) Sie kann mit einem kurzen Bewegungsspiel fortfahren, das alle Kinder einbezieht, um einen reibungslose...'
- US05_06 'Szenario 5: f) Sie kann den Stuhlkreis auflösen und die Schüler:innen begeben sich wieder an ihre Plätze, um von dort...'
+ US05_05 'Szenario 5: e) Sie kann mit einem kurzen Bewegungsspiel fortfahren, das alle Kinder einbezieht, um einen reibungslosen Übergang zur Besprechung der Gruppenarbeit zu schaffen.'
+ US05_06 'Szenario 5: f) Sie kann den Stuhlkreis auflösen und die Schüler:innen begeben sich wieder an ihre Plätze, um von dort aus die Ergebnisse der Gruppenarbeit zu besprechen.'
  US06_01 'Szenario 6: a) Sie kann sich darauf verlassen, dass die Schüler:innen die Uhr im Blick haben.'
  US06_02 'Szenario 6: b) Bevor die Gruppenarbeit startet, kann sie einen Zeitrahmen vorgeben.'
  US06_03 'Szenario 6: c) Sie kann einen Zeitrahmen vor Beginn der Gruppenarbeit vorgeben und zusätzlich die Minutenuhr stellen.'
@@ -183,10 +191,10 @@ VARIABLE LABELS
  US06_05 'Szenario 6: e) Sie kann pro Gruppe eine:n „Zeitmanager:in&quot; bestimmen, der/die die Zeit im Blick behält.'
  US06_06 'Szenario 6: f) Sie kann der Klasse in regelmäßigen Abständen mitteilen, wie viel Zeit noch zur Verfügung steht.'
  US07_01 'Szenario 7: a) Sie kann es den fertigen Schüler:innen überlassen, sich selbst zu beschäftigen.'
- US07_02 'Szenario 7: b) Sie kann nacheinander die Ergebnisse der fertigen Schüler:innen kontrollieren und sie beauftragen, die...'
+ US07_02 'Szenario 7: b) Sie kann nacheinander die Ergebnisse der fertigen Schüler:innen kontrollieren und sie beauftragen, die Fehler zu korrigieren.'
  US07_03 'Szenario 7: c) Sie kann den fertigen Schüler:innen erlauben, sich ein Würfelspiel zu nehmen und gemeinsam zu spielen.'
  US07_04 'Szenario 7: d) Sie kann den fertigen Schüler:innen die als nächstes anstehenden Aufgaben zur Bearbeitung geben.'
- US07_05 'Szenario 7: e) Sie kann die Stillarbeit vorzeitig abbrechen und den Schüler:innen ihre noch unbearbeiteten Aufgaben a...'
+ US07_05 'Szenario 7: e) Sie kann die Stillarbeit vorzeitig abbrechen und den Schüler:innen ihre noch unbearbeiteten Aufgaben als Hausaufgabe aufgeben.'
  US07_06 'Szenario 7: f) Sie kann den fertigen Schüler:innen eine zum Thema passende Extraaufgabe geben.'
  US07_07 'Szenario 7: g) Sie kann die fertigen Schüler:innen auffordern, den langsameren Schüler:innen zu helfen.'
  US08_01 'Szenario 8: a) Sie kann die Schüler:innen Lose ziehen lassen.'
@@ -203,17 +211,17 @@ VARIABLE LABELS
  US10_02 'Szenario 10: b) Sie kann abwarten, ob die Störung anhält.'
  US10_03 'Szenario 10: c) Sie kann Sanktionen für Störungen des Rituals festlegen.'
  US10_04 'Szenario 10: d) Sie kann die störenden Schüler:innen aus dem Sitzkreis ausschließen.'
- US10_05 'Szenario 10: e) Sie kann das Ritual verändern, z.B. durch liedbegleitende Bewegungen, damit die Schüler:innen aktiv m...'
+ US10_05 'Szenario 10: e) Sie kann das Ritual verändern, z.B. durch liedbegleitende Bewegungen, damit die Schüler:innen aktiv mit einbezogen werden.'
  US10_06 'Szenario 10: f) Sie kann die Schüler:innen abstimmen lassen, ob die Klasse das Begrüßungsritual beibehalten soll.'
- US11_01 'Szenario 11: a) Sie kann sich Gehör verschaffen, indem sie mit ihrer Stimme die Klasse übertönt und die Schüler:innen...'
+ US11_01 'Szenario 11: a) Sie kann sich Gehör verschaffen, indem sie mit ihrer Stimme die Klasse übertönt und die Schüler:innen zur Ruhe ermahnt.'
  US11_02 'Szenario 11: b) Sie kann jede:n störende:n Schüler:in immer prompt auffordern, aufmerksam zu sein.'
- US11_03 'Szenario 11: c) Sie kann das Ende der Stunde abwarten und mit den störenden Schüler:innen Einzelgespräche über Verhal...'
+ US11_03 'Szenario 11: c) Sie kann das Ende der Stunde abwarten und mit den störenden Schüler:innen Einzelgespräche über Verhaltensregeln führen.'
  US11_04 'Szenario 11: d) Sie kann in der nächsten Unterrichtsstunde mit den Schüler:innen Klassenregeln erarbeiten.'
  US11_05 'Szenario 11: e) Sie kann kleine Belohnungen an die Kinder verteilen, die besonders leise sind und gut mitarbeiten.'
  US12_01 'Szenario 12: a) Sie kann die aufrufenden Schüler:innen zur Eile mahnen.'
  US12_02 'Szenario 12: b) Sie kann jedem aufrufenden Kind die Zeit geben, die es braucht, seine Wahl zu treffen.'
  US12_03 'Szenario 12: c) Sie kann ein Zeitlimit setzen und die Schüler:innen loben, die das Limit einhalten.'
- US12_04 'Szenario 12: d) Sie kann die Schüler:innen ermahnen, dass sie die Meldekette abbricht, wenn die Aufrufenden nicht züg...'
+ US12_04 'Szenario 12: d) Sie kann die Schüler:innen ermahnen, dass sie die Meldekette abbricht, wenn die Aufrufenden nicht zügig ihre:n Nachfolger:innen aufrufen.'
  US12_05 'Szenario 12: e) Sie kann die ungeduldigen Schüler:innen um Ruhe und Geduld bitten.'
  TIME001 'Verweildauer Seite 1'
  TIME002 'Verweildauer Seite 2'

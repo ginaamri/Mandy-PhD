@@ -86,7 +86,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 ```{r demographicstable, echo = FALSE}
 
 # prepare data (selected from questionnaire data)
-demo.data <- read_excel ("./data/data_empschul_labor_lehrperson_2021-11-24.xlsx") 
+demo.data <- read_excel ("./data/data_empschul_labor_lehrperson.xlsx") 
 
 # select relevant columns
 demo.data <- demo.data %>% select(LI02_01_1,

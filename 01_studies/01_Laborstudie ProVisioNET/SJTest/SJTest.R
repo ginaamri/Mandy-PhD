@@ -41,7 +41,7 @@ mean_plot <-
                                         width = 0.1)) +
   labs(x = "") +
   ylim(0,1) + 
-  scale_fill_brewer(palette = "RdBu") +
+  scale_fill_brewer(palette = "Set1") +
   facet_wrap(vars(`Facets Classroom Management`), 
              nrow = 1, strip.position = "bottom") +
   theme_minimal()+
@@ -49,8 +49,7 @@ mean_plot <-
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 8, 
-                                angle = 45))
+    strip.text.x = element_text(size = 12))
 
 mean_plot
 

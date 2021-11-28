@@ -2,7 +2,6 @@
 
 library(needs)
 needs(tidyverse,
-      ggplot,
       psych,
       moments,
       sjPlot,
@@ -22,9 +21,9 @@ sri_expert <- read_excel("./data/coding_sri_expert.xlsx")
 
 
 # filter relevant rows and select relevant columns 
-sri_novice <- sri_novice %>% select(Group, Event, Disturbing_Factor, Confident_Factor)
+sri_novice <- sri_novice %>% select(Group, Event, Disruption_Factor, Confident_Factor)
 
-sri_expert <- sri_expert %>% select(Group, Event, Disturbing_Factor, Confident_Factor)
+sri_expert <- sri_expert %>% select(Group, Event, Disruption_Factor, Confident_Factor)
 
 
 # combine the two data frames with novice and expert
@@ -39,22 +38,22 @@ sri_filter <- na.omit(sri)
 
 # # creating a new column --> event was "seen" / "not seen" 
 # # WARNING! ifelse() needs three parameters: test, truth value, false value 
-# sri$Seen <- ifelse(sri$Disturbing_Factor <= 10, 'seen', ifelse(sri$Disturbing_Factor > 11, 'not seen', 'not seen')) 
+# sri$Seen <- ifelse(sri$Disruption_Factor <= 10, 'seen', ifelse(sri$Disruption_Factor > 11, 'not seen', 'not seen')) 
 
 
 # define expert and novice with ifelse function
 sri_filter$Group = ifelse(sri_filter$Group < 200, "Novice","Expert")
 
 # create a new data frame with both factors
-sri_disturb <- subset.data.frame(sri_filter, select = c(Group, Event, Disturbing_Factor))
+sri_disrup <- subset.data.frame(sri_filter, select = c(Group, Event, Disruption_Factor))
 sri_confi <- subset.data.frame(sri_filter, select = c(Group, Event, Confident_Factor))
 
 
-# plotting disturbing factor
+# plotting Disruption factor
 dist_plot <- 
-  ggplot(data = sri_disturb,
+  ggplot(data = sri_disrup,
          mapping = aes(x = Group,
-                       y = Disturbing_Factor)) +
+                       y = Disruption_Factor)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
              alpha = 0.4,
@@ -62,16 +61,15 @@ dist_plot <-
                                         width = 0.1,
                                         height = 0)) +
   labs(x = "",
-       y = "Disturbing Factor") + 
+       y = "Disruption Factor") + 
   ylim(0,10)+
-  scale_fill_brewer(palette = "RdBu") +
+  scale_fill_brewer(palette = "Set1") +
   facet_wrap(vars(Event), 
              nrow = 1, strip.position = "bottom") +
-  ggtitle("How disturbing was the event for you?") +
+  ggtitle("How disruptive was the event for you?") +
   theme_minimal() + 
   theme(axis.ticks.x = element_blank(),
         axis.text.x = element_blank(),
-        legend.position = "none",
         strip.text.x = element_text(size = 8, 
                                     angle = 80))
 dist_plot
@@ -85,12 +83,13 @@ confi_plot <-
   geom_boxplot(mapping = aes(fill = Group)) +
   labs(x = "", 
        y = "Confident Factor") +
+  ylim(0,10) +
   geom_point(size = 2, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
                                         width = 0.15, 
                                         height = 0)) +
-  scale_fill_brewer(palette = "RdBu") +
+  scale_fill_brewer(palette = "Set1") +
   facet_wrap(vars(Event), 
              nrow = 1, strip.position = "bottom") +
   ggtitle("How confident did you feel in dealing with this event?") +
