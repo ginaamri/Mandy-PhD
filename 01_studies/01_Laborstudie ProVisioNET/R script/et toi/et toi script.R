@@ -14,15 +14,23 @@ needs(tidyverse,
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
 options(dplyr.summarise.inform = FALSE)
 
+
 # read in data
-expert_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_202_203_interval.tsv",
-                       locale = locale(decimal_mark = ","))
-novice_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_interval.tsv",
+expert_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_202_203_204_205_interval.tsv",
                        locale = locale(decimal_mark = ","))
 
+# read in novice data
+toi_novice1 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_interval_101;108-111.tsv",
+                            locale = locale(decimal_mark = ","))
+
+toi_novice2 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics 102-107_interval.tsv",
+                            locale = locale(decimal_mark = ","))
+
+# combine the novice df
+toi_novice <- rbind(toi_novice1, toi_novice2)
 
 # combine two data frames 
-toi <- rbind(expert_toi, novice_toi)
+toi <- rbind(expert_toi, toi_novice)
 
 
 ############### TIME TO FIRST REACTION ####################
@@ -72,7 +80,6 @@ toi_react <-
   select(Group, TOI, Time_to_first_Reaction)
 
 
-
 # changing milliseconds into seconds
 toi_react$`Time to first reaction in seconds`<- round(toi_react$Time_to_first_Reaction/1000,
                                                     digits = 2)
@@ -91,7 +98,7 @@ react_plot <-
                                         height = 0)) +
   ylim(0,25) + 
   labs(x = "") +
-  scale_fill_brewer(palette = "RdBu") +
+  scale_fill_brewer(palette = "Set1") +
   facet_wrap(vars(TOI), 
              nrow = 1, strip.position = "bottom") +
   ggtitle("Time to first reaction to disruptive person") +
@@ -100,34 +107,14 @@ react_plot <-
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 8, 
-                                angle = 80))
+                                angle = 65))
 react_plot
 
          
 ############### TIME TO FIRST FIXATION ####################
 
-# read in novice data
-toi_fix_novice1 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_interval_101;108-111.tsv",
-                           locale = locale(decimal_mark = ","))
-
-toi_fix_novice2 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_novice_interval_102-105.tsv",
-                            locale = locale(decimal_mark = ","))
-
-# combine the novice df
-toi_fix_novice <- rbind(toi_fix_novice1, toi_fix_novice2)
-
-
-# read in expert data
-toi_fix_expert <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_202_203_interval.tsv",
-                           locale = locale(decimal_mark = ","))
-
-
-# combine two data frames 
-toi_fix <- rbind(toi_fix_novice, toi_fix_expert)
-
-
-# filter relevant rows = TOIs
-toi_fix <- toi_fix %>% filter (TOI == "Chatting_with_neighbour"|
+# filter relevant rows only for time to first reaction
+toi_fix <- toi %>% filter (TOI == "Chatting_with_neighbour"|
                                TOI == "Clicking_pen"| 
                                TOI == "Drawing"|
                                TOI == "Drumming_with_hands"| 
@@ -139,7 +126,7 @@ toi_fix <- toi_fix %>% filter (TOI == "Chatting_with_neighbour"|
 
 # select relevant columns only for time to first fixation
 toi_fix <- toi_fix %>% 
-  select(Group, TOI, Time_to_first_fixation.Disruptive_Person, Number_of_fixations.Disruptive_Person)
+  select(Group, Participant, TOI, Time_to_first_fixation.Disruptive_Person, Number_of_fixations.Disruptive_Person)
 
 # remoce all NAs
 toi_fix <- na.omit(toi_fix)
@@ -162,7 +149,7 @@ fix_plot <-
                                         width = 0.1)) +
   ylim(0,25) + 
   labs(x ="") + 
-  scale_fill_brewer(palette = "RdBu") +
+  scale_fill_brewer(palette = "Set1") +
   facet_wrap(vars(TOI), 
              nrow = 1, strip.position = "bottom") +
   ggtitle("Time to first fixation to disruptive person") +
@@ -170,36 +157,35 @@ fix_plot <-
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    legend.position = "none",
     strip.text.x = element_text(size = 8,
-                                angle = 80))
+                                angle = 65))
 
 fix_plot
 
-# # plotting number of fixations for disruptive person
-# number_plot <- 
-#   ggplot(data = toi_fix,
-#          mapping = aes(x = Group,
-#                        y = `Number of fixations on disruptive person`)) +
-#   geom_boxplot(mapping = aes(fill = Group)) +
-#   geom_point(size = 2, 
-#              alpha = 0.4,
-#              position = position_jitter(seed = 1, 
-#                                         width = 0.1)) +
-#   labs(x = "") + 
-#   scale_fill_brewer(palette = "RdBu") +
-#   facet_wrap(vars(TOI), 
-#              nrow = 1, strip.position = "bottom") +
-#   ggtitle("Number of fixations on disruptive person") +
-#   theme_minimal() +
-#   theme(
-#     axis.text.x = element_blank(),
-#     axis.ticks.x = element_blank(),
-#     strip.text.x = element_text(size = 8,
-#                                 angle = 80))
-# 
-# number_plot
+# plotting number of fixations for disruptive person
+number_plot <-
+  ggplot(data = toi_fix,
+         mapping = aes(x = Group,
+                       y = `Number of fixations on disruptive person`)) +
+  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_point(size = 2,
+             alpha = 0.4,
+             position = position_jitter(seed = 1,
+                                        width = 0.1)) +
+  ylim(0,20) +
+  labs(x = "") +
+  scale_fill_brewer(palette = "Set1") +
+  facet_wrap(vars(TOI),
+             nrow = 1, strip.position = "bottom") +
+  ggtitle("Number of fixations on disruptive person") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    strip.text.x = element_text(size = 8,
+                                angle = 80))
 
+number_plot
 
 
 # arranging plots 

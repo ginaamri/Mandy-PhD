@@ -42,7 +42,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf #bookdown::word_document2
+output            : bookdown::word_document2
 ---
 
 
@@ -128,7 +128,7 @@ demo.table <- demo.data %>%
 # format and insert table in manuscript
 apa_table(
   demo.table,
-  caption = "Demographic Information and and Teaching Experience",
+  caption = "Demographic Information and Teaching Experience",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
