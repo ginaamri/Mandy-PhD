@@ -49,7 +49,33 @@ sri_disrup <- subset.data.frame(sri_filter, select = c(Group, Event, Disruption_
 sri_confi <- subset.data.frame(sri_filter, select = c(Group, Event, Confident_Factor))
 
 
-# plotting Disruption factor
+# plotting Disruption factor for groups
+dist_group_plot <- 
+  ggplot(data = sri_disrup,
+         mapping = aes(x = Group,
+                       y = Disruption_Factor)) +
+  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_point(size = 2, 
+             alpha = 0.4,
+             position = position_jitter(seed = 1, 
+                                        width = 0.1,
+                                        height = 0)) +
+  labs(x = "",
+       y = "Disruption Factor") + 
+  ylim(0,10)+
+  scale_fill_brewer(palette = "Set1") +
+  ggtitle("How disruptive was the event for you?") +
+  theme_classic() + 
+  theme(
+    legend.position="none",
+    axis.text.x = element_text(size = 11),
+    plot.title = element_text(size = 15, face = "bold"))
+
+dist_group_plot
+
+
+
+# plotting Disruption factor for all disruptions
 dist_plot <- 
   ggplot(data = sri_disrup,
          mapping = aes(x = Group,
@@ -67,16 +93,18 @@ dist_plot <-
   facet_wrap(vars(Event), 
              nrow = 1, strip.position = "bottom") +
   ggtitle("How disruptive was the event for you?") +
-  theme_minimal() + 
+  theme_classic() + 
   theme(axis.ticks.x = element_blank(),
         axis.text.x = element_blank(),
         strip.text.x = element_text(size = 8, 
-                                    angle = 80))
+                                    angle = 80),
+        plot.title = element_text(size = 15, face = "bold"))
+
 dist_plot
 
 
-# plotting Confident factor
-confi_plot <- 
+# plotting Confident factor for group
+confi_group_plot <- 
   ggplot(data = sri_confi,
          mapping = aes(x = Group,
                        y = Confident_Factor)) +
@@ -90,17 +118,59 @@ confi_plot <-
                                         width = 0.15, 
                                         height = 0)) +
   scale_fill_brewer(palette = "Set1") +
+  ggtitle("How confident did you feel dealing with this event?") +
+  theme_classic() +
+  theme(axis.ticks.x = element_blank(),
+        legend.position="none",
+        axis.text.x = element_text(size = 11),
+        plot.title = element_text(size = 15, face = "bold"))
+
+confi_group_plot
+
+# plotting confident factor for all disruptions
+confi_plot <- 
+  ggplot(data = sri_confi,
+         mapping = aes(x = Group,
+                       y = Confident_Factor)) +
+  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_point(size = 2, 
+             alpha = 0.4,
+             position = position_jitter(seed = 1, 
+                                        width = 0.1,
+                                        height = 0)) +
+  labs(x = "",
+       y = "Confident Factor") + 
+  ylim(0,10)+
+  scale_fill_brewer(palette = "Set1") +
   facet_wrap(vars(Event), 
              nrow = 1, strip.position = "bottom") +
-  ggtitle("How confident did you feel in dealing with this event?") +
-  theme_minimal() +
+  ggtitle("How confident did you feel dealing with this event?") +
+  theme_classic() + 
   theme(axis.ticks.x = element_blank(),
         axis.text.x = element_blank(),
         strip.text.x = element_text(size = 8, 
-                                    angle = 80))
+                                    angle = 80),
+        plot.title = element_text(size = 15, face = "bold"))
 
 confi_plot
 
-# arranging plots 
-grid.arrange(dist_plot, confi_plot, ncol=2, nrow =1)
+# # arranging plots 
+# grid.arrange(dist_plot, confi_plot, ncol=2, nrow =1)
+
+
+
+#################### MEAN, SD, N ############
+
+# mean disrup_factor
+sri_disrup_mean <- sri_disrup %>%
+  group_by(Group) %>%
+  summarise("M" = round(mean(Disruption_Factor), 2),
+            "SD" = round(sd(Disruption_Factor), 2))
+
+# mean ttfr 
+sri_confi_mean <- sri_confi %>%
+  group_by(Group) %>%
+  summarise("M" = round(mean(Confident_Factor), 2),
+            "SD" = round(sd(Confident_Factor), 2))
+
 

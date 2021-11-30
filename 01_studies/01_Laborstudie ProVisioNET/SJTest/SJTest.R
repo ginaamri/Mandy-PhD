@@ -29,7 +29,7 @@ df_sjt_long <- df_sjt %>%
 # define expert and novice with ifelse function
 df_sjt_long$Group = ifelse(df_sjt_long$Group < 200, "Novice","Expert")
 
-# plotting mean
+# plotting mean of all aspects 
 mean_plot <- 
   ggplot(data = df_sjt_long,
          mapping = aes(x = Group,
@@ -44,7 +44,7 @@ mean_plot <-
   scale_fill_brewer(palette = "Set1") +
   facet_wrap(vars(`Facets Classroom Management`), 
              nrow = 1, strip.position = "bottom") +
-  theme_minimal()+
+  theme_classic()+
   ggtitle("Situational Judgment Test of Strategic Knowledge of Classroom Management") +
   theme(
     axis.text.x = element_blank(),
@@ -53,3 +53,34 @@ mean_plot <-
 
 mean_plot
 
+#################### MEAN, SD, N ############
+
+# mean SJT ALL
+sjt_mean <- df_sjt_long %>%
+  filter(`Facets Classroom Management` == "All") %>%
+  group_by(Group) %>%
+  summarise("M" = round(mean(Mean), 2),
+            "SD" = round(sd(Mean), 2))
+
+
+# mean SJT Managing Momentum
+sjt_mm <- df_sjt_long %>%
+  filter(`Facets Classroom Management` == "Managing momentum") %>%
+  group_by(Group) %>%
+  summarise("M" = round(mean(Mean), 2),
+            "SD" = round(sd(Mean), 2))
+
+# mean SJT Monitoring
+sjt_m <- df_sjt_long %>%
+  filter(`Facets Classroom Management` == "Monitoring") %>%
+  group_by(Group) %>%
+  summarise("M" = round(mean(Mean), 2),
+            "SD" = round(sd(Mean), 2))
+
+
+# mean SJT Rules and routins
+sjt_r <- df_sjt_long %>%
+  filter(`Facets Classroom Management` == "Rules and routines") %>%
+  group_by(Group) %>%
+  summarise("M" = round(mean(Mean), 2),
+            "SD" = round(sd(Mean), 2))
