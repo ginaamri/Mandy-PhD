@@ -84,3 +84,4 @@ sjt_r <- df_sjt_long %>%
   group_by(Group) %>%
   summarise("M" = round(mean(Mean), 2),
             "SD" = round(sd(Mean), 2))
+
