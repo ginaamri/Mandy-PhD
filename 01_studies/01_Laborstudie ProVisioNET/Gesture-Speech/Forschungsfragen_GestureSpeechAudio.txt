@@ -1,0 +1,23 @@
+Forschungsfragen (bezogen auf Micro-Teaching-Setting)
+
+Gesture/Speech:
+- Gesture: Unterscheiden sich erfahrene und unerfahrene Lehrpersonen hinsichtlich der Varianz ihrer Gesten? (wie viele unterschiedliche Gesten werden verwendet) 
+- Gesture/Speech: Gibt es einen Zusammenhang zwischen Gesture und Speech bei (unerfahrenen) Lehrpersonen und unterscheiden sich die Extremgruppen (explorativ)? 
+- Gesture/Speech: Unterscheiden sich Gesten zwischen Experts und Novices in bestimmten Phasen, z.B. während "Störungsphasen"?
+- Speech/Audio: Turn-taking behavior --> Gibt es unterschiede in der Anzahl der Turn-Takings und der Entropie zwischen Novices/Experts?
+--> Teacher als Leader, wird Sprechakt immer wieder an Lehrperson zurückgegeben?
+- Audio: Unterscheiden sich erfahrene und unerfahrene Lehrpersonen hinsichtlich ihrer Lautstärke, Silben, Pitch (exploration)?
+
+
+Facial Expression:
+- SRI mit OBS aufgenommen --> Gesicht von Subject sichtbar --> Analyse des Gesichtsausdrucks möglich???
+
+
+TO DOS:
+- Videos schneiden --> wie?
+- Literaturrecherche --> was gibt's bereits in Educational Research?
+- mehr Event Codings:
+			speaker: Teacher, StudentA, StudentB, StudentC
+			phases: welche genau nehmen wir?? Stunde (Beginn, Ende), Einzelarbeit, U-Gespräch?
+			disruptions: 9x
+- ELAN --> was kann man damit machen?
