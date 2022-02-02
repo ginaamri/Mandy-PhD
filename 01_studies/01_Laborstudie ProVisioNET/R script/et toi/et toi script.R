@@ -15,7 +15,7 @@ needs(tidyverse,
 options(dplyr.summarise.inform = FALSE)
 
 
-# read in data
+# read in expert data
 expert_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_202_203_204_205_interval.tsv",
                        locale = locale(decimal_mark = ","))
 
