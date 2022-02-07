@@ -35,6 +35,9 @@ expert_aoi <- rbind(expert_aoi1,
                     expert_aoi4)
                     
 
+file_names <- list.files(path = "data",
+                         pattern = "interval_complete.tsv")
+
 
 # read in novice data
 novice_aoi1 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_101_interval_complete.tsv",
