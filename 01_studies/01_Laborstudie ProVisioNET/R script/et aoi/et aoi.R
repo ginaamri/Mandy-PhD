@@ -16,42 +16,61 @@ options(dplyr.summarise.inform = FALSE)
 
 
 # read in expert data
-expert_aoi1 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_202_203_204_event_complete.tsv",
+expert_aoi1 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_202_203_204_interval_complete.tsv",
                        locale = locale(decimal_mark = ","))
 
-expert_aoi2 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_205_event_complete.tsv",
+expert_aoi2 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_205_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-expert_aoi3 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_206_event_complete.tsv",
+expert_aoi3 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_206_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-expert_aoi4 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_207_event_complete.tsv",
+expert_aoi4 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_207_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
 # combine the expert df
-expert_aoi <- rbind(expert_aoi1, expert_aoi2, expert_aoi3, expert_aoi4)
+expert_aoi <- rbind(expert_aoi1, 
+                    expert_aoi2, 
+                    expert_aoi3, 
+                    expert_aoi4)
                     
 
 
 # read in novice data
-novice_aoi1 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_101_event_complete.tsv",
+novice_aoi1 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_101_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
                       
-novice_aoi2 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_102-107_event_complete.tsv",
+novice_aoi2 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_102-107_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-novice_aoi3 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_108-111_event_complete.tsv",
+novice_aoi3 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_108-111_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-novice_aoi4 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_112_event_complete.tsv",
+novice_aoi4 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_112_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-novice_aoi5 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_113-115_event_complete.tsv",
+novice_aoi5 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_113-115_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_aoi6 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_116_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_aoi7 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_117_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
 # combine the novice df
-novice_aoi <- rbind(novice_aoi1, novice_aoi2, novice_aoi3, novice_aoi4, novice_aoi5)
+novice_aoi <- rbind(novice_aoi1, 
+                    novice_aoi2, 
+                    novice_aoi3, 
+                    novice_aoi4, 
+                    novice_aoi5, 
+                    novice_aoi6, 
+                    novice_aoi7)
 
+
+# combine the both df
+df_aoi <- rbind(novice_aoi,
+                expert_aoi)
 
 
 ############### TIME TO FIRST FIXATION ####################
