@@ -41,22 +41,32 @@ expert_aoi <- rbind(expert_aoi1,
 novice_aoi1 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_101_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
                       
-novice_aoi2 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_102-107_interval_complete.tsv",
+novice_aoi2 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_102_103_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-novice_aoi3 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_108-111_interval_complete.tsv",
+novice_aoi3 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_104_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-novice_aoi4 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_112_interval_complete.tsv",
+novice_aoi4 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_105_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-novice_aoi5 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_113-115_interval_complete.tsv",
+novice_aoi5 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_106_107_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-novice_aoi6 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_116_interval_complete.tsv",
+
+novice_aoi6 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_108-111_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
-novice_aoi7 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_117_interval_complete.tsv",
+novice_aoi7 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_112_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_aoi8 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_113-115_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_aoi9 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_116_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_aoi10 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_117_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
 # combine the novice df
@@ -66,7 +76,10 @@ novice_aoi <- rbind(novice_aoi1,
                     novice_aoi4, 
                     novice_aoi5, 
                     novice_aoi6, 
-                    novice_aoi7)
+                    novice_aoi7,
+                    novice_aoi8,
+                    novice_aoi9,
+                    novice_aoi10)
 
 
 # combine the both df
@@ -78,7 +91,7 @@ df_aoi <- rbind(novice_aoi,
 ############### TIME TO FIRST FIXATION ####################
 
 # filter relevant rows only for time to first reaction
-df_aoi <- df_aoi %>% filter (TOI == "Entire Recording")
+df_aoi <- df_aoi %>% filter (TOI == "Lesson")
 
 # select relevant columns only for time to first fixation
 df_aoi <- df_aoi %>% 
