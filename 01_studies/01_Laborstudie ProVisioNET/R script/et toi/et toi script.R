@@ -16,25 +16,75 @@ options(dplyr.summarise.inform = FALSE)
 
 
 # read in expert data
-expert_toi <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_202_203_204_205_interval.tsv",
-                       locale = locale(decimal_mark = ","))
+expert_toi1 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_202_203_204_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+expert_toi2 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_205_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+expert_toi3 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_206_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+expert_toi4 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_207_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+# combine the expert df
+expert_toi <- rbind(expert_toi1, 
+                    expert_toi2, 
+                    expert_toi3, 
+                    expert_toi4)
+
+
 
 # read in novice data
-toi_novice1 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_101_interval.tsv",
-                            locale = locale(decimal_mark = ","))
+novice_toi1 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_101_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
 
-toi_novice2 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics_108-111_interval.tsv",
-                       locale = locale(decimal_mark = ","))
+novice_toi2 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_102_103_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
 
-toi_novice3 <- read_tsv(file = "./data/ProVisioNET_study_glasses_metrics 102-107_interval.tsv",
-                            locale = locale(decimal_mark = ","))
+novice_toi3 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_104_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_toi4 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_105_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_toi5 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_106_107_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+
+novice_toi6 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_108-111_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_toi7 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_112_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_toi8 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_113-115_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_toi9 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_116_interval_complete.tsv",
+                        locale = locale(decimal_mark = ","))
+
+novice_toi10 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_117_interval_complete.tsv",
+                         locale = locale(decimal_mark = ","))
+
 
 # combine the novice df
-toi_novice <- rbind(toi_novice1, toi_novice2, toi_novice3)
+novice_toi <- rbind(novice_toi1, 
+                    novice_toi2, 
+                    novice_toi3, 
+                    novice_toi4, 
+                    novice_toi5, 
+                    novice_toi6, 
+                    novice_toi7,
+                    novice_toi8,
+                    novice_toi9,
+                    novice_toi10)
 
-# combine two data frames 
-toi <- rbind(expert_toi, toi_novice)
 
+# combine the both df
+toi <- rbind(novice_toi,
+                expert_toi)
 
 ############### TIME TO FIRST REACTION ####################
 
@@ -128,12 +178,21 @@ react_plot <-
   facet_wrap(vars(TOI), 
              nrow = 1, strip.position = "bottom") +
   ggtitle("Time to first reaction to disruptive person") +
+  # scale_x_discrete(limits = c("Chatting_with_neighbour",
+  #                             "Whispering", 
+  #                             "Heckling",
+  #                             "Snipping_with_fingers",
+  #                             "Drumming_with_hands",
+  #                             "Clicking_pen",
+  #                             "Head_on_table",
+  #                             "Looking_at_phone",
+  #                             "Drawing")) +
   theme_classic() +
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 8,
-                                angle = 65),
+                                angle = 90),
     plot.title = element_text(size = 15, face = "bold"))
     
 react_plot
@@ -209,7 +268,7 @@ fix_plot <-
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 6,
-                                angle = 65),
+                                angle = 90),
     plot.title = element_text(size = 15, face = "bold"))
 
 fix_plot
