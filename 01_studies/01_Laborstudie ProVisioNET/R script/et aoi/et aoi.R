@@ -91,7 +91,17 @@ df_aoi <- rbind(novice_aoi,
 ############### TIME TO FIRST FIXATION ####################
 
 # filter relevant rows only for time to first reaction
-df_aoi <- df_aoi %>% filter (TOI == "Lesson")
+df_aoi <- df_aoi %>% filter (TOI == "Lesson" |
+                               TOI == "Chatting_with_neighbour"|
+                               TOI == "Clicking_pen"| 
+                               TOI == "Drawing"|
+                               TOI == "Drumming_with_hands"| 
+                               TOI == "Head_on_table"| 
+                               TOI == "Heckling"|
+                               TOI == "Looking_at_phone" |
+                               TOI == "Snipping_with_fingers"|
+                               TOI == "Whispering")
+
 
 # select relevant columns only for time to first fixation
 df_aoi <- df_aoi %>% 
