@@ -191,15 +191,6 @@ react_plot <-
   labs(x = "") +
   scale_fill_brewer(palette = "Set1") +
   ggtitle("Time to first reaction to disruptive person") +
-  # scale_x_discrete(limits = c("Chatting_with_neighbour",
-  #                             "Whispering", 
-  #                             "Heckling",
-  #                             "Snipping_with_fingers",
-  #                             "Drumming_with_hands",
-  #                             "Clicking_pen",
-  #                             "Head_on_table",
-  #                             "Looking_at_phone",
-  #                             "Drawing")) +
   theme_classic() +
   theme(
     axis.text.x = element_blank(),
