@@ -163,8 +163,23 @@ react_group_plot
 
 # plotting time to first reaction for all disruptions
 react_plot <- 
-  ggplot(data = toi_react,
-         mapping = aes(x = Group,
+  toi_react %>% 
+  mutate(TOI = factor(TOI,
+                        levels = c("Chatting_with_neighbour","Whispering",
+                                  "Heckling","Snipping_with_fingers",
+                                  "Drumming_with_hands","Clicking_pen",
+                                  "Head_on_table","Looking_at_phone",
+                                  "Drawing"
+                                  ),
+                        labels = c("Chatting with neighbour","Whispering",
+                                   "Heckling","Snipping with fingers",
+                                   "Drumming with hands","Clicking pen",
+                                   "Head on table","Looking at phone",
+                                   "Drawing"
+                        )
+                        )
+         ) %>% 
+  ggplot(mapping = aes(x = Group,
                        y = `Time to first reaction in seconds`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
@@ -175,8 +190,6 @@ react_plot <-
   ylim(0,25) + 
   labs(x = "") +
   scale_fill_brewer(palette = "Set1") +
-  facet_wrap(vars(TOI), 
-             nrow = 1, strip.position = "bottom") +
   ggtitle("Time to first reaction to disruptive person") +
   # scale_x_discrete(limits = c("Chatting_with_neighbour",
   #                             "Whispering", 
@@ -193,7 +206,11 @@ react_plot <-
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 8,
                                 angle = 90),
-    plot.title = element_text(size = 15, face = "bold"))
+    plot.title = element_text(size = 15, face = "bold")
+    ) +
+  facet_wrap(facets = vars(TOI),
+             nrow = 1,
+             strip.position = "bottom")
     
 react_plot
 
