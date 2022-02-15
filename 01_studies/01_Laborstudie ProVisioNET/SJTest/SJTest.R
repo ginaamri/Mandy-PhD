@@ -22,6 +22,9 @@ df_sjt <- rename(df_sjt, c("Group" = "UI06_05",
                            "Rules and routines" = "SJT_R_gek",
                            "All" = "SJT_KF_gek"))
 
+# remove NAs
+df_sjt <- na.omit(df_sjt)
+
 # changing from wide to long format
 df_sjt_long <- df_sjt %>% 
   pivot_longer(!Group, names_to = "Facets Classroom Management", values_to = "Mean")
@@ -49,7 +52,8 @@ mean_plot <-
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 12))
+    strip.text.x = element_text(size = 14),
+    axis.title.y = element_text(size = 16))
 
 mean_plot
 
