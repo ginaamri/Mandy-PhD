@@ -193,6 +193,7 @@ df_aoi_totaldur <- df_aoi_totaldur %>% pivot_longer(
 # remove all NAs
 df_aoi_totaldur <- na.omit(df_aoi_totaldur)
 
+
 # changing milliseconds into seconds
 df_aoi_totaldur$Seconds <- round(df_aoi_totaldur$Milliseconds/1000,
                         digits = 2)
