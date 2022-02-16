@@ -86,8 +86,8 @@ dist_plot <-
                                  "heckling",
                                  "snipping",
                                  "drumming",
-                                 "clicking",
-                                 "looking at phone",
+                                 "clicking pen",
+                                 "locking at phone",
                                  "head on table",
                                  "drawing"
                       ),
@@ -100,10 +100,9 @@ dist_plot <-
                                  "Looking at phone",
                                  "Head on table",
                                  "Drawing"
-                      )
+                                 )
   )) %>%
-  ggplot(data = sri_disrup,
-         mapping = aes(x = Group,
+  ggplot(mapping = aes(x = Group,
                        y = Disruption_Factor)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
@@ -125,8 +124,8 @@ dist_plot <-
                                     angle = 90),
         plot.title = element_text(size = 15, face = "bold"))
 
-dist_plot
 
+dist_plot
 
 # plotting Confident factor for group
 confi_group_plot <- 
