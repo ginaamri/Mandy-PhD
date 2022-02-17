@@ -69,6 +69,13 @@ novice_aoi9 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_116_inter
 novice_aoi10 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_117_interval_complete.tsv",
                         locale = locale(decimal_mark = ","))
 
+novice_aoi11 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_118_interval_complete.tsv",
+                         locale = locale(decimal_mark = ","))
+
+novice_aoi12 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_119_interval_complete.tsv",
+                         locale = locale(decimal_mark = ","))
+
+
 # combine the novice df
 novice_aoi <- rbind(novice_aoi1, 
                     novice_aoi2, 
@@ -79,7 +86,9 @@ novice_aoi <- rbind(novice_aoi1,
                     novice_aoi7,
                     novice_aoi8,
                     novice_aoi9,
-                    novice_aoi10)
+                    novice_aoi10,
+                    novice_aoi11,
+                    novice_aoi12)
 
 
 # combine the both df

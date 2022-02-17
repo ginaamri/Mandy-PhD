@@ -47,7 +47,6 @@ output            : bookdown::word_document2
 
 
 ```{r setup, include = FALSE}
-install.packages('papaja')
 library("papaja")
 r_refs("r-references.bib")
 ```
