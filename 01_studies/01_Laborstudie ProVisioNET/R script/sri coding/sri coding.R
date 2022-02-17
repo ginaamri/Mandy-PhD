@@ -144,17 +144,41 @@ confi_group_plot <-
   scale_fill_brewer(palette = "Set1") +
   ggtitle("How confident did you feel dealing with this event?") +
   theme_classic() +
-  theme(axis.ticks.x = element_blank(),
-        legend.position="none",
-        axis.text.x = element_text(size = 11),
-        plot.title = element_text(size = 15, face = "bold"))
+  theme(
+    legend.position="none",
+    axis.text.x = element_text(size = 15),
+    plot.title = element_text(size = 19, face = "bold"),
+    axis.text.y = element_text(size = 15),
+    axis.title.y = element_text(size = 15))
 
 confi_group_plot
 
 # plotting confident factor for all disruptions
 confi_plot <- 
-  ggplot(data = sri_confi,
-         mapping = aes(x = Group,
+  sri_confi %>% 
+  mutate(Event = factor(Event,
+                        levels = c("chatting",
+                                   "whispering",
+                                   "heckling",
+                                   "snipping",
+                                   "drumming",
+                                   "clicking pen",
+                                   "locking at phone",
+                                   "head on table",
+                                   "drawing"
+                        ),
+                        labels = c("Chatting",
+                                   "Whispering",
+                                   "Heckling",
+                                   "Snipping",
+                                   "Drumming",
+                                   "Clicking pen",
+                                   "Looking at phone",
+                                   "Head on table",
+                                   "Drawing"
+                        )
+  )) %>%
+  ggplot(mapping = aes(x = Group,
                        y = Confident_Factor)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
@@ -173,7 +197,7 @@ confi_plot <-
   theme(axis.ticks.x = element_blank(),
         axis.text.x = element_blank(),
         strip.text.x = element_text(size = 8, 
-                                    angle = 80),
+                                    angle = 90),
         plot.title = element_text(size = 15, face = "bold"))
 
 confi_plot
@@ -191,7 +215,7 @@ sri_disrup_mean <- sri_disrup %>%
   summarise("M" = round(mean(Disruption_Factor), 2),
             "SD" = round(sd(Disruption_Factor), 2))
 
-# mean ttfr 
+# mean confi_factor
 sri_confi_mean <- sri_confi %>%
   group_by(Group) %>%
   summarise("M" = round(mean(Confident_Factor), 2),

@@ -50,10 +50,12 @@ mean_plot <-
   theme_classic()+
   ggtitle("Situational Judgment Test of Strategic Knowledge of Classroom Management") +
   theme(
+    plot.title = element_text(size = 18, face = "bold"),
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 14),
-    axis.title.y = element_text(size = 16))
+    axis.title.y = element_text(size = 13),
+    axis.title.x = element_text(size = 25))
 
 mean_plot
 

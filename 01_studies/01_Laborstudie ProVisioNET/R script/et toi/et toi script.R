@@ -68,6 +68,12 @@ novice_toi9 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_116_inter
 novice_toi10 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_117_interval_complete.tsv",
                          locale = locale(decimal_mark = ","))
 
+novice_toi11 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_118_interval_complete.tsv",
+                         locale = locale(decimal_mark = ","))
+
+novice_toi12 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_119_interval_complete.tsv",
+                         locale = locale(decimal_mark = ","))
+
 
 # combine the novice df
 novice_toi <- rbind(novice_toi1, 
@@ -79,7 +85,9 @@ novice_toi <- rbind(novice_toi1,
                     novice_toi7,
                     novice_toi8,
                     novice_toi9,
-                    novice_toi10)
+                    novice_toi10,
+                    novice_toi11,
+                    novice_toi12)
 
 
 # combine the both df
@@ -155,8 +163,10 @@ react_group_plot <-
   ggtitle("Time to first reaction to disruptive person") +
   theme_classic() + 
   theme(legend.position="none",
-        axis.text.x = element_text(size = 11),
-        plot.title = element_text(size = 15, face = "bold"))
+        axis.text.x = element_text(size = 20),
+        plot.title = element_text(size = 17, face = "bold"),
+        axis.title.y = element_text(size = 18),
+        )
 
 react_group_plot
 
@@ -195,9 +205,10 @@ react_plot <-
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 8,
+    strip.text.x = element_text(size = 9,
                                 angle = 90),
-    plot.title = element_text(size = 15, face = "bold")
+    plot.title = element_text(size = 17, face = "bold"),
+    axis.title.y = element_text(size = 14),
     ) +
   facet_wrap(facets = vars(TOI),
              nrow = 1,
@@ -250,15 +261,32 @@ fix_group_plot <-
   ggtitle("Time to first fixation to disruptive person") +
   theme_classic() + 
   theme(legend.position="none",
-        axis.text.x = element_text(size = 11),
-        plot.title = element_text(size = 15, face = "bold"))
+        axis.text.x = element_text(size = 20),
+        plot.title = element_text(size = 17, face = "bold"),
+        axis.title.y = element_text(size = 15),
+  )
 
 fix_group_plot
 
 # plotting time to first fixation for all disruptions
 fix_plot <- 
-  ggplot(data = toi_fix,
-         mapping = aes(x = Group,
+  toi_fix %>% 
+  mutate(TOI = factor(TOI,
+                      levels = c("Chatting_with_neighbour","Whispering",
+                                 "Heckling","Snipping_with_fingers",
+                                 "Drumming_with_hands","Clicking_pen",
+                                 "Head_on_table","Looking_at_phone",
+                                 "Drawing"
+                      ),
+                      labels = c("Chatting with neighbour","Whispering",
+                                 "Heckling","Snipping with fingers",
+                                 "Drumming with hands","Clicking pen",
+                                 "Head on table","Looking at phone",
+                                 "Drawing"
+                      )
+  )
+  ) %>% 
+  ggplot(mapping = aes(x = Group,
                        y = `Time to first fixation in seconds`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
@@ -275,9 +303,14 @@ fix_plot <-
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 6,
+    strip.text.x = element_text(size = 9,
                                 angle = 90),
-    plot.title = element_text(size = 15, face = "bold"))
+    plot.title = element_text(size = 17, face = "bold"),
+    axis.title.y = element_text(size = 14),
+  ) +
+  facet_wrap(facets = vars(TOI),
+             nrow = 1,
+             strip.position = "bottom")
 
 fix_plot
 
