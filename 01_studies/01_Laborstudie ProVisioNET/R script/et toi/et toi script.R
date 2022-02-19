@@ -217,10 +217,83 @@ react_plot <-
 react_plot
 
 
+# plotting time to first reaction for 3 disruptions sum up
+toi_react$TOI[toi_react$TOI == "Chatting_with_neighbour" |
+                toi_react$TOI == "Heckling" |
+                toi_react$TOI == "Whispering"] <- "Verbal disruption"
+
+toi_react$TOI[toi_react$TOI == "Head_on_table" |
+                toi_react$TOI == "Looking_at_phone" |
+                toi_react$TOI == "Drawing"] <- "Lack of eagerness"
+
+toi_react$TOI[toi_react$TOI == "Clicking_pen" |
+                toi_react$TOI == "Drumming_with_hands" |
+                toi_react$TOI == "Snipping_with_fingers"] <- "Agitation"
+
+
+# select relevant columns only for time to first event
+toi_react <- toi_react %>% 
+  select(Participant, Group, TOI,
+         Time_to_first_Event.Reaction_chatting,
+         Time_to_first_Event.Reaction_clicking,
+         Time_to_first_Event.Reaction_drawing,
+         Time_to_first_Event.Reaction_drumming,
+         Time_to_first_Event.Reaction_head,
+         Time_to_first_Event.Reaction_heckling,
+         Time_to_first_Event.Reaction_phone,
+         Time_to_first_Event.Reaction_snipping,
+         Time_to_first_Event.Reaction_whispering)
+
+# changing format with pivot_longer()
+toi_react <-
+  toi_react %>%
+  pivot_longer(cols = contains("Time_to"),
+               names_to = "Time_to_first_reaction",
+               values_to = "Time_to_first_Reaction") %>%
+  na.omit() %>% 
+  select(Group, TOI, Participant, Time_to_first_Reaction)
+
+
+# changing milliseconds into seconds
+toi_react$`Time to first reaction in seconds`<- round(toi_react$Time_to_first_Reaction/1000,
+                                                      digits = 2)
+
+# plotting
+react_plot_sum <-
+  ggplot(data = toi_react,
+         mapping = aes(x = Group,
+                       y = `Time to first reaction in seconds`)) +
+  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_point(size = 2, 
+             alpha = 0.4,
+             position = position_jitter(seed = 1, 
+                                        width = 0.1,
+                                        height = 0)) +
+  ylim(0,25) + 
+  labs(x = "") +
+  scale_fill_brewer(palette = "Set1") +
+  ggtitle("Time to first reaction to disruptive person") +
+  theme_classic() +
+  theme(
+    legend.title = element_text(size=14), #change legend title font size
+    legend.text = element_text(size=14), #change legend text font size
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    strip.text.x = element_text(size = 15),
+    plot.title = element_text(size = 20, face = "bold"),
+    axis.title.y = element_text(size = 16),
+  ) +
+  facet_wrap(facets = vars(TOI),
+             nrow = 1,
+             strip.position = "bottom")
+
+react_plot_sum
+
+
 
 ############### TIME TO FIRST FIXATION ####################
 
-# filter relevant rows only for time to first reaction
+# filter relevant rows only for time to first fixation
 toi_fix <- toi %>% filter (TOI == "Chatting_with_neighbour"|
                                TOI == "Clicking_pen"| 
                                TOI == "Drawing"|
@@ -268,6 +341,7 @@ fix_group_plot <-
 
 fix_group_plot
 
+
 # plotting time to first fixation for all disruptions
 fix_plot <- 
   toi_fix %>% 
@@ -313,6 +387,66 @@ fix_plot <-
              strip.position = "bottom")
 
 fix_plot
+
+
+# plotting time to first fixation for 3 disruptions sum up
+toi_fix$TOI[toi_fix$TOI == "Chatting_with_neighbour" |
+              toi_fix$TOI == "Heckling" |
+              toi_fix$TOI == "Whispering"] <- "Verbal disruption"
+
+toi_fix$TOI[toi_fix$TOI == "Head_on_table" |
+              toi_fix$TOI == "Looking_at_phone" |
+              toi_fix$TOI == "Drawing"] <- "Lack of eagerness"
+
+toi_fix$TOI[toi_fix$TOI == "Clicking_pen" |
+              toi_fix$TOI == "Drumming_with_hands" |
+              toi_fix$TOI == "Snipping_with_fingers"] <- "Agitation"
+
+
+# select relevant columns only for time to first fixation
+toi_fix <- toi_fix %>% 
+  select(Group, Participant, TOI, Time_to_first_fixation.Disruptive_Person, Number_of_fixations.Disruptive_Person)
+
+# remoce all NAs
+toi_fix <- na.omit(toi_fix)
+
+# changing milliseconds into seconds
+toi_fix$`Time to first fixation in seconds`<- round(toi_fix$Time_to_first_fixation.Disruptive_Person/1000,
+                                                    digits = 2)
+
+toi_fix$`Number of fixations on disruptive person` <- toi_fix$Number_of_fixations.Disruptive_Person
+
+# plotting
+fix_plot_sum <-
+  ggplot(data = toi_fix,
+         mapping = aes(x = Group,
+                       y = `Time to first fixation in seconds`)) +
+  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_point(size = 2, 
+             alpha = 0.4,
+             position = position_jitter(seed = 1, 
+                                        width = 0.1,
+                                        height = 0)) +
+  ylim(0,25) + 
+  labs(x = "") +
+  scale_fill_brewer(palette = "Set1") +
+  ggtitle("Time to first fixation to disruptive person") +
+  theme_classic() +
+  theme(
+    legend.title = element_text(size=14), #change legend title font size
+    legend.text = element_text(size=14), #change legend text font size
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    strip.text.x = element_text(size = 15),
+    plot.title = element_text(size = 20, face = "bold"),
+    axis.title.y = element_text(size = 16),
+  ) +
+  facet_wrap(facets = vars(TOI),
+             nrow = 1,
+             strip.position = "bottom")
+
+fix_plot_sum
+
 
 # # plotting number of fixations for disruptive person
 # number_plot <-
