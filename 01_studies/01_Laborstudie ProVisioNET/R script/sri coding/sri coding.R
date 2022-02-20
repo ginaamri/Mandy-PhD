@@ -76,33 +76,26 @@ dist_group_plot <-
 dist_group_plot
 
 
+# plotting Disruption factor for 3 disruptions sum up
+sri_disrup$Event[sri_disrup$Event == "chatting" |
+                   sri_disrup$Event == "heckling" |
+                   sri_disrup$Event == "whispering"] <- "Verbal disruption"
 
-# plotting Disruption factor for all disruptions
-dist_plot <- 
-  sri_disrup %>% 
-  mutate(Event = factor(Event,
-                      levels = c("chatting",
-                                 "whispering",
-                                 "heckling",
-                                 "snipping",
-                                 "drumming",
-                                 "clicking pen",
-                                 "locking at phone",
-                                 "head on table",
-                                 "drawing"
-                      ),
-                      labels = c("Chatting",
-                                 "Whispering",
-                                 "Heckling",
-                                 "Snipping",
-                                 "Drumming",
-                                 "Clicking pen",
-                                 "Looking at phone",
-                                 "Head on table",
-                                 "Drawing"
-                                 )
-  )) %>%
-  ggplot(mapping = aes(x = Group,
+sri_disrup$Event[sri_disrup$Event == "head on table" |
+                   sri_disrup$Event == "looking at phone" |
+                   sri_disrup$Event == "drawing"] <- "Lack of eagerness"
+
+sri_disrup$Event[sri_disrup$Event == "clicking pen" |
+                   sri_disrup$Event == "drumming" |
+                   sri_disrup$Event == "snipping"] <- "Agitation"
+
+
+
+
+# plotting
+sri_disrup_sum <-
+  ggplot(data = sri_disrup,
+         mapping = aes(x = Group,
                        y = Disruption_Factor)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
@@ -110,22 +103,79 @@ dist_plot <-
              position = position_jitter(seed = 1, 
                                         width = 0.1,
                                         height = 0)) +
-  labs(x = "",
-       y = "Disruption Factor") + 
-  ylim(0,10)+
+  ylim(0,10) + 
+  labs(x = "") +
+  ylab("Disruption Factor") +
   scale_fill_brewer(palette = "Set1") +
-  facet_wrap(vars(Event), 
-             nrow = 1, strip.position = "bottom") +
   ggtitle("How disruptive was the event for you?") +
-  theme_classic() + 
-  theme(axis.ticks.x = element_blank(),
-        axis.text.x = element_blank(),
-        strip.text.x = element_text(size = 8, 
-                                    angle = 90),
-        plot.title = element_text(size = 15, face = "bold"))
+  theme_classic() +
+  theme(
+    legend.title = element_text(size=14), #change legend title font size
+    legend.text = element_text(size=14), #change legend text font size
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    strip.text.x = element_text(size = 15),
+    plot.title = element_text(size = 20, face = "bold"),
+    axis.title.y = element_text(size = 16),
+  ) +
+  facet_wrap(facets = vars(Event),
+             nrow = 1,
+             strip.position = "bottom")
+
+sri_disrup_sum
 
 
-dist_plot
+
+# # plotting Disruption factor for all disruptions
+# dist_plot <- 
+#   sri_disrup %>% 
+#   mutate(Event = factor(Event,
+#                       levels = c("chatting",
+#                                  "whispering",
+#                                  "heckling",
+#                                  "snipping",
+#                                  "drumming",
+#                                  "clicking pen",
+#                                  "looking at phone",
+#                                  "head on table",
+#                                  "drawing"
+#                       ),
+#                       labels = c("Chatting",
+#                                  "Whispering",
+#                                  "Heckling",
+#                                  "Snipping",
+#                                  "Drumming",
+#                                  "Clicking pen",
+#                                  "Looking at phone",
+#                                  "Head on table",
+#                                  "Drawing"
+#                                  )
+#   )) %>%
+#   ggplot(mapping = aes(x = Group,
+#                        y = Disruption_Factor)) +
+#   geom_boxplot(mapping = aes(fill = Group)) +
+#   geom_point(size = 2, 
+#              alpha = 0.4,
+#              position = position_jitter(seed = 1, 
+#                                         width = 0.1,
+#                                         height = 0)) +
+#   labs(x = "",
+#        y = "Disruption Factor") + 
+#   ylim(0,10)+
+#   scale_fill_brewer(palette = "Set1") +
+#   facet_wrap(vars(Event), 
+#              nrow = 1, strip.position = "bottom") +
+#   ggtitle("How disruptive was the event for you?") +
+#   theme_classic() + 
+#   theme(axis.ticks.x = element_blank(),
+#         axis.text.x = element_blank(),
+#         strip.text.x = element_text(size = 8, 
+#                                     angle = 90),
+#         plot.title = element_text(size = 15, face = "bold"))
+# 
+# 
+# dist_plot
+
 
 # plotting Confident factor for group
 confi_group_plot <- 
@@ -153,32 +203,27 @@ confi_group_plot <-
 
 confi_group_plot
 
-# plotting confident factor for all disruptions
-confi_plot <- 
-  sri_confi %>% 
-  mutate(Event = factor(Event,
-                        levels = c("chatting",
-                                   "whispering",
-                                   "heckling",
-                                   "snipping",
-                                   "drumming",
-                                   "clicking pen",
-                                   "locking at phone",
-                                   "head on table",
-                                   "drawing"
-                        ),
-                        labels = c("Chatting",
-                                   "Whispering",
-                                   "Heckling",
-                                   "Snipping",
-                                   "Drumming",
-                                   "Clicking pen",
-                                   "Looking at phone",
-                                   "Head on table",
-                                   "Drawing"
-                        )
-  )) %>%
-  ggplot(mapping = aes(x = Group,
+
+# plotting Confident factor for 3 disruptions sum up
+sri_confi$Event[sri_confi$Event == "chatting" |
+                  sri_confi$Event == "heckling" |
+                  sri_confi$Event == "whispering"] <- "Verbal disruption"
+
+sri_confi$Event[sri_confi$Event == "head on table" |
+                   sri_confi$Event == "looking at phone" |
+                   sri_confi$Event == "drawing"] <- "Lack of eagerness"
+
+sri_confi$Event[sri_confi$Event == "clicking pen" |
+                  sri_confi$Event == "drumming" |
+                  sri_confi$Event == "snipping"] <- "Agitation"
+
+
+
+
+# plotting
+sri_confi_sum <-
+  ggplot(data = sri_confi,
+         mapping = aes(x = Group,
                        y = Confident_Factor)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
@@ -186,25 +231,79 @@ confi_plot <-
              position = position_jitter(seed = 1, 
                                         width = 0.1,
                                         height = 0)) +
-  labs(x = "",
-       y = "Confident Factor") + 
-  ylim(0,10)+
+  ylim(0,10) + 
+  labs(x = "") +
+  ylab("Confident Factor") +
   scale_fill_brewer(palette = "Set1") +
-  facet_wrap(vars(Event), 
-             nrow = 1, strip.position = "bottom") +
   ggtitle("How confident did you feel dealing with this event?") +
-  theme_classic() + 
-  theme(axis.ticks.x = element_blank(),
-        axis.text.x = element_blank(),
-        strip.text.x = element_text(size = 8, 
-                                    angle = 90),
-        plot.title = element_text(size = 15, face = "bold"))
+  theme_classic() +
+  theme(
+    legend.title = element_text(size=14), #change legend title font size
+    legend.text = element_text(size=14), #change legend text font size
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    strip.text.x = element_text(size = 15),
+    plot.title = element_text(size = 20, face = "bold"),
+    axis.title.y = element_text(size = 16),
+  ) +
+  facet_wrap(facets = vars(Event),
+             nrow = 1,
+             strip.position = "bottom")
 
-confi_plot
+sri_confi_sum
 
-# # arranging plots 
-# grid.arrange(dist_plot, confi_plot, ncol=2, nrow =1)
-
+# # plotting confident factor for all disruptions
+# confi_plot <- 
+#   sri_confi %>% 
+#   mutate(Event = factor(Event,
+#                         levels = c("chatting",
+#                                    "whispering",
+#                                    "heckling",
+#                                    "snipping",
+#                                    "drumming",
+#                                    "clicking pen",
+#                                    "locking at phone",
+#                                    "head on table",
+#                                    "drawing"
+#                         ),
+#                         labels = c("Chatting",
+#                                    "Whispering",
+#                                    "Heckling",
+#                                    "Snipping",
+#                                    "Drumming",
+#                                    "Clicking pen",
+#                                    "Looking at phone",
+#                                    "Head on table",
+#                                    "Drawing"
+#                         )
+#   )) %>%
+#   ggplot(mapping = aes(x = Group,
+#                        y = Confident_Factor)) +
+#   geom_boxplot(mapping = aes(fill = Group)) +
+#   geom_point(size = 2, 
+#              alpha = 0.4,
+#              position = position_jitter(seed = 1, 
+#                                         width = 0.1,
+#                                         height = 0)) +
+#   labs(x = "",
+#        y = "Confident Factor") + 
+#   ylim(0,10)+
+#   scale_fill_brewer(palette = "Set1") +
+#   facet_wrap(vars(Event), 
+#              nrow = 1, strip.position = "bottom") +
+#   ggtitle("How confident did you feel dealing with this event?") +
+#   theme_classic() + 
+#   theme(axis.ticks.x = element_blank(),
+#         axis.text.x = element_blank(),
+#         strip.text.x = element_text(size = 8, 
+#                                     angle = 90),
+#         plot.title = element_text(size = 15, face = "bold"))
+# 
+# confi_plot
+# 
+# # # arranging plots 
+# # grid.arrange(dist_plot, confi_plot, ncol=2, nrow =1)
+# 
 
 
 #################### MEAN, SD, N ############
