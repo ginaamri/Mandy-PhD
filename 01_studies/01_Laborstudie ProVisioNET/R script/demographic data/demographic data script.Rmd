@@ -6,7 +6,7 @@ author:
   - name          : "Mandy Klatt"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
-    address       : "Egelstraße 2a 04103 Leipzig"
+    address       : "Dittrichring 5-7, 04109 Leipzig"
     email         : "mandy.klatt@uni-leipzig.de"
   - name          : "Dr. Gregor Kachel"
     affiliation   : "1, 2"
@@ -22,13 +22,17 @@ affiliation:
     institution   : "Max-Planck University for Evolutionary Anthropology"
 
 authornote: |
-  The Ethics Advisory Board of Leipzig University has dealt with the research project and has come to the conclusion that there are no objections to the implementation of this research project. The Ethics Advisory Board points out that the scientific and ethical responsibilty for the implementation of the project remains with the project director.
+  Ethics Approval 
+All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University.
+  
+  Consent to Participate
+All participants gave informed consent.
+
 
 abstract: |
-  This document is a supplement to the paper and shows first graphs findings from the pilot study. 
   
-keywords          : "Professional Vision, Expert-Novice-Paradigm, Eye-Tracking"
-wordcount         : "1949"
+keywords          : "Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking"
+wordcount         : "XXX"
 
 bibliography      : ["r-references.bib"]
 
@@ -114,7 +118,7 @@ demo.data$Gender <- as.numeric(demo.data$Gender)
 demo.table <- demo.data %>%
   group_by(Group) %>%
   summarise(N=n(),
-            "Male" = sum(Gender),
+            "Gender male" = round(100 * n() / nrow(Gende)), 2,
             "M Age" = round(mean(Age), 2),
             "Min Age" = min(Age),
             "Max Age" = max(Age),

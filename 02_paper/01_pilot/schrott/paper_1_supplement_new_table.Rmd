@@ -1,0 +1,1458 @@
+---
+title             : "Through the eyes of the teacher"
+shorttitle        : "Visual attention in teaching and learning processes"
+
+author: 
+  - name          : "Mandy Klatt"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Egelstraße 2a 04103 Leipzig"
+    email         : "mandy.klatt@uni-leipzig.de"
+  - name          : "Dr. Gregor Kachel"
+    affiliation   : "1, 2"
+  - name          : "Dr. Christin Lotz"
+    affiliation   : "1"
+  - name          : "Prof. Dr. Anne Deiglmayr"
+    affiliation   : "1"
+  
+affiliation:
+  - id            : "1"
+    institution   : "Leipzig University"
+  - id            : "2"
+    institution   : "Max-Planck University for Evolutionary Anthropology"
+
+authornote: |
+  The Ethics Advisory Board of Leipzig University has dealt with the research project and has come to the conclusion that there are no objections to the implementation of this research project. The Ethics Advisory Board points out that the scientific and ethical responsibilty for the implementation of the project remains with the project director.
+
+abstract: |
+  This document is a supplement to the paper and shows first graphs findings from the pilot study. 
+  
+keywords          : "Professional Vision, Expert-Novice-Paradigm, Eye-Tracking"
+wordcount         : "1949"
+
+bibliography      : ["r-references.bib"]
+
+floatsintext      : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_pdf #bookdown::word_document2
+---
+
+```{r setup, include = FALSE}
+
+# if a package is not installed on the current machine, it will install it
+if(!"devtools" %in% rownames(installed.packages())) install.packages("devtools")
+if (!require(tidyverse)) install.packages('tidyverse'); library(tidyverse)
+if (!require(papaja)) install.packages("papaja"); library(papaja)
+if (!require(psych)) install.packages('psych'); library(psych) # stats
+if (!require(moments)) install.packages('moments'); library(moments) # skewness & kurtosis
+if (!require(sjPlot)) install.packages('sjPlot'); library(sjPlot) # item analysis of a scale or index
+
+# suppress "summarize" info. 
+# if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
+options(dplyr.summarise.inform = FALSE)
+
+r_refs("r-references.bib")
+
+```
+
+```{r analysis-preferences, echo = FALSE}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+# State of research
+
+Teaching and classroom management are multidimensional settings in which teachers have to respond immediately to events as they develop [@barnes2004significance]. The different interests and abilities of students must be managed in a way that maximizes the active learning time of students and minimizes disruptions whilst teaching. Learning to develop such classroom management skills and to teach effectively is a complicated and complex process [@wolff2017see]. 
+
+During teaching, teachers must be able to select from a variety of visual and acoustic impressions to focus their attention on the essential and to distinguish between relevant and irrelevant events. This ability is called professional vision and is a key component of teacher expertise and successful teaching [@barth2017professionelle]. Eye tracking technology has become a reliable means to study teachers’ visual focus of attention [@pouta2020student; @bogert2016visualperception; @wolff2017see]
+
+Educational research has repeatedly shown that there are differences between experienced and novice teachers in terms of perception and behavioral competencies [@barth2017professionelle; @bogert2016visualperception; @wolff2017see]. For example, experts direct their attention more often and more evenly to all students, whereas novices only direct their attention to some students. The frequency and duration of fixations as eye movement are decisive [@stuermer2017eye]. Mobile eye-tracking technology has also shown that experienced teachers distribute their focus more efficiently to solve tasks [@jarodzka2010eyes]. Furthermore, in contrast to novices, experts are able to focus their attention on the entire class and guide the class while giving feedback to individual students and answering questions [@cortina2015low].
+
+
+
+## Research questions
+
+The aim of the pilot study was to investigate whether there are differences in how expert and novice teachers manage scripted classroom disruptions. The disruptions were experimentally varied using a previously written script. Thus, our aim was to find out whether differences in the allocation of attention between expertise groups can be detected in this controlled context.
+
+In order to answer this question, the hypothesis was formulated that teachers with more professional experience not only notice more disruptions but also notice them faster. In the hypothesis, therefore, it is necessary to check what has already been shown in the research literature: In complex teaching situations, experts have a more structured and elaborate professional knowledge than novices in order to perceive and interpret relevant events and to act appropriately [@berliner2001learning; @lachner2016makes].
+
+
+# Methods
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+
+
+## Participants
+
+For the sample recruitment of the subjects (N = 8, experts n = 2, novices n = 6), schools in the city of Leipzig in Saxony were contacted. The institutions as well as the subjects were informed in detail about the aim and intention of the study in advance. Participation in the study was voluntary and only took place after written consent has been given.
+
+```{r demographicspilottable, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+quest.raw.data<-read.table("./data/short_questionnaire_data_2701211.txt", dec=",", sep="\t", header=T) 
+
+# knock out NAs
+quest.raw.data <- quest.raw.data  %>% filter(
+  personID != "NA")
+
+# create a basic table (tibble) using tidyverse functions
+demo.quest.table <- quest.raw.data %>%
+  filter(what == "head") %>%
+  group_by(group) %>%
+  summarise(N=n(),
+            "Male" = sum(gender),
+            "M age" = round(mean(age), 2),
+            "Min age" = min(age),
+            "Max age" = max(age),
+            "SD age" = round(sd(age), 2),
+            "M exp." = round(mean(experience), 2),
+            "Min exp." = min(experience),
+            "Max exp." = max(experience),
+            "SD exp." = round(sd(experience), 2),
+           )
+
+# format and insert table in manuscript
+apa_table(
+  demo.quest.table,
+  caption = "Demographic Information and Teaching Experience",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+The selection of the subjects was based on extreme groups, whereby professional experience is the crucial criterion for the selection of experts or novices. Novices were recruited as teachers who have been working in the teaching profession for no more than 3 years, whereas experts were considered to have professional experience of 10 years or more [@messner2000berufliche].
+
+## Procedure/ Data collection
+
+### Set up
+
+For this study, scripted mini-lessons with n = 2 experts and n = 6 novices were recorded in the mobile Lab of the Empirical School and Classroom Research at the University of Leipzig. The subjects were divided into groups of four, so the study was conducted on two different sessions. All participants were asked to hold a 10-minute lesson. The duration of each appointment was approximately 2h: per group 10min briefing, 4 x 10min mini-lessons, 10min technical preparation and follow-up and 4x 10min transition points between the lessons and answering questionnaires.
+
+One person from the group of 4 acted as a teacher, the other three subjects acted as the class. The subjects, who represented the class, were given behavioral instructions in a pre-written script to simulate typical events and disruptions in the classroom (e.g. putting their heads on the table, chatting, looking at their mobile phones, etc.).
+
+The lesson disruptions were displayed as instructions during the lesson for all "students" but not the teacher. In order to avoid learning effects, the disruptions in each lesson were distributed pseudo-randomly over the short teaching phase. In addition, the order of the data collection was taken into account in the analyses and variance caused by order was controlled.
+
+(ref:datacollection-caption) Example for set up during a mini-lesson
+
+```{r datacollection, fig.cap = "(ref:datacollection-caption)", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/datacollection.png", dpi = 108)
+
+# # How to insert images in papaja
+# - pictures must be png
+# - I created a pictures folder in the main folder, just dumb pictures there
+# - you just need to hand the name and path of the picture to the knitr::: function (see above)
+# - the dpi argument is for adjusting the size on the page in pixels
+
+# in order to write the caption, you have to use the line just above the code chunk (ref:YOURTEXT-caption) and then just write behind it
+# the code chunk then opens and after "r" it needs to provide a name for the code chunk, must be unique in the document
+# the fig.cap = then calls the text from the line just above
+# fig.align allows to position the pic on page, center ist probablby best
+# echo = false ensures that the code chunk does not occur in the pdf
+# Now, go and try putting your own images in the paper 
+#
+# TIP = check line 46 in this manuscript. THis section ets global properties for how graphs are put in the paper. 
+#         if floatsintext      : yes  --> pics, graphs, tables will be put where the code chunk is
+#         if floatsintext      : no   --> pics, graphs, tables will be put at the end as is required by some journals
+# TIP: check the folder "papaja_example&tutorial" that I put in this folder for paper1
+# Tip: make a bookmark of this and skim through it: http://frederikaust.com/papaja_man/
+
+```
+
+### Questionnaire data
+
+After each mini-lesson, the students answered items on the teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and scales on the teacher's presence behavior (students n = 24). In addition, the teacher was asked to give a self-assessment on his/her classroom management by completing the questionnaire after each mini-lesson (teachers n = 8).
+
+### Behavioral data
+
+The speech, sounds and voices were recorded with an audio recorder installed in the middle of the Lab. Movements, facial expressions and gestures of the subjects were recorded by four cameras from different angles. One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
+
+### Eyetracking data
+
+A binocular Tobii Pro Glasses 2 eye-tracker consisting of a wearable head unit and a recording unit was used to record the eye movements of all 8 participants. The head unit is a measuring device with different sensitive sensors. A high-definition scene camera captures a full HD video and an integrated microphone records the surrounding sounds. Infrared light illuminators support the eye tracking sensors which record the eye orientation. The videos were recorded with a sampling rate of 50 Hz and a video resolution with 1920 x 1080 at 25 frames per second. The scene camera has a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and has a frame dimension of 179 x 159 x 57mm (width x depth x height). The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
+
+
+## Coding/ Data preparation/ Reliability 
+
+### Questionnaire Data
+
+The evaluation after each mini-lesson was conducted using paper questionnaires. Time needed to complete the questionnaire was about 5 minutes. 
+The scales on the quality of teaching are a validated questionnaire [@helmke2014unterrichtsdiagnostik]. Whereas the scales on the teacher's presence behavior were derived from the research literature [@brophy1986classroom; @kiel2013trainingsbuch; @kounin2006techniken; @marzano2007art; @nolting2012storungen] and were used in the pilot for the first time. The questionnaire is 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree). Data was obtained from N = 32 subjects (students n = 24, teachers n = 8). 
+
+The following scales were assessed:
+
+(1) Classroom management
+(2) Positive climate and motivation
+(3) Clarity and structuredness
+(4) Activation and support
+(5) Presence: posture/gaze
+(6) Presence: voice
+(7) Presence: verbal and non-verbal intervention
+(8) Natural behaviour
+
+Table \@ref(tab:table-all-scales-self-assessment) provides an overview over the mean, the standard deviation, the range, Cronbach's Alpha and the Skewness & Kurtosis of all scales for the teachers' self-assessment.
+
+```{r table-all-scales-self-assessment, echo=FALSE, message=FALSE, warning=FALSE}
+
+# prepare data (selected from questionnaire data) - only equal items and without observer
+quest.raw.data<-read.table("./data/short_questionnaire_data_150221.txt", dec=",", sep="\t", header=T) 
+
+# knock out NAs and duration of speaking time
+quest.raw.data <- quest.raw.data  %>% filter(
+  personID != "NA",
+  itemID != "8",
+  perspective == "self-assessment")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
+
+##############################################
+
+# calculate Cronbach's Alpha for each scale
+# activation & support
+self.as.wide <- quest.raw.data %>%
+                          filter (scale == "Activation and support") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+self.alpha.as <- alpha(self.as.wide[,-1])
+
+#clarity & structuredness
+self.cs.wide <- quest.raw.data %>%
+                          filter (scale == "Clarity and structuredness") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.cs <- alpha(self.cs.wide[,-1])
+
+#classroom management
+self.cm.wide <- quest.raw.data %>%
+                          filter (scale == "Classroom management") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.cm <- alpha(self.cm.wide[,-1])
+
+#natural behaviour
+self.nb.wide <- quest.raw.data %>%
+                          filter (scale == "Natural behaviour") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.nb <- alpha(self.nb.wide[,-1])
+
+#positive climate and motivation
+self.pcm.wide <- quest.raw.data %>%
+                          filter (scale == "Positive climate and motivation") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.pcm <- alpha(self.pcm.wide[,-1])
+
+#presence: posture & gaze
+self.ppg.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: posture/gaze") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.ppg <- alpha(self.ppg.wide[,-1])
+
+#presence: voice
+self.pv.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: voice") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.pv <- alpha(self.pv.wide[,-1])
+
+#presence: verbal/non-verbal intervention
+self.pvni.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: verbal and non-verbal intervention") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.pvni <- alpha(self.pvni.wide[,-1])
+	
+#Presence without subscales
+self.p.wide <- quest.raw.data %>%
+                          filter(str_detect(scale,
+                                        paste(c(
+                                        "Presence: voice", 
+                                        "Presence: verbal and non-verbal intervention", 
+                                        "Presence: posture/gaze"),
+                                         collapse = '|'))) %>% 
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+self.alpha.p <- alpha(self.p.wide[,-1])
+
+##############################################
+
+# # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+# 
+# # activation & support
+# tab_itemscale(self.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # classroom management
+# tab_itemscale(self.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # clarity & structuredness
+# tab_itemscale(self.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # natural behaviour
+# tab_itemscale(self.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # postive clima and motivation
+# tab_itemscale(self.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # presence without subscales
+# tab_itemscale(self.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # presence: posture & gaze
+# tab_itemscale(self.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# # presence: voice
+# tab_itemscale(self.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# # presence: verbal/non-verbal intervention
+# tab_itemscale(self.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+##############################################
+
+# add alphas to excel table 
+# read in new data 
+quest.raw.data.alpha <- read.table("./data/short_questionnaire_data_260221_alpha.txt", dec=",", sep="\t", header=T) 
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data.alpha <- quest.raw.data.alpha %>%  mutate(alpha = as.numeric(alpha))
+
+##############################################
+
+# #####correlation between all presences' items
+# SELF-ASSESSMENT
+# install.packages("Hmisc")
+# library("Hmisc")
+
+# function cr() to format the correlation matrix
+res1.self<-cor(self.p.wide[,-1])
+
+
+# Visualization correlation matrix
+# Use corrplot() function: Draw a correlogram
+
+# # install.packages("corrplot")
+# library("corrplot")
+# 
+# # Insignificant correlation are crossed
+# corrplot(res1.self$r, type="upper", order="hclust",
+#          p.mat = res1.self$P, sig.level = 0.01, insig = "blank")
+# # Insignificant correlations are leaved blank
+# corrplot(res1.self$r, type="upper", order="hclust",
+#          p.mat = res1.self$P, sig.level = 0.01, insig = "blank")
+
+###############################################
+
+# create a basic table (tibble) using tidyverse functions for teachers' self assessment 
+# Change Number of Digits in Global R Options to reduce the number of digits after the decimal point to two
+options(digits = 2)              
+
+teacher.scale.quest.table <- quest.raw.data.alpha %>% # select data
+  filter(perspective == "self-assessment")%>%
+  group_by(scale) %>%
+  summarise("N items" = n_distinct(shortID),
+            "M" = round(mean(value), 2),
+            "SD" = round(sd(value), 2),
+            "Min" = min(value),
+            "Max" = max(value),
+            "Skewness" = skewness(value),
+            "Kurtosis" = kurtosis(value),
+            "Cronbach's α" = mean(alpha))
+
+# format and insert table in manuscript
+apa_table(
+  teacher.scale.quest.table,
+  caption = "Scale analysis for teachers' self-assessment",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+)
+
+```
+
+Table \@ref(tab:table-all-scales-students) provides an overview over the mean, the standard deviation, the range, Cronbach's Alpha and the Skewness & Kurtosis of all scales for the students' perception of the teacher's behaviour in class.
+
+```{r table-all-scales-students, echo=FALSE, message=FALSE, warning=FALSE}
+
+# prepare data (selected from questionnaire data) - only equal items and without observer
+quest.raw.data<-read.table("./data/short_questionnaire_data_150221.txt", dec=",", sep="\t", header=T) 
+
+# knock out NAs and duration of speaking time
+quest.raw.data <- quest.raw.data  %>% filter(
+  personID != "NA",
+  itemID != "8",
+  perspective == "student")
+view(quest.raw.data)
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
+
+###############################################
+
+# calculate Cronbach's Alpha for each scale of students' peception
+
+# activation & support
+stud.as.wide <- quest.raw.data %>%
+                          filter (scale == "Activation and support") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+stud.alpha.as <- alpha(stud.as.wide[,-1])
+
+#clarity & structuredness
+stud.cs.wide <- quest.raw.data %>%
+                          filter (scale == "Clarity and structuredness") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.cs <- alpha(stud.cs.wide[,-1])
+
+#classroom management
+stud.cm.wide <- quest.raw.data %>%
+                          filter (scale == "Classroom management") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.cm <- alpha(stud.cm.wide[,-1])
+
+#natural behaviour
+stud.nb.wide <- quest.raw.data %>%
+                          filter (scale == "Natural behaviour") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.nb <- alpha(stud.nb.wide[,-1])
+
+#positive climate and motivation
+stud.pcm.wide <- quest.raw.data %>%
+                          filter (scale == "Positive climate and motivation") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.pcm <- alpha(stud.pcm.wide[,-1])
+
+#presence: posture & gaze
+stud.ppg.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: posture/gaze") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.ppg <- alpha(stud.ppg.wide[,-1])
+
+#presence: verbal and non-verbal intervention
+stud.pvni.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: verbal and non-verbal intervention") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.pvni <- alpha(stud.pvni.wide[,-1])
+	
+#presence: voice
+stud.pv.wide <- quest.raw.data %>%
+                          filter (scale == "Presence: voice") %>%  
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.pv <- alpha(stud.pv.wide[,-1])
+
+#Presence without subscales
+stud.p.wide <- quest.raw.data %>%
+                          filter(str_detect(scale,
+                                        paste(c(
+                                        "Presence: voice", 
+                                        "Presence: verbal and non-verbal intervention", 
+                                        "Presence: posture/gaze"),
+                                         collapse = '|'))) %>% 
+                          select(shortID, value) %>%
+                          group_by(shortID) %>%
+                          mutate(id=row_number()) %>%
+                          spread(shortID, value)
+
+stud.alpha.p <- alpha(stud.p.wide[,-1])
+
+# ###############################################
+
+# # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+# 
+# # activation & support
+# tab_itemscale(stud.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # classroom management
+# tab_itemscale(stud.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # clarity & structuredness
+# tab_itemscale(stud.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # natural behaviour
+# tab_itemscale(stud.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # positive clima and motivation
+# tab_itemscale(stud.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # presence without subscales
+# tab_itemscale(stud.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# 
+# # presence: posture & gaze
+# tab_itemscale(stud.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# # presence: voice
+# tab_itemscale(stud.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# # presence: verbal/non-verbal intervention
+# tab_itemscale(stud.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+
+##############################################
+# #####correlation between all presences' items
+# SELF-ASSESSMENT
+# install.packages("Hmisc")
+library("Hmisc")
+
+# # function to format the correlation matrix
+# flattenCorrMatrix <- function(cormat, pmat) {
+#   ut <- upper.tri(cormat)
+#   data.frame(
+#     row = rownames(cormat)[row(cormat)[ut]],
+#     column = rownames(cormat)[col(cormat)[ut]],
+#     cor  =(cormat)[ut],
+#     p = pmat[ut]
+#     )
+# }
+# 
+# res1.stud<-cor(stud.p.wide[,-1])
+
+# res1.stud<-rcorr(as.matrix(stud.p.wide[,-1]))
+# 
+# flattenCorrMatrix(res1.stud$r, res1.stud$P)
+# 
+# res2.stud<-flattenCorrMatrix(res1.stud$r, res1.stud$P)
+
+# Visualization correlation matrix
+# Use corrplot() function: Draw a correlogram
+
+# install.packages("corrplot")
+library("corrplot")
+
+# # Insignificant correlation are crossed
+# corrplot(res1.stud$r, type="upper", order="hclust",
+#          p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
+# # Insignificant correlations are leaved blank
+# corrplot(res1.stud$r, type="upper", order="hclust",
+#          p.mat = res1.stud$P, sig.level = 0.01, insig = "blank")
+
+##############################################
+
+# add alphas to excel table 
+# read in new data 
+quest.raw.data.alpha <- read.table("./data/short_questionnaire_data_260221_alpha.txt", dec=",", sep="\t", header=T) 
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+quest.raw.data.alpha <- quest.raw.data.alpha %>%  mutate(alpha = as.numeric(alpha))
+
+##############################################
+
+# create a basic table (tibble) using tidyverse functions for teacher self assessment 
+student.scale.quest.table <- quest.raw.data.alpha %>% # select data
+  filter(perspective == "student")%>%
+  group_by(scale) %>%
+  summarise("N items" = n_distinct(shortID),
+            "M" = round(mean(value), 2),
+            "SD" = round(sd(value), 2),
+            "Min" = min(value),
+            "Max" = max(value),
+            "Skewness" = skewness(value),
+            "Kurtosis" = kurtosis(value),
+            "Cronbach's α" = mean(alpha))
+
+# format and insert table in manuscript
+apa_table(
+  student.scale.quest.table,
+  caption = "Scale analysis for students' perspective",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+)
+
+```
+
+
+\newpage
+The individual items of a scale are further represented in graphs.
+
+(1) Classroom management
+```{r Line Plots Classroom Management, echo=FALSE, fig.height=6, fig.width=6, message=FALSE, warning=FALSE, fig.cap="Items for Classroom Management"}
+
+### classroom management 
+
+# filter by parameter variable, i.e. create a subset for classroom management without perspective "observer"
+cm.data <- quest.raw.data %>% filter(scale == "Classroom management")
+                                                 
+view(cm.data)
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+cm.data <- cm.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+cm.plot.sd <- cm.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+cm.plot<-ggplot(data = cm.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = perspective, colour = perspective)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = cm.data, y = "value", x = NULL,
+       title="Classroom management" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+cm.plot
+
+```
+\newpage
+(2) Positive climate and motivation
+```{r Positive climate and motivation line plots,  fig.width=6, fig.height = 7, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = "Items for Positive climate and motivation"}
+
+### Positive climate and motivation 
+
+# filter by parameter variable, i.e. create a subset for Positive climate and motivation
+pcm.data <- quest.raw.data %>% filter(scale == "Positive climate and motivation")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+pcm.data <- pcm.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+pcm.plot.sd <- pcm.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+pcm.plot<-ggplot(data = pcm.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = pcm.data, y = "value", x = NULL,
+       title="Positive climate and motivation" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 5))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+pcm.plot
+
+```
+\newpage
+(3) Clarity and structuredness
+```{r Clarity and structuredness line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = "Items for Clarity and structuredness"}
+
+### Clarity and structuredness 
+
+# filter by parameter variable, i.e. create a subset for Clarity and structuredness
+cs.data <- quest.raw.data %>% filter(scale == "Clarity and structuredness")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+cs.data <- cs.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+cs.plot.sd <- cs.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+cs.plot<-ggplot(data = cs.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = cs.data, y = "value", x = NULL,
+       title="Clarity and structuredness" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+cs.plot
+
+```
+\newpage
+(4) Activation and support
+```{r Activation and support line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = "Items for Activation and support"}
+
+### Activation and support 
+
+# filter by parameter variable, i.e. create a subset for Activation and support
+as.data <- quest.raw.data %>% filter(scale == "Activation and support")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+as.data <- as.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+as.plot.sd <- as.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+as.plot<-ggplot(data = as.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = as.data, y = "value", x = NULL,
+       title="Activation and support" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+as.plot
+
+```
+\newpage
+
+(ref:presenceposturegaze-caption) (5) Presence: posture/gaze 
+
+```{r presenceposturegaze, fig.cap = "(ref:presenceposturegaze-caption)", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/presenceposturegaze.png", dpi = 108)
+
+# ```{r Presence: posture/gaze line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+
+# ### Presence: posture/gaze 
+# 
+# # filter by parameter variable, i.e. create a subset for Presence: posture/gaze
+# ppg.data <- quest.raw.data %>% filter(scale == "Presence: posture/gaze")
+# 
+# # value sometimes contained text before filtering, we have to convert the numbers to numeric
+# ppg.data <- ppg.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# 
+# # to create error bars, we need to summarize the data in a separate data frame
+# ppg.plot.sd <- ppg.data %>%
+#   group_by(group, item.wordings, .drop=TRUE) %>%
+#   summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+# 
+# # long plot
+# ppg.plot<-ggplot(data = ppg.plot.sd,
+#                   aes(x = item.wordings, y = mean,
+#                       group = group, colour = group)) +
+#   geom_line()+
+#   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+#   theme_light() +
+#   ylim(1,4)+
+#   facet_grid(~perspective)+
+#   labs(data = ppg.data, y = "value", x = NULL,
+#        title="Presence: posture/gaze" ,
+#        subtitle=NULL)+
+#   theme(legend.position="bottom",
+#         panel.spacing.x = ,
+#         plot.title = element_text(hjust = 0.5),
+#         axis.text.y = element_text(size = 6))+
+#   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+#   coord_flip()
+# ppg.plot
+
+```
+
+\newpage
+
+(ref:presencevoice-caption) (6) Presence: voice
+
+```{r presencevoice, fig.cap = "(ref:presencevoice-caption)", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/presencevoice.png", dpi = 108)
+
+# ```{r Presence: voice line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+# 
+# ### Presence: voice 
+# # filter by parameter variable, i.e. create a subset for Presence: voice
+# pv.data <- quest.raw.data %>% filter(scale == "Presence: voice")
+# 
+# # value sometimes contained text before filtering, we have to convert the numbers to numeric
+# pv.data <- pv.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# 
+# # to create error bars, we need to summarize the data in a separate data frame
+# pv.plot.sd <- pv.data %>%
+#   group_by(group, item.wordings, .drop=TRUE) %>%
+#   summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+# 
+# # long plot
+# pv.plot<-ggplot(data = pv.plot.sd,
+#                   aes(x = item.wordings, y = mean,
+#                       group = group, colour = group)) +
+#   geom_line()+
+#   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+#   theme_light() +
+#   ylim(1,4)+
+#   facet_grid(~perspective)+
+#   labs(data = pv.data, y = "value", x = NULL,
+#        title="Presence: voice" ,
+#        subtitle=NULL)+
+#   theme(legend.position="bottom",
+#         panel.spacing.x = ,
+#         plot.title = element_text(hjust = 0.5),
+#         axis.text.y = element_text(size = 6))+
+#   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+#   coord_flip()
+# pv.plot
+
+```
+\newpage
+
+(ref:presenceverbalnonverbalintervention-caption) (7) Presence: verbal and non-verbal intervention
+
+```{r presenceverbalnonverbalintervention, fig.cap = "(ref:presenceverbalnonverbalintervention-caption)", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/presenceverbalnonverbalintervention.png", dpi = 108)
+
+# ```{r Presence: verbal and non-verbal intervention line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE}
+# 
+# ### Presence: verbal and non-verbal intervention 
+# # filter by parameter variable, i.e. create a subset for Presence: verbal and non-verbal intervention
+# pvni.data <- quest.raw.data %>% filter(scale == "Presence: verbal and non-verbal intervention")
+# 
+# # value sometimes contained text before filtering, we have to convert the numbers to numeric
+# pvni.data <- pvni.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+# 
+# # to create error bars, we need to summarize the data in a separate data frame
+# pvni.plot.sd <- pvni.data %>%
+#   group_by(group, item.wordings, .drop=TRUE) %>%
+#   summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+# 
+# # long plot
+# pvni.plot<-ggplot(data = pvni.plot.sd,
+#                   aes(x = item.wordings, y = mean,
+#                       group = group, colour = group)) +
+#   geom_line()+
+#   geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+#   theme_light() +
+#   ylim(1,4)+
+#   facet_grid(~perspective)+
+#   labs(data = pvni.data, y = "value", x = NULL,
+#        title="Presence: verbal and non-verbal intervention" ,
+#        subtitle=NULL)+
+#   theme(legend.position="bottom",
+#         panel.spacing.x = ,
+#         plot.title = element_text(hjust = 0.5),
+#         axis.text.y = element_text(size = 6))+
+#   scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+#   coord_flip()
+# pvni.plot
+
+```
+\newpage
+(8) Natural behaviour
+```{r Natural behaviour line plots,  fig.width=6, fig.height = 6, message = FALSE, warning = FALSE , echo=FALSE, fig.cap = "Items for Natural Behaviour"}
+
+### Natural behaviour 
+# filter by parameter variable, i.e. create a subset for Natural behaviour
+nb.data <- quest.raw.data %>% filter(scale == "Natural behaviour")
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+nb.data <- nb.data %>%  mutate(value = as.numeric(as.character(factor(value))))
+
+# to create error bars, we need to summarize the data in a separate data frame
+nb.plot.sd <- nb.data %>%
+  group_by(group, item.wordings, .drop=TRUE) %>%
+  summarise(perspective, mean = mean(value), n = n(), sd = sd(value), se = sd/sqrt(n), )
+
+# long plot
+nb.plot<-ggplot(data = nb.plot.sd,
+                  aes(x = item.wordings, y = mean,
+                      group = group, colour = group)) +
+  geom_line()+
+  geom_pointrange(position = position_dodge(0.1), aes(ymin = mean-se, ymax = mean+se))+
+  theme_light() +
+  ylim(1,4)+
+  facet_grid(~perspective)+
+  labs(data = nb.data, y = "value", x = NULL,
+       title="Natural behaviour" ,
+       subtitle=NULL)+
+  theme(legend.position="bottom",
+        panel.spacing.x = ,
+        plot.title = element_text(hjust = 0.5),
+        axis.text.y = element_text(size = 6))+
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 55))+
+  coord_flip()
+nb.plot
+
+```
+\newpage
+In addition, we plotted all scales. Graph provides boxplots and individual data for experts and novices.
+
+```{r boxplot scales, fig.width=6, fig.height = 8, echo = FALSE, fig.cap = "Boxplots and individual data for experts and novices"}
+
+quest.plot <- quest.raw.data %>%
+  ggplot(aes(x=scale, y=value, fill=scale)) +
+    geom_boxplot() +
+    scale_x_discrete(guide = guide_axis(angle = 70)) +
+    geom_jitter(color="black", size=0.4, alpha=0.5) +
+    theme_light() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)) +
+    facet_grid(~group)+
+    ggtitle("Boxplot with individual points for all scales") +
+    xlab("")
+quest.plot
+
+```
+
+\newpage
+
+### Behavioral Data
+
+The recorded lessons were coded in a post-hoc procedure with the coding software MAXQDA by previously trained raters [@kuckartz2019analyzing]. The following coding scheme was developed:
+
+- phase - lesson begin, state event: teacher starts the lesson with a noise, talk, taking a position in class
+- phase - lesson end,	state event: teacher finishes the lesson with a noise, talk, taking a position in class
+- phase - organization/transition points, state event: any situation that does not imply effective learning time (fetching chalk, working        material, organizing desks, opening windows, printing work results etc.)
+- phase - single,	state event: any individual student activity on a given task (reading, writing, drawing etc.)
+- phase - group, state event: any student activity on a given task together in a group of at least 3 students (reading, writing, drawing etc.)
+- phase - class discussion, state event: discussion in class, teacher talks to class/individual/group
+- phase - pair: state event: any student activity on a given task together in a team of 2 students (reading, writing, drawing etc.)
+- phase - teachers lecture, state event: any teacher's presentation on a certain topic which maybe supported by a PPP, PREZI, notes on board,    OHP etc.
+- phase - other, state event: not categorizable
+- phase - break, state event: e.g. drinking, relaxation exercises
+- phase - external interruption, state event: external interruptions (e.g. fire alarm, technical problems, other teachers coming into the room)
+
+- speaking time - teacher, state event
+- speaking time - students, state event
+
+- disruption - chatting with neighbor, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - asking a question, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - yelling, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - looking at phone, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - staring out of window, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - drawing, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - head on table, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - clicking pen, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - drumming hands, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+- disruption - walking around, state event (perceived/ not perceived, reacted: verbal, non-verbal/ not reacted)
+
+
+
+First, we coded the speaking time of the teacher and the students to compare all perspectives: coder, observer, students, teacher. The graph below shows the result of the coded speaking duration compared to the estimated speaking duration assessed with the questionnaire.
+
+```{r coded speaking time, echo = FALSE }
+### read in data for 01_01_expert_D
+speaking.data.01.01 <- read.delim("./data/Aperol_pilot_01_01_expert_D_cam4_AL_MK.txt", dec=",", sep="\t", header=T)
+
+### select relevant columns
+speaking.data.01.01 <- speaking.data.01.01  %>% select(
+  Dokumentgruppe,
+  Dokumentname,
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+### filter only speaking time of teacher and "kodiert von Anna" as row 
+speaking.data.01.01 <- speaking.data.01.01 %>% filter (Code == "speaking time\\teacher",
+                                           Dokumentgruppe == "kodiert von Anna")
+speaking.data.01.01 <- sum(speaking.data.01.01$Abdeckungsgrad..)
+
+
+# read in data for 01_02_expert_A
+speaking.data.01.02 <- read.delim("./data/Aperol_pilot_01_02_expert_A_cam1_AL.txt", dec=",", sep="\t", header=T)
+
+
+### select relevant columns
+speaking.data.01.02 <- speaking.data.01.02 %>% select(
+  Dokumentname,
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+### filter only speaking time of teacher as row 
+speaking.data.01.02 <- speaking.data.01.02 %>% filter (Code == "speaking time\\teacher")
+speaking.data.01.02 <- sum(speaking.data.01.02$Abdeckungsgrad..)
+
+
+# read in data for 01_03_novice_B
+speaking.data.01.03 <- read.delim("./data/Aperol_pilot_01_03_novice_B_cam1.txt", dec=",", sep="\t", header=T)
+
+### select relevant columns
+speaking.data.01.03 <- speaking.data.01.03 %>% select(
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+### filter only speaking time of teacher as row 
+speaking.data.01.03 <- speaking.data.01.03 %>% filter (Code == "speaking time\\teachter")
+speaking.data.01.03 <- sum(speaking.data.01.03$Abdeckungsgrad..)
+
+
+
+# read in data for 01_04_novice_C
+speaking.data.01.04 <- read.delim("./data/Aperol_pilot_01_04_novice_C_cam1.txt", dec=",", sep="\t", header=T)
+
+### select relevant columns
+speaking.data.01.04 <- speaking.data.01.04 %>% select(
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+### filter only speaking time of teacher as row 
+speaking.data.01.04 <- speaking.data.01.04 %>% filter (Code == "speaking time\\teachter")
+
+speaking.data.01.04 <- sum(speaking.data.01.04$Abdeckungsgrad..)
+
+
+# read in data for 02_01_novice_A
+speaking.data.02.01 <- read.delim("./data/Aperol_pilot_02_01_novice_A_glasses.txt", dec=",", sep="\t", header=T)
+
+### select relevant columns
+speaking.data.02.01 <- speaking.data.02.01 %>% select(
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+### filter only speaking time of teacher as row 
+speaking.data.02.01 <- speaking.data.02.01 %>% filter (Code == "speaking time\\teacher")
+speaking.data.02.01 <- sum(speaking.data.02.01$Abdeckungsgrad..)
+
+
+# read in data for 02_02_novice_B
+speaking.data.02.02 <- read.delim("./data/Aperol_pilot_02_02_novice_B_cam1_AL_MK.txt", dec=",", sep="\t", header=T)
+
+### select relevant columns
+speaking.data.02.02 <- speaking.data.02.02 %>% select(
+  Dokumentgruppe,
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+### filter only speaking time of teacher as row 
+speaking.data.02.02 <- speaking.data.02.02 %>% filter (Code == "speaking time\\teacher",
+                                                       Dokumentgruppe == "kodiert von Anna")
+speaking.data.02.02 <- sum(speaking.data.02.02$Abdeckungsgrad..)
+
+
+# read in data for 02_03_novice_C
+speaking.data.02.03 <- read.delim("./data/Aperol_pilot_02_03_novice_C_cam1_AL_MK.txt", dec=",", sep="\t", header=T)
+
+### select relevant columns
+speaking.data.02.03 <- speaking.data.02.03 %>% select(
+  Dokumentgruppe,
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+### filter only speaking time of teacher as row 
+speaking.data.02.03 <- speaking.data.02.03 %>% filter (Code == "speaking time\\teachter",
+                                                       Dokumentgruppe == "02_03_kodiert von Anna")
+speaking.data.02.03 <- sum(speaking.data.02.03$Abdeckungsgrad..)
+
+# read in data for 02_04_novice_D
+speaking.data.02.04 <- read.delim("./data/Aperol_pilot_02_04_novice_D_cam1.txt", dec=",", sep="\t", header=T)
+
+### select relevant columns
+speaking.data.02.04 <- speaking.data.02.04 %>% select(
+  Code,
+  Anfang,
+  Ende,
+  Fläche,
+  Abdeckungsgrad..)
+
+### filter only speaking time of teacher as row 
+speaking.data.02.04 <- speaking.data.02.04 %>% filter (Code == "speaking time\\teachter")
+speaking.data.02.04 <- sum(speaking.data.02.04$Abdeckungsgrad..)
+
+```
+
+```{r speaking plot, echo=FALSE}
+
+# read in table with coded speaking time included
+speaking.data <- read.delim("./data/plus_coded_speaking_time_questionnaire_data_0802.txt", dec=",", sep="\t", header=T)
+
+# to compare both sessions filter only Identical items
+speaking.data <- speaking.data  %>% filter(str_detect(scale, 
+                                                 paste(c("Duration of speaking time"),
+                                                    collapse = '|')))
+
+# value sometimes contained text before filtering, we have to convert the numbers to numeric
+speaking.data <- speaking.data %>%  mutate(value = as.numeric(value))
+
+
+speaking.plot <- speaking.data %>%
+  ggplot(aes(x='Duration of speaking time', y=value, fill=group)) +
+    geom_boxplot() +
+    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    theme_light() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11),
+      axis.text.x = element_text(size = 8)) +
+    facet_grid(group~perspective) +
+    ggtitle("Boxplot with individual points for Duration of speaking time") +
+    xlab("")
+speaking.plot
+
+```
+
+
+### Eyetracking Data
+
+The Tobii Pro Lab 2 software was used to analyze the teachers' visual attetion during each mini-lesson. The software allows for non-screen based recordings of a participants’ attention while moving in real-world settings. The recordings of the glasses contain both HD-video from the subjects' perspective as well as the respective gaze data mapped onto the video. In order to map multiple recordings to AOIs, we first imported the eye-tracking recordings into the Tobii Pro Analyzer software. Second, we created dynamic Areas of Interest (AOI) manually to plot the gaze data. Once the AOIs are created, the gaze recordings of multiple recordings can be mapped and analyzed in aggregated form. Tobii Pro does not allow to do AOI based analyses within Pro Lab. So we exported a tsv. file to do further analyses in the software R.
+
+#### Gaze relational index (GRI)
+
+The GRI is a measure of visual expertise in information processing. This metric is calculated as the ratio of mean fixation duration to fixation count. The GRI is higher for novices than for experts. [@gegenfurtner2020gaze]
+
+```{r GRItable1, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.toi.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_all_TOI.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.toi.data <- et.toi.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations))
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.toi.table1 <- et.toi.data %>%
+  group_by(TOI) %>%
+  summarise("ID" = Participant,
+            "Group" = Variable1,
+            "Duration TOI ms" = Duration_of_interval,
+            "M Duration Fixation" = mean(Total_duration_of_whole_fixations),
+            "Number Fixation" = Number_of_whole_fixations,
+            "Time TOI Duration" = Duration_of_interval/mean(Total_duration_of_whole_fixations),
+            "Old GRI" = mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations,
+            "New GRI" = (Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations)
+
+
+# format and insert table in manuscript
+apa_table(
+  et.toi.table1,
+  caption = "GRI",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+```{r GRItable2, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.toi.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_all_TOI.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.toi.data <- et.toi.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations))
+
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.toi.table2 <- et.toi.data %>%
+  group_by(Variable1, TOI) %>%
+  rename("Group" = Variable1) %>%
+  summarise("M Fixation Duration" = mean(Total_duration_of_whole_fixations),
+            "M Number Fixation" = mean(Number_of_whole_fixations),
+            "M TOI" = mean(Duration_of_interval),
+            "M Old GRI" = mean(mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations),
+            "SD Old GRI" = sd(mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations),
+            "M New GRI" = mean((Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations),
+            "SD New GRI" = sd((Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations))
+
+
+# format and insert table in manuscript
+apa_table(
+  et.toi.table2,
+  caption = "GRI",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+```{r GRItable3, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.toi.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_all_TOI.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.toi.data <- et.toi.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations))
+
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.toi.table3 <- et.toi.data %>%
+  group_by(Variable1) %>%
+  rename("Group" = Variable1) %>%
+  summarise("M Fixation Duration" = mean(Total_duration_of_whole_fixations),
+            "M Number Fixation" = mean(Number_of_whole_fixations),
+            "M TOI" = mean(Duration_of_interval),
+            "M Old GRI" = mean(mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations),
+            "SD Old GRI" = sd(mean(Total_duration_of_whole_fixations)/Number_of_whole_fixations),
+            "M New GRI" = mean((Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations),
+            "SD New GRI" = sd((Duration_of_interval/mean(Total_duration_of_whole_fixations))/Number_of_whole_fixations))
+
+
+# format and insert table in manuscript
+apa_table(
+  et.toi.table3,
+  caption = "GRI",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+```{r calibration phase TOI, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.calib.data<-read.table("./data/Aperol_pilot_glasses_raw_ALL_metrics_calib_without_AOI_snapshot.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.calib.data <- et.calib.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations)
+                                       )
+# select relevant rows 
+et.calib.data <- et.calib.data %>% filter(TOI == "Calibration phase")
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.calib.table <- et.calib.data %>%
+  group_by(Participant, Variable1) %>%
+  summarise("Fixation Number" = Number_of_whole_fixations,
+            "Fixation Duration" = Total_duration_of_whole_fixations,
+            "M Duration Fixation" = Average_duration_of_whole_fixations,
+            "TOI" = Duration_of_interval,
+            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+
+# format and insert table in manuscript
+apa_table(
+  et.calib.table,
+  caption = "Number and Duration (in msec) of Fixations during calibration",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "scriptsize" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+```{r Calib end to lession start TOI, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.calib.lesson.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_calib_end_lesson_start.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.calib.lesson.data <- et.calib.lesson.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations)
+                                       )
+options(digits = 2)              
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.calib.lesson.table <- et.calib.lesson.data %>%
+  group_by(Participant, Variable1) %>%
+  summarise("Fixation Number" = Number_of_whole_fixations,
+            "Fixation Duration" = Total_duration_of_whole_fixations,
+            "M Duration Fixation" = Average_duration_of_whole_fixations,
+            "TOI" = Duration_of_interval,
+            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+
+# format and insert table in manuscript
+apa_table(
+  et.calib.lesson.table,
+  caption = "Number and Duration (in msec) of Fixations Calibration End to Lesson Start",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "scriptsize" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+```{r Disturbance "head on table" to first intervention, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+et.distub.head.data<-read.table("./data/Aperol_pilot_glasses_raw_metrics_head_on_table_session1.tsv", dec=",", sep="\t", header=T) 
+
+
+# converting integer to numeric
+et.distub.head.data <- et.distub.head.data %>%  mutate(Duration_of_interval = as.numeric(Duration_of_interval),
+                                       Total_duration_of_whole_fixations = as.numeric(Total_duration_of_whole_fixations),
+                                       Number_of_whole_fixations = as.numeric(Number_of_whole_fixations),
+                                       Average_duration_of_whole_fixations = as.numeric(Average_duration_of_whole_fixations)
+                                       )
+options(digits = 2)              
+
+# calculate the GRI 
+# create a basic table (tibble) using tidyverse functions
+et.distub.head.table <- et.distub.head.data %>%
+  group_by(Participant, Variable1) %>%
+  summarise("Fixation Number" = Number_of_whole_fixations,
+            "Fixation Duration" = Total_duration_of_whole_fixations,
+            "M Duration Fixation" = Average_duration_of_whole_fixations,
+            "TOI" = Duration_of_interval,
+            "GRI" = Average_duration_of_whole_fixations / Number_of_whole_fixations)
+view(et.distub.head.data)
+
+# format and insert table in manuscript
+apa_table(
+  et.distub.head.table,
+  caption = "Number and Duration (in msec) of Fixations for Disturbance 'head on table' to first intervention",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "scriptsize" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+#########################################
+
+## Data analysis
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+### Questionnaire Data
+
+### Behavioral Data
+
+### Eyetracking Data
+
+
+
+# Results
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+### Questionnaire Data
+
+### Behavioral Data
+
+### Eyetracking Data
+
+
+# Discussion
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup

@@ -1,0 +1,1693 @@
+---
+title             : "Supplementary information  \nPredicting pragmatic cue integration in adults’ and children’s inferences about novel word meanings"
+shorttitle        : " "
+
+author: 
+  - name          : "Manuel Bohn"
+    affiliation   : "1,2,3"
+  - name          : "Michael Henry Tessler"
+    affiliation   : "4"
+  - name          : "Megan Merrick"
+    affiliation   : "1"
+  - name          : "Michael C. Frank"
+    affiliation   : "1"
+
+affiliation:
+  - id            : "1"
+    institution   : "Department of Psychology, Stanford University"
+  - id            : "2"
+    institution   : "Leipzig Research Center for Early Child Development, Leipzig University"
+  - id            : "3"
+    institution   : "Department of Comparative Cultural Psychology, Max Planck Institute for Evolutionary Anthropology"
+  - id            : "4"
+    institution   : "Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology"
+
+bibliography      : ["library.bib"]
+
+figsintext        : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : no
+mask              : no
+toc               : yes
+
+class             : "doc"
+output            : papaja::apa6_pdf
+header-includes:
+  \usepackage{caption}
+  \usepackage{setspace}\doublespacing
+  \renewcommand{\thetable}{S\arabic{table}} 
+  \renewcommand{\thefigure}{S\arabic{figure}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F, include = T)
+library(papaja)
+library(tidyverse)
+library(knitr)
+library(ggthemes)
+library(langcog)
+library(rwebppl)
+library(coda)
+library(matrixStats)
+library(ggpubr)
+library(lme4)
+library(broom)
+library(broom.mixed)
+library(matrixStats)
+library(readxl)
+
+estimate_mode <- function(s) {
+  d <- density(s)
+  return(d$x[which.max(d$y)])
+}
+
+hdi_upper<- function(s){
+  m <- HPDinterval(mcmc(s))
+  return(m["var1","upper"])
+}
+
+hdi_lower<- function(s){
+  m <- HPDinterval(mcmc(s))
+  return(m["var1","lower"])
+}
+
+
+```
+
+
+```{r}
+# load data files
+
+# adults exp 1 
+adult_ex1_data <- read_csv(file="../../stats/data/adult_ex1.csv")
+# adults exp 2 novelty
+adult_ex2_novelty_data <- read_csv(file="../../stats/data/adult_ex2_novelty.csv")
+# adults exp 2 preference
+adult_ex2_preference_data <- read_csv(file="../../stats/data/adult_ex2_preference.csv")
+# adults ex3
+adult_ex3_data <-read_csv(file="../../stats/data/adult_ex3.csv")
+# prior strength manipulation experiments in experiment 4
+adult_ex4_prior_data <-read_csv(file="../../stats/data/adult_ex4_prior.csv") 
+# adults ex4
+adult_ex4_data <-read_csv(file="../../stats/data/adult_ex4.csv") 
+
+# children ex1
+child_ex1_data <-read_csv(file="../../stats/data/child_ex1.csv")
+# children ex2 preference
+child_ex2_data <-read_csv(file="../../stats/data/child_ex2.csv") 
+# children ex3
+child_ex3_data <-read_csv(file="../../stats/data/child_ex3.csv") 
+```
+
+
+# Overview
+
+Here we present additional information about methods, results and cognitive models. Readers who are interested in the model code and analysis code itself are encouraged to consult the associated online repository: https://github.com/manuelbohn/mcc. 
+
+# Supplemental methods and results
+
+The following sections present details on the analyses used to evaluate whether the different experimental manipulations produced different responses. For all generalized linear mixed models (GLMM), we included random intercepts for participant id (`id`) and the animal speaker (`agent` - representing the respective "item") with random slopes for condition (same speaker vs. different speaker), alignment (congruent vs. incongruent; experiment 3, 4 and 7) and age (experiment 5-7). We also included interactions between random effects. This maximal structure was reduced until the model converged. The formula of the final model is presented in the text. To access further details about GLMMS, including variance estimates for random effects, please download the online repository, open the file `papers/full_paper/Supplementary_information.Rmd` and run the command `summary()` on the respective object that stores the output of each model. 
+
+We used `r cite_r("library.bib")` for all our analyses reported in the main manuscript and the supplementary material.
+
+## Experiment 1
+
+### Procedure
+
+```{r figS1, include = T, fig.align = "center", fig.cap = "Screenshot showing test situation Experiment 1, 3 and 4.", out.width="100%"}
+knitr::include_graphics("./figures/SI_setup_inf.png")
+```
+
+The setup and procedure of Experiment 1 for adults are shown in Figure 1A in the main manuscript as well as Figure \ref{fig:figS1}. In the beginning of each trial, the animal introduced themselves (e.g. “Hi, I’m Dog”) and then turned towards the table with the two objects. The same utterance was used to make a request in all adult studies ( “Oh cool, there is a [non-word] on the table, how neat, can you give me the [non-word]?”). In the test condition, there was one object on the other table (left table in Figure \ref{fig:figS1}), whereas in the control condition, there were two. In the control condition, no inference was possible based on the speaker’s turning and pointing. The “correct” object in the control condition was randomly chosen from the two objects on the table. Technically, this condition did not control for any alternative explanations and we therefore did not run it for children. Participants received six trials, three per condition. Conditions were presented in a random order.
+
+```{r table_chance_Ex_1_2,results = "asis"}
+chance_comp_ex_1_2 <- bind_rows(
+    adult_ex1_data,
+    adult_ex2_novelty_data %>% mutate(condition = ifelse(condition == "same_speaker", "test", "control")),
+    adult_ex2_preference_data %>% mutate(condition = ifelse(condition == "same_speaker", "test", "control"))
+  )%>%
+    mutate(condition = factor(condition, levels = c("test","control")),
+           experiment = factor(experiment, levels = c("adult_ex1","adult_ex2_preference","adult_ex2_novelty")),
+           experiment = recode(experiment, 
+                               adult_ex1 = "Experiment 1",
+                               adult_ex2_preference = "Experiment 2A: Preference", 
+                               adult_ex2_novelty = "Experiment 2B: Novelty"))%>%
+  group_by(experiment,condition, id) %>%
+  summarise(correct = mean(correct))%>%
+  summarise(correct = list(correct)) %>%
+  group_by(experiment,condition) %>%
+  mutate(mean = mean(unlist(correct)),
+         df= t.test(unlist(correct), mu = 0.5)$parameter,
+         t_value = t.test(unlist(correct), mu = 0.5)$statistic,
+         p_value = t.test(unlist(correct), mu = 0.5)$p.value) %>%
+  select(experiment,condition,mean,df,t_value,p_value)%>%
+  mutate(p_value = ifelse(p_value<.001,"< .001",as.character(paste("=",substr(round(p_value,3),2,5),sep=" "))),
+         t_value = round(t_value,2))
+
+apa_table(
+  chance_comp_ex_1_2
+  , caption = "Comparison to chance in each condition of Experiment 1, 2A and 2B"
+  , note = "Proportion expected by chance = 0.5. Data aggregated within participant and conditon."
+  , escape = T
+)
+  
+```
+
+```{r plotex12, fig.cap = "Results from experiment 1 and 2 for adults. For preference and novelty, control refers to a different speaker (see Fig. 1B). Transparent dots show data from individual participants, diamonds represent condition means, error bars are 95\\% CIs. Dashed line indicates performance expected by chance.", fig.align = "center", out.width="80%"}
+p1 <- bind_rows(
+    adult_ex1_data,
+    adult_ex2_novelty_data %>% mutate(condition = ifelse(condition == "same_speaker", "test", "control")),
+    adult_ex2_preference_data %>% mutate(condition = ifelse(condition == "same_speaker", "test", "control"))
+  )%>%
+    mutate(condition = factor(condition, levels = c("test","control")),
+           experiment = factor(experiment, levels = c("adult_ex1","adult_ex2_preference","adult_ex2_novelty")))%>%
+  group_by(experiment,condition, id) %>%
+  summarise(correct = mean(correct))
+
+p2 <- p1 %>%
+  multi_boot_standard(col = "correct")
+
+
+ ggplot() +
+  geom_jitter(data = p1, aes(x = condition, y = correct, col = condition), alpha = 0.2, width = .3,height = .025)+
+  geom_pointrange(data = p2, aes(x = condition, y = mean, col = condition,ymin = ci_lower, ymax = ci_upper),size = .8, pch = 5, fatten = 2.5)+
+  geom_hline(yintercept = 0.5, lty=2)+
+  labs(x="",y="Proportion correct")+
+  facet_wrap( ~ experiment, labeller = as_labeller(c(`adult_ex2_preference`="Exp. 2A - Preference", `adult_ex2_novelty`="Exp. 2B - Novelty", `adult_ex1`="Exp. 1 - Informativeness")))+
+  theme_few(base_size = 10) + 
+  ylim(-0.05,1.05)+
+  guides(alpha = F,size =F)+
+  scale_color_solarized(name = "Condition",
+                     labels=c("Test","Control"))+
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), legend.position = c(0.75, 0.17), 
+        legend.background = element_blank())
+```
+
+### Results
+
+We used one sample t-tests to test if participants selected the more informative object (the one unique to the table the animal pointed at) above chance (50%). Table \ref{tab:table_chance_Ex_1_2} and Figure \ref{fig:plotex12} show the results. 
+
+```{r}
+# model
+lm_ex1 <- glmer(correct ~ condition +
+              (1 |id), 
+              data = adult_ex1_data, 
+              family = binomial,control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+#summary(lm_ex1)
+
+ex1_r <- broom.mixed::tidy(lm_ex1, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))
+
+```
+
+To compare the two conditions, we fit the following GLMM: `correct ~ condition + (1 |id)`. Participants chose the more informative object more often in the test condition compared to the control condition ($\beta$ = `r ex1_r%>%filter(term == "conditiontest")%>%pull(estimate)`, se = `r ex1_r%>%filter(term == "conditiontest")%>%pull(std.error)`, *p* `r ex1_r%>%filter(term == "conditiontest")%>%pull(p.value)`). 
+
+## Experiment 2
+
+### Procedure
+
+```{r figS2, include = T, fig.align = "center", fig.cap = "Screenshot showing test situation in Experiment 2 for adults.", out.width="100%"}
+knitr::include_graphics("./figures/SI_setup_pref.png")
+```
+
+The setup and procedure of Experiment 2 are shown in Fig. 1B in the main manuscript as well as Figure \ref{fig:figS2}. In the preference manipulation, the animal introduced themselves, then turned to one of the tables and expressed either that they liked (“Oh wow, I really like that one”) or disliked (“Oh bleh, I really don’t like that one”) the object before turning to the other side and expressing the respective other attitude. Next the animal disappeared and, after a short pause, either the same or a different animal returned and requested an object while facing straight ahead. Here, participants could identify the referent by assuming that the speaker was talking about the object they liked, if the speaker remained the same but not when a different speaker made a request. This procedure corresponds to the strong preference manipulation in Experiment 4 (see below).
+
+In the novelty manipulation one of the tables was initially empty. The animal turned to one of the sides and commented either on the presence (“Aha, look at that”) or the absence (“Hm…, nothing there”) of an object before turning to the other side and commenting in a complementary way. After shortly disappearing, the same animal repeated the sequence above. When the animal left a second time, a new object appeared on the empty table. Next, either the same or a different animal returned and requested an object. In this context, participants could infer that it was the new object that the speaker was referring to, if the speaker was the same. In contrast, when a different speaker (to whom both objects were equally new) made a request, no inference could be made based on the speaker’s knowledge. This corresponded to the strong manipulation in Experiment 4 (see below). 
+
+In both Experiment 2A and 2B, participants always received six trials, three with the same and three with the different speaker. Conditions were presented in a random order.
+
+### Results
+
+```{r}
+# model (maximally converging)
+lm_ex2pref <- glmer(correct ~ condition +
+              (1|id) + (1|agent), 
+              data = adult_ex2_preference_data, 
+              family = binomial,control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+#summary(lm_ex2pref)
+
+ex2pref_r <- broom.mixed::tidy(lm_ex2pref, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))
+
+ex2tnov <- adult_ex2_novelty_data %>%
+  group_by(condition, id) %>%
+  summarise(correct = mean(correct)) %>%
+  summarise(correct = list(correct)) %>%
+  group_by(condition) %>%
+  mutate(df= t.test(unlist(correct), mu = 0.5)$parameter,
+         t_value = t.test(unlist(correct), mu = 0.5)$statistic,
+         p_value = t.test(unlist(correct), mu = 0.5)$p.value) %>%
+  select(condition,df,t_value,p_value)%>%
+  mutate(p_value = ifelse(p_value<.001,"< .001",as.character(paste("=",substr(round(p_value,3),2,5),sep=" "))),
+         t_value = round(t_value,2))
+
+# model
+lm_ex2nov <- glmer(correct ~ condition +
+              (condition|id), 
+              data = adult_ex2_novelty_data, 
+              family = binomial,control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+#summary(lm_ex2nov)
+
+ex2nov_r <- broom.mixed::tidy(lm_ex2nov, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))
+```
+
+
+Table \ref{tab:table_chance_Ex_1_2} and Figure \ref{fig:plotex12} show results for the comparison to chance in Experiment 2A and B. In Experiment 2A, we fit the following GLMM: `correct ~ condition + (1|id) + (1|agent)`. Here, `agent` refers to the animal making the request. Participants chose the object previously preferred by the speaker more often in the test (same speaker) condition compared to the control (different speaker) condition ($\beta$ = `r ex2pref_r%>%filter(term == "conditionsame_speaker")%>%pull(estimate)`, se = `r ex2pref_r%>%filter(term == "conditionsame_speaker")%>%pull(std.error)`, *p* `r ex2pref_r%>%filter(term == "conditionsame_speaker")%>%pull(p.value)`). For Experiment 2B, we fit the following GLMM: `correct ~ condition + (condition|id)`. Participants chose the novel object more often in the test (same speaker) condition compared to the control (different speaker) condition ($\beta$ = `r ex2nov_r%>%filter(term == "conditionsame_speaker")%>%pull(estimate)`, se = `r ex2nov_r%>%filter(term == "conditionsame_speaker")%>%pull(std.error)`, *p* `r ex2nov_r%>%filter(term == "conditionsame_speaker")%>%pull(p.value)`). 
+
+## Experiment 3
+
+### Procedure
+
+For Experiment 3 we inserted the common ground manipulation before the request in the setup of Experiment 1 (see Figure 1C in the main manuscript for one example). For example, the animal turned to the table with one object and expressed that they liked the object  (pink-ish object in Figure \ref{fig:figS1}), then turned to the other table and express that they did not like object B (yellow-ish object in Figure \ref{fig:figS1}). Next, after quickly disappearing, the animal reappeared, turned to the table with two objects and made a request. To make it clear, which of the objects the speaker commented on while being turned to the table with the two objects during the common ground manipulation, the object was temporarily enlarged. Utterances were the same as in Experiment 1 and 2A and B. 
+
+Combining information sources yielded eight different conditions. Informativeness and common ground could either be congruent or incongruent. If, for example, the yellow-ish object in Figure \ref{fig:figS1} (i.e. the more informative object because unique to that table) was also the one the speaker expressed preference for, the two sources of information were congruent. Next, the speaker who made the request could either be the same as the one in the previous interaction or a different one. Finally, common ground information could be manipulated in the form of preference or novelty. This resulted in a total of 2 (novelty or preference) x 2 (same or different speaker) x 2 (congruent or incongruent) = 8 conditions. 
+
+Participants completed eight trials for one of the common ground manipulations with two trials per condition (same/different speaker x congruent/incongruent). Conditions were presented in a random order.
+
+### Results
+
+```{r ex3_model, results = "asis"}
+# model 
+lm_ex3 <- glmer(correct_inf ~ common_ground_manipulation*speaker*alignment + (alignment|id), 
+              data = adult_ex3_data, family = binomial, 
+              control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+#summary(lm_ex3)
+
+lm_ex3_r <- broom.mixed::tidy(lm_ex3, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))%>%
+  as_tibble()%>%
+  mutate(term = recode(term, 
+                       `(Intercept)` = "Intercept",
+                       common_ground_manipulationpreference = "common ground",
+                       speakersame_speaker = "speaker",
+                       alignmentincongruent = "alignment",
+                       `common_ground_manipulationpreference:speakersame_speaker` = "common ground * speaker",
+                       `common_ground_manipulationpreference:alignmentincongruent` = "common ground * alignment",
+                       `speakersame_speaker:alignmentincongruent` = "speaker * alignment",
+                       `common_ground_manipulationpreference:speakersame_speaker:alignmentincongruent` = "common ground * speaker * alignment"
+         ))
+   
+
+apa_table(
+  lm_ex3_r
+  , caption = "GLMM output for Experiment 3"
+  , note = "Reference levels: commmon ground - novelty, speaker - different speaker, alignment - congruent."
+  , escape = T
+)
+
+```
+
+```{r plotex3, fig.cap = "Data and model predictions by condition for Experiment 3 with adults. Transparent dots show data from individual participants, diamonds represent condition means. Empirical means are shonw in black and model predictions in pink. Error bars represent 95\\% HDIs.", fig.align = "center", out.width="100%"}
+adult_ex3_data_summary <- adult_ex3_data %>%
+  mutate(model = "data") %>%
+  group_by(model,common_ground_manipulation,speaker,alignment)%>%
+  summarize(k = sum(correct_inf), n = n())%>%
+  ungroup() %>%
+  mutate(a = 1 + k,
+         b = 1 + n - k,
+         ci_lower  = qbeta(.025, a, b),
+         ci_upper = qbeta(.975, a, b),
+         mean = (a-1)/(a+b-2))%>%
+  select(-a,-b,-n,-k)
+
+adult_ex3_pragm_model_pred_noise <- readRDS("../../stats/saves/ex3_pragm_model_noise.rds") %>%
+  filter(!(Parameter %in% c("noise")))  %>%
+  separate(Parameter, into = c("common_ground_manipulation","speaker", "alignment"), sep="/")%>%
+  mutate(model="integration")%>%
+  group_by(model,common_ground_manipulation,speaker,alignment)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+
+adult_ex3_pred <- bind_rows(
+  adult_ex3_pragm_model_pred_noise,
+  adult_ex3_data_summary
+) %>%
+  ungroup()%>%
+  mutate(common_ground_manipulation = ifelse(common_ground_manipulation == "novelty", "Novelty", "Preference"),
+         speaker = ifelse(speaker == "different_speaker", "Different speaker", "Same speaker"),
+         alignment = ifelse(alignment == "congruent", "Congruent", "Incongruent"))
+
+adult_ex3_plot_data <- adult_ex3_data %>%
+  mutate(model = "data")%>%
+  group_by(model,id,common_ground_manipulation,speaker,alignment)%>%
+  summarise(mean = mean(correct_inf))%>%
+  ungroup()%>%
+  mutate(common_ground_manipulation = ifelse(common_ground_manipulation == "novelty", "Novelty", "Preference"),
+         speaker = ifelse(speaker == "different_speaker", "Different speaker", "Same speaker"),
+         alignment = ifelse(alignment == "congruent", "Congruent", "Incongruent"))
+  
+
+ggplot(data = adult_ex3_pred, aes(x = alignment, y = mean, col = model)) +
+  geom_jitter(data = adult_ex3_plot_data, alpha = .1, height = 0.02)+
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper), size = .6,  position = position_dodge(width = .5), pch = 5)+
+  #geom_hline(yintercept = 0.5, lty=2)+
+  labs(x="",y="Choosing more informative")+
+  facet_grid (~ common_ground_manipulation + speaker) +
+  theme_few() + 
+  ylim(-0.05,1.05)+
+  guides(alpha = F)+ 
+  scale_color_manual(name= element_blank(),
+                     labels=c("Data","Model"),
+                     values= c("black","#6c71c4"))+
+  theme(axis.text.x=element_text(angle = 45, vjust = 1, hjust = 1), legend.position = c(0.1, 0.25), 
+        legend.background = element_blank())
+```
+
+We discuss and visualize the results as the proportion with which participants chose the more informative object (i.e., the object that would be the more informative referent when only utterance information is considered). Figure\ref{fig:plotex3} shows the result in each of the eight conditions of Experiment 3. Results are plotted from  The plot also shows model predictions from the integration model (including the noise parameter - see below).
+
+To see if participants differentiated between conditions, we fit the following GLMM to the data: `correct_inf ~ common ground*speaker*alignment + (alignment|id)`. Table \ref{tab:ex3_model} shows the model output. Results show that participants clearly differentiated between congruent and incongruent trials when the speaker remained the same. 
+
+## Experiment 4
+
+### Prior strength manipualtions
+
+```{r table_prior,results = "asis"}
+ex4_prior_models <- adult_ex4_prior_data %>%
+  group_by(common_ground_manipulation,prior_manipulation)%>%
+  do(broom::tidy(glmer(correct ~ speaker + (1|id) + (1|agent),data = .,family=binomial,  control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))))
+  
+
+
+ex4_prior_models_table <- ex4_prior_models%>%
+  filter(effect == "fixed")%>%
+  select(-statistic, -group, -effect)%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2),
+         term = case_when(term == "(Intercept)" ~ "Intercept",
+                          term == "speakersame_speaker" ~ "condition (same speaker)"))%>%
+  rename(Manipulation = common_ground_manipulation,
+         Strength = prior_manipulation,
+         Term = term,
+         Estimate = estimate,
+         SE = std.error,
+         p = p.value)
+
+apa_table(
+  ex4_prior_models_table
+  , caption = "GLMMs output for prior strength experiments"
+  , note = "Model structure in all cases: correct ~ condition + (1|id) + (1|agent)"
+  , escape = T
+)
+```
+
+Below we describe the different ways in which prior strength was manipulated in Experiment 4. The corresponding experiments can be found in the online repository. The test event was always the same: The animal disappeared and then either the same or a different animal returned and requested an object using an unknown word.
+
+For preference, at the beginning of the experiment both tables contained an object. In preference/strong the animal turned to one side and stated that they liked (“Oh wow, I really like that one”) or disliked (“Oh bleh, I really don’t like that one”) the object. Then they turned the other side and expressed the respective other attitude. In preference/medium the animal only turned to one side and expressed liking in a more subtle way (saying only: “Oh, wow”). We piloted several procedures but did not find a manipualtion that indicated only weak preference.
+
+For novelty, one table was empty while there was an object on the other. In novelty/strong the animal turned to one of the sides and commented either on the presence (“Aha, look at that”) or the absence of an object (“Hm, nothing there”). Then the animal turned to the other side and commented in a complementary way. Next, the animal disappeared. The same animal re-appeared and the sequence above was repeated. When the animal disappeared for the second time, a second object appeared on the empty table while the animal was away. In novelty/medium, the animal commented on the presence/absence of objects in the same way but did so only once. In novelty/weak, the animal only turned to the present object and commented on it. 
+
+In all cases, the order of utterances and/or the side to which the speaker turned first were counterbalanced. Figure \ref{fig:priorplot} shows the results for the same speaker and different speaker conditions for each manipulation.
+
+```{r priorplot, fig.cap = "Results from prior strength manipulation Experiments. Transparent dots show data from individual participants, diamonds represent condition means, error bars are 95\\% CIs. Dashed line indicates performance expected by chance.", fig.align = "center", out.width="100%"}
+
+p_adult_ex4_priors <- adult_ex4_prior_data%>%
+  mutate(prior_manipulation = relevel(as.factor(prior_manipulation), ref = "strong"))%>%
+  group_by(common_ground_manipulation,prior_manipulation,speaker, id) %>%
+  summarise(correct = mean(correct))
+  
+
+p_adult_ex4_priors_ci <- p_adult_ex4_priors %>%
+  multi_boot_standard(col = "correct")
+
+ggplot() +
+  geom_jitter(data = p_adult_ex4_priors, aes(x = speaker, y = correct, col = speaker), alpha = 0.3, width = .3,height = .02)+
+  geom_pointrange(data = p_adult_ex4_priors_ci, aes(x = speaker, y = mean, col = speaker,ymin = ci_lower, ymax = ci_upper),size = .8, pch = 5, fatten = 2.5)+
+  geom_hline(yintercept = 0.5, lty=2)+
+  labs(x="",y="")+
+  facet_grid(common_ground_manipulation ~ prior_manipulation)+
+  theme_few() + 
+  ylim(-0.05,1.05)+
+  guides(alpha = F,size =F)+
+  scale_color_solarized(name = "Speaker")+
+  theme(legend.position = c(0.85, 0.1),legend.background = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank())
+```
+
+
+### Procedure
+
+The general procedure in Experiment 4 was the same as in Experiment 3. We ran a total of 2 (novelty or preference) x 3 (weak, medium, strong) x 2 (same or different speaker) x 2 (congruent or incongruent) - 4 (no weak manipulation for preference) = 20 conditions. Each participant was randomly assigned to a common ground manipulation and a level of prior strength and completed eight trials in total, two in each unique condition in that combination. The strong prior manipulation was a direct replication of Experiment 3. 
+
+Table \ref{tab:table_prior} shows the results of a GLMM fit to the data from each manipulation. The results show that the parameter estimates for condition (i.e. difference between same speaker and different speaker condition) decreases in line with the hypothesized effect of the prior manipulation. 
+
+### Results
+
+```{r}
+adult_ex4_data_summary <- adult_ex4_data %>%
+  mutate(prior_manipulation = relevel(as.factor(prior_manipulation), ref = "strong"))%>%
+  mutate(model = "data") %>%
+  group_by(model,common_ground_manipulation,prior_manipulation,speaker,alignment)%>%
+  summarize(k = sum(correct_inf), n = n())%>%
+  ungroup() %>%
+  mutate(a = 1 + k,
+         b = 1 + n - k,
+         ci_lower  = qbeta(.025, a, b),
+         ci_upper = qbeta(.975, a, b),
+         mean = (a-1)/(a+b-2))%>%
+  select(-a,-b,-n,-k)
+
+
+cor_3_4 <- cor.test(adult_ex3_data_summary%>%pull(mean), adult_ex4_data_summary%>%filter(prior_manipulation == "strong")%>%pull(mean))
+
+```
+
+
+```{r ex4_models, results = "asis"}
+lm_ex4_strong <- glmer(correct_inf ~ common_ground_manipulation*speaker*alignment + (speaker+alignment|id), 
+              data = adult_ex4_data %>% filter(prior_manipulation == "strong"), family = binomial, 
+              control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+#summary(lm_ex4_strong)
+
+lm_ex4_r_strong <- broom.mixed::tidy(lm_ex4_strong, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))%>%
+  as_tibble()%>%
+  mutate(term = recode(term, 
+                       `(Intercept)` = "Intercept",
+                       common_ground_manipulationpreference = "common ground",
+                       speakersame_speaker = "speaker",
+                       alignmentincongruent = "alignment",
+                       `common_ground_manipulationpreference:speakersame_speaker` = "common ground * speaker",
+                       `common_ground_manipulationpreference:alignmentincongruent` = "common ground * alignment",
+                       `speakersame_speaker:alignmentincongruent` = "speaker * alignment",
+                       `common_ground_manipulationpreference:speakersame_speaker:alignmentincongruent` = "common ground * speaker * alignment"
+         ))%>%
+  mutate(`prior strength` = "strong")%>%
+  select(`prior strength`, term, estimate, std.error, statistic,p.value)
+
+
+lm_ex4_medium <- glmer(correct_inf ~ common_ground_manipulation*speaker*alignment + (alignment|id), 
+              data = adult_ex4_data %>% filter(prior_manipulation == "medium"), family = binomial, 
+              control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+#summary(lm_ex4_medium)
+
+lm_ex4_r_medium <- broom.mixed::tidy(lm_ex4_medium, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))%>%
+  as_tibble()%>%
+  mutate(term = recode(term, 
+                       `(Intercept)` = "Intercept",
+                       common_ground_manipulationpreference = "common ground",
+                       speakersame_speaker = "speaker",
+                       alignmentincongruent = "alignment",
+                       `common_ground_manipulationpreference:speakersame_speaker` = "common ground * speaker",
+                       `common_ground_manipulationpreference:alignmentincongruent` = "common ground * alignment",
+                       `speakersame_speaker:alignmentincongruent` = "speaker * alignment",
+                       `common_ground_manipulationpreference:speakersame_speaker:alignmentincongruent` = "common ground * speaker * alignment"
+         ))%>%
+  mutate(`prior strength` = "medium")%>%
+  select(`prior strength`, term, estimate, std.error, statistic,p.value)
+
+lm_ex4_weak <- glmer(correct_inf ~ speaker*alignment + (speaker+alignment|id), 
+              data = adult_ex4_data %>% filter(prior_manipulation == "weak"), family = binomial, 
+              control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+#summary(lm_ex4_weak)
+
+lm_ex4_r_weak <- broom.mixed::tidy(lm_ex4_weak, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))%>%
+  as_tibble()%>%
+  mutate(term = recode(term, 
+                       `(Intercept)` = "Intercept",
+                       common_ground_manipulationpreference = "common ground",
+                       speakersame_speaker = "speaker",
+                       alignmentincongruent = "alignment",
+                       `common_ground_manipulationpreference:speakersame_speaker` = "common ground * speaker",
+                       `common_ground_manipulationpreference:alignmentincongruent` = "common ground * alignment",
+                       `speakersame_speaker:alignmentincongruent` = "speaker * alignment",
+                       `common_ground_manipulationpreference:speakersame_speaker:alignmentincongruent` = "common ground * speaker * alignment"
+         ))%>%
+  mutate(`prior strength` = "weak")%>%
+  select(`prior strength`, term, estimate, std.error, statistic,p.value)
+
+
+t_ex4_r <- bind_rows(
+  lm_ex4_r_strong,
+  lm_ex4_r_medium,
+  lm_ex4_r_weak
+)
+
+
+apa_table(
+  t_ex4_r
+  , caption = "GLMMs output for Experiment 4"
+  , note = "Reference levels: commmon ground - novelty, speaker - different speaker, alignment - congruent."
+  , escape = T
+)
+
+```
+
+Results from Experiments 3 and 4 (strong prior manipulation) were highly correlated (r = `r cor_3_4$estimate`, *p* > .001). 
+
+To assess how participants differentiated between combinations of manipulations, we fit a separate GLMM to the data of each level of prior strength manipulation. Please note that we did not find a weak manipulation for preference. Model outputs are shown in Table \ref{tab:ex4_models}. Model structure for each level of prior strength manipulation was as follows: 
+
+* Strong:`correct_inf ~ common ground*speaker*alignment + (speaker+alignment|id)`
+* Medium:`correct_inf ~ common ground*speaker*alignment + (alignment|id)`
+* Weak:`correct_inf ~ correct_inf ~ speaker*alignment + (speaker+alignment|id)`
+
+A general observation to make is that, with common ground information getting weaker, changing the speaker has less of an impact on the informativeness inference. That is, the term `alignment x speaker` is only significant for the strong and medium manipulation but not the  weak manipulation. 
+
+## Experiment 5
+
+### Procedure
+
+```{r figS3, include = T, fig.align = "center", fig.cap = "Screenshot showing test situation Experiment 5 and 7.", out.width="100%"}
+knitr::include_graphics("./figures/SI_setup_inf_child.png")
+```
+
+Experiment 5 for children was modeled after [@frank2014inferring]. Instead of on tables, objects were presented as hanging in trees in order to facilitate showing points to distinct locations (see Figure \ref{fig:figS3}). After introducing themselves, the animal turned to the tree with two objects and said: “This is a tree with a [non-word], how neat, a tree with a [non-word]”). Next, the trees and the objects in them disappeared and new trees replaced them. The two objects from the tree the animal turned to previously were now spread across the two trees (one object per tree, position counterbalanced). While facing straight, the animal first said “Here are some more trees” and then asked the child to pick the tree with the object that corresponded to the novel word (“Which of these trees has a [non-word]?”). Children received six trials in a single test condition. 
+
+### Results
+
+```{r child_chance_comp, results = "asis"}
+#experiment 1
+child_ex1t <- child_ex1_data %>%
+  mutate(condition = "test",
+         experiment = "Experiment 5")%>%
+  group_by(experiment,condition,age_bin, id) %>%
+  summarise(correct = mean(correct)) %>%
+  summarise(correct = list(correct)) %>%
+  group_by(age_bin) %>%
+  mutate(mean = mean(unlist(correct)),
+         df= t.test(unlist(correct), mu = 0.5)$parameter,
+         t_value = t.test(unlist(correct), mu = 0.5)$statistic,
+         p_value = t.test(unlist(correct), mu = 0.5)$p.value) %>%
+  select(experiment,condition, mean, age_bin,df,t_value,p_value)%>%
+  mutate(p_value = ifelse(p_value<.001,"< .001",as.character(paste("=",substr(round(p_value,3),2,5),sep=" "))),
+         t_value = round(t_value,2))
+
+
+child_ex1_lm_data <- child_ex1_data%>%
+  mutate(age_num = scale(age_num, center = TRUE, scale = TRUE))
+
+# experiment 2
+child_ex2t <- child_ex2_data %>%
+  mutate(condition = ifelse(condition == "same_speaker", "test", "control"),
+         experiment = "Experiment 6")%>%
+  group_by(experiment,condition,age_bin, id) %>%
+  summarise(correct = mean(correct)) %>%
+  summarise(correct = list(correct)) %>%
+  group_by(condition,age_bin) %>%
+  mutate(mean = mean(unlist(correct)),
+         df= t.test(unlist(correct), mu = 0.5)$parameter,
+         t_value = t.test(unlist(correct), mu = 0.5)$statistic,
+         p_value = t.test(unlist(correct), mu = 0.5)$p.value) %>%
+  select(experiment, condition, mean, age_bin,df,t_value,p_value)%>%
+  mutate(p_value = ifelse(p_value<.001,"< .001",as.character(paste("=",substr(round(p_value,3),2,5),sep=" "))),
+         t_value = round(t_value,2))
+
+child_chance <- 
+  bind_rows(
+    child_ex1t,
+    child_ex2t
+  )
+
+apa_table(
+  child_chance
+  , caption = "Comparison to chance in each condition of Experiment 5 and 6"
+  , note = "Proportion expected by chance = 0.5. Data aggregated within participant and conditon."
+  , escape = T
+)
+
+```
+
+```{r plotex56, fig.cap = "Results from experiment 5 and 6 for children. For preference, control refers to to the different speaker condition (see Fig. 1B in main manuscript). Transparent dots show data from individual participants, regression lines shows smoothed conditional mean with 95\\% CI. Dashed line indicates performance expected by chance.", fig.align = "center", out.width="70%"}
+p_child_ex12 <- bind_rows(
+  child_ex1_data%>%mutate(condition = "test"),
+  child_ex2_data%>%mutate(condition = ifelse(condition == "same_speaker","test","control"))
+)%>%
+  mutate(condition = factor(condition, levels = c("test","control")))%>%
+  group_by(experiment,condition,age_num, id) %>%
+  summarise(correct = mean(correct))
+
+ggplot(data = p_child_ex12, aes(x = age_num, y = correct, col = condition)) +
+  geom_hline(yintercept = 0.5, lty=2)+
+  geom_jitter(alpha = 0.2, height = 0.02, width = 0)+
+  geom_smooth(aes(fill = condition),method = "glm",method.args = list(family = "binomial"), se = T, alpha = .5, size = .7)+
+  labs(x="Age",y="Proportion correct")+
+  facet_wrap( ~ experiment, labeller = as_labeller(c(`child_ex2`="Exp. 6 - Preference", `child_ex1`="Exp. 5 - Informativeness")))+
+  theme_few() +
+  ylim(-0.05,1.05)+
+  guides(alpha = F)+ 
+  scale_colour_solarized(name = "Condition",
+                     labels=c("Test","Control"))+
+  scale_fill_solarized(name = "Condition",
+                    labels=c("Test","Control"))+
+  theme(legend.position = c(0.1, 0.15), 
+        legend.background = element_blank())
+```
+
+Data for children was binned by year for the comparison to chance. As for adults, we used one sample t-tests for this analysis. Table \ref{tab:child_chance_comp} shows the results for Experiment 5. Figure \ref{fig:plotex56} (left) shows the results plotted with age as a continuous variable. 
+
+```{r}
+child_ex1_lm_data <- child_ex1_data%>%
+  mutate(age_num = scale(age_num, center = TRUE, scale = TRUE))
+
+# GLMM
+child_ex1_lm <- glmer(correct ~ age_num + (1 | id), 
+              data = child_ex1_lm_data, family = binomial, 
+              control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+
+child_lm_ex1_r <- broom.mixed::tidy(child_ex1_lm, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))
+
+```
+
+We fit a GLMM with the following structure to the trial by trial data with age as a continuous variable: `correct ~ age_num + (1|id)`. Results show that children became more likely to select the more informative object with age ($\beta$ = `r child_lm_ex1_r%>%filter(term == "age_num")%>%pull(estimate)`, se = `r child_lm_ex1_r%>%filter(term == "age_num")%>%pull(std.error)`, *p* `r child_lm_ex1_r%>%filter(term == "age_num")%>%pull(p.value)`, see also Figure \ref{fig:plotex56}). 
+
+## Experiment 6
+
+```{r}
+child_ex2_lm_data <- child_ex2_data%>%
+  mutate(age_num = scale(age_num, center = TRUE, scale = TRUE))
+
+child_ex2_lm <- glmer(correct ~ age_num*condition + (condition | id) + (1 | agent), 
+              data = child_ex2_lm_data, family = binomial, 
+              control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+child_lm_ex2_r <- broom.mixed::tidy(child_ex2_lm, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))
+```
+
+### Procedure
+
+Experiment 5 for children was identical to the strong preference manipulation for adults. Children received eight trials, four with the same and four with a different animal returning, presented in a random order. We tested children in the novelty manipulation but found that they did not reliably distinguish between the same and different speaker conditions. 
+
+### Results
+
+Comparison to chance within each condition of Experiment 6 is given in Table \ref{tab:child_chance_comp}. We fit a GLMM with the following structure to the data: `correct ~ age_num*condition + (condition|id) + (1|agent)`. The model output shows an effect of condition (same or different speaker) ($\beta$ = `r child_lm_ex2_r%>%filter(term == "conditionsame_speaker")%>%pull(estimate)`, se = `r child_lm_ex2_r%>%filter(term == "conditionsame_speaker")%>%pull(std.error)`, *p* `r child_lm_ex2_r%>%filter(term == "conditionsame_speaker")%>%pull(p.value)`) but no effect of age ($\beta$ = `r child_lm_ex2_r%>%filter(term == "age_num")%>%pull(estimate)`, se = `r child_lm_ex2_r%>%filter(term == "age_num")%>%pull(std.error)`, *p* `r child_lm_ex2_r%>%filter(term == "age_num")%>%pull(p.value)`) or interaction between speaker identity and age ($\beta$ = `r child_lm_ex2_r%>%filter(term == "age_num:conditionsame_speaker")%>%pull(estimate)`, se = `r child_lm_ex2_r%>%filter(term == "age_num:conditionsame_speaker")%>%pull(std.error)`, *p* `r child_lm_ex2_r%>%filter(term == "age_num:conditionsame_speaker")%>%pull(p.value)`, see also Figure \ref{fig:plotex56}).
+
+## Experiment 7
+
+### Procedure
+
+In Experiment 7 for children, we again inserted the preference manipulation from Experiment 6 into the setup of Experiment 5. After greeting the child, the animal turned to one of the trees, pointed to an object (object was temporarily enlarged and moved closer to the animal) and expressed liking or disliking. Then the animal turned to the other tree and expressed the other attitude for the other kind of object. Next, the animal disappeared and either the same or a different animal returned. The rest of the trial was identical to the label and request phase of Experiment 5. Children received eight trials, two per condition (same/different speaker x congruent/incongruent) in a randomized order. Children had the option to opt out after half of the test trials. Therefore, we constraint the randomization of conditions so that children received two blocks of trials, one with a trial from each condition.
+
+### Results
+
+```{r child_models, results = "asis", out.width="100%"}
+child_ex3_lm_data <- child_ex3_data%>%
+  mutate(age_num = scale(age_num, center = TRUE, scale = TRUE))
+
+child_ex3_lm <- glmer(correct_inf ~ age_num*speaker*alignment 
+      + (speaker+alignment | id), 
+      family = "binomial",
+      data = child_ex3_lm_data,
+      control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+child_lm_ex3_r <- broom.mixed::tidy(child_ex3_lm, effects = "fixed")%>%
+  mutate(p.value = ifelse(p.value<.001,"< .001",as.character(paste("=",substr(round(p.value,3),2,5),sep=" "))),
+         std.error = round(std.error,2),
+         estimate = round(estimate,2))%>%
+    mutate(term = recode(term, 
+                       `(Intercept)` = "Intercept",
+                       age_num = "age",
+                       speakersame_speaker = "speaker",
+                       alignmentincongruent = "alignment",
+                       `age_num:speakersame_speaker` = "age * speaker",
+                       `age_num:alignmentincongruent` = "age * alignment",
+                       `speakersame_speaker:alignmentincongruent` = "speaker * alignment",
+                       `age_num:speakersame_speaker:alignmentincongruent` = "age * speaker * alignment"
+         ))
+
+apa_table(
+  child_lm_ex3_r
+  , caption = "GLMM output for Experiment 7"
+  , note = "Reference level: speaker - different speaker, alignment - congruent."
+  , escape = T
+)
+```
+
+```{r plotmodelpredex7, fig.cap = "Model predictions and data for Experiment 7 with children. Colored lines show model predictions with 95\\% HDIs, transparent dots show data from individual participants and the black line with grey CI shows the smoothed conditional mean of the data in each condition. Black diamonds with error bars show mean for age bined by year with 95\\% HDIs.", fig.align = "center", out.width="100%"}
+child_model_predictions <- readRDS("../../stats/saves/child_ex3_model_predictions.rds")%>%
+  mutate(speaker = ifelse(speaker == "different_speaker", "Different speaker", "Same speaker"),
+         alignment = ifelse(alignment == "congruent", "Congruent", "Incongruent"))%>%
+  mutate(model = recode(model, pragmatic = "Parameter free", pragmatic_developmental_noise = "Developmental noise", pragmatic_noise = "Noise"))
+
+plot_child_ex3_data <- child_ex3_data%>%
+  mutate(speaker = ifelse(speaker == "different_speaker", "Different speaker", "Same speaker"),
+         alignment = ifelse(alignment == "congruent", "Congruent", "Incongruent"))%>%
+  group_by(age_num,speaker,alignment)%>%
+  summarise(mean = mean(correct_inf))
+
+
+p_child_ex3_data <- child_ex3_data %>%
+  mutate(speaker = ifelse(speaker == "different_speaker", "Different speaker", "Same speaker"),
+         alignment = ifelse(alignment == "congruent", "Congruent", "Incongruent"))
+
+
+p_child_ex3_data_binned <- child_ex3_data %>%
+  mutate(age = as.character(age_bin), 
+         model = "Data",
+         speaker = ifelse(speaker == "different_speaker", "Different speaker", "Same speaker"),
+         alignment = ifelse(alignment == "congruent", "Congruent", "Incongruent"))%>%
+  group_by(model,age, alignment, speaker) %>%
+  summarize(k = sum(correct_inf), n = n())%>%
+  ungroup() %>%
+  mutate(a = 1 + k,
+         b = 1 + n - k,
+         mean = (a-1)/(a+b-2),
+         ci_lower  = qbeta(.025, a, b),
+         ci_upper = qbeta(.975, a, b))%>%
+  select(-a,-b,-n,-k)
+
+ggplot(child_model_predictions)+
+  geom_jitter(data = plot_child_ex3_data, aes(x = age_num, y = mean), width = .025,height = .025, alpha = .2)+
+  geom_ribbon(aes(x = age, ymin = ci_lower, ymax = ci_upper, fill = model), alpha = .4) +
+  geom_line(aes(x = age, y = mean, col = model), size = 1, alpha = 1, linetype = 1) + 
+  geom_smooth(data = p_child_ex3_data, aes(x = age_num, y = correct_inf), col = "black", size = 0.6, method = "glm",method.args = list(family = "binomial"),  se = T,  alpha = .5)+
+geom_pointrange(data = p_child_ex3_data_binned, aes(x = as.numeric(age)+0.5, y = mean, ymin = ci_lower, ymax = ci_upper), size = .6,  position = position_dodge(width = .5), pch = 5)+
+  labs(y="Proportion more informative", x = "Age")+
+  ylim(-0.05,1.05)+
+  facet_grid(~speaker+alignment)+
+  theme_few()+
+  theme(legend.position="bottom")+
+  scale_color_manual(name="Model",
+                     breaks=c("Parameter free","Noise","Developmental noise"),
+                     values= c("#00afaf","#6c71c4","#af6300"))+
+  scale_fill_manual(name="Model",
+                     breaks=c("Parameter free","Noise","Developmental noise"),
+                     values= c("#00afaf","#6c71c4","#af6300"))
+
+```
+
+Figure \ref{fig:plotmodelpredex7} shows the results for each condition plotted by age as a continuous variable. The same figure also shows model predictions from the integration model with different noise parameters (see below).
+
+To see if children differentiated between the different combinations of manipulations in Experiment 7, we fit the following GLMM to the data: `correct_inf ~ age_num*speaker*alignment+ (speaker+alignment|id)`. Model output is shown in Table \ref{tab:child_models}.
+
+# Cognitive Models
+
+Cognitive models were implemented in WebPPL [@dippl] using the r package `rwebppl` [@R-rwebppl].
+
+## Ontology
+
+The situation we model is defined by three sets: referents $r$, utterances $u$, and lexica $\mathcal{L}$. 
+Referents are defined by two features $r_{t, l}$: the type of object they are $t$ (visually discernible given their shape and color) and their location $l$ (one of two tables).
+There are two types of objects $t_1$, $t_2$ and two locations $l_1$ and $l_2$.
+The utterances $u$ available to a speaker are (action, label) pairs $(u_a, u_w)$, where the action involves turning (pointing) to a particular location (a table) and labels are novel words ($w_1$, $w_2$), which are assumed to refer to the *type* of the object.
+There are two kinds of lexica, corresponding to the two utterance components: The lexicon of pointing $\mathcal{L}_{point}$ and the lexica of labels $\mathcal{L}_1, \mathcal{L}_2$.
+The lexicon of pointing $\mathcal{L}_{point}$ encodes the meaning of a point: The action of pointing reduces the set of referents to those that are on the table targeted by the point.
+The lexica of labels map labels $u_w$ onto referents: $\mathcal{L}_1$ which maps label 1 $w_1$ to type 1 $t_1$ and label 2 $w_2$ to type 2 $t_2$, and $\mathcal{L}_2$ which has the inverse mapping. 
+
+## Integration model
+
+Our word-learning model is a model of pragmatic reasoning couched in the Rational Speech Act modeling framework [@frank2012predicting; @goodman2016pragmatic]. The model describes the following process: A pragmatic listener ($L_1$) jointly infers a referent (what object is being picked out by the utterance) and a lexicon (label--type mappings) by reasoning about a pragmatic speaker ($S_1$) who produces utterances to convey information to a literal listener ($L_0$), who in turn interprets utterances according to their literal meaning. According to Bayes rule, the pragmatic listener's inference is given by:
+
+\begin{equation} 
+P_{L_1}(r, \mathcal{L}|u)\propto P_{S_1}(u|r_{t}, \mathcal{L})P( \mathcal{L})P(r)
+\end{equation} 
+
+The right-hand side of this equation has three terms: the prior distribution over referents $P(r)$, the prior distribution over lexica $P(\mathcal{L})$, and the likelihood $P_{S1}(u|r_t, \mathcal{L})$ that a speaker would produce an utterance $u$ given a referent type $r_t$ and their lexicon $\mathcal{L}$.
+
+In the situation we model, the prior on referents $P(r)$ is a categorical distribution over three objects in a scene, which we posit could be non-uniform due to what is in common ground (see main text and below for information on common ground manipulations). 
+Because the labels produced by the speaker are all novel words, the listener has no substantive knowledge about the lexica (label--type mappings) and thus the prior over the two lexica (described above) is uniform.
+
+The pragmatic listener updates their beliefs about both the referent and the lexicon by reasoning about the speaker, assumed to produce utterances to convey the referent type ($r_t$) to the listener by being a soft-max rational agent (with degree of rationality $\alpha$) with a utility function defined in terms of the informativity of an utterance for a referent type ($r_t$):
+
+\begin{equation} 
+P_{S_1}(u_{a,l} | r_t, \mathcal{L})\propto Informativity(u_a;r_t)^\alpha \cdot P(u_l \mid \mathcal{L})
+\end{equation} 
+
+The speaker's utterances are (action, label) pairs $(u_a, u_l)$ (i.e., we assume the speaker must point to one of the locations and must produce a label). The label the speaker produces $u_l$ depends upon their lexicon $\mathcal{L}$ (i.e., they choose the label that is consistent with the object under their lexicon).The action (point) the speaker produces $u_a$ is a function of that signal's informativity. That is, because the listener does not know the meaning of the labels, the labels carry no information to the listener.
+
+The informativity of the utterance (action) for a referent is the probability that a naive listener $L_0$ would select a the type of referent ($r_t$) given that utterance (action)[@goodman2013knowledge].
+
+\begin{equation} 
+Informativity(u_a; r_t) = P_{L_0}(r_t|u_a)
+\end{equation} 
+
+\noindent where the probability that the naive listener $L_0$ would select a referent of a given type $r_t$ given the utterance $u_a$ is given by Bayes' Rule:
+
+\begin{equation} 
+P_{L_0}(r_t|u) = \sum_{r_i \in t} P_{L_0}(r_i | u) \propto \mathcal{L}_{point} P(r_i)
+\end{equation} 
+
+\noindent where $\mathcal{L}_{point}$ encodes the meaning of the actions (points), and is simply a truth-function stipulating that the location of the referent must be at the location of the point.
+
+We assume in this model that the speaker is trying to convey the type of the referent $r_t$ rather than the individual token referents $r_i$; thus, the relevant probability for purposes of informativity is the type probability $P_{L_0}(r_t|u)$, which is simply a sum of the token probabilities for tokens that are of the same type $\sum_{r_i \in t} P_{L_0}(r_i | u)$.
+
+
+$P(r)$ again denotes the prior probability of a referent, $\mathcal{L}_{point}$ encodes the literal meaning of a point, returning 1 if the object is at the location of the point and 0 if the utterance if not. As mentioned above, because $L_1$ does not know the lexicon, the semantics of the words contained in the utterance (i.e., the labels) offer no information about the referent. The non-linguistic aspect of the utterance (pointing), however, do. As described above, the semantics of turning to one of the tables is roughly equivalent to saying "It's an object on that table". 
+
+
+The above formulation of a literal interpretation model based only on the semantics of the non-linguistic signals (points) can also be derived by positing a literal interpretation model that updates their beliefs according to the literal meanings of both labels and points, but which is uncertain about the meaning of the labels:  $P_{L_0}(r, \mathcal{L}|u)  \propto \mathcal{L}_{lit} P(r) P(\mathcal{L})$.
+
+### Worked Example
+
+In this section, we work through a toy numerical example for how model predictions were generated for the integration model. The prediction will correspond to the parameter free model described above (excluding the noise parameter). The values of the parameters are taken from a preference  condition (see below). Figure \ref{fig:figS1} shows a screenshot from the adult experiment, which the model was designed to capture. In this context, there are three potential referents of two types (pink-ish and yellow-ish; for simplicity, we refer refer the object's type by its color) on two tables: $r_{type:pink, table: 1}$, $r_{type:pink,table: 2}$; one yellow-ish, $r_{type:yellow,table: 2}$). For simplicity, we refer to the referents by the shorthand: $r_{p1}, r_{p2}, r_{y2}$.
+In principle, the speaker, the frog in this case, can produce one of four utterances, pointing either to the left or right table and saying either label ("dax" or "wug"):  $u_1 = (\text{left}, dax)$, $u_2 = (\text{left}, wug)$, $u_3 = (\text{right}, dax)$, $u_4 = (\text{right}, wug)$.
+We work out the example where the speaker produces utterance $u_3$, pointing to the right table (two objects) and saying the label "dax" (though since the labels have no *a priori* meanings, the computation would be the same for utterance $u_4$). 
+
+As mentioned above, the listener is learning the mappings between labels and object types (rather than object tokens). That is, the listener either believes the novel word "dax" refers to "pink-ish objects" or "yellow-ish objects". Pointing to a table always has the same meaning. These semantics can be described using two lexica: $\mathcal{L}_1 = \{dax: \text{pink-ish thing}, wug: \text{yellow-ish thing}, point: \text{location of point}\}$, $\mathcal{L}_2 = \{dax: \text{yellow-ish thing}, wug: \text{pink-ish thing}, point: \text{location of point}\}$.
+
+We construct the prior distribution over referents $P(r)$ based on the results of Experiment 2A, in which a different speaker displayed a preference for a yellow-ish object. The prior distribution over referents $P(r)$ (left to right in Fig. \ref{fig:figS1}) in the example that follows was [0.26, 0.26, 0.48] (see Model Parameters section below for a detailed description of how this distribution was constructed).
+
+We assume that the intentional goal of the speaker is to get the listener to select an object of the correct type. That is, the informativity of an utterance is calculated with respect to conveying the correct object type as opposed to a particular referent (token).
+
+First, we calculate the literal listener's posterior distribution over referents, and marginalize (average) over objects of the same type to compute the informativity of an utterance for a type.
+<!-- The literal listener's posterior distribution over referents and lexica has support of size six, owing to the unique combinations of referents and lexica. -->
+
+$$
+\begin{aligned}
+& P_{L_0}(r_{p1}| {u_3})  \propto \mathcal{L}_{point}(r_{p1}, u_3) P(r_{p1})  = 0 \times 0.26  =0\\
+& P_{L_0}(r_{p2}| {u_3})  \propto \mathcal{L}_{point}(r_{p2}, u_3) P(r_{p2})= 1 \times 0.26  =0.26\\
+& P_{L_0}(r_{y2} | {u_3})  \propto \mathcal{L}_{point}(r_{y2}, u_3) P(r_{y2})  = 1 \times 0.48  = 0.48
+\end{aligned}
+$$
+
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- & P_{L_0}(r_{p1}, \mathcal{L}_1 | {u_3})  \propto \mathcal{L}_1(r_{p1}, u_3) P(r_{p1}) P(\mathcal{L}_1) = 0 \times 0.26 \times 0.5 =0\\ -->
+<!-- & P_{L_0}(r_{p2}, \mathcal{L}_1 | {u_3})  \propto \mathcal{L}_1(r_{p2}, u_3) P(r_{p2}) P(\mathcal{L}_1) = 1 \times 0.26 \times 0.5 =0.13\\ -->
+<!-- & P_{L_0}(r_{y2}, \mathcal{L}_1 | {u_3})  \propto \mathcal{L}_1(r_{y2}, u_3) P(r_{y2}) P(\mathcal{L}_1) = 0 \times 0.48 \times 0.5 =0\\ -->
+<!-- & P_{L_0}(r_{p1}, \mathcal{L}_2 | {u_3})  \propto \mathcal{L}_2(r_{p1}, u_3) P(r_{p1}) P(\mathcal{L}_2) = 0 \times 0.26 \times 0.5=0\\ -->
+<!-- & P_{L_0}(r_{p2}, \mathcal{L}_2 | {u_3})  \propto \mathcal{L}_2(r_{p2}, u_3) P(r_{p2}) P(\mathcal{L}_2) = 0 \times 0.26 \times 0.5=0\\ -->
+<!-- & P_{L_0}(r_{y2}, \mathcal{L}_2 | {u_3})  \propto \mathcal{L}_2(r_{y2}, u_3) P(r_{y2}) P(\mathcal{L}_2) = 1 \times 0.48 \times 0.5=0.24\\ -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+
+
+
+because the speaker is pointing to the right table with $r_{p2}$ and $r_{y2}$.
+After normalization we have:
+
+$$
+\begin{aligned}
+& P_{L_0}(r_{p1}| {u_3}) = 0 \\
+& P_{L_0}(r_{p2}| {u_3}) = 0.35 \\
+& P_{L_0}(r_{y2} | {u_3}) = 0.65
+\end{aligned}
+$$
+
+In order to get the distribution over types (instead of tokens), we simply add up the probabilities for each token from the same type.
+
+$$
+\begin{aligned}
+& Informativity(u_3; r_p) = P_{L_0}(r_p | {u_3}) = P_{L_0}(r_{p1}| {u_3})  + P_{L_0}(r_{p2}| {u_3})  = 0+ 0.35 =0.35 \\
+& Informativity(u_3; r_p) = P_{L_0}(r_y | {u_3}) = P_{L_0}(r_{y2} | {u_3}) = 0.65\\
+\end{aligned}
+$$
+
+In a similar way, we can compute the informativity of the other utterances. Since the words have no *a priori* meanings, $u_4$ (pointing to the right and saying "wug") will have the same informativity values as $u_3$ (pointing the right and saying "dax"). The informativity vectors for $u_1$ and $u_2$ (pointing to the left and saying either "dax" or "wug") are also identical and given by: 
+
+$$
+\begin{aligned}
+&Informativity(u_1; r_p) = P_{L_0}(r_p|u_1) = 1\\
+&Informativity(u_1; r_y) = P_{L_0}(r_y|u_1) = 0
+\end{aligned}
+$$
+We assume that the speaker knows the lexicon, but doesn't believe the listener to know the lexicon. That is, the generative process of the utterance is tantamount to pointing to the table with the referent of the type the speaker wants and incidentally labeling it. The label itself carries no information.
+
+Based on equation 2 we can now compute the likelihood of each utterance given an object type. Recall the two lexica: $\mathcal{L}_1 = \{dax: \text{pink-ish thing}, wug: \text{yellow-ish thing} \}$, $\mathcal{L}_2 = \{dax: \text{yellow-ish thing}, wug: \text{pink-ish thing}\}$, and the four utterances:  $u_1 = (\text{left}, dax)$, $u_2 = (\text{left}, wug)$, $u_3 = (\text{right}, dax)$, $u_4 = (\text{right}, wug)$.
+We begin with the pink-ish type ($r_p$). If the speaker's lexicon were $\mathcal{L}_1$:
+
+$$
+P_{S_1}(u|r_p, \mathcal{L}_1) \propto   Informativity(u_a;r_p)^\alpha P(u \mid \mathcal{L}_1) = \begin{cases} 
+1^{2.24} \times 1 = 1 & \mbox{for } u_1 \\
+0^{2.24} \times 0 = 0& \mbox{for } u_2 \\
+0.35^{2.24} \times 1 = 0.095  & \mbox{for } u_3 \\
+1^{2.24} \times 0 = 0& \mbox{for } u_4 \\
+\end{cases}
+$$
+To arrive at the production probabilities, we normalize by the values from the previous calculation so that they add to 1:
+
+$$
+P_{S_1}(u|r_p, \mathcal{L}_1) = \begin{cases} 
+0.91  & \mbox{for } u_1 \\
+0 & \mbox{for } u_2 \\
+0.09  & \mbox{for } u_3 \\
+0& \mbox{for } u_4 \\
+\end{cases}
+$$
+
+The speaker's production probabilities are the same if the speaker's lexicon is $\mathcal{L}_2$, only the utterances use the other label:
+
+$$
+P_{S_1}(u|r_p, \mathcal{L}_2) = \begin{cases} 
+0  & \mbox{for } u_1 \\
+0.91 & \mbox{for } u_2 \\
+0  & \mbox{for } u_3 \\
+0.09& \mbox{for } u_4 \\
+\end{cases}
+$$
+That is, if the speaker is trying to convey the pink-ish object type, the speaker would be 10 times more likely (under a speaker rationality parameter of 2.24) to point to the left table than to the right table. This corresponds with the intuition that pointing to the left table would be a much better way to refer to a pink-ish object. 
+If instead the speaker wanted to convey the yellow-ish object type ($r_y$):
+
+$$
+P_{S_1}(u|r_y, \mathcal{L}_1) = Informativity(u;r_y)^\alpha \cdot P(u\mid \mathcal{L}_1) = \begin{cases} 
+0^{2.24} \times 0 = 0 & \mbox{for } u_1 \\
+0^{2.24} \times 0 = 0& \mbox{for } u_2 \\
+0^{2.24} \times 0 = 0  & \mbox{for } u_3 \\
+0.65^{2.24} \times 1 = 0.38& \mbox{for } u_4 \\
+\end{cases}
+$$
+
+To arrive at the production probabilities, we normalize:
+
+$$
+P_{S_1}(u|r_y, \mathcal{L}_1) = \begin{cases} 
+0  & \mbox{for } u_1 \\
+0 & \mbox{for } u_2 \\
+0  & \mbox{for } u_3 \\
+1& \mbox{for } u_4 \\
+\end{cases}
+$$
+and
+
+$$
+P_{S_1}(u|r_y, \mathcal{L}_2) = \begin{cases} 
+0  & \mbox{for } u_1 \\
+0 & \mbox{for } u_2 \\
+1  & \mbox{for } u_3 \\
+0& \mbox{for } u_4 \\
+\end{cases}
+$$
+
+That is, the speaker would point to the right table and say the utterance consistent with their lexicon. Again, intuitively this makes sense because the yellow-ish object is located only on the right table and pointing to that table presents the only way one could refer to that object type.
+
+Finally, based on equation 1 we can use these values to compute the probability that the listener thinks that the speaker is referring to the yellow-ish type ($r_y$) when they produce $u_3$ (pointing to the right table and saying "dax"). In this case, it is the same as the probability of the yellow-ish referent ($r_{y2}$) because there is only one yellow object.
+
+$$
+\begin{aligned}
+&P_{L_1}(r_{y2}, \mathcal{L}|u_3 ) = \frac{P_{S_1}(u_3 \mid r_y, \mathcal{L}) \cdot P(\mathcal{L}) \cdot P(r_{y2})}{
+\sum_{r'} P_{S_1}(u_3 \mid r', \mathcal{L}) \cdot P(\mathcal{L}) \cdot P(r')
+}
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+& P_{L_1}(r_{p1}, \mathcal{L}_1 | {u_3})  \propto P_{S_1}(u_3 \mid r_{p1}, \mathcal{L}_1) P(r_{p1}) P(\mathcal{L}_1) = 0.09 \times 0.26 \times 0.5 =0.012\\
+& P_{L_1}(r_{p2}, \mathcal{L}_1 | {u_3})  \propto P_{S_1}(u_3 \mid r_{p2}, \mathcal{L}_1)  P(r_{p2}) P(\mathcal{L}_1) = 0.09 \times 0.26 \times 0.5 =0.012\\
+& P_{L_1}(r_{y2}, \mathcal{L}_1 | {u_3})  \propto P_{S_1}(u_3 \mid r_{y2}, \mathcal{L}_1)  P(r_{y2}) P(\mathcal{L}_1) = 0 \times 0.48 \times 0.5 =0\\
+& P_{L_1}(r_{p1}, \mathcal{L}_2 | {u_3})  \propto P_{S_1}(u_3 \mid r_{p1}, \mathcal{L}_2)  P(r_{p1}) P(\mathcal{L}_2) = 0 \times 0.26 \times 0.5=0\\
+& P_{L_1}(r_{p2}, \mathcal{L}_2 | {u_3})  \propto P_{S_1}(u_3 \mid r_{p2}, \mathcal{L}_2) P(r_{p2}) P(\mathcal{L}_2) = 0 \times 0.26 \times 0.5=0\\
+& P_{L_1}(r_{y2}, \mathcal{L}_2 | {u_3})  \propto P_{S_1}(u_3 \mid r_{y2}, \mathcal{L}_2) P(r_{y2}) P(\mathcal{L}_2) = 1 \times 0.48 \times 0.5=0.24\\
+\end{aligned}
+$$
+
+After normalizing, the full joint-posterior distribution over referents and lexica is:
+
+$$
+\begin{aligned}
+& P_{L_1}(r_{p1}, \mathcal{L}_1 | {u_3})  = 0.045\\
+& P_{L_1}(r_{p2}, \mathcal{L}_1 | {u_3})  = 0.045\\
+& P_{L_1}(r_{y2}, \mathcal{L}_1 | {u_3})  = 0 \\
+& P_{L_1}(r_{p1}, \mathcal{L}_2 | {u_3})  = 0\\
+& P_{L_1}(r_{p2}, \mathcal{L}_2 | {u_3})  = 0\\
+& P_{L_1}(r_{y2}, \mathcal{L}_2 | {u_3})  = 0.91\\
+\end{aligned}
+$$
+
+To arrive at the distribution over types, you simply add all of the referents of the same type and marginalize out the lexicon:
+
+$$
+\begin{aligned}
+&P_{L_1}(r_p|u_3) =  \sum_{i \in {1, 2}} P_{L_1}(r_{p1}, \mathcal{L}_i|u_3) + P_{L_0}(r_{p2}, \mathcal{L}_i|u_3) = 0.09 \\
+&P_{L_1}(r_y|u_3) =  \sum_{i \in {1, 2}} P_{L_1}(r_{y2}, \mathcal{L}_i|u_3)  = 0.91 \\
+\end{aligned}
+$$
+
+To conclude the example, according to the parameter free integration model, the probability that $L_1$ thinks that $S_1$ is referring to a yellow-ish object when producing $u_3$ is 0.91. Based on this model we thus expected that, on average, participants would select the yellow-ish object in 91% of cases in a condition with the prior distribution specified above.  
+
+## No informativeness model
+
+The No informativeness model ignored the information about the intended referent that was expressed by the utterance and instead only focused on common ground manipulation. The only information available to $L_1$ is the prior distribution over referents. It is therefore defined as: 
+
+\begin{equation} 
+P_{L_1}(r|u)\propto P(r)
+\end{equation} 
+
+That is, the probability of the referent given the utterance is determined by the prior probability of the referent for a particular speaker. The prior distributions were set in the same way as for the integration model.
+
+## No conversational prior model
+
+This model was identical in structure to the integration model with the exception that the prior distribution did not correspond to the measurements from Experiment 2 and did not vary with speaker identity. That is, regardless of common ground manipulation and speaker identity the prior distribution was always uniform (i.e. [0.33,0.33,0.33]). The speaker optimality parameter $\alpha$ was set in the same way as in the integration model. 
+
+# Model parameters  
+
+As noted in the main text, the parameter $\alpha$ (speaker optimality parameter) in equation 2 determines the absolute strength of the likelihood term. Its interpretation is *how* rational $L_1$ thinks $S_1$ is in this particular context. For adults, we used the data from Experiment 1 to infer $\alpha$. That is, we performed a Bayesian analysis in which we used the integration model (assuming equal prior probability over referents), with an unknown *a priori* value of $\alpha$, and conditioned on the data from Experiment 1 to compute a posterior distribution over $\alpha$; in turn, the model generates posterior predictions for the proportion of correct responses in Experiment 1. We used MCMC to approximate the posterior distribution for $\alpha$ based on Experiment 1, computed the *maximum a posteriori* (MAP) estimate and used this value for $\alpha$ to generate model predictions for Experiment 3 and 4.	The prior distribution was $\alpha \sim {\rm Cauchy }(1,2)$. We collected samples from four independent MCMC chains, collecting 6000 samples from each chain and removing the first 2000 for burn-in. 
+
+For children, $\alpha$ changed with age. Thus, $\alpha$ for a given age was defined via a simple linear regression and instead of inferring a single value across age, we used the data from Experiment 5 to find the intercept ($\beta^\alpha_0$) and slope ($\beta^\alpha_1$) that best described the developmental trajectory in the data. As for adults, this was done via the integration model with equal prior probability for each object. We performed a Bayesian analysis to compute a posterior distribution for the intercept and the slope of this regression. The prior distribution was $\beta^\alpha_0 \sim {\rm Cauchy }(1,2)$ for the intercept and $\beta^\alpha_1 \sim {\rm Cauchy }(0,2)$ for the slope. We collected samples from four independent MCMC chains, collecting 6000 samples from each chain and removing the first 2000 for burn-in. In Experiment 7, the speaker optimality parameter for a given child of a given age was computed by taking the MAP for the intercept and adding the MAP for the slope times the child's age (with age anchored at 0): $\alpha_i = \beta^\alpha_0 + i \cdot \beta^\alpha_1$.
+
+The prior distribution over objects, $P(r)$, varied with the common ground manipulation, the identity of the speaker and the alignment of utterance and common ground information. Numerically, these probabilities depended on the measurement obtained in Experiment 2A and B for adults and Experiment 6 for children. Fig. \ref{fig:figS2} shows the test situation on Experiment 2.  
+
+For adults, the prior over objects was estimated in the following way: For example, in Experiment 2, for the preference/same speaker condition, when the speaker previously indicated that they liked the yellow-ish object (right table in Fig. \ref{fig:figS2}) and disliked the pink-ish object (left table in Fig.\ref{fig:figS2}), the average proportion with which participants chose the yellow-ish object  was `r adult_ex2_preference_data %>% filter(condition == "same_speaker") %>% summarise(mean = mean(correct)) %>% pull(mean)` and for the pink-ish object it was `r 1-adult_ex2_preference_data %>% filter(condition == "same_speaker") %>% summarise(mean = mean(correct)) %>% pull(mean)` respectively. In Experiments 3 and 4, this measurement determined the prior distribution over objects in cases whenever the same manipulation was used (preference/same speaker). Note that Experiment 3 involved three objects while Experiment 2 only involved two. We nevertheless used the exact proportions measured in Experiment 2 for each object as unnormalized probabilities in the prior. This approach  conserved the relative relation between object types. Thus, when utterance and common ground information were aligned (i.e. the yellow-ish object was the more informative object as in Fig. \ref{fig:figS1}), the distribution of objects was [$r_{p1}, r_{p2}, r_{y2}$]. Using the raw proportions, the corresponding prior distribution was [$P(r_{p}^1) = 0.03, P(r_{p}^2) = 0.03, P(r_{y}^2) = 0.97$] and after normalizing (so that they add up to 1) it was [0.03, 0.03, 0.94]. When information sources were dis-aligned (i.e. the pink-ish object was the more informative one), the object distribution was [$r_{y1}, r_{p2}, r_{y2}$] and the prior distribution was thus [0.97, 0.03, 0.97] or [0.49, 0.02, 0.49] after normalizing.
+
+For children, we used the data from Experiment 6 to model the intercepts ($\beta^\rho_{0,j}$) and slopes ($\beta^\rho_{1,j}$) that best described the developmental trajectory in the data for each of the two ($j$) conditions. As for the speaker optimality parameter, this allowed us to generate object prior distributions in the cognitive model that were sensitive to the child's age. We used a simple Bayesian logistic regression to find the intercept and slope (MAP of posterior distribution) that best described children's performance in the two conditions of experiment 6. The prior distribution was $\beta^\rho_0 ,\beta^\rho_1 \sim \text{Uniform}(-2,2)$ for the intercept and slope. We collected samples from four independent MCMC chains, collecting 6000 samples from each chain and removing the first 2000 for burn-in. In Experiment 7, the prior probability for an object was computed by taking the intercept for the respective condition ($j$), adding the slope times the child's age ($i$) and then using a logistic transformation to convert the outcome into proportions: $\rho_{i,j} = \text{logistic}(\beta^\rho_{0,j} + i \cdot \beta^\rho_{1,j})$. Because these proportions corresponded to a two object scenario, they were then converted to the three object scenario via normalization in the same way as for adults. The overall distribution then depended on the alignment of information sources in the same way as it did for adults. Model code for inferring the parameters can be found in the associated online repository in the file `models.Rmd` starting in line 213 (adults) 1464 (children).  
+
+# Model comparison
+
+Analysis code for model comparison can be found in the online repository.
+
+## Experiment 3
+
+Here we report details on the model comparisons. Model fit was assessed based on marginal log-likelihoods of the data under each model. To compute the log-likelihood for models including a noise parameter, we used forward sampling on four independent chains to collect 5000 samples from the prior distribution of the noise parameter, calculated the log-likelihood for each sample and then averaged over the resulting distribution. 
+
+Bayes Factors were then computed by first subtracting log-likelihoods for two models and then exponentiating the result. Table \ref{tab:ex3_comp} shows Bayes Factors for model comparisons in Experiment 3. We did not pre-register the inclusion of the noise parameter for Experiment 3, but did so for all subsequent experiments for which we did model comparisons (4 and 7). The first row in Table \ref{tab:ex3_comp} compares the integration model with noise parameter to the model without the noise parameter. This comparison shows that including the noise parameter greatly improves model fit. Figure \ref{fig:modelpredex3} correlates model predictions from the models including noise parameters to the data from Experiment 3. 
+
+```{r modelpredex3, include = T, fig.cap = "Correlation plot for model predictions and data from Experiment 3. All models depicted here included a noise parameter. Coefficients and p-values are based on Pearson correlation statistics. Dots represent condition modes. Error bars represent 95\\% HDIs.", fig.align = "center", out.width="100%"}
+
+adult_ex3_data_summary <- adult_ex3_data %>%
+  mutate(model = "data") %>%
+  group_by(model,common_ground_manipulation,speaker,alignment)%>%
+  summarize(k = sum(correct_inf), n = n())%>%
+  ungroup() %>%
+  mutate(a = 1 + k,
+         b = 1 + n - k,
+         ci_lower  = qbeta(.025, a, b),
+         ci_upper = qbeta(.975, a, b),
+         mean = (a-1)/(a+b-2))%>%
+  select(-a,-b,-n,-k)
+
+# summarize model predictions
+
+ex3_flat_prior_model_pred_noise <- readRDS("../../stats/saves/ex3_flat_prior_model_noise.rds") %>%
+  filter(!(Parameter %in% c("noise")))  %>%
+  separate(Parameter, into = c("common_ground_manipulation","speaker", "alignment"), sep="/")%>%
+  mutate(model="no_common_ground_noise")%>%
+  group_by(model,common_ground_manipulation,speaker,alignment)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+
+ex3_prior_only_model_pred_noise <- readRDS("../../stats/saves/ex3_prior_only_model_noise.rds") %>%
+  filter(!(Parameter %in% c("noise")))  %>%
+  separate(Parameter, into = c("common_ground_manipulation","speaker", "alignment"), sep="/")%>%
+  mutate(model="no_informativeness_noise")%>%
+  group_by(model,common_ground_manipulation,speaker,alignment)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+
+ex3_pragm_model_pred_noise <- readRDS("../../stats/saves/ex3_pragm_model_noise.rds") %>%
+  filter(!(Parameter %in% c("noise")))  %>%
+  separate(Parameter, into = c("common_ground_manipulation","speaker", "alignment"), sep="/")%>%
+  mutate(model="integration_noise")%>%
+  group_by(model,common_ground_manipulation,speaker,alignment)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+
+
+ex_3_model_pred <- bind_rows(
+  ex3_flat_prior_model_pred_noise,
+  ex3_prior_only_model_pred_noise,
+  ex3_pragm_model_pred_noise
+)
+ 
+# combine model predictions and data
+
+ex_3_pred <- bind_rows(
+  ex_3_model_pred,
+  adult_ex3_data_summary
+)
+
+ex_3_cor_plot <- ex_3_pred %>%
+  ungroup()%>%
+  filter(model != "data") %>%
+  left_join(., ex_3_pred %>%
+    ungroup()%>%
+    filter(model == "data") %>%
+    rename(data_mean = mean, data_ci_lower = ci_lower, data_ci_upper = ci_upper) %>%
+    select(-model)
+  )%>%
+  mutate(model =  case_when(model == "integration_noise" ~ "Integration",
+                            model == "no_informativeness_noise" ~ "No informativeness",
+                            model == "no_common_ground_noise" ~ "No conversational prior"
+                            ))
+
+
+ggplot(data = ex_3_cor_plot,aes(x = mean, y = data_mean, col = "1")) +
+  geom_abline(intercept = 0, slope = 1, lty = 2, alpha = 0.7, size = 0.5)+
+  geom_point(size = 2, pch = 1, stroke = 1)+
+  geom_errorbar(aes(ymin = data_ci_lower, ymax = data_ci_upper),width = 0,size = .7)+
+  geom_errorbarh(aes(xmin = ci_lower, xmax = ci_upper), height = 0,size = .7)+
+  coord_fixed()+
+  xlim(0,1)+ylim(0,1)+
+  xlab("Model")+
+  ylab("Data")+
+  facet_grid ( ~ model) +
+  guides(col = F)+
+  stat_cor(method = "pearson", label.x = 0.01, label.y = 0.99, aes(x = mean, y = data_mean), inherit.aes = F, size = 3)+
+  theme_few(base_size = )+
+  scale_color_manual(values = c("#4477AA"))+
+  theme(legend.position = "right")
+
+```
+
+```{r ex3_comp,results = "asis"}
+log_like_pragmatic_ex3 <- readRDS("../../stats/saves/ex3_pragm_model_loglike.rds")%>%
+  mutate(model = "integration")
+
+ex3_pragm_model_noise_loglike <- readRDS("../../stats/saves/ex3_pragm_model_noise_loglike.rds")%>%
+  mutate(model = "integration_noise")%>%
+  group_by(model)%>%
+  summarize(logP = logSumExp(value))
+
+ex3_prior_only_model_noise_loglike <- readRDS("../../stats/saves/ex3_prior_only_model_noise_loglike.rds")%>%
+  mutate(model = "no_informativeness_noise")%>%
+  group_by(model)%>%
+  summarize(logP = logSumExp(value))
+
+ex3_flat_prior_model_noise_loglike <- readRDS("../../stats/saves/ex3_flat_prior_model_noise_loglike.rds")%>%
+  mutate(model = "no_common_ground_noise")%>%
+  group_by(model)%>%
+  summarize(logP = logSumExp(value))
+
+ex3_model_comparison <- bind_rows(
+  log_like_pragmatic_ex3,
+  ex3_pragm_model_noise_loglike,
+  ex3_flat_prior_model_noise_loglike,
+  ex3_prior_only_model_noise_loglike
+)%>%
+  mutate(model = reorder(model,logP))
+
+ex3_bf <- bind_rows(
+  log_like_pragmatic_ex3,
+  ex3_pragm_model_noise_loglike,
+  ex3_flat_prior_model_noise_loglike,
+  ex3_prior_only_model_noise_loglike
+) %>% spread(model, logP) %>%
+  mutate("integration_noise > integration" = exp(integration_noise - integration),
+         "integration_noise > no_informativeness_noise" = exp(integration_noise - no_informativeness_noise),
+         "integration_noise > no_common_ground_noise" = exp(integration_noise - no_common_ground_noise),
+         "no_informativeness_noise > no_common_ground_noise" = exp(no_informativeness_noise - no_common_ground_noise)) %>%
+  select(-integration,-integration_noise, -no_informativeness_noise, -no_common_ground_noise)%>%
+  gather(Comparison, BF)%>%
+  mutate(BF = formatC(BF,2))
+
+apa_table(
+  ex3_bf
+  , caption = "Bayes Factors for model comparisons in Experiment 3"
+  , escape = T
+)
+
+```
+
+```{r ex3noise, include = T, fig.cap = "Posterior distribution of noise parameter for each model in Experiment 4", fig.align = "center", out.width="80%", fig.height=3}
+ex3_noise_parameters <- bind_rows(
+  readRDS("../../stats/saves/ex3_pragm_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "Integration"),
+  readRDS("../../stats/saves/ex3_prior_only_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "No informativeness"),
+  readRDS("../../stats/saves/ex3_flat_prior_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "No conversational prior")
+  )
+
+ggplot(ex3_noise_parameters, aes(x = value, col = Model, fill = Model))+
+  geom_density(alpha = .5)+
+  theme_few()+
+  xlab("Noise parameter")+
+  xlim(0,1)+
+  scale_color_manual(breaks=c("Integration","No informativeness","No conversational prior"),
+                    values= c("#C5D86D","#86615C","#AFE0CE"))+
+  scale_fill_manual(breaks=c("Integration","No informativeness","No conversational prior"),
+                    values= c("#C5D86D","#86615C","#AFE0CE"))
+```
+
+Figure \ref{fig:ex3noise} shows the posterior distribution of the noise parameter under each model. The noise parameter was fit to the data and indicates the proportion of responses that are estimated to be due to random guessing rather than in line with model predictions. Consequently, a model that makes predictions that are closer to the data is likely to have a lower noise parameter. The results corroborate the model comparison by showing that the integration model has the lowest noise parameter.  
+
+## Experiment 4
+
+```{r modelpredex4, include = T, fig.cap = "Correlation plot for model predictions and data from Experiment 4. All models included a noise parameter. Coefficients and p-values are based on Pearson correlation statistics. Dots represent condition modes. Error bars represent 95\\% HDIs.", fig.align = "center", out.width="100%"}
+
+adult_ex4_data_summary <- adult_ex4_data %>%
+  mutate(prior_manipulation = relevel(as.factor(prior_manipulation), ref = "strong"))%>%
+  mutate(model = "data") %>%
+  group_by(model,common_ground_manipulation,prior_manipulation,speaker,alignment)%>%
+  summarize(k = sum(correct_inf), n = n())%>%
+  ungroup() %>%
+  mutate(a = 1 + k,
+         b = 1 + n - k,
+         ci_lower  = qbeta(.025, a, b),
+         ci_upper = qbeta(.975, a, b),
+         mean = (a-1)/(a+b-2))%>%
+  select(-a,-b,-n,-k)
+
+# summarize model predictions
+
+ex4_flat_prior_model_pred_noise <- readRDS("../../stats/saves/ex4_flat_prior_model_noise.rds") %>%
+  filter(!(Parameter %in% c("noise")))  %>%
+  separate(Parameter, into = c("common_ground_manipulation","prior_manipulation","speaker", "alignment"), sep="/")%>%
+  mutate(model="no_common_ground")%>%
+  group_by(model,common_ground_manipulation,prior_manipulation,speaker,alignment)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+
+ex4_prior_only_model_pred_noise <- readRDS("../../stats/saves/ex4_prior_only_model_noise.rds") %>%
+  filter(!(Parameter %in% c("noise")))  %>%
+  separate(Parameter, into = c("common_ground_manipulation","prior_manipulation","speaker", "alignment"), sep="/")%>%
+  mutate(model="no_informativeness")%>%
+  group_by(model,common_ground_manipulation,prior_manipulation,speaker,alignment)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+
+ex4_pragm_model_pred_noise <- readRDS("../../stats/saves/ex4_pragm_model_noise.rds") %>%
+  filter(!(Parameter %in% c("noise")))  %>%
+  separate(Parameter, into = c("common_ground_manipulation","prior_manipulation","speaker", "alignment"), sep="/")%>%
+  mutate(model="integration_noise")%>%
+  group_by(model,common_ground_manipulation,prior_manipulation,speaker,alignment)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+
+
+ex_4_model_pred <- bind_rows(
+  ex4_pragm_model_pred_noise,
+  ex4_prior_only_model_pred_noise,
+  ex4_flat_prior_model_pred_noise
+)%>%
+  ungroup()%>%
+  mutate(prior_manipulation = relevel(as.factor(prior_manipulation), ref = "strong"))
+ 
+# combine model predictions and data
+
+ex_4_pred <- bind_rows(
+  ex_4_model_pred,
+  adult_ex4_data_summary
+)
+
+ex_4_cor_plot <- ex_4_pred %>%
+  ungroup()%>%
+  filter(model != "data") %>%
+  left_join(., ex_4_pred %>%
+    ungroup()%>%
+    filter(model == "data") %>%
+    rename(data_mean = mean, data_ci_lower = ci_lower, data_ci_upper = ci_upper) %>%
+    select(-model)
+  )%>%
+  mutate(model =  case_when(model == "integration_noise" ~ "Integration",
+                            model == "no_informativeness" ~ "No informativeness",
+                            model == "no_common_ground" ~ "No conversational prior"
+                            ))
+
+
+ggplot(data = ex_4_cor_plot,aes(x = mean, y = data_mean, col = prior_manipulation)) +
+  geom_abline(intercept = 0, slope = 1, lty = 2, alpha = 0.7, size = 0.5)+
+  geom_point(size = 2, pch = 1, stroke = 1)+
+  geom_errorbar(aes(ymin = data_ci_lower, ymax = data_ci_upper),width = 0,size = .7)+
+  geom_errorbarh(aes(xmin = ci_lower, xmax = ci_upper), height = 0,size = .7)+
+  coord_fixed()+
+  xlim(0,1)+ylim(0,1)+
+  xlab("Model")+
+  ylab("Data")+
+  facet_grid ( ~ model) +
+  stat_cor(method = "pearson", label.x = 0.01, label.y = 0.99, aes(x = mean, y = data_mean), inherit.aes = F, size = 3)+
+  theme_few(base_size = ) + 
+  scale_colour_ptol(name = "Prior strength")+
+  theme(legend.position = "bottom")
+
+```
+
+```{r ex4_comp, results="asis"}
+ex4_pragm_model_noise_loglike <- readRDS("../../stats/saves/ex4_pragm_model_noise_loglike.rds")%>%
+  mutate(model = "integration_noise")%>%
+  group_by(model)%>%
+  summarize(logP = logSumExp(value))
+
+ex4_prior_only_model_noise_loglike <- readRDS("../../stats/saves/ex4_prior_only_model_noise_loglike.rds")%>%
+  mutate(model = "no_informativeness")%>%
+  group_by(model)%>%
+  summarize(logP = logSumExp(value))
+
+ex4_flat_prior_model_noise_loglike <- readRDS("../../stats/saves/ex4_flat_prior_model_noise_loglike.rds")%>%
+  mutate(model = "no_common_ground")%>%
+  group_by(model)%>%
+  summarize(logP = logSumExp(value))
+
+ex4_bf <- bind_rows(
+  ex4_pragm_model_noise_loglike,
+  ex4_flat_prior_model_noise_loglike,
+  ex4_prior_only_model_noise_loglike
+) %>% spread(model, logP) %>%
+  mutate("Integration > No informativeness" = exp(integration_noise - no_informativeness),
+         "Integration > No conversational prior" = exp(integration_noise - no_common_ground),
+         "No conversational prior > No informativeness" = exp(no_common_ground - no_informativeness)) %>%
+  select(-integration_noise, -no_common_ground, -no_informativeness)%>%
+  gather(Comparison, BF)%>%
+  mutate(BF = formatC(BF,2))
+
+apa_table(
+  ex4_bf
+  , caption = "Model comparisons in Experiment 4"
+  , note = "BF = Bayes Factor; All models include a noise parameter."
+  , escape = T
+)
+
+
+```
+
+```{r ex4noise, include = T, fig.cap = "Posterior distribution of noise parameter for each model in Experiment 4", fig.align = "center", out.width="80%", fig.height=3}
+ex4_noise_parameters <- bind_rows(
+  readRDS("../../stats/saves/ex4_pragm_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "Integration"),
+  readRDS("../../stats/saves/ex4_prior_only_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "No informativeness"),
+  readRDS("../../stats/saves/ex4_flat_prior_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "No conversational prior")
+  )
+
+ggplot(ex4_noise_parameters, aes(x = value, col = Model, fill = Model))+
+  geom_density(alpha = .5)+
+  theme_few()+
+  xlab("Noise parameter")+
+  xlim(0,1)+
+  scale_color_manual(breaks=c("Integration","No informativeness","No conversational prior"),
+                    values= c("#C5D86D","#86615C","#AFE0CE"))+
+  scale_fill_manual(breaks=c("Integration","No informativeness","No conversational prior"),
+                    values= c("#C5D86D","#86615C","#AFE0CE"))
+```
+
+Figure \ref{fig:modelpredex4} correlates model predictions with the data from Experiment 4. Table \ref{tab:ex4_comp} shows Bayes Factors for model comparisons in Experiment 4. As pre-registered, all models included a noise parameter. Figure \ref{fig:ex4noise} shows the posterior distribution of the noise parameter for each model in Experiment 4. All results suggest that the integration model captures the structure in the data better compared to the alternative models considered. 
+
+## Experiment 7
+
+For children, we compared models using different types of noise parameters. We preregistered the model comparison for models including a single noise parameter. We added the additional model comparisons because the noise parameter was relatively high. The additional model comparisons allow us to see if the integration model provides a better fit when more emphasis is put on the model structure itself (see Figure \ref{fig:plotmodelpredex7} for model predictions from the models with different noise parameters). The results show that this was the case.
+
+Parameter free models did not include a noise parameter. Noise models included a single noise parameter for all ages. Developmental noise models included a noise parameter that changed with age. That is, instead of a single value, we inferred an intercept and a slope for the noise parameter. Noise was therefore a function of the child's age. Table \ref{tab:child_prag_bf} shows model comparisons for the integration models using different noise parameters. This shows that including a noise parameter improves model fit but that the type of noise parameter does not make much of a difference.
+
+```{r child_prag_bf, results = "asis"}
+child_ex3_model_comparison <- readRDS("../../stats/saves/child_ex3_model_comparison.rds")
+child_ex3_pragmatic_models_bf <- child_ex3_model_comparison%>%
+  select(-ci_lower, -ci_upper)%>%
+  filter(model == "pragmatic")%>%
+  spread(parameter, logP) %>%
+  mutate("dev. noise > noise" = exp(`developmental noise` - noise),
+         "noise > parameter free" = exp(noise - `parameter free`),
+         "dev. noise > parameter free" = exp(`developmental noise` - `parameter free`)) %>%
+  select(-model,-`parameter free`,-`developmental noise`, -noise)%>%
+  gather(Comparison, BF)%>%
+  mutate(BF = formatC(BF,2))
+
+apa_table(
+  child_ex3_pragmatic_models_bf
+  , caption = "Model comparisons for integration models in Experiment 7"
+  , note = "BF = Bayes Factor"
+  , escape = T
+)
+```
+
+Table \ref{tab:child_bf} shows results for model comparison for the different types of noise parameters. In all cases, the integration model provides a substantially better fit to the data compared to the alternative models.
+
+```{r child_bf, results = "asis", out.width="100%"}
+child_ex3_bf <- child_ex3_model_comparison%>%
+  select(-ci_lower, -ci_upper)%>%
+  rename(Parameter = parameter)%>%
+  group_by(Parameter)%>%
+  spread(model, logP) %>%
+  mutate("Int > No CP" = formatC(exp(pragmatic - flat_prior),2),
+         "Int > No Inf" = formatC(exp(pragmatic - prior_only),2),
+         "No CP > No Inf" = formatC(exp(flat_prior - prior_only),2)) %>%
+  select(-pragmatic,-flat_prior, -prior_only)
+
+apa_table(
+  child_ex3_bf
+  , caption = "Model comparisons in Experiment 7"
+  , note = "BF = Bayes Factor, Int = Integration, No CP = No conversational prior, No Inf = No informativeness "
+  , escape = T
+)
+```
+
+```{r}
+child_noise_parameters <- bind_rows(
+  readRDS("../../stats/saves/child_ex3_pragm_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "Integration"),
+  readRDS("../../stats/saves/child_ex3_prior_only_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "No informativeness"),
+  readRDS("../../stats/saves/child_ex3_flat_prior_model_noise.rds") %>%
+  filter(Parameter %in% c("noise"))  %>%
+  mutate(Model = "No conversational prior")
+  )
+child_noise_plot <- ggplot(child_noise_parameters, aes(x = value, col = Model, fill = Model))+
+  geom_density(alpha = .5)+
+  theme_few()+
+  xlab("Noise parameter")+
+  xlim(0,1)+
+  scale_color_manual(breaks=c("Integration","No informativeness","No conversational prior"),
+                    values= c("#C5D86D","#86615C","#AFE0CE"))+
+  scale_fill_manual(breaks=c("Integration","No informativeness","No conversational prior"),
+                    values= c("#C5D86D","#86615C","#AFE0CE"))
+```
+
+```{r, include = T}
+child_ex3_pragm_model_developmental_noise_param <- readRDS("../../stats/saves/child_ex3_pragm_model_developmental_noise.rds") %>%
+  filter(Parameter %in% c("noise_int","noise_slope"))  %>%
+  group_by(Parameter)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+child_ex3_prior_only_model_developmental_noise_param <- readRDS("../../stats/saves/child_ex3_prior_only_model_developmental_noise.rds") %>%
+  filter(Parameter %in% c("noise_int","noise_slope"))  %>%
+  group_by(Parameter)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+child_ex3_flat_prior_model_developmental_noise_param <- readRDS("../../stats/saves/child_ex3_flat_prior_model_developmental_noise.rds") %>%
+  filter(Parameter %in% c("noise_int","noise_slope"))  %>%
+  group_by(Parameter)%>%
+  summarise(mean = estimate_mode(value), 
+            ci_lower = hdi_lower(value),
+            ci_upper = hdi_upper(value))
+developmental_noise_parameter <- data_frame(
+  age = rep(seq(0,2, by = 0.05),3),
+  Model = c(rep("Integration",41),
+            rep("No conversational prior",41),
+            rep("No informativeness",41)),
+  int = c(rep(child_ex3_pragm_model_developmental_noise_param%>%
+                filter(Parameter == "noise_int")%>%
+                pull(mean),41),
+          rep(child_ex3_flat_prior_model_developmental_noise_param%>%
+                filter(Parameter == "noise_int")%>%
+                pull(mean),41),
+          rep(child_ex3_prior_only_model_developmental_noise_param%>%
+                filter(Parameter == "noise_int")%>%
+                pull(mean),41)
+          ),
+  slope = c(rep(child_ex3_pragm_model_developmental_noise_param%>%
+                filter(Parameter == "noise_slope")%>%
+                pull(mean),41),
+          rep(child_ex3_flat_prior_model_developmental_noise_param%>%
+                filter(Parameter == "noise_slope")%>%
+                pull(mean),41),
+          rep(child_ex3_prior_only_model_developmental_noise_param%>%
+                filter(Parameter == "noise_slope")%>%
+                pull(mean),41))
+) %>%
+  mutate(y = plogis(int + slope *age),
+         age = age +3)
+
+child_dev_noise_plot <- ggplot(developmental_noise_parameter, aes(x = age, y= y, col = Model))+
+  geom_line(size = 1)+
+  ylab("Noise parameter")+
+  xlab("Age")+
+  ylim(0,1)+
+  theme_few()+
+  scale_color_manual(breaks=c("Integration","No informativeness","No conversational prior"),
+                    values= c("#C5D86D","#86615C","#AFE0CE"))
+```
+
+Figure \ref{fig:childnoise} shows the different types of noise parameters for the each model. Figure \ref{fig:childnoise}A shows that the integration model has the lowest estimated level of noise of all the models considered. Figure \ref{fig:childnoise}B shows that the the integration model has the lowest level of estimated noise across the entire age range. It also shows that noise decreases with age for the integration model, suggesting that older children behaved more in line with model predictions compared to younger children. 
+
+```{r childnoise, include = T, fig.cap = "Posterior distribution of noise parameter for each model in Experiment 7. A: single noise parameter across age, B: Developmental noise parameter.", fig.align = "center", out.width="100%", fig.height=3}
+ggarrange(child_noise_plot,child_dev_noise_plot, nrow = 1, ncol = 2, common.legend = T, legend = "right", labels = c("A","B"))
+```
+
+Finally, Figure \ref{fig:childcor} shows correlations between model predictions and the data, binned by year. Across noise parameters, model predictions and data are closest aligned (i.e. closest to the dotted line) for the integration model, thereby corroborating the conclusions drawn based on the model comparison and the evaluation of the noise parameters. Correlations are also higher for 4yo compared to 3yo, supporting the interpretation based on the developmental noise parameter that children behaved more in line with the model predictions as they got older.  
+
+```{r childcor,  include = T, fig.cap = "Correlation plot for model predictions and data for all models considered in Experiment 7. Dots represent condition modes. Error bars represent 95\\% HDIs.", fig.align = "center", out.width="100%", fig.height=7}
+# child_cor <- bind_rows(
+#   readRDS("../../stats/saves/child_ex3_pragm_model_noise.rds") %>%
+#   filter(!(Parameter %in% c("noise"))) %>%
+#   separate(Parameter, into = c("age", "speaker", "alignment"), sep="/")%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "Pragmatic",
+#          noise = "Noise")%>%
+#   group_by(model, noise,age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value)),
+# 
+#   readRDS("../../stats/saves/child_ex3_flat_prior_model_noise.rds") %>%
+#   filter(!(Parameter %in% c("noise"))) %>%
+#   separate(Parameter, into = c("age", "speaker", "alignment"), sep="/")%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "No conversational prior",
+#          noise = "Noise")%>%
+#   group_by(model, noise,age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value)),
+#   
+#   readRDS("../../stats/saves/child_ex3_prior_only_model_noise.rds") %>%
+#   filter(!(Parameter %in% c("noise"))) %>%
+#   separate(Parameter, into = c("age", "speaker", "alignment"), sep="/")%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "No informativeness",
+#          noise = "Noise")%>%
+#   group_by(model, noise,age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value)),
+#   
+#     readRDS("../../stats/saves/child_ex3_pragm_model_developmental_noise.rds") %>%
+#   filter(!(Parameter %in% c("noise"))) %>%
+#   separate(Parameter, into = c("age", "speaker", "alignment"), sep="/")%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "Pragmatic",
+#          noise = "Dev. noise")%>%
+#   group_by(model, noise,age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value)),
+# 
+#   readRDS("../../stats/saves/child_ex3_flat_prior_model_developmental_noise.rds") %>%
+#   filter(!(Parameter %in% c("noise"))) %>%
+#   separate(Parameter, into = c("age", "speaker", "alignment"), sep="/")%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "No conversational prior",
+#          noise = "Dev. noise")%>%
+#   group_by(model, noise,age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value)),
+#   
+#   readRDS("../../stats/saves/child_ex3_prior_only_model_developmental_noise.rds") %>%
+#   filter(!(Parameter %in% c("noise"))) %>%
+#   separate(Parameter, into = c("age", "speaker", "alignment"), sep="/")%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "No informativeness",
+#          noise = "Dev. noise")%>%
+#   group_by(model, noise,age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value)),
+#   
+#   
+#   readRDS("../../stats/saves/child_ex3_pragm_model_param_free.rds") %>%
+#   separate(`0`, into = c("age", "speaker", "alignment","correct"), sep="/")%>%
+#   mutate(value = `1`,
+#          age = as.numeric(age))%>%
+#   select(-`1`)%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "Pragmatic",
+#          noise = "Param. free")%>%
+#   group_by(model,noise, age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value)),
+#   
+#   readRDS("../../stats/saves/child_ex3_prior_only_model_param_free.rds") %>%
+#   separate(`0`, into = c("age", "speaker", "alignment","correct"), sep="/")%>%
+#   mutate(value = `1`,
+#          age = as.numeric(age))%>%
+#   select(-`1`)%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "No informativeness",
+#          noise = "Param. free")%>%
+#   group_by(model,noise, age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value)),
+#   
+#   readRDS("../../stats/saves/child_ex3_flat_prior_model_param_free.rds") %>%
+#   separate(`0`, into = c("age", "speaker", "alignment","correct"), sep="/")%>%
+#   mutate(value = `1`,
+#          age = as.numeric(age))%>%
+#   select(-`1`)%>%
+#   mutate(age = ifelse(age<4,"3-year-olds","4-year-olds"))%>%
+#   mutate(model = "No conversational prior",
+#          noise = "Param. free")%>%
+#   group_by(model,noise, age,alignment,speaker) %>%
+#   summarise(mean = estimate_mode(value), 
+#             ci_lower = hdi_lower(value), 
+#             ci_upper =hdi_upper(value))
+# 
+# )
+
+
+p_child_cor<- readRDS("../../stats/saves/child_all_models_cor.rds") %>%
+  na.omit()%>%
+  ungroup()%>%
+  mutate(model = recode(model,
+                          "Pragmatic" = "Integration",
+                          "Flat prior" = "No conversational prior",
+                          "Prior only" = "No informativeness"),
+         data_mean = rep(p_child_ex3_data_binned%>%pull(mean),9),
+         data_ci_upper = rep(p_child_ex3_data_binned%>%pull(ci_upper),9),
+         data_ci_lower = rep(p_child_ex3_data_binned%>%pull(ci_lower),9))
+
+ggplot(p_child_cor, aes(x = mean, y = data_mean, col = age)) +
+  geom_abline(intercept = 0, slope = 1, lty = 2, alpha = 1, size = .5)+
+  geom_point(size = 2, pch = 1, stroke = 1)+
+  geom_errorbar(aes(ymin = data_ci_lower, ymax = data_ci_upper),width = 0,size = .7)+
+  geom_errorbarh(aes(xmin = ci_lower, xmax = ci_upper), height = 0,size = .7)+
+  coord_fixed()+
+ stat_cor(method = "pearson", label.x = 0.01, label.y = 0.99, aes(x = mean, y = data_mean), inherit.aes = F, size = 3)+
+  xlim(0,1)+ylim(0,1)+
+  xlab("Model")+
+  ylab("Data")+
+  facet_grid(noise~model)+
+  theme_few() + 
+  scale_colour_ptol(name = "Age")+
+  theme(legend.position = "bottom")
+```
+
+## Note on alternative approach
+
+In this model, we assume that the literal listener ($L_0$) is also sensitive to the prior manipulation. An alternative approach [used e.g. in @frank2012predicting] is to assume that $L_0$ has a uniform prior distribution over referents [.33, .33, .33]. We also ran the entire analysis with this alternative approach and found no major changes in the results. In all cases, the integration model outperformed the two alternative models, both for children as well as for adults. Interestingly, for adults but not for children, using a uniform prior for $L_0$ yielded a lower estimate for the noise parameter in Experiments 3 and 4. 
+
+
+\newpage
+
+# References
+```{r create_r-references}
+r_refs(file = "r-references.bib")
+```
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id = "refs"></div>
+\endgroup
+
+

@@ -1,0 +1,10 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\centering \includegraphics{./pictures/thisisdialectical}
+
+}
+
+\caption{Illustration of Stimulus material arrangement on page (A) and stimulus variations (B) for Pilot 1.}\label{fig:dialectical}
+\end{figure*}

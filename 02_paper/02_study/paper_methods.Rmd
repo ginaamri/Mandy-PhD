@@ -1,0 +1,206 @@
+---
+title             : "Through the eyes of the teacher"
+shorttitle        : "Visual attention in teaching and learning processes"
+
+author: 
+  - name          : "Mandy Klatt"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Dittrichring 5-7, 04109 Leipzig"
+    email         : "mandy.klatt@uni-leipzig.de"
+  - name          : "Dr. Gregor Kachel"
+    affiliation   : "1, 2"
+  - name          : "Dr. Christin Lotz"
+    affiliation   : "1"
+  - name          : "Prof. Dr. Anne Deiglmayr"
+    affiliation   : "1"
+  
+affiliation:
+  - id            : "1"
+    institution   : "Leipzig University"
+  - id            : "2"
+    institution   : "Max-Planck University for Evolutionary Anthropology"
+
+authornote: | 
+
+  Ethics Approval: All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University.
+
+  
+  Consent to Participate: All participants gave informed consent.
+
+
+abstract: |
+  
+keywords          : "Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking"
+wordcount         : "XXX"
+
+bibliography      : ["r-references.bib"]
+
+floatsintext      : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : bookdown::word_document2
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(include = FALSE)
+library("papaja")
+r_refs("r-references.bib")
+```
+
+```{r analysis-preferences, include=FALSE}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+```{r include=FALSE}
+#install.packages("needs")
+
+# suppress "summarize" info. 
+# if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
+options(dplyr.summarise.inform = FALSE)
+
+library(needs)
+
+needs(tidyverse,
+      lubridate,
+      viridis,
+      grid,
+      gridExtra,
+      cowplot,
+      readxl,
+      ARTofR)
+```
+
+```{r data, include=FALSE}
+# load data files
+
+```
+
+
+# Introduction
+
+Managing classroom disruptions is a crucial aspect of effective classroom management (@evertson2006classroom; @kounin2006techniken).
+
+Accordingly, teachers must be able to quickly notice and appropriately react to significant events in the classroom. This ability is referred to as classroom professional vision (@goodwin2015professional; @sherin2007development).
+
+The process of professional vision can be divided into two main aspects: focusing on relevant situations for learning and teaching (“noticing”) and applying knowledge to draw appropriate conclusions in these situations (“knowledge-based reasoning”; @seidel2014modeling). 
+
+Therefore, the early visual perception of classroom disruptions is a key component to effectively maximize students’ learning time and minimize classroom interruptions. According to Kounin (2006), these important classroom management strategies are called “withitness” and “overlapping” and can be summarized under the concept of monitoring (@gold2017using). 
+
+Learning to develop such classroom management skills is a demanding and complex task for student teachers (@wolff2016teacher). Research on teacher expertise showed that expert and novice teachers differ in their ability to perceive classroom events, “[…] whereas only a few studies have focused on the basal process of noticing, i.e. the recognition of possible disturbing situations” (@grub2020process, p.75). Mobile eye-tracking data can fill this research gap by providing new insights in how expertise differences in teacher´s professional vision manifest in teacher-student interactions (@lachner2016makes; @@wolff2016teacher).
+
+# Research Questions
+
+This study examined how the degree of teaching experience influences (a) the number of fixations on relevant areas (e.g., the student performing the disruption), (b) the fixation duration in relevant areas and (c) the time to first fixation on relevant areas, using mobile eye-tracking data in a controlled, micro-teaching setting. Based on the existing literature, we expect expert teachers to outperform novices by (H1) showing more fixations on relevant areas with (H2) shorter fixation durations and (H3) perceiving classroom disruptions faster (cf. @van2014first). 
+
+
+# Methods
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+
+## Participants
+
+```{r demographicstable, echo = FALSE}
+
+# prepare data (selected from questionnaire data)
+demo.data <- read_excel ("./data/data_empschul_labor_lehrperson.xlsx") 
+
+# select relevant columns
+demo.data <- demo.data %>% select(LI02_01_1,
+                                  LI03_01,
+                                  LI04_01,
+                                  LI06_05)
+
+
+# rename columns
+demo.data <- rename(demo.data, c("Group" = "LI06_05",
+                                  "Gender" = "LI02_01_1",
+                                  "Age" = "LI03_01",
+                                  "Teaching Experience" = "LI04_01"))
+
+# define expert and novice with ifelse function
+demo.data$Group = ifelse(demo.data$Group < 200, "Novice","Expert")
+
+# changing gender female 1 = 0
+demo.data$Gender = ifelse(demo.data$Gender == 2, "1","0")
+
+# changing character into numeric
+demo.data$Gender <- as.numeric(demo.data$Gender)
+
+# creating new column with percentage of gender
+
+
+# create a basic table (tibble) using tidyverse functions
+demo.table <- demo.data %>%
+  group_by(Group) %>%
+  summarise(N=n(),
+            "Gender female" = sum(Gender),
+            "M Age in years" = round(mean(Age), 0),
+            "SD Age in years" = round(sd(Age), 0),
+            "Min Age in years" = min(Age),
+            "Max Age in years" = max(Age),
+            "M Exp. in years" = round(mean(`Teaching Experience`), 0),
+            "SD Exp. in years" = round(sd(`Teaching Experience`), 0),
+            "Min Exp. in years" = min(`Teaching Experience`),
+            "Max Exp.in years" = max(`Teaching Experience`),
+           )
+
+# format and insert table in manuscript
+apa_table(
+  demo.table,
+  caption = "Demographic Information and Teaching Experience",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+
+```
+
+
+The planned sample consists of *n* = 40 experts (teacher training completed, active in the teaching profession) and *n* = 40 novices (student teachers, first internship completed). 
+
+The currently ongoing data collection already yielded data from *n* = `r length(demo.data$Group=="Expert")` experts and 
+
+*n* = r nrow(demo.data[demo.data$Group == "Novice",]) novices. 
+
+Participants Teachers were primarily recruited through personal contacts
+
+## Material
+
+
+
+## Procedure
+
+
+
+## Data analysis
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+
+# Results
+
+
+
+# Discussion
+
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup

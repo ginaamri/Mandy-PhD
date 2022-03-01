@@ -1,0 +1,73 @@
+Recording	Participant	Variable1	TOI	Interval	Media	Duration_of_interval	Start_of_interval	Total_duration_of_whole_fixations	Average_duration_of_whole_fixations	Number_of_whole_fixations
+Recording033	01_04_C	Novice	Asking question	1	fullstream	3869	369742	2918	973	3
+Recording033	01_04_C	Novice	Calibration phase	1	fullstream	17224	23641	15311	1094	14
+Recording033	01_04_C	Novice	Chatting with neighbour	1	fullstream	9843	597506	6516	241	27
+Recording033	01_04_C	Novice	Clicking pen	1	fullstream	12980	213455	4038	1009	4
+Recording033	01_04_C	Novice	Drawing on paper	1	fullstream	39979	252353	21807	808	27
+Recording033	01_04_C	Novice	Drumming hands	1	fullstream	43507	422654	17910	437	41
+Recording033	01_04_C	Novice	Looking at phone	1	fullstream	7984	440507	6876	859	8
+Recording033	01_04_C	Novice	Putting head on table	1	fullstream	20929	555705	16191	426	38
+Recording033	01_04_C	Novice	Yelling	1	fullstream	6083	124124	260	260	1
+Recording034	01_02_A	Expert	Asking question	1	fullstream	7112	394227	3258	251	13
+Recording034	01_02_A	Expert	Calibration phase	1	fullstream	13335	4742	10194	1019	10
+Recording034	01_02_A	Expert	Chatting with neighbour	1	fullstream	2607	489478	760	760	1
+Recording034	01_02_A	Expert	Clicking pen	1	fullstream	12071	578395	6056	303	20
+Recording034	01_02_A	Expert	Drawing on paper	1	fullstream	44971	301748	20068	231	87
+Recording034	01_02_A	Expert	Drumming hands	1	fullstream	20530	102274	7855	291	27
+Recording034	01_02_A	Expert	Looking at phone	1	fullstream	19897	524338	5976	213	28
+Recording034	01_02_A	Expert	Putting head on table	1	fullstream	23402	228117	12992	481	27
+Recording034	01_02_A	Expert	Yelling	1	fullstream	1995	160448	400	400	1
+Recording035	01_03_B	Novice	Asking question	1	fullstream	12863	304639	2698	675	4
+Recording035	01_03_B	Novice	Calibration phase	1	fullstream	10615	3910	9234	543	17
+Recording035	01_03_B	Novice	Chatting with neighbour	1	fullstream	11060	557735	4717	472	10
+Recording035	01_03_B	Novice	Clicking pen	1	fullstream	26272	155863	15051	941	16
+Recording035	01_03_B	Novice	Drawing on paper	1	fullstream	129708	177026	61903	784	79
+Recording035	01_03_B	Novice	Drumming hands	1	fullstream	12615	368209	3918	653	6
+Recording035	01_03_B	Novice	Looking at phone	1	fullstream	40427	410913	19109	637	30
+Recording035	01_03_B	Novice	Putting head on table	1	fullstream	39159	498114	18529	452	41
+Recording035	01_03_B	Novice	Yelling	1	fullstream	6527	233136	120	120	1
+Recording036	01_01_D	Expert	Asking question	1	fullstream	7648	629903	959	137	7
+Recording036	01_01_D	Expert	Calibration phase	1	fullstream	16470	2986	14372	1597	9
+Recording036	01_01_D	Expert	Chatting with neighbour	1	fullstream	6612	123858	2898	966	3
+Recording036	01_01_D	Expert	Clicking pen	1	fullstream	11597	430086	4777	434	11
+Recording036	01_01_D	Expert	Drawing on paper	1	fullstream	74511	329439	30961	337	92
+Recording036	01_01_D	Expert	Drumming hands	1	fullstream	23121	481792	8955	527	17
+Recording036	01_01_D	Expert	Looking at phone	1	fullstream	32387	545416	10993	379	29
+Recording036	01_01_D	Expert	Putting head on table	1	fullstream	6354	289567	2219	555	4
+Recording036	01_01_D	Expert	Yelling	1	fullstream	2245	395265	760	760	1
+Recording037	02_01_A	Novice	Asking question	1	fullstream	7422	265431	760	253	3
+Recording037	02_01_A	Novice	Calibration phase	1	fullstream	17902	5748	5157	397	13
+Recording037	02_01_A	Novice	Chatting with neighbour	1	fullstream	7429	485184	740	148	5
+Recording037	02_01_A	Novice	Clicking pen	1	fullstream	16114	607909	1379	125	11
+Recording037	02_01_A	Novice	Drawing on paper	1	fullstream	43469	325941	6116	197	31
+Recording037	02_01_A	Novice	Drumming hands	1	fullstream	62326	129530	7676	154	50
+Recording037	02_01_A	Novice	Looking at phone	1	fullstream	33557	538947	3738	267	14
+Recording037	02_01_A	Novice	Putting head on table	1	fullstream	51225	177117	8455	188	45
+Recording037	02_01_A	Novice	Yelling	1	fullstream	9105	237965	1279	183	7
+Recording038	02_02_B	Novice	Asking question	1	fullstream	7082	303890	5137	571	9
+Recording038	02_02_B	Novice	Calibration phase	1	fullstream	12325	3502	10654	888	12
+Recording038	02_02_B	Novice	Chatting with neighbour	1	fullstream	8397	533803	4198	382	11
+Recording038	02_02_B	Novice	Clicking pen	1	fullstream	9409	130124	7436	620	12
+Recording038	02_02_B	Novice	Drawing on paper	1	fullstream	147788	180119	112893	383	295
+Recording038	02_02_B	Novice	Drumming hands	1	fullstream	24699	352279	19648	786	25
+Recording038	02_02_B	Novice	Looking at phone	1	fullstream	16321	421887	11653	613	19
+Recording038	02_02_B	Novice	Putting head on table	1	fullstream	11322	495760	8715	436	20
+Recording038	02_02_B	Novice	Yelling	1	fullstream	2548	247600	1199	240	5
+Recording039	02_03_C	Novice	Asking question	1	fullstream	8045	375744	4877	610	8
+Recording039	02_03_C	Novice	Calibration phase	1	fullstream	16494	6462	14151	786	18
+Recording039	02_03_C	Novice	Chatting with neighbour	1	fullstream	11713	617128	7975	725	11
+Recording039	02_03_C	Novice	Clicking pen	1	fullstream	16269	196737	13712	508	27
+Recording039	02_03_C	Novice	Drawing on paper	1	fullstream	26495	245052	17270	375	46
+Recording039	02_03_C	Novice	Drumming hands	1	fullstream	27775	418568	15211	310	49
+Recording039	02_03_C	Novice	Looking at phone	1	fullstream	28223	321051	16350	348	47
+Recording039	02_03_C	Novice	Putting head on table	1	fullstream	61713	591704	38177	471	81
+Recording039	02_03_C	Novice	Yelling	1	fullstream	2992	137687	2678	1339	2
+Recording040	02_04_D	Novice	Asking question	1	fullstream	6595	651346	2798	466	6
+Recording040	02_04_D	Novice	Calibration phase	1	fullstream	20964	3690	19128	1366	14
+Recording040	02_04_D	Novice	Chatting with neighbour	1	fullstream	11443	205906	4757	1189	4
+Recording040	02_04_D	Novice	Clicking pen	1	fullstream	24220	415948	18029	949	19
+Recording040	02_04_D	Novice	Drawing on paper	1	fullstream	27915	313381	4297	391	11
+Recording040	02_04_D	Novice	Drumming hands	1	fullstream	14998	539574	10154	1128	9
+Recording040	02_04_D	Novice	Looking at phone	1	fullstream	31944	538922	17809	937	19
+Recording040	02_04_D	Novice	Putting head on table	1	fullstream	57484	241586	31121	741	42
+Recording040	02_04_D	Novice	Yelling	1	fullstream	12416	353527	420	420	1
