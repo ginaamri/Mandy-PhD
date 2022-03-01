@@ -150,19 +150,22 @@ toi_react$`Time to first reaction in seconds`<- round(toi_react$Time_to_first_Re
 react_group_plot <- 
   ggplot(data = toi_react,
          mapping = aes(x = Group,
-                       y = `Time to first reaction in seconds`)) +
+                       y = log(`Time to first reaction in seconds`))) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1,
-                                        height = 0)) +
-  ylim(0,25) + 
-  labs(x = "") +
+  # geom_point(size = 2, 
+  #            alpha = 0.4,
+  #            position = position_jitter(seed = 1, 
+  #                                       width = 0.1,
+  #                                       height = 0)) +
+  labs(x = "",
+       y = "Time to first reaction in seconds") +
   scale_fill_brewer(palette = "Set1") +
   ggtitle("Time to first reaction to disruptive person") +
-  theme_classic() + 
-  theme(legend.position="none",
+  theme_bw() + 
+  theme(axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.position="none",
         axis.text.x = element_text(size = 20),
         plot.title = element_text(size = 17, face = "bold"),
         axis.title.y = element_text(size = 18),
@@ -170,51 +173,50 @@ react_group_plot <-
 
 react_group_plot
 
-
 # plotting time to first reaction for all disruptions
-react_plot <- 
-  toi_react %>% 
-  mutate(TOI = factor(TOI,
-                        levels = c("Chatting_with_neighbour","Whispering",
-                                  "Heckling","Snipping_with_fingers",
-                                  "Drumming_with_hands","Clicking_pen",
-                                  "Head_on_table","Looking_at_phone",
-                                  "Drawing"
-                                  ),
-                        labels = c("Chatting with neighbour","Whispering",
-                                   "Heckling","Snipping with fingers",
-                                   "Drumming with hands","Clicking pen",
-                                   "Head on table","Looking at phone",
-                                   "Drawing"
-                        )
-                        )
-         ) %>% 
-  ggplot(mapping = aes(x = Group,
-                       y = `Time to first reaction in seconds`)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1,
-                                        height = 0)) +
-  ylim(0,25) + 
-  labs(x = "") +
-  scale_fill_brewer(palette = "Set1") +
-  ggtitle("Time to first reaction to disruptive person") +
-  theme_classic() +
-  theme(
-    axis.text.x = element_blank(),
-    axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 9,
-                                angle = 90),
-    plot.title = element_text(size = 17, face = "bold"),
-    axis.title.y = element_text(size = 14),
-    ) +
-  facet_wrap(facets = vars(TOI),
-             nrow = 1,
-             strip.position = "bottom")
-    
-react_plot
+# react_plot <- 
+#   toi_react %>% 
+#   mutate(TOI = factor(TOI,
+#                         levels = c("Chatting_with_neighbour","Whispering",
+#                                   "Heckling","Snipping_with_fingers",
+#                                   "Drumming_with_hands","Clicking_pen",
+#                                   "Head_on_table","Looking_at_phone",
+#                                   "Drawing"
+#                                   ),
+#                         labels = c("Chatting with neighbour","Whispering",
+#                                    "Heckling","Snipping with fingers",
+#                                    "Drumming with hands","Clicking pen",
+#                                    "Head on table","Looking at phone",
+#                                    "Drawing"
+#                         )
+#                         )
+#          ) %>% 
+#   ggplot(mapping = aes(x = Group,
+#                        y = `Time to first reaction in seconds`)) +
+#   geom_boxplot(mapping = aes(fill = Group)) +
+#   geom_point(size = 2, 
+#              alpha = 0.4,
+#              position = position_jitter(seed = 1, 
+#                                         width = 0.1,
+#                                         height = 0)) +
+#   ylim(0,25) + 
+#   labs(x = "") +
+#   scale_fill_brewer(palette = "Set1") +
+#   ggtitle("Time to first reaction to disruptive person") +
+#   theme_classic() +
+#   theme(
+#     axis.text.x = element_blank(),
+#     axis.ticks.x = element_blank(),
+#     strip.text.x = element_text(size = 9,
+#                                 angle = 90),
+#     plot.title = element_text(size = 17, face = "bold"),
+#     axis.title.y = element_text(size = 14),
+#     ) +
+#   facet_wrap(facets = vars(TOI),
+#              nrow = 1,
+#              strip.position = "bottom")
+#     
+# react_plot
 
 
 # plotting time to first reaction for 3 disruptions sum up
@@ -264,17 +266,18 @@ react_plot_sum <-
          mapping = aes(x = Group,
                        y = `Time to first reaction in seconds`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1,
-                                        height = 0)) +
-  ylim(0,25) + 
+  # geom_point(size = 2, 
+  #            alpha = 0.4,
+  #            position = position_jitter(seed = 1, 
+  #                                       width = 0.1,
+  #                                       height = 0)) +
+  # ylim(0,25) + 
   labs(x = "") +
   scale_fill_brewer(palette = "Set1") +
   ggtitle("Time to first reaction to disruptive person") +
-  theme_classic() +
+  theme_bw() +
   theme(
+    strip.background = element_blank(),
     legend.title = element_text(size=14), #change legend title font size
     legend.text = element_text(size=14), #change legend text font size
     axis.text.x = element_blank(),
@@ -282,7 +285,9 @@ react_plot_sum <-
     strip.text.x = element_text(size = 15),
     plot.title = element_text(size = 20, face = "bold"),
     axis.title.y = element_text(size = 16),
-  ) +
+    axis.line = element_line(colour = "black"),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()) +
   facet_wrap(facets = vars(TOI),
              nrow = 1,
              strip.position = "bottom")
@@ -322,71 +327,75 @@ toi_fix$`Number of fixations on disruptive person` <- toi_fix$Number_of_fixation
 fix_group_plot <- 
   ggplot(data = toi_fix,
          mapping = aes(x = Group,
-                       y = `Time to first fixation in seconds`)) +
+                       y = log(`Time to first fixation in seconds`))) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
-  ylim(0,25) + 
-  labs(x ="") + 
+  # geom_point(size = 2, 
+  #            alpha = 0.4,
+  #            position = position_jitter(seed = 1, 
+  #                                       width = 0.1)) +
+  # ylim(0,25) + 
+  labs(x ="",
+       y = "Time to first fixation in seconds") + 
   scale_fill_brewer(palette = "Set1") +
   ggtitle("Time to first fixation to disruptive person") +
-  theme_classic() + 
-  theme(legend.position="none",
+  theme_bw() + 
+  theme(axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.position="none",
         axis.text.x = element_text(size = 20),
         plot.title = element_text(size = 17, face = "bold"),
-        axis.title.y = element_text(size = 15),
+        axis.title.y = element_text(size = 18),
   )
 
 fix_group_plot
 
 
 # plotting time to first fixation for all disruptions
-fix_plot <- 
-  toi_fix %>% 
-  mutate(TOI = factor(TOI,
-                      levels = c("Chatting_with_neighbour","Whispering",
-                                 "Heckling","Snipping_with_fingers",
-                                 "Drumming_with_hands","Clicking_pen",
-                                 "Head_on_table","Looking_at_phone",
-                                 "Drawing"
-                      ),
-                      labels = c("Chatting with neighbour","Whispering",
-                                 "Heckling","Snipping with fingers",
-                                 "Drumming with hands","Clicking pen",
-                                 "Head on table","Looking at phone",
-                                 "Drawing"
-                      )
-  )
-  ) %>% 
-  ggplot(mapping = aes(x = Group,
-                       y = `Time to first fixation in seconds`)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
-  ylim(0,25) + 
-  labs(x ="") + 
-  scale_fill_brewer(palette = "Set1") +
-  facet_wrap(vars(TOI), 
-             nrow = 1, strip.position = "bottom") +
-  ggtitle("Time to first fixation to disruptive person") +
-  theme_classic() + 
-  theme(
-    axis.text.x = element_blank(),
-    axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 9,
-                                angle = 90),
-    plot.title = element_text(size = 17, face = "bold"),
-    axis.title.y = element_text(size = 14),
-  ) +
-  facet_wrap(facets = vars(TOI),
-             nrow = 1,
-             strip.position = "bottom")
-
-fix_plot
+# fix_plot <- 
+#   toi_fix %>% 
+#   mutate(TOI = factor(TOI,
+#                       levels = c("Chatting_with_neighbour","Whispering",
+#                                  "Heckling","Snipping_with_fingers",
+#                                  "Drumming_with_hands","Clicking_pen",
+#                                  "Head_on_table","Looking_at_phone",
+#                                  "Drawing"
+#                       ),
+#                       labels = c("Chatting with neighbour","Whispering",
+#                                  "Heckling","Snipping with fingers",
+#                                  "Drumming with hands","Clicking pen",
+#                                  "Head on table","Looking at phone",
+#                                  "Drawing"
+#                       )
+#   )
+#   ) %>% 
+#   ggplot(mapping = aes(x = Group,
+#                        y = `Time to first fixation in seconds`)) +
+#   geom_boxplot(mapping = aes(fill = Group)) +
+#   geom_point(size = 2, 
+#              alpha = 0.4,
+#              position = position_jitter(seed = 1, 
+#                                         width = 0.1)) +
+#   ylim(0,25) + 
+#   labs(x ="") + 
+#   scale_fill_brewer(palette = "Set1") +
+#   facet_wrap(vars(TOI), 
+#              nrow = 1, strip.position = "bottom") +
+#   ggtitle("Time to first fixation to disruptive person") +
+#   theme_classic() + 
+#   theme(
+#     axis.text.x = element_blank(),
+#     axis.ticks.x = element_blank(),
+#     strip.text.x = element_text(size = 9,
+#                                 angle = 90),
+#     plot.title = element_text(size = 17, face = "bold"),
+#     axis.title.y = element_text(size = 14),
+#   ) +
+#   facet_wrap(facets = vars(TOI),
+#              nrow = 1,
+#              strip.position = "bottom")
+# 
+# fix_plot
 
 
 # plotting time to first fixation for 3 disruptions sum up
@@ -420,19 +429,21 @@ toi_fix$`Number of fixations on disruptive person` <- toi_fix$Number_of_fixation
 fix_plot_sum <-
   ggplot(data = toi_fix,
          mapping = aes(x = Group,
-                       y = `Time to first fixation in seconds`)) +
+                       y = log(`Time to first fixation in seconds`))) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1,
-                                        height = 0)) +
-  ylim(0,25) + 
-  labs(x = "") +
+  # geom_point(size = 2, 
+  #            alpha = 0.4,
+  #            position = position_jitter(seed = 1, 
+  #                                       width = 0.1,
+  #                                       height = 0)) +
+  # ylim(0,25) + 
+  labs(x = "",
+       y = "Time to first fixation in seconds") +
   scale_fill_brewer(palette = "Set1") +
   ggtitle("Time to first fixation to disruptive person") +
   theme_classic() +
   theme(
+    strip.background = element_blank(),
     legend.title = element_text(size=14), #change legend title font size
     legend.text = element_text(size=14), #change legend text font size
     axis.text.x = element_blank(),
@@ -440,7 +451,9 @@ fix_plot_sum <-
     strip.text.x = element_text(size = 15),
     plot.title = element_text(size = 20, face = "bold"),
     axis.title.y = element_text(size = 16),
-  ) +
+    axis.line = element_line(colour = "black"),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()) +
   facet_wrap(facets = vars(TOI),
              nrow = 1,
              strip.position = "bottom")
