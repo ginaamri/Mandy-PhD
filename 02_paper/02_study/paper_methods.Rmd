@@ -109,7 +109,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ## Participants
 
-```{r demographicstable, echo = FALSE}
+```{r demographicstable}
 
 # prepare data (selected from questionnaire data)
 demo.data <- read_excel ("./data/data_empschul_labor_lehrperson.xlsx") 
@@ -169,9 +169,7 @@ apa_table(
 
 The planned sample consists of *n* = 40 experts (teacher training completed, active in the teaching profession) and *n* = 40 novices (student teachers, first internship completed). 
 
-The currently ongoing data collection already yielded data from *n* = `r length(demo.data$Group=="Expert")` experts and 
-
-*n* = r nrow(demo.data[demo.data$Group == "Novice",]) novices. 
+The currently ongoing data collection already yielded data from *n* = `r length(demo.data$Group[demo.data$Group == "Expert"])` experts and *n* = `r length(demo.data$Group[demo.data$Group == "Novice"])` novices. 
 
 Participants Teachers were primarily recruited through personal contacts
 
