@@ -109,7 +109,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ## Participants
 
-```{r demographicstable}
+```{r demographicstable, echo=FALSE}
 
 # prepare data (selected from questionnaire data)
 demo.data <- read_excel ("./data/data_empschul_labor_lehrperson.xlsx") 
@@ -167,7 +167,10 @@ apa_table(
 ```
 
 
-The planned sample consists of *n* = 40 experts (teacher training completed, active in the teaching profession) and *n* = 40 novices (student teachers, first internship completed). 
+In June 2021, the study was piloted with student teachers volunteers to refine the study procedure so that the first data collection was conducted at the beginning of July 2021.
+
+The planned sample consists of *n* = 40 expert teachers and *n* = 40 novice teachers. 
+The inclusion criterion for experts is that they have successfully completed teacher training and are actively employed in the teaching profession. Novices are student teachers who have already successfully completed their first internship in a school and have gained one to four hours of teaching experience.
 
 The currently ongoing data collection already yielded data from *n* = `r length(demo.data$Group[demo.data$Group == "Expert"])` experts and *n* = `r length(demo.data$Group[demo.data$Group == "Novice"])` novices. 
 
