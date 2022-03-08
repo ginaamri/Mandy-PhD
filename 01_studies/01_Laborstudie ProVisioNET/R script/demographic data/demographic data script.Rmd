@@ -22,11 +22,11 @@ affiliation:
     institution   : "Max-Planck University for Evolutionary Anthropology"
 
 authornote: |
-  Ethics Approval 
-All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University.
+  Ethics Approval
+  All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University.
   
   Consent to Participate
-All participants gave informed consent.
+  All participants gave informed consent.
 
 
 abstract: |
@@ -118,7 +118,7 @@ demo.data$Gender <- as.numeric(demo.data$Gender)
 demo.table <- demo.data %>%
   group_by(Group) %>%
   summarise(N=n(),
-            "Gender male" = round(100 * n() / nrow(Gende)), 2,
+            "Male" = sum(Gender),
             "M Age" = round(mean(Age), 2),
             "Min Age" = min(Age),
             "Max Age" = max(Age),
