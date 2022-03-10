@@ -1,6 +1,6 @@
 ---
 title             : "Through the eyes of the teacher"
-shorttitle        : "Visual attention in teaching and learning processes"
+shorttitle        : "Multimodal exploration of expertise differences in the perception of classroom disruptions"
 
 author: 
   - name          : "Mandy Klatt"
@@ -25,8 +25,9 @@ authornote: |
 
   Ethics Approval: All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University.
 
-  
   Consent to Participate: All participants gave informed consent.
+  
+  Financial Support: We received funding from QualiFond to support the qualification of young academics from the University Leipzig.
 
 
 abstract: |
@@ -37,8 +38,8 @@ wordcount         : "XXX"
 bibliography      : ["r-references.bib"]
 
 floatsintext      : yes
-figurelist        : no
-tablelist         : no
+figurelist        : yes
+tablelist         : yes
 footnotelist      : no
 linenumbers       : yes
 mask              : no
@@ -89,6 +90,9 @@ needs(tidyverse,
 
 # Introduction
 
+- wie wird Störung definiert
+- 
+
 Managing classroom disruptions is a crucial aspect of effective classroom management (@evertson2006classroom; @kounin2006techniken).
 
 Accordingly, teachers must be able to quickly notice and appropriately react to significant events in the classroom. This ability is referred to as classroom professional vision (@goodwin2015professional; @sherin2007development).
@@ -130,20 +134,29 @@ demo.data <- rename(demo.data, c("Group" = "LI06_05",
 # define expert and novice with ifelse function
 demo.data$Group = ifelse(demo.data$Group < 200, "Novice","Expert")
 
-# changing gender female 1 = 0
+# changing gender to count female gender (male = 2 --> 0)
 demo.data$Gender = ifelse(demo.data$Gender == 2, "1","0")
 
 # changing character into numeric
 demo.data$Gender <- as.numeric(demo.data$Gender)
 
 # creating new column with percentage of gender
+demo.data <- demo.data %>%
+  group_by(Group) %>%
+  mutate(Gender_Sum=n())
 
+# create new columns that give proportion of Gender
+# percentage = female gender divided by all female Gender
+demo.data <- demo.data  %>% 
+  group_by(Group) %>% 
+  mutate(Gender_percentage = Gender/Gender_Sum) %>% 
+  mutate(Gender_percentage = round(sum(Gender_percentage)*100, digits=0))
 
 # create a basic table (tibble) using tidyverse functions
 demo.table <- demo.data %>%
   group_by(Group) %>%
   summarise(N=n(),
-            "Gender female" = sum(Gender),
+            "Gender female in percentage" = Gender_percentage,
             "M Age in years" = round(mean(Age), 0),
             "SD Age in years" = round(sd(Age), 0),
             "Min Age in years" = min(Age),
@@ -167,25 +180,36 @@ apa_table(
 ```
 
 
-In June 2021, the study was piloted with student teachers volunteers to refine the study procedure so that the first data collection was conducted at the beginning of July 2021.
+The sample consists of *N* = `r length(demo.data$Group)` participants with *n* = `r length(demo.data$Group[demo.data$Group == "Expert"])` expert teachers and *n* = `r length(demo.data$Group[demo.data$Group == "Novice"])` novice teachers. 
 
-The planned sample consists of *n* = 40 expert teachers and *n* = 40 novice teachers. 
-The inclusion criterion for experts is that they have successfully completed teacher training and are actively employed in the teaching profession. Novices are student teachers who have already successfully completed their first internship in a school and have gained one to four hours of teaching experience.
+The inclusion criterion for experts was that they have successfully completed teacher training and are actively employed in the teaching profession. Novices were student teachers who have already successfully completed their first internship in a school and have gained one to four hours of teaching experience.
 
-The currently ongoing data collection already yielded data from *n* = `r length(demo.data$Group[demo.data$Group == "Expert"])` experts and *n* = `r length(demo.data$Group[demo.data$Group == "Novice"])` novices. 
+The subjects were primarily recruited through personal contacts, social media (facebook), e-mail distribution lists and advertising in lectures at the University Leipzig.
 
-Participants Teachers were primarily recruited through personal contacts
+The expert teachers (`r sum(demo.data$Gender)`women, `r demo.data$Gender_percentage`%) had a mean age of 
+
+
+The participants (98
+women; 80%) had a mean age of 23.96 years (SD = 5.82; range:
+18–48), and 13 of them (11%) reported to live together with
+their child/children. Whereas 21 participants (17%) lived alone,
+the remaining participants (n = 102; 83%) lived in a household
+consisting of 2–10 persons, with the majority (n = 93)
+living in a household of 2–4 persons. At baseline (July
+2020), n = 10 participants (8%) reported flu-like symptoms
+with one participant being in COVID-related quarantine.
 
 ## Material
 
 
 
 ## Procedure
-
+In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021, and July 2022.
 
 
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
+All reported data analyses were conducted with the `r cite_r("r-references.bib")` and IBM SPSS 28. Data analysis scripts
+can be obtained from the authors upon request. 
 
 
 # Results
