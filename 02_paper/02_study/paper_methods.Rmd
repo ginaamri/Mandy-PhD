@@ -122,14 +122,23 @@ demo.data <- read_excel ("./data/data_empschul_labor_lehrperson.xlsx")
 demo.data <- demo.data %>% select(LI02_01_1,
                                   LI03_01,
                                   LI04_01,
-                                  LI06_05)
-
+                                  LI06_05,
+                                  LI10_05,
+                                  LI11_01,
+                                  LI13_01,
+                                  LI14
+                                  )
 
 # rename columns
 demo.data <- rename(demo.data, c("Group" = "LI06_05",
-                                  "Gender" = "LI02_01_1",
-                                  "Age" = "LI03_01",
-                                  "Teaching Experience" = "LI04_01"))
+                                 "Gender" = "LI02_01_1",
+                                 "Age" = "LI03_01",
+                                 "Teaching Experience" = "LI04_01",
+                                 "Subject" = "LI10_05",
+                                 "Semester" = "LI11_01",
+                                 "Internship" = "LI13_01",
+                                 "Extracurricular Teaching Experience" = "LI14"
+                                 ))
 
 # define expert and novice with ifelse function
 demo.data$Group = ifelse(demo.data$Group < 200, "Novice","Expert")
@@ -137,13 +146,24 @@ demo.data$Group = ifelse(demo.data$Group < 200, "Novice","Expert")
 # changing gender to count female gender (male = 2 --> 0)
 demo.data$Gender = ifelse(demo.data$Gender == 2, "1","0")
 
-# changing character into numeric
+# changing character Gender into numeric
 demo.data$Gender <- as.numeric(demo.data$Gender)
+
+# changing character Semester into numeric
+demo.data$Semester <- as.numeric(demo.data$Semester)
 
 # creating new column with percentage of gender
 demo.data <- demo.data %>%
   group_by(Group) %>%
   mutate(Gender_Sum=n())
+
+# changing `Extracurricular Teaching Experience` to count experience (no experience = 2 --> 0)
+demo.data$`Extracurricular Teaching Experience` = ifelse(demo.data$`Extracurricular Teaching Experience` == 2, "1","0")
+
+# creating new column with percentage of Extracurricular Teaching Experience
+demo.data <- demo.data %>%
+  group_by(Group) %>%
+  mutate(`Extracurricular Teaching Experience`=n())
 
 # create new columns that give proportion of Gender
 # percentage = female gender divided by all female Gender
@@ -156,15 +176,20 @@ demo.data <- demo.data %>%
 demo.table <- demo.data %>%
   group_by(Group) %>%
   summarise(N=n(),
-            "Gender female in percentage" = round(sum(Gender/Gender_Sum) * 100, digits = 0),
-            "M Age in years" = round(mean(Age), 2),
-            "SD Age in years" = round(sd(Age), 2),
+            "Gender female in percentage" = round(sum(Gender/Gender_Sum) * 100, digits = 1),
+            "M Age in years" = round(mean(Age), 1),
+            "SD Age in years" = round(sd(Age), 1),
             "Min Age in years" = min(Age),
             "Max Age in years" = max(Age),
-            "M Exp. in years" = round(mean(`Teaching Experience`), 2),
-            "SD Exp. in years" = round(sd(`Teaching Experience`), 2),
+            "M Exp. in years" = round(mean(`Teaching Experience`), 1),
+            "SD Exp. in years" = round(sd(`Teaching Experience`), 1),
             "Min Exp. in years" = min(`Teaching Experience`),
-            "Max Exp.in years" = max(`Teaching Experience`),
+            "Max Exp. in years" = max(`Teaching Experience`),
+            "M Semester" = round(mean(Semester), 1),
+            "SD Semester" = round(sd(Semester), 1),
+            "Min Semester" = min(Semester),
+            "Max Semester" = max(Semester),
+            
            )
 
 # format and insert table in manuscript
@@ -186,20 +211,12 @@ The inclusion criterion for experts was that they have successfully completed te
 
 The subjects were primarily recruited through personal contacts, social media (facebook), e-mail distribution lists and advertising in lectures at the University Leipzig.
 
-The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 2)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 2)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) with average teaching experience of `r demo.data %>% filter(Group == "Expert") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 2)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Exp. in years") %>% round(., digits = 2)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Exp. in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Exp. in years")`).
+The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) and an average teaching experience of `r demo.table %>% filter(Group == "Expert") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Exp. in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Exp. in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Exp. in years")`).
 
-The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 2)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 2)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`).
+The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`) with an average teaching experience of `r demo.table %>% filter(Group == "Novice") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years. On average, the student teachers were in their `r demo.table %>% filter(Group == "Novice") %>% pull("M Semester") %>% mean() %>% round(., digits = 1)` semester (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Semester") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Semester")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Semester")`). 
 
 
-The participants (98
-women; 80%) had a mean age of 23.96 years (SD = 5.82; range:
-18–48), and 13 of them (11%) reported to live together with
-their child/children. Whereas 21 participants (17%) lived alone,
-the remaining participants (n = 102; 83%) lived in a household
-consisting of 2–10 persons, with the majority (n = 93)
-living in a household of 2–4 persons. At baseline (July
-2020), n = 10 participants (8%) reported flu-like symptoms
-with one participant being in COVID-related quarantine.
+
 
 ## Material
 
