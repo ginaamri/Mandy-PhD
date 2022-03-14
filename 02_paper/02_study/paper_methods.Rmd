@@ -147,22 +147,22 @@ demo.data <- demo.data %>%
 
 # create new columns that give proportion of Gender
 # percentage = female gender divided by all female Gender
-demo.data <- demo.data  %>% 
-  group_by(Group) %>% 
-  mutate(Gender_percentage = Gender/Gender_Sum) %>% 
-  mutate(Gender_percentage = round(sum(Gender_percentage)*100, digits=0))
+# demo.data <- demo.data  %>% 
+#   group_by(Group) %>% 
+#   mutate(Gender_percentage = Gender/Gender_Sum) %>% 
+#   mutate(Gender_percentage = round(sum(Gender_percentage)*100, digits=0))
 
 # create a basic table (tibble) using tidyverse functions
 demo.table <- demo.data %>%
   group_by(Group) %>%
   summarise(N=n(),
-            "Gender female in percentage" = Gender_percentage,
-            "M Age in years" = round(mean(Age), 0),
-            "SD Age in years" = round(sd(Age), 0),
+            "Gender female in percentage" = round(sum(Gender/Gender_Sum) * 100, digits = 0),
+            "M Age in years" = round(mean(Age), 2),
+            "SD Age in years" = round(sd(Age), 2),
             "Min Age in years" = min(Age),
             "Max Age in years" = max(Age),
-            "M Exp. in years" = round(mean(`Teaching Experience`), 0),
-            "SD Exp. in years" = round(sd(`Teaching Experience`), 0),
+            "M Exp. in years" = round(mean(`Teaching Experience`), 2),
+            "SD Exp. in years" = round(sd(`Teaching Experience`), 2),
             "Min Exp. in years" = min(`Teaching Experience`),
             "Max Exp.in years" = max(`Teaching Experience`),
            )
@@ -186,7 +186,9 @@ The inclusion criterion for experts was that they have successfully completed te
 
 The subjects were primarily recruited through personal contacts, social media (facebook), e-mail distribution lists and advertising in lectures at the University Leipzig.
 
-The expert teachers (`r sum(demo.data$Gender)`women, `r demo.data$Gender_percentage`%) had a mean age of 
+The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 2)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 2)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) with average teaching experience of `r demo.data %>% filter(Group == "Expert") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 2)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Exp. in years") %>% round(., digits = 2)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Exp. in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Exp. in years")`).
+
+The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 2)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 2)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`).
 
 
 The participants (98
