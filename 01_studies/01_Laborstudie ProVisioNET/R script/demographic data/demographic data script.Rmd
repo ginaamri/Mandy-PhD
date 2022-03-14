@@ -114,6 +114,9 @@ demo.data$Gender = ifelse(demo.data$Gender == 2, "0","1")
 # changing character into numeric
 demo.data$Gender <- as.numeric(demo.data$Gender)
 
+#filter without 121
+demo.data <-  demo.data[-c(28), ]
+
 # create a basic table (tibble) using tidyverse functions
 demo.table <- demo.data %>%
   group_by(Group) %>%
