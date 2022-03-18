@@ -1,0 +1,432 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  man,floatsintext]{apa6}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Through the eyes of the teacher - Multimodal exploration of expertise differences in the perception of classroom disruptions},
+  pdfauthor={Mandy Klatt1, Dr.~Gregor Kachel1, 2, Dr.~Christin Lotz1, \& Prof.~Dr.~Anne Deiglmayr1},
+  pdflang={en-EN},
+  pdfkeywords={Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% Manuscript styling
+\usepackage{upgreek}
+\captionsetup{font=singlespacing,justification=justified}
+
+% Table formatting
+\usepackage{longtable}
+\usepackage{lscape}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
+
+% Enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
+
+% \setlength{\parindent}{0.5in}
+% \setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
+% See https://github.com/crsh/papaja/issues/292
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-\z@\relax}%
+  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
+% \usepackage{etoolbox}
+\makeatletter
+\patchcmd{\HyOrg@maketitle}
+  {\section{\normalfont\normalsize\abstractname}}
+  {\section*{\normalfont\normalsize\abstractname}}
+  {}{\typeout{Failed to patch abstract.}}
+\patchcmd{\HyOrg@maketitle}
+  {\section{\protect\normalfont{\@title}}}
+  {\section*{\protect\normalfont{\@title}}}
+  {}{\typeout{Failed to patch title.}}
+\makeatother
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
+\keywords{Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking\newline\indent Word count: XXX}
+\usepackage{lineno}
+
+\linenumbers
+\usepackage{csquotes}
+\usepackage[titles]{tocloft}
+\cftpagenumbersoff{figure}
+\renewcommand{\cftfigpresnum}{\itshape\figurename\enspace}
+\renewcommand{\cftfigaftersnum}{.\space}
+\setlength{\cftfigindent}{0pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\settowidth{\cftfignumwidth}{Figure 10.\qquad}
+\cftpagenumbersoff{table}
+\renewcommand{\cfttabpresnum}{\itshape\tablename\enspace}
+\renewcommand{\cfttabaftersnum}{.\space}
+\setlength{\cfttabindent}{0pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\settowidth{\cfttabnumwidth}{Table 10.\qquad}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Through the eyes of the teacher - Multimodal exploration of expertise differences in the perception of classroom disruptions}
+\author{Mandy Klatt\textsuperscript{1}, Dr.~Gregor Kachel\textsuperscript{1, 2}, Dr.~Christin Lotz\textsuperscript{1}, \& Prof.~Dr.~Anne Deiglmayr\textsuperscript{1}}
+\date{}
+
+
+\shorttitle{Professional Vision in Micro-Teaching-Units}
+
+\authornote{
+
+We received funding from QualiFond of University Leipzig. We have no conflicts of interest to disclose. This article is based on data used at conference presentations (DACH-Nachwuchsakademie, 2022; EARLI SIG 11 2022; EARLI SIG 27, 2022).
+
+Correspondence concerning this article should be addressed to Mandy Klatt, Dittrichring 5-7, 04109 Leipzig. E-mail: \href{mailto:mandy.klatt@uni-leipzig.de}{\nolinkurl{mandy.klatt@uni-leipzig.de}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} Leipzig University\\\textsuperscript{2} Max-Planck University for Evolutionary Anthropology}
+
+\begin{document}
+\maketitle
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Managing classroom disruptions is a crucial aspect of effective classroom management (Evertson, Weinstein, et al. (2006); Kounin (2006)).
+
+Accordingly, teachers must be able to quickly notice and appropriately react to significant events in the classroom. This ability is referred to as classroom professional vision (Goodwin (2015); Sherin (2007)).
+
+The process of professional vision can be divided into two main aspects: focusing on relevant situations for learning and teaching (``noticing'') and applying knowledge to draw appropriate conclusions in these situations (``knowledge-based reasoning''; Seidel and Stürmer (2014)).
+
+Therefore, the early visual perception of classroom disruptions is a key component to effectively maximize students' learning time and minimize classroom interruptions. According to Kounin (2006), these important classroom management strategies are called ``withitness'' and ``overlapping'' and can be summarized under the concept of monitoring (Gold and Holodynski (2017)).
+
+Learning to develop such classroom management skills is a demanding and complex task for student teachers (Wolff, Jarodzka, Bogert, and Boshuizen (2016)). Research on teacher expertise showed that expert and novice teachers differ in their ability to perceive classroom events, ``{[}\ldots{]} whereas only a few studies have focused on the basal process of noticing, i.e.~the recognition of possible disturbing situations'' (Grub, Biermann, and Brünken (2020), p.75). Mobile eye-tracking data can fill this research gap by providing new insights in how expertise differences in teacher´s professional vision manifest in teacher-student interactions (Lachner, Jarodzka, and Nückles (2016); @Wolff et al. (2016)).
+
+\hypertarget{theoretical-background}{%
+\section{Theoretical background}\label{theoretical-background}}
+
+\hypertarget{professional-competence}{%
+\subsection{Professional competence}\label{professional-competence}}
+
+\hypertarget{classroom-management}{%
+\subsection{Classroom Management}\label{classroom-management}}
+
+\begin{itemize}
+\tightlist
+\item
+  Disruptions defintiion
+\end{itemize}
+
+\hypertarget{professional-vision}{%
+\subsection{Professional Vision}\label{professional-vision}}
+
+\hypertarget{expertise}{%
+\subsection{Expertise}\label{expertise}}
+
+\hypertarget{parameterindicators-of-professional-vision}{%
+\subsection{Parameter/Indicators of professional vision}\label{parameterindicators-of-professional-vision}}
+
+\hypertarget{research-questions}{%
+\section{Research Questions}\label{research-questions}}
+
+This study examined how the degree of teaching experience influences (a) the number of fixations on relevant areas (e.g., the student performing the disruption), (b) the fixation duration in relevant areas and (c) the time to first fixation on relevant areas, using mobile eye-tracking data in a controlled, micro-teaching setting. Based on the existing literature, we expect expert teachers to outperform novices by (H1) showing more fixations on relevant areas with (H2) shorter fixation durations and (H3) perceiving classroom disruptions faster (cf. Van den Bogert, Bruggen, Kostons, and Jochems (2014)).
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study.
+
+\hypertarget{participants}{%
+\subsection{Participants}\label{participants}}
+
+The sample consists of \emph{N} = 28 participants with \emph{n} = 7 expert teachers and \emph{n} = 21 novice teachers.
+
+The inclusion criterion for experts was that they have successfully completed teacher training and are actively employed in the teaching profession. According to Palmer, Stough, Burdenski, and Gonzales (2005), we selected teachers as experts who had at least three years of professional experience and ideally had worked in another teaching position, such as subject advisor or trainer for trainee teachers, in addition to their teaching profession in school. Novices were student teachers who had successfully completed their first internship in a school and gained one to four hours of teaching experience.
+
+The expert teachers (5 women; 71.40\%) had a mean age of 45.10 years (\emph{SD} = 12; range: 27-59) and an average teaching experience of 18.10 years (\emph{SD} = 14.10; range: 3-37).
+
+The novice teachers (13 women; 61.90\%) had a mean age of 23.30 years (\emph{SD} = 1.70; range: 20-27) with an average teaching experience of 0 years. On average, the student teachers were in their 7.40 semester (\emph{SD} = 2.50; range: 3-11). Furthermore, they had an average teaching experience of 12.20 teaching units à 45min (\emph{SD} = 8.40; range: 4-36) through the internships during their studies. 90.50\% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision.
+
+The subjects were primarily recruited through personal contacts, social media (Facebook), e-mail distribution lists and advertising in lectures at the University Leipzig. All study procedures were carried out in accordance with the ethical standards of the University's Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University. All participants were informed in detail about the aim and intention of the study prior to testing. Participation in the study was voluntary and only took place after written consent has been given.
+
+\hypertarget{material}{%
+\subsection{Material}\label{material}}
+
+\hypertarget{eye-tracking-equipment}{%
+\subsubsection{Eye-Tracking equipment}\label{eye-tracking-equipment}}
+
+During the unit, teachers wore a binocular Tobii Pro Glasses 2 eye-tracker (\url{https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/}). The system consisted of a wearable head unit and a recording unit. As shown in Figure \ref{fig:tobiiglasses2}, the head unit was a measuring device with different sensors. A high-definition scene camera captured a full HD video of the teacher's field of vision. An integrated microphone recorded the surrounding sounds. Infrared light illuminators supported the eye tracking sensors which recorded the eye orientation to capure the tacher's gaze point as shown in Figure \ref{fig:teachergazepoint}. The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 25 frames per second. The scene camera had a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and a frame dimension of 179 x 159 x 57mm (width x depth x height).
+
+\begin{figure}
+
+{\centering \includegraphics{./pictures/tobiiglasses2} 
+
+}
+
+\caption{Tobii Pro Glasses 2; Source: https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/}\label{fig:tobiiglasses2}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{./pictures/teachergazepoint} 
+
+}
+
+\caption{Teacher's Gaze Point}\label{fig:teachergazepoint}
+\end{figure}
+
+\hypertarget{procedure}{%
+\subsection{Procedure}\label{procedure}}
+
+In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021, and July 2022.
+
+The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
+
+\hypertarget{data-analysis}{%
+\subsection{Data analysis}\label{data-analysis}}
+
+We investigated whether experts and novice teachers differed
+
+All reported data analyses were conducted with the R (Version 4.1.2; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.3.3; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.1; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), and \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b) and IBM SPSS 28.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+\newpage
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-R-gridExtra}{}}%
+Auguie, B. (2017). \emph{gridExtra: Miscellaneous functions for "grid" graphics}. Retrieved from \url{https://CRAN.R-project.org/package=gridExtra}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-papaja}{}}%
+Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Prepare} reproducible {APA} journal articles with {R Markdown}}. Retrieved from \url{https://github.com/crsh/papaja}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-tinylabels}{}}%
+Barth, M. (2022). \emph{{tinylabels}: Lightweight variable labels}. Retrieved from \url{https://cran.r-project.org/package=tinylabels}
+
+\leavevmode\vadjust pre{\hypertarget{ref-evertson2006classroom}{}}%
+Evertson, C. M., Weinstein, C. S.others. (2006). Classroom management as a field of inquiry. \emph{Handbook of Classroom Management: Research, Practice, and Contemporary Issues}, \emph{3}(1), 16.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-viridis}{}}%
+Garnier, Simon, Ross, Noam, Rudis, Robert, \ldots{} Cédric. (2021a). \emph{{viridis} - colorblind-friendly color maps for r}. \url{https://doi.org/10.5281/zenodo.4679424}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-viridisLite}{}}%
+Garnier, Simon, Ross, Noam, Rudis, Robert, \ldots{} Cédric. (2021b). \emph{{viridis} - colorblind-friendly color maps for r}. \url{https://doi.org/10.5281/zenodo.4679424}
+
+\leavevmode\vadjust pre{\hypertarget{ref-gold2017using}{}}%
+Gold, B., \& Holodynski, M. (2017). Using digital video to measure the professional vision of elementary classroom management: Test validation and methodological challenges. \emph{Computers \& Education}, \emph{107}, 13--30.
+
+\leavevmode\vadjust pre{\hypertarget{ref-goodwin2015professional}{}}%
+Goodwin, C. (2015). Professional vision. In \emph{Aufmerksamkeit} (pp. 387--425). Springer.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-lubridate}{}}%
+Grolemund, G., \& Wickham, H. (2011). Dates and times made easy with {lubridate}. \emph{Journal of Statistical Software}, \emph{40}(3), 1--25. Retrieved from \url{https://www.jstatsoft.org/v40/i03/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-grub2020process}{}}%
+Grub, A.-S., Biermann, A., \& Brünken, R. (2020). Process-based measurement of professional vision of (prospective) teachers in the field of classroom management. A systematic review. \emph{Journal for Educational Research Online}, \emph{12}(3), 75--102.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-purrr}{}}%
+Henry, L., \& Wickham, H. (2020). \emph{Purrr: Functional programming tools}. Retrieved from \url{https://CRAN.R-project.org/package=purrr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-needs}{}}%
+Katz, J. (2016). \emph{Needs: Attaches and installs packages}. Retrieved from \url{https://CRAN.R-project.org/package=needs}
+
+\leavevmode\vadjust pre{\hypertarget{ref-kounin2006techniken}{}}%
+Kounin, J. S. (2006). \emph{Techniken der klassenf{ü}hrung}. Waxmann Verlag.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lachner2016makes}{}}%
+Lachner, A., Jarodzka, H., \& Nückles, M. (2016). What makes an expert teacher? Investigating teachers' professional vision and discourse abilities. \emph{Instructional Science}, \emph{44}(3), 197--203.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-tibble}{}}%
+Müller, K., \& Wickham, H. (2021). \emph{Tibble: Simple data frames}. Retrieved from \url{https://CRAN.R-project.org/package=tibble}
+
+\leavevmode\vadjust pre{\hypertarget{ref-palmer2005identifying}{}}%
+Palmer, D. J., Stough, L. M., Burdenski, T. K., Jr, \& Gonzales, M. (2005). Identifying teacher expertise: An examination of researchers' decision making. \emph{Educational Psychologist}, \emph{40}(1), 13--25.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-base}{}}%
+R Core Team. (2021). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-seidel2014modeling}{}}%
+Seidel, T., \& Stürmer, K. (2014). Modeling and measuring the structure of professional vision in preservice teachers. \emph{American Educational Research Journal}, \emph{51}(4), 739--771.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sherin2007development}{}}%
+Sherin, M. (2007). \emph{The development of teachers' professional vision in video clubs. Video research in the learning sciences. R. Goldman, r. Pea, b. Barron and SJ derry}. Mahwah, NJ, Lawrence Erlbaum.
+
+\leavevmode\vadjust pre{\hypertarget{ref-van2014first}{}}%
+Van den Bogert, N., Bruggen, J. van, Kostons, D., \& Jochems, W. (2014). First steps into understanding teachers' visual perception of classroom events. \emph{Teaching and Teacher Education}, \emph{37}, 208--216.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-ggplot2}{}}%
+Wickham, H. (2016). \emph{ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-stringr}{}}%
+Wickham, H. (2019). \emph{Stringr: Simple, consistent wrappers for common string operations}. Retrieved from \url{https://CRAN.R-project.org/package=stringr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-forcats}{}}%
+Wickham, H. (2021). \emph{Forcats: Tools for working with categorical variables (factors)}. Retrieved from \url{https://CRAN.R-project.org/package=forcats}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-tidyverse}{}}%
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the {tidyverse}. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-readxl}{}}%
+Wickham, H., \& Bryan, J. (2019). \emph{Readxl: Read excel files}. Retrieved from \url{https://CRAN.R-project.org/package=readxl}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-dplyr}{}}%
+Wickham, H., François, R., Henry, L., \& Müller, K. (2022). \emph{Dplyr: A grammar of data manipulation}. Retrieved from \url{https://CRAN.R-project.org/package=dplyr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-tidyr}{}}%
+Wickham, H., \& Girlich, M. (2022). \emph{Tidyr: Tidy messy data}. Retrieved from \url{https://CRAN.R-project.org/package=tidyr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-readr}{}}%
+Wickham, H., Hester, J., \& Bryan, J. (2021). \emph{Readr: Read rectangular text data}. Retrieved from \url{https://CRAN.R-project.org/package=readr}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-cowplot}{}}%
+Wilke, C. O. (2020). \emph{Cowplot: Streamlined plot theme and plot annotations for 'ggplot2'}. Retrieved from \url{https://CRAN.R-project.org/package=cowplot}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wolff2016teacher}{}}%
+Wolff, C. E., Jarodzka, H., Bogert, N. van den, \& Boshuizen, H. (2016). Teacher vision: Expert and novice teachers' perception of problematic classroom management scenes. \emph{Instructional Science}, \emph{44}(3), 243--265.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-ARTofR}{}}%
+Zhang, H. (2021). \emph{ARTofR: Who ever care about the {[}art of r{]} scripts?} Retrieved from \url{https://CRAN.R-project.org/package=ARTofR}
+
+\end{CSLReferences}
+
+\endgroup
+
+
+\clearpage
+\renewcommand{\listfigurename}{Figure captions}
+
+\clearpage
+\renewcommand{\listtablename}{Table captions}
+
+
+\end{document}

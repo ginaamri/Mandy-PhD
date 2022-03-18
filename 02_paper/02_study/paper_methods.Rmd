@@ -1,6 +1,6 @@
 ---
-title             : "Through the eyes of the teacher"
-shorttitle        : "Multimodal exploration of expertise differences in the perception of classroom disruptions"
+title             : "Through the eyes of the teacher - Multimodal exploration of expertise differences in the perception of classroom disruptions"
+shorttitle        : "Professional Vision in Micro-Teaching-Units"
 
 author: 
   - name          : "Mandy Klatt"
@@ -23,11 +23,7 @@ affiliation:
 
 authornote: | 
 
-  Ethics Approval: All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University.
-
-  Consent to Participate: All participants gave informed consent.
-  
-  Financial Support: We received funding from QualiFond to support the qualification of young academics from the University Leipzig.
+  We received funding from QualiFond of University Leipzig. We have no conflicts of interest to disclose. This article is based on data used at conference presentations (DACH-Nachwuchsakademie, 2022; EARLI SIG 11 2022; EARLI SIG 27, 2022). 
 
 
 abstract: |
@@ -47,7 +43,8 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : bookdown::word_document2
+output            : papaja::apa6_pdf
+# bookdown::word_document2
 ---
 
 
@@ -90,9 +87,6 @@ needs(tidyverse,
 
 # Introduction
 
-- wie wird Störung definiert
-- 
-
 Managing classroom disruptions is a crucial aspect of effective classroom management (@evertson2006classroom; @kounin2006techniken).
 
 Accordingly, teachers must be able to quickly notice and appropriately react to significant events in the classroom. This ability is referred to as classroom professional vision (@goodwin2015professional; @sherin2007development).
@@ -102,6 +96,20 @@ The process of professional vision can be divided into two main aspects: focusin
 Therefore, the early visual perception of classroom disruptions is a key component to effectively maximize students’ learning time and minimize classroom interruptions. According to Kounin (2006), these important classroom management strategies are called “withitness” and “overlapping” and can be summarized under the concept of monitoring (@gold2017using). 
 
 Learning to develop such classroom management skills is a demanding and complex task for student teachers (@wolff2016teacher). Research on teacher expertise showed that expert and novice teachers differ in their ability to perceive classroom events, “[…] whereas only a few studies have focused on the basal process of noticing, i.e. the recognition of possible disturbing situations” (@grub2020process, p.75). Mobile eye-tracking data can fill this research gap by providing new insights in how expertise differences in teacher´s professional vision manifest in teacher-student interactions (@lachner2016makes; @@wolff2016teacher).
+
+# Theoretical background
+
+## Professional competence
+
+## Classroom Management
+- Disruptions defintiion 
+
+## Professional Vision
+
+## Expertise
+
+## Parameter/Indicators of professional vision
+
 
 # Research Questions
 
@@ -113,7 +121,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ## Participants
 
-```{r demographicstable, echo=FALSE}
+```{r demographicstable}
 
 # prepare data (selected from questionnaire data)
 demo.data <- read_excel ("./data/data_empschul_labor_lehrperson.xlsx") 
@@ -158,12 +166,10 @@ demo.data <- demo.data %>%
   mutate(Gender_Sum=n())
 
 # changing `Extracurricular Teaching Experience` to count experience (no experience = 2 --> 0)
-demo.data$`Extracurricular Teaching Experience` = ifelse(demo.data$`Extracurricular Teaching Experience` == 2, "1","0")
+demo.data$`Extracurricular Teaching Experience` = ifelse(demo.data$`Extracurricular Teaching Experience` == 1, "1","0")
 
-# creating new column with percentage of Extracurricular Teaching Experience
-demo.data <- demo.data %>%
-  group_by(Group) %>%
-  mutate(`Extracurricular Teaching Experience`=n())
+demo.data$`Extracurricular Teaching Experience` <- as.numeric(demo.data$`Extracurricular Teaching Experience`)
+
 
 # create new columns that give proportion of Gender
 # percentage = female gender divided by all female Gender
@@ -189,7 +195,11 @@ demo.table <- demo.data %>%
             "SD Semester" = round(sd(Semester), 1),
             "Min Semester" = min(Semester),
             "Max Semester" = max(Semester),
-            
+            "M Internship in teaching units" = round(mean(Internship), 1),
+            "SD Internship in teaching units" = round(sd(Internship), 1),
+            "Min Internship in teaching units" = min(Internship),
+            "Max Internship in teaching units" = max(Internship),
+            "Extracurricular Teaching Experience in percentage" = round(sum(`Extracurricular Teaching Experience`/Gender_Sum) * 100, digits = 1),
            )
 
 # format and insert table in manuscript
@@ -207,28 +217,56 @@ apa_table(
 
 The sample consists of *N* = `r length(demo.data$Group)` participants with *n* = `r length(demo.data$Group[demo.data$Group == "Expert"])` expert teachers and *n* = `r length(demo.data$Group[demo.data$Group == "Novice"])` novice teachers. 
 
-The inclusion criterion for experts was that they have successfully completed teacher training and are actively employed in the teaching profession. Novices were student teachers who have already successfully completed their first internship in a school and have gained one to four hours of teaching experience.
-
-The subjects were primarily recruited through personal contacts, social media (facebook), e-mail distribution lists and advertising in lectures at the University Leipzig.
-
-The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) and an average teaching experience of `r demo.table %>% filter(Group == "Expert") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Exp. in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Exp. in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Exp. in years")`).
-
-The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`) with an average teaching experience of `r demo.table %>% filter(Group == "Novice") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years. On average, the student teachers were in their `r demo.table %>% filter(Group == "Novice") %>% pull("M Semester") %>% mean() %>% round(., digits = 1)` semester (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Semester") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Semester")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Semester")`). 
+The inclusion criterion for experts was that they have successfully completed teacher training and are actively employed in the teaching profession. According to @palmer2005identifying, we selected teachers as experts who had at least three years of professional experience and ideally had worked in another teaching position, such as subject advisor or trainer for trainee teachers, in addition to their teaching profession in school. Novices were student teachers who had successfully completed their first internship in a school and gained one to four hours of teaching experience.
 
 
+The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) and an average teaching experience of `r demo.table %>% filter(Group == "Expert") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Exp. in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Exp. in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Exp. in years")`). 
 
+The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`) with an average teaching experience of `r demo.table %>% filter(Group == "Novice") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years. On average, the student teachers were in their `r demo.table %>% filter(Group == "Novice") %>% pull("M Semester") %>% mean() %>% round(., digits = 1)` semester (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Semester") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Semester")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Semester")`). Furthermore, they had an average teaching experience of `r demo.table %>% filter(Group == "Novice") %>% pull("M Internship in teaching units") %>% mean() %>% round(., digits = 1)` teaching units à 45min (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Internship in teaching units") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Internship in teaching units")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Internship in teaching units")`) through the internships during their studies. `r demo.table %>% filter(Group == "Novice") %>% pull("Extracurricular Teaching Experience in percentage")`% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision. 
+
+The subjects were primarily recruited through personal contacts, social media (Facebook), e-mail distribution lists and advertising in lectures at the University Leipzig. All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University. All participants were informed in detail about the aim and intention of the study prior to testing. Participation in the study was voluntary and only took place after written consent has been given.
 
 ## Material
 
+### Eye-Tracking equipment
+
+During the unit, teachers wore a binocular Tobii Pro Glasses 2 eye-tracker (https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/). The system consisted of a wearable head unit and a recording unit. As shown in Figure \@ref(fig:tobiiglasses2), the head unit was a measuring device with different sensors. A high-definition scene camera captured a full HD video of the teacher’s field of vision. An integrated microphone recorded the surrounding sounds. Infrared light illuminators supported the eye tracking sensors which recorded the eye orientation to capure the tacher's gaze point as shown in Figure \@ref(fig:teachergazepoint). The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 25 frames per second. The scene camera had a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and a frame dimension of 179 x 159 x 57 mm (width x depth x height). 
+
+```{r tobiiglasses2, include = T, fig.cap = "Tobii Pro Glasses 2; Source: https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/tobiiglasses2.png", dpi = 108)
+
+```
+
+```{r teachergazepoint, include = T, fig.cap = "Teacher's Gaze Point", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/teachergazepoint.png", dpi = 108)
+
+```
+
+###  Video and Audio recording equipment
+
+The speech, sounds and voices of the participants were recorded with Zoom H3-VR Ambient Recorder (https://zoomcorp.com/en/gb/handheld-recorders/handheld-recorders/h3-vr-360-audio-recorder/) installed in the middle of the lab setting. The Zoom H3-VR recorded with four built-in mics arranged in an Ambisonic array with a bitrate of 4608 kBits/s. 
+
+Movements, facial expressions and gestures of the subjects were recorded by four Go Pro Hero 7 black cameras (https://gopro.com/content/dam/help/hero7-black/manuals/HERO7Black_UM_ENG_REVC.pdf) from different angles. 
+
+The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 50 frames per second in 16:9 format with a linear field of view. 
 
 
 ## Procedure
+
 In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021, and July 2022.
+
+One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
+
+The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
 
 
 ## Data analysis
-All reported data analyses were conducted with the `r cite_r("r-references.bib")` and IBM SPSS 28. Data analysis scripts
-can be obtained from the authors upon request. 
+
+We investigated whether experts and novice teachers differed
+
+All reported data analyses were conducted with the `r cite_r("r-references.bib")` and IBM SPSS 28.
 
 
 # Results
