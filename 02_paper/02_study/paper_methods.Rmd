@@ -82,6 +82,8 @@ needs(tidyverse,
 ```{r data, include=FALSE}
 # load data files
 
+quest.data <- read_excel ("./data/data_empschul_labor_lehrperson.xlsx") 
+
 ```
 
 
@@ -123,11 +125,8 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ```{r demographicstable}
 
-# prepare data (selected from questionnaire data)
-demo.data <- read_excel ("./data/data_empschul_labor_lehrperson.xlsx") 
-
-# select relevant columns
-demo.data <- demo.data %>% select(LI02_01_1,
+# select relevant columns from first questionnaire 
+demo.data <- quest.data %>% select(LI02_01_1,
                                   LI03_01,
                                   LI04_01,
                                   LI06_05,
@@ -168,6 +167,7 @@ demo.data <- demo.data %>%
 # changing `Extracurricular Teaching Experience` to count experience (no experience = 2 --> 0)
 demo.data$`Extracurricular Teaching Experience` = ifelse(demo.data$`Extracurricular Teaching Experience` == 1, "1","0")
 
+# changing character Extra. Exp. into numeric
 demo.data$`Extracurricular Teaching Experience` <- as.numeric(demo.data$`Extracurricular Teaching Experience`)
 
 
@@ -248,10 +248,24 @@ knitr::include_graphics("./pictures/teachergazepoint.png", dpi = 108)
 
 The speech, sounds and voices of the participants were recorded with Zoom H3-VR Ambient Recorder (https://zoomcorp.com/en/gb/handheld-recorders/handheld-recorders/h3-vr-360-audio-recorder/) installed in the middle of the lab setting. The Zoom H3-VR recorded with four built-in mics arranged in an Ambisonic array with a bitrate of 4608 kBits/s. 
 
-Movements, facial expressions and gestures of the subjects were recorded by four Go Pro Hero 7 black cameras (https://gopro.com/content/dam/help/hero7-black/manuals/HERO7Black_UM_ENG_REVC.pdf) from different angles. 
+Movements, facial expressions and gestures of the subjects were recorded by four Go Pro Hero 7 black cameras (https://gopro.com/content/dam/help/hero7-black/manuals/HERO7Black_UM_ENG_REVC.pdf) from different angles. The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 50 frames per second in 16:9 format with a linear field of view. 
 
-The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 50 frames per second in 16:9 format with a linear field of view. 
+### Questionnaire
 
+After each micro-teaching-unit, the students answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and scales on the teacher's presence behavior. In addition, participants were asked to give a self-assessment on  classroom management by completing the questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree). 
+
+```{r presence_questionnaire}
+
+# select relevant columns
+quest.data <- quest.data %>% select(LM01_01:LO01_02, LI06_05)
+
+# rename columns
+quest.data <- rename(quest.data, c("Group" = "LI06_05"))
+
+# # define expert and novice with ifelse function
+# quest.data$Group = ifelse(quest.data$Group < 200, "Novice","Expert")
+
+```
 
 ## Procedure
 
