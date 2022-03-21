@@ -76,7 +76,9 @@ needs(tidyverse,
       gridExtra,
       cowplot,
       readxl,
-      ARTofR)
+      ARTofR,
+      moments,
+      ltm)
 ```
 
 ```{r data, include=FALSE}
@@ -126,7 +128,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 ```{r demographicstable}
 
 # select relevant columns from first questionnaire 
-demo.data <- quest.data %>% select(LI02_01_1,
+demo.data <- quest.data %>% dplyr::select(LI02_01_1,
                                   LI03_01,
                                   LI04_01,
                                   LI06_05,
@@ -257,13 +259,97 @@ After each micro-teaching-unit, the students answered items on teaching quality 
 ```{r presence_questionnaire}
 
 # select relevant columns
-quest.data <- quest.data %>% select(LM01_01:LO01_02, LI06_05)
+quest.data <- quest.data %>% dplyr::select(LM01_01:LO01_02, LI06_05)
 
 # rename columns
 quest.data <- rename(quest.data, c("Group" = "LI06_05"))
 
-# # define expert and novice with ifelse function
-# quest.data$Group = ifelse(quest.data$Group < 200, "Novice","Expert")
+# define expert and novice with ifelse function
+quest.data$Group = ifelse(quest.data$Group < 200, "Novice","Expert")
+
+# creating a matrix
+quest.table <- matrix(data = NA, nrow = 4, ncol = 8)
+rownames(quest.table) <- c("LM", "LB", "LP", "LV")
+  colnames(quest.table) <- c("N Items","M","SD","Min","Max","Skewness","Kurtosis","alpha")
+
+# creating a loop 
+# i <- "LM"
+  
+for (i in c("LM", "LB", "LP", "LV")) {
+  
+loop.data <- quest.data %>% 
+  dplyr::select(starts_with(match = i))
+
+quest.table[i, "N Items"] <- length(loop.data)
+
+# calculating mean
+loop.data %>% 
+  mutate(mean = rowMeans(.)) %>% 
+  pull(mean) %>% 
+  mean() %>% 
+  round(., digits = 2) ->
+quest.table[i, "M"] 
+
+# calculating SD
+loop.data %>% 
+  mutate(mean = rowMeans(.)) %>% 
+  pull(mean) %>% 
+  sd() %>% 
+  round(., digits = 2) ->
+quest.table[i, "SD"] 
+
+# calculating Min
+loop.data %>% 
+  mutate(mean = rowMeans(.)) %>% 
+  pull(mean) %>% 
+  min() %>% 
+  round(., digits = 2) ->
+quest.table[i, "Min"]
+
+# calculating Max
+loop.data %>% 
+  mutate(mean = rowMeans(.)) %>% 
+  pull(mean) %>% 
+  max() %>% 
+  round(., digits = 2) ->
+quest.table[i, "Max"]
+
+# calculating Skewness
+loop.data %>% 
+  mutate(mean = rowMeans(.)) %>% 
+  pull(mean) %>% 
+  skewness() %>% 
+  round(., digits = 2) ->
+quest.table[i, "Skewness"]
+
+# calculating Kurtosis
+loop.data %>% 
+  mutate(mean = rowMeans(.)) %>% 
+  pull(mean) %>% 
+  kurtosis() %>% 
+  round(., digits = 2) ->
+quest.table[i, "Kurtosis"]
+
+# calculating alpha
+alpha <- loop.data %>% 
+  cronbach.alpha() 
+alpha$alpha
+
+quest.table[i, "alpha"] <- round(alpha$alpha,2)
+
+}
+ 
+rownames(quest.table) <- c("Classroom Management", "Balance", "Presence", "Natural Behavior")
+
+# format and insert table in manuscript
+apa_table(
+  quest.table,
+  caption = "Scale analysis for teachers' self-assessment",
+  # note = "Write Note here", 
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+)
 
 ```
 
