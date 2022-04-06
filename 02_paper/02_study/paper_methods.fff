@@ -1,0 +1,20 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\centering \includegraphics{./pictures/tobiiglasses2}
+
+}
+
+\caption{Tobii Pro Glasses 2; Source: https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/}\label{fig:tobiiglasses2}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\centering \includegraphics{./pictures/teachergazepoint}
+
+}
+
+\caption{Teacher's Gaze Point}\label{fig:teachergazepoint}
+\end{figure*}

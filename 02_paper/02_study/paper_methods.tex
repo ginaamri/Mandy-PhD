@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  man,floatsintext]{apa6}
+  man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -166,6 +166,12 @@
   }
 {}{\PatchFailed}
 \keywords{Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking\newline\indent Word count: XXX}
+\DeclareDelayedFloatFlavor{ThreePartTable}{table}
+\DeclareDelayedFloatFlavor{lltable}{table}
+\DeclareDelayedFloatFlavor*{longtable}{table}
+\makeatletter
+\renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
+\makeatother
 \usepackage{lineno}
 
 \linenumbers
@@ -261,9 +267,9 @@ The sample consists of \emph{N} = 28 participants with \emph{n} = 7 expert teach
 
 The inclusion criterion for experts was that they have successfully completed teacher training and are actively employed in the teaching profession. According to Palmer, Stough, Burdenski, and Gonzales (2005), we selected teachers as experts who had at least three years of professional experience and ideally had worked in another teaching position, such as subject advisor or trainer for trainee teachers, in addition to their teaching profession in school. Novices were student teachers who had successfully completed their first internship in a school and gained one to four hours of teaching experience.
 
-The expert teachers (5 women; 71.40\%) had a mean age of 45.10 years (\emph{SD} = 12; range: 27-59) and an average teaching experience of 18.10 years (\emph{SD} = 14.10; range: 3-37).
+The expert teachers (5 women; 71.40\%) had a mean age of 45.10 years (\emph{SD} = 12; range: 27-59) and an average teaching experience of 18.10 years (\emph{SD} = 14.10; range: 3-37). 71\% of the experienced teachers were also engaged in an secondary teaching activity, such as lecturers at the university, main training supervisors for trainee teachers and subject advisers.
 
-The novice teachers (13 women; 61.90\%) had a mean age of 23.30 years (\emph{SD} = 1.70; range: 20-27) with an average teaching experience of 0 years. On average, the student teachers were in their 7.40 semester (\emph{SD} = 2.50; range: 3-11). Furthermore, they had an average teaching experience of 12.20 teaching units à 45min (\emph{SD} = 8.40; range: 4-36) through the internships during their studies. 90.50\% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision.
+The novice teachers (13 women; 61.90\%) had a mean age of 23.30 years (\emph{SD} = 1.70; range: 20-27) with an average teaching experience of 0 years. On average, the student teachers were in their 7.40 semester (\emph{SD} = 2.50; range: 3-11). Furthermore, they had an average teaching experience of 12 teaching units à 45min (\emph{SD} = 8.60; range: 0-36) through the internships during their studies. 90.50\% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision.
 
 The subjects were primarily recruited through personal contacts, social media (Facebook), e-mail distribution lists and advertising in lectures at the University Leipzig. All study procedures were carried out in accordance with the ethical standards of the University's Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University. All participants were informed in detail about the aim and intention of the study prior to testing. Participation in the study was voluntary and only took place after written consent has been given.
 
@@ -319,7 +325,7 @@ The Tobii Pro Glasses Controller software was used to record and calibrate the e
 
 We investigated whether experts and novice teachers differed
 
-All reported data analyses were conducted with the R (Version 4.1.2; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.3.3; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.1; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), and \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b) and IBM SPSS 28.
+All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.3.3; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.1; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), and \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b) and IBM SPSS 28.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}

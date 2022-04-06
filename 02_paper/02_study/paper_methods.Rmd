@@ -33,7 +33,7 @@ wordcount         : "XXX"
 
 bibliography      : ["r-references.bib"]
 
-floatsintext      : yes
+floatsintext      : no
 figurelist        : yes
 tablelist         : yes
 footnotelist      : no
@@ -78,7 +78,8 @@ needs(tidyverse,
       readxl,
       ARTofR,
       moments,
-      ltm)
+      ltm,
+      sjPlot)
 ```
 
 ```{r data, include=FALSE}
@@ -125,7 +126,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ## Participants
 
-```{r demographicstable}
+```{r demographicstable, echo=FALSE}
 
 # select relevant columns from first questionnaire 
 demo.data <- quest.data %>% dplyr::select(LI02_01_1,
@@ -135,7 +136,10 @@ demo.data <- quest.data %>% dplyr::select(LI02_01_1,
                                   LI10_05,
                                   LI11_01,
                                   LI13_01,
-                                  LI14
+                                  LI14,
+                                  LI18,
+                                  LI16_05,
+                                  LI17
                                   )
 
 # rename columns
@@ -143,10 +147,13 @@ demo.data <- rename(demo.data, c("Group" = "LI06_05",
                                  "Gender" = "LI02_01_1",
                                  "Age" = "LI03_01",
                                  "Teaching Experience" = "LI04_01",
+                                 "Type of School" = "LI18",
+                                 "Grade" = "LI16_05",
                                  "Subject" = "LI10_05",
                                  "Semester" = "LI11_01",
                                  "Internship" = "LI13_01",
-                                 "Extracurricular Teaching Experience" = "LI14"
+                                 "Extracurricular Teaching Experience" = "LI14",
+                                 "Secondary Teaching Activities" = "LI17"
                                  ))
 
 # define expert and novice with ifelse function
@@ -171,6 +178,12 @@ demo.data$`Extracurricular Teaching Experience` = ifelse(demo.data$`Extracurricu
 
 # changing character Extra. Exp. into numeric
 demo.data$`Extracurricular Teaching Experience` <- as.numeric(demo.data$`Extracurricular Teaching Experience`)
+
+# changing `Secondary Teaching Activities` to count experience (no experience = 2 --> 0)
+demo.data$`Secondary Teaching Activities` = ifelse(demo.data$`Secondary Teaching Activities` == 1, "1","0")
+
+# changing character Extra. Exp. into numeric
+demo.data$`Secondary Teaching Activities` <- as.numeric(demo.data$`Secondary Teaching Activities`)
 
 
 # create new columns that give proportion of Gender
@@ -202,6 +215,7 @@ demo.table <- demo.data %>%
             "Min Internship in teaching units" = min(Internship),
             "Max Internship in teaching units" = max(Internship),
             "Extracurricular Teaching Experience in percentage" = round(sum(`Extracurricular Teaching Experience`/Gender_Sum) * 100, digits = 1),
+            "Secondary Teaching Activities in percentage" = round(sum(`Secondary Teaching Activities`/Gender_Sum) * 100)
            )
 
 # format and insert table in manuscript
@@ -222,7 +236,7 @@ The sample consists of *N* = `r length(demo.data$Group)` participants with *n* =
 The inclusion criterion for experts was that they have successfully completed teacher training and are actively employed in the teaching profession. According to @palmer2005identifying, we selected teachers as experts who had at least three years of professional experience and ideally had worked in another teaching position, such as subject advisor or trainer for trainee teachers, in addition to their teaching profession in school. Novices were student teachers who had successfully completed their first internship in a school and gained one to four hours of teaching experience.
 
 
-The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) and an average teaching experience of `r demo.table %>% filter(Group == "Expert") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Exp. in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Exp. in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Exp. in years")`). 
+The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) and an average teaching experience of `r demo.table %>% filter(Group == "Expert") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Exp. in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Exp. in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Exp. in years")`). `r demo.table %>% filter(Group == "Expert") %>% pull("Secondary Teaching Activities in percentage")`% of the experienced teachers were also engaged in an secondary teaching activity, such as lecturers at the university, main training supervisors for trainee teachers and subject advisers. 
 
 The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percentage")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`) with an average teaching experience of `r demo.table %>% filter(Group == "Novice") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years. On average, the student teachers were in their `r demo.table %>% filter(Group == "Novice") %>% pull("M Semester") %>% mean() %>% round(., digits = 1)` semester (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Semester") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Semester")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Semester")`). Furthermore, they had an average teaching experience of `r demo.table %>% filter(Group == "Novice") %>% pull("M Internship in teaching units") %>% mean() %>% round(., digits = 1)` teaching units à 45min (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Internship in teaching units") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Internship in teaching units")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Internship in teaching units")`) through the internships during their studies. `r demo.table %>% filter(Group == "Novice") %>% pull("Extracurricular Teaching Experience in percentage")`% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision. 
 
@@ -256,7 +270,7 @@ Movements, facial expressions and gestures of the subjects were recorded by four
 
 After each micro-teaching-unit, the students answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and scales on the teacher's presence behavior. In addition, participants were asked to give a self-assessment on  classroom management by completing the questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree). 
 
-```{r presence_questionnaire}
+```{r presence_questionnaire, echo=FALSE}
 
 # select relevant columns
 quest.data <- quest.data %>% dplyr::select(LM01_01:LO01_02, LI06_05)
@@ -338,8 +352,10 @@ alpha$alpha
 quest.table[i, "alpha"] <- round(alpha$alpha,2)
 
 }
- 
+
+# rename columns 
 rownames(quest.table) <- c("Classroom Management", "Balance", "Presence", "Natural Behavior")
+
 
 # format and insert table in manuscript
 apa_table(
@@ -351,15 +367,19 @@ apa_table(
   font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
 )
 
+
+# item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+
+# Classroom Management
+tab_itemscale(quest.data[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+
 ```
 
 ## Procedure
 
 In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021, and July 2022.
 
-One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
-
-The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
 
 
 ## Data analysis
