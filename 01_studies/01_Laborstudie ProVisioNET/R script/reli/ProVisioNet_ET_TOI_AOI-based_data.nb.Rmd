@@ -20,11 +20,9 @@ needs(tidyverse,
 # Read In Data sets
 
 ```{r, include = FALSE}
-AOI_AP_01 <- read_tsv(file = "data/01_01_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv"
-                   )
+AOI_AP_01 <- read_tsv(file = "data/01_01_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
-AOI_MK_01 <- read_tsv(file = "data/01_01_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv"
-                  )
+AOI_MK_01 <- read_tsv(file = "data/01_01_MK_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 
 AOI_AP_04 <- read_tsv(file = "data/04_04_AP_ProVisioNET_study_glasses_Metrics_Intervall based.tsv")
 

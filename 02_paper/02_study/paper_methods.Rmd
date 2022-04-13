@@ -33,7 +33,8 @@ wordcount         : "XXX"
 
 bibliography      : ["r-references.bib"]
 
-floatsintext      : no
+floatsintext      : yes
+figsintext        : yes
 figurelist        : yes
 tablelist         : yes
 footnotelist      : no
@@ -79,7 +80,9 @@ needs(tidyverse,
       ARTofR,
       moments,
       ltm,
-      sjPlot)
+      sjPlot,
+      kableExtra,
+      xtable)
 ```
 
 ```{r data, include=FALSE}
@@ -219,14 +222,15 @@ demo.table <- demo.data %>%
            )
 
 # format and insert table in manuscript
-apa_table(
-  demo.table,
+demo.table %>%
+papaja::apa_table(
   caption = "Demographic Information and Teaching Experience",
-  # note = "Write Note here", 
+  # note = "Write Note here",
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
   font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
-  )
+  ) 
+
 
 ```
 
@@ -270,7 +274,7 @@ Movements, facial expressions and gestures of the subjects were recorded by four
 
 After each micro-teaching-unit, the students answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and scales on the teacher's presence behavior. In addition, participants were asked to give a self-assessment on  classroom management by completing the questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree). 
 
-```{r presence_questionnaire, echo=FALSE}
+```{r presence_questionnaire, echo=FALSE, results='asis'}
 
 # select relevant columns
 quest.data <- quest.data %>% dplyr::select(LM01_01:LO01_02, LI06_05)
@@ -358,8 +362,8 @@ rownames(quest.table) <- c("Classroom Management", "Balance", "Presence", "Natur
 
 
 # format and insert table in manuscript
-apa_table(
-  quest.table,
+papaja::apa_table(
+quest.table,
   caption = "Scale analysis for teachers' self-assessment",
   # note = "Write Note here", 
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
@@ -371,7 +375,6 @@ apa_table(
 # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
 
 # Classroom Management
-tab_itemscale(quest.data[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
 
 
 ```

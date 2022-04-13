@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  man]{apa6}
+  man,floatsintext]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -166,12 +166,6 @@
   }
 {}{\PatchFailed}
 \keywords{Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking\newline\indent Word count: XXX}
-\DeclareDelayedFloatFlavor{ThreePartTable}{table}
-\DeclareDelayedFloatFlavor{lltable}{table}
-\DeclareDelayedFloatFlavor*{longtable}{table}
-\makeatletter
-\renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
-\makeatother
 \usepackage{lineno}
 
 \linenumbers
@@ -316,16 +310,12 @@ After each micro-teaching-unit, the students answered items on teaching quality 
 
 In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021, and July 2022.
 
-One camera was installed to film the class from the side. Two more cameras were installed on the blackboard and at the end of the Lab to film the teacher and class from the front and back. Furthermore, the fourth camera was installed in such a way that only facial expressions and gestures of the teacher were recorded, which enables a semi-automated analysis of the movement sequences.
-
-The Tobii Pro Glasses Controller software was used to record and calibrate the eye movements.
-
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
 
 We investigated whether experts and novice teachers differed
 
-All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.3.3; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.1; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), and \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b) and IBM SPSS 28.
+All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.3.3; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{ltm} (Version 1.2.0; Rizopoulos, 2006), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{MASS} (Version 7.3.55; Venables \& Ripley, 2002), \emph{moments} (Version 0.14; Komsta \& Novomestky, 2015), \emph{msm} (Version 1.6.9; Jackson, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{polycor} (Version 0.8.1; Fox, 2022), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.1; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{sjPlot} (Version 2.8.10; Lüdecke, 2021), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), and \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b) and IBM SPSS 28.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -356,6 +346,9 @@ Barth, M. (2022). \emph{{tinylabels}: Lightweight variable labels}. Retrieved fr
 \leavevmode\vadjust pre{\hypertarget{ref-evertson2006classroom}{}}%
 Evertson, C. M., Weinstein, C. S.others. (2006). Classroom management as a field of inquiry. \emph{Handbook of Classroom Management: Research, Practice, and Contemporary Issues}, \emph{3}(1), 16.
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-polycor}{}}%
+Fox, J. (2022). \emph{Polycor: Polychoric and polyserial correlations}. Retrieved from \url{https://CRAN.R-project.org/package=polycor}
+
 \leavevmode\vadjust pre{\hypertarget{ref-R-viridis}{}}%
 Garnier, Simon, Ross, Noam, Rudis, Robert, \ldots{} Cédric. (2021a). \emph{{viridis} - colorblind-friendly color maps for r}. \url{https://doi.org/10.5281/zenodo.4679424}
 
@@ -380,14 +373,23 @@ Helmke, A., Helmke, T., Lenske, G., Pham, G., Praetorius, A.-K., Schrader, F.-W.
 \leavevmode\vadjust pre{\hypertarget{ref-R-purrr}{}}%
 Henry, L., \& Wickham, H. (2020). \emph{Purrr: Functional programming tools}. Retrieved from \url{https://CRAN.R-project.org/package=purrr}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-msm}{}}%
+Jackson, C. H. (2011). Multi-state models for panel data: The {msm} package for {R}. \emph{Journal of Statistical Software}, \emph{38}(8), 1--29. Retrieved from \url{https://www.jstatsoft.org/v38/i08/}
+
 \leavevmode\vadjust pre{\hypertarget{ref-R-needs}{}}%
 Katz, J. (2016). \emph{Needs: Attaches and installs packages}. Retrieved from \url{https://CRAN.R-project.org/package=needs}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-moments}{}}%
+Komsta, L., \& Novomestky, F. (2015). \emph{Moments: Moments, cumulants, skewness, kurtosis and related tests}. Retrieved from \url{https://CRAN.R-project.org/package=moments}
 
 \leavevmode\vadjust pre{\hypertarget{ref-kounin2006techniken}{}}%
 Kounin, J. S. (2006). \emph{Techniken der klassenf{ü}hrung}. Waxmann Verlag.
 
 \leavevmode\vadjust pre{\hypertarget{ref-lachner2016makes}{}}%
 Lachner, A., Jarodzka, H., \& Nückles, M. (2016). What makes an expert teacher? Investigating teachers' professional vision and discourse abilities. \emph{Instructional Science}, \emph{44}(3), 197--203.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-sjPlot}{}}%
+Lüdecke, D. (2021). \emph{sjPlot: Data visualization for statistics in social science}. Retrieved from \url{https://CRAN.R-project.org/package=sjPlot}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-tibble}{}}%
 Müller, K., \& Wickham, H. (2021). \emph{Tibble: Simple data frames}. Retrieved from \url{https://CRAN.R-project.org/package=tibble}
@@ -398,6 +400,9 @@ Palmer, D. J., Stough, L. M., Burdenski, T. K., Jr, \& Gonzales, M. (2005). Iden
 \leavevmode\vadjust pre{\hypertarget{ref-R-base}{}}%
 R Core Team. (2021). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-ltm}{}}%
+Rizopoulos, D. (2006). Ltm: An r package for latent variable modelling and item response theory analyses. \emph{Journal of Statistical Software}, \emph{17}(5), 1--25. Retrieved from \url{https://doi.org/10.18637/jss.v017.i05}
+
 \leavevmode\vadjust pre{\hypertarget{ref-seidel2014modeling}{}}%
 Seidel, T., \& Stürmer, K. (2014). Modeling and measuring the structure of professional vision in preservice teachers. \emph{American Educational Research Journal}, \emph{51}(4), 739--771.
 
@@ -406,6 +411,9 @@ Sherin, M. (2007). \emph{The development of teachers' professional vision in vid
 
 \leavevmode\vadjust pre{\hypertarget{ref-van2014first}{}}%
 Van den Bogert, N., Bruggen, J. van, Kostons, D., \& Jochems, W. (2014). First steps into understanding teachers' visual perception of classroom events. \emph{Teaching and Teacher Education}, \emph{37}, 208--216.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-MASS}{}}%
+Venables, W. N., \& Ripley, B. D. (2002). \emph{Modern applied statistics with s} (Fourth). New York: Springer. Retrieved from \url{https://www.stats.ox.ac.uk/pub/MASS4/}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-ggplot2}{}}%
 Wickham, H. (2016). \emph{ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
