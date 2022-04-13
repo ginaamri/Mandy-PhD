@@ -25,8 +25,7 @@ for (i in file_names) {
 
     work_data <- 
     read_tsv(file = paste0("data/", i),
-                          locale = locale(decimal_mark = ",")) %>% 
-      select(!"Minimum_amplitude_of_saccades")
+                          locale = locale(decimal_mark = ","))
   
   assign(value = work_data,
          x = str_remove(paste0("tib_", i),
