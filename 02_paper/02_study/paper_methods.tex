@@ -33,16 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Through the eyes of the teacher - Multimodal exploration of expertise differences in the perception of classroom disruptions},
-  pdfauthor={Mandy Klatt1, Dr.~Gregor Kachel1, 2, Dr.~Christin Lotz1, \& Prof.~Dr.~Anne Deiglmayr1},
-  pdflang={en-EN},
-  pdfkeywords={Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -116,9 +106,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\begin{center}\begin{threeparttable}}
-%   {\end{threeparttable}\end{center}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
+%   {\begin{landscape}\centering\begin{threeparttable}}
+%   {\end{threeparttable}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -186,6 +176,16 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Through the eyes of the teacher - Multimodal exploration of expertise differences in the perception of classroom disruptions},
+  pdfauthor={Mandy Klatt1, Dr.~Gregor Kachel1, 2, Dr.~Christin Lotz1, \& Prof.~Dr.~Anne Deiglmayr1},
+  pdflang={en-EN},
+  pdfkeywords={Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Through the eyes of the teacher - Multimodal exploration of expertise differences in the perception of classroom disruptions}
 \author{Mandy Klatt\textsuperscript{1}, Dr.~Gregor Kachel\textsuperscript{1, 2}, Dr.~Christin Lotz\textsuperscript{1}, \& Prof.~Dr.~Anne Deiglmayr\textsuperscript{1}}
@@ -257,6 +257,31 @@ We report how we determined our sample size, all data exclusions (if any), all m
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:demographicstable}Demographic Information and Teaching Experience}
+
+\tiny{
+
+\begin{tabular}{lllllllllllllllllllll}
+\toprule
+Group & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Gender female in percentage} & \multicolumn{1}{c}{M Age in years} & \multicolumn{1}{c}{SD Age in years} & \multicolumn{1}{c}{Min Age in years} & \multicolumn{1}{c}{Max Age in years} & \multicolumn{1}{c}{M Exp. in years} & \multicolumn{1}{c}{SD Exp. in years} & \multicolumn{1}{c}{Min Exp. in years} & \multicolumn{1}{c}{Max Exp. in years} & \multicolumn{1}{c}{M Semester} & \multicolumn{1}{c}{SD Semester} & \multicolumn{1}{c}{Min Semester} & \multicolumn{1}{c}{Max Semester} & \multicolumn{1}{c}{M Internship in teaching units} & \multicolumn{1}{c}{SD Internship in teaching units} & \multicolumn{1}{c}{Min Internship in teaching units} & \multicolumn{1}{c}{Max Internship in teaching units} & \multicolumn{1}{c}{Extracurricular Teaching Experience in percentage} & \multicolumn{1}{c}{Secondary Teaching Activities in percentage}\\
+\midrule
+Expert & 7 & 71.40 & 45.10 & 12.00 & 27.00 & 59.00 & 18.10 & 14.10 & 3.00 & 37.00 & NA & NA & NA & NA & NA & NA & NA & NA & NA & 71.00\\
+Novice & 21 & 61.90 & 23.30 & 1.70 & 20.00 & 27.00 & 0.00 & 0.00 & 0.00 & 0.00 & 7.40 & 2.50 & 3.00 & 11.00 & 12.00 & 8.60 & 0.00 & 36.00 & 90.50 & NA\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
 The sample consists of \emph{N} = 28 participants with \emph{n} = 7 expert teachers and \emph{n} = 21 novice teachers.
 
 The inclusion criterion for experts was that they have successfully completed teacher training and are actively employed in the teaching profession. According to Palmer, Stough, Burdenski, and Gonzales (2005), we selected teachers as experts who had at least three years of professional experience and ideally had worked in another teaching position, such as subject advisor or trainer for trainee teachers, in addition to their teaching profession in school. Novices were student teachers who had successfully completed their first internship in a school and gained one to four hours of teaching experience.
@@ -277,7 +302,7 @@ During the unit, teachers wore a binocular Tobii Pro Glasses 2 eye-tracker (\url
 
 \begin{figure}
 
-{\centering \includegraphics{./pictures/tobiiglasses2} 
+{\centering \includegraphics[width=14.07in]{./pictures/tobiiglasses2} 
 
 }
 
@@ -286,7 +311,7 @@ During the unit, teachers wore a binocular Tobii Pro Glasses 2 eye-tracker (\url
 
 \begin{figure}
 
-{\centering \includegraphics{./pictures/teachergazepoint} 
+{\centering \includegraphics[width=7.16in]{./pictures/teachergazepoint} 
 
 }
 
@@ -305,6 +330,33 @@ Movements, facial expressions and gestures of the subjects were recorded by four
 
 After each micro-teaching-unit, the students answered items on teaching quality using a validated questionnaire (Helmke et al., 2014) and scales on the teacher's presence behavior. In addition, participants were asked to give a self-assessment on classroom management by completing the questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree).
 
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:presence_questionnaire}Scale analysis for teachers' self-assessment}
+
+\tiny{
+
+\begin{tabular}{lllllllll}
+\toprule
+ & \multicolumn{1}{c}{N Items} & \multicolumn{1}{c}{M} & \multicolumn{1}{c}{SD} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Skewness} & \multicolumn{1}{c}{Kurtosis} & \multicolumn{1}{c}{alpha}\\
+\midrule
+Classroom Management & 8.00 & 2.96 & 0.25 & 2.50 & 3.38 & -0.02 & 1.78 & 0.21\\
+Balance & 3.00 & 3.21 & 0.54 & 1.67 & 4.00 & -0.58 & 3.65 & 0.68\\
+Presence & 8.00 & 3.17 & 0.39 & 2.50 & 3.88 & -0.05 & 2.38 & 0.72\\
+Natural Behavior & 3.00 & 3.23 & 0.59 & 1.67 & 4.00 & -0.77 & 3.50 & 0.74\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
 
@@ -315,7 +367,7 @@ In June 2021, the study was piloted with student teachers volunteers to refine t
 
 We investigated whether experts and novice teachers differed
 
-All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.3.3; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{ltm} (Version 1.2.0; Rizopoulos, 2006), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{MASS} (Version 7.3.55; Venables \& Ripley, 2002), \emph{moments} (Version 0.14; Komsta \& Novomestky, 2015), \emph{msm} (Version 1.6.9; Jackson, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{polycor} (Version 0.8.1; Fox, 2022), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.1; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{sjPlot} (Version 2.8.10; Lüdecke, 2021), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), and \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b) and IBM SPSS 28.
+All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.3.3; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{ltm} (Version 1.2.0; Rizopoulos, 2006), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{MASS} (Version 7.3.55; Venables \& Ripley, 2002), \emph{moments} (Version 0.14; Komsta \& Novomestky, 2015), \emph{msm} (Version 1.6.9; Jackson, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9999; Aust \& Barth, 2020), \emph{polycor} (Version 0.8.1; Fox, 2022), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.2; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.4.0; Wickham \& Bryan, 2019), \emph{sjPlot} (Version 2.8.10; Lüdecke, 2021), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), and \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b) and IBM SPSS 28.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -344,7 +396,7 @@ Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Prepare} reproducible {APA} jour
 Barth, M. (2022). \emph{{tinylabels}: Lightweight variable labels}. Retrieved from \url{https://cran.r-project.org/package=tinylabels}
 
 \leavevmode\vadjust pre{\hypertarget{ref-evertson2006classroom}{}}%
-Evertson, C. M., Weinstein, C. S.others. (2006). Classroom management as a field of inquiry. \emph{Handbook of Classroom Management: Research, Practice, and Contemporary Issues}, \emph{3}(1), 16.
+Evertson, C. M., Weinstein, C. S., et al. (2006). Classroom management as a field of inquiry. \emph{Handbook of Classroom Management: Research, Practice, and Contemporary Issues}, \emph{3}(1), 16.
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-polycor}{}}%
 Fox, J. (2022). \emph{Polycor: Polychoric and polyserial correlations}. Retrieved from \url{https://CRAN.R-project.org/package=polycor}
