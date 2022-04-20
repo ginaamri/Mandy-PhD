@@ -62,7 +62,7 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
 ```{r include=FALSE}
-#install.packages("needs")
+# install.packages("needs")
 
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
@@ -83,6 +83,7 @@ needs(tidyverse,
       sjPlot,
       kableExtra,
       xtable)
+
 ```
 
 ```{r data, include=FALSE}
