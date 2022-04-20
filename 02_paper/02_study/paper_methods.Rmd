@@ -52,7 +52,7 @@ output            : papaja::apa6_pdf
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(include = FALSE)
 library("papaja")
-r_refs("r-references.bib")
+r_refs(file = "r-references.bib")
 ```
 
 ```{r analysis-preferences, include=FALSE}
@@ -130,7 +130,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ## Participants
 
-```{r demographicstable, echo=FALSE}
+```{r demographicstable, include = TRUE, echo=FALSE}
 
 # select relevant columns from first questionnaire 
 demo.data <- quest.data %>% dplyr::select(LI02_01_1,
@@ -229,8 +229,8 @@ papaja::apa_table(
   # note = "Write Note here",
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
-  font_size = "small" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
-  ) 
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
 
 
 ```
@@ -275,7 +275,7 @@ Movements, facial expressions and gestures of the subjects were recorded by four
 
 After each micro-teaching-unit, the students answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and scales on the teacher's presence behavior. In addition, participants were asked to give a self-assessment on  classroom management by completing the questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree). 
 
-```{r presence_questionnaire, echo=FALSE, results='asis'}
+```{r presence_questionnaire, include=TRUE, echo=FALSE, results='asis'}
 
 # select relevant columns
 quest.data <- quest.data %>% dplyr::select(LM01_01:LO01_02, LI06_05)
