@@ -166,6 +166,12 @@
   }
 {}{\PatchFailed}
 \keywords{Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking\newline\indent Word count: XXX}
+\DeclareDelayedFloatFlavor{ThreePartTable}{table}
+\DeclareDelayedFloatFlavor{lltable}{table}
+\DeclareDelayedFloatFlavor*{longtable}{table}
+\makeatletter
+\renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
+\makeatother
 \usepackage{lineno}
 
 \linenumbers
@@ -268,7 +274,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 \begin{tabular}{lllllllllllllllllllll}
 \toprule
-Group & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Gender female in percentage} & \multicolumn{1}{c}{M Age in years} & \multicolumn{1}{c}{SD Age in years} & \multicolumn{1}{c}{Min Age in years} & \multicolumn{1}{c}{Max Age in years} & \multicolumn{1}{c}{M Exp. in years} & \multicolumn{1}{c}{SD Exp. in years} & \multicolumn{1}{c}{Min Exp. in years} & \multicolumn{1}{c}{Max Exp. in years} & \multicolumn{1}{c}{M Semester} & \multicolumn{1}{c}{SD Semester} & \multicolumn{1}{c}{Min Semester} & \multicolumn{1}{c}{Max Semester} & \multicolumn{1}{c}{M Internship in teaching units} & \multicolumn{1}{c}{SD Internship in teaching units} & \multicolumn{1}{c}{Min Internship in teaching units} & \multicolumn{1}{c}{Max Internship in teaching units} & \multicolumn{1}{c}{Extracurricular Teaching Experience in percentage} & \multicolumn{1}{c}{Secondary Teaching Activities in percentage}\\
+Group & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Gender female in percent} & \multicolumn{1}{c}{M Age in years} & \multicolumn{1}{c}{SD Age in years} & \multicolumn{1}{c}{Min Age in years} & \multicolumn{1}{c}{Max Age in years} & \multicolumn{1}{c}{M Exp. in years} & \multicolumn{1}{c}{SD Exp. in years} & \multicolumn{1}{c}{Min Exp. in years} & \multicolumn{1}{c}{Max Exp. in years} & \multicolumn{1}{c}{M Semester} & \multicolumn{1}{c}{SD Semester} & \multicolumn{1}{c}{Min Semester} & \multicolumn{1}{c}{Max Semester} & \multicolumn{1}{c}{M Internship in teaching units} & \multicolumn{1}{c}{SD Internship in teaching units} & \multicolumn{1}{c}{Min Internship in teaching units} & \multicolumn{1}{c}{Max Internship in teaching units} & \multicolumn{1}{c}{Extracurricular Teaching Experience in percent} & \multicolumn{1}{c}{Secondary Teaching Activities in percent}\\
 \midrule
 Expert & 7 & 71.40 & 45.10 & 12.00 & 27.00 & 59.00 & 18.10 & 14.10 & 3.00 & 37.00 & NA & NA & NA & NA & NA & NA & NA & NA & NA & 71.00\\
 Novice & 21 & 61.90 & 23.30 & 1.70 & 20.00 & 27.00 & 0.00 & 0.00 & 0.00 & 0.00 & 7.40 & 2.50 & 3.00 & 11.00 & 12.00 & 8.60 & 0.00 & 36.00 & 90.50 & NA\\
@@ -335,7 +341,7 @@ After each micro-teaching-unit, the students answered items on teaching quality 
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:presence_questionnaire}Scale analysis for teachers' self-assessment}
+\caption{\label{tab:presence_questionnaire_novices}Scale analysis for novices' self-assessment}
 
 \tiny{
 
@@ -343,10 +349,10 @@ After each micro-teaching-unit, the students answered items on teaching quality 
 \toprule
  & \multicolumn{1}{c}{N Items} & \multicolumn{1}{c}{M} & \multicolumn{1}{c}{SD} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Skewness} & \multicolumn{1}{c}{Kurtosis} & \multicolumn{1}{c}{alpha}\\
 \midrule
-Classroom Management & 8.00 & 2.96 & 0.25 & 2.50 & 3.38 & -0.02 & 1.78 & 0.21\\
-Balance & 3.00 & 3.21 & 0.54 & 1.67 & 4.00 & -0.58 & 3.65 & 0.68\\
-Presence & 8.00 & 3.17 & 0.39 & 2.50 & 3.88 & -0.05 & 2.38 & 0.72\\
-Natural Behavior & 3.00 & 3.23 & 0.59 & 1.67 & 4.00 & -0.77 & 3.50 & 0.74\\
+Classroom Management & 8.00 & 2.94 & 0.26 & 2.50 & 3.38 & 0.02 & 1.69 & 0.31\\
+Balance & 3.00 & 3.14 & 0.56 & 1.67 & 4.00 & -0.45 & 3.53 & 0.71\\
+Presence & 8.00 & 3.10 & 0.36 & 2.50 & 3.88 & 0.10 & 2.65 & 0.66\\
+Natural Behavior & 3.00 & 3.17 & 0.65 & 1.67 & 4.00 & -0.65 & 2.91 & 0.80\\
 \bottomrule
 \end{tabular}
 
@@ -356,6 +362,163 @@ Natural Behavior & 3.00 & 3.23 & 0.59 & 1.67 & 4.00 & -0.77 & 3.50 & 0.74\\
 \end{center}
 
 \end{table}
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:presence_questionnaire_experts}Scale analysis for experts' self-assessment}
+
+\tiny{
+
+\begin{tabular}{lllllllll}
+\toprule
+ & \multicolumn{1}{c}{N Items} & \multicolumn{1}{c}{M} & \multicolumn{1}{c}{SD} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Skewness} & \multicolumn{1}{c}{Kurtosis} & \multicolumn{1}{c}{alpha}\\
+\midrule
+Classroom Management & 8.00 & 3.00 & 0.20 & 2.75 & 3.25 & 0.25 & 1.42 & -0.16\\
+Balance & 3.00 & 3.43 & 0.42 & 2.67 & 4.00 & -0.57 & 2.87 & 0.41\\
+Presence & 8.00 & 3.36 & 0.45 & 2.50 & 3.88 & -0.85 & 2.95 & 0.84\\
+Natural Behavior & 3.00 & 3.38 & 0.36 & 3.00 & 4.00 & 0.60 & 2.36 & 0.00\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+Component 1
+
+Missings
+
+Mean
+
+SD
+
+Skew
+
+Item Difficulty
+
+Item Discrimination
+
+α if deleted
+
+0.00 \%
+
+3.32
+
+0.72
+
+-0.58
+
+0.83
+
+0.18
+
+0.10
+
+0.00 \%
+
+3.32
+
+0.55
+
+0.06
+
+0.83
+
+0.08
+
+0.19
+
+0.00 \%
+
+3.36
+
+0.56
+
+-0.07
+
+0.84
+
+-0.06
+
+0.26
+
+0.00 \%
+
+3.18
+
+0.67
+
+-0.22
+
+0.79
+
+0.25
+
+0.05
+
+0.00 \%
+
+2.32
+
+0.61
+
+-0.29
+
+0.77
+
+0.00
+
+0.23
+
+0.00 \%
+
+2.21
+
+0.63
+
+0.77
+
+0.55
+
+-0.30
+
+0.41
+
+0.00 \%
+
+2.96
+
+0.58
+
+-0.01
+
+0.74
+
+0.33
+
+0.02
+
+0.00 \%
+
+2.96
+
+0.69
+
+-0.67
+
+0.74
+
+0.21
+
+0.08
+
+Mean inter-item-correlation=0.028 · Cronbach's α=0.207
 
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
@@ -367,7 +530,7 @@ In June 2021, the study was piloted with student teachers volunteers to refine t
 
 We investigated whether experts and novice teachers differed
 
-All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.4.1; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{knitr} (Version 1.38; Xie, 2015), \emph{ltm} (Version 1.2.0; Rizopoulos, 2006), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{MASS} (Version 7.3.55; Venables \& Ripley, 2002), \emph{moments} (Version 0.14; Komsta \& Novomestky, 2015), \emph{msm} (Version 1.6.9; Jackson, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9999; Aust \& Barth, 2020), \emph{polycor} (Version 0.8.1; Fox, 2022), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.2; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.4.0; Wickham \& Bryan, 2019), \emph{rlang} (Version 1.0.2; Henry \& Wickham, 2022), \emph{sjPlot} (Version 2.8.10; Lüdecke, 2021), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), and \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b) and IBM SPSS 28.
+All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.4.1; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{kableExtra} (Version 1.3.4; Zhu, 2021), \emph{knitr} (Version 1.38; Xie, 2015), \emph{ltm} (Version 1.2.0; Rizopoulos, 2006), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{MASS} (Version 7.3.55; Venables \& Ripley, 2002), \emph{moments} (Version 0.14; Komsta \& Novomestky, 2015), \emph{msm} (Version 1.6.9; Jackson, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9999; Aust \& Barth, 2020), \emph{polycor} (Version 0.8.1; Fox, 2022), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.2; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.4.0; Wickham \& Bryan, 2019), \emph{rlang} (Version 1.0.2; Henry \& Wickham, 2022), \emph{sjPlot} (Version 2.8.10; Lüdecke, 2021), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b), and \emph{xtable} (Version 1.8.4; Dahl, Scott, Roosen, Magnusson, \& Swinton, 2019) and IBM SPSS 28.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -394,6 +557,9 @@ Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Prepare} reproducible {APA} jour
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-tinylabels}{}}%
 Barth, M. (2022). \emph{{tinylabels}: Lightweight variable labels}. Retrieved from \url{https://cran.r-project.org/package=tinylabels}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-xtable}{}}%
+Dahl, D. B., Scott, D., Roosen, C., Magnusson, A., \& Swinton, J. (2019). \emph{Xtable: Export tables to LaTeX or HTML}. Retrieved from \url{https://CRAN.R-project.org/package=xtable}
 
 \leavevmode\vadjust pre{\hypertarget{ref-evertson2006classroom}{}}%
 Evertson, C. M., Weinstein, C. S.others. (2006). Classroom management as a field of inquiry. \emph{Handbook of Classroom Management: Research, Practice, and Contemporary Issues}, \emph{3}(1), 16.
@@ -505,6 +671,9 @@ Xie, Y. (2015). \emph{Dynamic documents with {R} and knitr} (2nd ed.). Boca Rato
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-ARTofR}{}}%
 Zhang, H. (2021). \emph{ARTofR: Who ever care about the {[}art of r{]} scripts?} Retrieved from \url{https://CRAN.R-project.org/package=ARTofR}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-kableExtra}{}}%
+Zhu, H. (2021). \emph{kableExtra: Construct complex table with 'kable' and pipe syntax}. Retrieved from \url{https://CRAN.R-project.org/package=kableExtra}
 
 \end{CSLReferences}
 
