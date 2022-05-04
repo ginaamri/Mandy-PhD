@@ -214,7 +214,7 @@ quest.raw.data <- quest.raw.data %>%  mutate(value = as.numeric(value))
 # activation & support
 self.as.wide <- quest.raw.data %>%
                           filter (scale == "Activation and support") %>%  
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -223,7 +223,7 @@ self.alpha.as <- alpha(self.as.wide[,-1])
 #clarity & structuredness
 self.cs.wide <- quest.raw.data %>%
                           filter (scale == "Clarity and structuredness") %>%  
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -233,7 +233,7 @@ self.alpha.cs <- alpha(self.cs.wide[,-1])
 #classroom management
 self.cm.wide <- quest.raw.data %>%
                           filter (scale == "Classroom management") %>%  
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -243,7 +243,7 @@ self.alpha.cm <- alpha(self.cm.wide[,-1])
 #natural behaviour
 self.nb.wide <- quest.raw.data %>%
                           filter (scale == "Natural behaviour") %>%  
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -253,7 +253,7 @@ self.alpha.nb <- alpha(self.nb.wide[,-1])
 #positive climate and motivation
 self.pcm.wide <- quest.raw.data %>%
                           filter (scale == "Positive climate and motivation") %>%  
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -263,7 +263,7 @@ self.alpha.pcm <- alpha(self.pcm.wide[,-1])
 #presence: posture & gaze
 self.ppg.wide <- quest.raw.data %>%
                           filter (scale == "Presence: posture/gaze") %>%  
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -273,7 +273,7 @@ self.alpha.ppg <- alpha(self.ppg.wide[,-1])
 #presence: voice
 self.pv.wide <- quest.raw.data %>%
                           filter (scale == "Presence: voice") %>%  
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -283,7 +283,7 @@ self.alpha.pv <- alpha(self.pv.wide[,-1])
 #presence: verbal/non-verbal intervention
 self.pvni.wide <- quest.raw.data %>%
                           filter (scale == "Presence: verbal and non-verbal intervention") %>%  
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -298,7 +298,7 @@ self.p.wide <- quest.raw.data %>%
                                         "Presence: verbal and non-verbal intervention", 
                                         "Presence: posture/gaze"),
                                          collapse = '|'))) %>% 
-                          select(shortID, value) %>%
+                          dplyr::select(shortID, value) %>%
                           group_by(shortID) %>%
                           mutate(id=row_number()) %>%
                           spread(shortID, value)
@@ -307,32 +307,32 @@ self.alpha.p <- alpha(self.p.wide[,-1])
 
 ##############################################
 
-# # item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
-# 
-# # activation & support
-# tab_itemscale(self.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# 
-# # classroom management
-# tab_itemscale(self.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# 
-# # clarity & structuredness
-# tab_itemscale(self.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# 
-# # natural behaviour
-# tab_itemscale(self.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# 
-# # postive clima and motivation
-# tab_itemscale(self.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# 
-# # presence without subscales
-# tab_itemscale(self.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# 
-# # presence: posture & gaze
-# tab_itemscale(self.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# # presence: voice
-# tab_itemscale(self.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
-# # presence: verbal/non-verbal intervention
-# tab_itemscale(self.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# item analysis of a scale or index using the tab_itemscale() function of the sjPlot package
+
+# activation & support
+tab_itemscale(self.as.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# classroom management
+tab_itemscale(self.cm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# clarity & structuredness
+tab_itemscale(self.cs.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# natural behaviour
+tab_itemscale(self.nb.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# postive clima and motivation
+tab_itemscale(self.pcm.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# presence without subscales
+tab_itemscale(self.p.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+
+# presence: posture & gaze
+tab_itemscale(self.ppg.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# presence: voice
+tab_itemscale(self.pv.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
+# presence: verbal/non-verbal intervention
+tab_itemscale(self.pvni.wide[,-1], show.shapiro = TRUE, show.kurtosis = TRUE)
 
 ##############################################
 
