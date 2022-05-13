@@ -1,5 +1,4 @@
 ### ProVisioNET Eyetracking AOI Coding Data 
-
 library(needs)
 needs(tidyverse,
       psych,
@@ -14,86 +13,6 @@ needs(tidyverse,
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
 options(dplyr.summarise.inform = FALSE)
-
-# 
-# # read in expert data
-# expert_aoi1 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_202_203_204_interval_complete.tsv",
-#                        locale = locale(decimal_mark = ","))
-# 
-# expert_aoi2 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_205_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# expert_aoi3 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_206_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# expert_aoi4 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_207_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# # combine the expert df
-# expert_aoi <- rbind(expert_aoi1, 
-#                     expert_aoi2, 
-#                     expert_aoi3, 
-#                     expert_aoi4)
-#                     
-# 
-# 
-# # read in novice data
-# novice_aoi1 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_101_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-#                       
-# novice_aoi2 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_102_103_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# novice_aoi3 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_104_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# novice_aoi4 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_105_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# novice_aoi5 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_106_107_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# 
-# novice_aoi6 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_108-111_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# novice_aoi7 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_112_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# novice_aoi8 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_113-115_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# novice_aoi9 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_116_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# novice_aoi10 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_117_interval_complete.tsv",
-#                         locale = locale(decimal_mark = ","))
-# 
-# novice_aoi11 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_118_interval_complete.tsv",
-#                          locale = locale(decimal_mark = ","))
-# 
-# novice_aoi12 <- read_tsv(file = "data/ProVisioNET_study_glasses_metrics_119_interval_complete.tsv",
-#                          locale = locale(decimal_mark = ","))
-# 
-# 
-# # combine the novice df
-# novice_aoi <- rbind(novice_aoi1, 
-#                     novice_aoi2, 
-#                     novice_aoi3, 
-#                     novice_aoi4, 
-#                     novice_aoi5, 
-#                     novice_aoi6, 
-#                     novice_aoi7,
-#                     novice_aoi8,
-#                     novice_aoi9,
-#                     novice_aoi10,
-#                     novice_aoi11,
-#                     novice_aoi12)
-# 
-# 
-# # combine the both df
-# df_aoi <- rbind(novice_aoi,
-#                 expert_aoi)
 
 # Return a character vector with names of .tsv data in data folder
 
@@ -129,11 +48,9 @@ rm(work_data)
 rm(file_names)
 rm(i)
 
-############### TIME TO FIRST FIXATION ####################
 
-# filter relevant rows only for time to first reaction
-df_aoi <- df_aoi %>% filter (TOI == "Lesson" |
-                               TOI == "Chatting_with_neighbour"|
+# filter relevant rows
+df_aoi <- df_aoi %>% filter (TOI == "Chatting_with_neighbour"|
                                TOI == "Clicking_pen"| 
                                TOI == "Drawing"|
                                TOI == "Drumming_with_hands"| 
@@ -143,12 +60,25 @@ df_aoi <- df_aoi %>% filter (TOI == "Lesson" |
                                TOI == "Snipping_with_fingers"|
                                TOI == "Whispering")
 
+# creating new variable with sum disruptions
+df_aoi$TOI_sum[df_aoi$TOI == "Chatting_with_neighbour" |
+                 df_aoi$TOI == "Heckling" |
+                 df_aoi$TOI == "Whispering"] <- "Verbal disruption"
 
-# select relevant columns only for time to first fixation
+df_aoi$TOI_sum[df_aoi$TOI == "Head_on_table" |
+                 df_aoi$TOI == "Looking_at_phone" |
+                 df_aoi$TOI == "Drawing"] <- "Lack of eagerness"
+
+df_aoi$TOI_sum[df_aoi$TOI == "Clicking_pen" |
+                 df_aoi$TOI == "Drumming_with_hands" |
+                 df_aoi$TOI == "Snipping_with_fingers"] <- "Agitation"
+
+# select relevant columns
 df_aoi <- df_aoi %>% 
   select(Participant, 
          Group,
          TOI,
+         TOI_sum,
          Time_to_first_fixation.Disruptive_Person,
          starts_with("Total_duration_of_fixations"),
          starts_with("Number_of_fixations"))
@@ -160,9 +90,6 @@ df_aoi <- df_aoi %>%
 # changing milliseconds into seconds
 df_aoi$Time_to_first_fixation_seconds.Disruptive_Person <- round(df_aoi$Time_to_first_fixation.Disruptive_Person/1000,
                                                     digits = 2)
-
-# toi_fix$`Number of fixations on disruptive person` <- toi_fix$Number_of_fixations.Disruptive_Person
-
 
 ########################### TIME TO FIRST FIXATION ON DISRUPTIVE PERSON ######################
 
@@ -188,39 +115,75 @@ fix_group_plot <-
 fix_group_plot
 
 
-# plotting time to first fixation for all disruptions
-fix_plot <- 
+# # plotting time to first fixation for all disruptions
+# fix_plot <- 
+#   ggplot(data = df_aoi,
+#          mapping = aes(x = Group,
+#                        y = Time_to_first_fixation_seconds.Disruptive_Person)) +
+#   geom_boxplot(mapping = aes(fill = Group)) +
+#   geom_point(size = 2, 
+#              alpha = 0.4,
+#              position = position_jitter(seed = 1, 
+#                                         width = 0.1)) +
+#   ylim(0,25) + 
+#   labs(x ="") + 
+#   scale_fill_brewer(palette = "Set1") +
+#   facet_wrap(vars(TOI), 
+#              nrow = 1, strip.position = "bottom") +
+#   ggtitle("Time to first fixation in seconds to disruptive person") +
+#   theme_classic() + 
+#   theme(
+#     axis.text.x = element_blank(),
+#     axis.ticks.x = element_blank(),
+#     strip.text.x = element_text(size = 6,
+#                                 angle = 90),
+#     plot.title = element_text(size = 15, face = "bold"))
+# 
+# fix_plot
+
+
+
+# plotting time to first fixation for 3 disruptions sum up
+fix_plot_sum <-
   ggplot(data = df_aoi,
          mapping = aes(x = Group,
                        y = Time_to_first_fixation_seconds.Disruptive_Person)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
-  ylim(0,25) + 
-  labs(x ="") + 
+  # geom_point(size = 2, 
+  #            alpha = 0.4,
+  #            position = position_jitter(seed = 1, 
+  #                                       width = 0.1,
+  #                                       height = 0)) +
+  ylim(0,15) +
+  labs(x = "",
+       y = "Time to first fixation in seconds") +
   scale_fill_brewer(palette = "Set1") +
-  facet_wrap(vars(TOI), 
-             nrow = 1, strip.position = "bottom") +
-  ggtitle("Time to first fixation in seconds to disruptive person") +
-  theme_classic() + 
+  ggtitle("Time to first fixation to disruptive person") +
+  theme_bw() +
   theme(
+    strip.background = element_blank(),
+    legend.title = element_text(size=14), #change legend title font size
+    legend.text = element_text(size=14), #change legend text font size
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 6,
-                                angle = 90),
-    plot.title = element_text(size = 15, face = "bold"))
+    strip.text.x = element_text(size = 15),
+    plot.title = element_text(size = 20, face = "bold"),
+    axis.title.y = element_text(size = 16),
+    axis.line = element_line(colour = "black"),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()) +
+  facet_wrap(facets = vars(TOI_sum),
+             nrow = 1,
+             strip.position = "bottom")
 
-fix_plot
-
+fix_plot_sum
 
 ########################### TOTAL DURATION OF FIXATIONS IN AOIS ######################
 
 # selecting relevant columns
 df_aoi_totaldur <- df_aoi %>% 
   select(Group,
-         TOI,
+         TOI_sum,
          starts_with("Total_duration_of_fixations"))
 
 
@@ -265,7 +228,7 @@ totaldur_group_plot <-
              alpha = 0.1,
              position = position_jitter(seed = 1, 
                                         width = 0.1)) +
-  ylim(0,25) + 
+  ylim(0,5) + 
   labs(x ="") + 
   scale_fill_brewer(palette = "Set1") +
   ggtitle("Total Duration of Fixations in AOIs") +
@@ -279,21 +242,8 @@ totaldur_group_plot
 
 
 # plotting total duration of fixations for all disruptions
-totaldur_plot <- 
-  df_aoi_totaldur %>% 
-  # mutate(Total_durations_of_Fixations = factor(Total_durations_of_Fixations,
-  #                                              levels = unique(.$Total_durations_of_Fixations),
-  #                                              labels = c("StudentA", 
-  #                                                         "StudentB",
-  #                                                         "StudentC",
-  #                                                         "Disruptive_Person",
-  #                                                         "Nametag_B",
-  #                                                         "Board_Screen",
-  #                                                         "Classroom_Others",
-  #                                                         "Matieral_Teacher",
-  #                                                         "Nametag_A",
-  #                                                         "Nametag_C",
-  #                                                         "Material_Students"))) %>% 
+totaldur_plot <-
+  df_aoi_totaldur %>%
   ggplot(data = df_aoi_totaldur,
          mapping = aes(x = Group,
                        y = Seconds)) +
@@ -303,13 +253,13 @@ totaldur_plot <-
              alpha = 0.1,
              position = position_jitter(seed = 1,
                                         width = 0.1)) +
-  ylim(0,25) + 
-  labs(x ="") + 
+  ylim(0,25) +
+  labs(x ="") +
   scale_fill_brewer(palette = "Set1") +
-  facet_wrap(vars(Total_Durations_Of_Fixations), 
+  facet_wrap(vars(Total_Durations_Of_Fixations),
              nrow = 1, strip.position = "bottom") +
   ggtitle("Total Duration of Fixations in AOIs") +
-  theme_classic() + 
+  theme_classic() +
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
@@ -365,7 +315,7 @@ number_group_plot <-
              alpha = 0.1,
              position = position_jitter(seed = 1,
                                         width = 0.1)) +
-  ylim(0,25) + 
+  ylim(0,10) + 
   labs(x ="") + 
   scale_fill_brewer(palette = "Set1") +
   ggtitle("Number of Fixations in AOIs") +
@@ -385,7 +335,7 @@ number_plot <-
                      y = Number)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   # geom_violin(mapping = aes(fill = Group)) +
-  ylim(0,25) + 
+  ylim(0,10) + 
   labs(x ="") + 
   scale_fill_brewer(palette = "Set1") +
   facet_wrap(vars(Number_Of_Fixations_in_AOIs), 
