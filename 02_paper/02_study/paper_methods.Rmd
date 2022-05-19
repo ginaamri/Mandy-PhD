@@ -34,8 +34,8 @@ wordcount         : "XXX"
 bibliography      : ["r-references.bib"]
 
 floatsintext      : no
-figsintext        : yes
-figurelist        : yes
+figsintext        : no
+figurelist        : no
 tablelist         : yes
 footnotelist      : no
 linenumbers       : yes
@@ -193,33 +193,51 @@ demo.table <- demo.data %>%
             "M Age in years" = round(mean(Age), 1),
             "SD Age in years" = round(sd(Age), 1),
             "Min Age in years" = min(Age),
-            "Max Age in years" = max(Age),
-            "M Exp. in years" = round(mean(`Teaching Experience`), 1),
-            "SD Exp. in years" = round(sd(`Teaching Experience`), 1),
-            "Min Exp. in years" = min(`Teaching Experience`),
-            "Max Exp. in years" = max(`Teaching Experience`),
-            "M Semester" = round(mean(Semester), 1),
-            "SD Semester" = round(sd(Semester), 1),
-            "Min Semester" = min(Semester),
-            "Max Semester" = max(Semester),
-            "M Internship in teaching units" = round(mean(Internship), 1),
-            "SD Internship in teaching units" = round(sd(Internship), 1),
-            "Min Internship in teaching units" = min(Internship),
-            "Max Internship in teaching units" = max(Internship),
-            "Extracurricular Teaching Experience in percent" = round(sum(`Extracurricular Teaching Experience`/Gender_Sum) * 100, digits = 1),
-            "Secondary Teaching Activities in percent" = round(sum(`Secondary Teaching Activities`/Gender_Sum) * 100)
-           )
+            "Max Age in years" = max(Age)
+            )
+ 
 
 # format and insert table in manuscript
 demo.table %>%
 papaja::apa_table(
-  caption = "Demographic Information and Teaching Experience",
+  caption = "Demographic Information",
   # note = "Write Note here",
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
   font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
   )
 
+
+# create a basic table (tibble) using tidyverse functions
+exp.table <- demo.data %>%
+  group_by(Group) %>%
+  summarise(N=n(),
+           "M Exp." = round(mean(`Teaching Experience`), 1),
+            "SD Exp." = round(sd(`Teaching Experience`), 1),
+            "Min Exp." = min(`Teaching Experience`),
+            "Max Exp." = max(`Teaching Experience`),
+            "M Semester" = round(mean(Semester), 1),
+            "SD Semester" = round(sd(Semester), 1),
+            "Min Semester" = min(Semester),
+            "Max Semester" = max(Semester),
+            "M Internship" = round(mean(Internship), 1),
+            "SD Internship" = round(sd(Internship), 1),
+            "Min Internship" = min(Internship),
+            "Max Internship" = max(Internship),
+            "Extracurricular Teaching Experience" = round(sum(`Extracurricular Teaching Experience`/Gender_Sum) * 100, digits = 1),
+            "Secondary Teaching Activities" = round(sum(`Secondary Teaching Activities`/Gender_Sum) * 100)
+           )
+
+# format and insert table in manuscript
+exp.table %>%
+papaja::apa_table(
+  caption = "Teaching Experience in years, internship experience in teaching units (45min) and extracurricular teaching experience in percent",
+  # note = "Write Note here",
+  escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
+  placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
+  font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
+  )
+      
 
 ```
 
@@ -229,9 +247,9 @@ The sample consists of *N* = `r length(demo.data$Group)` participants with *n* =
 The inclusion criterion for experts was that they have successfully completed teacher training and are actively employed in the teaching profession. According to @palmer2005identifying, we selected teachers as experts who had at least three years of professional experience and ideally had worked in another teaching position, such as subject advisor or trainer for trainee teachers, in addition to their teaching profession in school. Novices were student teachers who had successfully completed their first internship in a school and gained one to four hours of teaching experience.
 
 
-The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percent")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) and an average teaching experience of `r demo.table %>% filter(Group == "Expert") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Exp. in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Exp. in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Exp. in years")`). `r demo.table %>% filter(Group == "Expert") %>% pull("Secondary Teaching Activities in percent")`% of the experienced teachers were also engaged in an secondary teaching activity, such as lecturers at the university, main training supervisors for trainee teachers and subject advisers. 
+The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percent")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) and an average teaching experience of `r exp.table %>% filter(Group == "Expert") %>% pull("M Exp.") %>% mean() %>% round(., digits = 1)` years (*SD* = `r exp.table %>% filter(Group == "Expert") %>% pull("SD Exp.") %>% round(., digits = 1)`; range: `r exp.table %>%  filter(Group == "Expert") %>% pull("Min Exp.")`-`r exp.table %>%  filter(Group == "Expert") %>% pull("Max Exp.")`). `r exp.table %>% filter(Group == "Expert") %>% pull("Secondary Teaching Activities")`% of the experienced teachers were also engaged in an secondary teaching activity, such as lecturers at the university, main training supervisors for trainee teachers and subject advisers. 
 
-The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percent")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`) with an average teaching experience of `r demo.table %>% filter(Group == "Novice") %>% pull("M Exp. in years") %>% mean() %>% round(., digits = 1)` years. On average, the student teachers were in their `r demo.table %>% filter(Group == "Novice") %>% pull("M Semester") %>% mean() %>% round(., digits = 1)` semester (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Semester") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Semester")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Semester")`). Furthermore, they had an average teaching experience of `r demo.table %>% filter(Group == "Novice") %>% pull("M Internship in teaching units") %>% mean() %>% round(., digits = 1)` teaching units à 45min (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Internship in teaching units") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Internship in teaching units")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Internship in teaching units")`) through the internships during their studies. `r demo.table %>% filter(Group == "Novice") %>% pull("Extracurricular Teaching Experience in percent")`% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision. 
+The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percent")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`) with an average teaching experience of `r exp.table %>% filter(Group == "Novice") %>% pull("M Exp.") %>% mean() %>% round(., digits = 1)` years. On average, the student teachers were in their `r exp.table %>% filter(Group == "Novice") %>% pull("M Semester") %>% mean() %>% round(., digits = 1)` semester (*SD* = `r exp.table %>% filter(Group == "Novice") %>% pull("SD Semester") %>% round(., digits = 1)`; range: `r exp.table %>%  filter(Group == "Novice") %>% pull("Min Semester")`-`r exp.table %>%  filter(Group == "Novice") %>% pull("Max Semester")`). Furthermore, they had an average teaching experience of `r exp.table %>% filter(Group == "Novice") %>% pull("M Internship") %>% mean() %>% round(., digits = 1)` teaching units à 45min (*SD* = `r exp.table %>% filter(Group == "Novice") %>% pull("SD Internship") %>% round(., digits = 1)`; range: `r exp.table %>%  filter(Group == "Novice") %>% pull("Min Internship")`-`r exp.table %>%  filter(Group == "Novice") %>% pull("Max Internship")`) through the internships during their studies. `r exp.table %>% filter(Group == "Novice") %>% pull("Extracurricular Teaching Experience")`% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision. 
 
 The subjects were primarily recruited through personal contacts, social media (Facebook), e-mail distribution lists and advertising in lectures at the University Leipzig. All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University. All participants were informed in detail about the aim and intention of the study prior to testing. Participation in the study was voluntary and only took place after written consent has been given.
 
@@ -364,8 +382,6 @@ quest.table.novice,
 
 ```{r presence_questionnaire_experts, include=TRUE, echo=FALSE, results='asis'}
 
-
-
 ############## EXPERT TABLE #########################
 
 # creating a matrix
@@ -457,30 +473,51 @@ quest.table.expert,
 
 
 ```{r item_analysis_classroom_management, include=TRUE, results='asis'}
-quest.data %>% 
-  dplyr::select(contains("LM")) %>% 
-  as.data.frame() %>% 
-  tab_itemscale(CSS = list(
-    css.firsttablerow.col7 = "'cronbachs alpha';"
-  ))
+# quest.data %>% 
+#   dplyr::select(contains("LM")) %>% 
+#   as.data.frame() %>% 
+#   tab_itemscale(CSS = list(
+#     css.firsttablerow.col7 = "'cronbachs alpha';"
+#   ))
 ```
 
-```{r item_analysis_balance, include=TRUE}
-# quest.data %>% 
-#   dplyr::select(contains("LB")) %>% 
-#   as.data.frame() %>% 
+```{r item_analysis_balance, include=TRUE, results='asis'}
+# quest.data %>%
+#   dplyr::select(contains("LB")) %>%
+#   as.data.frame() %>%
+#   tab_itemscale()
+```
+
+```{r item_analysis_presence, include=TRUE,results='asis'}
+# quest.data %>%
+#   dplyr::select(contains("LP")) %>%
+#   as.data.frame() %>%
+#   tab_itemscale()
+```
+
+```{r item_analysis_behavior, include=TRUE,results='asis'}
+# quest.data %>%
+#   dplyr::select(contains("LV")) %>%
+#   as.data.frame() %>%
 #   tab_itemscale()
 ```
 
 
-
-
-
-
 ## Procedure
 
-In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021, and July 2022.
+In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021 and August 2022.
 
+The project was conducted as a laboratory study in a cross-sectional study design to investigate whether and how teachers' experience has an influence on the perception of and reaction to classroom disruptions.
+
+For the data collection, student teachers and experienced teachers were asked to prepare micro-teaching-unit of 15 minutes. The subjects taught the micro-teaching-unit in front of a fictitious class consisting of three student assistants who simulated typical classroom events during the lesson. A mobile eye-tracker recorded the subject's gaze behavior and audio data of the lesson. All other sounds and voices were recorded by an audio recorder. In addition, the test persons were given a smartwatch to record the number of steps they took and their heart rate. To record facial expressions, gestures and movements, four mobile cameras were installed to record the classroom from all perspectives (!!!see figures). After the micro-teaching-unit, the teacher conducted a letter search in the room. For this, four letters had to be found in order and read aloud. This served as a control condition for the speed of the subjects' perceptual ability.
+of the test persons. After the end of the teaching sequence, the class and the teacher
+After the end of the teaching sequence, the class and the teacher filled out a questionnaire focusing on evidence-based methods of teaching diagnostics (EMU) in order to collect data on self-assessment and assessment by others. 
+
+In the second part of the survey, the investigator conducted a Stimulated-
+Recall Interview (SRI) with the respondents. In this interview, the recorded video of the lesson was watched in its entirety and commented on by the teacher while thinking aloud. Finally, the test persons answered a Situational Judgement Test (SJT, [@gold2015development]) in the form of a questionnaire. Here they had to assess teaching scenarios and evaluate their behavior in response to them. The SJT was used to assess strategic knowledge about classroom management. 
+
+This study is subject to a quasi-experimental study design, as there was no random assignment of the test persons to the experimental conditions. Due to the use of MET technology, the study has a high external validity (Gegenfurtner et al., 2018). The SRI carried out afterwards explicitly investigates the subjects' sense of disturbance and feeling of safety, which speaks for a high content validity of the study. Internal validity can be ensured to the extent that the teaching events that occurred were exactly the same for all subjects, as the learners received precise behavioural instructions. These disturbances followed a script and coding guide in which the actions of the class were precisely described. The sequence of events varied from survey to survey so that disruptions were always random. The scripted behavioural instructions during the teaching sequence characterise this study with a high degree of standardization, especially when compared to events taking place in a real classroom. The study is based on an experimental manual, script and coding guide, which explicitly describes the implementation, evaluation as well as interpretation of the data, thus making it objectively recordable and measurable. As this study takes place within the framework of the dissertation ProVisioNET, the original survey will continue beyond the submission of this scientific work.
+continues. 
 
 
 ## Data analysis

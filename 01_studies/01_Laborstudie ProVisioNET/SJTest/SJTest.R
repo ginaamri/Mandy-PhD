@@ -12,8 +12,13 @@ needs(tidyverse,
 # read in data
 df_sjt <- read_csv2(file = "C:/Users/mk99feta/OneDrive/Dokumente/GitHub/Mandy-PhD/01_studies/01_Laborstudie ProVisioNET/SJTest/data/SJT.csv")
 
-# select relevant columns --> only mean
-df_sjt <- df_sjt %>% select(UI06_05, SJT_AL_gek, SJT_ST_gek, SJT_R_gek, SJT_KF_gek)
+# select relevant columns --> only subject ID and mean
+df_sjt <- df_sjt %>% 
+  select(UI06_05, 
+         SJT_AL_gek, 
+         SJT_ST_gek, 
+         SJT_R_gek, 
+         SJT_KF_gek)
 
 # rename columns
 df_sjt <- rename(df_sjt, c("Group" = "UI06_05",
@@ -58,6 +63,12 @@ mean_plot <-
     axis.title.x = element_text(size = 25))
 
 mean_plot
+
+ggsave(plot = mean_plot,
+       filename = "plots/sjt_plot.pdf",
+       height = 7,
+       width = 9,
+       units = "in")
 
 #################### MEAN, SD, N ############
 

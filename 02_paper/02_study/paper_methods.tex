@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  man,floatsintext]{apa6}
+  man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -177,12 +177,6 @@
 \linenumbers
 \usepackage{csquotes}
 \usepackage[titles]{tocloft}
-\cftpagenumbersoff{figure}
-\renewcommand{\cftfigpresnum}{\itshape\figurename\enspace}
-\renewcommand{\cftfigaftersnum}{.\space}
-\setlength{\cftfigindent}{0pt}
-\setlength{\cftafterloftitleskip}{0pt}
-\settowidth{\cftfignumwidth}{Figure 10.\qquad}
 \cftpagenumbersoff{table}
 \renewcommand{\cfttabpresnum}{\itshape\tablename\enspace}
 \renewcommand{\cfttabaftersnum}{.\space}
@@ -268,16 +262,41 @@ We report how we determined our sample size, all data exclusions (if any), all m
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:demographicstable}Demographic Information and Teaching Experience}
+\caption{\label{tab:demographicstable}Demographic Information}
 
 \tiny{
 
-\begin{tabular}{lllllllllllllllllllll}
+\begin{tabular}{lllllll}
 \toprule
-Group & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Gender female in percent} & \multicolumn{1}{c}{M Age in years} & \multicolumn{1}{c}{SD Age in years} & \multicolumn{1}{c}{Min Age in years} & \multicolumn{1}{c}{Max Age in years} & \multicolumn{1}{c}{M Exp. in years} & \multicolumn{1}{c}{SD Exp. in years} & \multicolumn{1}{c}{Min Exp. in years} & \multicolumn{1}{c}{Max Exp. in years} & \multicolumn{1}{c}{M Semester} & \multicolumn{1}{c}{SD Semester} & \multicolumn{1}{c}{Min Semester} & \multicolumn{1}{c}{Max Semester} & \multicolumn{1}{c}{M Internship in teaching units} & \multicolumn{1}{c}{SD Internship in teaching units} & \multicolumn{1}{c}{Min Internship in teaching units} & \multicolumn{1}{c}{Max Internship in teaching units} & \multicolumn{1}{c}{Extracurricular Teaching Experience in percent} & \multicolumn{1}{c}{Secondary Teaching Activities in percent}\\
+Group & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Gender female in percent} & \multicolumn{1}{c}{M Age in years} & \multicolumn{1}{c}{SD Age in years} & \multicolumn{1}{c}{Min Age in years} & \multicolumn{1}{c}{Max Age in years}\\
 \midrule
-Expert & 7 & 71.40 & 45.10 & 12.00 & 27.00 & 59.00 & 18.10 & 14.10 & 3.00 & 37.00 & NA & NA & NA & NA & NA & NA & NA & NA & NA & 71.00\\
-Novice & 21 & 61.90 & 23.30 & 1.70 & 20.00 & 27.00 & 0.00 & 0.00 & 0.00 & 0.00 & 7.40 & 2.50 & 3.00 & 11.00 & 12.00 & 8.60 & 0.00 & 36.00 & 90.50 & NA\\
+Expert & 7 & 71.40 & 45.10 & 12.00 & 27.00 & 59.00\\
+Novice & 21 & 61.90 & 23.30 & 1.70 & 20.00 & 27.00\\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:demographicstable}Teaching Experience in years, internship experience in teaching units (45min) and extracurricular teaching experience in percent}
+
+\tiny{
+
+\begin{tabular}{llllllllllllllll}
+\toprule
+Group & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{M Exp.} & \multicolumn{1}{c}{SD Exp.} & \multicolumn{1}{c}{Min Exp.} & \multicolumn{1}{c}{Max Exp.} & \multicolumn{1}{c}{M Semester} & \multicolumn{1}{c}{SD Semester} & \multicolumn{1}{c}{Min Semester} & \multicolumn{1}{c}{Max Semester} & \multicolumn{1}{c}{M Internship} & \multicolumn{1}{c}{SD Internship} & \multicolumn{1}{c}{Min Internship} & \multicolumn{1}{c}{Max Internship} & \multicolumn{1}{c}{Extracurricular Teaching Experience} & \multicolumn{1}{c}{Secondary Teaching Activities}\\
+\midrule
+Expert & 7 & 18.10 & 14.10 & 3.00 & 37.00 & NA & NA & NA & NA & NA & NA & NA & NA & NA & 71.00\\
+Novice & 21 & 0.00 & 0.00 & 0.00 & 0.00 & 7.40 & 2.50 & 3.00 & 11.00 & 12.00 & 8.60 & 0.00 & 36.00 & 90.50 & NA\\
 \bottomrule
 \end{tabular}
 
@@ -390,140 +409,22 @@ Natural Behavior & 3.00 & 3.38 & 0.36 & 3.00 & 4.00 & 0.60 & 2.36 & 0.00\\
 
 \end{table}
 
-Component 1
-
-Missings
-
-Mean
-
-SD
-
-Skew
-
-Item Difficulty
-
-Item Discrimination
-
-α if deleted
-
-0.00 \%
-
-3.32
-
-0.72
-
--0.58
-
-0.83
-
-0.18
-
-0.10
-
-0.00 \%
-
-3.32
-
-0.55
-
-0.06
-
-0.83
-
-0.08
-
-0.19
-
-0.00 \%
-
-3.36
-
-0.56
-
--0.07
-
-0.84
-
--0.06
-
-0.26
-
-0.00 \%
-
-3.18
-
-0.67
-
--0.22
-
-0.79
-
-0.25
-
-0.05
-
-0.00 \%
-
-2.32
-
-0.61
-
--0.29
-
-0.77
-
-0.00
-
-0.23
-
-0.00 \%
-
-2.21
-
-0.63
-
-0.77
-
-0.55
-
--0.30
-
-0.41
-
-0.00 \%
-
-2.96
-
-0.58
-
--0.01
-
-0.74
-
-0.33
-
-0.02
-
-0.00 \%
-
-2.96
-
-0.69
-
--0.67
-
-0.74
-
-0.21
-
-0.08
-
-Mean inter-item-correlation=0.028 · Cronbach's α=0.207
-
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
 
-In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021, and July 2022.
+In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021 and August 2022.
+
+The project was conducted as a laboratory study in a cross-sectional study design to investigate whether and how teachers' experience has an influence on the perception of and reaction to classroom disruptions.
+
+The subjects were informed in detail about the procedure and aim of the study before the survey. For the data collection, student teachers and experienced teachers were asked to prepare micro-teaching-unit of 15 minutes. The subjects taught the micro-teaching-unit to a fictitious class consisting of three student assistants who simulated typical classroom events during the lesson. A mobile eye-tracker recorded the teachers' gaze behavior and audio data of the lesson. All other sounds and voices were also recorded using audio recorders. In addition, the test persons were given a smartwatch to record the number of steps they took and their pulse rate. To record facial expressions, gestures and movements, four mobile cameras were installed to record the fictitious classroom from all perspectives (see figures 5-8). After the lesson, the teacher conducted a letter search in the room. For this, four letters had to be found in order and read aloud. This served as a control condition for the speed of the subjects' perceptual ability.
+of the test persons. After the end of the teaching sequence, the class and the teacher
+After the end of the teaching sequence, the class and the teacher filled out a questionnaire focusing on evidence-based methods of teaching diagnostics (EMU) in order to collect data on self-assessment and assessment by others.
+
+In the second part of the survey, the investigator conducted a Stimulated-
+Recall Interview (SRI) with the respondents. In this interview, the recorded video of the lesson was watched in its entirety and commented on by the teacher while thinking aloud. Finally, the test persons answered a Situational Judgement Test (SJT, (Gold \& Holodynski, 2015)) in the form of a questionnaire. Here they had to assess teaching scenarios and evaluate their behavior in response to them. The SJT was used to assess strategic knowledge about classroom management.
+
+This study is subject to a quasi-experimental study design, as there was no random assignment of the test persons to the experimental conditions. Due to the use of MET technology, the study has a high external validity (Gegenfurtner et al., 2018). The SRI carried out afterwards explicitly investigates the subjects' sense of disturbance and feeling of safety, which speaks for a high content validity of the study. Internal validity can be ensured to the extent that the teaching events that occurred were exactly the same for all subjects, as the learners received precise behavioural instructions. These disturbances followed a script and coding guide in which the actions of the class were precisely described. The sequence of events varied from survey to survey so that disruptions were always random. The scripted behavioural instructions during the teaching sequence characterise this study with a high degree of standardization, especially when compared to events taking place in a real classroom. The study is based on an experimental manual, script and coding guide, which explicitly describes the implementation, evaluation as well as interpretation of the data, thus making it objectively recordable and measurable. As this study takes place within the framework of the dissertation ProVisioNET, the original survey will continue beyond the submission of this scientific work.
+continues.
 
 \hypertarget{data-analysis}{%
 \subsection{Data analysis}\label{data-analysis}}
@@ -572,6 +473,9 @@ Garnier, Simon, Ross, Noam, Rudis, Robert, \ldots{} Cédric. (2021a). \emph{{vir
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-viridisLite}{}}%
 Garnier, Simon, Ross, Noam, Rudis, Robert, \ldots{} Cédric. (2021b). \emph{{viridis} - colorblind-friendly color maps for r}. \url{https://doi.org/10.5281/zenodo.4679424}
+
+\leavevmode\vadjust pre{\hypertarget{ref-gold2015development}{}}%
+Gold, B., \& Holodynski, M. (2015). Development and construct validation of a situational judgment test of strategic knowledge of classroom management in elementary schools. \emph{Educational Assessment}, \emph{20}(3), 226--248.
 
 \leavevmode\vadjust pre{\hypertarget{ref-gold2017using}{}}%
 Gold, B., \& Holodynski, M. (2017). Using digital video to measure the professional vision of elementary classroom management: Test validation and methodological challenges. \emph{Computers \& Education}, \emph{107}, 13--30.
@@ -679,9 +583,6 @@ Zhu, H. (2021). \emph{kableExtra: Construct complex table with 'kable' and pipe 
 
 \endgroup
 
-
-\clearpage
-\renewcommand{\listfigurename}{Figure captions}
 
 \clearpage
 \renewcommand{\listtablename}{Table captions}
