@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.18)  18 MAY 2022 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.18)  27 MAY 2022 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -384,91 +384,94 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip74
-)
-\cslhangindent=\skip75
-\csllabelwidth=\skip76
-\cslentryspacingunit=\skip77
-(c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip75
+\LTright=\skip76
+\LTpre=\skip77
+\LTpost=\skip78
+\LTchunksize=\count298
+\LTcapwidth=\dimen183
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count299
+\LT@rows=\count300
+\c@LT@tables=\count301
+\c@LT@chunks=\count302
+\LT@p@ftn=\toks25
+) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen184
+\ar@mcellbox=\box59
+\extrarowheight=\dimen185
+\NC@list=\toks26
+\extratabsurround=\skip79
+\backup@length=\skip80
+\ar@cellbox=\box60
+) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count298
-\calc@Bcount=\count299
-\calc@Adimen=\dimen183
-\calc@Bdimen=\dimen184
-\calc@Askip=\skip78
-\calc@Bskip=\skip79
+\calc@Acount=\count303
+\calc@Bcount=\count304
+\calc@Adimen=\dimen186
+\calc@Bdimen=\dimen187
+\calc@Askip=\skip81
+\calc@Bskip=\skip82
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count300
-\calc@Cskip=\skip80
-) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
+\calc@Ccount=\count305
+\calc@Cskip=\skip83
+) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box61
+\fn@width=\dimen188
+)
+\cslhangindent=\skip84
+\csllabelwidth=\skip85
+\cslentryspacingunit=\skip86
+(c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2022/04/30 3.74 The Babel package
-\babel@savecnt=\count301
-\U@D=\dimen185
+\babel@savecnt=\count306
+\U@D=\dimen189
 \l@unhyphenated=\language3
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count302
+\bbl@dirlevel=\count307
 Package babel Info: You haven't specified a language. I'll use 'nil'
 (babel)             as the main language. Reported on input line 4326.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
 Language: nil 2022/04/30 3.74 Nil language
 \l@nil=\language4
 ))
-\everypar=\toks25
+\everypar=\toks27
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
 Package babel Info: Importing data for english
-(babel)             from babel-en.ini. Reported on input line 100.
+(babel)             from babel-en.ini. Reported on input line 110.
 Package babel Info: Hyphen rules for 'english' set to \l@english
-(babel)             (\language0). Reported on input line 100.
+(babel)             (\language0). Reported on input line 110.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/was/upgreek.sty
 Package: upgreek 2003/02/12 v2.0 (WaS)
 Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
 \symugrf@m=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
-) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip81
-\LTright=\skip82
-\LTpre=\skip83
-\LTpost=\skip84
-\LTchunksize=\count303
-\LTcapwidth=\dimen186
-\LT@head=\box54
-\LT@firsthead=\box55
-\LT@foot=\box56
-\LT@lastfoot=\box57
-\LT@gbox=\box58
-\LT@cols=\count304
-\LT@rows=\count305
-\c@LT@tables=\count306
-\c@LT@chunks=\count307
-\LT@p@ftn=\toks26
 ) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip85
+\multirow@colwidth=\skip87
 \multirow@cntb=\count308
-\multirow@dima=\skip86
-\bigstrutjot=\dimen187
+\multirow@dima=\skip88
+\bigstrutjot=\dimen190
 ) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-(c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen188
-\ar@mcellbox=\box59
-\extrarowheight=\dimen189
-\NC@list=\toks27
-\extratabsurround=\skip87
-\backup@length=\skip88
-\ar@cellbox=\box60
-)
-\TX@col@width=\dimen190
-\TX@old@table=\dimen191
-\TX@old@col=\dimen192
-\TX@target=\dimen193
-\TX@delta=\dimen194
+\TX@col@width=\dimen191
+\TX@old@table=\dimen192
+\TX@old@col=\dimen193
+\TX@target=\dimen194
+\TX@delta=\dimen195
 \TX@cols=\count309
 \TX@ftn=\toks28
 ) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
@@ -486,7 +489,7 @@ Package: expl3 2022-05-04 L3 programming layer (loader)
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count310
-\l__pdf_internal_box=\box61
+\l__pdf_internal_box=\box62
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -496,17 +499,17 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count311
 \output=\toks29
 \linenoprevgraf=\count312
-\linenumbersep=\dimen195
-\linenumberwidth=\dimen196
+\linenumbersep=\dimen196
+\linenumberwidth=\dimen197
 \c@linenumber=\count313
 \c@pagewiselinenumber=\count314
 \c@LN@truepage=\count315
 \c@internallinenumber=\count316
 \c@internallinenumbers=\count317
-\quotelinenumbersep=\dimen197
-\bframerule=\dimen198
-\bframesep=\dimen199
-\bframebox=\box62
+\quotelinenumbersep=\dimen198
+\bframerule=\dimen199
+\bframesep=\dimen256
+\bframebox=\box63
 LaTeX Info: Redefining \\ on input line 3056.
 ) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
@@ -572,24 +575,24 @@ LaTeX Warning: Label `tab:demographicstable' multiply defined.
 )
 \openout1 = `paper_methods.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 207.
-LaTeX Font Info:    ... okay on input line 207.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -645,7 +648,7 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 207.
+Package hyperref Info: Link coloring OFF on input line 217.
 (./paper_methods.out) (./paper_methods.out)
 \@outlinefile=\write5
 \openout5 = `paper_methods.out'.
@@ -653,43 +656,43 @@ Package hyperref Info: Link coloring OFF on input line 207.
 
 Class apa6 Warning: Abstract not defined.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 209.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 219.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 209.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 219.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 209.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 219.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 209.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 219.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 209.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 219.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 209.
+(Font)              <12> on input line 219.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 209.
+(Font)              <8> on input line 219.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 209.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 209.
+(Font)              <6> on input line 219.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 219.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 209.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 219.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 221.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 231.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2]
@@ -698,22 +701,16 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (paper_methods.ttt) [3] [4]
 \openout4 = `paper_methods.fff'.
 
-(paper_methods.fff)
-Underfull \vbox (badness 1406) has occurred while \output is active []
-
-[5] [6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[7] [8]
+(paper_methods.fff) [5] [6] [7] [8] [9] [10]
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
-[9]
+[11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[10]
+[12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[11] [12] AED endfloat: Processing end Figures and Tables (./paper_methods.ttt
+[13] [14] AED endfloat: Processing end Figures and Tables (./paper_methods.ttt
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 12.
 
@@ -721,43 +718,50 @@ Overfull \hbox (430.71025pt too wide) in paragraph at lines 33--50
  [] 
  []
 
-) [13
+[15
 
 
 
-] [14] (./paper_methods.fff
-<./pictures/tobiiglasses2.png, id=262, 732.336pt x 244.2726pt>
+] [16]) [17
+
+] (./paper_methods.fff
+<./pictures/tobiiglasses2.png, id=283, 732.336pt x 244.2726pt>
 File: ./pictures/tobiiglasses2.png Graphic file (type png)
 <use ./pictures/tobiiglasses2.png>
 Package pdftex.def Info: ./pictures/tobiiglasses2.png  used on input line 5.
 (pdftex.def)             Requested size: 469.76619pt x 156.69174pt.
-<./pictures/teachergazepoint.png, id=263, 465.53925pt x 271.0125pt>
-File: ./pictures/teachergazepoint.png Graphic file (type png)
-<use ./pictures/teachergazepoint.png>
-Package pdftex.def Info: ./pictures/teachergazepoint.png  used on input line 15.
-(pdftex.def)             Requested size: 465.5381pt x 271.01183pt.
-) [15
+<./pictures/teachersgaze.pdf, id=284, 845.0471pt x 597.50829pt>
+File: ./pictures/teachersgaze.pdf Graphic file (type pdf)
+<use ./pictures/teachersgaze.pdf>
+Package pdftex.def Info: ./pictures/teachersgaze.pdf  used on input line 15.
+(pdftex.def)             Requested size: 469.75456pt x 332.14981pt.
+<./pictures/sri.pdf, id=285, 845.0471pt x 597.50829pt>
+File: ./pictures/sri.pdf Graphic file (type pdf)
+<use ./pictures/sri.pdf>
+Package pdftex.def Info: ./pictures/sri.pdf  used on input line 25.
+(pdftex.def)             Requested size: 469.75456pt x 332.14981pt.
+) [18
 
- <./pictures/tobiiglasses2.png>] [16 <./pictures/teachergazepoint.PNG>] (./paper_methods.aux)
+ <./pictures/tobiiglasses2.png>] [19 <./pictures/teachersgaze.pdf>] [20 <./pictures/sri.pdf>] (./paper_methods.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper_methods.out' has not changed.
-(rerunfilecheck)             Checksum: 4140DE6CE8FFD04F6A7EF48D070045E6;2586.
+(rerunfilecheck)             Checksum: B9360C247EA595A13FE184986FBB8480;2595.
  ) 
 Here is how much of TeX's memory you used:
- 16348 strings out of 480260
- 270087 string characters out of 5892602
- 584339 words of memory out of 5000000
- 33853 multiletter control sequences out of 15000+600000
+ 16428 strings out of 480260
+ 271550 string characters out of 5892602
+ 584084 words of memory out of 5000000
+ 33920 multiletter control sequences out of 15000+600000
  520721 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,11n,77p,2252b,659s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,11n,77p,2252b,683s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb>
-Output written on paper_methods.pdf (16 pages, 723956 bytes).
+Output written on paper_methods.pdf (20 pages, 7375955 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 294 compressed objects within 3 object streams
- 110 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 508 PDF objects out of 1000 (max. 8388607)
+ 414 compressed objects within 5 object streams
+ 118 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

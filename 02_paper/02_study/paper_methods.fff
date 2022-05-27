@@ -12,9 +12,19 @@
 \ifnextchar[{\eatarg}{}
 
 
-{\centering \includegraphics{./pictures/teachergazepoint}
+{\centering \includegraphics{./pictures/teachersgaze}
 
 }
 
-\caption{Teacher's Gaze Point}\label{fig:teachergazepoint}
+\caption{Teacher's Gaze Point}\label{fig:teachersgaze}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\centering \includegraphics{./pictures/sri}
+
+}
+
+\caption{Subject and experimenter during the Stimulated Recall Interview}\label{fig:sri}
 \end{figure*}
