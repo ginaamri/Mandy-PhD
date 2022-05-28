@@ -255,9 +255,11 @@ The subjects were primarily recruited through personal contacts, social media (F
 
 ## Material
 
-### Eye-Tracking equipment
+Experimental stimuli are freely available in the following online repository: https://github.com/... .
 
-During the unit, teachers wore a binocular Tobii Pro Glasses 2 eye-tracker (https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/). The system consisted of a wearable head unit and a recording unit. As shown in Figure \@ref(fig:tobiiglasses2), the head unit was a measuring device with different sensors. A high-definition scene camera captured a full HD video of the teacher’s field of vision. An integrated microphone recorded the surrounding sounds. Infrared light illuminators supported the eye tracking sensors which recorded the eye orientation to capure the tacher's gaze point as shown in Figure \@ref(fig:teachergazepoint). The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 25 frames per second. The scene camera had a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and a frame dimension of 179 x 159 x 57 mm (width x depth x height). 
+### Eye-Tracking data
+
+During the lesson, teachers wore a binocular Tobii Pro Glasses 2 eye-tracker (https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/). The system consisted of a wearable head unit and a recording unit. As shown in Figure \@ref(fig:tobiiglasses2), the head unit was a measuring device with different sensors. A high-definition scene camera captured a full HD video of the teacher’s field of vision. An integrated microphone recorded the surrounding sounds. Infrared light illuminators supported the eye tracking sensors which recorded the eye orientation to capture the teacher's gaze point as shown in Figure \@ref(fig:teachersgaze). The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 25 frames per second. The scene camera had a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and a frame dimension of 179 x 159 x 57 mm (width x depth x height). 
 
 ```{r tobiiglasses2, include = T, fig.cap = "Tobii Pro Glasses 2; Source: https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/", fig.align = "center", echo = FALSE}
 
@@ -265,21 +267,22 @@ knitr::include_graphics("./pictures/tobiiglasses2.png", dpi = 108)
 
 ```
 
-```{r teachergazepoint, include = T, fig.cap = "Teacher's Gaze Point", fig.align = "center", echo = FALSE}
+```{r teachersgaze, include = T, fig.cap = "Teacher's Gaze Point", fig.align = "center", echo = FALSE}
 
-knitr::include_graphics("./pictures/teachergazepoint.png", dpi = 108)
+knitr::include_graphics("./pictures/teachersgaze.pdf", dpi = 108)
 
 ```
 
-###  Video and Audio recording equipment
+### Behavioral data
 
 The speech, sounds and voices of the participants were recorded with Zoom H3-VR Ambient Recorder (https://zoomcorp.com/en/gb/handheld-recorders/handheld-recorders/h3-vr-360-audio-recorder/) installed in the middle of the lab setting. The Zoom H3-VR recorded with four built-in mics arranged in an Ambisonic array with a bitrate of 4608 kBits/s. 
 
-Movements, facial expressions and gestures of the subjects were recorded by four Go Pro Hero 7 black cameras (https://gopro.com/content/dam/help/hero7-black/manuals/HERO7Black_UM_ENG_REVC.pdf) from different angles. The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 50 frames per second in 16:9 format with a linear field of view. 
+Movements, facial expressions and gestures of the subjects were recorded by four Go Pro Hero 7 black cameras (https://gopro.com/content/dam/help/hero7-black/manuals/HERO7Black_UM_ENG_REVC.pdf) from different angles.  The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 50 frames per second in 16:9 format with a linear field of view. 
 
-### Questionnaire
+### Questionnaire data
 
-After each micro-teaching-unit, the students answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and scales on the teacher's presence behavior. In addition, participants were asked to give a self-assessment on  classroom management by completing the questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree). 
+After each micro-teaching-unit, the three actors answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and self developed scales on the teacher's presence behavior derived from the research literature. In addition, subjects were asked to give a self-assessment on  classroom management by completing the same questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree).  
+
 
 ```{r presence_questionnaire_novices, include=TRUE, echo=FALSE, results='asis'}
 # load data files
@@ -471,7 +474,6 @@ quest.table.expert,
 
 ```
 
-
 ```{r item_analysis_classroom_management, include=TRUE, results='asis'}
 # quest.data %>% 
 #   dplyr::select(contains("LM")) %>% 
@@ -503,18 +505,62 @@ quest.table.expert,
 ```
 
 
-## Procedure
+### Verbal data
 
-In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021 and August 2022.
+In addition to the eye-tracking, questionnaire and behavioral data, verbal data was also collected in the form of a Stimulated Recall Interview.  
+
+\@ref(fig:sri)
+
+```{r sri, include = T, fig.cap = "Subject and experimenter during the Stimulated Recall Interview", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/sri.pdf", dpi = 108)
+
+```
+
+
+
+## Procedure
 
 The project was conducted as a laboratory study in a cross-sectional study design to investigate whether and how teachers' experience has an influence on the perception of and reaction to classroom disruptions.
 
-For the data collection, student teachers and experienced teachers were asked to prepare micro-teaching-unit of 15 minutes. The subjects taught the micro-teaching-unit in front of a fictitious class consisting of three student assistants who simulated typical classroom events during the lesson. A mobile eye-tracker recorded the subject's gaze behavior and audio data of the lesson. All other sounds and voices were recorded by an audio recorder. In addition, the test persons were given a smartwatch to record the number of steps they took and their heart rate. To record facial expressions, gestures and movements, four mobile cameras were installed to record the classroom from all perspectives (!!!see figures). After the micro-teaching-unit, the teacher conducted a letter search in the room. For this, four letters had to be found in order and read aloud. This served as a control condition for the speed of the subjects' perceptual ability.
-of the test persons. After the end of the teaching sequence, the class and the teacher
-After the end of the teaching sequence, the class and the teacher filled out a questionnaire focusing on evidence-based methods of teaching diagnostics (EMU) in order to collect data on self-assessment and assessment by others. 
+In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021 and ... 2022.
 
-In the second part of the survey, the investigator conducted a Stimulated-
-Recall Interview (SRI) with the respondents. In this interview, the recorded video of the lesson was watched in its entirety and commented on by the teacher while thinking aloud. Finally, the test persons answered a Situational Judgement Test (SJT, [@gold2015development]) in the form of a questionnaire. Here they had to assess teaching scenarios and evaluate their behavior in response to them. The SJT was used to assess strategic knowledge about classroom management. 
+Before the data collection, each subject received a personal digital meeting with the experimenter to go over the study procedure and to arrange a date for the data collection. During the digital meeting, the subjects were asked to prepare a 15-minute lesson in a subject and grade of their choice for the data collection.
+
+On the day of a data collection, the first step was to set up the study room at the University of Leipzig. For this, all the appropriate technical equipment was charged and installed in the room (see set up plan [REFERENZ EINFÜGEN]). Next, all four cameras and the audio recorder were synced via Timecode System. 
+
+After the subject arrived, a smart watch was put on to measure the heart rate during the session and to get a pretest time at least 15min before the session started. In addition to the experimenter and the subject, three student assistants from the working group always took part in the data collection, as they represented the class.
+
+After the welcome, the subject was again briefed about the study. It was explicitly pointed out that the student assistants would act as the class and simulate typical class events during the lesson. The subject was asked in advance to behave as naturally as possible during the entire time. Next, the subjects' written informed consent was obtained and contact details were collected in order to inform all persons participating in the study if a covid infection should occur.
+
+After the introduction, the eye-tracking glasses were adjusted for the subject by inserting contact lenses if necessary and changing the nose pad. To start the eye tracking glasses, the Tobii Glasses must be fitted onto the subject's head via an one-point-calibration. In the calibration process the subject was asked to look at a Calibration Card held in-front of the subject for a few seconds. The experimenter started the recording from Tobii Glasses Controller Software running on a computer.
+
+After starting the eye tracking recording, all other technical devices were also switched on: The four cameras and the audio recorder were controlled via iPad using the BLINK Hup app and could be started simultaneously by synchronization. The ZED camera was started manually on another laptop. 
+
+Before the 15-minute lesson, there was a short 10-minute warm-up phase. The phase was divided into two parts and served on the one hand to get the subjects used to the eye-tracking glasses and on the other hand to get used to their class. In the first phase of the warm-up, the game "name juggling" was played using two balls. In the game, the subject and the three actors threw two balls at each other and, depending on the color of the ball, called either their own name or that of the target person. After the name juggling, the subjects were supposed to start a conversation. For this, the subject thought of a question for each student and was also asked a question of each student. The content could be anything that interested the participants. 
+
+After the warm up phase, the experimenter ensured a manual synchronization of the technique by an acoustic signal in which she clapped her hands loudly twice standing in the middle of the room. After this, another nine-point calibration followed outside the study room in a neighboring room. Before the subject left the room for calibration, the time on the smartwatch was noted, as well as the steps recorded until that point. The subject had to stand at a marked point and look at a board three meters away with nine april tags. The subject was asked to read the nine points aloud in order at a normal speaking speed. This procedure was important to validate the one-point calibration on the one hand and on the other hand to give the subject the feeling of a lesson start, because after this calibration the subject came into the study room to start the 15-minute lesson. 
+
+For the micro-teaching lesson, student teachers and experienced teachers were asked to prepare an introduction of 15 minutes which they taught in front of the fictitious class consisting of three student assistants. The actors simulated the nine classroom events during the lesson, derived by research literature. The order of the disruptions as well as the students performing them were fully balanced using Latin Square. The disruptions were only visible for the class on a screen.
+
+
+verbal disruption         | agitation               | lack of eagerness to learn
+:---------------:         | :---------------:       | :---------------:
+chatting with neighbor    | drumming hands          | putting head on table
+whispering with neighbor  | clicking pen            | looking at phone
+heckling                  | snipping with fingers   | drawing on a sheet of paper
+
+During the lesson, a mobile eye-tracker recorded the subject's gaze behavior and audio data of the lesson. All other sounds and voices were recorded by an audio recorder. To record facial expressions, gestures and movements, four mobile cameras were installed to record the classroom from all perspectives (!!!see figures). 
+
+After the lesson, the time was again noted from the smartwatch as well as the subject's steps. The nine-point calibration was also performed again in the neighboring room. This time, however, the subject was asked to wait outside the room until he or she was called in, because four letters from A to D were placed in the study room. The subject was asked to stand facing the board at a marked point in the room and, when given an acoustic signal, to turn around and search the letters and read them aloud in order. This served as a control condition for the speed of the subjects' perceptual ability as no expertise is required for searching letters.
+
+After the letter search, all technical devices were turn 
+
+the class and the teacher filled out a questionnaire focusing on evidence-based methods of teaching diagnostics (EMU) in order to collect data on self-assessment and assessment by others. 
+
+In the second part of the study, the experimenter conducted a Stimulated-Recall Interview (SRI) with the subject. In this interview, the recorded video of the lesson was watched and commented on by the subject while thinking aloud. 
+
+Finally, the test persons answered a Situational Judgement Test (SJT, [@gold2015development]) in the form of a questionnaire. Here they had to assess teaching scenarios and evaluate their behavior in response to them. The SJT was used to assess strategic knowledge about classroom management. 
 
 This study is subject to a quasi-experimental study design, as there was no random assignment of the test persons to the experimental conditions. Due to the use of MET technology, the study has a high external validity (Gegenfurtner et al., 2018). The SRI carried out afterwards explicitly investigates the subjects' sense of disturbance and feeling of safety, which speaks for a high content validity of the study. Internal validity can be ensured to the extent that the teaching events that occurred were exactly the same for all subjects, as the learners received precise behavioural instructions. These disturbances followed a script and coding guide in which the actions of the class were precisely described. The sequence of events varied from survey to survey so that disruptions were always random. The scripted behavioural instructions during the teaching sequence characterise this study with a high degree of standardization, especially when compared to events taking place in a real classroom. The study is based on an experimental manual, script and coding guide, which explicitly describes the implementation, evaluation as well as interpretation of the data, thus making it objectively recordable and measurable. As this study takes place within the framework of the dissertation ProVisioNET, the original survey will continue beyond the submission of this scientific work.
 continues. 

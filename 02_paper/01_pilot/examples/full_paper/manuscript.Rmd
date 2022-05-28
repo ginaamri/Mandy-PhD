@@ -25,12 +25,12 @@ affiliation:
 
 
 abstract: |
-  Language is learned in complex social settings where listeners must reconstruct speakers’ intended meanings from context. To navigate this challenge, children can use pragmatic reasoning to learn the meaning of unfamiliar words. One important challenge for pragmatic reasoning is that it requires integrating multiple information sources. Here we study this integration process. We isolate two sources of pragmatic information and -- using a probabilistic model of conversational reasoning -- formalize how they should be combined and how this process might develop. We use this model to generate quantitative predictions, which we test against new behavioral data from three- to five-year-old children (N = 243) and adults (N = 694). Results show close numerical alignment between model predictions and data. Furthermore, the model provided a better explanation of the data compared to simpler alternative models assuming that participnats selectively ignore one information source. This work integrates distinct sets of findings regarding early language and suggests that pragmatic reasoning models can provide a quantitative framework for understanding developmental changes in language learning.  
+  Language is learned in complex social settings where listeners must reconstruct speakers’ intended meanings from context. To navigate this challenge, children can use pragmatic reasoning to learn the meaning of unfamiliar words. One important challenge for pragmatic reasoning is that it requires integrating multiple information sources. Here we study this integration process. We isolate two sources of pragmatic information and -- using a probabilistic model of conversational reasoning -- formalize how they should be combined and how this process might develop. We use this model to generate quantitative predictions, which we test againsbibliography      : ["library.bib"]
+t new behavioral data from three- to five-year-old children (N = 243) and adults (N = 694). Results show close numerical alignment between model predictions and data. Furthermore, the model provided a better explanation of the data compared to simpler alternative models assuming that participnats selectively ignore one information source. This work integrates distinct sets of findings regarding early language and suggests that pragmatic reasoning models can provide a quantitative framework for understanding developmental changes in language learning.  
   
 keywords          : "language acquisition, social cognition, pragmatics, Bayesian modeling, common ground"
 wordcount         : "7708"
 
-bibliography      : ["library.bib"]
 
 figsintext        : yes
 figurelist        : no
