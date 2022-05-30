@@ -106,24 +106,30 @@ Natural Behavior & 3.00 & 3.38 & 0.36 & 3.00 & 4.00 & 0.60 & 2.36 & 0.00\\
 \end{center}
 
 \end{table*}
-\efloatseparator
- 
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:disruption_categories}Categories of Disruptions (Lohmann, 2015)}
+
+\tiny{
+
+\begin{tabular}{lllll}
 \toprule
-\begin{minipage}[b]{\linewidth}\centering
-verbal disruption
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-agitation
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-lack of eagerness to learn
-\end{minipage} \\
+Verbal.Disruption & \multicolumn{1}{c}{Agitation} & \multicolumn{1}{c}{Lack.of.eagerness.to.learn} & \multicolumn{1}{c}{X.looking.at.phone.} & \multicolumn{1}{c}{X.drawing.on.a.sheet.of.paper.}\\
 \midrule
-\endhead
-chatting with neighbor & drumming hands & putting head on table \\
-whispering with neighbor & clicking pen & looking at phone \\
-heckling & snipping with fingers & drawing on a sheet of paper \\
+chatting with neighbor & drumming hands & putting head on table & looking at phone & drawing on a sheet of paper\\
+whispering with neighbor & clicking pen & putting head on table & looking at phone & drawing on a sheet of paper\\
+heckling & snipping with fingers & putting head on table & looking at phone & drawing on a sheet of paper\\
 \bottomrule
-\end{longtable}
+\end{tabular}
+
+}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}

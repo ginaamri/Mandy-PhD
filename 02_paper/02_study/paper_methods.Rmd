@@ -543,12 +543,21 @@ After the warm up phase, the experimenter ensured a manual synchronization of th
 
 For the micro-teaching lesson, student teachers and experienced teachers were asked to prepare an introduction of 15 minutes which they taught in front of the fictitious class consisting of three student assistants. The actors simulated the nine classroom events during the lesson, derived by research literature. The order of the disruptions as well as the students performing them were fully balanced using Latin Square. The disruptions were only visible for the class on a screen.
 
+```{r disruption_categories, include=TRUE, echo=FALSE, results='asis'}
+df_disrup_table <- data.frame(`Verbal Disruption` = c("chatting with neighbor", "whispering with neighbor", "heckling"),
+                              Agitation = c("drumming hands", "clicking pen", "snipping with fingers"),
+                              `Lack of eagerness to learn` = c("putting head on table", "looking at phone", "drawing on a sheet of paper")
+                              )
 
-verbal disruption         | agitation               | lack of eagerness to learn
-:---------------:         | :---------------:       | :---------------:
-chatting with neighbor    | drumming hands          | putting head on table
-whispering with neighbor  | clicking pen            | looking at phone
-heckling                  | snipping with fingers   | drawing on a sheet of paper
+papaja::apa_table(x = df_disrup_table,
+                  caption = "Categories of Disruptions (Lohmann, 2015)",
+                  escape = TRUE,
+                  placement = "h",
+                  font_size = "tiny")
+
+```
+
+
 
 During the lesson, a mobile eye-tracker recorded the subject's gaze behavior and audio data of the lesson. All other sounds and voices were recorded by an audio recorder. To record facial expressions, gestures and movements, four mobile cameras were installed to record the classroom from all perspectives (!!!see figures). 
 

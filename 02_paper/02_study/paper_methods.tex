@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  man]{apa6}
+  man,floatsintext]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -43,16 +43,6 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -176,17 +166,17 @@
   }
 {}{\PatchFailed}
 \keywords{Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking\newline\indent Word count: XXX}
-\DeclareDelayedFloatFlavor{ThreePartTable}{table}
-\DeclareDelayedFloatFlavor{lltable}{table}
-\DeclareDelayedFloatFlavor*{longtable}{table}
-\makeatletter
-\renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
-\makeatother
 \usepackage{lineno}
 
 \linenumbers
 \usepackage{csquotes}
 \usepackage[titles]{tocloft}
+\cftpagenumbersoff{figure}
+\renewcommand{\cftfigpresnum}{\itshape\figurename\enspace}
+\renewcommand{\cftfigaftersnum}{.\space}
+\setlength{\cftfigindent}{0pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\settowidth{\cftfignumwidth}{Figure 10.\qquad}
 \cftpagenumbersoff{table}
 \renewcommand{\cfttabpresnum}{\itshape\tablename\enspace}
 \renewcommand{\cfttabaftersnum}{.\space}
@@ -460,34 +450,41 @@ Before the 15-minute lesson, there was a short 10-minute warm-up phase. The phas
 
 After the warm up phase, the experimenter ensured a manual synchronization of the technique by an acoustic signal in which she clapped her hands loudly twice standing in the middle of the room. After this, another nine-point calibration followed outside the study room in a neighboring room. Before the subject left the room for calibration, the time on the smartwatch was noted, as well as the steps recorded until that point. The subject had to stand at a marked point and look at a board three meters away with nine april tags. The subject was asked to read the nine points aloud in order at a normal speaking speed. This procedure was important to validate the one-point calibration on the one hand and on the other hand to give the subject the feeling of a lesson start, because after this calibration the subject came into the study room to start the 15-minute lesson.
 
-For the micro-teaching lesson, student teachers and experienced teachers were asked to prepare an introduction of 15 minutes which they taught in front of the fictitious class consisting of three student assistants. The actors simulated the nine classroom events during the lesson, derived by research literature. The order of the disruptions as well as the students performing them were fully balanced using Latin Square.
+For the micro-teaching lesson, student teachers and experienced teachers were asked to prepare an introduction of 15 minutes which they taught in front of the fictitious class consisting of three student assistants. The actors simulated the nine classroom events during the lesson, derived by research literature. The order of the disruptions as well as the students performing them were fully balanced using Latin Square. The disruptions were only visible for the class on a screen.
 
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\begin{table}[h]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:disruption_categories}Categories of Disruptions (Lohmann, 2015)}
+
+\tiny{
+
+\begin{tabular}{lll}
 \toprule
-\begin{minipage}[b]{\linewidth}\centering
-verbal disruption
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-agitation
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-lack of eagerness to learn
-\end{minipage} \\
+Verbal.Disruption & \multicolumn{1}{c}{Agitation} & \multicolumn{1}{c}{Lack.of.eagerness.to.learn}\\
 \midrule
-\endhead
-chatting with neighbor & drumming hands & putting head on table \\
-whispering with neighbor & clicking pen & looking at phone \\
-heckling & snipping with fingers & drawing on a sheet of paper \\
+chatting with neighbor & drumming hands & putting head on table\\
+whispering with neighbor & clicking pen & looking at phone\\
+heckling & snipping with fingers & drawing on a sheet of paper\\
 \bottomrule
-\end{longtable}
+\end{tabular}
 
-The experimenter used time cards to indicate the time remaining (yellow = one minute remaining; red = time expired).
+}
 
-A mobile eye-tracker recorded the subject's gaze behavior and audio data of the lesson. All other sounds and voices were recorded by an audio recorder. To record facial expressions, gestures and movements, four mobile cameras were installed to record the classroom from all perspectives (!!!see figures). After the micro-teaching-unit, the teacher conducted a letter search in the room. For this, four letters had to be found in order and read aloud. This served as a control condition for the speed of the subjects' perceptual ability.
+\end{threeparttable}
+\end{center}
 
-of the test persons. After the end of the teaching sequence, the class and the teacher
-After the end of the teaching sequence, the class and the teacher filled out a questionnaire focusing on evidence-based methods of teaching diagnostics (EMU) in order to collect data on self-assessment and assessment by others.
+\end{table}
+
+During the lesson, a mobile eye-tracker recorded the subject's gaze behavior and audio data of the lesson. All other sounds and voices were recorded by an audio recorder. To record facial expressions, gestures and movements, four mobile cameras were installed to record the classroom from all perspectives (!!!see figures).
+
+After the lesson, the time was again noted from the smartwatch as well as the subject's steps. The nine-point calibration was also performed again in the neighboring room. This time, however, the subject was asked to wait outside the room until he or she was called in, because four letters from A to D were placed in the study room. The subject was asked to stand facing the board at a marked point in the room and, when given an acoustic signal, to turn around and search the letters and read them aloud in order. This served as a control condition for the speed of the subjects' perceptual ability as no expertise is required for searching letters.
+
+After the letter search, all technical devices were turn
+
+the class and the teacher filled out a questionnaire focusing on evidence-based methods of teaching diagnostics (EMU) in order to collect data on self-assessment and assessment by others.
 
 In the second part of the study, the experimenter conducted a Stimulated-Recall Interview (SRI) with the subject. In this interview, the recorded video of the lesson was watched and commented on by the subject while thinking aloud.
 
@@ -501,7 +498,7 @@ continues.
 
 We investigated whether experts and novice teachers differed
 
-All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.4.1; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{kableExtra} (Version 1.3.4; Zhu, 2021), \emph{knitr} (Version 1.38; Xie, 2015), \emph{ltm} (Version 1.2.0; Rizopoulos, 2006), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{MASS} (Version 7.3.55; Venables \& Ripley, 2002), \emph{moments} (Version 0.14; Komsta \& Novomestky, 2015), \emph{msm} (Version 1.6.9; Jackson, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9999; Aust \& Barth, 2020), \emph{polycor} (Version 0.8.1; Fox, 2022), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.2; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.4.0; Wickham \& Bryan, 2019), \emph{rlang} (Version 1.0.2; Henry \& Wickham, 2022), \emph{sjPlot} (Version 2.8.10; Lüdecke, 2021), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b), and \emph{xtable} (Version 1.8.4; Dahl, Scott, Roosen, Magnusson, \& Swinton, 2019) and IBM SPSS 28.
+All reported data analyses were conducted with the R (Version 4.1.3; R Core Team, 2021) and the R-packages \emph{ARTofR} (Version 0.4.1; Zhang, 2021), \emph{cowplot} (Version 1.1.1; Wilke, 2020), \emph{dplyr} (Version 1.0.8; Wickham, François, Henry, \& Müller, 2022), \emph{forcats} (Version 0.5.1; Wickham, 2021), \emph{ggmosaic} (Version 0.3.3; Jeppson, Hofmann, \& Cook, 2021), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{ggrepel} (Version 0.9.1; Slowikowski, 2021), \emph{ggthemes} (Version 4.2.4; Arnold, 2021), \emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{haven} (Version 2.4.3; Wickham \& Miller, 2021), \emph{kableExtra} (Version 1.3.4; Zhu, 2021), \emph{knitr} (Version 1.38; Xie, 2015), \emph{lme4} (Version 1.1.29; Bates, Mächler, Bolker, \& Walker, 2015), \emph{ltm} (Version 1.2.0; Rizopoulos, 2006), \emph{lubridate} (Version 1.8.0; Grolemund \& Wickham, 2011), \emph{MASS} (Version 7.3.55; Venables \& Ripley, 2002), \emph{Matrix} (Version 1.4.0; Bates \& Maechler, 2021), \emph{moments} (Version 0.14; Komsta \& Novomestky, 2015), \emph{msm} (Version 1.6.9; Jackson, 2011), \emph{needs} (Version 0.0.3; Katz, 2016), \emph{papaja} (Version 0.1.0.9999; Aust \& Barth, 2020), \emph{polycor} (Version 0.8.1; Fox, 2022), \emph{purrr} (Version 0.3.4; Henry \& Wickham, 2020), \emph{readr} (Version 2.1.2; Wickham, Hester, \& Bryan, 2021), \emph{readxl} (Version 1.4.0; Wickham \& Bryan, 2019), \emph{rgeos} (Version 0.5.9; Bivand \& Rundel, 2021), \emph{rlang} (Version 1.0.2; Henry \& Wickham, 2022), \emph{rnaturalearth} (Version 0.1.0; South, 2017a, 2017b), \emph{rnaturalearthdata} (Version 0.1.0; South, 2017b), \emph{sf} (Version 1.0.7; E. Pebesma, 2018), \emph{sjlabelled} (Version 1.2.0; Lüdecke, 2022), \emph{sjPlot} (Version 2.8.10; Lüdecke, 2021), \emph{sp} (Version 1.4.7; E. J. Pebesma \& Bivand, 2005), \emph{stringr} (Version 1.4.0; Wickham, 2019), \emph{tibble} (Version 3.1.6; Müller \& Wickham, 2021), \emph{tidyr} (Version 1.2.0; Wickham \& Girlich, 2022), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), \emph{tinylabels} (Version 0.2.3; Barth, 2022), \emph{viridis} (Version 0.6.2; Garnier et al., 2021a, 2021b), \emph{viridisLite} (Version 0.4.0; Garnier et al., 2021b), and \emph{xtable} (Version 1.8.4; Dahl, Scott, Roosen, Magnusson, \& Swinton, 2019) and IBM SPSS 28.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -520,6 +517,9 @@ All reported data analyses were conducted with the R (Version 4.1.3; R Core Team
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-R-ggthemes}{}}%
+Arnold, J. B. (2021). \emph{Ggthemes: Extra themes, scales and geoms for 'ggplot2'}. Retrieved from \url{https://CRAN.R-project.org/package=ggthemes}
+
 \leavevmode\vadjust pre{\hypertarget{ref-R-gridExtra}{}}%
 Auguie, B. (2017). \emph{gridExtra: Miscellaneous functions for "grid" graphics}. Retrieved from \url{https://CRAN.R-project.org/package=gridExtra}
 
@@ -528,6 +528,15 @@ Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Prepare} reproducible {APA} jour
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-tinylabels}{}}%
 Barth, M. (2022). \emph{{tinylabels}: Lightweight variable labels}. Retrieved from \url{https://cran.r-project.org/package=tinylabels}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-lme4}{}}%
+Bates, D., Mächler, M., Bolker, B., \& Walker, S. (2015). Fitting linear mixed-effects models using {lme4}. \emph{Journal of Statistical Software}, \emph{67}(1), 1--48. \url{https://doi.org/10.18637/jss.v067.i01}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-Matrix}{}}%
+Bates, D., \& Maechler, M. (2021). \emph{Matrix: Sparse and dense matrix classes and methods}. Retrieved from \url{https://CRAN.R-project.org/package=Matrix}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-rgeos}{}}%
+Bivand, R., \& Rundel, C. (2021). \emph{Rgeos: Interface to geometry engine - open source ('GEOS')}. Retrieved from \url{https://CRAN.R-project.org/package=rgeos}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-xtable}{}}%
 Dahl, D. B., Scott, D., Roosen, C., Magnusson, A., \& Swinton, J. (2019). \emph{Xtable: Export tables to LaTeX or HTML}. Retrieved from \url{https://CRAN.R-project.org/package=xtable}
@@ -571,6 +580,9 @@ Henry, L., \& Wickham, H. (2022). \emph{Rlang: Functions for base types and core
 \leavevmode\vadjust pre{\hypertarget{ref-R-msm}{}}%
 Jackson, C. H. (2011). Multi-state models for panel data: The {msm} package for {R}. \emph{Journal of Statistical Software}, \emph{38}(8), 1--29. Retrieved from \url{https://www.jstatsoft.org/v38/i08/}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-ggmosaic}{}}%
+Jeppson, H., Hofmann, H., \& Cook, D. (2021). \emph{Ggmosaic: Mosaic plots in the 'ggplot2' framework}. Retrieved from \url{https://CRAN.R-project.org/package=ggmosaic}
+
 \leavevmode\vadjust pre{\hypertarget{ref-R-needs}{}}%
 Katz, J. (2016). \emph{Needs: Attaches and installs packages}. Retrieved from \url{https://CRAN.R-project.org/package=needs}
 
@@ -586,11 +598,20 @@ Lachner, A., Jarodzka, H., \& Nückles, M. (2016). What makes an expert teacher?
 \leavevmode\vadjust pre{\hypertarget{ref-R-sjPlot}{}}%
 Lüdecke, D. (2021). \emph{sjPlot: Data visualization for statistics in social science}. Retrieved from \url{https://CRAN.R-project.org/package=sjPlot}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-sjlabelled}{}}%
+Lüdecke, D. (2022). \emph{Sjlabelled: Labelled data utility functions (version 1.2.0)}. \url{https://doi.org/10.5281/zenodo.1249215}
+
 \leavevmode\vadjust pre{\hypertarget{ref-R-tibble}{}}%
 Müller, K., \& Wickham, H. (2021). \emph{Tibble: Simple data frames}. Retrieved from \url{https://CRAN.R-project.org/package=tibble}
 
 \leavevmode\vadjust pre{\hypertarget{ref-palmer2005identifying}{}}%
 Palmer, D. J., Stough, L. M., Burdenski, T. K., Jr, \& Gonzales, M. (2005). Identifying teacher expertise: An examination of researchers' decision making. \emph{Educational Psychologist}, \emph{40}(1), 13--25.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-sf}{}}%
+Pebesma, E. (2018). {Simple Features for R: Standardized Support for Spatial Vector Data}. \emph{{The R Journal}}, \emph{10}(1), 439--446. \url{https://doi.org/10.32614/RJ-2018-009}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-sp}{}}%
+Pebesma, E. J., \& Bivand, R. S. (2005). Classes and methods for spatial data in {R}. \emph{R News}, \emph{5}(2), 9--13. Retrieved from \url{https://CRAN.R-project.org/doc/Rnews/}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-base}{}}%
 R Core Team. (2021). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
@@ -603,6 +624,15 @@ Seidel, T., \& Stürmer, K. (2014). Modeling and measuring the structure of prof
 
 \leavevmode\vadjust pre{\hypertarget{ref-sherin2007development}{}}%
 Sherin, M. (2007). \emph{The development of teachers' professional vision in video clubs. Video research in the learning sciences. R. Goldman, r. Pea, b. Barron and SJ derry}. Mahwah, NJ, Lawrence Erlbaum.
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-ggrepel}{}}%
+Slowikowski, K. (2021). \emph{Ggrepel: Automatically position non-overlapping text labels with 'ggplot2'}. Retrieved from \url{https://CRAN.R-project.org/package=ggrepel}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-rnaturalearth}{}}%
+South, A. (2017a). \emph{Rnaturalearth: World map data from natural earth}. Retrieved from \url{https://CRAN.R-project.org/package=rnaturalearth}
+
+\leavevmode\vadjust pre{\hypertarget{ref-R-rnaturalearthdata}{}}%
+South, A. (2017b). \emph{Rnaturalearthdata: World vector map data from natural earth used in 'rnaturalearth'}. Retrieved from \url{https://CRAN.R-project.org/package=rnaturalearthdata}
 
 \leavevmode\vadjust pre{\hypertarget{ref-van2014first}{}}%
 Van den Bogert, N., Bruggen, J. van, Kostons, D., \& Jochems, W. (2014). First steps into understanding teachers' visual perception of classroom events. \emph{Teaching and Teacher Education}, \emph{37}, 208--216.
@@ -634,6 +664,9 @@ Wickham, H., \& Girlich, M. (2022). \emph{Tidyr: Tidy messy data}. Retrieved fro
 \leavevmode\vadjust pre{\hypertarget{ref-R-readr}{}}%
 Wickham, H., Hester, J., \& Bryan, J. (2021). \emph{Readr: Read rectangular text data}. Retrieved from \url{https://CRAN.R-project.org/package=readr}
 
+\leavevmode\vadjust pre{\hypertarget{ref-R-haven}{}}%
+Wickham, H., \& Miller, E. (2021). \emph{Haven: Import and export 'SPSS', 'stata' and 'SAS' files}. Retrieved from \url{https://CRAN.R-project.org/package=haven}
+
 \leavevmode\vadjust pre{\hypertarget{ref-R-cowplot}{}}%
 Wilke, C. O. (2020). \emph{Cowplot: Streamlined plot theme and plot annotations for 'ggplot2'}. Retrieved from \url{https://CRAN.R-project.org/package=cowplot}
 
@@ -653,6 +686,9 @@ Zhu, H. (2021). \emph{kableExtra: Construct complex table with 'kable' and pipe 
 
 \endgroup
 
+
+\clearpage
+\renewcommand{\listfigurename}{Figure captions}
 
 \clearpage
 \renewcommand{\listtablename}{Table captions}
