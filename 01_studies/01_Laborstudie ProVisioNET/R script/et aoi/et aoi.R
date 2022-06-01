@@ -36,18 +36,15 @@ for (i in file_names) {
 }
 
 # Bind every tibble that contains "interval_complete" to a new tiblle
-
 df_aoi <- 
   mget(ls(pattern = "interval_complete")) %>%
   bind_rows()
 
 # Remove temporary data for a cleaner workspace
-
 rm(list = ls(pattern = "^tib_ProVisio"))
 rm(work_data)
 rm(file_names)
 rm(i)
-
 
 # filter relevant rows
 df_aoi <- df_aoi %>% filter (TOI == "Chatting_with_neighbour"|
@@ -92,6 +89,17 @@ df_aoi$Time_to_first_fixation_seconds.Disruptive_Person <- round(df_aoi$Time_to_
                                                     digits = 2)
 
 ########################### TIME TO FIRST FIXATION ON DISRUPTIVE PERSON ######################
+
+# t-test for expertise differences
+t.test(x = df_aoi$Time_to_first_fixation.Disruptive_Person[df_aoi$Group == "Expert"],
+       y = df_aoi$Time_to_first_fixation.Disruptive_Person[df_aoi$Group == "Novice"])
+
+
+# effect size for group differenes
+d <- CohenD(x = df_aoi$Time_to_first_fixation.Disruptive_Person[df_aoi$Group == "Novice"],
+            y = df_aoi$Time_to_first_fixation.Disruptive_Person[df_aoi$Group == "Expert"],
+            na.rm = TRUE
+            )
 
 # plotting time to first fixation for groups
 fix_group_plot <- 
@@ -180,6 +188,29 @@ fix_plot_sum
 
 ########################### TOTAL DURATION OF FIXATIONS IN AOIS ######################
 
+df_aoi_dur <-
+  df_aoi %>% 
+  mutate(
+    Total_duration_of_fixations = sum(c_across(starts_with("Total_duration")
+                                                      )
+                                               ),
+                                      na.rm = TRUE
+                                      )
+    )
+
+# t-test für Gruppenunterschiede 
+t.test(x = df_aoi_totaldur$Total_Durations_Of_Fixations[Total_Durations_Of_Fixations$Group == "Expert"],
+       y = df_aoi_totaldur$Total_Durations_Of_Fixations[Total_Durations_Of_Fixations$Group == "Novice"])
+
+
+# Effektstärke berechnen für Gruppenunterschiede
+d <- CohenD(x = df_aoi$Total_duration_of_fixations[df_aoi$Group == "Novice"],
+            y = df_aoi$Total_duration_of_fixations[df_aoi$Group == "Expert"],
+            na.rm = TRUE
+)
+
+
+
 # selecting relevant columns
 df_aoi_totaldur <- df_aoi %>% 
   select(Group,
@@ -217,6 +248,7 @@ df_aoi_totaldur <- df_aoi_totaldur %>%
                                                Total_duration_of_fixations.Nametag_Anna = 'NametagA',
                                                Total_duration_of_fixations.Nametag_Bianca = 'NametagB',
                                                `Total_duration_of_fixations.Nametag_Carl(a)` = 'NametagC'))
+
          
 # plotting total duration of fixations for groups
 totaldur_group_plot <- 
@@ -244,8 +276,8 @@ totaldur_group_plot
 # plotting total duration of fixations for all disruptions
 totaldur_plot <-
   df_aoi_totaldur %>%
-  ggplot(data = df_aoi_totaldur,
-         mapping = aes(x = Group,
+  filter(Total_Durations_Of_Fixations == "Disruptive_Person") %>% 
+  ggplot(mapping = aes(x = Group,
                        y = Seconds)) +
   # geom_violin(mapping = aes(fill = Group)) +
   geom_boxplot(mapping = aes(fill = Group)) +
@@ -256,8 +288,36 @@ totaldur_plot <-
   ylim(0,25) +
   labs(x ="") +
   scale_fill_brewer(palette = "Set1") +
-  facet_wrap(vars(Total_Durations_Of_Fixations),
-             nrow = 1, strip.position = "bottom") +
+  # facet_wrap(vars(Total_Durations_Of_Fixations),
+             # nrow = 1, strip.position = "bottom") +
+  ggtitle("Total Duration of Fixations in AOIs") +
+  theme_classic() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    strip.text.x = element_text(size = 6,
+                                angle = 90),
+    plot.title = element_text(size = 15, face = "bold"))
+
+totaldur_plot
+
+# plot für students
+totaldur_plot <-
+  df_aoi_totaldur %>%
+  filter(Total_Durations_Of_Fixations %in% c("StudentA", "StudentB", "StudentC")) %>% 
+  ggplot(mapping = aes(x = Group,
+                       y = Seconds)) +
+  # geom_violin(mapping = aes(fill = Group)) +
+  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1)) +
+  ylim(0,25) +
+  labs(x ="") +
+  scale_fill_brewer(palette = "Set1") +
+  # facet_wrap(vars(Total_Durations_Of_Fixations),
+  # nrow = 1, strip.position = "bottom") +
   ggtitle("Total Duration of Fixations in AOIs") +
   theme_classic() +
   theme(
