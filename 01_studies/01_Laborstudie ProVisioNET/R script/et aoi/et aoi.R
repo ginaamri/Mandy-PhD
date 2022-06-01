@@ -47,15 +47,17 @@ rm(file_names)
 rm(i)
 
 # filter relevant rows
-df_aoi <- df_aoi %>% filter (TOI == "Chatting_with_neighbour"|
-                               TOI == "Clicking_pen"| 
-                               TOI == "Drawing"|
-                               TOI == "Drumming_with_hands"| 
-                               TOI == "Head_on_table"| 
-                               TOI == "Heckling"|
-                               TOI == "Looking_at_phone" |
-                               TOI == "Snipping_with_fingers"|
-                               TOI == "Whispering")
+df_aoi <- df_aoi %>% filter (TOI %in% c("Chatting_with_neighbour",
+                                        "Clicking_pen",
+                                        "Drawing",
+                                        "Drumming_with_hands",
+                                        "Head_on_table",
+                                        "Heckling",
+                                        "Looking_at_phone",
+                                        "Snipping_with_fingers",
+                                        "Whispering"
+                                        )
+                             )
 
 # creating new variable with sum disruptions
 df_aoi$TOI_sum[df_aoi$TOI == "Chatting_with_neighbour" |
@@ -190,22 +192,22 @@ fix_plot_sum
 
 df_aoi_dur <-
   df_aoi %>% 
-  mutate(
-    Total_duration_of_fixations = sum(c_across(starts_with("Total_duration")
-                                                      )
-                                               ),
-                                      na.rm = TRUE
-                                      )
-    )
+  rowwise() %>% 
+  mutate(Total_duration_of_fixations = sum(c_across(starts_with("Total_duration")
+                                                    ),
+                                           na.rm = TRUE
+                                           )
+         )
+    
 
 # t-test für Gruppenunterschiede 
-t.test(x = df_aoi_totaldur$Total_Durations_Of_Fixations[Total_Durations_Of_Fixations$Group == "Expert"],
-       y = df_aoi_totaldur$Total_Durations_Of_Fixations[Total_Durations_Of_Fixations$Group == "Novice"])
+t.test(x = df_aoi_dur$Total_duration_of_fixations[df_aoi_dur$Group == "Expert"],
+       y = df_aoi_dur$Total_duration_of_fixations[df_aoi_dur$Group == "Novice"])
 
 
 # Effektstärke berechnen für Gruppenunterschiede
-d <- CohenD(x = df_aoi$Total_duration_of_fixations[df_aoi$Group == "Novice"],
-            y = df_aoi$Total_duration_of_fixations[df_aoi$Group == "Expert"],
+d <- CohenD(x = df_aoi_dur$Total_duration_of_fixations[df_aoi_dur$Group == "Expert"],
+            y = df_aoi_dur$Total_duration_of_fixations[df_aoi_dur$Group == "Novice"],
             na.rm = TRUE
 )
 
