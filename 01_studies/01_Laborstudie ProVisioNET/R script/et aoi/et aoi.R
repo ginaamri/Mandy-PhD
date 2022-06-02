@@ -103,23 +103,29 @@ d_time <- CohenD(x = df_aoi$Time_to_first_fixation.Disruptive_Person[df_aoi$Grou
             )
 
 # plotting time to first fixation for groups
-fix_group_plot <- 
+fix_group_plot <-
   ggplot(data = df_aoi,
          mapping = aes(x = Group,
                        y = Time_to_first_fixation_seconds.Disruptive_Person)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
+  geom_point(size = 2,
              alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
-  ylim(0,25) + 
-  labs(x ="") + 
-  scale_fill_brewer(palette = "Set1") +
-  ggtitle("Time to first fixation in seconds to disruptive person") +
-  theme_classic() + 
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0)) +
+  ylim(0,15) +
+  labs(x = "",
+       y = "Time to first fixation in seconds") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  ggtitle("Time to first fixation to disruptive person for expertise groups") +
+  theme_classic() +
   theme(legend.position="none",
-        axis.text.x = element_text(size = 11),
-        plot.title = element_text(size = 15, face = "bold"))
+        axis.text.x = element_text(size = 14),
+        axis.text.y = element_text(size = 14),
+        axis.title = element_text(size=14),
+        plot.title = element_text(size = 15, 
+                                  face = "bold")
+        )
 
 fix_group_plot
 
@@ -136,7 +142,7 @@ fix_group_plot
 #                                         width = 0.1)) +
 #   ylim(0,25) + 
 #   labs(x ="") + 
-#   scale_fill_brewer(palette = "Set1") +
+#   scale_fill_manual(values=c("steelblue","firebrick")) +
 #   facet_wrap(vars(TOI), 
 #              nrow = 1, strip.position = "bottom") +
 #   ggtitle("Time to first fixation in seconds to disruptive person") +
@@ -157,17 +163,17 @@ fix_plot_sum <-
          mapping = aes(x = Group,
                        y = Time_to_first_fixation_seconds.Disruptive_Person)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 2, 
-  #            alpha = 0.4,
-  #            position = position_jitter(seed = 1, 
-  #                                       width = 0.1,
-  #                                       height = 0)) +
+  geom_point(size = 2,
+             alpha = 0.4,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0)) +
   ylim(0,15) +
   labs(x = "",
        y = "Time to first fixation in seconds") +
-  scale_fill_brewer(palette = "Set1") +
-  ggtitle("Time to first fixation to disruptive person") +
-  theme_bw() +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  ggtitle("Time to first fixation to disruptive person for categories") +
+  theme_classic() +
   theme(
     strip.background = element_blank(),
     legend.title = element_text(size=14), #change legend title font size
@@ -188,15 +194,15 @@ fix_plot_sum
 
 ########################### TOTAL DURATION OF FIXATIONS IN AOIS ######################
 
-# creating new variable by summarizing total duration in all AOIs
-df_aoi_dur_sum <-
-  df_aoi %>% 
-  rowwise() %>% 
-  mutate(Sum_total_duration_of_fixations = sum(c_across(starts_with("Total_duration")
-                                                        ),
-                                               na.rm = TRUE
-                                               )
-         )
+# # creating new variable by summarizing total duration in all AOIs
+# df_aoi_dur_sum <-
+#   df_aoi %>% 
+#   rowwise() %>% 
+#   mutate(Sum_total_duration_of_fixations = sum(c_across(starts_with("Total_duration")
+#                                                         ),
+#                                                na.rm = TRUE
+#                                                )
+#          )
 
 # TOTAL DURATION OF FIXATIONS IN AOI = Disruptive Person 
 # t-test for expertise differences
@@ -206,34 +212,34 @@ t.test(x = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == 
 
 # TOTAL DURATION OF FIXATIONS IN AOI = Disruptive Person
 # effect size for expertise differences
-d_dur <- CohenD(x = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
+d_dur_disrup <- CohenD(x = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
             y = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
             na.rm = TRUE
                 )
-XXX FEHLER
+
+
 # TOTAL DURATION OF FIXATIONS IN AOI = Students 
 # creating new variable by summarizing total duration in AOI "Students"
-af_aoi <-
+df_aoi <-
   df_aoi %>% 
   rowwise() %>% 
-  mutate(Total_duration_of_fixations.Students = sum(c_across("Total_duration_of_fixations.Anna" + 
-                                                             "Total_duration_of_fixations.Bianca" +
+  mutate(Total_duration_of_fixations.Students = sum(c_across("Total_duration_of_fixations.Anna" | 
+                                                             "Total_duration_of_fixations.Bianca" |
                                                              "Total_duration_of_fixations.Carl(a)")
-                                                    ),
-         na.rm = TRUE
-        )
+                                                    )        
+         )
 
 # t-test for expertise differences
-t.test(x = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
-       y = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"])
+t.test(x = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Expert"],
+       y = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Novice"])
 
 
 # TOTAL DURATION OF FIXATIONS IN AOI = Students
 # effect size for expertise differences
-d_dur <- CohenD(x = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
-                y = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+d_dur_stud <- CohenD(x = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Novice"],
+                y = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Expert"],
                 na.rm = TRUE
-)
+                    )
 
 # selecting relevant columns
 df_aoi_dur <- df_aoi %>% 
@@ -287,12 +293,16 @@ totaldur_group_plot <-
                                         width = 0.1)) +
   # ylim(0,20) + 
   labs(x ="") + 
-  scale_fill_brewer(palette = "Set1") +
-  ggtitle("Total Duration of Fixations in AOIs") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  ggtitle("Total Duration of Fixations in all AOIs") +
   theme_classic() + 
   theme(legend.position="none",
-        axis.text.x = element_text(size = 11),
-        plot.title = element_text(size = 15, face = "bold"))
+        axis.text.x = element_text(size = 14),
+        axis.text.y = element_text(size = 14),
+        axis.title = element_text(size=14),
+        plot.title = element_text(size = 15, 
+                                  face = "bold")
+        )
 
 totaldur_group_plot
 
@@ -312,7 +322,7 @@ totaldur_disrup_plot <-
                                         width = 0.1)) +
   ylim(0,20) +
   labs(x ="") +
-  scale_fill_brewer(palette = "Set1") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
              # nrow = 1, strip.position = "bottom") +
   ggtitle("Total Duration of Fixations in AOI `Disruptive Person`") +
@@ -324,10 +334,15 @@ totaldur_disrup_plot <-
                                 angle = 90),
     plot.title = element_text(size = 15, face = "bold")) + 
   theme(legend.position="none",
-        axis.text.x = element_text(size = 11),
-        plot.title = element_text(size = 15, face = "bold"))
+        axis.text.x = element_text(size = 14),
+        axis.text.y = element_text(size = 14),
+        axis.title = element_text(size=14),
+        plot.title = element_text(size = 15, 
+                                  face = "bold")
+        )
 
 totaldur_disrup_plot
+
 
 # plot für students
 totaldur_student_plot <-
@@ -343,27 +358,64 @@ totaldur_student_plot <-
                                         width = 0.1)) +
   ylim(0,20) +
   labs(x ="") +
-  scale_fill_brewer(palette = "Set1") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
   # nrow = 1, strip.position = "bottom") +
   ggtitle("Total Duration of Fixations in AOI `Students`") +
   theme_classic() +
-  theme(
-    axis.text.x = element_blank(),
-    axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 6,
-                                angle = 90),
-    plot.title = element_text(size = 15, face = "bold")) +
   theme(legend.position="none",
-    axis.text.x = element_text(size = 11),
-    plot.title = element_text(size = 15, face = "bold"))
+    axis.text.x = element_text(size = 14),
+    axis.text.y = element_text(size = 14),
+    axis.title = element_text(size=14),
+    plot.title = element_text(size = 15, 
+                              face = "bold")
+        )
 
 totaldur_student_plot
 
 
+grid.arrange(totaldur_disrup_plot, 
+             totaldur_student_plot,
+             nrow = 1)
+
 ########################### NUMBER OF FIXATIONS IN AOIS ######################
 
+# NUMBER OF FIXATIONS IN AOI = Disruptive Person 
+# t-test for expertise differences
+t.test(x = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+       y = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"])
 
+
+# TOTAL DURATION OF FIXATIONS IN AOI = Disruptive Person
+# effect size for expertise differences
+d_number_disrup <- CohenD(x = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
+                       y = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+                       na.rm = TRUE
+                          )
+
+
+# TOTAL DURATION OF FIXATIONS IN AOI = Students 
+# creating new variable by summarizing total duration in AOI "Students"
+df_aoi <-
+  df_aoi %>% 
+  rowwise() %>% 
+  mutate(Number_of_fixations.Students = sum(c_across("Number_of_fixations.Anna" |
+                                                       "Number_of_fixations.Bianca" |
+                                                       "Number_of_fixations.Carl(a)")
+                                            )
+         )
+
+# t-test for expertise differences
+t.test(x = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Expert"],
+       y = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Novice"])
+
+
+# TOTAL DURATION OF FIXATIONS IN AOI = Students
+# effect size for expertise differences
+d_number_stud <- CohenD(x = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Expert"],
+                     y = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Novice"],
+                     na.rm = TRUE
+                     )
 
 # selecting relevant columns
 df_aoi_number <- df_aoi %>% 
@@ -375,7 +427,7 @@ df_aoi_number <- df_aoi %>%
 # changing format from wide to long
 df_aoi_number <- df_aoi_number %>% pivot_longer(
   cols = contains("Number_of_fixations"),
-  names_to = "Number_Of_Fixations_in_AOIs",
+  names_to = "AOI",
   values_to = "Number")
 
 
@@ -384,21 +436,21 @@ df_aoi_number <- na.omit(df_aoi_number)
 
 # rename values
 df_aoi_number <- df_aoi_number %>% 
-  mutate(Number_Of_Fixations_in_AOIs = recode(Number_Of_Fixations_in_AOIs,
-                                          Number_of_fixations.Anna = 'StudentA',
-                                          Number_of_fixations.Bianca = 'StudentB',
-                                          Number_of_fixations.Board_Screen = 'Board_Screen',
-                                          `Number_of_fixations.Carl(a)` = 'StudentC',
-                                          Number_of_fixations.Classroom_Others = 'Classroom_Others',
-                                          Number_of_fixations.Disruptive_Person = 'Disruptive_Person',
-                                          Number_of_fixations.Material_Students = 'Material_Students',
-                                          Number_of_fixations.Material_Teacher = 'Material_Teacher',
-                                          Number_of_fixations.Nametag_Anna = 'NametagA',
-                                          Number_of_fixations.Nametag_Bianca = 'NametagB',
-                                          `Number_of_fixations.Nametag_Carl(a)` = 'NametagC'))
+  mutate(AOI = recode(AOI,
+                      Number_of_fixations.Anna = 'StudentA',
+                      Number_of_fixations.Bianca = 'StudentB',
+                      Number_of_fixations.Board_Screen = 'Board/Screen',
+                      `Number_of_fixations.Carl(a)` = 'StudentC',
+                      Number_of_fixations.Classroom_Others = 'Classroom/Others',
+                      Number_of_fixations.Disruptive_Person = 'Disruptive Person',
+                      Number_of_fixations.Material_Students = 'Material Students',
+                      Number_of_fixations.Material_Teacher = 'Material Teacher',
+                      Number_of_fixations.Nametag_Anna = 'NametagA',
+                      Number_of_fixations.Nametag_Bianca = 'NametagB',
+                      `Number_of_fixations.Nametag_Carl(a)` = 'NametagC'))
 
 
-# plotting number of fixations in AOIs for groups
+# plotting number of fixations in AOIs for expertise groups
 number_group_plot <- 
   ggplot(data = df_aoi_number,
          mapping = aes(x = Group,
@@ -409,39 +461,95 @@ number_group_plot <-
              alpha = 0.1,
              position = position_jitter(seed = 1,
                                         width = 0.1)) +
-  ylim(0,10) + 
+  ylim(0,20) + 
   labs(x ="") + 
-  scale_fill_brewer(palette = "Set1") +
-  ggtitle("Number of Fixations in AOIs") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  ggtitle("Number of Fixations in all AOIs") +
   theme_classic() + 
   theme(legend.position="none",
-        axis.text.x = element_text(size = 11),
-        plot.title = element_text(size = 15, face = "bold"))
+        axis.text.x = element_text(size = 14),
+        axis.text.y = element_text(size = 14),
+        axis.title = element_text(size=14),
+        plot.title = element_text(size = 15, 
+                                  face = "bold")
+        )
 
 number_group_plot
 
-
-
-# plotting number of fixations in all AOIs
-number_plot <- 
-  ggplot(data = df_aoi_number,
-       mapping = aes(x = Group,
-                     y = Number)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
+# plotting number of fixations in AOI = Disruptive Person
+number_disrup_plot <-
+  df_aoi_number %>%
+  filter(AOI == "Disruptive Person") %>% 
+  ggplot(mapping = aes(x = Group,
+                       y = Number)) +
   # geom_violin(mapping = aes(fill = Group)) +
-  ylim(0,10) + 
-  labs(x ="") + 
-  scale_fill_brewer(palette = "Set1") +
-  facet_wrap(vars(Number_Of_Fixations_in_AOIs), 
-             nrow = 1, strip.position = "bottom") +
-  ggtitle("Number of Fixations in AOIs") +
-  theme_classic() + 
+  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1)) +
+  ylim(0,20) +
+  labs(x ="") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  # facet_wrap(vars(Total_Durations_Of_Fixations),
+  # nrow = 1, strip.position = "bottom") +
+  ggtitle("Number of Fixations in AOI `Disruptive Person`") +
+  theme_classic() +
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 6,
                                 angle = 90),
-    plot.title = element_text(size = 15, face = "bold"))
+    plot.title = element_text(size = 15, face = "bold")) + 
+  theme(legend.position="none",
+        axis.text.x = element_text(size = 14),
+        axis.text.y = element_text(size = 14),
+        axis.title = element_text(size=14),
+        plot.title = element_text(size = 15, 
+                                  face = "bold")
+        )
 
-number_plot
+number_disrup_plot
 
+
+# plotting number of fixations in AOI = Students
+number_stud_plot <-
+  df_aoi_number %>%
+  filter(AOI %in% c("StudentA", "StudentB", "StudentC")) %>% 
+  ggplot(mapping = aes(x = Group,
+                       y = Number)) +
+  # geom_violin(mapping = aes(fill = Group)) +
+  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1)) +
+  ylim(0,20) +
+  labs(x ="") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  # facet_wrap(vars(Total_Durations_Of_Fixations),
+  # nrow = 1, strip.position = "bottom") +
+  ggtitle("Number of Fixations in AOI `Students`") +
+  theme_classic() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    strip.text.x = element_text(size = 6,
+                                angle = 90),
+    plot.title = element_text(size = 15, face = "bold")) +
+  theme(legend.position="none",
+        axis.text.x = element_text(size = 14),
+        axis.text.y = element_text(size = 14),
+        axis.title = element_text(size=14),
+        plot.title = element_text(size = 15, 
+                                  face = "bold")
+        )
+
+
+number_stud_plot
+
+
+grid.arrange(number_group_plot,
+             number_disrup_plot, 
+             number_stud_plot,
+             nrow = 1)
