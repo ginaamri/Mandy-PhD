@@ -7,7 +7,8 @@ needs(tidyverse,
       gridExtra,
       cowplot,
       readxl,
-      ARTofR)
+      ARTofR,
+      DescTools)
 
 # read in data
 df_sjt <- read_csv2(file = "C:/Users/mk99feta/OneDrive/Dokumente/GitHub/Mandy-PhD/01_studies/01_Laborstudie ProVisioNET/SJTest/data/SJT.csv")
@@ -60,7 +61,12 @@ mean_plot <-
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 14),
     axis.title.y = element_text(size = 13),
-    axis.title.x = element_text(size = 25))
+    axis.title.x = element_text(size = 25)
+        )
+  # + annotate(geom = "text",
+  #          x = "All",
+  #          y = 0.25,
+  #          label = paste ("d = ", round(d_sjt_all),3))
 
 mean_plot
 
@@ -101,4 +107,60 @@ sjt_r <- df_sjt_long %>%
   group_by(Group) %>%
   summarise("M" = round(mean(Mean), 2),
             "SD" = round(sd(Mean), 2))
+
+#################### T-TEST & EFFECT SIZE ##################
+
+# define expert and novice with ifelse function in wide format
+df_sjt$Group = ifelse(df_sjt$Group < 200, "Novice","Expert")
+
+#### ALL #### 
+# t-test for expertise differences 
+t.test(x = df_sjt$All[df_sjt$Group == "Expert"],
+       y = df_sjt$All[df_sjt$Group == "Novice"])
+
+
+# effect size for expertise differences
+d_sjt_all <- CohenD(x = df_sjt$All[df_sjt$Group == "Novice"],
+                y = df_sjt$All[df_sjt$Group == "Expert"],
+                na.rm = TRUE
+                    )
+
+#### MANAGING MOMENTUM #### 
+# t-test for expertise differences 
+t.test(x = df_sjt$`Managing momentum`[df_sjt$Group == "Expert"],
+       y = df_sjt$`Managing momentum`[df_sjt$Group == "Novice"]
+       )
+
+
+# effect size for expertise differences
+d_sjt_mm <- CohenD(x = df_sjt$`Managing momentum`[df_sjt$Group == "Novice"],
+                    y = df_sjt$`Managing momentum`[df_sjt$Group == "Expert"],
+                    na.rm = TRUE
+                  )
+
+#### MONITORING ####
+# t-test for expertise differences 
+t.test(x = df_sjt$Monitoring[df_sjt$Group == "Expert"],
+       y = df_sjt$Monitoring[df_sjt$Group == "Novice"]
+       )
+
+
+# effect size for expertise differences
+d_sjt_moni <- CohenD(x = df_sjt$Monitoring[df_sjt$Group == "Novice"],
+                   y = df_sjt$Monitoring[df_sjt$Group == "Expert"],
+                   na.rm = TRUE
+                    )
+
+#### RULES & ROUTINES #### 
+# t-test for expertise differences 
+t.test(x = df_sjt$`Rules and routines`[df_sjt$Group == "Expert"],
+       y = df_sjt$`Rules and routines`[df_sjt$Group == "Novice"]
+      )
+
+
+# effect size for expertise differences
+d_sjt_rr <- CohenD(x = df_sjt$`Rules and routines`[df_sjt$Group == "Novice"],
+                     y = df_sjt$`Rules and routines`[df_sjt$Group == "Expert"],
+                     na.rm = TRUE
+                  )
 
