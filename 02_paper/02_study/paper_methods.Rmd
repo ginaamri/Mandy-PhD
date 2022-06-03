@@ -23,7 +23,7 @@ affiliation:
 
 authornote: | 
 
-  We received funding from QualiFond of University Leipzig. We have no conflicts of interest to disclose. This article is based on data used at conference presentations (DACH-Nachwuchsakademie, 2022; EARLI SIG 11 2022; EARLI SIG 27, 2022). 
+  We received funding from QualiFond of University Leipzig. We have no conflicts of interest to disclose. This article is based on data used at conference presentations (DACH-Nachwuchsakademie, 2022; EARLI SIG 11, 2022; EARLI SIG 27, 2022). 
 
 
 abstract: |
@@ -82,7 +82,8 @@ needs(tidyverse,
       ltm,
       sjPlot,
       kableExtra,
-      xtable)
+      xtable,
+      DescTools)
 
 ```
 
@@ -136,17 +137,17 @@ We report how we determined our sample size, all data exclusions (if any), all m
 demo.data <- 
   read_excel("./data/data_empschul_labor_lehrperson.xlsx") %>% 
   transmute(Group = LI06_05,
-                                 Gender = LI02_01_1,
-                                 Age = LI03_01,
-                                 `Teaching Experience` = LI04_01,
-                                 `Type of School` = LI18,
-                                 Grade = LI16_05,
-                                 Subject = LI10_05,
-                                 Semester = LI11_01,
-                                 Internship = LI13_01,
-                                 `Extracurricular Teaching Experience` = LI14,
-                                 `Secondary Teaching Activities` = LI17
-                                 )
+            Gender = LI02_01_1,
+            Age = LI03_01,
+            `Teaching Experience` = LI04_01,
+            `Type of School` = LI18,
+            Grade = LI16_05,
+            Subject = LI10_05,
+            Semester = LI11_01,
+            Internship = LI13_01,
+            `Extracurricular Teaching Experience` = LI14,
+            `Secondary Teaching Activities` = LI17
+            )
 
 # define expert and novice with ifelse function
 demo.data$Group = ifelse(demo.data$Group < 200, "Novice","Expert")
@@ -160,10 +161,23 @@ demo.data$Gender <- as.numeric(demo.data$Gender)
 # changing character Semester into numeric
 demo.data$Semester <- as.numeric(demo.data$Semester)
 
-# creating new column with percent of gender
+# creating new column with total participants to calculate percent of gender
 demo.data <- demo.data %>%
   group_by(Group) %>%
   mutate(Gender_Sum=n())
+
+# changing Type of School into character
+# LI18:
+# 1: Grundschule
+# 2: Oberschule
+# 3: Gymnasium
+# 4: Förderschule/Sondershausen
+# 5: Berufsbildende Schule
+# -1: andere Schulform
+demo.data$`Type of School` <- factor(x = demo.data$`Type of School`,
+                   levels = c("1","2","3","4","5","-1"), # Mögliche Werte # andere Möglichkeit: unique(demo.data$`Type of School`)
+                   labels = c("Grundschule","Oberschule","Gymnasium","Förderschule","Berufsbildende Schule", "andere Schulform")) # Bezeichnungen
+
 
 # changing `Extracurricular Teaching Experience` to count experience (no experience = 2 --> 0)
 demo.data$`Extracurricular Teaching Experience` = ifelse(demo.data$`Extracurricular Teaching Experience` == 1, "1","0")
@@ -176,7 +190,6 @@ demo.data$`Secondary Teaching Activities` = ifelse(demo.data$`Secondary Teaching
 
 # changing character Extra. Exp. into numeric
 demo.data$`Secondary Teaching Activities` <- as.numeric(demo.data$`Secondary Teaching Activities`)
-
 
 # create new columns that give proportion of Gender
 # percent = female gender divided by all female Gender
@@ -249,17 +262,19 @@ The inclusion criterion for experts was that they have successfully completed te
 
 The expert teachers (`r demo.data %>% filter(Gender == 1 & Group == "Expert") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Expert") %>% pull("Gender female in percent")`%) had a mean age of `r demo.data %>% filter(Group == "Expert") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Expert") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Expert") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Expert") %>% pull("Max Age in years")`) and an average teaching experience of `r exp.table %>% filter(Group == "Expert") %>% pull("M Exp.") %>% mean() %>% round(., digits = 1)` years (*SD* = `r exp.table %>% filter(Group == "Expert") %>% pull("SD Exp.") %>% round(., digits = 1)`; range: `r exp.table %>%  filter(Group == "Expert") %>% pull("Min Exp.")`-`r exp.table %>%  filter(Group == "Expert") %>% pull("Max Exp.")`). `r exp.table %>% filter(Group == "Expert") %>% pull("Secondary Teaching Activities")`% of the experienced teachers were also engaged in an secondary teaching activity, such as lecturers at the university, main training supervisors for trainee teachers and subject advisers. 
 
+### XXX Type of School noch eintragen
+
 The novice teachers (`r demo.data %>% filter(Gender == 1 & Group == "Novice") %>% pull(Gender) %>% length()` women; `r demo.table %>% filter(Group == "Novice") %>% pull("Gender female in percent")`%) had a mean age of `r demo.data %>% filter(Group == "Novice") %>% pull(Age) %>% mean() %>% round(., digits = 1)` years (*SD* = `r demo.table %>% filter(Group == "Novice") %>% pull("SD Age in years") %>% round(., digits = 1)`; range: `r demo.table %>%  filter(Group == "Novice") %>% pull("Min Age in years")`-`r demo.table %>%  filter(Group == "Novice") %>% pull("Max Age in years")`) with an average teaching experience of `r exp.table %>% filter(Group == "Novice") %>% pull("M Exp.") %>% mean() %>% round(., digits = 1)` years. On average, the student teachers were in their `r exp.table %>% filter(Group == "Novice") %>% pull("M Semester") %>% mean() %>% round(., digits = 1)` semester (*SD* = `r exp.table %>% filter(Group == "Novice") %>% pull("SD Semester") %>% round(., digits = 1)`; range: `r exp.table %>%  filter(Group == "Novice") %>% pull("Min Semester")`-`r exp.table %>%  filter(Group == "Novice") %>% pull("Max Semester")`). Furthermore, they had an average teaching experience of `r exp.table %>% filter(Group == "Novice") %>% pull("M Internship") %>% mean() %>% round(., digits = 1)` teaching units à 45min (*SD* = `r exp.table %>% filter(Group == "Novice") %>% pull("SD Internship") %>% round(., digits = 1)`; range: `r exp.table %>%  filter(Group == "Novice") %>% pull("Min Internship")`-`r exp.table %>%  filter(Group == "Novice") %>% pull("Max Internship")`) through the internships during their studies. `r exp.table %>% filter(Group == "Novice") %>% pull("Extracurricular Teaching Experience")`% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision. 
 
 The subjects were primarily recruited through personal contacts, social media (Facebook), e-mail distribution lists and advertising in lectures at the University Leipzig. All study procedures were carried out in accordance with the ethical standards of the University’s Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University. All participants were informed in detail about the aim and intention of the study prior to testing. Participation in the study was voluntary and only took place after written consent has been given.
 
-## Material
+## Variables
 
-Experimental stimuli are freely available in the following online repository: https://github.com/... .
+All stimuli are freely available in the following online repository: https://github.com/... .
 
 ### Eye-Tracking data
 
-During the lesson, teachers wore a binocular Tobii Pro Glasses 2 eye-tracker (https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/). The system consisted of a wearable head unit and a recording unit. As shown in Figure \@ref(fig:tobiiglasses2), the head unit was a measuring device with different sensors. A high-definition scene camera captured a full HD video of the teacher’s field of vision. An integrated microphone recorded the surrounding sounds. Infrared light illuminators supported the eye tracking sensors which recorded the eye orientation to capture the teacher's gaze point as shown in Figure \@ref(fig:teachersgaze). The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 25 frames per second. The scene camera had a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and a frame dimension of 179 x 159 x 57 mm (width x depth x height). 
+To record eye-tracking data, teachers wore a binocular Tobii Pro Glasses 2 eye-tracker during the micro-teaching-unit. The system consisted of a wearable head unit and a recording unit. As shown in Figure \@ref(fig:tobiiglasses2), the head unit was a measuring device with different sensors. A high-definition scene camera captured a full HD video of the teacher’s field of vision. An integrated microphone recorded the surrounding sounds. Infrared light illuminators supported the eye tracking sensors which recorded the eye orientation to capture the teacher's gaze point as shown in Figure \@ref(fig:teachersgaze). The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 25 frames per second. The scene camera had a field of view of 90 deg. in 16:9 format (82 deg. horizontal and 52 deg. vertical) and a frame dimension of 179 x 159 x 57 mm (width x depth x height). 
 
 ```{r tobiiglasses2, include = T, fig.cap = "Tobii Pro Glasses 2; Source: https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/", fig.align = "center", echo = FALSE}
 
@@ -273,16 +288,19 @@ knitr::include_graphics("./pictures/teachersgaze.pdf", dpi = 108)
 
 ```
 
-### Behavioral data
 
-The speech, sounds and voices of the participants were recorded with Zoom H3-VR Ambient Recorder (https://zoomcorp.com/en/gb/handheld-recorders/handheld-recorders/h3-vr-360-audio-recorder/) installed in the middle of the lab setting. The Zoom H3-VR recorded with four built-in mics arranged in an Ambisonic array with a bitrate of 4608 kBits/s. 
 
-Movements, facial expressions and gestures of the subjects were recorded by four Go Pro Hero 7 black cameras (https://gopro.com/content/dam/help/hero7-black/manuals/HERO7Black_UM_ENG_REVC.pdf) from different angles.  The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 50 frames per second in 16:9 format with a linear field of view. 
+### Video data
+
+The speech, sounds and voices of the participants were recorded with Zoom H3-VR Ambient Recorder installed in the middle of the lab setting (see set up plan \@ref(fig:setup). The Zoom H3-VR recorded with four built-in mics arranged in an Ambisonic array with a bitrate of 4608 kBits/s. 
+
+Movements, facial expressions and gestures of the subjects were recorded by four Go Pro Hero 7 black cameras from different angles (see set up plan \@ref(fig:setup). The videos were recorded with a sampling rate of 50 Hz in a video resolution with 1920 x 1080 at 50 frames per second in 16:9 format with a linear field of view. 
+
+
 
 ### Questionnaire data
 
 After each micro-teaching-unit, the three actors answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and self developed scales on the teacher's presence behavior derived from the research literature. In addition, subjects were asked to give a self-assessment on  classroom management by completing the same questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree).  
-
 
 ```{r presence_questionnaire_novices, include=TRUE, echo=FALSE, results='asis'}
 # load data files
@@ -504,10 +522,7 @@ quest.table.expert,
 #   tab_itemscale()
 ```
 
-
-### Verbal data
-
-In addition to the eye-tracking, questionnaire and behavioral data, verbal data was also collected in the form of a Stimulated Recall Interview.  
+#### Rating scales 
 
 \@ref(fig:sri)
 
@@ -518,6 +533,20 @@ knitr::include_graphics("./pictures/sri.pdf", dpi = 108)
 ```
 
 
+#### Situational Jugdement Test
+To assess the strategic knowledge of classroom management, subjects answered a Situational Judgement Test (SJT, [@gold2015development]).
+
+Gold and Holodynski (2015, p. 229) developed a 'Situational Judgment Test of Strategic Knowledge of Classroom Management in Elementary Schools (SJT)' to measure strategic knowledge of classroom management among elementary school teachers. This is a test procedure for situation-specific action in which the participants are presented with hypothetical scenarios for which they are to indicate how a teacher should ideally behave or how promising the presented options for action are on the basis of given answer options.
+
+In developing the test procedure, the authors divided the concept of classroom management into three main aspects: *Monitoring*, *managing momentum* (structuring) and *rules and routines* [@gold2015development, p. 230f]. 
+
+*Monitoring* includes proactive strategies such as omnipresence. This means, the teacher is always informed about the students' behavior, regulates it and reports it back to them. The second strategy is overlapping. In this case, the teacher is able to control several teaching processes at the same time. Monitoring means also reactive strategies of supervision, which also includes the effective handling of classroom disruptions (cf. ibid.; [@kounin2006techniken, p. 89ff). 
+
+By *managing momentum* (structuring), Gold and Holodynski (2015) understand the skillful control of teaching processes so that they can run smoothly and without delays, taking into account the students' level of understanding and attention [@kounin2006techniken, p. 101ff]. They also include the group focus specifically identified by Kounin [@kounin2006techniken, p. 117ff], i.e. mobilizing the whole class and demanding accountability [@gold2015development, p. 231]. 
+
+The third facet of classroom management, establishing *rules, routines and rituals*, supports the other two facets and offers the pupils, orientation and structure in everyday school life (cf. ibid.).
+
+When taking the test, participants must rate all six response options for each scenario as suitable or unsuitable using a six-point scale (see sample scenario in Appendix 1). Prior to this, the effectiveness of the strategies proposed in the answers was determined by expert judgement. Based on these, an overall rating was created, which is used for the evaluation of the answer keys. All three mentioned knowledge facets of class management (monitoring, transition design and rules and routines) are recorded separately with separate tasks in this SJT by Gold and Holodynski. The original 14 individual scenarios can each be assigned to one facet: Scenarios 1-5 cover the area of ubiquity, scenarios 6-10 the area of structuring and scenarios 11-14 the area of rules and routines. Scenarios 10 and 12 were removed from the test due to insufficient agreement between the expert judgement. In the evaluation, in addition to an overall assessment, all three knowledge areas can be presented and compared individually.
 
 ## Procedure
 
@@ -569,7 +598,7 @@ the class and the teacher filled out a questionnaire focusing on evidence-based 
 
 In the second part of the study, the experimenter conducted a Stimulated-Recall Interview (SRI) with the subject. In this interview, the recorded video of the lesson was watched and commented on by the subject while thinking aloud. 
 
-Finally, the test persons answered a Situational Judgement Test (SJT, [@gold2015development]) in the form of a questionnaire. Here they had to assess teaching scenarios and evaluate their behavior in response to them. The SJT was used to assess strategic knowledge about classroom management. 
+Finally, the subjects answered a Situational Judgement Test (SJT, [@gold2015development]) in the form of a questionnaire. Here they had to assess teaching scenarios and evaluate their behavior in response to them. The SJT was used to assess strategic knowledge about classroom management. 
 
 This study is subject to a quasi-experimental study design, as there was no random assignment of the test persons to the experimental conditions. Due to the use of MET technology, the study has a high external validity (Gegenfurtner et al., 2018). The SRI carried out afterwards explicitly investigates the subjects' sense of disturbance and feeling of safety, which speaks for a high content validity of the study. Internal validity can be ensured to the extent that the teaching events that occurred were exactly the same for all subjects, as the learners received precise behavioural instructions. These disturbances followed a script and coding guide in which the actions of the class were precisely described. The sequence of events varied from survey to survey so that disruptions were always random. The scripted behavioural instructions during the teaching sequence characterise this study with a high degree of standardization, especially when compared to events taking place in a real classroom. The study is based on an experimental manual, script and coding guide, which explicitly describes the implementation, evaluation as well as interpretation of the data, thus making it objectively recordable and measurable. As this study takes place within the framework of the dissertation ProVisioNET, the original survey will continue beyond the submission of this scientific work.
 continues. 

@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  man,floatsintext]{apa6}
+  man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -166,17 +166,17 @@
   }
 {}{\PatchFailed}
 \keywords{Professional Vision, Expert-Novice-Paradigm, mobile Eye-Tracking\newline\indent Word count: XXX}
+\DeclareDelayedFloatFlavor{ThreePartTable}{table}
+\DeclareDelayedFloatFlavor{lltable}{table}
+\DeclareDelayedFloatFlavor*{longtable}{table}
+\makeatletter
+\renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
+\makeatother
 \usepackage{lineno}
 
 \linenumbers
 \usepackage{csquotes}
 \usepackage[titles]{tocloft}
-\cftpagenumbersoff{figure}
-\renewcommand{\cftfigpresnum}{\itshape\figurename\enspace}
-\renewcommand{\cftfigaftersnum}{.\space}
-\setlength{\cftfigindent}{0pt}
-\setlength{\cftafterloftitleskip}{0pt}
-\settowidth{\cftfignumwidth}{Figure 10.\qquad}
 \cftpagenumbersoff{table}
 \renewcommand{\cfttabpresnum}{\itshape\tablename\enspace}
 \renewcommand{\cfttabaftersnum}{.\space}
@@ -196,7 +196,7 @@
 
 \authornote{
 
-We received funding from QualiFond of University Leipzig. We have no conflicts of interest to disclose. This article is based on data used at conference presentations (DACH-Nachwuchsakademie, 2022; EARLI SIG 11 2022; EARLI SIG 27, 2022).
+We received funding from QualiFond of University Leipzig. We have no conflicts of interest to disclose. This article is based on data used at conference presentations (DACH-Nachwuchsakademie, 2022; EARLI SIG 11, 2022; EARLI SIG 27, 2022).
 
 Correspondence concerning this article should be addressed to Mandy Klatt, Dittrichring 5-7, 04109 Leipzig. E-mail: \href{mailto:mandy.klatt@uni-leipzig.de}{\nolinkurl{mandy.klatt@uni-leipzig.de}}
 
@@ -257,6 +257,10 @@ We report how we determined our sample size, all data exclusions (if any), all m
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
+\begin{verbatim}
+## Warning: NAs durch Umwandlung erzeugt
+\end{verbatim}
+
 \begin{table}[h]
 
 \begin{center}
@@ -296,7 +300,7 @@ Novice & 21 & 61.90 & 23.30 & 1.70 & 20.00 & 27.00\\
 Group & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{M Exp.} & \multicolumn{1}{c}{SD Exp.} & \multicolumn{1}{c}{Min Exp.} & \multicolumn{1}{c}{Max Exp.} & \multicolumn{1}{c}{M Semester} & \multicolumn{1}{c}{SD Semester} & \multicolumn{1}{c}{Min Semester} & \multicolumn{1}{c}{Max Semester} & \multicolumn{1}{c}{M Internship} & \multicolumn{1}{c}{SD Internship} & \multicolumn{1}{c}{Min Internship} & \multicolumn{1}{c}{Max Internship} & \multicolumn{1}{c}{Extracurricular Teaching Experience} & \multicolumn{1}{c}{Secondary Teaching Activities}\\
 \midrule
 Expert & 7 & 18.10 & 14.10 & 3.00 & 37.00 & NA & NA & NA & NA & NA & NA & NA & NA & NA & 71.00\\
-Novice & 21 & 0.00 & 0.00 & 0.00 & 0.00 & 7.40 & 2.50 & 3.00 & 11.00 & 12.00 & 8.60 & 0.00 & 36.00 & 90.50 & NA\\
+Novice & 21 & 0.00 & 0.00 & 0.00 & 0.00 & NA & NA & NA & NA & 12.00 & 8.60 & 0.00 & 36.00 & 90.50 & NA\\
 \bottomrule
 \end{tabular}
 
@@ -313,7 +317,7 @@ The inclusion criterion for experts was that they have successfully completed te
 
 The expert teachers (5 women; 71.40\%) had a mean age of 45.10 years (\emph{SD} = 12; range: 27-59) and an average teaching experience of 18.10 years (\emph{SD} = 14.10; range: 3-37). 71\% of the experienced teachers were also engaged in an secondary teaching activity, such as lecturers at the university, main training supervisors for trainee teachers and subject advisers.
 
-The novice teachers (13 women; 61.90\%) had a mean age of 23.30 years (\emph{SD} = 1.70; range: 20-27) with an average teaching experience of 0 years. On average, the student teachers were in their 7.40 semester (\emph{SD} = 2.50; range: 3-11). Furthermore, they had an average teaching experience of 12 teaching units à 45min (\emph{SD} = 8.60; range: 0-36) through the internships during their studies. 90.50\% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision.
+The novice teachers (13 women; 61.90\%) had a mean age of 23.30 years (\emph{SD} = 1.70; range: 20-27) with an average teaching experience of 0 years. On average, the student teachers were in their NA semester (\emph{SD} = NA; range: NA-NA). Furthermore, they had an average teaching experience of 12 teaching units à 45min (\emph{SD} = 8.60; range: 0-36) through the internships during their studies. 90.50\% of the student teachers were also engaged in an extracurricular teaching activity, such as tutoring or homework supervision.
 
 The subjects were primarily recruited through personal contacts, social media (Facebook), e-mail distribution lists and advertising in lectures at the University Leipzig. All study procedures were carried out in accordance with the ethical standards of the University's Institutional Review Board. The authors received a positive vote on the study procedures from the Ethics Committee Board of Leipzig University. All participants were informed in detail about the aim and intention of the study prior to testing. Participation in the study was voluntary and only took place after written consent has been given.
 
@@ -686,9 +690,6 @@ Zhu, H. (2021). \emph{kableExtra: Construct complex table with 'kable' and pipe 
 
 \endgroup
 
-
-\clearpage
-\renewcommand{\listfigurename}{Figure captions}
 
 \clearpage
 \renewcommand{\listtablename}{Table captions}
