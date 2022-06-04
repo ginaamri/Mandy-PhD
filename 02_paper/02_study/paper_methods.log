@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.18)  3 JUN 2022 10:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.4)  4 JUN 2022 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **paper_methods.tex
 (./paper_methods.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-05-04> (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/apa6/apa6.cls
+L3 programming layer <2022-06-02> (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/apa6/apa6.cls
 Document Class: apa6 2020/01/13 v2.34 APA formatting (6th edition)
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -170,7 +170,7 @@ LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
 \c@appendix=\count270
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2022/05/10 v4.0.2 Extensive control of page headers and footers
+Package: fancyhdr 2022/05/18 v4.0.3 Extensive control of page headers and footers
 \f@nch@headwidth=\skip62
 \f@nch@O@elh=\skip63
 \f@nch@O@erh=\skip64
@@ -401,7 +401,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count300
 \calc@Cskip=\skip80
 ) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2022/04/30 3.74 The Babel package
+Package: babel 2022/05/22 3.75 The Babel package
 \babel@savecnt=\count301
 \U@D=\dimen185
 \l@unhyphenated=\language3
@@ -409,9 +409,9 @@ Package: babel 2022/04/30 3.74 The Babel package
 \bbl@readstream=\read2
 \bbl@dirlevel=\count302
 Package babel Info: You haven't specified a language. I'll use 'nil'
-(babel)             as the main language. Reported on input line 4326.
+(babel)             as the main language. Reported on input line 4360.
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2022/04/30 3.74 Nil language
+Language: nil 2022/05/22 3.75 Nil language
 \l@nil=\language4
 ))
 \everypar=\toks25
@@ -482,7 +482,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 \longtablewidth=\skip90
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.sty (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-05-04 L3 programming layer (loader) 
+Package: expl3 2022-06-02 L3 programming layer (loader) 
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count310
@@ -490,7 +490,7 @@ File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2022-01-12 L3 Experimental document command parser
+Package: xparse 2022-05-30 L3 Experimental document command parser
 )) (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count311
@@ -693,28 +693,31 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 22
 (c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 260.
-(c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 \openout3 = `paper_methods.ttt'.
 
 (paper_methods.ttt) [3] [4]
 \openout4 = `paper_methods.fff'.
 
-(paper_methods.fff) [5] [6] [7] [8] [9] [10] [11]
+(paper_methods.fff)
+
+LaTeX Warning: Reference `fig:setup' on page 5 undefined on input line 354.
+
+
+LaTeX Warning: Reference `fig:setup' on page 5 undefined on input line 356.
+
+[5] [6] [7] [8] [9] [10] [11] [12] [13]
 Underfull \vbox (badness 1028) has occurred while \output is active []
-
-[12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[15] [16] AED endfloat: Processing end Figures and Tables (./paper_methods.ttt
+[15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[17] [18] AED endfloat: Processing end Figures and Tables (./paper_methods.ttt
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 12.
 
@@ -722,48 +725,51 @@ Overfull \hbox (430.71025pt too wide) in paragraph at lines 33--50
  [] 
  []
 
-) [17
+) [19
 
 
 
-] [18] (./paper_methods.fff
-<./pictures/tobiiglasses2.png, id=313, 732.336pt x 244.2726pt>
+] [20] (./paper_methods.fff
+<./pictures/tobiiglasses2.png, id=321, 732.336pt x 244.2726pt>
 File: ./pictures/tobiiglasses2.png Graphic file (type png)
 <use ./pictures/tobiiglasses2.png>
 Package pdftex.def Info: ./pictures/tobiiglasses2.png  used on input line 5.
 (pdftex.def)             Requested size: 469.76619pt x 156.69174pt.
-<./pictures/teachersgaze.pdf, id=314, 845.0471pt x 597.50829pt>
+<./pictures/teachersgaze.pdf, id=322, 845.0471pt x 597.50829pt>
 File: ./pictures/teachersgaze.pdf Graphic file (type pdf)
 <use ./pictures/teachersgaze.pdf>
 Package pdftex.def Info: ./pictures/teachersgaze.pdf  used on input line 15.
 (pdftex.def)             Requested size: 469.75456pt x 332.14981pt.
-<./pictures/sri.pdf, id=315, 845.0471pt x 597.50829pt>
+<./pictures/sri.pdf, id=323, 845.0471pt x 597.50829pt>
 File: ./pictures/sri.pdf Graphic file (type pdf)
 <use ./pictures/sri.pdf>
 Package pdftex.def Info: ./pictures/sri.pdf  used on input line 25.
 (pdftex.def)             Requested size: 469.75456pt x 332.14981pt.
-) [19
+) [21
 
- <./pictures/tobiiglasses2.png>] [20 <./pictures/teachersgaze.pdf>] [21 <./pictures/sri.pdf>] (./paper_methods.aux)
+ <./pictures/tobiiglasses2.png>] [22 <./pictures/teachersgaze.pdf>] [23 <./pictures/sri.pdf>] (./paper_methods.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper_methods.out' has not changed.
-(rerunfilecheck)             Checksum: B9360C247EA595A13FE184986FBB8480;2595.
+(rerunfilecheck)             Checksum: D44B611715317D5298E9D46F85884E8C;2697.
  ) 
 Here is how much of TeX's memory you used:
- 16423 strings out of 480260
- 271205 string characters out of 5892602
- 586528 words of memory out of 5000000
- 33901 multiletter control sequences out of 15000+600000
- 521039 words of font info for 74 fonts, out of 8000000 for 9000
+ 16412 strings out of 480253
+ 270978 string characters out of 5892445
+ 587037 words of memory out of 5000000
+ 33893 multiletter control sequences out of 15000+600000
+ 524992 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,11n,77p,2373b,659s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on paper_methods.pdf (21 pages, 7402842 bytes).
+ 72i,11n,77p,2435b,659s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/mk99feta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb>
+Output written on paper_methods.pdf (23 pages, 7401958 bytes).
 PDF statistics:
- 544 PDF objects out of 1000 (max. 8388607)
- 447 compressed objects within 5 object streams
- 132 named destinations out of 1000 (max. 500000)
+ 553 PDF objects out of 1000 (max. 8388607)
+ 454 compressed objects within 5 object streams
+ 139 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

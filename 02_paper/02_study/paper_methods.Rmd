@@ -129,6 +129,12 @@ This study examined how the degree of teaching experience influences (a) the num
 # Methods
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
+This study had a quasi-experimental study design, as there was no random assignment of the subjects to experimental conditions. Due to the use of mobile eye-tracking technology, the study had a high external validity [@gegenfurtner2018mobiles]. Internal validity could be ensured to the extent that the disruptive events that occurred were exactly the same for all subjects, as the actors received precise behavioral instructions. These disruptions followed a script and coding scheme in which the actions of the class were precisely described. The order of the disruptions as well as the performing actors were fully balanced with Lain Square to exclude row effects.
+
+The scripted behavioral instructions during the micro-teaching unit characterized the study with a high degree of standardization, especially when compared to events taking place in a real classroom. The study was based on an experimental manual, script and coding, which explicitly described the implementation, evaluation as well as interpretation of the data, thus making it objectively recordable and measurable.
+
+
+
 ## Participants
 
 ```{r demographicstable, include = TRUE, echo=FALSE}
@@ -300,12 +306,12 @@ Movements, facial expressions and gestures of the subjects were recorded by four
 
 ### Questionnaire data
 
-After each micro-teaching-unit, the three actors answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and self developed scales on the teacher's presence behavior derived from the research literature. In addition, subjects were asked to give a self-assessment on  classroom management by completing the same questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree).  
+After each micro-teaching-unit, the three actors answered items on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and self developed scales on the teacher's presence behavior derived from the research literature. In addition, subjects were asked to give a self-assessment on  classroom management by completing the same questionnaire after each micro-teaching-unit. The questionnaire was a 4-point Likert scale (1 = Strongly Disagree; 2 = Disagree; 3 = Agree; 4 = Strongly Agree).
 
 ```{r presence_questionnaire_novices, include=TRUE, echo=FALSE, results='asis'}
 # load data files
-quest.data <- read_excel("./data/data_empschul_labor_lehrperson.xlsx") %>% 
-  mutate(Group = ifelse(LI06_05 < 200, "Novice","Expert")) %>% 
+quest.data <- read_excel("./data/data_empschul_labor_lehrperson.xlsx") %>%
+  mutate(Group = ifelse(LI06_05 < 200, "Novice","Expert")) %>%
   dplyr::select(Group, LM01_01:LO01_02)
 
 # create two data frames
@@ -320,73 +326,73 @@ quest.table.novice <- matrix(data = NA, nrow = 4, ncol = 8)
 rownames(quest.table.novice) <- c("LM", "LB", "LP", "LV")
   colnames(quest.table.novice) <- c("N Items","M","SD","Min","Max","Skewness","Kurtosis","alpha")
 
-# creating a loop 
+# creating a loop
 # i <- "LM"
-  
+
 for (i in c("LM", "LB", "LP", "LV")) {
-  
-loop.data <- quest.data.novice %>% 
+
+loop.data <- quest.data.novice %>%
   dplyr::select(starts_with(match = i))
 
 quest.table.novice[i, "N Items"] <- length(loop.data)
 
 # calculating mean
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  mean() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  mean() %>%
   round(., digits = 2) ->
-quest.table.novice[i, "M"] 
+quest.table.novice[i, "M"]
 
 # calculating SD
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  sd() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  sd() %>%
   round(., digits = 2) ->
-quest.table.novice[i, "SD"] 
+quest.table.novice[i, "SD"]
 
 # calculating Min
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  min() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  min() %>%
   round(., digits = 2) ->
 quest.table.novice[i, "Min"]
 
 # calculating Max
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  max() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  max() %>%
   round(., digits = 2) ->
 quest.table.novice[i, "Max"]
 
 # calculating Skewness
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  skewness() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  skewness() %>%
   round(., digits = 2) ->
 quest.table.novice[i, "Skewness"]
 
 # calculating Kurtosis
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  kurtosis() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  kurtosis() %>%
   round(., digits = 2) ->
 quest.table.novice[i, "Kurtosis"]
 
 # calculating alpha
-alpha <- loop.data %>% 
-  cronbach.alpha() 
+alpha <- loop.data %>%
+  cronbach.alpha()
 
 quest.table.novice[i, "alpha"] <- round(alpha$alpha,2)
 
 }
 
-# rename columns 
+# rename columns
 rownames(quest.table.novice) <- c("Classroom Management", "Balance", "Presence", "Natural Behavior")
 
 
@@ -394,7 +400,7 @@ rownames(quest.table.novice) <- c("Classroom Management", "Balance", "Presence",
 papaja::apa_table(
 quest.table.novice,
   caption = "Scale analysis for novices' self-assessment",
-  # note = "Write Note here", 
+  # note = "Write Note here",
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
   font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
@@ -410,73 +416,73 @@ quest.table.expert <- matrix(data = NA, nrow = 4, ncol = 8)
 rownames(quest.table.expert) <- c("LM", "LB", "LP", "LV")
   colnames(quest.table.expert) <- c("N Items","M","SD","Min","Max","Skewness","Kurtosis","alpha")
 
-# creating a loop 
+# creating a loop
 # i <- "LM"
-  
+
 for (i in c("LM", "LB", "LP", "LV")) {
-  
-loop.data <- quest.data.expert %>% 
+
+loop.data <- quest.data.expert %>%
   dplyr::select(starts_with(match = i))
 
 quest.table.expert[i, "N Items"] <- length(loop.data)
 
 # calculating mean
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  mean() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  mean() %>%
   round(., digits = 2) ->
-quest.table.expert[i, "M"] 
+quest.table.expert[i, "M"]
 
 # calculating SD
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  sd() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  sd() %>%
   round(., digits = 2) ->
-quest.table.expert[i, "SD"] 
+quest.table.expert[i, "SD"]
 
 # calculating Min
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  min() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  min() %>%
   round(., digits = 2) ->
 quest.table.expert[i, "Min"]
 
 # calculating Max
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  max() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  max() %>%
   round(., digits = 2) ->
 quest.table.expert[i, "Max"]
 
 # calculating Skewness
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  skewness() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  skewness() %>%
   round(., digits = 2) ->
 quest.table.expert[i, "Skewness"]
 
 # calculating Kurtosis
-loop.data %>% 
-  mutate(mean = rowMeans(.)) %>% 
-  pull(mean) %>% 
-  kurtosis() %>% 
+loop.data %>%
+  mutate(mean = rowMeans(.)) %>%
+  pull(mean) %>%
+  kurtosis() %>%
   round(., digits = 2) ->
 quest.table.expert[i, "Kurtosis"]
 
 # calculating alpha
-alpha <- loop.data %>% 
-  cronbach.alpha() 
+alpha <- loop.data %>%
+  cronbach.alpha()
 
 quest.table.expert[i, "alpha"] <- round(alpha$alpha,2)
 
 }
 
-# rename columns 
+# rename columns
 rownames(quest.table.expert) <- c("Classroom Management", "Balance", "Presence", "Natural Behavior")
 
 
@@ -484,7 +490,7 @@ rownames(quest.table.expert) <- c("Classroom Management", "Balance", "Presence",
 papaja::apa_table(
 quest.table.expert,
   caption = "Scale analysis for experts' self-assessment",
-  # note = "Write Note here", 
+  # note = "Write Note here",
   escape = TRUE, # if TRUE special Latex characters are escaped; if this is turned to F captions cannot be rendered. I don't know why...
   placement = "h", # position of table in page:  exact location (h), at the top (t), bottom (b)
   font_size = "tiny" # options are tiny, scriptsize, footnotesize, small, normalsize (default), large, Large, LARGE, huge, Huge
@@ -493,9 +499,9 @@ quest.table.expert,
 ```
 
 ```{r item_analysis_classroom_management, include=TRUE, results='asis'}
-# quest.data %>% 
-#   dplyr::select(contains("LM")) %>% 
-#   as.data.frame() %>% 
+# quest.data %>%
+#   dplyr::select(contains("LM")) %>%
+#   as.data.frame() %>%
 #   tab_itemscale(CSS = list(
 #     css.firsttablerow.col7 = "'cronbachs alpha';"
 #   ))
@@ -524,19 +530,22 @@ quest.table.expert,
 
 #### Rating scales 
 
-\@ref(fig:sri)
+Two self-developed 11-point rating scales were used to record how disruptive the individual disruptions were perceived by the subjects and how confident they felt in dealing with the disruptions. Data for rating scales were collected during the Stimulted Recall Interview, where the experimenter watched the pre-recorded eye-tracking video with the subject. 
 
-```{r sri, include = T, fig.cap = "Subject and experimenter during the Stimulated Recall Interview", fig.align = "center", echo = FALSE}
+The questionnaire included nine questions for each scripted disruptive event. The subjects did not have to complete the questionnaire themselves at any time, as this was done by the experimenter. 
 
-knitr::include_graphics("./pictures/sri.pdf", dpi = 108)
+For the present study, the following two questions from the interview were relevant:
+1. "How disturbing did you perceive this event to be?"
+2. "How confident did you feel in dealing with this event?" 
 
-```
+Both questions were answered using a scale ranging from 0 to 10. On this scale, 0 stood for "not at all disruptive" or "not at all safe" and 10 for "extremely disturbing" or "extremely safe."
+
+With these rating scales, the subjects indicated their personal subjective feeling towards the individual lesson disruption. Rating scales usually consist of a number of clearly arranged categories that can be presented visually in a variety of ways [@albers2009methodik, p. 67f]. In the present questionnaire, the numerical representation with eleven answer options (0-10) was used. There was no specific designated neutral position. In this questionnaire, the middle category 5 was not interpreted as a neutral position. In order to avoid misinterpretations of the scaling, the questionnaire was described verbally by the experimenter and follow-up questions from the test subjects were possible at any time. With regard to the quality criteria, it should be made clear that complete objectivity in answering the two questions is given by the rating scales. The question remained the same for all subjects and no additional comments were made. Validity can also be assumed for the questionnaire, since the subjects couls ask follow-up questions and thus uncertainties were clarified. However, similar to the video data, there was no perfect reliability with this survey instrument, because in a few exceptional cases, for example, the experimenter forgot to ask the subject the relevant questions.
 
 
 #### Situational Jugdement Test
-To assess the strategic knowledge of classroom management, subjects answered a Situational Judgement Test (SJT, [@gold2015development]).
 
-Gold and Holodynski (2015, p. 229) developed a 'Situational Judgment Test of Strategic Knowledge of Classroom Management in Elementary Schools (SJT)' to measure strategic knowledge of classroom management among elementary school teachers. This is a test procedure for situation-specific action in which the participants are presented with hypothetical scenarios for which they are to indicate how a teacher should ideally behave or how promising the presented options for action are on the basis of given answer options.
+To assess the strategic knowledge of classroom management, subjects answered a Situational Judgement Test (SJT, [@gold2015development]). In the questionnaire, participants were given hypothetical school scenarios with with 5-7 response strategy for which they had to evaluate the effectiveness of each strategy on a 6-point rating scale from 1 (A) to 6 (F) according to school grades (see example scenario XXX REFERENZ EINFÜGEN). 
 
 In developing the test procedure, the authors divided the concept of classroom management into three main aspects: *Monitoring*, *managing momentum* (structuring) and *rules and routines* [@gold2015development, p. 230f]. 
 
@@ -544,15 +553,24 @@ In developing the test procedure, the authors divided the concept of classroom m
 
 By *managing momentum* (structuring), Gold and Holodynski (2015) understand the skillful control of teaching processes so that they can run smoothly and without delays, taking into account the students' level of understanding and attention [@kounin2006techniken, p. 101ff]. They also include the group focus specifically identified by Kounin [@kounin2006techniken, p. 117ff], i.e. mobilizing the whole class and demanding accountability [@gold2015development, p. 231]. 
 
-The third facet of classroom management, establishing *rules, routines and rituals*, supports the other two facets and offers the pupils, orientation and structure in everyday school life (cf. ibid.).
+The third facet of classroom management, establishing *rules, routines and rituals*, supports the other two facets and offers pupils orientation and structure in everyday school life (cf. ibid.).
 
-When taking the test, participants must rate all six response options for each scenario as suitable or unsuitable using a six-point scale (see sample scenario in Appendix 1). Prior to this, the effectiveness of the strategies proposed in the answers was determined by expert judgement. Based on these, an overall rating was created, which is used for the evaluation of the answer keys. All three mentioned knowledge facets of class management (monitoring, transition design and rules and routines) are recorded separately with separate tasks in this SJT by Gold and Holodynski. The original 14 individual scenarios can each be assigned to one facet: Scenarios 1-5 cover the area of ubiquity, scenarios 6-10 the area of structuring and scenarios 11-14 the area of rules and routines. Scenarios 10 and 12 were removed from the test due to insufficient agreement between the expert judgement. In the evaluation, in addition to an overall assessment, all three knowledge areas can be presented and compared individually.
+The construction of the SJT included 14 scenarios that were based on transcribed classroom videos from Germany. For the 14 scenarios, response strategies were derived from evidence-based and theoretical principles by 17 experts on classroom management. With the exception of scenario 5, which was subsequently excluded, the 17 experts agreed on an appropriate level of content validity for all other scenarios (cf. ibid.). For the validation of the strategies, pair comparisons were made between different strategies and the frequencies were calculated in relation to the expert responses (cf. ibid., p. 238). Scenarios 10 and 12 were excluded from further analysis because they did not reach the minimum level of agreement (cf. ibid.). 
+
+The construct validity of the SJT with the other 11 scenarios and the sensitivity to differences in strategic knowledge was then examined in a pilot study with 98 trainee teachers and their results validated in a cross-validation with a larger sample (cf. ibid., p. 238ff). Despite limitations in reliability, the test was confirmed to have content and construct validity (cf. ibid., p. 243). On the basis of these results, sufficient reliability and validity of the SJT test procedure was assumed.
+
+The scenarios could each be assigned to one facet of the mentioned classroom management: Scenarios 1-4 cover the facet *monitoring*, scenarios 6-9 the facet *managing momentum* and scenarios 11-14 the facet *rules and routines*. 
+
+In the current study, objectivity of application was ensured by the questionnaire-format, the written instructions and by a detailed test administration manual of the study *ProVisioNET*. The objectivity of analysis was given by processing the obtained questionnaire data in `r cite_r("r-references.bib")` and IBM SPSS 28.
+
+Since the test was a questionnaire designed to assess strategic knowledge of classroom management of *primary school teachers*, but the sample of the study included several types of schools, changes were made in 10 out of 12 scenarios by deleting the indicated class grade. Only in two scenarios was the class grade information not deleted, as the action alternatives would otherwise not be appropriate without the information.
+
 
 ## Procedure
 
 The project was conducted as a laboratory study in a cross-sectional study design to investigate whether and how teachers' experience has an influence on the perception of and reaction to classroom disruptions.
 
-In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021 and ... 2022.
+In June 2021, the study was piloted with student teachers volunteers to refine the study procedure. Data collection was conducted between July 2021 and Septemper 2022.
 
 Before the data collection, each subject received a personal digital meeting with the experimenter to go over the study procedure and to arrange a date for the data collection. During the digital meeting, the subjects were asked to prepare a 15-minute lesson in a subject and grade of their choice for the data collection.
 
@@ -587,26 +605,29 @@ papaja::apa_table(x = df_disrup_table,
 ```
 
 
-
 During the lesson, a mobile eye-tracker recorded the subject's gaze behavior and audio data of the lesson. All other sounds and voices were recorded by an audio recorder. To record facial expressions, gestures and movements, four mobile cameras were installed to record the classroom from all perspectives (!!!see figures). 
 
 After the lesson, the time was again noted from the smartwatch as well as the subject's steps. The nine-point calibration was also performed again in the neighboring room. This time, however, the subject was asked to wait outside the room until he or she was called in, because four letters from A to D were placed in the study room. The subject was asked to stand facing the board at a marked point in the room and, when given an acoustic signal, to turn around and search the letters and read them aloud in order. This served as a control condition for the speed of the subjects' perceptual ability as no expertise is required for searching letters.
 
-After the letter search, all technical devices were turn 
+After the letter search, the experimenter clapped twice with the hands to record an acoustic signal for the synchronization of all technical devices. Afterwards, all devices were switched off and the subjects as well as the actors were given a short questionnaire, which contained items to collect demographic information as well as items about the previously given lesson on teaching quality using a validated questionnaire [@helmke2014unterrichtsdiagnostik] and self developed scales on the teacher's presence behavior derived from the research literature. The completion of the questionnaire took approximately 5 minutes.
 
-the class and the teacher filled out a questionnaire focusing on evidence-based methods of teaching diagnostics (EMU) in order to collect data on self-assessment and assessment by others. 
+In the second part of the study, the experimenter conducted a Stimulated Recall Interview (SRI) with the subject(see in Figure \@ref(fig:sri). The interview was recorded by the ambient recorder and additionally with a software called OBS to record the speech and screen. The recorded eye-tracking video was watched and commented on by the subject while thinking aloud. The interview was structured by a guideline based on a fixed sequence of questions, however the subjects were allowed to answer completely open to these questions. The objective was to collect data that would provide insight into the subjects' thoughts and reactions in relation to the scripted classroom disruptions. The eye-tracking video was not completely re-watched, but stopped at the points where disruptions occurred. After the disruption occurred, the subject was asked to describe what had just happened. If the disruption was noticed, the subject was asked how disruptive the event was at that moment on a scale from 0 to 10 (for a detailed description of the scale question, see Rating Scales). In addition, the subject was asked to reason the given number. In a next step, the experimenter re-played the subject's reaction to the disruption and asked to describe and reason the reaction. The 
 
-In the second part of the study, the experimenter conducted a Stimulated-Recall Interview (SRI) with the subject. In this interview, the recorded video of the lesson was watched and commented on by the subject while thinking aloud. 
 
-Finally, the subjects answered a Situational Judgement Test (SJT, [@gold2015development]) in the form of a questionnaire. Here they had to assess teaching scenarios and evaluate their behavior in response to them. The SJT was used to assess strategic knowledge about classroom management. 
 
-This study is subject to a quasi-experimental study design, as there was no random assignment of the test persons to the experimental conditions. Due to the use of MET technology, the study has a high external validity (Gegenfurtner et al., 2018). The SRI carried out afterwards explicitly investigates the subjects' sense of disturbance and feeling of safety, which speaks for a high content validity of the study. Internal validity can be ensured to the extent that the teaching events that occurred were exactly the same for all subjects, as the learners received precise behavioural instructions. These disturbances followed a script and coding guide in which the actions of the class were precisely described. The sequence of events varied from survey to survey so that disruptions were always random. The scripted behavioural instructions during the teaching sequence characterise this study with a high degree of standardization, especially when compared to events taking place in a real classroom. The study is based on an experimental manual, script and coding guide, which explicitly describes the implementation, evaluation as well as interpretation of the data, thus making it objectively recordable and measurable. As this study takes place within the framework of the dissertation ProVisioNET, the original survey will continue beyond the submission of this scientific work.
-continues. 
+```{r sri, include = T, fig.cap = "Subject and experimenter during the Stimulated Recall Interview", fig.align = "center", echo = FALSE}
+
+knitr::include_graphics("./pictures/sri.pdf", dpi = 108)
+
+```
+
+Finally, the subjects answered a Situational Judgement Test (SJT, [@gold2015development]) in the form of a questionnaire. Here they had to assess teaching scenarios and evaluate their behavior in response to them. The SJT was used to assess strategic knowledge about classroom management. The
+completion of the entire survey took 15 min on average.
 
 
 ## Data analysis
 
-We investigated whether experts and novice teachers differed
+We investigated whether experts and novice teachers differed 
 
 All reported data analyses were conducted with the `r cite_r("r-references.bib")` and IBM SPSS 28.
 
