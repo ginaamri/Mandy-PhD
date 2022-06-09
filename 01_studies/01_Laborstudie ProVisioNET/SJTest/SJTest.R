@@ -13,13 +13,10 @@ needs(tidyverse,
 # read in data
 df_sjt <- read_csv2(file = "C:/Users/mk99feta/OneDrive/Dokumente/GitHub/Mandy-PhD/01_studies/01_Laborstudie ProVisioNET/SJTest/data/SJT.csv")
 
-# select relevant columns --> only subject ID and mean
-df_sjt <- df_sjt %>% 
-  select(UI06_05, 
-         SJT_AL_gek, 
-         SJT_ST_gek, 
-         SJT_R_gek, 
-         SJT_KF_gek)
+# select relevant columns --> only subject ID and mean 
+df_sjt <- df_sjt %>% select(UI06_05, SJT_AL_gek, SJT_ST_gek, SJT_R_gek, SJT_KF_gek) %>% 
+  slice(1:34) # filter only relevant rows for analysis
+
 
 # rename columns
 df_sjt <- rename(df_sjt, c("Group" = "UI06_05",
@@ -50,17 +47,20 @@ mean_plot <-
                                         width = 0.1)) +
   labs(x = "") +
   ylim(0,1) + 
-  scale_fill_brewer(palette = "Set1") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
   facet_wrap(vars(`Facets Classroom Management`), 
              nrow = 1, strip.position = "bottom") +
   theme_classic()+
   ggtitle("Situational Judgment Test of Strategic Knowledge of Classroom Management") +
   theme(
-    plot.title = element_text(size = 18, face = "bold"),
+    plot.title = element_text(size = 18, 
+                              face = "bold"),
+    legend.title = element_text(size = 17),
+    legend.text = element_text(size = 15),
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 14),
-    axis.title.y = element_text(size = 13),
+    axis.title.y = element_text(size = 14),
     axis.title.x = element_text(size = 25)
         )
   # + annotate(geom = "text",
@@ -71,9 +71,9 @@ mean_plot <-
 mean_plot
 
 ggsave(plot = mean_plot,
-       filename = "plots/sjt_plot.pdf",
-       height = 7,
-       width = 9,
+       filename = "plots/sjt_plot.png",
+       height = 8,
+       width = 14,
        units = "in")
 
 #################### MEAN, SD, N ############
@@ -120,8 +120,8 @@ t.test(x = df_sjt$All[df_sjt$Group == "Expert"],
 
 
 # effect size for expertise differences
-d_sjt_all <- CohenD(x = df_sjt$All[df_sjt$Group == "Novice"],
-                y = df_sjt$All[df_sjt$Group == "Expert"],
+d_sjt_all <- CohenD(x = df_sjt$All[df_sjt$Group == "Expert"],
+                y = df_sjt$All[df_sjt$Group == "Novice"],
                 na.rm = TRUE
                     )
 
@@ -133,8 +133,8 @@ t.test(x = df_sjt$`Managing momentum`[df_sjt$Group == "Expert"],
 
 
 # effect size for expertise differences
-d_sjt_mm <- CohenD(x = df_sjt$`Managing momentum`[df_sjt$Group == "Novice"],
-                    y = df_sjt$`Managing momentum`[df_sjt$Group == "Expert"],
+d_sjt_mm <- CohenD(x = df_sjt$`Managing momentum`[df_sjt$Group == "Expert"],
+                    y = df_sjt$`Managing momentum`[df_sjt$Group == "Novice"],
                     na.rm = TRUE
                   )
 
@@ -146,8 +146,8 @@ t.test(x = df_sjt$Monitoring[df_sjt$Group == "Expert"],
 
 
 # effect size for expertise differences
-d_sjt_moni <- CohenD(x = df_sjt$Monitoring[df_sjt$Group == "Novice"],
-                   y = df_sjt$Monitoring[df_sjt$Group == "Expert"],
+d_sjt_moni <- CohenD(x = df_sjt$Monitoring[df_sjt$Group == "Expert"],
+                   y = df_sjt$Monitoring[df_sjt$Group == "Novice"],
                    na.rm = TRUE
                     )
 
@@ -159,8 +159,8 @@ t.test(x = df_sjt$`Rules and routines`[df_sjt$Group == "Expert"],
 
 
 # effect size for expertise differences
-d_sjt_rr <- CohenD(x = df_sjt$`Rules and routines`[df_sjt$Group == "Novice"],
-                     y = df_sjt$`Rules and routines`[df_sjt$Group == "Expert"],
+d_sjt_rr <- CohenD(x = df_sjt$`Rules and routines`[df_sjt$Group == "Expert"],
+                     y = df_sjt$`Rules and routines`[df_sjt$Group == "Novice"],
                      na.rm = TRUE
                   )
 

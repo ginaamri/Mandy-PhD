@@ -14,66 +14,84 @@ needs(tidyverse,
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
 options(dplyr.summarise.inform = FALSE)
 
-# read in data
-sri_novice <- read_excel("./data/coding_sri_novice.xlsx")
+# read in data and combine multiple excel sheets into a single table 
+sri <- 
+  excel_sheets("data/Coding_SRI.xlsx") %>% 
+  map_df(~read_xlsx("data/Coding_SRI.xlsx",.)) %>% 
+  select(Group, Event, `Disruption Factor`, `Confident Factor`) %>% # select relevant columns 
+  filter(Group %in% c(101:122, 201:212))# filter relevant rows
 
-sri_expert <- read_excel("./data/coding_sri_expert.xlsx")
+ 
+# counting drop outs (-99 not perceived, -100 not answered)
+# all dropout
+sri$dropout <- 
+  length(which(sri$`Disruption Factor`== -99 |
+               sri$`Disruption Factor`== -100 |
+                sri$`Confident Factor` == -100)) %>% 
+  as.numeric(sri$dropout)
 
-
-# filter relevant rows and select relevant columns 
-sri_novice <- sri_novice %>% select(Group, Event, Disruption_Factor, Confident_Factor)
-
-sri_expert <- sri_expert %>% select(Group, Event, Disruption_Factor, Confident_Factor)
-
-
-# combine the two data frames with novice and expert
-sri <- rbind(sri_expert, sri_novice)
-
-
-# removing all NAs
-sri_filter <- na.omit(sri)
-
-# # replacing NA with 11
-# sri[is.na(sri)] = 11
-
-# # creating a new column --> event was "seen" / "not seen" 
-# # WARNING! ifelse() needs three parameters: test, truth value, false value 
-# sri$Seen <- ifelse(sri$Disruption_Factor <= 10, 'seen', ifelse(sri$Disruption_Factor > 11, 'not seen', 'not seen')) 
+# not perceived
+sri$not_perceived <-
+  length(which(sri$`Disruption Factor`== -99)) %>% 
+  as.numeric(sri$not_perceived)
 
 
+# # count all events and calculate percentage of dropouts
+# sri$sum_events <-
+#   length(summary(as.factor(sri$Group))) %>% 
+#   as.numeric(sri$sum_events) %>% 
+#   mutate(all_dropout_percent= (dropout/sum_events)*100)
+
+
+# drop out all drop out
+sri <- 
+  sri %>% 
+  filter(!`Disruption Factor` == -100,
+           !`Confident Factor` == -100,
+           !`Disruption Factor`== -99)
+  
+         
 # define expert and novice with ifelse function
-sri_filter$Group = ifelse(sri_filter$Group < 200, "Novice","Expert")
+sri$Group = ifelse(sri$Group < 200, "Novice","Expert")
 
 # create a new data frame with both factors
-sri_disrup <- subset.data.frame(sri_filter, select = c(Group, Event, Disruption_Factor))
-sri_confi <- subset.data.frame(sri_filter, select = c(Group, Event, Confident_Factor))
+sri_disrup <- subset.data.frame(sri, select = c(Group, Event, `Disruption Factor`))
+sri_confi <- subset.data.frame(sri, select = c(Group, Event, `Confident Factor`))
 
 
 # plotting Disruption factor for groups
 dist_group_plot <- 
   ggplot(data = sri_disrup,
          mapping = aes(x = Group,
-                       y = Disruption_Factor)) +
+                       y = `Disruption Factor`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.1,
-                                        height = 0)) +
+  # geom_point(size = 2, 
+  #            alpha = 0.4,
+  #            position = position_jitter(seed = 1, 
+  #                                       width = 0.1,
+  #                                       height = 0)) +
   labs(x = "",
        y = "Disruption Factor") + 
   ylim(0,10)+
-  scale_fill_brewer(palette = "Set1") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
   ggtitle("How disruptive was the event for you?") +
   theme_classic() + 
   theme(
     legend.position="none",
-    axis.text.x = element_text(size = 15),
-    plot.title = element_text(size = 19, face = "bold"),
-    axis.text.y = element_text(size = 15),
-    axis.title.y = element_text(size = 15))
+    axis.text.x = element_text(size = 18),
+    axis.text.y = element_text(size = 16),
+    axis.title.y = element_text(size = 18),
+    plot.title = element_text(size = 20, 
+                              face = "bold"),
+    )
 
 dist_group_plot
+
+ggsave(plot = dist_group_plot,
+       filename = "plots/dist_group_plot.png",
+       height = 8,
+       width = 8,
+       units = "in")
 
 
 # plotting Disruption factor for 3 disruptions sum up
@@ -106,7 +124,7 @@ sri_disrup_sum <-
   ylim(0,10) + 
   labs(x = "") +
   ylab("Disruption Factor") +
-  scale_fill_brewer(palette = "Set1") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
   ggtitle("How disruptive was the event for you?") +
   theme_classic() +
   theme(
@@ -181,27 +199,35 @@ sri_disrup_sum
 confi_group_plot <- 
   ggplot(data = sri_confi,
          mapping = aes(x = Group,
-                       y = Confident_Factor)) +
+                       y = `Confident Factor`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   labs(x = "", 
        y = "Confident Factor") +
   ylim(0,10) +
-  geom_point(size = 2, 
-             alpha = 0.4,
-             position = position_jitter(seed = 1, 
-                                        width = 0.15, 
-                                        height = 0)) +
-  scale_fill_brewer(palette = "Set1") +
+  # geom_point(size = 2, 
+  #            alpha = 0.4,
+  #            position = position_jitter(seed = 1, 
+  #                                       width = 0.15, 
+  #                                       height = 0)) +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
   ggtitle("How confident did you feel dealing with this event?") +
   theme_classic() +
   theme(
     legend.position="none",
-    axis.text.x = element_text(size = 15),
-    plot.title = element_text(size = 19, face = "bold"),
-    axis.text.y = element_text(size = 15),
-    axis.title.y = element_text(size = 15))
+    axis.text.x = element_text(size = 18),
+    axis.text.y = element_text(size = 16),
+    axis.title.y = element_text(size = 18),
+    plot.title = element_text(size = 20, 
+                              face = "bold"),
+    )
 
 confi_group_plot
+
+ggsave(plot = confi_group_plot,
+       filename = "plots/confi_group_plot.png",
+       height = 8,
+       width = 8,
+       units = "in")
 
 
 # plotting Confident factor for 3 disruptions sum up
@@ -234,7 +260,7 @@ sri_confi_sum <-
   ylim(0,10) + 
   labs(x = "") +
   ylab("Confident Factor") +
-  scale_fill_brewer(palette = "Set1") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
   ggtitle("How confident did you feel dealing with this event?") +
   theme_classic() +
   theme(
@@ -320,4 +346,30 @@ sri_confi_mean <- sri_confi %>%
   summarise("M" = round(mean(Confident_Factor), 2),
             "SD" = round(sd(Confident_Factor), 2))
 
+#################### T-TEST & EFFECT SIZE ############
+
+# Disruption Factor 
+# t-test for expertise differences
+t.test(x = sri$`Disruption Factor`[sri$Group == "Expert"],
+       y = sri$`Disruption Factor`[sri$Group == "Novice"])
+
+
+# Disruption Factor 
+# effect size for expertise differences
+d_sri_disrup <- CohenD(x = sri$`Disruption Factor`[sri$Group == "Expert"],
+                       y = sri$`Disruption Factor`[sri$Group == "Novice"],
+                       na.rm = TRUE)
+
+
+# Confident Factor 
+# t-test for expertise differences
+t.test(x = sri$`Confident Factor`[sri$Group == "Expert"],
+       y = sri$`Confident Factor`[sri$Group == "Novice"])
+
+
+# Confident Factor 
+# effect size for expertise differences
+d_sri_confi <- CohenD(x = sri$`Confident Factor`[sri$Group == "Expert"],
+                     y = sri$`Confident Factor`[sri$Group == "Novice"],
+                     na.rm = TRUE)
 
