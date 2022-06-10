@@ -328,7 +328,7 @@ totaldur_group_plot <-
                                         width = 0.1,
                                         height = 0.1)) +
   scale_x_discrete(limits = c("Novice", "Expert")) +
-    ylim(0,20) + 
+    ylim(0,15) + 
   labs(x ="") + 
   scale_fill_manual(values=c("steelblue","firebrick")) +  
   ggtitle("Total Duration of Fixations on all AOIs") +
@@ -363,7 +363,7 @@ totaldur_stud_disrup_plot <-
                                         width = 0.1,
                                         height = 0.1)) +
   scale_x_discrete(limits = c("Novice", "Expert")) +
-  ylim(0,20) + 
+  ylim(0,15) + 
   labs(x ="") + 
   scale_fill_manual(values=c("steelblue","firebrick")) +  
   ggtitle("Total Duration of Fixations on AOI `Students` & `Disruptive Person`") +
@@ -398,7 +398,7 @@ totaldur_disrup_plot <-
              position = position_jitter(seed = 1,
                                         width = 0.1)) +
   scale_x_discrete(limits = c("Novice", "Expert")) +
-  ylim(0,20) +
+  ylim(0,15) +
   labs(x ="") +
   scale_fill_manual(values=c("steelblue","firebrick")) +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
@@ -436,7 +436,7 @@ totaldur_student_plot <-
                                         width = 0.1,
                                         height = 0.1)) +
   scale_x_discrete(limits = c("Novice", "Expert")) +
-  ylim(0,20) +
+  ylim(0,15) +
   labs(x ="") +
   scale_fill_manual(values=c("steelblue","firebrick")) +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),

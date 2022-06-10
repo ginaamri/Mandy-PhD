@@ -207,7 +207,7 @@ confi_group_plot <-
        y = "Confident Factor") +
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,10) +
-  geom_point(size = 2,
+  geom_point(size = 1,
              alpha = 0.4,
              position = position_jitter(seed = 1,
                                         width = 0.1,
@@ -255,11 +255,11 @@ sri_confi_sum <-
          mapping = aes(x = Group,
                        y = `Confident Factor`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
+  geom_point(size = 1, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
                                         width = 0.1,
-                                        height = 0)) +
+                                        height = 0.1)) +
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,10) + 
   labs(x = "") +

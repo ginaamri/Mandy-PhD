@@ -41,10 +41,15 @@ mean_plot <-
          mapping = aes(x = Group,
                        y = Mean)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
+  # scale_linetype_manual(values = c("Expert", "Novice"),
+  #                       labels = c("Expert", "Novice"),
+  #                       guide = guide_legend(reverse = TRUE)) +
+  geom_point(size = 1, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
-                                        width = 0.1)) +
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   labs(x = "") +
   ylim(0,1) + 
   scale_fill_manual(values=c("steelblue","firebrick")) +  
