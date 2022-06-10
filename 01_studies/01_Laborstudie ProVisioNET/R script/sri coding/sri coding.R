@@ -65,11 +65,12 @@ dist_group_plot <-
          mapping = aes(x = Group,
                        y = `Disruption Factor`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 2, 
-  #            alpha = 0.4,
-  #            position = position_jitter(seed = 1, 
-  #                                       width = 0.1,
-  #                                       height = 0)) +
+  geom_point(size = 1,
+             alpha = 0.4,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   labs(x = "",
        y = "Disruption Factor") + 
   ylim(0,10)+
@@ -114,13 +115,14 @@ sri_disrup$Event[sri_disrup$Event == "clicking pen" |
 sri_disrup_sum <-
   ggplot(data = sri_disrup,
          mapping = aes(x = Group,
-                       y = Disruption_Factor)) +
+                       y = `Disruption Factor`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  geom_point(size = 2, 
+  geom_point(size = 1, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
                                         width = 0.1,
-                                        height = 0)) +
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,10) + 
   labs(x = "") +
   ylab("Disruption Factor") +
@@ -134,7 +136,7 @@ sri_disrup_sum <-
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 15),
     plot.title = element_text(size = 20, face = "bold"),
-    axis.title.y = element_text(size = 16),
+    axis.title.y = element_text(size = 10),
   ) +
   facet_wrap(facets = vars(Event),
              nrow = 1,
@@ -203,12 +205,13 @@ confi_group_plot <-
   geom_boxplot(mapping = aes(fill = Group)) +
   labs(x = "", 
        y = "Confident Factor") +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,10) +
-  # geom_point(size = 2, 
-  #            alpha = 0.4,
-  #            position = position_jitter(seed = 1, 
-  #                                       width = 0.15, 
-  #                                       height = 0)) +
+  geom_point(size = 2,
+             alpha = 0.4,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
   scale_fill_manual(values=c("steelblue","firebrick")) +  
   ggtitle("How confident did you feel dealing with this event?") +
   theme_classic() +
@@ -250,13 +253,14 @@ sri_confi$Event[sri_confi$Event == "clicking pen" |
 sri_confi_sum <-
   ggplot(data = sri_confi,
          mapping = aes(x = Group,
-                       y = Confident_Factor)) +
+                       y = `Confident Factor`)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
                                         width = 0.1,
                                         height = 0)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,10) + 
   labs(x = "") +
   ylab("Confident Factor") +
@@ -268,7 +272,7 @@ sri_confi_sum <-
     legend.text = element_text(size=14), #change legend text font size
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 15),
+    strip.text.x = element_text(size = 10),
     plot.title = element_text(size = 20, face = "bold"),
     axis.title.y = element_text(size = 16),
   ) +

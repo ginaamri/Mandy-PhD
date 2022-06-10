@@ -167,7 +167,7 @@ fix_plot_sum <-
              alpha = 0.4,
              position = position_jitter(seed = 1,
                                         width = 0.1,
-                                        height = 0)) +
+                                        height = 0.1)) +
   ylim(0,15) +
   labs(x = "",
        y = "Time to first fixation in seconds") +
@@ -242,8 +242,8 @@ t.test(x = df_aoi$Stud_disrup_total_duration_of_fixations[df_aoi$Group == "Exper
 
 # TOTAL DURATION OF FIXATIONS AOI students and AOI disruptive person
 # effect size for expertise differences
-d_dur_stud_disrup <- CohenD(x = df_aoi$Stud_disrup_total_duration_of_fixations[df_aoi$Group == "Novice"],
-                    y = df_aoi$Stud_disrup_total_duration_of_fixations[df_aoi$Group == "Expert"],
+d_dur_stud_disrup <- CohenD(x = df_aoi$Stud_disrup_total_duration_of_fixations[df_aoi$Group == "Expert"],
+                    y = df_aoi$Stud_disrup_total_duration_of_fixations[df_aoi$Group == "Novice"],
                     na.rm = TRUE)
 
 
@@ -257,8 +257,8 @@ t.test(x = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == 
 
 # TOTAL DURATION OF FIXATIONS IN AOI = Disruptive Person
 # effect size for expertise differences
-d_dur_disrup <- CohenD(x = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
-            y = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+d_dur_disrup <- CohenD(x = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+            y = df_aoi$Total_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
             na.rm = TRUE
                 )
 
@@ -271,8 +271,8 @@ t.test(x = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Expert"]
 
 # TOTAL DURATION OF FIXATIONS IN AOI = Students
 # effect size for expertise differences
-d_dur_stud <- CohenD(x = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Novice"],
-                y = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Expert"],
+d_dur_stud <- CohenD(x = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Expert"],
+                y = df_aoi$Total_duration_of_fixations.Students[df_aoi$Group == "Novice"],
                 na.rm = TRUE
                     )
 
@@ -322,11 +322,13 @@ totaldur_group_plot <-
          mapping = aes(x = Group,
                        y = Seconds)) +
   geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 2, 
-  #            alpha = 0.1,
-  #            position = position_jitter(seed = 1, 
-  #                                       width = 0.1)) +
-  ylim(0,20) + 
+  geom_point(size = 2,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
+    ylim(0,20) + 
   labs(x ="") + 
   scale_fill_manual(values=c("steelblue","firebrick")) +  
   ggtitle("Total Duration of Fixations on all AOIs") +
@@ -354,11 +356,13 @@ totaldur_stud_disrup_plot <-
   filter(AOI %in% c("StudentA", "StudentB", "StudentC", "'Disruptive Person'")) %>% 
   ggplot(mapping = aes(x = Group,
                        y = Seconds)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 2, 
-  #            alpha = 0.1,
-  #            position = position_jitter(seed = 1, 
-  #                                       width = 0.1)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,20) + 
   labs(x ="") + 
   scale_fill_manual(values=c("steelblue","firebrick")) +  
@@ -388,11 +392,12 @@ totaldur_disrup_plot <-
   ggplot(mapping = aes(x = Group,
                        y = Seconds)) +
   # geom_violin(mapping = aes(fill = Group)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 1,
-  #            alpha = 0.1,
-  #            position = position_jitter(seed = 1,
-  #                                       width = 0.1)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,20) +
   labs(x ="") +
   scale_fill_manual(values=c("steelblue","firebrick")) +  
@@ -424,11 +429,13 @@ totaldur_student_plot <-
   ggplot(mapping = aes(x = Group,
                        y = Seconds)) +
   # geom_violin(mapping = aes(fill = Group)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 1,
-  #            alpha = 0.1,
-  #            position = position_jitter(seed = 1,
-  #                                       width = 0.1)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,20) +
   labs(x ="") +
   scale_fill_manual(values=c("steelblue","firebrick")) +  
@@ -478,8 +485,8 @@ t.test(x = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Expert"],
 
 # NUMBER OF FIXATIONS iN all AOIs
 # effect size for expertise differences
-d_num_all <- CohenD(x = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Novice"],
-                    y = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Expert"],
+d_num_all <- CohenD(x = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Expert"],
+                    y = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Novice"],
                     na.rm = TRUE)
 
 
@@ -507,8 +514,8 @@ t.test(x = df_aoi$Stud_disrup_number_of_fixations[df_aoi$Group == "Expert"],
 
 # TOTAL DURATION OF FIXATIONS AOI students and AOI disruptive person
 # effect size for expertise differences
-d_num_stud_disrup <- CohenD(x = df_aoi$Stud_disrup_number_of_fixations[df_aoi$Group == "Novice"],
-                            y = df_aoi$Stud_disrup_number_of_fixations[df_aoi$Group == "Expert"],
+d_num_stud_disrup <- CohenD(x = df_aoi$Stud_disrup_number_of_fixations[df_aoi$Group == "Expert"],
+                            y = df_aoi$Stud_disrup_number_of_fixations[df_aoi$Group == "Novice"],
                             na.rm = TRUE)
 
 
@@ -520,8 +527,8 @@ t.test(x = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"
 
 # NUMBER OF FIXATIONS IN AOI = Disruptive Person
 # effect size for expertise differences
-d_num_disrup <- CohenD(x = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
-                       y = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+d_num_disrup <- CohenD(x = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+                       y = df_aoi$Number_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
                        na.rm = TRUE)
 
 
@@ -533,8 +540,8 @@ t.test(x = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Expert"],
 
 # NUMBER OF FIXATIONS IN AOI = Students
 # effect size for expertise differences
-d_num_stud <- CohenD(x = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Novice"],
-                     y = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Expert"],
+d_num_stud <- CohenD(x = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Expert"],
+                     y = df_aoi$Number_of_fixations.Students[df_aoi$Group == "Novice"],
                      na.rm = TRUE)
 
 # selecting relevant columns
@@ -579,11 +586,13 @@ number_group_plot <-
   ggplot(data = df_aoi_number,
          mapping = aes(x = Group,
                        y = Count)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 2, 
-  #            alpha = 0.1,
-  #            position = position_jitter(seed = 1, 
-  #                                       width = 0.1)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) + 
   labs(x ="") + 
   scale_fill_manual(values=c("steelblue","firebrick")) +  
@@ -612,11 +621,13 @@ number_stud_disrup_plot <-
   filter(AOI %in% c("StudentA", "StudentB", "StudentC", "'Disruptive Person'")) %>% 
   ggplot(mapping = aes(x = Group,
                        y = Count)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 2, 
-  #            alpha = 0.1,
-  #            position = position_jitter(seed = 1, 
-  #                                       width = 0.1)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) + 
   labs(x ="") + 
   scale_fill_manual(values=c("steelblue","firebrick")) +  
@@ -646,11 +657,13 @@ number_disrup_plot <-
   ggplot(mapping = aes(x = Group,
                        y = Count)) +
   # geom_violin(mapping = aes(fill = Group)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 1,
-  #            alpha = 0.1,
-  #            position = position_jitter(seed = 1,
-  #                                       width = 0.1)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) +
   labs(x ="") +
   scale_fill_manual(values=c("steelblue","firebrick")) +  
@@ -682,11 +695,13 @@ number_student_plot <-
   ggplot(mapping = aes(x = Group,
                        y = Count)) +
   # geom_violin(mapping = aes(fill = Group)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
-  # geom_point(size = 1,
-  #            alpha = 0.1,
-  #            position = position_jitter(seed = 1,
-  #                                       width = 0.1)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) +
   labs(x ="") +
   scale_fill_manual(values=c("steelblue","firebrick")) +  
