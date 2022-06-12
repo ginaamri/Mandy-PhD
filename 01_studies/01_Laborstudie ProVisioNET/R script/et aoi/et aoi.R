@@ -78,7 +78,8 @@ df_aoi <- df_aoi %>%
          TOI_sum,
          Time_to_first_fixation.Disruptive_Person,
          starts_with("Total_duration_of_fixations"),
-         starts_with("Number_of_fixations"))
+         starts_with("Number_of_fixations"),
+         starts_with("Average_duration"))
 
 
 # # remove all NAs
@@ -729,4 +730,282 @@ ggsave(plot = number_student_plot,
 
 grid.arrange(totaldur_disrup_plot, 
              totaldur_student_plot,
+             nrow = 1)
+
+
+
+########################### AVERAGE DURATION OF FIXATIONS IN AOIS ######################
+
+# creating new variable by summarizing average duration in all AOIs
+df_aoi <-
+  df_aoi %>%
+  rowwise() %>%
+  mutate(Sum_average_duration_of_fixations = sum(c_across(starts_with("Average_duration")
+                                                          ),
+                                                 na.rm = TRUE
+                                                 )
+         )
+
+# AVERAGE DURATION OF FIXATIONS on all AOIs 
+# t-test for expertise differences
+t.test(x = df_aoi$Sum_average_duration_of_fixations[df_aoi$Group == "Expert"],
+       y = df_aoi$Sum_average_duration_of_fixations[df_aoi$Group == "Novice"])
+
+
+# TOTAL DURATION OF FIXATIONS on all AOIs
+# effect size for expertise differences
+d_aver_all <- CohenD(x = df_aoi$Sum_average_duration_of_fixations[df_aoi$Group == "Novice"],
+                    y = df_aoi$Sum_average_duration_of_fixations[df_aoi$Group == "Expert"],
+                    na.rm = TRUE)
+
+# creating new variable by summarizing average duration in AOI "Students"
+df_aoi <-
+  df_aoi %>% 
+  rowwise() %>% 
+  mutate(Average_duration_of_fixations.Students = sum(c_across("Average_duration_of_fixations.Anna" | 
+                                                               "Average_duration_of_fixations.Bianca" |
+                                                               "Average_duration_of_fixations.Carl(a)")))
+
+
+# creating new variable by summarizing AOI students and AOI disruptive person
+df_aoi <- 
+  df_aoi %>% 
+  rowwise() %>% 
+  mutate(Stud_disrup_average_duration_of_fixations = Average_duration_of_fixations.Students +
+                                                     Average_duration_of_fixations.Disruptive_Person)
+
+
+# AVERAGE DURATION OF FIXATIONS for AOI students and AOI disruptive person
+# t-test for expertise differences
+t.test(x = df_aoi$Stud_disrup_average_duration_of_fixations[df_aoi$Group == "Expert"],
+       y = df_aoi$Stud_disrup_average_duration_of_fixations[df_aoi$Group == "Novice"])
+
+
+# AVERAGE DURATION OF FIXATIONS AOI students and AOI disruptive person
+# effect size for expertise differences
+d_aver_stud_disrup <- CohenD(x = df_aoi$Stud_disrup_average_duration_of_fixations[df_aoi$Group == "Expert"],
+                            y = df_aoi$Stud_disrup_average_duration_of_fixations[df_aoi$Group == "Novice"],
+                            na.rm = TRUE
+                            )
+
+
+
+# AVERAGE DURATION OF FIXATIONS IN AOI = Disruptive Person 
+# t-test for expertise differences
+t.test(x = df_aoi$Average_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+       y = df_aoi$Average_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"]
+       )
+
+
+# TOTAL DURATION OF FIXATIONS IN AOI = Disruptive Person
+# effect size for expertise differences
+d_aver_disrup <- CohenD(x = df_aoi$Average_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Expert"],
+                       y = df_aoi$Average_duration_of_fixations.Disruptive_Person[df_aoi$Group == "Novice"],
+                       na.rm = TRUE
+                       )
+
+
+# AVERAGE DURATION OF FIXATIONS IN AOI = Students 
+# t-test for expertise differences
+t.test(x = df_aoi$Average_duration_of_fixations.Students[df_aoi$Group == "Expert"],
+       y = df_aoi$Average_duration_of_fixations.Students[df_aoi$Group == "Novice"]
+       )
+
+
+# AVERAGE DURATION OF FIXATIONS IN AOI = Students
+# effect size for expertise differences
+d_aver_stud <- CohenD(x = df_aoi$Average_duration_of_fixations.Students[df_aoi$Group == "Expert"],
+                     y = df_aoi$Average_duration_of_fixations.Students[df_aoi$Group == "Novice"],
+                     na.rm = TRUE
+                     )
+
+# selecting relevant columns
+df_aoi_aver_dur <- df_aoi %>% 
+  select(Group,
+         TOI_sum,
+         starts_with("Average_duration_of_fixations"))
+
+
+# changing format from wide to long
+df_aoi_aver_dur <- df_aoi_aver_dur %>% 
+  pivot_longer(
+  cols = contains("Average_duration"),
+  names_to = "Average_durations_of_fixations",
+  values_to = "Milliseconds")
+
+
+# remove all NAs
+df_aoi_aver_dur <- na.omit(df_aoi_aver_dur)
+
+
+# changing milliseconds into seconds
+df_aoi_aver_dur$Seconds <- round(df_aoi_aver_dur$Milliseconds/1000,
+                                 digits = 2)
+
+
+# rename values
+df_aoi_aver_dur <- 
+  df_aoi_aver_dur %>% 
+  mutate(AOI = recode(Average_durations_of_fixations, 
+                      Average_duration_of_fixations.Anna = 'StudentA',
+                      Average_duration_of_fixations.Bianca = 'StudentB',
+                      Average_duration_of_fixations.Board_Screen = 'Board/Screen',
+                      `Average_duration_of_fixations.Carl(a)` = 'StudentC',
+                      Average_duration_of_fixations.Classroom_Others = 'Classroom/Others',
+                      Average_duration_of_fixations.Disruptive_Person = 'Disruptive Person',
+                      Average_duration_of_fixations.Material_Students = 'Material Students',
+                      Average_duration_of_fixations.Material_Teacher = 'Material Teacher',
+                      Average_duration_of_fixations.Nametag_Anna = 'NametagA',
+                      Average_duration_of_fixations.Nametag_Bianca = 'NametagB',
+                      `Average_duration_of_fixations.Nametag_Carl(a)` = 'NametagC'))
+
+
+# plotting average duration of fixations for expertise groups for all AOIs
+aver_dur_group_plot <- 
+  ggplot(data = df_aoi_aver_dur,
+         mapping = aes(x = Group,
+                       y = Seconds)) +
+  geom_boxplot(mapping = aes(fill = Group), 
+               outlier.shape = NA) +
+  geom_point(size = 2,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
+  ylim(0,4) +
+  labs(x ="") + 
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  ggtitle("Average Duration of Fixations on all AOIs") +
+  theme_classic() + 
+  theme(legend.position="none",
+        axis.text.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.title = element_text(size=18),
+        plot.title = element_text(size = 25, 
+                                  face = "bold")
+  )
+
+aver_dur_group_plot
+
+ggsave(plot = aver_dur_group_plot,
+       filename = "plots/aver_dur_group_plot.png",
+       height = 8,
+       width = 14,
+       units = "in")
+
+
+# plotting average duration of fixations for expertise groups for AOI student and AOI disruptive person
+aver_dur_stud_disrup_plot <- 
+  df_aoi_aver_dur %>% 
+  filter(AOI %in% c("StudentA", "StudentB", "StudentC", "'Disruptive Person'")) %>% 
+  ggplot(mapping = aes(x = Group,
+                       y = Seconds)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
+  ylim(0,3) +
+  labs(x ="") + 
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  ggtitle("Average Duration of Fixations on AOI `Students` & `Disruptive Person`") +
+  theme_classic() + 
+  theme(legend.position="none",
+        axis.text.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.title = element_text(size=18),
+        plot.title = element_text(size = 25, 
+                                  face = "bold")
+  )
+
+aver_dur_stud_disrup_plot
+
+ggsave(plot = aver_dur_stud_disrup_plot,
+       filename = "plots/aver_dur_stud_disrup_plot.png",
+       height = 8,
+       width = 14,
+       units = "in")
+
+
+# plotting average duration of fixations for disruptive person
+aver_dur_disrup_plot <-
+  df_aoi_aver_dur %>%
+  filter(AOI == "Disruptive Person") %>% 
+  ggplot(mapping = aes(x = Group,
+                       y = Seconds)) +
+  # geom_violin(mapping = aes(fill = Group)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
+  ylim(0,3) +
+  labs(x ="") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  # facet_wrap(vars(Total_Durations_Of_Fixations),
+  # nrow = 1, strip.position = "bottom") +
+  ggtitle("Average Duration of Fixations on AOI `Disruptive Person`") +
+  theme_classic() +
+  theme(legend.position="none",
+        axis.text.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.title = element_text(size=18),
+        plot.title = element_text(size = 20, 
+                                  face = "bold")
+  )
+
+aver_dur_disrup_plot
+
+ggsave(plot = aver_dur_disrup_plot,
+       filename = "plots/aver_dur_disrup_plot.png",
+       height = 8,
+       width = 8,
+       units = "in")
+
+
+# plot für students
+aver_dur_student_plot <-
+  df_aoi_aver_dur %>%
+  filter(AOI %in% c("StudentA", "StudentB", "StudentC")) %>% 
+  ggplot(mapping = aes(x = Group,
+                       y = Seconds)) +
+  # geom_violin(mapping = aes(fill = Group)) +
+  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_point(size = 1,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  scale_x_discrete(limits = c("Novice", "Expert")) +
+  ylim(0, 3) +
+  labs(x ="") +
+  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  # facet_wrap(vars(Total_Durations_Of_Fixations),
+  # nrow = 1, strip.position = "bottom") +
+  ggtitle("Average Duration of Fixations on AOI `Students`") +
+  theme_classic() +
+  theme(legend.position="none",
+        axis.text.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.title = element_text(size=18),
+        plot.title = element_text(size = 20, 
+                                  face = "bold")
+  )
+
+aver_dur_student_plot
+
+
+ggsave(plot = aver_dur_student_plot,
+       filename = "plots/aver_dur_student_plot.png",
+       height = 8,
+       width = 8,
+       units = "in")
+
+
+grid.arrange(aver_dur_disrup_plot, 
+             aver_dur_student_plot,
              nrow = 1)
