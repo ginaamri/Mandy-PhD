@@ -39,15 +39,14 @@ df_sjt_long$Group = ifelse(df_sjt_long$Group < 200, "Novice","Expert")
 mean_plot <- 
 df_sjt_long %>% 
   mutate(Group = factor(Group,
-                        levels = c("Novice","Expert")
+                        levels = c("Novice", 
+                                   "Expert")
                         )
          ) %>% 
   ggplot(mapping = aes(x = Group,
                        y = Mean)) +
-  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
-  # scale_linetype_manual(values = c("Expert", "Novice"),
-  #                       labels = c("Novice", "Expert"),
-  #                       guide = guide_legend(reverse = TRUE)) +
+  geom_boxplot(mapping = aes(fill = Group), 
+               outlier.shape = NA) +
   geom_point(size = 1, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
@@ -56,7 +55,6 @@ df_sjt_long %>%
   labs(x = "") +
   ylim(0,1) + 
   scale_fill_manual(values=c("firebrick","steelblue")) +  
- # scale_x_discrete(limits = c("Novice", "Expert")) +
   facet_wrap(vars(`Facets Classroom Management`), 
              nrow = 1, strip.position = "bottom") +
   theme_classic()+
@@ -64,8 +62,8 @@ df_sjt_long %>%
   theme(
     plot.title = element_text(size = 18, 
                               face = "bold"),
-    legend.title = element_text(size = 17),
-    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 20),
+    legend.text = element_text(size = 18),
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
     strip.text.x = element_text(size = 14),
@@ -77,7 +75,7 @@ df_sjt_long %>%
   #          y = 0.25,
   #          label = paste ("d = ", round(d_sjt_all),3))
 
-#mean_plot
+mean_plot
 
 ggsave(plot = mean_plot,
        filename = "plots/sjt_plot.png",
