@@ -322,7 +322,8 @@ totaldur_group_plot <-
   ggplot(data = df_aoi_dur,
          mapping = aes(x = Group,
                        y = Seconds)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_boxplot(mapping = aes(fill = Group),
+               outlier.shape = NA) +
   geom_point(size = 2,
              alpha = 0.1,
              position = position_jitter(seed = 1,
@@ -478,13 +479,13 @@ df_aoi <-
                                        )
          )
 
-# NUMBER OF FIXATIONS iN all AOIs 
+# NUMBER OF FIXATIONS on all AOIs 
 # t-test for expertise differences
 t.test(x = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Expert"],
        y = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Novice"])
 
 
-# NUMBER OF FIXATIONS iN all AOIs
+# NUMBER OF FIXATIONS on all AOIs
 # effect size for expertise differences
 d_num_all <- CohenD(x = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Expert"],
                     y = df_aoi$Sum_number_of_fixations[df_aoi$Group == "Novice"],
@@ -587,7 +588,8 @@ number_group_plot <-
   ggplot(data = df_aoi_number,
          mapping = aes(x = Group,
                        y = Count)) +
-  geom_boxplot(mapping = aes(fill = Group), outlier.shape = NA) +
+  geom_boxplot(mapping = aes(fill = Group), 
+               outlier.shape = NA) +
   geom_point(size = 1,
              alpha = 0.1,
              position = position_jitter(seed = 1,

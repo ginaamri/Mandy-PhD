@@ -64,7 +64,8 @@ dist_group_plot <-
   ggplot(data = sri_disrup,
          mapping = aes(x = Group,
                        y = `Disruption Factor`)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_boxplot(mapping = aes(fill = Group),
+               outlier.shape = NA) +
   geom_point(size = 1,
              alpha = 0.4,
              position = position_jitter(seed = 1,
@@ -202,7 +203,8 @@ confi_group_plot <-
   ggplot(data = sri_confi,
          mapping = aes(x = Group,
                        y = `Confident Factor`)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_boxplot(mapping = aes(fill = Group), 
+               outlier.shape = NA) +
   labs(x = "", 
        y = "Confident Factor") +
   scale_x_discrete(limits = c("Novice", "Expert")) +
@@ -254,7 +256,8 @@ sri_confi_sum <-
   ggplot(data = sri_confi,
          mapping = aes(x = Group,
                        y = `Confident Factor`)) +
-  geom_boxplot(mapping = aes(fill = Group)) +
+  geom_boxplot(mapping = aes(fill = Group), 
+               outliner.shape = NA) +
   geom_point(size = 1, 
              alpha = 0.4,
              position = position_jitter(seed = 1, 
