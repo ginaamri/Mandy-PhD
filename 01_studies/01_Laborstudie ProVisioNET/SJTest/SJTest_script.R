@@ -54,21 +54,21 @@ df_sjt_long %>%
                                         height = 0.1)) +
   labs(x = "") +
   ylim(0,1) + 
-  scale_fill_manual(values=c("firebrick","steelblue")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   facet_wrap(vars(`Facets Classroom Management`), 
              nrow = 1, strip.position = "bottom") +
-  theme_classic()+
-  ggtitle("Situational Judgment Test of Strategic Knowledge of Classroom Management") +
+  theme_cowplot()+
+  ggtitle("SJT") +
   theme(
-    plot.title = element_text(size = 18, 
+    plot.title = element_text(size = 34, 
                               face = "bold"),
-    legend.title = element_text(size = 20),
-    legend.text = element_text(size = 18),
+    legend.title = element_text(size = 27),
+    legend.text = element_text(size = 25),
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    strip.text.x = element_text(size = 14),
-    axis.title.y = element_text(size = 14),
-    axis.title.x = element_text(size = 25)
+    strip.text.x = element_text(size = 22),
+    axis.title.y = element_text(size = 27),
+    axis.title.x = element_text(size = 27)
         )
   # + annotate(geom = "text",
   #          x = "All",
@@ -78,9 +78,9 @@ df_sjt_long %>%
 mean_plot
 
 ggsave(plot = mean_plot,
-       filename = "plots/sjt_plot.png",
-       height = 8,
-       width = 14,
+       filename = "plots/sjt_plot.svg",
+       height = 9,
+       width = 16,
        units = "in")
 
 #################### MEAN, SD, N ############

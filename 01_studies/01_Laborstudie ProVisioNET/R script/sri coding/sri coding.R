@@ -8,7 +8,8 @@ needs(tidyverse,
       DescTools,
       irr,
       readxl, 
-      gridExtra)
+      gridExtra,
+      cowplot)
 
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
@@ -19,23 +20,22 @@ sri <-
   excel_sheets("data/Coding_SRI.xlsx") %>% 
   map_df(~read_xlsx("data/Coding_SRI.xlsx",.)) %>% 
   select(Group, Event, `Disruption Factor`, `Confident Factor`) %>% # select relevant columns 
-  filter(Group %in% c(101:122, 201:212))# filter relevant rows
+  filter(Group %in% c(101:122, 202:212))# filter relevant rows
 
  
-# counting drop outs (-99 not perceived, -100 not answered)
-# all dropout
-sri$dropout <- 
-  length(which(sri$`Disruption Factor`== -99 |
-               sri$`Disruption Factor`== -100 |
-                sri$`Confident Factor` == -100)) %>% 
-  as.numeric(sri$dropout)
-
-# not perceived
-sri$not_perceived <-
-  length(which(sri$`Disruption Factor`== -99)) %>% 
-  as.numeric(sri$not_perceived)
-
-
+# # counting drop outs (-99 not perceived, -100 not answered)
+# # all dropout
+# sri$dropout <- 
+#   length(which(sri$`Disruption Factor`== -99 |
+#                sri$`Disruption Factor`== -100 |
+#                 sri$`Confident Factor` == -100)) %>% 
+#   as.numeric(sri$dropout)
+# 
+# # not perceived
+# sri$not_perceived <-
+#   length(which(sri$`Disruption Factor`== -99)) %>% 
+#   as.numeric(sri$not_perceived)
+# 
 # # count all events and calculate percentage of dropouts
 # sri$sum_events <-
 #   length(summary(as.factor(sri$Group))) %>% 
@@ -47,8 +47,9 @@ sri$not_perceived <-
 sri <- 
   sri %>% 
   filter(!`Disruption Factor` == -100,
-           !`Confident Factor` == -100,
-           !`Disruption Factor`== -99)
+         !`Confident Factor` == -100,
+         !`Disruption Factor`== -99,
+         !`Confident Factor` == -99)
   
          
 # define expert and novice with ifelse function
@@ -75,22 +76,22 @@ dist_group_plot <-
   labs(x = "",
        y = "Disruption Factor") + 
   ylim(0,10)+
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   ggtitle("How disruptive was the event for you?") +
-  theme_classic() + 
+  theme_cowplot() + 
   theme(
     legend.position="none",
-    axis.text.x = element_text(size = 18),
-    axis.text.y = element_text(size = 16),
-    axis.title.y = element_text(size = 18),
-    plot.title = element_text(size = 20, 
+    axis.text.x = element_text(size = 23),
+    axis.text.y = element_text(size = 18),
+    axis.title.y = element_text(size = 25),
+    plot.title = element_text(size = 25, 
                               face = "bold"),
     )
 
 dist_group_plot
 
 ggsave(plot = dist_group_plot,
-       filename = "plots/dist_group_plot.png",
+       filename = "plots/dist_group_plot.svg",
        height = 8,
        width = 8,
        units = "in")
@@ -214,22 +215,22 @@ confi_group_plot <-
              position = position_jitter(seed = 1,
                                         width = 0.1,
                                         height = 0.1)) +
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
-  ggtitle("How confident did you feel dealing with this event?") +
-  theme_classic() +
+  scale_fill_brewer(palette  = "RdBu") +  
+  ggtitle("How confident did you feel \ndealing with this event?") +
+  theme_cowplot() + 
   theme(
     legend.position="none",
-    axis.text.x = element_text(size = 18),
-    axis.text.y = element_text(size = 16),
-    axis.title.y = element_text(size = 18),
-    plot.title = element_text(size = 20, 
+    axis.text.x = element_text(size = 23),
+    axis.text.y = element_text(size = 18),
+    axis.title.y = element_text(size = 25),
+    plot.title = element_text(size = 25, 
                               face = "bold"),
-    )
+  )
 
 confi_group_plot
 
 ggsave(plot = confi_group_plot,
-       filename = "plots/confi_group_plot.png",
+       filename = "plots/confi_group_plot.svg",
        height = 8,
        width = 8,
        units = "in")
@@ -380,3 +381,67 @@ d_sri_confi <- CohenD(x = sri$`Confident Factor`[sri$Group == "Expert"],
                      y = sri$`Confident Factor`[sri$Group == "Novice"],
                      na.rm = TRUE)
 
+
+# mean & SD disruption factor
+# novices
+mean_disrup_nov <- 
+  sri_disrup %>%
+  filter(Group == "Novice") %>% 
+  pull(`Disruption Factor`) %>% 
+  mean() %>% 
+  round(., digits = 0)
+
+sd_disrup_nov <- 
+  sri_disrup %>%
+  filter(Group == "Novice") %>% 
+  pull(`Disruption Factor`) %>% 
+  sd() %>% 
+  round(., digits = 0)
+
+# experts
+mean_disrup_exp <-
+  sri_disrup %>%
+  filter(Group == "Expert") %>% 
+  pull(`Disruption Factor`) %>% 
+  mean() %>% 
+  round(., digits = 0)
+
+sd_disrup_exp <- 
+  sri_disrup %>%
+  filter(Group == "Expert") %>% 
+  pull(`Disruption Factor`) %>% 
+  sd() %>% 
+  round(., digits = 0)
+
+
+
+# mean & SD confident factor
+# novices
+mean_confi_nov <- 
+  sri_confi %>%
+  filter(Group == "Novice") %>% 
+  pull(`Confident Factor`) %>% 
+  mean() %>% 
+  round(., digits = 0)
+
+sd_confi_nov <- 
+  sri_confi %>%
+  filter(Group == "Novice") %>% 
+  pull(`Confident Factor`) %>% 
+  sd() %>% 
+  round(., digits = 0)
+
+# experts
+mean_confi_exp <-
+  sri_confi %>%
+  filter(Group == "Expert") %>% 
+  pull(`Confident Factor`) %>% 
+  mean() %>% 
+  round(., digits = 0)
+
+sd_confi_exp <- 
+  sri_confi %>%
+  filter(Group == "Expert") %>% 
+  pull(`Confident Factor`) %>% 
+  sd() %>% 
+  round(., digits = 0)

@@ -8,7 +8,8 @@ needs(tidyverse,
       irr,
       readxl, 
       gridExtra,
-      janitor)
+      janitor,
+      RColorBrewer)
 
 # suppress "summarize" info. 
 # if this line is ommitted, each table using the summarize function will be accompanied with a warning from the console
@@ -43,6 +44,55 @@ rm(list = ls(pattern = "^tib_ProVisio"))
 rm(work_data)
 rm(file_names)
 rm(i)
+
+# filter group & total duration & number fixation
+df_aoi %>% 
+  filter(TOI == "Entire Recording") %>% 
+  select (Group,
+          starts_with("Total_duration_of_fixations"),
+          starts_with("Number_of_fixations"),
+          !"Total_duration_of_fixations.Disruptive_Person",
+          !"Number_of_fixations.Disruptive_Person") %>% 
+  rowwise() %>% 
+  transmute(Group = Group,
+            Sum_duration_fixation = sum(c_across(starts_with("Total_duration")
+                                                 ),
+                                  na.rm = TRUE
+                                  ),
+         Sum_number_fixation = sum(c_across(starts_with("Number_of")
+                                            ),
+                                   na.rm = TRUE
+                                   )) %>% 
+  mutate(Average_duration = Sum_duration_fixation/Sum_number_fixation,
+         Group = as_factor(Group)) -> df_aoi_sum
+df_aoi_sum %>% 
+  ggplot(mapping = aes(x = Group,
+                       y = Average_duration)) +
+  geom_boxplot(mapping = aes(fill = Group),
+               outlier.shape = NA) +
+  geom_point(size = 2,
+             alpha = 0.1,
+             position = position_jitter(seed = 1,
+                                        width = 0.1,
+                                        height = 0.1)) +
+  # scale_x_discrete(labels = paste0(c("Expert\n","Novice\n"),
+  #                                  "M = ", c(mean_dur_nov, mean_dur_exp),
+  #                                  "; SD = ", c(sd_dur_nov, sd_dur_exp)
+  #                                  )
+  #                  ) +
+  labs(x ="",
+       y = "Average duration in milliseconds") + 
+  scale_fill_brewer(palette  = "RdBu") +  
+  ggtitle("Average Duration of Fixations on all AOIs") +
+  theme_classic() + 
+  theme(legend.position="none",
+        axis.text.x = element_text(size = 20),
+        axis.text.y = element_text(size = 16),
+        axis.title = element_text(size=18),
+        plot.title = element_text(size = 25, 
+                                  face = "bold")
+  )
+
 
 # filter relevant rows
 df_aoi <- df_aoi %>% filter (TOI %in% c("Chatting_with_neighbour",
@@ -165,14 +215,14 @@ fix_plot_sum <-
                        y = Time_to_first_fixation_seconds.Disruptive_Person)) +
   geom_boxplot(mapping = aes(fill = Group)) +
   geom_point(size = 2,
-             alpha = 0.4,
+             alpha = 0.7,
              position = position_jitter(seed = 1,
                                         width = 0.1,
                                         height = 0.1)) +
   ylim(0,15) +
   labs(x = "",
        y = "Time to first fixation in seconds") +
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   ggtitle("Time to first fixation to disruptive person for categories") +
   theme_classic() +
   theme(
@@ -193,7 +243,7 @@ fix_plot_sum <-
 
 fix_plot_sum
 
-########################### TOTAL DURATION OF FIXATIONS IN AOIS ######################
+########################### DURATION OF FIXATIONS IN AOIS ######################
 
 # creating new variable by summarizing total duration in all AOIs
 df_aoi <-
@@ -205,16 +255,16 @@ df_aoi <-
                                                )
          )
 
-# TOTAL DURATION OF FIXATIONS iN all AOIs 
+# TOTAL DURATION OF FIXATIONS on all AOIs 
 # t-test for expertise differences
-t.test(x = df_aoi$Sum_total_duration_of_fixations[df_aoi$Group == "Expert"],
-       y = df_aoi$Sum_total_duration_of_fixations[df_aoi$Group == "Novice"])
+t.test(x = df_aoi_sum$Average_duration[df_aoi_sum$Group == "Expert"],
+       y = df_aoi_sum$Average_duration[df_aoi_sum$Group == "Novice"])
 
 
-# TOTAL DURATION OF FIXATIONS iN all AOIs
+# TOTAL DURATION OF FIXATIONS on all AOIs
 # effect size for expertise differences
-d_dur_all <- CohenD(x = df_aoi$Sum_total_duration_of_fixations[df_aoi$Group == "Novice"],
-                    y = df_aoi$Sum_total_duration_of_fixations[df_aoi$Group == "Expert"],
+d_dur_all <- CohenD(x = df_aoi_sum$Average_duration[df_aoi_sum$Group == "Novice"],
+                    y = df_aoi_sum$Average_duration[df_aoi_sum$Group == "Expert"],
                     na.rm = TRUE)
 
 
@@ -316,11 +366,50 @@ df_aoi_dur <-
                                                Total_duration_of_fixations.Nametag_Bianca = 'NametagB',
                                                `Total_duration_of_fixations.Nametag_Carl(a)` = 'NametagC'))
 
+# mean total duration SD
+mean_dur_nov <- 
+  df_aoi_dur %>%
+  filter(Group == "Novice") %>% 
+  pull(Seconds) %>% 
+  mean() %>% 
+  round(., digits = 2)
+
+mean_dur_exp <-
+  df_aoi_dur %>%
+  filter(Group == "Expert") %>% 
+  pull(Seconds) %>% 
+  mean() %>% 
+  round(., digits = 2)
+
+sd_dur_nov <- 
+  df_aoi_dur %>%
+  filter(Group == "Novice") %>% 
+  pull(Seconds) %>% 
+  sd() %>% 
+  round(., digits = 2)
+
+sd_dur_exp <- 
+  df_aoi_dur %>%
+  filter(Group == "Expert") %>% 
+  pull(Seconds) %>% 
+  sd() %>% 
+  round(., digits = 2)
          
-# plotting total duration of fixations for expertise groups for all AOIs
+# plotting total duration of fixations for expertise groups on all AOIs
 totaldur_group_plot <- 
-  ggplot(data = df_aoi_dur,
-         mapping = aes(x = Group,
+  df_aoi_dur %>% 
+  filter(Total_durations_of_fixations != "Total_duration_of_fixations.Students",
+         Total_durations_of_fixations != "Total_duration_of_fixations.Disruptive_Person") %>% 
+  mutate(Group = factor (Group,
+                         levels = c("Novice",
+                                    "Expert"),
+                         labels = paste0(c("Novice\n","Expert\n"),
+                                        "M = ", c(mean_dur_nov, mean_dur_exp),
+                                        ", SD = ", c(sd_dur_nov, sd_dur_exp)
+                                        )
+                         )
+         ) %>%
+  ggplot(mapping = aes(x = Group,
                        y = Seconds)) +
   geom_boxplot(mapping = aes(fill = Group),
                outlier.shape = NA) +
@@ -329,19 +418,25 @@ totaldur_group_plot <-
              position = position_jitter(seed = 1,
                                         width = 0.1,
                                         height = 0.1)) +
-  scale_x_discrete(limits = c("Novice", "Expert")) +
+  # scale_x_discrete(labels = paste0(c("Expert\n","Novice\n"),
+  #                                  "M = ", c(mean_dur_nov, mean_dur_exp),
+  #                                  "; SD = ", c(sd_dur_nov, sd_dur_exp)
+  #                                  )
+  #                  ) +
     ylim(0,15) + 
   labs(x ="") + 
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   ggtitle("Total Duration of Fixations on all AOIs") +
   theme_classic() + 
   theme(legend.position="none",
-        axis.text.x = element_text(size = 18),
+        axis.text.x = element_text(size = 20),
         axis.text.y = element_text(size = 16),
         axis.title = element_text(size=18),
         plot.title = element_text(size = 25, 
                                   face = "bold")
         )
+
+
 
 totaldur_group_plot
 
@@ -367,7 +462,7 @@ totaldur_stud_disrup_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) + 
   labs(x ="") + 
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   ggtitle("Total Duration of Fixations on AOI `Students` & `Disruptive Person`") +
   theme_classic() + 
   theme(legend.position="none",
@@ -402,7 +497,7 @@ totaldur_disrup_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) +
   labs(x ="") +
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
              # nrow = 1, strip.position = "bottom") +
   ggtitle("Total Duration of Fixations on AOI `Disruptive Person`") +
@@ -440,7 +535,7 @@ totaldur_student_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) +
   labs(x ="") +
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
   # nrow = 1, strip.position = "bottom") +
   ggtitle("Total Duration of Fixations on AOI `Students`") +
@@ -598,7 +693,7 @@ number_group_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) + 
   labs(x ="") + 
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   ggtitle("Number of Fixations on all AOIs") +
   theme_classic() + 
   theme(legend.position="none",
@@ -633,7 +728,7 @@ number_stud_disrup_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) + 
   labs(x ="") + 
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   ggtitle("Number of Fixations on AOI `Students` & `Disruptive Person`") +
   theme_classic() + 
   theme(legend.position="none",
@@ -669,7 +764,7 @@ number_disrup_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) +
   labs(x ="") +
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
   # nrow = 1, strip.position = "bottom") +
   ggtitle("Number of Fixations on AOI `Disruptive Person`") +
@@ -707,7 +802,7 @@ number_student_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,15) +
   labs(x ="") +
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
   # nrow = 1, strip.position = "bottom") +
   ggtitle("Number of Fixations on AOI `Students`") +
@@ -877,7 +972,7 @@ aver_dur_group_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,4) +
   labs(x ="") + 
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   ggtitle("Average Duration of Fixations on all AOIs") +
   theme_classic() + 
   theme(legend.position="none",
@@ -912,7 +1007,7 @@ aver_dur_stud_disrup_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,3) +
   labs(x ="") + 
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   ggtitle("Average Duration of Fixations on AOI `Students` & `Disruptive Person`") +
   theme_classic() + 
   theme(legend.position="none",
@@ -947,7 +1042,7 @@ aver_dur_disrup_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0,3) +
   labs(x ="") +
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
   # nrow = 1, strip.position = "bottom") +
   ggtitle("Average Duration of Fixations on AOI `Disruptive Person`") +
@@ -985,7 +1080,7 @@ aver_dur_student_plot <-
   scale_x_discrete(limits = c("Novice", "Expert")) +
   ylim(0, 3) +
   labs(x ="") +
-  scale_fill_manual(values=c("steelblue","firebrick")) +  
+  scale_fill_brewer(palette  = "RdBu") +  
   # facet_wrap(vars(Total_Durations_Of_Fixations),
   # nrow = 1, strip.position = "bottom") +
   ggtitle("Average Duration of Fixations on AOI `Students`") +
