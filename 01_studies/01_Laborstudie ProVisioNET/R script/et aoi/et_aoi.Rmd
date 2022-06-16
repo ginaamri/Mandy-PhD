@@ -268,6 +268,30 @@ d_number_disrup <- CohenD(x = df_aoi_disrup$Number_of_fixations.Disruptive_Perso
 
 ```{r}
 ##################### NUMBER OF FIXATIONS ON AOI STUDENTS ########################
+# filter group & total duration & number fixation on AOI Students
+df_aoi %>% 
+  filter(TOI == "Lesson") %>% 
+  select (Group,
+          "Total_duration_of_fixations.Anna",
+          "Total_duration_of_fixations.Bianca",
+          "Total_duration_of_fixations.Carl(a)",
+          "Number_of_fixations.Anna",
+          "Number_of_fixations.Bianca",
+          "Number_of_fixations.Carl(a)") %>% 
+  rowwise() %>% 
+  transmute(Group = Group,
+            Stud_duration_fixation = sum(c_across(starts_with("Total_duration")
+                                                 ),
+                                         na.rm = TRUE
+                                         ),
+            Stud_number_fixation = sum(c_across(starts_with("Number_of")
+                                                ),
+                                       na.rm = TRUE
+                                       )
+            ) %>% 
+  mutate(Average_duration_stud = round(Stud_duration_fixation/Stud_number_fixation, 
+                                  digits = 0),
+         Group = as_factor(Group)) -> df_aoi_stud
 
 # mean & SD average duration on AOI Students
 # novices
@@ -360,6 +384,27 @@ d_number_stud <- CohenD(x = df_aoi_stud$Stud_number_fixation[df_aoi_stud$Group =
 
 # filter group & total duration & number fixation on all AOIs
 
+df_aoi %>% 
+  filter(TOI == "Lesson") %>% 
+  select (Group,
+          starts_with("Total_duration_of_fixations"),
+          starts_with("Number_of_fixations"),
+          !"Total_duration_of_fixations.Disruptive_Person",
+          !"Number_of_fixations.Disruptive_Person") %>% 
+  rowwise() %>% 
+  transmute(Group = Group,
+            Sum_duration_fixation = sum(c_across(starts_with("Total_duration")
+                                                    ),
+                                           na.rm = TRUE
+                                           ),
+            Sum_number_fixation = sum(c_across(starts_with("Number_of")
+                                                  ),
+                                         na.rm = TRUE
+                                         )
+            ) %>% 
+  mutate(Average_duration = round(Sum_duration_fixation/Sum_number_fixation,
+                                         digits = 0),
+         Group = as_factor(Group)) -> df_aoi_sum
 # mean & SD average duration 
 # novices
 mean_dur_nov <- 
