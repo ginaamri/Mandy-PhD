@@ -14,8 +14,11 @@ needs(tidyverse,
 df_sjt <- read_csv2(file = "C:/Users/mk99feta/OneDrive/Dokumente/GitHub/Mandy-PhD/01_studies/01_Laborstudie ProVisioNET/SJTest/data/SJT.csv")
 
 # select relevant columns --> only subject ID and mean 
-df_sjt <- df_sjt %>% select(UI06_05, SJT_AL_gek, SJT_ST_gek, SJT_R_gek, SJT_KF_gek) %>% 
-  slice(1:34) # filter only relevant rows for analysis
+df_sjt <- df_sjt %>% select(UI06_05, SJT_AL_gek, SJT_ST_gek, SJT_R_gek, SJT_KF_gek) 
+# %>% slice(1:34) # filter only relevant rows for analysis
+
+# remove NAs
+df_sjt <- na.omit(df_sjt)
 
 
 # rename columns
@@ -25,8 +28,6 @@ df_sjt <- rename(df_sjt, c("Group" = "UI06_05",
                            "Rules and routines" = "SJT_R_gek",
                            "All" = "SJT_KF_gek"))
 
-# remove NAs
-df_sjt <- na.omit(df_sjt)
 
 # changing from wide to long format
 df_sjt_long <- df_sjt %>% 
@@ -85,7 +86,7 @@ ggsave(plot = mean_plot,
 
 #################### MEAN, SD, N ############
 
-# mean SJT ALL
+# mean & SD SJT ALL
 sjt_mean <- df_sjt_long %>%
   filter(`Facets Classroom Management` == "All") %>%
   group_by(Group) %>%
