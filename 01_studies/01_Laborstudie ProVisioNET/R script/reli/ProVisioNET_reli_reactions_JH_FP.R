@@ -20,21 +20,21 @@ options(dplyr.summarise.inform = FALSE)
 ################## RATER 1 ################
 
 # read in data from rater1 while specifying locale allows to set "," 
-r1 <-read_excel ("./data/coding_expertise_reaction_FP.xlsx")
+r1 <-read_excel ("./data/coding_expertise_reaction_MN.xlsx", col_names = TRUE)
 
 
 ################## RATER 2 ################
 
 # read in data from rater1 while specifying locale allows to set "," 
-r2 <-read_excel ("./data/coding_expertise_reaction_JH.xlsx")
+r2 <-read_excel ("./data/coding_expertise_reaction_NT.xlsx", col_names = TRUE)
 
 
 ################## DATA WRANGLING video 01 ################
 
 # filter relevant rows and select relevant columns 
-r1 <- r1 %>% filter(`VP ID` == "02")
+r1 <- r1 %>% filter(`VP ID` == "101")
 
-r2 <- r2 %>% filter(`VP ID` == "02")
+r2 <- r2 %>% filter(`VP ID` == "101")
 
 
 # reshape data frame in long format 
@@ -58,7 +58,7 @@ r3 <- bind_cols(r1_long$Value, r2_long$Value) %>%
 agree(r3)
 
 #################### CohenKappa ##############################
-psych::cohen.kappa(x = as.matrix(r3))
+kappa <- psych::cohen.kappa(x = as.matrix(r3))
 
 
 
